@@ -1,0 +1,65 @@
+### ONELINE
+代入法：f(A) 的特征值是 f(λ)，逆是 1/λ
+
+### PAIN
+**要解决的是：只知道 $A$ 的特征值、不知道 $A$ 的元素，怎么求 $A$ 的多项式、逆、伴随矩阵的特征值（以及它们的行列式）。**
+典型题：设 3 阶矩阵 $A$ 的特征值为 $1, 2, 3$，求 $\lvert A^{2} - 3A + E \rvert$。
+最容易想到的办法是"把 $A$ 求出来再硬算"。可特征值是 1、2、3 的矩阵有无穷多个：$\begin{pmatrix} 1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 3 \end{pmatrix}$ 满足，$\begin{pmatrix} 1 & 5 & 7 \\ 0 & 2 & 9 \\ 0 & 0 & 3 \end{pmatrix}$ 也满足（上三角，特征值就是主对角元），元素完全不一样。题目不给元素，就说明它压根不打算让你求出 $A$ —— 那就得有一条"绕开 $A$"的通道。
+另一个想法是"把 $A^{2} - 3A + E$ 老老实实算出来"：$n$ 阶矩阵要算 $n^{2}$ 个元素的平方、再加减，纯体力活，而且没有 $A$ 的元素根本没法开工。
+
+### GAP
+- **坑一 · 想先把 A 求出来**：只给特征值，$A$ 有无数种取法，写不出一个具体的 $A$；硬写一个（比如对角阵）虽然答案碰巧一致，但理由不成立，换成含参或重根的情形立刻翻车；
+- **坑二 · 只记住 $A^{k}$ 那一行结论**：会算 $A^{10}$ 的特征值，碰到 $\lvert A^{2} - 3A + E \rvert$、$\mathrm{tr}(A^{2} + A)$、$A^{-1} + A$ 就要从头推，其实它们共用同一句话；
+- **坑三 · 用逆和伴随的公式不管前提**：$A^{-1}$ 的特征值写成 $\frac{1}{\lambda}$、$A^{*}$ 的写成 $\frac{\lvert A \rvert}{\lambda}$，这两条都要求 $\lambda \ne 0$（等价于 $A$ 可逆）。题目里凡是出现特征值 0，这两条就不能直接用。
+
+### INTRO
+于是引入**代入法**（特征值的运算性质）：只要 $A\alpha = \lambda\alpha$ 且 $\alpha \ne 0$，两边反复左乘 $A$ 就得到
+
+$$
+A^{k}\alpha = \lambda^{k}\alpha, \qquad f(A)\alpha = f(\lambda)\alpha
+$$
+
+（$k$ 是正整数，$f$ 是任意多项式）；当 $A$ 可逆（即 $\lambda \ne 0$）时还有
+
+$$
+A^{-1}\alpha = \frac{1}{\lambda}\alpha, \qquad A^{*}\alpha = \frac{\lvert A \rvert}{\lambda}\alpha
+$$
+
+一句话口诀：**把式子里的 $A$ 换成 $\lambda$，算出来的就是特征值**（前提是这个式子只用到乘法、加法和求逆）。
+
+上面那三个坑，逐个补上：
+
+- **坑一补上 · 完全不用知道 A 长什么样**：$\lvert A^{2} - 3A + E \rvert = f(1)f(2)f(3)$，其中 $f(x) = x^{2} - 3x + 1$，于是 $(1 - 3 + 1)(4 - 6 + 1)(9 - 9 + 1) = (-1)\times(-1)\times 1 = 1$，全程只用到 $\lambda = 1, 2, 3$；
+- **坑二补上 · 一句话管住所有多项式**：$A^{k}$、$A^{2} - 3A + E$、$A^{-1} + A$ 全都套"$A$ 换 $\lambda$"，不用一个一个背；
+- **坑三补上 · 前提写在公式旁边**：$\frac{1}{\lambda}$ 和 $\frac{\lvert A \rvert}{\lambda}$ 都压着 $\lambda \ne 0$ 这个条件；看到特征值里有 0，先说一句"$A$ 不可逆，这两条不能用"。
+
+### DETAIL
+**性质（代入法）**：设 $A\alpha = \lambda\alpha$，$\alpha \ne 0$，则
+1. $A^{k}\alpha = \lambda^{k}\alpha$（$k$ 为正整数），即 $\lambda^{k}$ 是 $A^{k}$ 的特征值；
+2. 对任意多项式 $f$，$f(A)\alpha = f(\lambda)\alpha$，即 $f(\lambda)$ 是 $f(A)$ 的特征值，$\alpha$ 仍是同一个特征向量；
+3. $A$ 可逆（$\lambda \ne 0$）时 $A^{-1}\alpha = \frac{1}{\lambda}\alpha$，$A^{*}\alpha = \frac{\lvert A \rvert}{\lambda}\alpha$；
+4. $A^{\mathrm{T}}$ 与 $A$ 的特征值完全相同，$P^{-1}AP$ 与 $A$ 的特征值也完全相同（$P$ 可逆）。
+**证明（一行）**：$A\alpha = \lambda\alpha \Rightarrow A^{2}\alpha = A(\lambda\alpha) = \lambda A\alpha = \lambda^{2}\alpha$，依此类推得 $A^{k}\alpha = \lambda^{k}\alpha$，再把各项加起来得多项式那条；逆的情形：两边左乘 $A^{-1}$ 得 $\alpha = \lambda A^{-1}\alpha$，由 $\lambda \ne 0$ 得 $A^{-1}\alpha = \frac{1}{\lambda}\alpha$；伴随则用 $A^{*} = \lvert A \rvert A^{-1}$（第二章）。
+**算例（写全步骤）**：3 阶矩阵 $A$ 的特征值为 $1, 2, 3$。
+- $\lvert A \rvert = 1 \times 2 \times 3 = 6$；
+- $f(x) = x^{2} - 3x + 1$ 时，$f(1) = -1$、$f(2) = -1$、$f(3) = 1$，所以 $\lvert A^{2} - 3A + E \rvert = (-1)\times(-1)\times 1 = 1$；
+- $A^{-1}$ 的特征值：$1, \frac{1}{2}, \frac{1}{3}$；
+- $A^{*}$ 的特征值：$\frac{6}{1} = 6$、$\frac{6}{2} = 3$、$\frac{6}{3} = 2$（校验：$\lvert A^{*} \rvert = 6 \times 3 \times 2 = 36 = 6^{2} = \lvert A \rvert^{n-1}$，$n = 3$ 时正是 $\lvert A \rvert^{2}$）；
+- $\mathrm{tr}(A^{2}) = 1 + 4 + 9 = 14$。
+**转置的特征向量会变（易错）**：$A = \begin{pmatrix} 1 & 1 \\ 0 & 2 \end{pmatrix}$ 的 $\lambda = 1$ 对应 $\begin{pmatrix} 1 \\ 0 \end{pmatrix}$（解 $(I - A)x = 0$ 得 $x_2 = 0$）；而 $A^{\mathrm{T}} = \begin{pmatrix} 1 & 0 \\ 1 & 2 \end{pmatrix}$ 的 $\lambda = 1$ 对应 $\begin{pmatrix} 1 \\ -1 \end{pmatrix}$（解 $x_1 + x_2 = 0$）—— **特征值一样，特征向量不一样**。
+**常用结论**：
+- 由 $A$ 的特征值 $\lambda_i$ 立刻得到 $f(A)$ 的特征值 $f(\lambda_i)$，重数也一一对应；
+- $\lvert f(A) \rvert = \prod_i f(\lambda_i)$，这是"已知特征值求行列式"的通用公式；
+- $\mathrm{tr}(f(A)) = \sum_i f(\lambda_i)$；
+- $A$ 与 $A^{\mathrm{T}}$ 特征值相同，$A$ 与 $P^{-1}AP$ 特征值相同；
+- 前提：$\frac{1}{\lambda}$、$\frac{\lvert A \rvert}{\lambda}$ 这两条要求 $\lambda \ne 0$。
+
+### USAGE
+1. 选择题：给 $A$ 的特征值，问 $A^{-1}$、$A^{*}$、$A^{2} + 2A - 3E$ 的特征值，或者问 $\lvert A + kE \rvert$ 等于多少。
+2. 填空题：由特征值反求 $\lvert A \rvert$、$\mathrm{tr}(A)$、$\mathrm{tr}(A^{2})$，或者由"有没有零特征值"判断 $A$ 是否可逆。
+3. 解答题：求 $A^{n}$ 或含 $A$ 的多项式的行列式时，标准套路是"先用代入法写出 $f(A)$ 的全部特征值，再用 $\lvert f(A) \rvert = \prod f(\lambda_i)$"。
+
+### SELFCHECK
+1. 算：3 阶矩阵 $A$ 的特征值为 $1, 2, 3$，求 $\lvert A^{2} - 3A + E \rvert$。
+2. 算：同上 $A$，写出 $A^{*}$ 的三个特征值（提示：$\frac{\lvert A \rvert}{\lambda}$）。
+3. 判：若 $A$ 有一个特征值为 0，$A^{-1}$ 存在吗？这时还能用 $\frac{\lvert A \rvert}{\lambda}$ 写 $A^{*}$ 的特征值吗？

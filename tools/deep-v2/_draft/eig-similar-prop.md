@@ -1,0 +1,59 @@
+### ONELINE
+相似矩阵：特征多项式、行列式、迹、秩全相同
+
+### PAIN
+**要解决的是：在不解方程的前提下，快速判断两个矩阵不相似（或者确认它们共享哪些量）。**
+给两个同阶矩阵，元素一大堆，问它们是否相似。按定义去求 $P$：$P$ 有 $n^{2}$ 个未知数，条件 $AP = PB$ 给出 $n^{2}$ 个方程，还得额外要求 $P$ 可逆（这是个非线性条件）—— 手算根本做不动，而且就算解出来了也只能说明"这一对相似"。
+换个方向想：如果两个矩阵真的相似，那它们一定"共享"某些量（比如行列式）；只要发现某个共享量不一样，立刻就能判"不相似"。所以真正需要的是一份清单：**哪些量是相似不变的**。
+
+### GAP
+- **坑一 · 硬解 $AP = PB$ 找 P**：2 阶还能碰碰运气，3 阶以上就是 $9$ 个未知数的方程组，还要讨论"$P$ 可逆"；而且"没解出来"不等于"不相似"，结论下不了；
+- **坑二 · 以为"不变量相同"就相似**：$\begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$ 与 $\begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}$ 的特征多项式、特征值、行列式、迹、秩**全都一样**，却不相似 —— 不变量相同只是必要条件，用它判"相似"会判错；
+- **坑三 · 以为相似矩阵连特征向量都一样**：$B = P^{-1}AP$ 的特征向量是 $P^{-1}\alpha$（$\alpha$ 是 $A$ 的特征向量），一般与 $\alpha$ 不同。举证：$A = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$ 的 $\lambda = 3$ 对应 $\begin{pmatrix} 1 \\ 1 \end{pmatrix}$，而 $\Lambda = \begin{pmatrix} 3 & 0 \\ 0 & 1 \end{pmatrix}$ 的 $\lambda = 3$ 对应 $\begin{pmatrix} 1 \\ 0 \end{pmatrix}$，方向都不一样。（这两个向量正是同一组：把 $A$ 的特征向量左乘 $P^{-1}$，就得到 $B$ 的对应特征向量 —— 所以说“不同”，是指“不再等于原来的 $\alpha$”，不是说两者无关。）
+
+### INTRO
+于是把**相似不变量**列成一张清单（都能从 $P^{-1}AP = B$ 直接推出）：**特征多项式（从而特征值含重数）、行列式、迹、秩、$r(\lambda E - A)$、可对角化性**；另配套两条运算规律：$P^{-1}A^{k}P = (P^{-1}AP)^{k}$、$P^{-1}A^{*}P = (P^{-1}AP)^{*}$。
+
+上面那三个坑，逐个补上：
+
+- **坑一补上 · 不用碰 P**：清单上任一项不同，直接判"不相似"，一行字解决；只有清单全同才需要进一步考察；
+- **坑二补上 · 分清必要与充分**：不变量相同是**必要**条件 —— 用它判"不相似"最灵，用它判"相似"不够；要判相似得另找办法（下一节专讲）；
+- **坑三补上 · 特征向量要跟着"换坐标"**：$B = P^{-1}AP$ 的特征向量是 $P^{-1}\alpha$，不是 $\alpha$。所以题目只问特征值时，根本不用管特征向量的变化；一旦问特征向量，就得记住这一步。
+
+### DETAIL
+**核心推导**：设 $B = P^{-1}AP$，则
+
+$$
+\lvert \lambda E - B \rvert = \lvert \lambda E - P^{-1}AP \rvert = \lvert P^{-1}(\lambda E - A)P \rvert = \lvert P^{-1} \rvert \lvert \lambda E - A \rvert \lvert P \rvert = \lvert \lambda E - A \rvert
+$$
+
+第一步是代入，第二步把 $\lambda E$ 写成 $P^{-1}(\lambda E)P$ 再提出来，第三步用第二章的 $\lvert XYZ \rvert = \lvert X \rvert\lvert Y \rvert\lvert Z \rvert$，最后一步用 $\lvert P^{-1} \rvert\lvert P \rvert = \lvert P^{-1}P \rvert = \lvert E \rvert = 1$。
+**由此逐条落地**：
+- 特征多项式相同 $\Rightarrow$ 特征值（含重数）相同；
+- 在特征多项式里令 $\lambda = 0$：$\lvert -B \rvert = \lvert -A \rvert$，即 $\lvert A \rvert = \lvert B \rvert$；
+- 比较 $\lambda^{n-1}$ 的系数，或直接对 $B = P^{-1}AP$ 取迹：$\mathrm{tr}(A) = \mathrm{tr}(B)$；
+- 秩：$P$ 与 $P^{-1}$ 可逆，乘可逆矩阵不改变秩，故 $r(A) = r(B)$；同理 $\lambda E - B = P^{-1}(\lambda E - A)P$ 给出 $r(\lambda E - A) = r(\lambda E - B)$；
+- 可对角化性：$A$ 能对角化（有 $n$ 个线性无关特征向量），把每个特征向量左乘 $P^{-1}$ 就得到 $B$ 的 $n$ 个线性无关特征向量，所以 $B$ 也能；
+- $P^{-1}A^{k}P = (P^{-1}AP)^{k}$（$k$ 个 $P^{-1}AP$ 连乘，中间的 $P^{-1}P$ 两两抵消）；
+- $P^{-1}A^{*}P = (P^{-1}AP)^{*}$：两边分别左乘 $P^{-1}AP$ 都得到 $\lvert A \rvert E$（用 $MM^{*} = \lvert M \rvert E$），而满足这个式子的矩阵是唯一的。
+**算例（把不变量算一遍）**：$A = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$ 与 $\Lambda = \begin{pmatrix} 3 & 0 \\ 0 & 1 \end{pmatrix}$ 已知相似（上一节算过 $P^{-1}AP = \Lambda$）。
+- 特征多项式：$\lvert \lambda E - A \rvert = (\lambda - 2)^{2} - 1 = (\lambda - 3)(\lambda - 1)$，$\lvert \lambda E - \Lambda \rvert = (\lambda - 3)(\lambda - 1)$，相同；
+- 行列式：$\lvert A \rvert = 2 \times 2 - 1 \times 1 = 3$，$\lvert \Lambda \rvert = 3 \times 1 = 3$，相同；
+- 迹：$\mathrm{tr}(A) = 2 + 2 = 4$，$\mathrm{tr}(\Lambda) = 3 + 1 = 4$，相同；
+- 秩：$r(A) = 2 = r(\Lambda)$；
+- 再比一个更细的：$3E - A = \begin{pmatrix} 1 & -1 \\ -1 & 1 \end{pmatrix}$ 秩为 1，$3E - \Lambda = \begin{pmatrix} 0 & 0 \\ 0 & 2 \end{pmatrix}$ 秩也为 1，相同。
+**算例（判不相似）**：$A = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$ 与 $B = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}$：$\lvert A \rvert = 1 = \lvert B \rvert$、$\mathrm{tr}(A) = 2 = \mathrm{tr}(B)$、特征多项式都是 $(\lambda - 1)^{2}$，这几项都没挡住；但 $E - A = O$ 秩为 0，$E - B = \begin{pmatrix} 0 & -1 \\ 0 & 0 \end{pmatrix}$ 秩为 1 —— $r(\lambda E - A)$ 这一项不同，判不相似（下一节详细说）。
+**常用结论**：
+- 判"不相似"的快捷清单：$\lvert A \rvert$、$\mathrm{tr}(A)$、$r(A)$、特征多项式、$r(\lambda E - A)$、是否可对角化，任一项不同就不相似；
+- $P^{-1}A^{k}P = (P^{-1}AP)^{k}$、$P^{-1}A^{*}P = (P^{-1}AP)^{*}$，即"相似的矩阵，其幂与伴随也相似"；
+- 前提：$\lvert A \rvert$、$\mathrm{tr}(A)$、特征多项式只能对**同阶方阵**比较（相似的定义本身就要求 $A$、$B$ 同阶）。
+
+### USAGE
+1. 选择题：给两个矩阵问"它们是否相似"（先用不变量排除），或者问"下列哪个量不是相似不变量"。
+2. 填空题：用相似的不变量相等反求参数，常见是 $\mathrm{tr}(A) = \mathrm{tr}(B)$ 与 $\lvert A \rvert = \lvert B \rvert$ 联立。
+3. 解答题：证明相似矩阵的某个量相同（写 $\lvert \lambda E - P^{-1}AP \rvert = \lvert \lambda E - A \rvert$ 这条链子最正式），或者用"不变量不同"证明两个矩阵不相似。
+
+### SELFCHECK
+1. 算：$A = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$ 与 $\Lambda = \begin{pmatrix} 3 & 0 \\ 0 & 1 \end{pmatrix}$，分别写出特征多项式、行列式、迹，看是否相同。
+2. 判：$\begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$ 与 $\begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}$ 的迹、行列式、特征多项式相同吗？它们相似吗？
+3. 想：$B = P^{-1}AP$，$A$ 的特征向量 $\alpha$ 要乘上什么才是 $B$ 的特征向量？

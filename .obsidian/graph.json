@@ -1,0 +1,44 @@
+{
+  "collapse-filter": true,
+  "search": "",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "tag:#数二",
+      "color": {
+        "a": 1,
+        "rgb": 4176208
+      }
+    },
+    {
+      "query": "tag:#数一",
+      "color": {
+        "a": 1,
+        "rgb": 15238970
+      }
+    },
+    {
+      "query": "tag:#基础",
+      "color": {
+        "a": 1,
+        "rgb": 5490904
+      }
+    }
+  ],
+  "collapse-display": true,
+  "showArrow": true,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": true,
+  "centerStrength": 0.518713248970312,
+  "repelStrength": 10,
+  "linkStrength": 1,
+  "linkDistance": 250,
+  "scale": 1.4019828977760902,
+  "close": false
+}

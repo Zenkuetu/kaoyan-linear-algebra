@@ -1,0 +1,285 @@
+{
+ "nodes": [
+  {
+   "id": "legend",
+   "type": "text",
+   "x": 0,
+   "y": -300,
+   "width": 900,
+   "height": 250,
+   "color": "5",
+   "text": "# 05 判定枢纽（考试最常考的\"判定\"型主线）\n\n**节点颜色**：🟦 基础（三卷共同要求）｜🟩 **数二也要求** ｜ 🟧 仅数一（= 数二不要求）\n**连线**（起点=条件，终点=结论）：🟥 充要 A⇔B（可互换）｜🟧 充分 A⇒B ｜ 🟪 必要 B⇒A ｜ ⬜ 无关 ｜ 🟩 关联\n> 11 个枢纽点：可逆 / 满秩 / ｜A｜≠0 / 列组无关 / 齐次只有零解 / 有解判别 / 特征值 / 惯性指数……\n> 它们之间几乎全是充要关系，是证明题与选择题的公共骨架。\n本图含 **11** 个知识点、**11** 条连线。"
+  },
+  {
+   "id": "g-m-det",
+   "type": "group",
+   "x": 0,
+   "y": 0,
+   "width": 390,
+   "height": 452,
+   "color": "6",
+   "label": "一. 行列式（2）"
+  },
+  {
+   "id": "p-det-rowsum-zero",
+   "type": "text",
+   "x": 34,
+   "y": 126,
+   "width": 300,
+   "height": 116,
+   "color": "5",
+   "text": "**｜A｜=0 ⇔ 行（列）线性相关**\n｜A｜= 0 ⇔ A 的列（行）向量组线性相关 ⇔ A 不可逆 ⇔ r(A) < n。\n`基础`"
+  },
+  {
+   "id": "p-det-product",
+   "type": "text",
+   "x": 34,
+   "y": 272,
+   "width": 300,
+   "height": 116,
+   "color": "5",
+   "text": "**｜AB｜ = ｜A｜｜B｜**\n同阶方阵乘积的行列式等于行列式之积；对任意有限个方阵同样成立。\n`基础`"
+  },
+  {
+   "id": "g-m-mat",
+   "type": "group",
+   "x": 510,
+   "y": 0,
+   "width": 390,
+   "height": 598,
+   "color": "6",
+   "label": "二. 矩阵（3）"
+  },
+  {
+   "id": "p-mat-invertible-crit",
+   "type": "text",
+   "x": 544,
+   "y": 272,
+   "width": 300,
+   "height": 116,
+   "color": "5",
+   "text": "**可逆的充要条件（汇总枢纽）**\nA 可逆 ⇔ ｜A｜≠0 ⇔ r(A)=n ⇔ Ax=0 只有零解 ⇔ A 的行（列）组…\n`基础`"
+  },
+  {
+   "id": "p-mat-equiv",
+   "type": "text",
+   "x": 544,
+   "y": 418,
+   "width": 300,
+   "height": 116,
+   "color": "5",
+   "text": "**矩阵等价与秩**\nA ≅ B ⇔ 存在可逆 P,Q 使 PAQ = B ⇔ r(A) = r(B)（同型）…\n`基础`"
+  },
+  {
+   "id": "p-mat-rank",
+   "type": "text",
+   "x": 544,
+   "y": 126,
+   "width": 300,
+   "height": 116,
+   "color": "4",
+   "text": "**矩阵的秩**\nA 中非零子式的最高阶数；也等于行（列）向量组的秩，即行阶梯形非零行数。\n`基础/数二`"
+  },
+  {
+   "id": "g-m-vec",
+   "type": "group",
+   "x": 1020,
+   "y": 0,
+   "width": 390,
+   "height": 306,
+   "color": "6",
+   "label": "三. 向量（向量组的线性相关性）（1）"
+  },
+  {
+   "id": "p-vec-indep-def",
+   "type": "text",
+   "x": 1054,
+   "y": 126,
+   "width": 300,
+   "height": 116,
+   "color": "4",
+   "text": "**线性相关与线性无关的定义**\n存在不全为零的 kᵢ 使 Σkᵢαᵢ=0 则线性相关；只有全零解才成立则线性无关。\n`数一/数二`"
+  },
+  {
+   "id": "g-m-eq",
+   "type": "group",
+   "x": 1530,
+   "y": 0,
+   "width": 390,
+   "height": 452,
+   "color": "6",
+   "label": "四. 线性方程组（2）"
+  },
+  {
+   "id": "p-eq-homo-sol",
+   "type": "text",
+   "x": 1564,
+   "y": 272,
+   "width": 300,
+   "height": 116,
+   "color": "5",
+   "text": "**齐次方程组 Ax = 0**\n必有零解；有非零解 ⇔ r(A) < n ⇔ 列组线性相关 ⇔ ｜A｜=0（方阵）。\n`基础`"
+  },
+  {
+   "id": "p-eq-nonhomo-crit",
+   "type": "text",
+   "x": 1564,
+   "y": 126,
+   "width": 300,
+   "height": 116,
+   "color": "5",
+   "text": "**非齐次方程组 Ax = b 的相容性判别**\n有解 ⇔ r(A) = r(A,b)；无解 ⇔ r(A) < r(A,b)（此时 r(A…\n`基础`"
+  },
+  {
+   "id": "g-m-eig",
+   "type": "group",
+   "x": 2040,
+   "y": 0,
+   "width": 390,
+   "height": 452,
+   "color": "6",
+   "label": "五. 矩阵的特征值与特征向量（2）"
+  },
+  {
+   "id": "p-eig-def",
+   "type": "text",
+   "x": 2074,
+   "y": 272,
+   "width": 300,
+   "height": 116,
+   "color": "4",
+   "text": "**特征值与特征向量的定义**\nAα = λα（α≠0），λ 为特征值、α 为对应特征向量。\n`数一/数二`"
+  },
+  {
+   "id": "p-eig-diag-crit",
+   "type": "text",
+   "x": 2074,
+   "y": 126,
+   "width": 300,
+   "height": 116,
+   "color": "4",
+   "text": "**可对角化的充要条件**\nA 可对角化 ⇔ A 有 n 个线性无关的特征向量 ⇔ 每个特征值的几何重数 = 代数重…\n`数一/数二`"
+  },
+  {
+   "id": "g-m-quad",
+   "type": "group",
+   "x": 2550,
+   "y": 0,
+   "width": 390,
+   "height": 306,
+   "color": "6",
+   "label": "六. 二次型（1）"
+  },
+  {
+   "id": "p-qf-congruent",
+   "type": "text",
+   "x": 2584,
+   "y": 126,
+   "width": 300,
+   "height": 116,
+   "color": "4",
+   "text": "**矩阵合同**\n存在可逆 C 使 CᵀAC = B，则 A ≃ B（合同）；实对称矩阵合同 ⇔ 正负惯性…\n`数一/数二`"
+  }
+ ],
+ "edges": [
+  {
+   "id": "e-det-rowsum-zero__mat-invertible-crit",
+   "fromNode": "p-det-rowsum-zero",
+   "toNode": "p-mat-invertible-crit",
+   "fromSide": "right",
+   "toSide": "left",
+   "color": "1",
+   "label": "充要"
+  },
+  {
+   "id": "e-det-product__mat-invertible-crit",
+   "fromNode": "p-det-product",
+   "toNode": "p-mat-invertible-crit",
+   "fromSide": "right",
+   "toSide": "left",
+   "color": "2",
+   "label": "充分"
+  },
+  {
+   "id": "e-mat-equiv__mat-rank",
+   "fromNode": "p-mat-equiv",
+   "toNode": "p-mat-rank",
+   "fromSide": "top",
+   "toSide": "bottom",
+   "color": "1",
+   "label": "充要"
+  },
+  {
+   "id": "e-mat-equiv__mat-invertible-crit",
+   "fromNode": "p-mat-equiv",
+   "toNode": "p-mat-invertible-crit",
+   "fromSide": "top",
+   "toSide": "bottom",
+   "color": "2",
+   "label": "充分"
+  },
+  {
+   "id": "e-vec-indep-def__mat-invertible-crit",
+   "fromNode": "p-vec-indep-def",
+   "toNode": "p-mat-invertible-crit",
+   "fromSide": "right",
+   "toSide": "left",
+   "color": "1",
+   "label": "充要"
+  },
+  {
+   "id": "e-eig-def__mat-invertible-crit",
+   "fromNode": "p-eig-def",
+   "toNode": "p-mat-invertible-crit",
+   "fromSide": "right",
+   "toSide": "left",
+   "color": "1",
+   "label": "充要"
+  },
+  {
+   "id": "e-mat-invertible-crit__eig-diag-crit",
+   "fromNode": "p-mat-invertible-crit",
+   "toNode": "p-eig-diag-crit",
+   "fromSide": "right",
+   "toSide": "left",
+   "color": "2",
+   "label": "充分"
+  },
+  {
+   "id": "e-mat-invertible-crit__eq-homo-sol",
+   "fromNode": "p-mat-invertible-crit",
+   "toNode": "p-eq-homo-sol",
+   "fromSide": "right",
+   "toSide": "left",
+   "color": "1",
+   "label": "充要"
+  },
+  {
+   "id": "e-mat-invertible-crit__vec-indep-def",
+   "fromNode": "p-mat-invertible-crit",
+   "toNode": "p-vec-indep-def",
+   "fromSide": "right",
+   "toSide": "left",
+   "color": "1",
+   "label": "充要"
+  },
+  {
+   "id": "e-mat-invertible-crit__det-rowsum-zero",
+   "fromNode": "p-mat-invertible-crit",
+   "toNode": "p-det-rowsum-zero",
+   "fromSide": "right",
+   "toSide": "left",
+   "color": "1",
+   "label": "充要"
+  },
+  {
+   "id": "e-mat-invertible-crit__mat-rank",
+   "fromNode": "p-mat-invertible-crit",
+   "toNode": "p-mat-rank",
+   "fromSide": "top",
+   "toSide": "bottom",
+   "color": "1",
+   "label": "充要"
+  }
+ ]
+}

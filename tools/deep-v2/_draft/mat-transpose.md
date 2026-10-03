@@ -1,0 +1,50 @@
+### ONELINE
+行列互换：第 $i$ 行搬到第 $i$ 列，得到 $A^{\mathrm{T}}$
+
+### PAIN
+$A = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{pmatrix}$ 是 $2 \times 3$ 的，想按列看它时，第 $2$ 列那两个数 $2, 5$ 得像“一行”那样用。
+
+$$
+A^{\mathrm{T}} = \begin{pmatrix} 1 & 4 \\ 2 & 5 \\ 3 & 6 \end{pmatrix} \quad (3 \times 2)
+$$
+
+验算一下：$A$ 的 $(1,2)$ 元是 $2$，$A^{\mathrm{T}}$ 的 $(2,1)$ 元也是 $2$，位置正好反过来。
+
+### GAP
+- **坑一 · 照格子硬搬**：直接照格子搬太笨，$m \times n$ 个元素一个一个搬，规模一大就搬不动，搬完还得再乘一遍才知道对不对。
+- **坑二 · 乘积顺序想当然**：乘积的转置最容易想当然，$(AB)^{\mathrm{T}} = A^{\mathrm{T}}B^{\mathrm{T}}$ 是错的，顺序必须整个反过来。
+- **坑三 · 左右身份变了**：转置还会改变“左乘还是右乘”的身份，凡是跟乘法顺序有关的公式，转置之后都得重新验一遍。
+
+### INTRO
+于是引入转置 $A^{\mathrm{T}}$：把第 $i$ 行整条搬到第 $i$ 列，也就是 $(A^{\mathrm{T}})_{ij} = A_{ji}$。$A$ 管的是行，$A^{\mathrm{T}}$ 让同一批数去管列——同一个矩阵换一个视角看。
+上面那三个坑，逐个补上：
+- **坑一补上 · 搬法写成一条式子**：$(A^{\mathrm{T}})_{ij} = A_{ji}$ 一句话就把整张矩阵搬完了，不用一个格子一个格子挪，搬完照这条式子核对位置就行。
+- **坑二补上 · 顺序整个反过来**：反序律随之而来，乘积要整个翻过来，$(AB)^{\mathrm{T}} = B^{\mathrm{T}}A^{\mathrm{T}}$，不是 $A^{\mathrm{T}}B^{\mathrm{T}}$。
+- **坑三补上 · 左右身份重新验过**：凡是跟乘法顺序有关的公式，转置之后照反序律重新验一遍就有定论；而跟顺序无关的行列式不受影响，$\lvert A^{\mathrm{T}} \rvert = \lvert A \rvert$。
+
+### DETAIL
+**定义**：$A^{\mathrm{T}}$ 的第 $i$ 行就是 $A$ 的第 $i$ 列，$(A^{\mathrm{T}})_{ij} = A_{ji}$。
+
+**三条运算法则**：
+
+$$
+(AB)^{\mathrm{T}} = B^{\mathrm{T}}A^{\mathrm{T}}, \qquad (A^{\mathrm{T}})^{\mathrm{T}} = A, \qquad (kA)^{\mathrm{T}} = kA^{\mathrm{T}}
+$$
+
+**验一遍反序律**：取 $A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$，$B = \begin{pmatrix} 1 & 0 \\ 1 & 1 \end{pmatrix}$，则
+
+$$
+(AB)^{\mathrm{T}} = \begin{pmatrix} 3 & 2 \\ 7 & 4 \end{pmatrix}^{\mathrm{T}} = \begin{pmatrix} 3 & 7 \\ 2 & 4 \end{pmatrix}, \qquad B^{\mathrm{T}}A^{\mathrm{T}} = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}\begin{pmatrix} 1 & 3 \\ 2 & 4 \end{pmatrix} = \begin{pmatrix} 3 & 7 \\ 2 & 4 \end{pmatrix}
+$$
+
+两边一样。**行列式不受影响**：$\lvert A \rvert = 1 \times 4 - 2 \times 3 = -2$，转置之后还是 $-2$。
+
+### USAGE
+1. 化简求值：已知 $A$ 求 $A^{\mathrm{T}}$，或求 $(AB)^{\mathrm{T}}$、$(A^{\mathrm{T}}B)^{\mathrm{T}}$ 这类式子，落笔先检查有没有用反序律 $B^{\mathrm{T}}A^{\mathrm{T}}$。
+2. 抽象矩阵证明题：由 $AA^{\mathrm{T}} = O$ 推出 $A = O$；或者用 $(A^{\mathrm{T}}A)^{\mathrm{T}} = A^{\mathrm{T}}A$ 说明 $A^{\mathrm{T}}A$ 是对称矩阵。
+3. 反解参数：由 $A^{\mathrm{T}} = A$（对称）或 $A^{\mathrm{T}} = -A$（反对称）列出方程，解出矩阵里的参数。
+
+### SELFCHECK
+1. 算：$\begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}^{\mathrm{T}} = \begin{pmatrix} 1 & 3 \\ 2 & 4 \end{pmatrix}$，再转置一次看是不是回到原矩阵。
+2. 说：$(ABC)^{\mathrm{T}}$ 等于什么？（答案：$C^{\mathrm{T}}B^{\mathrm{T}}A^{\mathrm{T}}$，三项全部反序）
+3. 验：任意 $2$ 阶方阵都有 $\lvert A^{\mathrm{T}} \rvert = \lvert A \rvert$ 吗？拿 $\begin{pmatrix} 2 & 5 \\ 1 & 3 \end{pmatrix}$ 算两遍。

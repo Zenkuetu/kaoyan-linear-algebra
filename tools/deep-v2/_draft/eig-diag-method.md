@@ -1,0 +1,94 @@
+### ONELINE
+求特征值特征向量，按列拼 P，顺序对上 Λ
+
+### PAIN
+**要解决的是：确认能对角化之后，怎么把那个 $P$ 和 $\Lambda$ 具体写出来，并且保证算出来的结果是对的。**
+$A = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$ 的特征值是 3 和 1，特征向量是 $\begin{pmatrix} 1 \\ 1 \end{pmatrix}$（属于 3）和 $\begin{pmatrix} 1 \\ -1 \end{pmatrix}$（属于 1）。
+最直觉的拼法是"特征向量按找到的先后顺序写"：先找到 $\begin{pmatrix} 1 \\ 1 \end{pmatrix}$ 就写第一列 —— 这一步没问题。可轮到 $\Lambda$ 时，如果顺手把 $\begin{pmatrix} 3 & 0 \\ 0 & 1 \end{pmatrix}$ 写成 $\begin{pmatrix} 1 & 0 \\ 0 & 3 \end{pmatrix}$，或者随手把 $P$ 的两列对调一下，等式 $P^{-1}AP = \Lambda$ 立刻不成立。
+错位到底错在哪里、怎么保证不错、$P$ 和 $\Lambda$ 各自能变到什么程度，是这一节要解决的事。
+
+### GAP
+- **坑一 · P 的列序与 Λ 的对角元错位**：$(1,1)^{\mathrm{T}}$ 属于 3，就必须配 3。把 $P$ 写成 $\begin{pmatrix} 1 & 1 \\ -1 & 1 \end{pmatrix}$（两列对调）而 $\Lambda$ 还写 $\begin{pmatrix} 3 & 0 \\ 0 & 1 \end{pmatrix}$，算出来
+
+$$
+AP = \begin{pmatrix} 1 & 3 \\ -1 & 3 \end{pmatrix}, \qquad P\Lambda = \begin{pmatrix} 3 & 1 \\ -3 & 1 \end{pmatrix}
+$$
+
+两个矩阵根本不一样，$AP = P\Lambda$ 不成立，$P^{-1}AP \ne \Lambda$；
+- **坑二 · 忘了 $P$ 必须可逆**：$P$ 的列是特征向量，如果两个"特征向量"其实线性相关（比如在同一个特征值的解空间里取了 $\xi$ 和 $2\xi$），$P$ 就不可逆，$P^{-1}$ 根本写不出来；而这恰恰说明特征向量没取够，本来就不该对角化；
+- **坑三 · 最后一步把公式方向搞反**：由 $P^{-1}AP = \Lambda$ 要推的是 $A = P\Lambda P^{-1}$（两边左乘 $P$、右乘 $P^{-1}$），写成 $A = P^{-1}\Lambda P$ 就全反了；接着求幂也要按 $A^{k} = P\Lambda^{k}P^{-1}$ 走，而不是 $P^{-1}\Lambda^{k}P$。
+
+### INTRO
+于是把**相似对角化**的步骤定死（$n$ 阶矩阵 $A$）：
+
+1. 求全部特征值 $\lambda_1, \dots, \lambda_n$（含重数）；
+2. 对每个特征值解 $(\lambda_i E - A)x = 0$，取出基础解系（即线性无关的特征向量）；
+3. 数一数是不是共有 $n$ 个线性无关的特征向量：不够就到此为止（$A$ 不可对角化），够了继续；
+4. 把这些特征向量按顺序排成 $P$ 的列，$\Lambda$ 的对角元**按同样的顺序**写 —— $P$ 的第 $j$ 列配 $\Lambda$ 的第 $j$ 个对角元；
+5. 得 $P^{-1}AP = \Lambda$，也就是 $A = P\Lambda P^{-1}$。
+
+上面那三个坑，逐个补上：
+
+- **坑一补上 · 顺序由"列"决定**：写成 $P = (\alpha_1, \alpha_2)$、$\Lambda = \mathrm{diag}(\lambda_1, \lambda_2)$，只要 $A\alpha_j = \lambda_j\alpha_j$，按列看 $AP = P\Lambda$ 自动成立。正确的一对是 $P = \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}$、$\Lambda = \begin{pmatrix} 3 & 0 \\ 0 & 1 \end{pmatrix}$（第一列 $(1,1)^{\mathrm{T}}$ 配 3）；两列一对调，$\Lambda$ 必须同步对调成 $\begin{pmatrix} 1 & 0 \\ 0 & 3 \end{pmatrix}$；
+- **坑二补上 · 可逆性由"个数够不够"保证**：取满 $n$ 个线性无关的特征向量，$P$ 就一定可逆；取不够（重根只给得出 1 个特征向量）就说明不可对角化，硬拼出来的 $P$ 行列式为 0；
+- **坑三补上 · 用 $AP = P\Lambda$ 这个中间式子记方向**：$P^{-1}AP = \Lambda \iff AP = P\Lambda \iff A = P\Lambda P^{-1}$，三个式子是同一件事；求幂时中间的 $P^{-1}P$ 两两抵消，$A^{k} = P\Lambda^{k}P^{-1}$。
+
+### DETAIL
+**步骤模板（解答题照这个写）**：
+1. 解特征方程 $\lvert \lambda E - A \rvert = 0$，得 $\lambda_1, \dots, \lambda_n$ 及重数；
+2. 对每个 $\lambda_i$ 作行变换求 $(\lambda_i E - A)x = 0$ 的基础解系 $\xi_{i1}, \dots, \xi_{im_i}$；
+3. 若 $\sum_i m_i < n$，写"$A$ 不可对角化"，结束；否则继续；
+4. 取 $P = (\xi_{11}, \dots, \xi_{1m_1}, \xi_{21}, \dots)$，$\Lambda$ 按同样顺序把对应的 $\lambda$ 填到对角线上；
+5. 写结论 $P^{-1}AP = \Lambda$（或 $A = P\Lambda P^{-1}$）。
+**算例（写全步骤）**：$A = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$。
+第一步，特征多项式：
+
+$$
+\lvert \lambda E - A \rvert = \begin{vmatrix} \lambda - 2 & -1 \\ -1 & \lambda - 2 \end{vmatrix} = (\lambda - 2)^{2} - 1 = \lambda^{2} - 4\lambda + 3 = (\lambda - 1)(\lambda - 3)
+$$
+
+特征值 $\lambda_1 = 3$、$\lambda_2 = 1$（互异，故可对角化）。
+第二步，求特征向量。对 $\lambda_1 = 3$：
+
+$$
+3E - A = \begin{pmatrix} 1 & -1 \\ -1 & 1 \end{pmatrix} \xrightarrow{\;r_2 + r_1\;} \begin{pmatrix} 1 & -1 \\ 0 & 0 \end{pmatrix} \implies x_1 = x_2 \implies \xi_1 = \begin{pmatrix} 1 \\ 1 \end{pmatrix}
+$$
+
+对 $\lambda_2 = 1$：
+
+$$
+E - A = \begin{pmatrix} -1 & -1 \\ -1 & -1 \end{pmatrix} \xrightarrow{\;r_2 - r_1\;} \begin{pmatrix} -1 & -1 \\ 0 & 0 \end{pmatrix} \implies x_1 = -x_2 \implies \xi_2 = \begin{pmatrix} 1 \\ -1 \end{pmatrix}
+$$
+
+第三步，拼 $P$ 与 $\Lambda$：
+
+$$
+P = \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}, \qquad \Lambda = \begin{pmatrix} 3 & 0 \\ 0 & 1 \end{pmatrix}
+$$
+
+第四步，验证（用 $AP = P\Lambda$，比先求逆省事）：
+
+$$
+AP = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}\begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} = \begin{pmatrix} 3 & 1 \\ 3 & -1 \end{pmatrix}, \qquad P\Lambda = \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}\begin{pmatrix} 3 & 0 \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} 3 & 1 \\ 3 & -1 \end{pmatrix}
+$$
+
+两边相等。又 $\lvert P \rvert = -2 \ne 0$，且 $P^{2} = 2E$ 故 $P^{-1} = \frac{1}{2}P$，于是
+
+$$
+P^{-1}AP = \frac{1}{2}\begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}\begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}\begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} = \begin{pmatrix} 3 & 0 \\ 0 & 1 \end{pmatrix} = \Lambda
+$$
+
+**错位的代价（真算一遍）**：若把 $P$ 写成 $P' = \begin{pmatrix} 1 & 1 \\ -1 & 1 \end{pmatrix}$（两列对调）而 $\Lambda$ 不变，则 $AP' = \begin{pmatrix} 1 & 3 \\ -1 & 3 \end{pmatrix}$，而 $P'\Lambda = \begin{pmatrix} 3 & 1 \\ -3 & 1 \end{pmatrix}$，两者不等 —— 顺序必须跟着一起换。
+**唯一性说明**：
+- $P$ 不唯一：特征向量可以乘任意非零常数，同一重根内部可以换一组基础解系，不同特征值之间可以对调列（$\Lambda$ 要同步对调）；
+- $\Lambda$ 在不计对角元次序的意义下唯一，它的对角元就是 $A$ 的全部特征值（由"相似矩阵特征多项式相同"保证）。
+
+### USAGE
+1. 选择题：给定 $A$ 与 $P$，问 $\Lambda$ 对角元的顺序，或者问"$P$ 的第 2 列是哪个特征值的特征向量"。
+2. 填空题：补全 $P$ 的某一列、$\Lambda$ 的某个对角元，或由 $P^{-1}AP = \Lambda$ 反求 $A$ 中的参数。
+3. 解答题：求可逆矩阵 $P$ 使 $P^{-1}AP = \Lambda$，必须写全"特征值 → 特征向量 → 拼 $P$ → 说明 $P$ 可逆 → 结论"这五步，只给答案不给分。
+
+### SELFCHECK
+1. 算：$A = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$，写出 $P$ 与 $\Lambda$，并验证 $AP = P\Lambda$。
+2. 判：$P = \begin{pmatrix} 1 & 1 \\ -1 & 1 \end{pmatrix}$ 与 $\Lambda = \begin{pmatrix} 3 & 0 \\ 0 & 1 \end{pmatrix}$ 能配成 $P^{-1}AP = \Lambda$ 吗？为什么？
+3. 想：$\Lambda$ 的对角元顺序换了，$P$ 要不要跟着换？换完之后 $A = P\Lambda P^{-1}$ 还成立吗？

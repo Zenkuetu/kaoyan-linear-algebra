@@ -1,0 +1,68 @@
+### ONELINE
+找不到不全为零的系数凑出零，就叫线性无关
+
+### PAIN
+**线性相关性要解决的问题是：一组向量里有没有"白搭"的。**
+先看具体动作。手里三个向量
+$$
+\alpha_1 = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}, \qquad \alpha_2 = \begin{pmatrix} 2 \\ 0 \\ 1 \end{pmatrix}, \qquad \alpha_3 = \begin{pmatrix} 5 \\ 2 \\ 5 \end{pmatrix}
+$$
+问：这三个里有没有哪个是多余的（砍掉它，剩下的还能凑出它来）？最容易想到的办法是拿上一节的"线性表示"一个个试：$\alpha_1$ 能不能由 $\alpha_2, \alpha_3$ 表示、$\alpha_2$ 能不能由 $\alpha_1, \alpha_3$ 表示、$\alpha_3$ 能不能由 $\alpha_1, \alpha_2$ 表示 —— 三个向量试三次，五个向量试五次，每试一次都得重做一遍行变换。
+更要紧的是，这个办法只盯着"两个和几个"，容易漏掉"三个一起才凑出零"的情形。
+
+### GAP
+所以先要一个"一次比完整组"的说法。土办法挨个数一遍：
+
+- **坑一 · 只查两两成不成比例**：这是最省事的办法，但会漏。$\alpha_1 = \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}$、$\alpha_2 = \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}$、$\alpha_3 = \begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix}$ 里任何两个都不成比例，可三个一起就有 $\alpha_1 + \alpha_2 - \alpha_3 = 0$ —— 两两不成比例，不等于整组没多余。
+- **坑二 · 拿"有没有零向量"当唯一线索**：组里有零向量确实一定有多余的（$1 \times 0 = 0$），但没有零向量照样可能多余 —— $\begin{pmatrix} 1 \\ 0 \end{pmatrix}, \begin{pmatrix} 0 \\ 1 \end{pmatrix}, \begin{pmatrix} 1 \\ 1 \end{pmatrix}$ 里没有零向量，第三个却能被前两个凑出来。
+- **坑三 · 把"谁多余"当成有标准答案的事**：$\alpha_3 = \alpha_1 + 2\alpha_2$ 与 $\alpha_1 = \alpha_3 - 2\alpha_2$ 说的是同一件事，说"哪个多余"只是挑了个说法；换一组向量，"多余的那个"还会换人。需要一个对所有向量一视同仁的说法。
+
+### INTRO
+于是引入**线性相关与线性无关**：对一组向量 $\alpha_1, \dots, \alpha_s$，看有没有**不全为零**的数 $k_1, \dots, k_s$ 使
+$$
+k_1\alpha_1 + k_2\alpha_2 + \dots + k_s\alpha_s = 0
+$$
+找得到这样一组不全为零的系数，就说这组向量**线性相关**（组里有白搭的，能凑出零）；只有当 $k_1 = k_2 = \dots = k_s = 0$ 时上式才成立，就说这组向量**线性无关**（组里谁也不多余）。
+"存在"两个字要读准：只要有**一组**不全为零的系数能凑出零就够了，不是"所有系数都行"。
+
+上面那三个坑，逐个补上：
+
+- **坑一补上 · 一次比完整组**：不再两两比，$s$ 个向量一次写进一个等式；上面那组取 $k_1 = 1, k_2 = 1, k_3 = -1$ 就凑出零，"三个一起"的关系躲不掉。
+- **坑二补上 · 零向量只是一个特例**：没有零向量也能相关 —— $\begin{pmatrix} 1 \\ 0 \end{pmatrix}, \begin{pmatrix} 0 \\ 1 \end{pmatrix}, \begin{pmatrix} 1 \\ 1 \end{pmatrix}$ 取 $k_1 = k_2 = 1$、$k_3 = -1$ 即得零；反过来"含零向量必相关"只是定义的特殊情形。
+- **坑三补上 · 谁都不特殊**：定义里 $\alpha_1, \dots, \alpha_s$ 地位完全一样，"相关"是整组的性质，不挑谁多余。
+
+> 顺带提一句：这套"凑零"的说法，到第四章会换成"方程有没有非零的解"这种问法，两边结论一模一样。现在不懂那套语言不影响做题。
+
+### DETAIL
+**定义**：设 $\alpha_1, \dots, \alpha_s$ 是 $n$ 维向量。若存在一组**不全为零**的数 $k_1, \dots, k_s$ 使
+$$
+k_1\alpha_1 + k_2\alpha_2 + \dots + k_s\alpha_s = 0
+$$
+则称 $\alpha_1, \dots, \alpha_s$ 线性相关；若上式成立必须有 $k_1 = k_2 = \dots = k_s = 0$，则称它们线性无关。
+**按定义判定**：把 $\sum k_i\alpha_i = 0$ 按分量展开成 $n$ 个等式，看有没有不全为零的解 —— 有就是相关，只有全零解就是无关。
+**算例（相关）**：$\alpha_1 = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}$、$\alpha_2 = \begin{pmatrix} 2 \\ 0 \\ 1 \end{pmatrix}$、$\alpha_3 = \begin{pmatrix} 5 \\ 2 \\ 5 \end{pmatrix}$。设 $k_1\alpha_1 + k_2\alpha_2 + k_3\alpha_3 = 0$，按分量逐个写开（每个分量凑一份等式）：
+$$
+\begin{cases} k_1 + 2k_2 + 5k_3 = 0 \\ 2k_1 + 0 \cdot k_2 + 2k_3 = 0 \\ 3k_1 + k_2 + 5k_3 = 0 \end{cases}
+$$
+取 $k_3 = -1$：第二式给 $2k_1 - 2 = 0$，即 $k_1 = 1$；代进第一式 $1 + 2k_2 - 5 = 0$ 得 $k_2 = 2$；再验第三式 $3 + 2 - 5 = 0$，成立。于是 $k_1 = 1$、$k_2 = 2$、$k_3 = -1$ 不全为零，所以这组向量线性相关 —— 顺带也读出 $\alpha_3 = \alpha_1 + 2\alpha_2$。
+**算例（无关）**：$\alpha_1 = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$、$\alpha_2 = \begin{pmatrix} 2 \\ 5 \end{pmatrix}$。设 $k_1\alpha_1 + k_2\alpha_2 = 0$：
+$$
+\begin{cases} k_1 + 2k_2 = 0 \\ 2k_1 + 5k_2 = 0 \end{cases}
+$$
+第一式给 $k_1 = -2k_2$，代入第二式得 $-4k_2 + 5k_2 = k_2 = 0$，于是 $k_2 = 0$、$k_1 = 0$，所以这组向量线性无关。
+**几个基本情形**：
+- 含零向量的组一定线性相关（零向量前面的系数取 $1$、其余取 $0$ 就凑出零）；
+- 单个向量 $\alpha$：$\alpha = 0$ 时相关，$\alpha \ne 0$ 时无关；
+- 两个向量：相关当且仅当成比例 —— $\begin{pmatrix} 1 \\ 2 \end{pmatrix}$ 与 $\begin{pmatrix} 2 \\ 4 \end{pmatrix}$ 相关（$2\alpha_1 - \alpha_2 = 0$），而 $\begin{pmatrix} 1 \\ 2 \end{pmatrix}$ 与 $\begin{pmatrix} 2 \\ 5 \end{pmatrix}$ 不成比例，无关；
+- $n$ 维单位向量组 $\varepsilon_1, \dots, \varepsilon_n$（第 $i$ 个分量是 $1$、其余是 $0$）线性无关：设 $\sum k_i\varepsilon_i = 0$，左边就是 $(k_1, \dots, k_n)^{\mathrm{T}}$，等于零向量只好所有 $k_i = 0$。
+**常用结论**：线性无关组的每个向量都不是零向量；相关组里一定能挑出一个向量，它可由其余向量线性表示。
+
+### USAGE
+1. 选择题：给具体向量组判相关还是无关；也问"$\alpha_1, \alpha_2, \alpha_3$ 满足什么条件时线性无关"这类条件题。
+2. 填空题：含参数的向量组问参数取何值时线性相关（把条件写成行列式为零，或秩小于向量个数）。
+3. 解答题：用定义证明无关 —— 设 $k_1\alpha_1 + \dots + k_s\alpha_s = 0$，推出每个 $k_i = 0$；这是本章证明题最常用的开头。
+
+### SELFCHECK
+1. 判断：$\alpha_1 = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}$、$\alpha_2 = \begin{pmatrix} 2 \\ 0 \\ 1 \end{pmatrix}$、$\alpha_3 = \begin{pmatrix} 5 \\ 2 \\ 5 \end{pmatrix}$ 相关吗？（相关，$1 \cdot \alpha_1 + 2 \cdot \alpha_2 - 1 \cdot \alpha_3 = 0$。）
+2. 判断：含零向量的向量组一定相关吗？（一定，零向量前取系数 $1$、其余取 $0$ 即可。）
+3. 判断：$\begin{pmatrix} 1 \\ 2 \end{pmatrix}$ 与 $\begin{pmatrix} 2 \\ 4 \end{pmatrix}$ 相关还是无关？（相关，$2\alpha_1 - \alpha_2 = 0$，两个向量成比例。）

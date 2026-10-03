@@ -1,0 +1,125 @@
+/* ============================================================
+   考研线代知识网 · 阅读增强样式（Obsidian CSS 片段）
+   目的：把"一大段干巴巴的文字"变成"有分区色、有留白、关键词有色"的版面。
+   - 不依赖任何插件，不改笔记正文以外的任何设置
+   - 阅读视图（Ctrl+E）效果最全；实时预览下留白与关键词着色同样生效
+   - 源文件：la-codegen/install/obsidian-snippet.css（随生成器一起维护）
+   ============================================================ */
+
+/* ---------- 1. 留白与行距：缓解"看着累" ---------- */
+.markdown-rendered p,
+.markdown-rendered li {
+  line-height: 1.85;
+}
+.markdown-rendered p {
+  margin-block: 0.95em;
+}
+.markdown-rendered li {
+  margin-block: 0.34em;
+}
+.markdown-rendered ul,
+.markdown-rendered ol {
+  margin-block: 0.9em;
+}
+.markdown-rendered h1 {
+  margin-bottom: 0.5em;
+}
+.markdown-rendered h2 {
+  margin-block: 2.6em 0.9em;
+}
+.markdown-rendered h3 {
+  margin-block: 1.8em 0.6em;
+}
+.markdown-rendered table {
+  margin-block: 1.3em;
+}
+.markdown-rendered mjx-container[display="true"],
+.markdown-rendered .math-block {
+  margin-block: 1.15em;
+}
+
+/* ---------- 2. 小节标题：整条彩色（靠标题里的彩色圆点触发） ---------- */
+.markdown-rendered h2:has(> span.hx) {
+  padding: 0.32em 0.72em;
+  border-left: 6px solid var(--hx-c, #6e7681);
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--hx-c, #6e7681) 14%, transparent);
+}
+.markdown-rendered h2 > span.hx {
+  margin-right: 0.3em;
+  font-size: 0.95em;
+}
+.markdown-rendered h2:has(> .hx-pain)   { --hx-c: #e8873a; }  /* 一、先看要解决什么 */
+.markdown-rendered h2:has(> .hx-gap)    { --hx-c: #e5534b; }  /* 二、直接办法为什么不够 */
+.markdown-rendered h2:has(> .hx-intro)  { --hx-c: #3fb950; }  /* 三、于是引入 */
+.markdown-rendered h2:has(> .hx-detail) { --hx-c: #4c8dff; }  /* 四、细节 */
+.markdown-rendered h2:has(> .hx-usage)  { --hx-c: #a371f7; }  /* 五、怎么用 */
+.markdown-rendered h2:has(> .hx-err)    { --hx-c: #f0883e; }  /* 六、易错点 */
+.markdown-rendered h2:has(> .hx-check)  { --hx-c: #39c5cf; }  /* 七、30 秒自测 */
+.markdown-rendered h2:has(> .hx-rel)    { --hx-c: #8b949e; }  /* 八、关系网 */
+.markdown-rendered h2:has(> .hx-nav)    { --hx-c: #6e7681; }  /* 九、导航 */
+
+/* ---------- 3. 正文关键词着色：红=坑，绿=补上，蓝=规则标签，黄=关键结论 ----------
+   注意：着色对象外面还包着 **加粗**，而 Obsidian 自己会给 strong 定颜色
+   （--bold-color），所以必须连 strong 一起选中，否则颜色会被盖成白色。 */
+.pit, .pit strong {
+  color: #ff7b72;
+  font-weight: 700;
+}
+.fix, .fix strong {
+  color: #56d364;
+  font-weight: 700;
+}
+.lab, .lab strong {
+  color: #79b8ff;
+  font-weight: 700;
+}
+.key, .key strong {
+  color: #e3b341;
+  font-weight: 700;
+}
+
+/* ---------- 4. 顶部"一句话"做成醒目的条 ---------- */
+.markdown-rendered blockquote:has(.oneline) {
+  border-left: 4px solid #d2a8ff;
+  border-radius: 6px;
+  background: color-mix(in srgb, #d2a8ff 10%, transparent);
+  padding: 0.55em 0.95em;
+}
+.oneline, .oneline strong {
+  color: #d2a8ff;
+}
+
+/* ---------- 5. 表格更好读（斑马纹 + 表头底色） ---------- */
+.markdown-rendered table {
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.96em;
+}
+.markdown-rendered th {
+  background: var(--background-secondary);
+}
+.markdown-rendered tbody tr:nth-child(2n) td {
+  background: color-mix(in srgb, var(--background-secondary) 40%, transparent);
+}
+
+/* ---------- 6. 关系网折叠块（原生 callout，默认收起） ---------- */
+.callout[data-callout="quote"] {
+  --callout-color: 139, 148, 158;
+  margin-block: 1.2em;
+}
+.callout[data-callout="quote"] > .callout-title {
+  font-size: 0.95em;
+  padding-block: 0.35em;
+}
+
+/* ---------- 7. 实时预览（编辑视图）也照顾一下留白 ---------- */
+.markdown-source-view.mod-cm6 .cm-content {
+  line-height: 1.8;
+}
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header {
+  padding-block: 0.45em;
+}
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-list-line {
+  padding-block: 0.16em;
+}

@@ -1,0 +1,121 @@
+{
+  "mat-inv-method": {
+    "oneline": "求逆三招：$(A \\mid E)$、伴随公式、凑 $AB=E$",
+    "pain": "现在要算 $A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}$ 的逆矩阵。\n按定义来就是找一个 $B$ 让 $AB = BA = E$，二阶还行，四个方程四个未知数；**到三阶就是九个未知数九个方程**，手算基本是自杀。\n那照葫芦画瓢抄二阶公式行不行？\n\n$$\nA^{-1} = \\frac{1}{ad - bc}\\begin{pmatrix} d & -b \\\\ -c & a \\end{pmatrix},\n\\qquad\nA^{-1} = \\frac{1}{1 \\times 4 - 2 \\times 3}\\begin{pmatrix} 4 & -2 \\\\ -3 & 1 \\end{pmatrix} = \\begin{pmatrix} -2 & 1 \\\\ \\dfrac{3}{2} & -\\dfrac{1}{2} \\end{pmatrix}\n$$\n\n乘一下 $A A^{-1} = E$，结果没问题。\n但这个公式只有二阶长得这么干净，三阶照抄就是九个代数余子式加一次转置，口诀一句都记不住。",
+    "gap": "靠这两条路都不稳，三个坑挨个数：\n- **坑一 · 硬解太费体力**：按定义硬解，$n$ 阶要解 $n^2$ 个未知数的方程组，纯体力活，抄错一个符号全盘皆输；\n- **坑二 · 伴随公式一步不能错**：伴随公式得算 $n^2$ 个代数余子式（三阶就是 9 个二阶行列式），再转置、再除 $\\lvert A \\rvert$，一步都不能错；\n- **坑三 · 抽象题无从下手**：抽象题里的 $A$ 根本没给数字，只有一个矩阵方程，上面两种办法都无从下手。",
+    "intro": "所以求逆要按“手上有什么”分三条路走。上面那三个坑，逐个补上：\n- **坑一补上 · 改成一路行变换**：有具体数字矩阵，把 $A$ 和单位阵并排，只用行变换消成 $(E \\mid A^{-1})$，不用再解 $n^2$ 个未知数；\n- **坑二补上 · 照公式一次算完**：给的是 $\\lvert A \\rvert$、$A^{*}$ 或某个代数余子式时，直接走 $A^{-1} = \\dfrac{A^{*}}{\\lvert A \\rvert}$，位次一次摆对（$A^{*}$ 的第 $i$ 行第 $j$ 列放 $A_{ji}$），不用解 $n^{2}$ 个未知数；\n- **坑三补上 · 抽象题凑乘积**：给的是抽象矩阵方程，凑 $AB = E$，凑出来的 $B$ 就是 $A^{-1}$。",
+    "detail": "**方法一：初等行变换**（$(A \\mid E)$ 化成 $(E \\mid A^{-1})$，**只能作行变换**，中间用一次列变换这题就废了）：\n\n$$\n(A \\mid E) = \\begin{pmatrix} 1 & 2 & 1 & 0 \\\\ 3 & 4 & 0 & 1 \\end{pmatrix}\n\\;\\longrightarrow\\;\n\\begin{pmatrix} 1 & 2 & 1 & 0 \\\\ 0 & -2 & -3 & 1 \\end{pmatrix}\n\\;\\longrightarrow\\;\n\\begin{pmatrix} 1 & 2 & 1 & 0 \\\\ 0 & 1 & \\dfrac{3}{2} & -\\dfrac{1}{2} \\end{pmatrix}\n\\;\\longrightarrow\\;\n\\begin{pmatrix} 1 & 0 & -2 & 1 \\\\ 0 & 1 & \\dfrac{3}{2} & -\\dfrac{1}{2} \\end{pmatrix}\n$$\n\n三步依次是 $r_2 - 3r_1$、$r_2 \\times (-\\dfrac{1}{2})$、$r_1 - 2r_2$；左半成了 $E$，右半就是 $A^{-1}$。道理在这儿：那串行变换每一步都能写成左乘一个初等矩阵，合起来就是一个可逆矩阵 $P$，使 $P A = E$；两边右乘 $A^{-1}$ 得 $P = A^{-1}$。所以把同一串变换作用到 $E$ 上，得到的就是 $P E = A^{-1}$。\n**方法二：伴随公式** $A^{-1} = \\dfrac{A^{*}}{\\lvert A \\rvert}$（要求 $\\lvert A \\rvert \\neq 0$），核心恒等式是 $A A^{*} = A^{*} A = \\lvert A \\rvert E$。\n本例如 $A^{*} = \\begin{pmatrix} 4 & -2 \\\\ -3 & 1 \\end{pmatrix}$、$\\lvert A \\rvert = -2$，于是 $A^{-1} = \\dfrac{1}{-2}\\begin{pmatrix} 4 & -2 \\\\ -3 & 1 \\end{pmatrix}$，和方法一的结果完全一致。\n**方法三：抽象凑乘积**。由 $A^2 - 2A - 3E = O$ 提公因式得 $A(A - 2E) = 3E$，也就是 $A \\cdot \\dfrac{A - 2E}{3} = E$，所以 $A^{-1} = \\dfrac{A - 2E}{3}$。",
+    "usage": [
+      "给 2 阶或 3 阶数字矩阵，要求用初等行变换求 $A^{-1}$，必须写出 $(A \\mid E)$ 的每一步（过程分占大头，只写答案不给分）。",
+      "伴随公式题：给 $\\lvert A \\rvert$、$A^{*}$ 或某个代数余子式，求 $A^{-1}$、$(A^{*})^{-1}$、$\\lvert A^{*} \\rvert$，核心恒等式是 $A A^{*} = \\lvert A \\rvert E$。",
+      "抽象定义法：由 $A^2 - 2A - 3E = O$ 提公因式得 $A \\cdot \\dfrac{A - 2E}{3} = E$，于是 $A^{-1} = \\dfrac{A - 2E}{3}$。"
+    ],
+    "selfcheck": [
+      "用 $(A \\mid E)$ 求 $\\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}$ 的逆，写完把 $A A^{-1}$ 乘出来核对是不是 $E$。",
+      "直接写出 $\\begin{pmatrix} 2 & 3 \\\\ 1 & 1 \\end{pmatrix}$ 的行列式与逆：$\\lvert A \\rvert = 2 \\times 1 - 3 \\times 1 = -1$，$A^{-1} = \\dfrac{1}{-1}\\begin{pmatrix} 1 & -3 \\\\ -1 & 2 \\end{pmatrix} = \\begin{pmatrix} -1 & 3 \\\\ 1 & -2 \\end{pmatrix}$，再验算 $A A^{-1} = E$。",
+      "设 $A^2 = 3A$ 且 $A \\neq O$，判断 $A$ 是否一定可逆：不一定，反例 $A = \\begin{pmatrix} 3 & 0 \\\\ 0 & 0 \\end{pmatrix}$ 满足 $A^2 = 3A$ 但 $\\lvert A \\rvert = 0$。"
+    ]
+  },
+  "mat-eq-solve": {
+    "oneline": "解 $AX=B$：把 $(A \\mid B)$ 消成 $(E \\mid A^{-1}B)$",
+    "pain": "题目给 $A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}$、$B = \\begin{pmatrix} 5 \\\\ 11 \\end{pmatrix}$，要解矩阵方程 $AX = B$。\n顺手就想到：先把 $A^{-1}$ 求出来，再乘一下 $B$。\n听起来挺对，但实际操作是先做一整轮 $(A \\mid E)$ 的消元，再额外算一次矩阵乘法。\n要是 $B$ 有两列、三列呢？$A^{-1}$ 这个中间结果得先单独算出来、再拿去和 $B$ 相乘，多抄一遍就多一次抄错的机会。\n\n$$\nAX = B, \\qquad A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}, \\quad B = \\begin{pmatrix} 5 \\\\ 11 \\end{pmatrix}\n$$",
+    "gap": "“先求逆再乘”这条路有三个说不通的地方：\n- **坑一 · 求逆多一道工序**：得先把 $A^{-1}$ 单独算出来，才能拿它去乘 $B$；这一步算错，后面全错。\n- **坑二 · 多列时要多存一个中间结果**：$B$ 的列数一多，$A^{-1}$ 这个中间结果得先单独算出来抄一遍，再和整个 $B$ 相乘，多抄一遍就多一次抄错的机会；\n- **坑三 · $A$ 不可逆就过不去**：$A$ 不可逆时 $A^{-1}$ 压根不存在，这条路过不去——但方程照样可能有解（无穷多解）。",
+    "intro": "于是换个思路：把 $A$ 和 $B$ **并排**写成 $(A \\mid B)$，一次消元同时处理所有列。\n因为初等行变换等于左乘可逆矩阵，不改变方程的解；$A$ 可逆时把左半消成 $E$，右半自然就是 $A^{-1}B$。\n上面那三个坑，逐个补上：\n- **坑一补上 · 省掉单独求逆这道工序**：不用先把 $A^{-1}$ 单独算出来，把 $(A \\mid B)$ 并排一次消元就行；\n- **坑二补上 · 多列一次搞定**：$B$ 有几列就并排写几列，一次消元同时出所有列，不用把 $A^{-1}$ 单独算出来当中间量；\n- **坑三补上 · 不可逆时退化成看秩**：$A$ 不可逆时左半消不出 $E$，就退化成用秩判断有没有解、有多少解。",
+    "detail": "**结论**：$A$ 可逆时，对增广阵只用行变换\n\n$$\n(A \\mid B) \\;\\longrightarrow\\; (E \\mid A^{-1}B)\n$$\n\n右半就是 $X$。这里“化成 $(E \\mid A^{-1}B)$”的前提是 **$A$ 可逆**；$A$ 不可逆时左半消不出 $E$，只能靠秩判断。\n**算例**（一步步走）：\n\n$$\n(A \\mid B) = \\begin{pmatrix} 1 & 2 & 5 \\\\ 3 & 4 & 11 \\end{pmatrix}\n\\;\\xrightarrow{\\; r_2 - 3r_1 \\;}\\;\n\\begin{pmatrix} 1 & 2 & 5 \\\\ 0 & -2 & -4 \\end{pmatrix}\n\\;\\xrightarrow{\\; r_2 \\times (-\\frac{1}{2}) \\;}\\;\n\\begin{pmatrix} 1 & 2 & 5 \\\\ 0 & 1 & 2 \\end{pmatrix}\n\\;\\xrightarrow{\\; r_1 - 2r_2 \\;}\\;\n\\begin{pmatrix} 1 & 0 & 1 \\\\ 0 & 1 & 2 \\end{pmatrix}\n$$\n\n即 $X = \\begin{pmatrix} 1 \\\\ 2 \\end{pmatrix}$。验算 $A X = \\begin{pmatrix} 1 \\times 1 + 2 \\times 2 \\\\ 3 \\times 1 + 4 \\times 2 \\end{pmatrix} = \\begin{pmatrix} 5 \\\\ 11 \\end{pmatrix} = B$，对的。\n**$B$ 有两列就并排写**，$(A \\mid B)$ 一次消元同时解出每一列。\n**遇到 $XA = B$**：不能直接对 $A$ 作行变换，先转置成 $A^{\\mathrm{T}} X^{\\mathrm{T}} = B^{\\mathrm{T}}$，用 $(A^{\\mathrm{T}} \\mid B^{\\mathrm{T}})$ 求出 $X^{\\mathrm{T}}$，再转置回去。",
+    "usage": [
+      "$(A \\mid B)$ 型：给 $A$ 与两列的 $B$，求 $AX = B$ 中的 $X$，考你能不能一次消元同时解出多个方程组。",
+      "$XA = B$ 型：转置成 $A^{\\mathrm{T}} X^{\\mathrm{T}} = B^{\\mathrm{T}}$，用 $(A^{\\mathrm{T}} \\mid B^{\\mathrm{T}})$ 求 $X^{\\mathrm{T}}$ 再转置回去（直接对 $A$ 作行变换是错的）。",
+      "含参或 $A$ 不可逆的情形：用 $r(A)$ 与 $r(A, B)$ 是否相等判无解或无穷多解，要解就写通解。"
+    ],
+    "selfcheck": [
+      "用 $(A \\mid B)$ 解 $\\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix} X = \\begin{pmatrix} 1 & 0 \\\\ 0 & 1 \\end{pmatrix}$，确认算出来的正是 $A^{-1} = \\begin{pmatrix} -2 & 1 \\\\ \\dfrac{3}{2} & -\\dfrac{1}{2} \\end{pmatrix}$。",
+      "解 $\\begin{pmatrix} 2 & 1 \\\\ 1 & 3 \\end{pmatrix} X = \\begin{pmatrix} 1 \\\\ 2 \\end{pmatrix}$：$X = \\dfrac{1}{5}\\begin{pmatrix} 1 \\\\ 3 \\end{pmatrix} = \\begin{pmatrix} \\dfrac{1}{5} \\\\ \\dfrac{3}{5} \\end{pmatrix}$，代回得 $A X = \\begin{pmatrix} 1 \\\\ 2 \\end{pmatrix}$。",
+      "说出 $AX = B$ 有唯一解的条件（$\\lvert A \\rvert \\neq 0$），并说明 $A$ 不可逆时只看哪两个秩。"
+    ]
+  },
+  "mat-block": {
+    "oneline": "把大矩阵当小矩阵使，整体运算",
+    "pain": "比如这个矩阵，要它的行列式和逆：\n\n$$\nM = \\begin{pmatrix} 1 & 2 & 0 \\\\ 3 & 4 & 0 \\\\ 0 & 0 & 2 \\end{pmatrix}\n$$\n\n数字不大，硬算也扛得住：三阶行列式展开一次，逆就做 $(M \\mid E)$ 消元。\n但你看得出来，它左下、右上一整块全是 $0$——这其实是两个小矩阵拼起来的。",
+    "gap": "逐元素硬算的毛病很明显，三个坑全都躲不开：\n- **坑一 · 零块白算**：把那些 $0$ 也当数字老老实实算一遍，纯属浪费；\n- **坑二 · 阶数一高顶不住**：阶数一高（比如 $m + n$ 阶），$(M \\mid E)$ 就是一大堆列，手算顶不住；\n- **坑三 · 带字母根本写不出来**：很多题的矩阵阶数里带字母（$A$ 是 $m$ 阶、$B$ 是 $n$ 阶），逐元素根本写不出来。",
+    "intro": "于是按零的位置切块，把 $A$、$B$ 这些小方块当成“大矩阵的元素”来运算，这就是**分块矩阵**。\n上面那三个坑，逐个补上：\n- **坑一补上 · 零块整块记账**：切块以后那些 $0$ 块直接当零块用，不用再挨个当数字算，白算的那部分省掉；\n- **坑二补上 · 块上一步到位**：分块对角阵里每块各管一段、互不干扰，所以行列式相乘、逆各自求、秩相加，不用再对一大堆列做消元；\n- **坑三补上 · 字母阶数也照写**：阶数带字母时，把 $A$、$B$ 当成“大矩阵的元素”直接写块公式，不必把每个元素写出来。",
+    "detail": "**分块规则**：加法要求两边分法完全相同；乘法要求左矩阵的**列**分法与右矩阵的**行**分法一致（不匹配就不能乘）；转置是“先分块转置、再把每块转置”。\n**分块对角**（$M = \\begin{pmatrix} A & O \\\\ O & B \\end{pmatrix}$，$A$ 为 $m$ 阶、$B$ 为 $n$ 阶方阵）：\n\n$$\n\\lvert M \\rvert = \\lvert A \\rvert \\cdot \\lvert B \\rvert, \\qquad M^{-1} = \\begin{pmatrix} A^{-1} & O \\\\ O & B^{-1} \\end{pmatrix}, \\qquad r(M) = r(A) + r(B)\n$$\n\n**分块三角**（$A$、$C$ 均可逆）：\n\n$$\n\\begin{pmatrix} A & B \\\\ O & C \\end{pmatrix}^{-1} = \\begin{pmatrix} A^{-1} & -A^{-1} B C^{-1} \\\\ O & C^{-1} \\end{pmatrix}\n$$\n\n两个公式的前提不同，别把 $\\lvert M \\rvert = \\lvert A \\rvert\\lvert B \\rvert$ 套到块三角上。\n**算例**：把上面的 $M$ 写成 $\\begin{pmatrix} A & O \\\\ O & B \\end{pmatrix}$，其中 $A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}$、$B = \\begin{pmatrix} 2 \\end{pmatrix}$、$O$ 是零块。\n于是 $\\lvert M \\rvert = \\lvert A \\rvert \\cdot \\lvert B \\rvert = (-2) \\times 2 = -4$，而\n\n$$\nM^{-1} = \\begin{pmatrix} A^{-1} & O \\\\ O & B^{-1} \\end{pmatrix} = \\begin{pmatrix} -2 & 1 & 0 \\\\ \\dfrac{3}{2} & -\\dfrac{1}{2} & 0 \\\\ 0 & 0 & \\dfrac{1}{2} \\end{pmatrix}\n$$\n\n抽查 $M M^{-1}$ 的第一行：$1 \\times (-2) + 2 \\times \\dfrac{3}{2} + 0 = 1$，$1 \\times 1 + 2 \\times (-\\dfrac{1}{2}) = 0$，第三列是 $0$，确实是 $E$ 的第一行。",
+    "usage": [
+      "分块对角阵或分块三角阵求逆、求行列式、求秩，直接套块公式比硬算快得多。",
+      "抽象分块求逆：$\\begin{pmatrix} A & B \\\\ O & C \\end{pmatrix}^{-1} = \\begin{pmatrix} A^{-1} & -A^{-1} B C^{-1} \\\\ O & C^{-1} \\end{pmatrix}$（$A$、$C$ 均可逆），选择题高频。",
+      "分块矩阵的乘法与转置：分块必须匹配，左矩阵的列分法与右矩阵的行分法要一致。"
+    ],
+    "selfcheck": [
+      "写出 $\\begin{pmatrix} A & O \\\\ O & B \\end{pmatrix}$ 的逆、行列式与秩（分别是 $\\begin{pmatrix} A^{-1} & O \\\\ O & B^{-1} \\end{pmatrix}$、$\\lvert A \\rvert \\cdot \\lvert B \\rvert$、$r(A) + r(B)$），并说明理由。",
+      "对 $M = \\begin{pmatrix} 1 & 2 & 0 \\\\ 3 & 4 & 0 \\\\ 0 & 0 & 2 \\end{pmatrix}$ 直接按三阶展开算 $\\lvert M \\rvert$，看是否等于 $\\lvert A \\rvert \\cdot \\lvert B \\rvert = -4$。",
+      "取 $A = \\begin{pmatrix} 2 \\end{pmatrix}$、$B = \\begin{pmatrix} 3 \\end{pmatrix}$、$C = \\begin{pmatrix} 5 \\end{pmatrix}$，用公式算 $\\begin{pmatrix} A & B \\\\ O & C \\end{pmatrix}^{-1} = \\begin{pmatrix} \\dfrac{1}{2} & -\\dfrac{3}{10} \\\\ 0 & \\dfrac{1}{5} \\end{pmatrix}$，再乘原矩阵验证得 $E$。"
+    ]
+  },
+  "mat-elem-op": {
+    "oneline": "换行、乘非零数、倍加：秩不变",
+    "pain": "手上是 $A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}$，要判断它含几条独立信息（秩），或者解 $Ax = 0$。\n两行不成比例，秩是 $2$、$Ax = 0$ 只有零解——这个还用眼睛看得出来。\n再换一个：$B = \\begin{pmatrix} 1 & 2 \\\\ 2 & 4 \\end{pmatrix}$，第二行是第一行的 $2$ 倍，秩是 $1$。\n可要是十阶矩阵、还带参数呢？一句“看得出来”就不好使了。",
+    "gap": "直接按定义看也不行，三个坑摆在眼前：\n- **坑一 · 按定义查是指数级**：定义要求挨个检查“任意 $k$ 行是否线性相关”，组合数指数级增长，手算不现实；\n- **坑二 · 含参矩阵凭感觉会翻车**：含参矩阵里主元落在哪一列会随参数变化，凭感觉看极容易翻车；\n- **坑三 · 没有能中途停的流程**：缺一个**机械、可重复、能中途停**的流程，把矩阵一步步擦干净。",
+    "intro": "于是有了三种初等行变换：换行、某行乘非零数、某行的 $k$ 倍加到另一行。\n上面那三个坑，逐个补上：\n- **坑一补上 · 绕开定义挨个查**：用这三种动作把矩阵一步步擦干净，压根不用去数“任意 $k$ 行”；\n- **坑二补上 · 主元落哪列消出来就知道**：主元落在哪一列由消元过程直接给出，不用凭感觉猜；\n- **坑三补上 · 机械流程能中途停**：这三种动作就是那套**机械、可重复、能中途停**的流程，每一步都能停下来看；\n\n妙处是它们**都能原路返回**（换回来、乘倒数、减回去），行与行之间的线性关系一点没变——所以秩不变，$Ax = 0$ 的解集也不变。",
+    "detail": "**三种初等行变换**（$i \\neq j$，$k \\neq 0$）：\n1. 交换第 $i$、$j$ 两行，记 $r_i \\leftrightarrow r_j$，逆变换就是再换一次；\n2. 第 $i$ 行乘非零数 $k$，记 $r_i \\times k$，逆变换是 $r_i \\times \\dfrac{1}{k}$；\n3. 第 $j$ 行的 $k$ 倍加到第 $i$ 行，记 $r_i + k r_j$，逆变换是 $r_i - k r_j$。\n\n秩不变的演示：\n\n$$\nA = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix} \\;\\xrightarrow{\\; r_2 - 3r_1 \\;}\\; \\begin{pmatrix} 1 & 2 \\\\ 0 & -2 \\end{pmatrix}, \\qquad B = \\begin{pmatrix} 1 & 2 \\\\ 2 & 4 \\end{pmatrix} \\;\\xrightarrow{\\; r_2 - 2r_1 \\;}\\; \\begin{pmatrix} 1 & 2 \\\\ 0 & 0 \\end{pmatrix}\n$$\n\n$A$ 还剩两个非零行，秩还是 $2$；$B$ 只剩一个非零行，秩还是 $1$（两行本来成比例，本来就只有 $1$）。\n**反例**：若对 $A$ 用“第 2 行乘 $0$”，得 $\\begin{pmatrix} 1 & 2 \\\\ 0 & 0 \\end{pmatrix}$，秩从 $2$ 掉到 $1$——所以只准乘“非零”数，三种动作之外的操作不保证秩不变。\n另外，化行阶梯形之后数的是**非零行的个数**，不是非零列。",
+    "usage": [
+      "求秩：用初等行变换化成行阶梯形，数非零行的个数；含参时要讨论主元落在哪一列。",
+      "解线性方程组：对增广阵作行变换化成行最简形，写出通解，几乎每年必考。",
+      "求逆与解矩阵方程：对 $(A \\mid E)$、$(A \\mid B)$ 只能用行变换，中间用一次列变换整道题就废了（列变换会换掉未知量对应的列，解出来的 $X$ 已经不是原方程的解）。"
+    ],
+    "selfcheck": [
+      "把 $\\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}$ 分别作三种初等行变换化成阶梯形，各数一次非零行，确认都是 2。",
+      "说出三种初等行变换，各用一个 2 阶矩阵演示，检查变换前后的秩相同。",
+      "判断：对增广阵作初等列变换仍保持方程组的解集不变。（错：列变换会改变未知量的含义，解集一般会变。）"
+    ]
+  },
+  "mat-elem-mat": {
+    "oneline": "初等矩阵：左乘改行，右乘改列",
+    "pain": "想交换 $A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}$ 的两行，现在的写法只能是一句中文：“交换第 1、2 两行”。\n做完得到 $\\begin{pmatrix} 3 & 4 \\\\ 1 & 2 \\end{pmatrix}$。\n问题是这句话是个**动作**，不是**对象**：它没法写进矩阵等式，没法参与运算，更没法用来证明“连着做一串变换到底发生了什么”。",
+    "gap": "光有“动作”说话，三个坑全都填不上：\n- **坑一 · 写不进矩阵等式**：变换不能代入矩阵等式，“$A$ 变到 $B$”没法用代数语言精确写出来；\n- **坑二 · 撤销只能嘴上说**：想撤销一串变换（求复合变换的逆），只能嘴上说“反着做一遍”，算不出来；\n- **坑三 · 结论没有落脚点**：“可逆矩阵能写成初等矩阵的乘积”这类结论，根本没有落脚点。",
+    "intro": "于是把“一次初等变换”本身记成一个矩阵：对单位阵 $E$ 做一次初等变换，得到的矩阵就叫**初等矩阵**。\n而且分工极清楚：**左乘动行，右乘动列**。\n上面那三个坑，逐个补上：\n- **坑一补上 · 动作能写进等式**：这样一来“做变换”变成“乘矩阵”，动作变成了对象，$EA$ 就是“对 $A$ 做了这次变换”，能直接写进矩阵等式；\n- **坑二补上 · 撤销靠取逆**：初等矩阵都可逆，而且逆还是**同一种初等变换**（交换的逆是自己，倍乘的逆取倒数，倍加的逆取相反数）—— 各试一次就验完；撤销一串变换就是按倒序乘上它们的逆；\n- **坑三补上 · 分解有了落脚点**：$A$ 可逆 $\\iff$ $A = P_1 P_2 \\cdots P_s$（初等矩阵之积），这类结论就落在这个乘法上。",
+    "detail": "**三类初等矩阵**（都是对 $E$ 动一次手得到的）：$E(i, j)$ 交换 $i$、$j$ 两行；$E(i(k))$ 第 $i$ 行乘 $k$（$k \\neq 0$）；$E(ij(k))$ 第 $j$ 行的 $k$ 倍加到第 $i$ 行。\n**左乘右乘对照**，取 $A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}$、$E = \\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$：\n\n$$\nE A = \\begin{pmatrix} 3 & 4 \\\\ 1 & 2 \\end{pmatrix}, \\qquad A E = \\begin{pmatrix} 2 & 1 \\\\ 4 & 3 \\end{pmatrix}\n$$\n\n前者交换了 $A$ 的两行，后者交换了 $A$ 的两列。再取 $E_2 = \\begin{pmatrix} 1 & 0 \\\\ 0 & 2 \\end{pmatrix}$：\n\n$$\nE_2 A = \\begin{pmatrix} 1 & 2 \\\\ 6 & 8 \\end{pmatrix}, \\qquad A E_2 = \\begin{pmatrix} 1 & 4 \\\\ 3 & 8 \\end{pmatrix}\n$$\n\n前者是第 2 行乘 $2$，后者是第 2 列乘 $2$。所以左乘动行、右乘动列，动作是同一种初等变换，作用的位置不同。\n**两条关键结论**：初等矩阵都可逆，且 $E^{-1}$ 还是**同一种初等变换**的初等矩阵（$E(i, j)^{-1} = E(i, j)$，$E(i(k))^{-1} = E(i(\\dfrac{1}{k}))$，$E(ij(k))^{-1} = E(ij(-k))$）；$A$ 可逆 $\\iff$ $A = P_1 P_2 \\cdots P_s$（初等矩阵之积）。\n**等价标准形**：任何 $m \\times n$ 矩阵都能用初等变换化成 $\\begin{pmatrix} E_r & O \\\\ O & O \\end{pmatrix}$，即 $\\operatorname{diag}(E_r, O)$，其中 $r$ 就是矩阵的秩。",
+    "usage": [
+      "给初等矩阵 $E$ 与矩阵 $A$，算 $EA$ 或 $AE$ 并说明作了哪种初等变换（也有反过来问的）。",
+      "可逆矩阵分解：$A$ 可逆 $\\iff$ $A = P_1 P_2 \\cdots P_s$（初等矩阵之积），常用来证“可逆矩阵与 $E$ 等价”。",
+      "等价标准形：把矩阵化成 $\\operatorname{diag}(E_r, O)$，或由 $PAQ = \\operatorname{diag}(E_r, O)$ 反求 $P$、$Q$ 与秩。"
+    ],
+    "selfcheck": [
+      "写出 3 阶的 $E(1, 3)$、$E(2(4))$、$E(21(5))$（这三个都按 **3 阶**单位矩阵动手；$E(21(5))$ 是第 2 行加第 1 行的 5 倍），并说出左乘它们各做了什么。",
+      "用 2 阶例子各算一次左乘与右乘同一个初等矩阵，确认一个改行、一个改列。",
+      "把 $A = \\begin{pmatrix} 1 & 2 & 3 \\\\ 2 & 4 & 6 \\end{pmatrix}$ 化成 $\\operatorname{diag}(E_r, O)$，写出 $r = 1$ 以及最终矩阵 $\\begin{pmatrix} 1 & 0 & 0 \\\\ 0 & 0 & 0 \\end{pmatrix}$。"
+    ]
+  },
+  "mat-elem-relation": {
+    "oneline": "三类初等矩阵的行列式：$-1$、$k$、$1$",
+    "pain": "用行变换算行列式是常规操作，比如\n\n$$\n\\lvert A \\rvert = \\begin{vmatrix} 2 & 3 \\\\ 4 & 5 \\end{vmatrix} \\;\\longrightarrow\\; \\begin{vmatrix} 2 & 3 \\\\ 0 & -1 \\end{vmatrix} = 2 \\times (-1) = -2\n$$\n\n和直接算 $2 \\times 5 - 3 \\times 4 = -2$ 一致。\n可心里得一直悬着几个问号：交换两行要不要变号？某一行乘了 $2$ 最后要不要除回去？倍加会不会悄悄改变行列式？\n这些真不是小事——搞错一个，大题最后一步直接报废。",
+    "gap": "只有 $\\lvert EA \\rvert = \\lvert E \\rvert \\cdot \\lvert A \\rvert$ 这一句还不够，三个坑等着填：\n- **坑一 · 三个数没交代**：它只说“乘初等矩阵等于乘它的行列式”，可每个初等矩阵的行列式是几，并没有交代；\n- **坑二 · 靠感觉记会记错**：光靠感觉记“倍加不变、换行变号、倍乘提出来”，一紧张就会把倍加也算上一个系数；\n- **坑三 · 两个 $k$ 最容易混**：而且 $\\lvert kA \\rvert = k^n \\lvert A \\rvert$（整个矩阵乘 $k$）和“某一行乘 $k$”长得太像，最容易混。",
+    "intro": "于是把三类初等矩阵的行列式**当场算出来**，对应关系就闭环了：换行的 $\\lvert E \\rvert = -1$（换行变号），倍乘的 $\\lvert E \\rvert = k$（倍乘提出 $k$），倍加的 $\\lvert E \\rvert = 1$（倍加不变）。\n上面那三个坑，逐个补上：\n- **坑一补上 · 三个数当面算出来**：换行 $-1$、倍乘 $k$、倍加 $1$，$\\lvert E \\rvert$ 各是几不用再猜；\n- **坑二补上 · 感觉换成公式**：$\\lvert EA \\rvert = \\lvert E \\rvert \\cdot \\lvert A \\rvert$ 把“凭感觉记”变成三条明确的对应，倍加不会再被加上一个系数；\n- **坑三补上 · 两个 $k$ 分开记**：倍乘是“某一行乘 $k$”提出一个 $k$，$\\lvert E \\rvert = k$；整个矩阵乘 $k$ 才是 $\\lvert kA \\rvert = k^n \\lvert A \\rvert$，两个 $k$ 从此分得开；\n\n有了这三个数，$\\lvert EA \\rvert = \\lvert E \\rvert \\cdot \\lvert A \\rvert$ 就自动翻译成“用行变换算行列式”的三条规则。",
+    "detail": "以 3 阶为例（约定 $E(ij(k))$ 表示第 $i$ 行加第 $j$ 行的 $k$ 倍）：\n\n$$\nE(1, 3) = \\begin{pmatrix} 0 & 0 & 1 \\\\ 0 & 1 & 0 \\\\ 1 & 0 & 0 \\end{pmatrix}, \\qquad \\lvert E(1, 3) \\rvert = -1\n$$\n\n交换两行，行列式变号。\n\n$$\nE(2(5)) = \\begin{pmatrix} 1 & 0 & 0 \\\\ 0 & 5 & 0 \\\\ 0 & 0 & 1 \\end{pmatrix}, \\qquad \\lvert E(2(5)) \\rvert = 5\n$$\n\n对角元相乘即可。\n\n$$\nE(21(3)) = \\begin{pmatrix} 1 & 0 & 0 \\\\ 3 & 1 & 0 \\\\ 0 & 0 & 1 \\end{pmatrix}, \\qquad \\lvert E(21(3)) \\rvert = 1\n$$\n\n这是第 2 行加第 1 行的 $3$ 倍，是下三角且对角全为 $1$。\n**一句话对应**：$\\lvert EA \\rvert = \\lvert E \\rvert \\cdot \\lvert A \\rvert$ 说明——交换两行 $\\lvert A \\rvert$ 变号；某行乘 $k$ 可把 $k$ 提到行列式外；倍加 $\\lvert A \\rvert$ 不变。这就是用行变换算行列式的依据。\n**常用推论**：$\\lvert kA \\rvert = k^n \\lvert A \\rvert$、$\\lvert A^{*} \\rvert = \\lvert A \\rvert^{\\,n-1}$、$\\lvert A^{-1} \\rvert = \\dfrac{1}{\\lvert A \\rvert}$。\n用行变换把行列式化成上三角后，把每一步的变号与倍数记清，再乘对角元就行。",
+    "usage": [
+      "用 $\\lvert EA \\rvert = \\lvert E \\rvert \\cdot \\lvert A \\rvert$ 判断关系：交换两行 $\\lvert A \\rvert$ 变号，某行乘 $k$ 可提出 $k$，倍加 $\\lvert A \\rvert$ 不变——这正是用行变换算行列式的依据。",
+      "计算题：先用行变换把行列式化成上三角，再乘对角元，要记清每一步的变号与倍数。",
+      "判断题：$\\lvert kA \\rvert = k^n \\lvert A \\rvert$ 而不是 $k \\lvert A \\rvert$，$\\lvert A^{*} \\rvert = \\lvert A \\rvert^{\\,n-1}$，$\\lvert A^{-1} \\rvert = \\dfrac{1}{\\lvert A \\rvert}$，常混在一起考。"
+    ],
+    "selfcheck": [
+      "写出 3 阶的 $E(2, 3)$、$E(3(-4))$、$E(13(2))$ 并各算行列式（答案依次是 $-1$、$-4$、$1$）。",
+      "设 $\\lvert A \\rvert = 5$，交换 $A$ 的第 1、2 行得 $B$，则 $\\lvert B \\rvert = -5$；再把 $B$ 的第 3 行乘 $2$ 得 $C$，则 $\\lvert C \\rvert = -10$。",
+      "用 $\\begin{pmatrix} 2 & 3 \\\\ 4 & 5 \\end{pmatrix}$ 演示：$r_2 - 2r_1$ 得 $\\begin{pmatrix} 2 & 3 \\\\ 0 & -1 \\end{pmatrix}$，$\\lvert A \\rvert = 2 \\times (-1) = -2$，与直接算 $2 \\times 5 - 3 \\times 4 = -2$ 一致。"
+    ]
+  },
+  "mat-equiv": {
+    "oneline": "同型且秩相等就等价，标准形是 $\\operatorname{diag}(E_r, O)$",
+    "pain": "看这两个矩阵：\n\n$$\nA = \\begin{pmatrix} 1 & 2 & 3 \\\\ 2 & 4 & 6 \\end{pmatrix}, \\qquad \\begin{pmatrix} 1 & 0 & 0 \\\\ 0 & 0 & 0 \\end{pmatrix}\n$$\n\n左边全是正整数，右边只有 $0$ 和 $1$，长得一点都不像。\n可它们其实是“同一个东西的两种写法”。\n那问题来了：怎么一眼看出两个矩阵“本质相同”？总不能逐元素比吧。",
+    "gap": "逐元素比这条路走不通，三个坑都堵在这儿：\n- **坑一 · 换个样子就白比**：只有完全相同时才比得出结果，稍微换一组基（做一次初等变换）样子就全变了；\n- **坑二 · 三个词太像**：相似、合同、等价三个词长得太像，判据却完全不同，选错一个整题报废；\n- **坑三 · 缺一个不变量**：缺一个“样子会变、但本质不变”的量，来衡量两个矩阵是不是一回事。",
+    "intro": "这个量就是**秩**。\n\n定义：$A$ 经过有限次初等变换化为 $B$，就说 $A$ 与 $B$ **等价**，记作 $A \\cong B$。\n\n结论干脆得很：$A \\cong B$ $\\iff$ 同型（行数、列数分别相同）且 $r(A) = r(B)$；而且任何矩阵都等价于一个最简的样子 —— 等价标准形 $\\operatorname{diag}(E_r, O)$。\n\n上面那三个坑，逐个补上：\n\n- **坑一补上 · 比秩不比元素**：不比元素，只看 $r(A)$ 与 $r(B)$ 是否相等，样子变了也不影响；\n- **坑二补上 · 三个词各认各的判据**：等价看秩（前提是同型）；相似（第五章讲）看特征值与迹；合同（第六章讲）看对称阵与惯性指数 —— 名字先记住，各归各的；\n- **坑三补上 · 不变量就是秩**：秩就是那个“样子会变、但本质不变”的量，两个矩阵是不是一回事，比一下秩就知道。",
+    "detail": "**定义**：$A$ 经有限次初等变换化为 $B$，则称 $A$ 与 $B$ 等价；等价 $\\iff$ 存在可逆矩阵 $P$、$Q$ 使 $PAQ = B$。\n**充要条件**：$A \\cong B$ $\\iff$ $A$、$B$ 同型且 $r(A) = r(B)$。\n**标准形**：任何 $m \\times n$ 矩阵 $A$ 都等价于\n\n$$\n\\begin{pmatrix} E_r & O \\\\ O & O \\end{pmatrix} = \\operatorname{diag}(E_r, O), \\qquad r = r(A)\n$$\n\n**算例**：$A = \\begin{pmatrix} 1 & 2 & 3 \\\\ 2 & 4 & 6 \\end{pmatrix}$（$2 \\times 3$，$r(A) = 1$），标准形是 $\\begin{pmatrix} 1 & 0 & 0 \\\\ 0 & 0 & 0 \\end{pmatrix}$。\n取 $P = \\begin{pmatrix} 1 & 0 \\\\ -2 & 1 \\end{pmatrix}$（第 2 行减第 1 行的 $2$ 倍）、$Q = \\begin{pmatrix} 1 & -2 & -3 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \\end{pmatrix}$（第 2 列减第 1 列的 $2$ 倍、第 3 列减第 1 列的 $3$ 倍），算得 $PAQ = \\begin{pmatrix} 1 & 0 & 0 \\\\ 0 & 0 & 0 \\end{pmatrix} = \\operatorname{diag}(E_1, O)$，所以 $A$ 与自己的标准形等价。\n**同型但秩不同就不等价**：$C = \\begin{pmatrix} 1 & 2 & 3 \\\\ 0 & 0 & 1 \\end{pmatrix}$ 也是 $2 \\times 3$，但 $r(C) = 2 \\neq 1$。\n**别混**：等价只看秩（前提是两者同型）；相似要求特征值、迹一致；合同要求对称阵且惯性指数相同。\n**顺带一个高频结论**：$AX = B$ 有解 $\\iff r(A) = r(A, B)$，本质是 $B$ 的每一列都落在 $A$ 的列空间里。",
+    "usage": [
+      "选择题或判断题：$A \\cong B$ $\\iff$ 同型且 $r(A) = r(B)$；要和相似（特征值、迹）、合同（对称阵、惯性指数）区分开。",
+      "求可逆矩阵 $P$、$Q$ 使 $PAQ$ 为标准形，或由标准形 $\\operatorname{diag}(E_r, O)$ 反求秩与未知参数。",
+      "方程组有解的秩刻画：$AX = B$ 有解 $\\iff r(A) = r(A, B)$，本质是 $B$ 的每一列都落在 $A$ 的列空间里。"
+    ],
+    "selfcheck": [
+      "说出 $A$ 与 $B$ 等价的充要条件（同型 + 秩相等），并各举一对等价、一对不等价的 $2 \\times 3$ 矩阵。",
+      "把 $\\begin{pmatrix} 1 & 2 & 3 \\\\ 2 & 4 & 6 \\end{pmatrix}$ 化成 $\\operatorname{diag}(E_r, O)$，写出 $r = 1$ 与结果矩阵 $\\begin{pmatrix} 1 & 0 & 0 \\\\ 0 & 0 & 0 \\end{pmatrix}$。",
+      "判断：秩相等就一定相似。（错：两者秩都是 $2$，但 $\\begin{pmatrix} 1 & 1 \\\\ 0 & 1 \\end{pmatrix}$ 只有一个特征值且不能对角化（第五章才讲），而 $\\begin{pmatrix} 1 & 0 \\\\ 0 & 1 \\end{pmatrix}$ 只与自己相似 —— 秩相同只是相似的必要条件。）"
+    ]
+  }
+}

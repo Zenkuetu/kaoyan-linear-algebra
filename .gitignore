@@ -1,0 +1,22 @@
+# 忽略：外部软件与本地状态
+installers/
+*.exe
+*.zip
+
+# Obsidian 的本地工作区状态（每人不同，不应进仓库）
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.trash/
+
+# 第三方插件本体（体积大且有各自许可，请从 Obsidian 社区商店安装）
+.obsidian/plugins/
+
+# 生成过程与临时文件
+_gh_publish/
+_gh_release/
+_vault_test/
+*.bak
+*.bak[0-9]*
+*.bak-*
+*.log

@@ -1,0 +1,28 @@
+const VC = [];
+// 续：第三章 向量（数一/数二/数三 均要求）
+VC.push({ id: 'm-vec', title: '第三章 向量（向量组的线性相关性）', x: -1800, y: 720, summary: '数一/数二/数三 均要求（数二只考具体坐标向量，不考抽象的向量空间证明）。核心：线性相关性的判定、极大无关组与向量组的秩。', points: [
+  { id: 'vec-def',title: 'n 维向量及其运算', module: 'm-vec', summary: 'n 个数组成的有序数组 α=(a₁,…,aₙ)ᵀ；加法与数乘按分量进行。', tags: ['数一', '数二'], pitfalls: ['把 αᵀβ 与 αβᵀ 混同'] },
+  { id: 'vec-inner',title: '向量的内积、长度与正交', module: 'm-vec', summary: '内积 (α,β)=αᵀβ；长度 ‖α‖=√(αᵀα)；αᵀβ=0 称正交；非零正交组线性无关。', tags: ['数一', '数二'],
+    pitfalls: ['施密特公式中投影系数算错'] },
+  { id: 'vec-combo',title: '线性组合与线性表示', module: 'm-vec', summary: 'β 可由 α₁,…,αₛ 线性表示 ⇔ 存在 k₁,…,kₛ 使 β=Σkᵢαᵢ ⇔ 方程组 Ax=β 有解。', tags: ['数一', '数二'],
+    pitfalls: ['忘记同时比较系数矩阵与增广矩阵的秩'] },
+  { id: 'vec-indep-def',title: '线性相关与线性无关的定义', module: 'm-vec', summary: '存在不全为零的 kᵢ 使 Σkᵢαᵢ=0 则线性相关；只有全零解才成立则线性无关。', tags: ['数一', '数二'],
+    pitfalls: ['把"存在"理解成"任意"，导致判定方向反了'] },
+  { id: 'vec-indep-crit',title: '线性相关性的判定方法', module: 'm-vec', summary: '向量个数 s 与维数 n 比较：s>n 必相关；s=n 时看行列式；一般情形看 r(α₁…αₛ) 与 s 是否相等。', tags: ['数一', '数二'],
+    pitfalls: ['把"个数大于维数必相关"错记成"个数小于维数必无关"'] },
+  { id: 'vec-indep-concl',title: '线性相关性的重要结论', module: 'm-vec', summary: '部分相关 ⇒ 整体相关；整体无关 ⇒ 部分无关；无关组添加分量仍无关，相关组减少分量仍相关。', tags: ['数一', '数二'],
+    pitfalls: ['把"整体无关 ⇒ 部分无关"反向使用'] },
+  { id: 'vec-equivalent',title: '向量组的等价', module: 'm-vec', summary: '两组可互相线性表示称等价；等价向量组的秩相等（逆不成立）。', tags: ['数一', '数二'],
+    pitfalls: ['由秩相等直接判定两组等价'] },
+  { id: 'vec-maximal',title: '极大线性无关组', module: 'm-vec', summary: '向量组中线性无关且再添任一向量就相关的部分组；不唯一，但所含向量个数固定。', tags: ['数一', '数二'],
+    pitfalls: ['误以为极大无关组唯一'] },
+  { id: 'vec-rank-def',title: '向量组的秩', module: 'm-vec', summary: '向量组的极大线性无关组所含向量的个数，记 r(α₁,…,αₛ)。', tags: ['数一', '数二'],
+    pitfalls: ['把向量按行排成矩阵后混淆行秩与列秩的含义'] },
+  { id: 'vec-rank-vs-mat',title: '向量组的秩与矩阵的秩', module: 'm-vec', summary: '矩阵的秩 = 行向量组的秩 = 列向量组的秩；这是"行秩 = 列秩"的完整表述。', tags: ['数一', '数二'], pitfalls: ['化行阶梯形后去数"零列"而不是非零行'] },
+  { id: 'vec-express-crit',title: '线性表出的判定定理', module: 'm-vec', summary: 'β 可由组 (I) 唯一表示 ⇔ r(I)=r(I,β)=s（组 (I) 无关）；有无穷多种表示则 r(I)=r(I,β)<s。', tags: ['数一', '数二'],
+    pitfalls: ['把 r(I)=r(I,β) 当作唯一表示的判据（还需 (I) 无关）'] },
+  { id: 'vec-rank-table',title: '向量组秩与线性表出的关系表', module: 'm-vec', summary: '单向定理：若 (I) 可由 (II) 表示且 s > r(II)，则 (I) 必线性相关。', tags: ['数一', '数二'],
+    pitfalls: ['机械套用 s>n 而忽略"可由谁表示"的前提'] },
+  { id: 'vec-schmidt',title: '施密特正交化与标准正交基', module: 'm-vec', summary: '把线性无关组逐步化为正交组：β₁=α₁，βᵢ=αᵢ−Σ(αᵢ,βⱼ)/(βⱼ,βⱼ)·βⱼ，再单位化。', tags: ['数一'],
+    pitfalls: ['投影项的分母写成 (βⱼ,βⱼ) 之外的形式'] },
+] });
