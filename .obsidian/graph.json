@@ -6,9 +6,31 @@
   "hideUnresolved": false,
   "showOrphans": true,
   "collapse-color-groups": false,
-  "colorGroups": [],
+  "colorGroups": [
+    {
+      "query": "tag:#数二",
+      "color": {
+        "a": 1,
+        "rgb": 4176208
+      }
+    },
+    {
+      "query": "tag:#数一",
+      "color": {
+        "a": 1,
+        "rgb": 15238970
+      }
+    },
+    {
+      "query": "tag:#基础",
+      "color": {
+        "a": 1,
+        "rgb": 5490904
+      }
+    }
+  ],
   "collapse-display": true,
-  "showArrow": false,
+  "showArrow": true,
   "textFadeMultiplier": 0,
   "nodeSizeMultiplier": 1,
   "lineSizeMultiplier": 1,
