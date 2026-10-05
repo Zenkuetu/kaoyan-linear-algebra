@@ -96,6 +96,7 @@ check-oneline.mjs      "一句话"视觉宽度 ≤ 46
 check-jargon.mjs       引入段不得越界使用后面章节的术语
 check-connectivity.mjs 关系图连通性（当前 1 个连通块）
 check-vault-connectivity.mjs  整库连通性
+check-graph-config.mjs 图谱设置没被"运行中的 Obsidian"覆盖掉（配色组 / 箭头 / 连线着色）
 verify-fix-landing.mjs 关键修复是否真的落在产物里
 ```
 
