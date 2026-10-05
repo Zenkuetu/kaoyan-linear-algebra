@@ -28,6 +28,7 @@ const mdFiles = files.filter(f => f.endsWith('.md'));
 let wikiTotal = 0, mdTotal = 0;
 const broken = [];
 const ambiguous = [];
+const dirtyLinks = [];  // 链接内部混入空白（表格对齐工具常见坑）：如 [[目标   |显示名]]，Obsidian 解析不到
 const bareNonMd = [];   // 裸双链只匹配到非 .md 文件（Obsidian 不会解析，是"未创建链接"的常见成因）
 
 for (const f of mdFiles) {
@@ -38,6 +39,14 @@ for (const f of mdFiles) {
   // [[目标|显示]] 或 [[目标#标题|显示]]
   for (const m of text.matchAll(/\[\[([^\]\n]+?)\]\]/g)) {
     wikiTotal++;
+    // ⚠️ 先查"链接内部有没有多余空白"——必须在 trim 之前查，
+    //    否则 [[目标    |显示名]] 会被 trim 成合法目标，这类坏链接就漏过去了（踩过这个坑）。
+    const rawInner = m[1];
+    const [rawT, rawD] = rawInner.split('|');
+    const tPart = (rawT || '').split('#')[0];
+    if (tPart !== tPart.trim() || (rawD !== undefined && rawD !== rawD.trim())) {
+      dirtyLinks.push({ file: rel, line: lines.findIndex(l => l.includes(m[0])) + 1, target: rawInner });
+    }
     let target = m[1].split('|')[0].split('#')[0].trim();
     if (!target) continue;
     const norm = target.replace(/\.(md|canvas)$/i, '');
@@ -86,8 +95,13 @@ console.log(bareNonMd.length
   ? '❌ 裸双链指向非笔记文件（Obsidian 不解析，需写扩展名）: ' + bareNonMd.length
   : '✅ 没有"裸双链指向画布"的问题（画布链接均带 .canvas）');
 for (const b of bareNonMd.slice(0, 10)) console.log('  · ' + b.file + '  [[' + b.target + ']]  实际文件: ' + b.only);
+console.log(dirtyLinks.length
+  ? '❌ 链接内部混入空白（多半是表格对齐工具把空格塞进了 [[目标|显示名]]）: ' + dirtyLinks.length
+  : '✅ 没有链接内部含空白的坏链接');
+for (const d of dirtyLinks.slice(0, 10)) console.log('  · ' + d.file + ':' + d.line + '  [[' + d.target + ']]');
+if (dirtyLinks.length) console.log('  修法：node la-codegen/fix-table-links.mjs <库目录> --apply');
 
 // 额外检查：文件名里是否含 Obsidian 不接受的字符
 const badChars = files.map(f => path.relative(vault, f).replace(/\\/g, '/')).filter(p => /[*?"<>|]/.test(p));
 console.log(badChars.length ? '❌ 文件名含非法字符: ' + badChars.join(', ') : '✅ 文件名不含 * ? " < > | 等非法字符');
-process.exit(broken.length || badChars.length || bareNonMd.length ? 1 : 0);
+process.exit(broken.length || badChars.length || bareNonMd.length || dirtyLinks.length ? 1 : 0);

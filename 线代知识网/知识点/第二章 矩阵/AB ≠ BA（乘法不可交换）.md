@@ -15,7 +15,7 @@ tags:
 
 # AB ≠ BA（乘法不可交换）
 
-> <span class="oneline">**一句话**：矩阵乘法看顺序，换个次序结果常不同</span>
+> <span class="oneline">​</span>**一句话**：矩阵乘法看顺序，换个次序结果常不同
 
 **考试层次**：`基础` ｜ **章节**：[[第二章 矩阵|第二章 矩阵]]
 
@@ -28,31 +28,31 @@ tags:
 ## <span class="hx hx-gap">🔴</span> 二、直接办法为什么不够
 
 土办法是“数怎么做我就怎么做”，完全平方、平方差、提取公因式照搬。
-劣势一，$AB \ne BA$ 时这些公式全废。硬套 $(A + B)^{2} = A^{2} + 2AB + B^{2}$ 直接算错，老实展开应该是 $(A + B)^{2} = A^{2} + AB + BA + B^{2}$；$A^{2} - B^{2} = (A + B)(A - B)$ 同理，右边展开出来是 $A^{2} + BA - AB - B^{2}$。
-劣势二，可不可交换没有判据。两个符号矩阵摆在那，只能硬算出 $AB$ 与 $BA$ 再逐个位置比，含参的时候根本比不出来。
-劣势三，一旦要算 $(A + B)^{n}$ 或者化简 $A^{k}$，不知道能不能交换就等于没法展开。
+- <span class="pit">​</span>**劣势一**：$AB \ne BA$ 时这些公式全废。硬套 $(A + B)^{2} = A^{2} + 2AB + B^{2}$ 直接算错，老实展开应该是 $(A + B)^{2} = A^{2} + AB + BA + B^{2}$；$A^{2} - B^{2} = (A + B)(A - B)$ 同理，右边展开出来是 $A^{2} + BA - AB - B^{2}$。
+- <span class="pit">​</span>**劣势二**：可不可交换没有判据。两个符号矩阵摆在那，只能硬算出 $AB$ 与 $BA$ 再逐个位置比，含参的时候根本比不出来。
+- <span class="pit">​</span>**劣势三**：一旦要算 $(A + B)^{n}$ 或者化简 $A^{k}$，不知道能不能交换就等于没法展开。
 
 ## <span class="hx hx-intro">🟢</span> 三、于是引入：AB ≠ BA
 
 于是引入“可交换”这个概念：$AB = BA$ 时，才说 $A$ 与 $B$ 可交换。
 上面那三个劣势，逐个补上：
 
-- <span class="fix">**第一个劣势补上**</span>：展开式老老实实写全 $(A + B)^{2} = A^{2} + AB + BA + B^{2}$，只有 $AB = BA$ 时才塌成 $A^{2} + 2AB + B^{2}$，公式什么时候能用一眼看清。
-- <span class="fix">**第二个劣势补上**</span>：判据有了，要判断某个矩阵能不能与 $A$ 交换，就设未知量、列方程解 $AB = BA$，符号矩阵也能判。
-- <span class="fix">**第三个劣势补上**</span>：可交换的场合，比如数量矩阵 $kE$ 与任何同阶矩阵，就能放心用二项式展开算 $(A + B)^{n}$、化简 $A^{k}$。
+- <span class="fix">​</span>**第一个劣势补上**：展开式老老实实写全 $(A + B)^{2} = A^{2} + AB + BA + B^{2}$，只有 $AB = BA$ 时才塌成 $A^{2} + 2AB + B^{2}$，公式什么时候能用一眼看清。
+- <span class="fix">​</span>**第二个劣势补上**：判据有了，要判断某个矩阵能不能与 $A$ 交换，就设未知量、列方程解 $AB = BA$，符号矩阵也能判。
+- <span class="fix">​</span>**第三个劣势补上**：可交换的场合，比如数量矩阵 $kE$ 与任何同阶矩阵，就能放心用二项式展开算 $(A + B)^{n}$、化简 $A^{k}$。
 
 ## <span class="hx hx-detail">🔵</span> 四、细节
 
-<span class="lab">**定义**</span>：若 $AB = BA$，就说 $A$ 与 $B$ 可交换；一般情况下 $AB \ne BA$，乘法看顺序。
-<span class="lab">**算例**</span>：
+<span class="lab">​</span>**定义**：若 $AB = BA$，就说 $A$ 与 $B$ 可交换；一般情况下 $AB \ne BA$，乘法看顺序。
+<span class="lab">​</span>**算例**：
 
 $$
 A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}, \quad B = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, \qquad AB = \begin{pmatrix} 2 & 1 \\ 4 & 3 \end{pmatrix} \ne \begin{pmatrix} 3 & 4 \\ 1 & 2 \end{pmatrix} = BA
 $$
 
-<span class="lab">**可交换的例子**</span>：$2E = \begin{pmatrix} 2 & 0 \\ 0 & 2 \end{pmatrix}$ 与任何 2 阶矩阵 $B$ 都满足 $2E \cdot B = B \cdot 2E$；一般地，数量矩阵 $kE$ 总与同阶矩阵可交换，$E$ 是乘法单位元，$kE$ 相当于把 $E$ 放大 $k$ 倍。
-<span class="lab">**展开式的差别写清楚**</span>：$(A + B)^{2} = A^{2} + AB + BA + B^{2}$，所以只有 $AB = BA$ 时才有 $(A + B)^{2} = A^{2} + 2AB + B^{2}$。
-<span class="lab">**怎么操作**</span>：遇到“求所有与 $A$ 可交换的矩阵”，就把 $B = (b_{ij})$ 设成未知量，按 $AB = BA$ 逐格列方程组；遇到式子里出现 $BA$，别随手当成 $AB$。
+<span class="lab">​</span>**可交换的例子**：$2E = \begin{pmatrix} 2 & 0 \\ 0 & 2 \end{pmatrix}$ 与任何 2 阶矩阵 $B$ 都满足 $2E \cdot B = B \cdot 2E$；一般地，数量矩阵 $kE$ 总与同阶矩阵可交换，$E$ 是乘法单位元，$kE$ 相当于把 $E$ 放大 $k$ 倍。
+<span class="lab">​</span>**展开式的差别写清楚**：$(A + B)^{2} = A^{2} + AB + BA + B^{2}$，所以只有 $AB = BA$ 时才有 $(A + B)^{2} = A^{2} + 2AB + B^{2}$。
+<span class="lab">​</span>**怎么操作**：遇到“求所有与 $A$ 可交换的矩阵”，就把 $B = (b_{ij})$ 设成未知量，按 $AB = BA$ 逐格列方程组；遇到式子里出现 $BA$，别随手当成 $AB$。
 
 ## <span class="hx hx-usage">🟣</span> 五、怎么用
 

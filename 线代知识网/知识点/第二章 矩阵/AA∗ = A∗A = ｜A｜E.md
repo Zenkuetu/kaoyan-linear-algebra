@@ -12,7 +12,7 @@ tags:
 
 # AA* = A*A = ｜A｜E
 
-> <span class="oneline">**一句话**：$A$ 与 $A^{*}$ 怎么乘都等于 $\lvert A \rvert E$（数量阵）</span>
+> <span class="oneline">​</span>**一句话**：$A$ 与 $A^{*}$ 怎么乘都等于 $\lvert A \rvert E$（数量阵）
 
 **考试层次**：`基础` ｜ **章节**：[[第二章 矩阵|第二章 矩阵]]
 
@@ -28,9 +28,9 @@ $$
 
 ## <span class="hx hx-gap">🔴</span> 二、直接办法为什么不够
 
-- <span class="pit">**坑一 · 硬乘看不出规律**</span>：一个个乘着找规律不现实，$n$ 阶要算 $n^{2}$ 个元素，每个元素本身又是一串乘积求和，靠算例猜不出一般结论。
-- <span class="pit">**坑二 · 右边该长什么样没数**</span>：更麻烦的是右边该长什么样根本没数，为什么偏偏是数量阵 $\lvert A \rvert E$，而不是 $\lvert A \rvert$ 的某个幂、或者别的什么矩阵？不把这条恒等式点破就看不出来。
-- <span class="pit">**坑三 · 前提容易糊**</span>：前提也容易糊，哪一步需要 $\lvert A \rvert \ne 0$，哪一步 $\lvert A \rvert = 0$ 也照样成立，光靠乘法验不出来。
+- <span class="pit">​</span>**坑一 · 硬乘看不出规律**：一个个乘着找规律不现实，$n$ 阶要算 $n^{2}$ 个元素，每个元素本身又是一串乘积求和，靠算例猜不出一般结论。
+- <span class="pit">​</span>**坑二 · 右边该长什么样没数**：更麻烦的是右边该长什么样根本没数，为什么偏偏是数量阵 $\lvert A \rvert E$，而不是 $\lvert A \rvert$ 的某个幂、或者别的什么矩阵？不把这条恒等式点破就看不出来。
+- <span class="pit">​</span>**坑三 · 前提容易糊**：前提也容易糊，哪一步需要 $\lvert A \rvert \ne 0$，哪一步 $\lvert A \rvert = 0$ 也照样成立，光靠乘法验不出来。
 
 ## <span class="hx hx-intro">🟢</span> 三、于是引入：AA* = A*A = ｜A｜E
 
@@ -40,15 +40,15 @@ $$
 AA^{*} = A^{*}A = \lvert A \rvert E
 $$
 
-- <span class="fix">**坑一补上 · 不用一个个乘**</span>：有了这条恒等式，$n$ 阶那 $n^{2}$ 个元素不用一个个乘出来找规律；
-- <span class="fix">**坑二补上 · 右边就是数量阵**</span>：右边为什么偏偏是数量阵 $\lvert A \rvert E$、非对角元为什么是 $0$，一句话就点破了 —— 因为“一行元素乘上另一行对应的代数余子式”会全部抵消，这是行列式展开定理的直接推论；而且 $A$ 与 $A^{*}$ 相乘可以互换位置；
-- <span class="fix">**坑三补上 · 前提分得清**</span>：哪一步要 $\lvert A \rvert \ne 0$、哪一步不用，由这条恒等式就分得清 —— 求逆就是一步乘系数 $A^{-1} = \dfrac{A^{*}}{\lvert A \rvert}$（$\lvert A \rvert \ne 0$）。
+- <span class="fix">​</span>**坑一补上 · 不用一个个乘**：有了这条恒等式，$n$ 阶那 $n^{2}$ 个元素不用一个个乘出来找规律；
+- <span class="fix">​</span>**坑二补上 · 右边就是数量阵**：右边为什么偏偏是数量阵 $\lvert A \rvert E$、非对角元为什么是 $0$，一句话就点破了 —— 因为“一行元素乘上另一行对应的代数余子式”会全部抵消，这是行列式展开定理的直接推论；而且 $A$ 与 $A^{*}$ 相乘可以互换位置；
+- <span class="fix">​</span>**坑三补上 · 前提分得清**：哪一步要 $\lvert A \rvert \ne 0$、哪一步不用，由这条恒等式就分得清 —— 求逆就是一步乘系数 $A^{-1} = \dfrac{A^{*}}{\lvert A \rvert}$（$\lvert A \rvert \ne 0$）。
 
 ## <span class="hx hx-detail">🔵</span> 四、细节
 
-<span class="lab">**恒等式**</span>：$AA^{*} = A^{*}A = \lvert A \rvert E$，右边是数量阵，说明 $A$ 和 $A^{*}$ 相乘可以交换。
+<span class="lab">​</span>**恒等式**：$AA^{*} = A^{*}A = \lvert A \rvert E$，右边是数量阵，说明 $A$ 和 $A^{*}$ 相乘可以交换。
 
-<span class="lab">**由它推出来的三条**</span>：
+<span class="lab">​</span>**由它推出来的三条**：
 
 - 当 $\lvert A \rvert \ne 0$（也就是 $A$ 可逆）时，两边同乘 $\lvert A \rvert^{-1}$ 得 $A^{*} = \lvert A \rvert A^{-1}$，注意前提是 $\lvert A \rvert \ne 0$；
 - 两边取行列式得 $\lvert A \rvert\lvert A^{*} \rvert = \lvert A \rvert^{n}$，于是 $n \ge 2$ 时 $\lvert A^{*} \rvert = \lvert A \rvert^{n-1}$（$\lvert A \rvert = 0$ 时结论是 $\lvert A^{*} \rvert = 0$），$n = 2$ 时就是 $\lvert A^{*} \rvert = \lvert A \rvert$；

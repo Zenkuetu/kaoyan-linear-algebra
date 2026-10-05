@@ -10,7 +10,7 @@ tags:
 
 # AX = AY 推不出 X = Y
 
-> <span class="oneline">**一句话**：矩阵乘法不能随便约分，除非 A 可逆</span>
+> <span class="oneline">​</span>**一句话**：矩阵乘法不能随便约分，除非 A 可逆
 
 **考试层次**：`基础` ｜ **章节**：[[第二章 矩阵|第二章 矩阵]]
 
@@ -23,31 +23,31 @@ tags:
 ## <span class="hx hx-gap">🔴</span> 二、直接办法为什么不够
 
 土办法是凭感觉约：觉得 $A \ne O$ 就能约。
-劣势一，$A \ne O$ 完全不够。上面那个 $A$ 就不是零矩阵，照样约不掉，硬约就把 $X \ne Y$ 这样的解丢了。
-劣势二，没有判据就只能靠猜，选择题里那些错误选项往往就是漏掉“$A$ 可逆”这个前提，一猜就中招。
-劣势三，前提漏一次后面全塌：$AX = 0$ 的解结构、秩的关系一步推错，整道题跟着崩。
+- <span class="pit">​</span>**劣势一**：$A \ne O$ 完全不够。上面那个 $A$ 就不是零矩阵，照样约不掉，硬约就把 $X \ne Y$ 这样的解丢了。
+- <span class="pit">​</span>**劣势二**：没有判据就只能靠猜，选择题里那些错误选项往往就是漏掉“$A$ 可逆”这个前提，一猜就中招。
+- <span class="pit">​</span>**劣势三**：前提漏一次后面全塌：$AX = 0$ 的解结构、秩的关系一步推错，整道题跟着崩。
 
 ## <span class="hx hx-intro">🟢</span> 三、于是引入：AX = AY 推不出 X = Y
 
 于是把“能不能约”变成一个明确的判据：$AX = AY$ 先移项成 $A(X - Y) = O$，再看 $A$ 可不可逆。
 上面那三个劣势，逐个补上：
 
-- <span class="fix">**第一个劣势补上**</span>：判据不看你感觉，只看 $A$ —— $A$ 可逆时两边左乘 $A^{-1}$ 得 $X = Y$；不可逆时 $AX = AY$ 不蕴含 $X = Y$。
-- <span class="fix">**第二个劣势补上**</span>：约分要的通行证是 $A$ 可逆（或 $A$ 列满秩），没有这张证就老老实实停在 $A(X - Y) = O$ 这一步，别硬约。
-- <span class="fix">**第三个劣势补上**</span>：不可逆时换成能用的结论 —— $X - Y$ 的每一列都是 $Ax = 0$ 的解；$AB = O$ 时 $B$ 的每一列都是 $AX = 0$ 的解。
+- <span class="fix">​</span>**第一个劣势补上**：判据不看你感觉，只看 $A$ —— $A$ 可逆时两边左乘 $A^{-1}$ 得 $X = Y$；不可逆时 $AX = AY$ 不蕴含 $X = Y$。
+- <span class="fix">​</span>**第二个劣势补上**：约分要的通行证是 $A$ 可逆（或 $A$ 列满秩），没有这张证就老老实实停在 $A(X - Y) = O$ 这一步，别硬约。
+- <span class="fix">​</span>**第三个劣势补上**：不可逆时换成能用的结论 —— $X - Y$ 的每一列都是 $Ax = 0$ 的解；$AB = O$ 时 $B$ 的每一列都是 $AX = 0$ 的解。
 
 ## <span class="hx hx-detail">🔵</span> 四、细节
 
-<span class="lab">**核心事实**</span>：$AX = AY \iff A(X - Y) = O$；能不能推出 $X = Y$，全看 $A$ 可不可逆。
-<span class="pit">**不可逆的反例**</span>：
+<span class="lab">​</span>**核心事实**：$AX = AY \iff A(X - Y) = O$；能不能推出 $X = Y$，全看 $A$ 可不可逆。
+<span class="pit">​</span>**不可逆的反例**：
 
 $$
 A = \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}, \quad X = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix}, \quad Y = \begin{pmatrix} 0 & 0 \\ 1 & 1 \end{pmatrix}, \qquad AX = AY = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix}
 $$
 
 这里 $AX = AY$ 成立但 $X \ne Y$，所以 $A$ 约不掉；换成 $A = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$，$AX = AY$ 会把两边每个位置逐格暴露出来，直接得 $X = Y$。
-<span class="lab">**怎么判**</span>：先算 $\lvert A \rvert$ 或者看 $r(A)$，$\lvert A \rvert \ne 0$（等价地 $r(A) = n$）才能约；$A$ 列满秩时同样可以，由 $A(X - Y) = O$ 得 $X - Y = O$。
-<span class="lab">**顺带记一句**</span>：$AB = AC$ 且 $A \ne O$ 也不能约，除非再补上 $A$ 可逆；$AB = O$ 且 $A \ne O$ 时只能得到 $B$ 的每一列都是 $AX = 0$ 的解（等价说法是 $r(A) + r(B) \le n$），得不到 $B = O$。
+<span class="lab">​</span>**怎么判**：先算 $\lvert A \rvert$ 或者看 $r(A)$，$\lvert A \rvert \ne 0$（等价地 $r(A) = n$）才能约；$A$ 列满秩时同样可以，由 $A(X - Y) = O$ 得 $X - Y = O$。
+<span class="lab">​</span>**顺带记一句**：$AB = AC$ 且 $A \ne O$ 也不能约，除非再补上 $A$ 可逆；$AB = O$ 且 $A \ne O$ 时只能得到 $B$ 的每一列都是 $AX = 0$ 的解（等价说法是 $r(A) + r(B) \le n$），得不到 $B = O$。
 
 ## <span class="hx hx-usage">🟣</span> 五、怎么用
 

@@ -23,7 +23,7 @@ const notesDir = path.join(vault, '知识点');
 const notes = [];
 (function walk(d) { for (const e of fs.readdirSync(d, { withFileTypes: true })) { const f = path.join(d, e.name); if (e.isDirectory()) walk(f); else if (e.name.endsWith('.md')) notes.push(f); } })(notesDir);
 
-const structProblems = [], latexProblems = [];
+const structProblems = [], latexProblems = [], styleProblems = [];
 const idSeen = new Map();
 let gen2 = 0, gen1 = 0, plainN = 0;
 for (const f of notes) {
@@ -62,6 +62,12 @@ for (const f of notes) {
   else plainN++;
   if (!has('**一句话**：')) structProblems.push(rel + '：缺少"一句话"');
   if (!has('、导航')) structProblems.push(rel + '：缺少导航');
+  // 歧义写法：± 表达式后面直接跟 ≈。
+  // 例如「算出来是 $2 \pm \sqrt{2} \approx 0.586$ 和 $3.414$」——那个 ≈ 语法上绑在 2±√2 上，
+  // 读起来像"2+√2≈0.586"（读者会正确地质疑：2+√2 怎么可能小于 2）。两个根必须分别写。
+  if (/\\pm[^$\n]{0,30}\\approx/.test(t)) {
+    styleProblems.push(rel + '：出现「± … ≈」歧义写法（读者会读成"2+√2≈小数"），应把两个根分别写清楚');
+  }
   // 关系网的折叠必须用 Obsidian 原生 callout；禁止 <details>（HTML 块遇空行即结束，
   // 里面的表格会跑到块外 —— 症状是"折叠框空的、内容永远展开、点箭头没反应"）。
   if (has('<details>')) structProblems.push(rel + '：仍在使用 <details> 折叠关系网（应改成 > [!quote]- callout）');
@@ -90,4 +96,6 @@ console.log(structProblems.length ? '❌ 结构问题 ' + structProblems.length 
 for (const p of structProblems.slice(0, 15)) console.log('  · ' + p);
 console.log(latexProblems.length ? '❌ LaTeX 问题 ' + latexProblems.length + ' 处' : '✅ LaTeX 全部通过（配对/括号/环境/命令/中文/<nowiki>[[]]</nowiki>）');
 for (const p of latexProblems.slice(0, 15)) console.log('  · ' + p);
-process.exit(structProblems.length || latexProblems.length ? 1 : 0);
+console.log(styleProblems.length ? '❌ 表述问题 ' + styleProblems.length + ' 处' : '✅ 没有「± … ≈」这类会被读错的表述');
+for (const p of styleProblems.slice(0, 15)) console.log('  · ' + p);
+process.exit(structProblems.length || latexProblems.length || styleProblems.length ? 1 : 0);

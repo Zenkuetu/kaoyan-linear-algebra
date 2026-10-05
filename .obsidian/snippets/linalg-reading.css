@@ -62,22 +62,21 @@
 /* ---------- 3. 正文关键词着色：红=坑，绿=补上，蓝=规则标签，黄=关键结论 ----------
    注意：着色对象外面还包着 **加粗**，而 Obsidian 自己会给 strong 定颜色
    （--bold-color），所以必须连 strong 一起选中，否则颜色会被盖成白色。 */
-.pit, .pit strong {
-  color: #ff7b72;
-  font-weight: 700;
-}
-.fix, .fix strong {
-  color: #56d364;
-  font-weight: 700;
-}
-.lab, .lab strong {
-  color: #79b8ff;
-  font-weight: 700;
-}
-.key, .key strong {
-  color: #e3b341;
-  font-weight: 700;
-}
+/* span.pit/.fix/.lab/.key 现在只是"零宽标记"，本身不带文字 ——
+   所以用**相邻兄弟选择器**只给"紧跟其后的那个加粗标题"上色，说明文字保持正常颜色
+   （整段都上色的话，大段红字读起来反而累）。
+   若你更喜欢"整段都上色"，把每组的 `+ strong` 去掉、并改成 li:has(> span.pit) 形式即可。 */
+.markdown-rendered span.pit + strong,
+.markdown-source-view.mod-cm6 .cm-line span.pit + strong { color: #ff7b72; font-weight: 700; }
+
+.markdown-rendered span.fix + strong,
+.markdown-source-view.mod-cm6 .cm-line span.fix + strong { color: #56d364; font-weight: 700; }
+
+.markdown-rendered span.lab + strong,
+.markdown-source-view.mod-cm6 .cm-line span.lab + strong { color: #79b8ff; font-weight: 700; }
+
+.markdown-rendered span.key + strong,
+.markdown-source-view.mod-cm6 .cm-line span.key + strong { color: #e3b341; font-weight: 700; }
 
 /* ---------- 4. 顶部"一句话"做成醒目的条 ---------- */
 .markdown-rendered blockquote:has(.oneline) {
@@ -86,7 +85,10 @@
   background: color-mix(in srgb, #d2a8ff 10%, transparent);
   padding: 0.55em 0.95em;
 }
-.oneline, .oneline strong {
+.markdown-rendered blockquote:has(.oneline),
+.markdown-rendered blockquote:has(.oneline) strong,
+.markdown-source-view.mod-cm6 .cm-line:has(.oneline),
+.markdown-source-view.mod-cm6 .cm-line:has(.oneline) strong {
   color: #d2a8ff;
 }
 

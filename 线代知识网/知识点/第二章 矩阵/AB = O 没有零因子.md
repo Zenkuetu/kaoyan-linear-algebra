@@ -12,7 +12,7 @@ tags:
 
 # AB = O 没有零因子
 
-> <span class="oneline">**一句话**：两个非零矩阵相乘，可能得到零矩阵</span>
+> <span class="oneline">​</span>**一句话**：两个非零矩阵相乘，可能得到零矩阵
 
 **考试层次**：`基础` ｜ **章节**：[[第二章 矩阵|第二章 矩阵]]
 
@@ -25,31 +25,31 @@ tags:
 ## <span class="hx hx-gap">🔴</span> 二、直接办法为什么不够
 
 土办法是把数的消去律整套搬过来：$AB = O$ 就想约掉一个非零因子，$AB = AC$ 且 $A \ne O$ 就想约掉 $A$ 得 $B = C$。
-劣势一，这条直接用错。上面两个反例就摆在那，正确答案是“都不对”，只能拿反例排除。
-劣势二，乱约分会把解丢掉。解矩阵方程时两边同除 $A$，非零解就被你扔了；反过来也可能误以为只有零解。
-劣势三，这一脚踩错会连锁：后面判断可逆、算秩、讨论解空间全跟着错。
+- <span class="pit">​</span>**劣势一**：这条直接用错。上面两个反例就摆在那，正确答案是“都不对”，只能拿反例排除。
+- <span class="pit">​</span>**劣势二**：乱约分会把解丢掉。解矩阵方程时两边同除 $A$，非零解就被你扔了；反过来也可能误以为只有零解。
+- <span class="pit">​</span>**劣势三**：这一脚踩错会连锁：后面判断可逆、算秩、讨论解空间全跟着错。
 
 ## <span class="hx hx-intro">🟢</span> 三、于是引入：AB = O 没有零因子
 
 于是先把话说明白：矩阵乘法不满足"积为 0 则至少一个因子为 0"这条性质 —— 非零矩阵可以当零因子，也没有消去律，由 $AB = O$ 推不出 $A = O$ 或 $B = O$。
 上面那三个劣势，逐个补上：
 
-- <span class="fix">**第一个劣势补上**</span>：把“积为 0”的直觉换成“信息被压掉了”的理解：$B$ 的每一列都被 $A$ 变成了零向量，信息丢了，对方自然不必是 0。
-- <span class="fix">**第二个劣势补上**</span>：约分改成有前提的操作，只有 $A$ 可逆（$\lvert A \rvert \ne 0$）时，才能在 $AB = O$ 两边左乘 $A^{-1}$ 得 $B = O$。
-- <span class="fix">**第三个劣势补上**</span>：不可逆时改用结构性结论 —— $B$ 的每一列都是 $Ax = 0$ 的解，于是 $r(A) + r(B) \le n$，这句话在证明题里很好用。
+- <span class="fix">​</span>**第一个劣势补上**：把“积为 0”的直觉换成“信息被压掉了”的理解：$B$ 的每一列都被 $A$ 变成了零向量，信息丢了，对方自然不必是 0。
+- <span class="fix">​</span>**第二个劣势补上**：约分改成有前提的操作，只有 $A$ 可逆（$\lvert A \rvert \ne 0$）时，才能在 $AB = O$ 两边左乘 $A^{-1}$ 得 $B = O$。
+- <span class="fix">​</span>**第三个劣势补上**：不可逆时改用结构性结论 —— $B$ 的每一列都是 $Ax = 0$ 的解，于是 $r(A) + r(B) \le n$，这句话在证明题里很好用。
 
 ## <span class="hx hx-detail">🔵</span> 四、细节
 
-<span class="pit">**反例（必须记住）**</span>：
+<span class="pit">​</span>**反例（必须记住）**：
 
 $$
 A = \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}, \quad B = \begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix}, \qquad AB = BA = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix} = O
 $$
 
 $A$、$B$ 都非零，所以由 $AB = O$ 既推不出 $A = O$，也推不出 $B = O$；连 $BA = O$ 也成立，两边都别想约。
-<span class="lab">**再看平方**</span>：$N = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}$ 非零，而 $N^{2} = O$，说明由 $A^{2} = O$ 同样推不出 $A = O$。
-<span class="lab">**能用的那一条**</span>：若 $AB = O$ 且 $A$ 可逆（$\lvert A \rvert \ne 0$），两边左乘 $A^{-1}$ 得 $B = O$ —— 约分不是不能做，是得先看 $A$ 可逆不可逆。
-<span class="lab">**常用变形**</span>：由 $AB = O$ 可知 $B$ 的每一列都是 $Ax = 0$ 的解，从而 $r(A) + r(B) \le n$；又比如 $A^{2} = O$ 时 $A + E$ 可逆，且 $(A + E)^{-1} = E - A$，验证一下就是 $(A + E)(E - A) = E - A^{2} = E$。
+<span class="lab">​</span>**再看平方**：$N = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}$ 非零，而 $N^{2} = O$，说明由 $A^{2} = O$ 同样推不出 $A = O$。
+<span class="lab">​</span>**能用的那一条**：若 $AB = O$ 且 $A$ 可逆（$\lvert A \rvert \ne 0$），两边左乘 $A^{-1}$ 得 $B = O$ —— 约分不是不能做，是得先看 $A$ 可逆不可逆。
+<span class="lab">​</span>**常用变形**：由 $AB = O$ 可知 $B$ 的每一列都是 $Ax = 0$ 的解，从而 $r(A) + r(B) \le n$；又比如 $A^{2} = O$ 时 $A + E$ 可逆，且 $(A + E)^{-1} = E - A$，验证一下就是 $(A + E)(E - A) = E - A^{2} = E$。
 
 ## <span class="hx hx-usage">🟣</span> 五、怎么用
 

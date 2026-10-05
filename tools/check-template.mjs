@@ -60,7 +60,8 @@ for (const f of notes) {
       if (!has('、考试怎么考')) problems.push(rel + '（id=' + id + '）：有通俗层但缺"考试怎么考"');
     }
     if (!has('、30 秒自测')) problems.push(rel + '（id=' + id + '）：有通俗层但缺"30 秒自测"');
-    if (!/^- \[ \] /m.test(t)) problems.push(rel + '（id=' + id + '）：自测项未渲染成复选框');
+    // 自测项必须是复选框；已勾选（- [x]）同样合规 —— 那是读者的学习进度，同步时会刻意保留
+    if (!/^- \[[ xX]\] /m.test(t)) problems.push(rel + '（id=' + id + '）：自测项未渲染成复选框');
   }
   // 正文首屏不得出现大段无引入的定义（启发式：**frontmatter 之后**的前 12 行内必须有一句话）
   // 注意：frontmatter 里现在有"按关系类型分组的属性"（充要/充分/必要…），长度随出边数变化，

@@ -13,7 +13,7 @@ tags:
 
 # n 维向量及其运算
 
-> <span class="oneline">**一句话**：n 个数竖着排成一列就是 n 维向量，运算按分量来</span>
+> <span class="oneline">​</span>**一句话**：n 个数竖着排成一列就是 n 维向量，运算按分量来
 
 **考试层次**：`数一` `数二` ｜ **章节**：[[第三章 向量（向量组的线性相关性）|第三章 向量（向量组的线性相关性）]]
 
@@ -32,8 +32,8 @@ $$
 所以先给"一列数"一个正经身份，这件事值得单独立一条。土办法挨个数一遍：
 
 - **坑一 · 每次现抄成一个 $n \times 1$ 矩阵**：$\begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}$ 这种写法本身没错，可一列抄一次，五列抄五次，题目一长就分不清哪个括号对应哪一列；而且第二章里矩阵是一张"表"，把一列也写成括号，读者分不清这里要的是一个对象还是一张表。
-- <span class="pit">**坑二 · 直接套矩阵乘法把两列乘起来**</span>：$\begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}$ 与 $\begin{pmatrix} 4 \\ 5 \\ 6 \end{pmatrix}$ 都是 $3 \times 1$，内标 $3$ 与 $1$ 对不上，这么写根本不合法；于是有人改成"对应位置相乘"得 $\begin{pmatrix} 4 \\ 10 \\ 18 \end{pmatrix}$，可这结果只是三个数各自乘了一下，没有合起来，判不了两列像不像。
-- <span class="pit">**坑三 · 分不清结果是数还是表**</span>：$\alpha = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$、$\beta = \begin{pmatrix} 3 \\ 4 \end{pmatrix}$ 时，$\alpha^{\mathrm{T}}\beta = 1 \times 3 + 2 \times 4 = 11$ 是一个数，而 $\alpha\beta^{\mathrm{T}} = \begin{pmatrix} 3 & 4 \\ 6 & 8 \end{pmatrix}$ 是一张表；两个式子只差转置写在谁头上，结果一个是数一个是表，靠肉眼记迟早要错。
+- <span class="pit">​</span>**坑二 · 直接套矩阵乘法把两列乘起来**：$\begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}$ 与 $\begin{pmatrix} 4 \\ 5 \\ 6 \end{pmatrix}$ 都是 $3 \times 1$，内标 $3$ 与 $1$ 对不上，这么写根本不合法；于是有人改成"对应位置相乘"得 $\begin{pmatrix} 4 \\ 10 \\ 18 \end{pmatrix}$，可这结果只是三个数各自乘了一下，没有合起来，判不了两列像不像。
+- <span class="pit">​</span>**坑三 · 分不清结果是数还是表**：$\alpha = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$、$\beta = \begin{pmatrix} 3 \\ 4 \end{pmatrix}$ 时，$\alpha^{\mathrm{T}}\beta = 1 \times 3 + 2 \times 4 = 11$ 是一个数，而 $\alpha\beta^{\mathrm{T}} = \begin{pmatrix} 3 & 4 \\ 6 & 8 \end{pmatrix}$ 是一张表；两个式子只差转置写在谁头上，结果一个是数一个是表，靠肉眼记迟早要错。
 
 ## <span class="hx hx-intro">🟢</span> 三、于是引入：n 维向量及其运算
 
@@ -45,26 +45,26 @@ $$
 
 上面那三个坑，逐个补上：
 
-- <span class="fix">**坑一补上 · 一列数有了名字**</span>：上面 $A$ 的三列直接记作 $\alpha_1, \alpha_2, \alpha_3$，写 $\alpha_3 = \alpha_1 + 2\alpha_2$ 就完事，不用再抄括号；
-- <span class="fix">**坑二补上 · 哪些运算合法有了明文规定**</span>：同维数的向量只能做加法和数乘（分量对分量）；想"乘"必须让一个是行、一个是列 —— 把前一个转置成行向量，$1 \times n$ 乘 $n \times 1$ 内标对上了才算得出来；
-- <span class="fix">**坑三补上 · 数与表在记号上分开**</span>：$\alpha^{\mathrm{T}}\beta$ 是 $1 \times 1$ 矩阵，读成一个数；$\alpha\beta^{\mathrm{T}}$ 是 $n \times n$ 矩阵，是一张表；口诀是"转置写在前面，结果才是数"。
+- <span class="fix">​</span>**坑一补上 · 一列数有了名字**：上面 $A$ 的三列直接记作 $\alpha_1, \alpha_2, \alpha_3$，写 $\alpha_3 = \alpha_1 + 2\alpha_2$ 就完事，不用再抄括号；
+- <span class="fix">​</span>**坑二补上 · 哪些运算合法有了明文规定**：同维数的向量只能做加法和数乘（分量对分量）；想"乘"必须让一个是行、一个是列 —— 把前一个转置成行向量，$1 \times n$ 乘 $n \times 1$ 内标对上了才算得出来；
+- <span class="fix">​</span>**坑三补上 · 数与表在记号上分开**：$\alpha^{\mathrm{T}}\beta$ 是 $1 \times 1$ 矩阵，读成一个数；$\alpha\beta^{\mathrm{T}}$ 是 $n \times n$ 矩阵，是一张表；口诀是"转置写在前面，结果才是数"。
 
 > 顺带提一句：到了第四章，会用专门讲"解方程有没有解"的那套语言来问"这一列能不能由那几列凑出来"，本点的 $\alpha_3 = \alpha_1 + 2\alpha_2$ 到那时会换个名字。现在不懂那套语言不影响做本点的题。
 
 ## <span class="hx hx-detail">🔵</span> 四、细节
 
-<span class="lab">**定义**</span>：由 $n$ 个数 $a_1, a_2, \dots, a_n$ 组成的有序数组称为 $n$ 维向量。竖着写的叫列向量，
+<span class="lab">​</span>**定义**：由 $n$ 个数 $a_1, a_2, \dots, a_n$ 组成的有序数组称为 $n$ 维向量。竖着写的叫列向量，
 $$
 \alpha = \begin{pmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{pmatrix}
 $$
 横着写的 $\alpha^{\mathrm{T}} = (a_1, a_2, \dots, a_n)$ 叫行向量；$a_i$ 叫第 $i$ 个分量。**"有序"两个字要紧**：$(1,2)$ 与 $(2,1)$ 是两个不同的向量。
-<span class="lab">**算例**</span>：$\alpha = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}$、$\beta = \begin{pmatrix} 4 \\ 0 \\ -1 \end{pmatrix}$，则
+<span class="lab">​</span>**算例**：$\alpha = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}$、$\beta = \begin{pmatrix} 4 \\ 0 \\ -1 \end{pmatrix}$，则
 $$
 \alpha + \beta = \begin{pmatrix} 1 + 4 \\ 2 + 0 \\ 3 - 1 \end{pmatrix} = \begin{pmatrix} 5 \\ 2 \\ 2 \end{pmatrix}, \qquad 2\alpha - \beta = \begin{pmatrix} 2 - 4 \\ 4 - 0 \\ 6 + 1 \end{pmatrix} = \begin{pmatrix} -2 \\ 4 \\ 7 \end{pmatrix}
 $$
-<span class="lab">**零向量**</span>：分量全是 $0$ 的向量记作 $0$；写 $\alpha = 0$ 是指每个分量都为 $0$，只要有一个分量不为 $0$ 就不是零向量。
-<span class="lab">**运算律**</span>：$\alpha + \beta = \beta + \alpha$、$(\alpha + \beta) + \gamma = \alpha + (\beta + \gamma)$、$k(\alpha + \beta) = k\alpha + k\beta$、$(k + l)\alpha = k\alpha + l\alpha$、$1 \cdot \alpha = \alpha$、$0 \cdot \alpha = 0$。这些按分量逐条验证即可，因为向量本来就是 $n \times 1$ 矩阵，加法数乘的规则跟第二章完全一样。
-<span class="lab">**两种乘法别混**</span>：以 $\alpha = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$、$\beta = \begin{pmatrix} 3 \\ 4 \end{pmatrix}$ 为例，
+<span class="lab">​</span>**零向量**：分量全是 $0$ 的向量记作 $0$；写 $\alpha = 0$ 是指每个分量都为 $0$，只要有一个分量不为 $0$ 就不是零向量。
+<span class="lab">​</span>**运算律**：$\alpha + \beta = \beta + \alpha$、$(\alpha + \beta) + \gamma = \alpha + (\beta + \gamma)$、$k(\alpha + \beta) = k\alpha + k\beta$、$(k + l)\alpha = k\alpha + l\alpha$、$1 \cdot \alpha = \alpha$、$0 \cdot \alpha = 0$。这些按分量逐条验证即可，因为向量本来就是 $n \times 1$ 矩阵，加法数乘的规则跟第二章完全一样。
+<span class="lab">​</span>**两种乘法别混**：以 $\alpha = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$、$\beta = \begin{pmatrix} 3 \\ 4 \end{pmatrix}$ 为例，
 $$
 \alpha^{\mathrm{T}}\beta = \begin{pmatrix} 1 & 2 \end{pmatrix}\begin{pmatrix} 3 \\ 4 \end{pmatrix} = 1 \times 3 + 2 \times 4 = 11
 $$
@@ -72,7 +72,7 @@ $$
 \alpha\beta^{\mathrm{T}} = \begin{pmatrix} 1 \\ 2 \end{pmatrix}\begin{pmatrix} 3 & 4 \end{pmatrix} = \begin{pmatrix} 3 & 4 \\ 6 & 8 \end{pmatrix}
 $$
 一个数、一张表，区别只在转置写在哪里。
-<span class="key">**常用结论**</span>：$\alpha = \beta$ 当且仅当对应分量逐个相等；$\alpha - \alpha = 0$；但两个非零向量相加也可能得零向量，例如 $\begin{pmatrix} 1 \\ 2 \end{pmatrix} + \begin{pmatrix} -1 \\ -2 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}$。
+<span class="key">​</span>**常用结论**：$\alpha = \beta$ 当且仅当对应分量逐个相等；$\alpha - \alpha = 0$；但两个非零向量相加也可能得零向量，例如 $\begin{pmatrix} 1 \\ 2 \end{pmatrix} + \begin{pmatrix} -1 \\ -2 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}$。
 
 ## <span class="hx hx-usage">🟣</span> 五、怎么用
 

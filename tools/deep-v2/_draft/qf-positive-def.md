@@ -50,7 +50,7 @@ $$
 
 **算例一（正定）**：$f = x_1^2 + 2x_1x_2 + 3x_2^2$，$A = \begin{pmatrix} 1 & 1 \\ 1 & 3 \end{pmatrix}$。
 用顺序主子式：一阶 $\Delta_1 = 1 > 0$，二阶 $\Delta_2 = \lvert A \rvert = 1 \times 3 - 1 \times 1 = 2 > 0$，所以正定。
-用特征值核一遍：$\lvert \lambda E - A \rvert = (\lambda-1)(\lambda-3) - 1 = \lambda^2 - 4\lambda + 2$，解得 $\lambda = 2 \pm \sqrt{2} \approx 0.586$ 与 $3.414$，两个都大于零，一致。
+用特征值核一遍：$\lvert \lambda E - A \rvert = (\lambda-1)(\lambda-3) - 1 = \lambda^2 - 4\lambda + 2$，解得 $\lambda = 2 - \sqrt{2} \approx 0.586$ 与 $\lambda = 2 + \sqrt{2} \approx 3.414$，两个都大于零，一致。
 再直接验一个点：$x = (1,-2)$ 时 $f = 1 - 4 + 12 = 9 > 0$；$x = (1,-1)$ 时 $f = 1 - 2 + 3 = 2 > 0$。
 
 **算例二（不是正定）**：$A = \begin{pmatrix} 1 & 3 \\ 3 & 1 \end{pmatrix}$，$\lvert A \rvert = 1 - 9 = -8 < 0$，顺序主子式不全大于零，不正定。直接找反例：$x = (1,-1)$ 时 $x^{\mathrm{T}}Ax = 1 - 6 + 1 = -4 < 0$。**算例三（主对角元全正但不是正定）**：$A = \begin{pmatrix} 1 & 2 \\ 2 & 1 \end{pmatrix}$，主对角元 $1, 1 > 0$，可 $\lvert A \rvert = 1 - 4 = -3 < 0$，特征值 $3, -1$，取 $x = (1,-1)$ 得 $-2 < 0$，不正定。
@@ -62,7 +62,7 @@ $$
 
 **正定的运算封闭性**：$A$ 正定且 $k > 0$ 时，$kA$、$A^{-1}$、$A^{*}$、$A^{m}$（$m$ 为正整数）都正定。
 理由（以 $A^{-1}$ 为例）：$A$ 正定 $\Rightarrow$ 特征值 $\lambda_i > 0$ $\Rightarrow$ $A^{-1}$ 的特征值是 $\frac{1}{\lambda_i} > 0$，而 $A^{-1}$ 仍实对称，所以正定。
-**算例**：$A = \begin{pmatrix} 1 & 1 \\ 1 & 3 \end{pmatrix}$ 的特征值是 $2 \pm \sqrt{2}$，所以 $A^{-1}$ 的特征值是 $\frac{1}{2 \pm \sqrt{2}} = \frac{2 \mp \sqrt{2}}{2} \approx 0.293,\ 1.707$，都正；$A^{2}$ 的特征值是 $(2 \pm \sqrt{2})^2 = 6 \mp 4\sqrt{2} \approx 0.343,\ 11.657$，都正；$A^{*} = \lvert A \rvert A^{-1} = 2A^{-1}$ 的特征值是 $2 \mp \sqrt{2} \approx 0.586,\ 3.414$（恰好与 $A$ 的特征值相同），都正。
+**算例**：$A = \begin{pmatrix} 1 & 1 \\ 1 & 3 \end{pmatrix}$ 的特征值是 $2 \pm \sqrt{2}$，所以 $A^{-1}$ 的特征值是 $\frac{1}{2 \pm \sqrt{2}} = \frac{2 \mp \sqrt{2}}{2}$，即 $0.293$ 与 $1.707$，都正；$A^{2}$ 的特征值是 $(2 \pm \sqrt{2})^2 = 6 \mp 4\sqrt{2}$，即 $0.343$ 与 $11.657$，都正；$A^{*} = \lvert A \rvert A^{-1} = 2A^{-1}$ 的特征值是 $2 \mp \sqrt{2} \approx 0.586,\ 3.414$（恰好与 $A$ 的特征值相同），都正。
 
 **前提提醒**：
 - 定义里的 $A$ **必须实对称**；"特征值全正"这个等价说法也只对实对称矩阵成立；

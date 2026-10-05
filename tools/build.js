@@ -9,6 +9,63 @@ const loader = new Function('__bootstrap',
   src + '\nreturn __bootstrap({MODULES: [].concat(DC, MX, VC, EQ, EG, QF), EDGES: EDGE_LIST});');
 const { MODULES, EDGES } = loader(x => x);
 
+
+// ===== 表格对齐（输出前统一跑一遍）=====
+// 关键点：切分单元格时必须跳过 [[目标|显示名]] 内部的那个 |，
+// 否则补白会落进 wikilink 里（目标名后面多出空格），Obsidian 就解析不到这个文件了。
+// 这一坑在真实使用中踩到过：外部表格对齐工具把空格塞进链接，导致三篇带别名的笔记"失去链接"。
+const __wide = c => /[\u1100-\u115F\u2E80-\uA4CF\uAC00-\uD7A3\uF900-\uFAFF\uFE30-\uFE6F\uFF00-\uFF60\uFFE0-\uFFE6]/.test(c) ? 2 : 1;
+const __visWidth = s => [...s].reduce((n, c) => n + __wide(c), 0);
+function __visible(cell) {
+  let s = String(cell).trim();
+  s = s.replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, (_, a, b) => b);
+  s = s.replace(/\[\[([^\]]+)\]\]/g, (_, a) => a);
+  s = s.replace(/`([^`]*)`/g, '$1').replace(/\*\*([^*]+)\*\*/g, '$1').replace(/\*([^*]+)\*/g, '$1');
+  return s;
+}
+function __splitRow(line) {
+  const s = line.trim().replace(/^\|/, '').replace(/\|$/, '');
+  const cells = []; let cur = ''; let link = 0;
+  for (let i = 0; i < s.length; i++) {
+    const two = s.slice(i, i + 2);
+    if (two === '[[') { link++; cur += two; i++; continue; }
+    if (two === ']]') { link = Math.max(0, link - 1); cur += two; i++; continue; }
+    if (s[i] === '|' && link === 0) { cells.push(cur); cur = ''; continue; }
+    cur += s[i];
+  }
+  cells.push(cur);
+  return cells.map(c => c.trim());
+}
+function alignTables(text) {
+  const lines = String(text).split('\n');
+  let i = 0;
+  while (i < lines.length) {
+    if (lines[i].trim().startsWith('|')) {
+      let j = i;
+      while (j + 1 < lines.length && lines[j + 1].trim().startsWith('|')) j++;
+      if (j > i) {
+        const rows = lines.slice(i, j + 1).map(__splitRow);
+        const isSep = r => r.every(c => /^:?-{2,}:?$/.test(c.replace(/\s/g, '')));
+        if (rows.length >= 2 && isSep(rows[1])) {
+          const nCol = Math.max(...rows.map(r => r.length));
+          const w = new Array(nCol).fill(0);
+          for (let k = 0; k < rows.length; k++) { if (k === 1) continue; for (let c = 0; c < nCol; c++) w[c] = Math.max(w[c], __visWidth(__visible(rows[k][c] || ''))); }
+          for (let k = 0; k < rows.length; k++) {
+            const out = [];
+            for (let c = 0; c < nCol; c++) {
+              const cell = rows[k][c] || '';
+              out.push(k === 1 ? '-'.repeat(Math.max(3, w[c])) : cell + ' '.repeat(Math.max(0, w[c] - __visWidth(__visible(cell)))));
+            }
+            lines[i + k] = '| ' + out.join(' | ') + ' |';
+          }
+        }
+      }
+      i = j + 1;
+    } else i++;
+  }
+  return lines.join('\n');
+}
+
 // ===== 校验 =====
 const byId = new Map();
 const dupes = [];
@@ -170,18 +227,31 @@ const HX_EMOJI = {
 // 只包一层 <span class="…">：CSS 片段没启用时退化成普通加粗文字，不影响阅读。
 // 标签里含 $ 公式的一律不包（避免把行内公式塞进标签里）。
 const LABEL_RE = /^(\s*(?:[-*]\s+|>\s+)?)\*\*([^*]+)\*\*：(.*)$/;
+// 形如 **算例三**（秩亏）：…… —— 短括号属于标签本身，要一起加粗才会一起上色；
+// 长括号（说明性文字）不并进来，保持正常颜色。
+const LABEL_PAREN_RE = /^(\s*(?:[-*]\s+|>\s+)?)\*\*([^*]+)\*\*（([^）]{1,10})）：(.*)$/;
 const ITEM_RE = /^(\s*[-*]\s+)\*\*((?:坑|劣势|第)[^*]{0,24}?)\*\*(.*)$/;
 function decorate(text) {
   return String(text).split('\n').map(line => {
-    let m = ITEM_RE.exec(line);
+    // span 里只放一个零宽字符当"标记"：Obsidian 不解析 HTML 标签内部的行内 Markdown 与公式，
+    // 所以 **加粗** 与 $公式$ 必须留在 span 外面；颜色由 CSS 的 `span.X + strong` 命中的那个加粗块承担。
+    const MARK = '<span class="%C">\u200b</span>';
+    const labelClass = t => /结论|关键|要记/.test(t) ? 'key'
+      : (/补上|解决了/.test(t) ? 'fix'
+        : (/坑|劣势|缺点|误区|反例|陷阱|易错/.test(t) ? 'pit' : 'lab'));
+    let m = LABEL_PAREN_RE.exec(line);
+    if (m && !/一句话/.test(m[2]) && m[2].indexOf('$') < 0) {
+      const cls = labelClass(m[2]);
+      return m[1] + MARK.replace('%C', cls) + '**' + m[2] + '（' + m[3] + '）**：' + m[4];
+    }
+    m = ITEM_RE.exec(line);
     if (m && /坑|劣势/.test(m[2])) {
       const cls = /补上/.test(m[2]) ? 'fix' : 'pit';
-      return m[1] + '<span class="' + cls + '">**' + m[2] + '**</span>' + m[3];
+      return m[1] + MARK.replace('%C', cls) + '**' + m[2] + '**' + m[3];
     }
     m = LABEL_RE.exec(line);
-    if (m && !/一句话/.test(m[2]) && !m[2].includes('$')) {
-      const cls = /结论|关键|要记/.test(m[2]) ? 'key' : (/反例|陷阱|易错/.test(m[2]) ? 'pit' : 'lab');
-      return m[1] + '<span class="' + cls + '">**' + m[2] + '**</span>：' + m[3];
+    if (m && !/一句话/.test(m[2]) && m[2].indexOf('$') < 0) {
+      return m[1] + MARK.replace('%C', labelClass(m[2])) + '**' + m[2] + '**：' + m[3];
     }
     return line;
   }).join('\n');
@@ -237,7 +307,7 @@ for (const m of MODULES) {
       L.push('');
     };
     // 0. 一句话 + 元信息（先给结论）
-    L.push('> <span class="oneline">**一句话**：' + noLink(d && d.oneline ? d.oneline : p.summary) + '</span>');
+    L.push('> <span class="oneline">\u200b</span>**一句话**：' + noLink(d && d.oneline ? d.oneline : p.summary));
     L.push('');
     L.push('**考试层次**：' + tagLabel(p.tags) + ' ｜ **章节**：' + chapterLink(m));
     L.push('');
@@ -315,7 +385,7 @@ for (const m of MODULES) {
     L.push('- 关系图：' + canvasLink('01 关系网索引（章节结构）') + ' ｜ 充分必要链：[02 充分必要条件链](02%20充分必要条件链.md)');
     L.push('- 速查表：[03 基础数一数二对照表](03%20基础数一数二对照表.md) ｜ 易错点：[04 易错点与陷阱清单](04%20易错点与陷阱清单.md)');
     L.push('');
-    fs.writeFileSync(path.join(dir, notePath(p)), L.join('\n'), 'utf8');
+    fs.writeFileSync(path.join(dir, notePath(p)), alignTables(L.join('\n')), 'utf8');
     noteCount++;
   }
 }
@@ -464,7 +534,7 @@ const CANVAS_META = {
   L.push('- [02 充分必要条件链](02%20充分必要条件链.md)（Mermaid 版，按章节分块，可在 Obsidian 里直接编辑）');
   L.push('');
   L.push('');
-  fs.writeFileSync(path.join(OUT, '00 线性代数知识网总览.md'), L.join('\n'), 'utf8');
+  fs.writeFileSync(path.join(OUT, '00 线性代数知识网总览.md'), alignTables(L.join('\n')), 'utf8');
 }
 
 // 00b 章节笔记
@@ -502,7 +572,7 @@ for (const m of MODULES) {
   L.push('');
   L.push('返回：[[00 线性代数知识网总览]]');
   L.push('');
-  fs.writeFileSync(path.join(OUT, '章节/' + safeName(m.title) + '.md'), L.join('\n'), 'utf8');
+  fs.writeFileSync(path.join(OUT, '章节/' + safeName(m.title) + '.md'), alignTables(L.join('\n')), 'utf8');
 }
 
 // 02 充分必要条件链
@@ -546,7 +616,7 @@ for (const m of MODULES) {
   L.push(mermaidFor(EDGES.filter(e => ['m-space'].includes(byId.get(e[0]).moduleId) || ['m-space'].includes(byId.get(e[1]).moduleId)), 'graph LR'));
   L.push('');
   L.push('返回：[[00 线性代数知识网总览]]');
-  fs.writeFileSync(path.join(OUT, '02 充分必要条件链.md'), L.join('\n'), 'utf8');
+  fs.writeFileSync(path.join(OUT, '02 充分必要条件链.md'), alignTables(L.join('\n')), 'utf8');
 }
 
 // 03 对照表
@@ -591,7 +661,7 @@ for (const m of MODULES) {
   for (const p of tagStats['数二']) if (p.tags.includes('基础')) L.push('- ' + wikiLink(p) + '（' + p.chapter + '）');
   L.push('');
   L.push('返回：[[00 线性代数知识网总览]]');
-  fs.writeFileSync(path.join(OUT, '03 基础数一数二对照表.md'), L.join('\n'), 'utf8');
+  fs.writeFileSync(path.join(OUT, '03 基础数一数二对照表.md'), alignTables(L.join('\n')), 'utf8');
 }
 
 // 04 易错点
@@ -615,7 +685,7 @@ for (const m of MODULES) {
     }
   }
   L.push('返回：[[00 线性代数知识网总览]]');
-  fs.writeFileSync(path.join(OUT, '04 易错点与陷阱清单.md'), L.join('\n'), 'utf8');
+  fs.writeFileSync(path.join(OUT, '04 易错点与陷阱清单.md'), alignTables(L.join('\n')), 'utf8');
 }
 
 console.log('OK 知识点=' + byId.size + ' 关系边=' + EDGES.length + ' 笔记=' + noteCount + '（Canvas 由 canvas-v2.js 生成）');

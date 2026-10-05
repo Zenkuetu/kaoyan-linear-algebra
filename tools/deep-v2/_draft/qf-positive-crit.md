@@ -64,11 +64,11 @@ $$
 二阶：$\Delta_2 = 2 \times 2 - 1 \times 1 = 3 > 0$。
 三阶：按第一行展开 $\lvert A \rvert = 2\begin{vmatrix} 2 & 1 \\ 1 & 2 \end{vmatrix} - 1\begin{vmatrix} 1 & 1 \\ 0 & 2 \end{vmatrix} + 0 = 2 \times 3 - 1 \times 2 = 4 > 0$。
 三个都正，所以 $A$ **正定**。
-用第 2 条核对：$\lvert \lambda E - A \rvert = \lambda^3 - 6\lambda^2 + 10\lambda - 4 = (\lambda - 2)(\lambda^2 - 4\lambda + 2)$，特征值是 $2$ 与 $2 \pm \sqrt{2} \approx 0.586,\ 3.414$，全为正，一致。顺带核对：特征值之和 $2 + (2 + \sqrt{2}) + (2 - \sqrt{2}) = 6 = \mathrm{tr}(A) = 2+2+2$；之积 $2 \times (2 + \sqrt{2})(2 - \sqrt{2}) = 2 \times 2 = 4 = \lvert A \rvert$；二阶主子式之和 $3 + 4 + 3 = 10$，正好等于特征值两两乘积之和 $(2+\sqrt{2})(2-\sqrt{2}) + 2(2+\sqrt{2}) + 2(2-\sqrt{2}) = 2 + 8 = 10$，都对上了。
+用第 2 条核对：$\lvert \lambda E - A \rvert = \lambda^3 - 6\lambda^2 + 10\lambda - 4 = (\lambda - 2)(\lambda^2 - 4\lambda + 2)$，特征值是 $2$、$2 - \sqrt{2} \approx 0.586$ 与 $2 + \sqrt{2} \approx 3.414$，全为正，一致。顺带核对：特征值之和 $2 + (2 + \sqrt{2}) + (2 - \sqrt{2}) = 6 = \mathrm{tr}(A) = 2+2+2$；之积 $2 \times (2 + \sqrt{2})(2 - \sqrt{2}) = 2 \times 2 = 4 = \lvert A \rvert$；二阶主子式之和 $3 + 4 + 3 = 10$，正好等于特征值两两乘积之和 $(2+\sqrt{2})(2-\sqrt{2}) + 2(2+\sqrt{2}) + 2(2-\sqrt{2}) = 2 + 8 = 10$，都对上了。
 
 **算例二（二阶，用第 5 条）**：$A = \begin{pmatrix} 1 & 1 \\ 1 & 3 \end{pmatrix}$。$\Delta_1 = 1 > 0$，$\Delta_2 = 3 - 1 = 2 > 0$，正定。
 用第 4 条核对：取 $C = \begin{pmatrix} 1 & 1 \\ 0 & \sqrt{2} \end{pmatrix}$（$\lvert C \rvert = \sqrt{2} \neq 0$），$C^{\mathrm{T}}C = \begin{pmatrix} 1 & 1 \\ 1 & 1 + 2 \end{pmatrix} = A$，一致。
-用第 3 条核对：特征值是 $2 \pm \sqrt{2} \approx 0.586,\ 3.414$，都正，所以 $p = 2 = n$，$A$ 与 $E$ 合同。
+用第 3 条核对：特征值是 $2 - \sqrt{2} \approx 0.586$ 与 $2 + \sqrt{2} \approx 3.414$，都正，所以 $p = 2 = n$，$A$ 与 $E$ 合同。
 
 **算例三（不正定）**：$A = \begin{pmatrix} 1 & 2 \\ 2 & 1 \end{pmatrix}$，$\Delta_2 = 1 - 4 = -3 < 0$，不正定（特征值 $3, -1$，$\lambda = -1 < 0$，两条判据一致）。
 
