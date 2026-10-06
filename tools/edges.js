@@ -179,6 +179,7 @@ const EDGE_LIST = [
   ['mat-power', 'eig-trace-det-app', 'rel', '秩 1 矩阵的幂公式 Aᵏ = (trA)^{k−1}A 要用迹，与"用特征值求幂"同属一套应用'],
   ['mat-noncommute', 'mat-invertible-crit', 'rel', '乘法不交换使消去律失效，可逆正是把它救回来的条件'],
   ['mat-noncommute', 'mat-nocancel', 'rel', '乘法不交换是有零因子、无消去律这些反直觉现象的同一个根源'],
+  ['mat-noncommute', 'eig-property', 'rel', '可交换与"特征向量共享"是同一件事的两面：AB = BA 时 B 把 A 的每个特征子空间映到自身，λ 是单根时就是公共特征向量（可同时对角化）'],
   ['mat-elem-op', 'mat-eq-solve', 'need', '(A | E) → (E | A⁻¹)、(A|B) → (E|A⁻¹B) 靠的正是三种初等行变换'],
   ['mat-eq-solve', 'mat-inv-method', 'rel', '(A|B) 的行化简就是 (A|E) 求逆的加宽版：得到 E 即得 A⁻¹，同步读出 X'],
   ['mat-eq-solve', 'eq-AX-O-AB-O', 'suff', '把 B 换成 O 即得齐次矩阵方程 AX = O，解法与 AX = B 完全同形'],
