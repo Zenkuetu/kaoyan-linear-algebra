@@ -12,6 +12,11 @@ installers/
 # 第三方插件本体（体积大且有各自许可，请从 Obsidian 社区商店安装）
 .obsidian/plugins/
 
+# 令牌（永远不会出现在仓库里）
+.gh-token.txt
+.gh-token.dpapi
+*.dpapi
+
 # 生成过程与临时文件
 _gh_publish/
 _gh_release/
