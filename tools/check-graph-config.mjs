@@ -43,13 +43,15 @@ if (fs.existsSync(pPath)) {
   console.log('· 本机没装 Extended Graph，跳过插件配置检查（发布包自带插件，仅本机未启用）');
 }
 
-// 3) 暂存区一致性
+// 3) 暂存区一致性（按语义比：只核配色组与箭头，不比 scale 这类个人状态）
 const sPath = STAGE + '/.obsidian/graph.json';
 if (fs.existsSync(sPath)) {
-  const a = fs.readFileSync(gPath), b = fs.readFileSync(sPath);
-  if (Buffer.compare(a, b) !== 0) problems.push('发布暂存区的 .obsidian/graph.json 与 vault 不一致（需要重新 stage-gh.mjs）');
+  const s = readJson(sPath);
+  const sig = x => JSON.stringify((x.colorGroups || []).map(c => [c.query, c.color]));
+  if (sig(s) !== sig(g)) problems.push('发布暂存区的 graph.json 配色组与 vault 不一致（需要重新 stage-release.mjs）');
+  if (s.showArrow !== g.showArrow) problems.push('发布暂存区的 graph.json showArrow 与 vault 不一致（需要重新 stage-release.mjs）');
 } else {
-  problems.push('发布暂存区里没有 .obsidian/graph.json');
+  problems.push('发布暂存区里没有 .obsidian/graph.json（先跑 node tools/stage-release.mjs <版本号>）');
 }
 
 if (problems.length) {

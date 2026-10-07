@@ -73,3 +73,23 @@ gh release create v1.2 --title "v1.2" --notes-file RELEASE-NOTES.md <zip>
 
 - **Obsidian 开着的时候会把它内存里的图谱状态写回 `.obsidian/graph.json`**，把三个节点配色组和箭头冲掉；装了 Extended Graph 的话，插件保存的「状态」也会在打开图谱时把它顶掉 —— 所以 `check-graph-config.mjs` 在发布前必跑，而且配置好之后要**重启 Obsidian** 才生效。
 - `tools/latex-whitelist.json` 曾经漏提交（脚本跑不起来），现已补齐。
+
+## `.obsidian` 里哪些进仓库
+
+| 文件 | 入库 | 说明 |
+| --- | --- | --- |
+| `.obsidian/graph.json` | ✅ | 三个节点配色组 + 箭头，属发布配置 |
+| `.obsidian/plugins/extended-graph/{main.js,manifest.json,styles.css,LICENSE}` | ✅ | 插件本体（GPLv3），随包分发 |
+| `.obsidian/plugins/extended-graph/data.json` | ✅ | **只放分发必需的键**（功能开关、连线颜色、`states` 里的配色组与箭头）；面板折叠状态、钉住的节点坐标、导出勾选这类使用痕迹一律不入库 |
+| `.obsidian/{app.json,appearance.json,core-plugins.json,community-plugins.json}` | ✅ | 库级设置；`community-plugins.json` 不跟踪的话解压出来插件是关着的 |
+| `.obsidian/workspace.json`、`.obsidian/cache/`、`.trash/` | ❌ | 个人布局与缓存，见 `.gitignore` |
+
+上面这几份**运行时会一直被 Obsidian / 插件重写**（`graph.json` 的 `scale`、`data.json` 被补回的默认键、`app.json` 的结尾换行），所以 `git status` 会常年有改动。本机可以把它们设成 skip-worktree，工作区就干净了：
+
+```bash
+git update-index --skip-worktree .obsidian/graph.json .obsidian/app.json .obsidian/plugins/extended-graph/data.json
+# 真要提交它们的新改动时先解除：
+git update-index --no-skip-worktree <文件>
+```
+
+注意：**发布包永远取自提交**（`stage-release.mjs` 从 git 对象读），所以本地运行时的膨胀不会污染发布包。

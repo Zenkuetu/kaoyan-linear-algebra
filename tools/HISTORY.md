@@ -121,6 +121,7 @@ verify-fix-landing.mjs        高危修复是否真的落在产物里（不看�
 - **发布包改为随包分发 Extended Graph**（原来写的是"请自行从社区商店安装"）：`main.js` / `manifest.json` / `styles.css` / `data.json` / `LICENSE` 全部入库；`.gitignore` 从"整个 `plugins/` 忽略"改成"只放行 `extended-graph`"；并把 `.obsidian/community-plugins.json` 一并跟踪 —— 不跟踪它的话，解压出来插件是关着的，"开箱即用"仍然不成立。
 - **`data.json` 也入库**：它记录了连线颜色映射与各项开关，是"开箱即用"的另一半；不入库的话插件起来是默认值，连线不上色、图例里也没有可勾的类型。
 - **许可证**：插件是 GPLv3，故随附 LICENSE 全文；本库其余内容仍是 CC BY-NC-SA 4.0。
+- **`data.json` 只入库分发必需的键**：插件把整套运行时设置（面板折叠状态、钉住的节点坐标、导出勾选、当前节点样式、缩放/延迟手感…）都塞在同一个文件里，全量入库等于把使用痕迹打包送人。现在只保留 `enableFeatures` / `interactiveSettings`（连线颜色）/ `ignoreInlineLinks` / `maxNodes` / 标签显示 / `collapseLegend` / `states`（含配色组与箭头）/ `backupGraphOptions` 共 10 个顶层键，其余由插件默认值补齐（9.9 KB → 4.6 KB）。同时把 `check-graph-config.mjs` 的暂存区比对从「逐字节」改成「只核配色组与箭头」，这样 `graph.json` 里的 `scale` 这类个人状态不会再让发布检查误报。
 
 
 
