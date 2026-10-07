@@ -63,9 +63,19 @@ node tools/verify-sync.mjs                                  # 同步前逐文件
 ## 发布
 
 ```bash
-node tools/stage-release.mjs 1.2      # 暂存 + 打包 .build/_gh_publish/linear-algebra-vault-v1.2.zip
-gh release create v1.2 --title "v1.2" --notes-file RELEASE-NOTES.md <zip>
+node tools/stage-release.mjs 1.4      # 从提交取库本体暂存 + 打包 .build/linear-algebra-vault-v1.4.zip
+git push origin main && git push origin refs/tags/v1.4
+gh release create v1.4 --title "v1.4 — …" --notes-file .build/v1.4-notes.md .build/linear-algebra-vault-v1.4.zip
 ```
+
+> **推不上去先看代理。** 直连 `github.com` 会被重置（`Failed to connect to github.com` / `Recv failure: Connection was reset`），得让本地代理在跑，并让 git / gh 走它：
+>
+> ```bash
+> set HTTPS_PROXY=http://127.0.0.1:7892   # 端口以 Clash 的混合端口为准
+> set HTTP_PROXY=http://127.0.0.1:7892
+> ```
+>
+> **系统代理开着只保证浏览器通，git 不读 Windows 的代理设置**，必须靠这两个环境变量（或 `git config --global http.proxy`）；`gh` 同理。发布说明单独切一份到 `.build/v1.4-notes.md`（只取 `RELEASE-NOTES.md` 里该版本那一段），不要把整份说明塞进单个 release。
 
 打包器自己写、不用 .NET 的 `ZipFile`：内部路径一律正斜杠、文件名标 UTF-8 标记、逐项校验 CRC 与解压结果（macOS / Linux 上解压才不会得到 `.obsidian\app.json` 这种怪名字）。
 
