@@ -7,7 +7,7 @@
 ## 快速开始
 
 1. 下载 [Obsidian](https://obsidian.md/download)（免费；本仓库**不打包**安装包）。
-2. 到本仓库的 [Releases](../../releases) 页面下载最新版 ZIP（当前为 `linear-algebra-vault-v1.1.zip`；请以 Releases 页最新版为准）。
+2. 到本仓库的 [Releases](../../releases) 页面下载最新版 ZIP（当前为 `linear-algebra-vault-v1.2.zip`；请以 Releases 页最新版为准）。
 3. 解压，得到一个包含 `.obsidian` 与 `线代知识网` 两层内容的文件夹。
 4. 在 Obsidian 里选择 **打开文件夹作为仓库（Open folder as vault）**，指向**这个解压出来的文件夹**（不是里面的 `线代知识网`）—— 这样样式片段（小节色条、坑标红）与关系图谱的节点配色会开箱即用。
 5. 打开 `线代知识网/00 线性代数知识网总览` 开始看。

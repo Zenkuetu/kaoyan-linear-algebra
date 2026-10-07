@@ -107,3 +107,12 @@ verify-fix-landing.mjs        高危修复是否真的落在产物里（不看�
 - **增量发布**：发布脚本原先只能"从零建仓库"，现在 `publish-update.mjs` 先算本地 git blob sha 与远端树对比，只上传真正变化的文件（本次 145 个 / 全库 285 个），提交接在 main 之后。
 - **Release 说明的编码**：v1.0 的 Release 说明当年是被写坏的（950 字里有 483 个乱码问号），v1.1 起一律用 Node 以 UTF-8 写入，并回头修好了 v1.0 的说明。
 
+## 七、v1.2 修掉的几件事（相对 v1.1）
+
+- **换机器就要改脚本**：12 个脚本里写死了旧机器的 `D:/Files/Deepseek workplace/la-codegen` 与 `D:/Files/考研数学线性代数`。现在统一走 `tools/paths.mjs`，默认相对仓库根推导，构建产物放在 `.build/`。
+- **`latex-whitelist.json` 从未提交**：`latexcheck.mjs` 第 7 行读它，缺了整条校验链（`check-notes` / `draft2json`）直接崩。现已补齐（按 Obsidian 自带 MathJax 的符号名表重建）。
+- **发布脚本没进仓库**：`stage-gh.mjs` / `publish-update.mjs` 只存在旧机器上，仓库里没有，等于发布流程不可复现。新增 `tools/stage-release.mjs`：从提交取库本体（只打包 `线代知识网/` 与 `.obsidian/`，所以插件与个人状态天然不进包），自写规范化打包器并逐项回读校验。
+- **`README-进阶.md` 指错了菜单**：两个选项都写成 `设置 → 关系图谱 → …`，实际在图谱视图自己的设置面板里（「颜色组」与「外观 → 箭头」）。这解释了 v1.1 之后仍有人找不到箭头。
+- **顺带确认**：v1.1 的 ZIP 本身是对的（`showArrow: true` + 三个配色组）；丢失发生在本机 —— Obsidian / Extended Graph 用内存状态把它覆盖了。tag `v1.1` 指向的提交早于修复，所以**以提交为准反而会拿到旧配置，以 Release 资产为准才对**。
+
+

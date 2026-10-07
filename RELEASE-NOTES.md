@@ -1,5 +1,32 @@
 # Release Notes
 
+## v1.2 — 文档与工具链修正
+
+对应 ZIP：`linear-algebra-vault-v1.2.zip`（126 个文件，含 `.obsidian` 配置与样式片段）
+
+### 修正了「怎么打开图谱箭头」的说明
+
+库内 `README-进阶.md` 原来把两个选项的位置都写成了 `设置 → 关系图谱 → …`，而那里其实只有核心插件的启用总开关。实际位置在**图谱视图自己的设置面板**里：
+
+- 节点配色组：图谱视图设置面板 → **颜色组** → 新建颜色组（中文界面里 `Groups` 译作「颜色组」）
+- 箭头：图谱视图设置面板 → **外观** → **箭头**（英文界面 `Display` → `Arrows`）；它的提示语是「放大后，显示链接的箭头」，**缩得太小是看不到箭头的**
+
+### 图谱设置为什么会自己丢
+
+`.obsidian/graph.json` 里那三个节点配色组与箭头开关是手写进去的；Obsidian 开着的时候会用内存里的状态把它写回，装了 Extended Graph 的话、插件保存的「状态」也会在打开图谱时顶掉它。所以：**改完配置要重启 Obsidian 才稳**，发布前跑 `node tools/check-graph-config.mjs`。
+
+### 工具链：换机器不用再改脚本
+
+- 新增 `tools/paths.mjs`：所有路径默认相对**仓库根**推导（`LA_VAULT_ROOT` / `LA_BUILD` / `LA_STAGE` 或 `tools/local-paths.json` 可覆盖），12 个脚本里写死的 `D:/Files/...` 全部移除，构建产物统一落在 `.build/`
+- 补上 `tools/latex-whitelist.json`：它此前**从未提交进仓库**，而 `latexcheck.mjs` 一启动就读它 —— 缺了会让 `check-notes` / `draft2json` 直接崩溃
+- 新增 `tools/stage-release.mjs`：暂存 + 打包（正斜杠、UTF-8 名字标记、逐项 CRC 与内容自校验），发布流程从此可复现
+- 新增 `tools/README.md`：三层结构、标准流程、校验套件、发布命令
+- `.gitignore`：忽略 `.build/` 与 `tools/local-paths.json`
+
+### 内容与规模
+
+知识点 **103 个**、关系边 **164 条**、7 张章节页、4 张汇总页、6 张 Canvas —— 与 v1.1 一致，**正文未改动**。校验套件全绿：结构 / LaTeX / 模板 / 双链 / 误链 / 术语越界 / 「一句话」宽度 / Canvas 越界 / 关系图与整库各 1 个连通块 / 高危修复落地 13 项。
+
 ## v1.1 — 渲染与内容修正
 
 对应 ZIP：`linear-algebra-vault-v1.1.zip`（126 个文件，含 `.obsidian` 配置与样式片段）
