@@ -27,8 +27,10 @@
 要改就改配置，别改脚本：环境变量 `LA_VAULT_ROOT` / `LA_BUILD` / `LA_STAGE`，或写一个 `tools/local-paths.json`（已在 `.gitignore` 里）：
 
 ```json
-{ "vaultRoot": "D:/我的库", "build": "D:/tmp/_vault_test", "stage": "D:/tmp/_gh_publish" }
+{ "build": "../临时/_vault_test", "stage": "../临时/_gh_publish" }
 ```
+
+（值可以是相对路径——相对当前工作目录解析——也可以是绝对路径；`vaultRoot` 默认就是仓库根，一般不用写。）
 
 ## 标准流程
 

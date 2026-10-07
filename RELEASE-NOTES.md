@@ -17,7 +17,7 @@
 
 ### 工具链：换机器不用再改脚本
 
-- 新增 `tools/paths.mjs`：所有路径默认相对**仓库根**推导（`LA_VAULT_ROOT` / `LA_BUILD` / `LA_STAGE` 或 `tools/local-paths.json` 可覆盖），12 个脚本里写死的 `D:/Files/...` 全部移除，构建产物统一落在 `.build/`
+- 新增 `tools/paths.mjs`：所有路径默认相对**仓库根**推导（`LA_VAULT_ROOT` / `LA_BUILD` / `LA_STAGE` 或 `tools/local-paths.json` 可覆盖），12 个脚本里写死的绝对路径全部移除，构建产物统一落在 `.build/`
 - 补上 `tools/latex-whitelist.json`：它此前**从未提交进仓库**，而 `latexcheck.mjs` 一启动就读它 —— 缺了会让 `check-notes` / `draft2json` 直接崩溃
 - 新增 `tools/stage-release.mjs`：暂存 + 打包（正斜杠、UTF-8 名字标记、逐项 CRC 与内容自校验），发布流程从此可复现
 - 新增 `tools/README.md`：三层结构、标准流程、校验套件、发布命令

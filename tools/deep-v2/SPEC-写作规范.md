@@ -59,13 +59,13 @@
 
 ### R7 每次交付都要过校验
 ```
-node build.js "D:\Files\Deepseek workplace\_vault_test"
-node canvas-v2.js "D:\Files\Deepseek workplace\_vault_test"
-node check-notes.mjs "D:\Files\Deepseek workplace\_vault_test"      # 结构 + LaTeX + 悬空引用
-node check-template.mjs "D:\Files\Deepseek workplace\_vault_test" deep
-node check-links.mjs  "D:\Files\Deepseek workplace\_vault_test"      # 链接可解析
-node check-mislinks.mjs / check-contain.mjs / check-oneline.mjs
-node sync-vault.mjs --apply                                          # 同步到已安装库（不删库里的东西）
+node tools/build.js        .build/_vault_test
+node tools/canvas-v2.js    .build/_vault_test
+node tools/check-notes.mjs .build/_vault_test        # 结构 + LaTeX + 悬空引用
+node tools/check-template.mjs .build/_vault_test tools/deep-v2
+node tools/check-links.mjs .build/_vault_test        # 链接可解析
+node tools/check-mislinks.mjs / check-contain.mjs / check-oneline.mjs
+node tools/sync-vault.mjs --apply                    # 同步到已安装库（不删库里的东西）
 ```
 每章写完，另派一个**独立审校**：重算算例、给结论找反例、补前提，并把问题写回 JSON。
 
@@ -80,16 +80,16 @@ node sync-vault.mjs --apply                                          # 同步到
 写正文**不要直接改 JSON**（LaTeX 里的反斜杠会被 JSON 转义搞坏）。流程是：
 
 ```
-node dump-chapter.mjs                 # 生成每章写作简报 deep-v2/_input/m-<章>.md（含 id/标签/现有要点/关系边）
-#   → 写草稿 deep-v2/_draft/<知识点id>.md（纯文本，小节标记 ### ONELINE/PAIN/GAP/INTRO/DETAIL/USAGE/SELFCHECK）
-node draft2json.mjs --key det         # 校验并写出 deep-v2/m-det-a.json
-node draft2json.mjs --key mat         # 已有章节就地更新（第二章矩阵）
-node draft2json.mjs --all             # 全部章节
-node build.js "D:\Files\Deepseek workplace\_vault_test"   # 生成笔记
-node canvas-v2.js "D:\Files\Deepseek workplace\_vault_test"
-node check-notes.mjs <库> / check-template.mjs <库> deep-v2 / check-links.mjs / check-mislinks.mjs / check-contain.mjs / check-oneline.mjs
-node sync-vault.mjs --apply           # 同步进 Obsidian 库（只覆盖有差异的文件，不删库里的东西）
-node apply-style.mjs                  # 安装/更新阅读样式片段（CSS snippet）
+node tools/dump-chapter.mjs           # 生成每章写作简报 tools/deep-v2/_input/m-<章>.md（含 id/标签/现有要点/关系边）
+#   → 写草稿 tools/deep-v2/_draft/<知识点id>.md（纯文本，小节标记 ### ONELINE/PAIN/GAP/INTRO/DETAIL/USAGE/SELFCHECK）
+node tools/draft2json.mjs --key det   # 校验并写出 tools/deep-v2/m-det-a.json
+node tools/draft2json.mjs --key mat   # 已有章节就地更新（第二章矩阵）
+node tools/draft2json.mjs --all       # 全部章节
+node tools/build.js .build/_vault_test    # 生成笔记（所有命令都在仓库根目录执行）
+node tools/canvas-v2.js .build/_vault_test
+node tools/check-notes.mjs .build/_vault_test / check-template.mjs / check-links.mjs / check-mislinks.mjs / check-contain.mjs / check-oneline.mjs
+node tools/sync-vault.mjs --apply     # 同步进 Obsidian 库（只覆盖有差异的文件，不删库里的东西）
+node tools/apply-style.mjs            # 安装/更新阅读样式片段（CSS snippet）
 ```
 
 `draft2json.mjs` 会在写盘前卡住这些硬性要求（不合格就不出 JSON）：
