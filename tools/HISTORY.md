@@ -115,4 +115,12 @@ verify-fix-landing.mjs        高危修复是否真的落在产物里（不看�
 - **`README-进阶.md` 指错了菜单**：两个选项都写成 `设置 → 关系图谱 → …`，实际在图谱视图自己的设置面板里（「颜色组」与「外观 → 箭头」）。这解释了 v1.1 之后仍有人找不到箭头。
 - **顺带确认**：v1.1 的 ZIP 本身是对的（`showArrow: true` + 三个配色组）；丢失发生在本机 —— Obsidian / Extended Graph 用内存状态把它覆盖了。tag `v1.1` 指向的提交早于修复，所以**以提交为准反而会拿到旧配置，以 Release 资产为准才对**。
 
+## 八、v1.3 修掉的几件事（相对 v1.2）
+
+- **插件装成了半套**：`.obsidian/plugins/extended-graph/` 只有 `main.js` / `manifest.json` / `data.json`，**少了 `styles.css`（35 KB）**。按连线类型过滤的那个"图例"面板、以及它的开关按钮，定位与显隐全写在这份 CSS 里，缺了就等于不显形（面板、按钮都在 DOM 里，但没有样式就落在看不见的位置）。官方 2.7.3–2.7.7 的 `styles.css` 是同一份（35432 字节），照 2.7.6 发布资产补齐即可。
+- **发布包改为随包分发 Extended Graph**（原来写的是"请自行从社区商店安装"）：`main.js` / `manifest.json` / `styles.css` / `data.json` / `LICENSE` 全部入库；`.gitignore` 从"整个 `plugins/` 忽略"改成"只放行 `extended-graph`"；并把 `.obsidian/community-plugins.json` 一并跟踪 —— 不跟踪它的话，解压出来插件是关着的，"开箱即用"仍然不成立。
+- **`data.json` 也入库**：它记录了连线颜色映射与各项开关，是"开箱即用"的另一半；不入库的话插件起来是默认值，连线不上色、图例里也没有可勾的类型。
+- **许可证**：插件是 GPLv3，故随附 LICENSE 全文；本库其余内容仍是 CC BY-NC-SA 4.0。
+
+
 

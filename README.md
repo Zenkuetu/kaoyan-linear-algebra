@@ -6,11 +6,12 @@
 
 ## 快速开始
 
-1. 下载 [Obsidian](https://obsidian.md/download)（免费；本仓库**不打包**安装包）。
-2. 到本仓库的 [Releases](../../releases) 页面下载最新版 ZIP（当前为 `linear-algebra-vault-v1.2.zip`；请以 Releases 页最新版为准）。
+1. 下载 [Obsidian](https://obsidian.md/download)（免费；本仓库**不打包** Obsidian 本体）。
+2. 到本仓库的 [Releases](../../releases) 页面下载最新版 ZIP（当前为 `linear-algebra-vault-v1.3.zip`；请以 Releases 页最新版为准）。
 3. 解压，得到一个包含 `.obsidian` 与 `线代知识网` 两层内容的文件夹。
-4. 在 Obsidian 里选择 **打开文件夹作为仓库（Open folder as vault）**，指向**这个解压出来的文件夹**（不是里面的 `线代知识网`）—— 这样样式片段（小节色条、坑标红）与关系图谱的节点配色会开箱即用。
-5. 打开 `线代知识网/00 线性代数知识网总览` 开始看。
+4. 在 Obsidian 里选择 **打开文件夹作为仓库（Open folder as vault）**，指向**这个解压出来的文件夹**（不是里面的 `线代知识网`）—— 样式片段（小节色条、坑标红）、关系图谱的节点配色、**连线按关系类型上色**都开箱即用：**Extended Graph 已随包提供并默认启用**。
+5. 首次打开若提示「受限模式 / 社区插件已关闭」，到 设置 → 第三方插件 里允许即可（插件本体已随包提供，不需要联网下载）。它是 GPLv3，许可证见 `.obsidian/plugins/extended-graph/LICENSE`。
+6. 打开 `线代知识网/00 线性代数知识网总览` 开始看。
 
 ## 库的结构
 
@@ -61,9 +62,9 @@
 
 **每条边都做过"读出来必须是真的"校验**：`iff` 要两个方向都真，`suff`/`need` 要只有单向成立且方向正确，`rel` 不能读成条件关系。164 条边里已有 132 条通过独立审计，其余按同口径修正；v1.1 新增的那条（"可交换 ↔ 特征向量共享"）另用精确有理数重算过（详见 `tools/HISTORY.md`）。
 
-## 关系图谱的高级玩法（可选）
+## 关系图谱：连线按类型上色（插件已随包提供）
 
-Obsidian 原生图谱只能给**节点**上色，不能给**连线**上色。本库的 frontmatter 已经按关系类型写好了属性（`充要⇔` / `充分⇒` / `必要⇐` / `无关` / `关联` / `章节` / `索引`），装上 [Extended Graph](https://community.obsidian.md/plugins/extended-graph) 插件后，连线就能按类型上色、并直接标出类型名。
+Obsidian 原生图谱只能给**节点**上色，不能给**连线**上色。本库的 frontmatter 已经按关系类型写好了属性（`充要⇔` / `充分⇒` / `必要⇐` / `无关` / `关联` / `章节` / `索引`），本库随包提供 [Extended Graph](https://community.obsidian.md/plugins/extended-graph)（GPLv3）并已默认启用，连线就能按类型上色、并直接标出类型名；图谱左下角的**图例**可以逐类型勾选过滤。
 
 配置方法（含中文界面词条对照）见 `线代知识网/README-进阶.md`。
 

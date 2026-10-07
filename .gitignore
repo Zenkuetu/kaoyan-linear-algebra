@@ -9,8 +9,9 @@ installers/
 .obsidian/cache
 .trash/
 
-# 第三方插件本体（体积大且有各自许可，请从 Obsidian 社区商店安装）
-.obsidian/plugins/
+# 第三方插件：默认忽略，只放行随包分发的 Extended Graph（GPLv3，见该目录下 LICENSE）
+.obsidian/plugins/*
+!.obsidian/plugins/extended-graph/
 
 # 令牌（永远不会出现在仓库里）
 .gh-token.txt

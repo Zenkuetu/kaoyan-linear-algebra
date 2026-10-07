@@ -1,5 +1,27 @@
 # Release Notes
 
+## v1.3 — 插件随包提供
+
+对应 ZIP：`linear-algebra-vault-v1.3.zip`（随包多带 Extended Graph 插件本体）
+
+### 关系图谱的连线着色与图例，现在开箱即用
+
+v1.2 及之前只带 `.obsidian/graph.json`（节点配色 + 箭头），**连线按关系类型上色需要自己装 Extended Graph 并手工配置**。现在插件随包提供并默认启用：
+
+- `.obsidian/plugins/extended-graph/`：`main.js` / `manifest.json` / `styles.css` / `data.json` / `LICENSE`
+- `.obsidian/community-plugins.json`：已把 `extended-graph` 标为启用
+- `data.json` 预置了连线颜色映射（充要⇔ / 充分⇒ / 必要⇐ / 无关 / 关联 / 章节 / 索引）、标签显示、忽略行内链接、最大节点数 200、图例默认展开
+
+首次打开若提示「受限模式 / 社区插件已关闭」，到 设置 → 第三方插件 允许即可（不需要联网）。
+
+### 为什么有人看不到那个"按连线类型过滤"的图例
+
+`.obsidian/plugins/extended-graph/styles.css` 一旦缺失，图例面板与它的开关按钮就没有定位/显隐样式 —— 而这些全写在这份 CSS 里，于是图例在关系图谱里等于不显形。v1.3 起插件本体随包，不会再出现"半套安装"。
+
+### 插件许可是 GPLv3
+
+Extended Graph © 2025 ElsaTam，GPLv3（https://github.com/ElsaTam/obsidian-extended-graph），许可证全文随插件目录提供。本库其余内容仍为 CC BY-NC-SA 4.0。
+
 ## v1.2 — 文档与工具链修正
 
 对应 ZIP：`linear-algebra-vault-v1.2.zip`（126 个文件，含 `.obsidian` 配置与样式片段）

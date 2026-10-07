@@ -40,7 +40,7 @@ if (fs.existsSync(pPath)) {
     if (!types.includes(t)) problems.push('Extended Graph：缺少连线颜色类型 ' + t);
   }
 } else {
-  console.log('· 本机没装 Extended Graph，跳过插件配置检查（发布库不打包插件）');
+  console.log('· 本机没装 Extended Graph，跳过插件配置检查（发布包自带插件，仅本机未启用）');
 }
 
 // 3) 暂存区一致性
