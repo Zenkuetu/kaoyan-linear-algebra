@@ -158,6 +158,16 @@
         "linkStrength": 1,
         "repelStrength": 10,
         "collapseColorGroups": false
+      },
+      "toggleTypes": {
+        "link": [
+          "索引",
+          "无关",
+          "章节",
+          "none"
+        ],
+        "tag": [],
+        "folder": []
       }
     }
   ],

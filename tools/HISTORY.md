@@ -122,6 +122,8 @@ verify-fix-landing.mjs        高危修复是否真的落在产物里（不看�
 - **`data.json` 也入库**：它记录了连线颜色映射与各项开关，是"开箱即用"的另一半；不入库的话插件起来是默认值，连线不上色、图例里也没有可勾的类型。
 - **许可证**：插件是 GPLv3，故随附 LICENSE 全文；本库其余内容仍是 CC BY-NC-SA 4.0。
 - **`data.json` 只入库分发必需的键**：插件把整套运行时设置（面板折叠状态、钉住的节点坐标、导出勾选、当前节点样式、缩放/延迟手感…）都塞在同一个文件里，全量入库等于把使用痕迹打包送人。现在只保留 `enableFeatures` / `interactiveSettings`（连线颜色）/ `ignoreInlineLinks` / `maxNodes` / 标签显示 / `collapseLegend` / `states`（含配色组与箭头）/ `backupGraphOptions` 共 10 个顶层键，其余由插件默认值补齐（9.9 KB → 4.6 KB）。同时把 `check-graph-config.mjs` 的暂存区比对从「逐字节」改成「只核配色组与箭头」，这样 `graph.json` 里的 `scale` 这类个人状态不会再让发布检查误报。
+- **图谱默认过滤四类边**：`states[0].toggleTypes.link = ["索引", "无关", "章节", "none"]`。插件的规则是「列在 `toggleTypes` 里的类型与 `enableByDefault` 取反」，所以这几类默认不画，但图例里仍留着行、点一下就能勾回来（想彻底从图例里拿掉得用 `excludeRegex`）。
+- **顺带发现**：插件只要一保存设置，就会把整套运行时字段写回 `data.json`（裁剪后重载 Obsidian，文件又变回 110 个键）—— 所以裁剪版的权威副本在**提交里**，本机那份用 skip-worktree 忽略即可，发布包始终取自提交。
 
 
 
