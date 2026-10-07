@@ -143,7 +143,7 @@
         "search": "",
         "hideUnresolved": false,
         "showAttachments": false,
-        "showOrphans": true,
+        "showOrphans": false,
         "showTags": false,
         "localBacklinks": true,
         "localForelinks": true,
@@ -177,7 +177,7 @@
     "showTags": false,
     "showAttachments": false,
     "hideUnresolved": false,
-    "showOrphans": true,
+    "showOrphans": false,
     "collapse-color-groups": false,
     "colorGroups": [
       {
