@@ -7,7 +7,7 @@
 ## 快速开始
 
 1. 下载 [Obsidian](https://obsidian.md/download)（免费；本仓库**不打包** Obsidian 本体）。
-2. 到本仓库的 [Releases](../../releases) 页面下载最新版 ZIP（当前为 `linear-algebra-vault-v1.3.zip`；请以 Releases 页最新版为准）。
+2. 到本仓库的 [Releases](../../releases) 页面下载最新版 ZIP（当前为 `linear-algebra-vault-v1.4.zip`；请以 Releases 页最新版为准）。
 3. 解压，得到一个包含 `.obsidian` 与 `线代知识网` 两层内容的文件夹。
 4. 在 Obsidian 里选择 **打开文件夹作为仓库（Open folder as vault）**，指向**这个解压出来的文件夹**（不是里面的 `线代知识网`）—— 样式片段（小节色条、坑标红）、关系图谱的节点配色、**连线按关系类型上色**都开箱即用：**Extended Graph 已随包提供并默认启用**。
 5. 首次打开若提示「受限模式 / 社区插件已关闭」，到 设置 → 第三方插件 里允许即可（插件本体已随包提供，不需要联网下载）。它是 GPLv3，许可证见 `.obsidian/plugins/extended-graph/LICENSE`。
