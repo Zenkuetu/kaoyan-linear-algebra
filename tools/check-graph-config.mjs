@@ -7,8 +7,7 @@
 // 用法: node check-graph-config.mjs
 import fs from 'node:fs';
 
-const VAULT = 'D:/Files/考研数学线性代数';
-const STAGE = 'D:/Files/Deepseek workplace/_gh_publish';
+import { VAULT_ROOT as VAULT, STAGE } from './paths.mjs';   // 路径统一由 paths.mjs 解析（默认相对仓库根推导）
 const problems = [];
 
 function readJson(p) { return JSON.parse(fs.readFileSync(p, 'utf8')); }

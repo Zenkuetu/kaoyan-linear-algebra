@@ -1,7 +1,8 @@
 // 用"图谱的真实视角"（无向）检查整个库的连通性：frontmatter 里的链接（类型边）算边
 import fs from 'node:fs';
 import path from 'node:path';
-const root = process.argv[2] || 'D:/Files/Deepseek workplace/_vault_test';
+import { BUILD } from './paths.mjs';   // 路径统一由 paths.mjs 解析（默认相对仓库根推导）
+const root = process.argv[2] || BUILD;
 
 const files = [];
 (function walk(d) {

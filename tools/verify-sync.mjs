@@ -7,8 +7,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const SRC = 'D:/Files/Deepseek workplace/_vault_test';
-const DST = 'D:/Files/考研数学线性代数/线代知识网';
+import { BUILD as SRC, VAULT as DST } from './paths.mjs';   // 路径统一由 paths.mjs 解析（默认相对仓库根推导）
 const strict = process.argv.includes('--strict');
 
 function walk(root, sub = '') {

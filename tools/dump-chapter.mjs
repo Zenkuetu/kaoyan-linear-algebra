@@ -4,8 +4,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const ROOT = 'D:/Files/Deepseek workplace/la-codegen';
-const OUTDIR = path.join(ROOT, 'deep-v2', '_input');
+import { CODEGEN as ROOT, DEEP2 } from './paths.mjs';   // 路径统一由 paths.mjs 解析（默认相对仓库根推导）
+const OUTDIR = path.join(DEEP2, '_input');
 
 const files = ['dc.js', 'matrices.js', 'vectors.js', 'equations.js', 'eigen.js', 'quadratic.js', 'edges.js'];
 const src = files.map(f => fs.readFileSync(path.join(ROOT, f), 'utf8')).join('\n');

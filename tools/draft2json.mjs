@@ -7,9 +7,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { checkText, visualWidth } from './latexcheck.mjs';
 
-const ROOT = 'D:/Files/Deepseek workplace/la-codegen';
-const DRAFT = path.join(ROOT, 'deep-v2', '_draft');
-const MAN = path.join(ROOT, 'deep-v2', '_input', '_manifest.json');
+import { CODEGEN as ROOT, DRAFT, MANIFEST as MAN } from './paths.mjs';   // 路径统一由 paths.mjs 解析（默认相对仓库根推导）
 
 const args = process.argv.slice(2);
 const getArg = (n) => { const i = args.indexOf(n); return i >= 0 ? args[i + 1] : null; };

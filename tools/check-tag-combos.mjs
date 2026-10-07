@@ -1,7 +1,7 @@
 // 检查标签组合：确认"非数二"是否总能由"没有基础/数二"推出（即显示时可否安全省略）
 import fs from 'node:fs';
 import path from 'node:path';
-const ROOT = 'D:/Files/Deepseek workplace/la-codegen';
+import { CODEGEN as ROOT } from './paths.mjs';   // 路径统一由 paths.mjs 解析（默认相对仓库根推导）
 const files = ['dc.js', 'matrices.js', 'vectors.js', 'equations.js', 'eigen.js', 'quadratic.js', 'edges.js'];
 const src = files.map(f => fs.readFileSync(path.join(ROOT, f), 'utf8')).join('\n');
 const { MODULES } = new Function('__bootstrap',

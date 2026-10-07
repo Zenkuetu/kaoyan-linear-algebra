@@ -1,6 +1,6 @@
 // 体检：把 152 条关系边当成无向图，算出所有连通块，找出"孤岛"
 import fs from 'node:fs';
-const ROOT = 'D:/Files/Deepseek workplace/la-codegen';
+import { CODEGEN as ROOT } from './paths.mjs';   // 路径统一由 paths.mjs 解析（默认相对仓库根推导）
 const files = ['dc.js', 'matrices.js', 'vectors.js', 'equations.js', 'eigen.js', 'quadratic.js', 'edges.js'];
 const src = files.map(f => fs.readFileSync(ROOT + '/' + f, 'utf8')).join('\n');
 const { MODULES, EDGES } = new Function('__bootstrap',

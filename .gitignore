@@ -25,3 +25,8 @@ _vault_test/
 *.bak[0-9]*
 *.bak-*
 *.log
+
+# 本机构建产物与本地路径配置（由 tools/paths.mjs 使用）
+.build/
+tools/local-paths.json
+

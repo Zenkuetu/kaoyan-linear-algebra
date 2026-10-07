@@ -2,8 +2,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const VAULT_ROOT = 'D:/Files/考研数学线性代数';        // Obsidian 打开的库根目录
-const SRC = 'D:/Files/Deepseek workplace/la-codegen/install/obsidian-snippet.css';
+import { VAULT_ROOT, SNIPPET as SRC } from './paths.mjs';   // 路径统一由 paths.mjs 解析（默认相对仓库根推导）
 const NAME = 'linalg-reading';
 
 const OBS = path.join(VAULT_ROOT, '.obsidian');

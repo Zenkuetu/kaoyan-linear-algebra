@@ -8,7 +8,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const VAULT = 'D:/Files/考研数学线性代数';
+import { VAULT_ROOT as VAULT } from './paths.mjs';   // 路径统一由 paths.mjs 解析（默认相对仓库根推导）
 const NOTES = path.join(VAULT, '线代知识网');
 const APPLY = process.argv.includes('--apply');
 const TAGS = ['基础', '数一', '数二'];

@@ -6,7 +6,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const ROOT = 'D:/Files/Deepseek workplace/la-codegen';
+import { CODEGEN as ROOT } from './paths.mjs';   // 路径统一由 paths.mjs 解析（默认相对仓库根推导）
 const target = process.argv[2];
 const isVault = process.argv.includes('--vault');
 if (!target) { console.error('用法: node check-jargon.mjs <deep-v2 目录 | 库目录> [--vault]'); process.exit(2); }

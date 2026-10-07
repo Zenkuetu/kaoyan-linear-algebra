@@ -4,7 +4,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const VAULT = process.argv[2] || 'D:/Files/Deepseek workplace/_vault_test';
+import { BUILD } from './paths.mjs';   // 路径统一由 paths.mjs 解析（默认相对仓库根推导）
+const VAULT = process.argv[2] || BUILD;
 const NOTES = path.join(VAULT, '知识点');
 
 function findNote(fragment) {
