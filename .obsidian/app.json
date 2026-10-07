@@ -1,1 +1,8 @@
-{}
+{
+  "userIgnoreFilters": [
+    "tools/",
+    "docs/",
+    "README.md",
+    "RELEASE-NOTES.md"
+  ]
+}
