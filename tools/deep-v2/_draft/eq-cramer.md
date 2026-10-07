@@ -37,15 +37,32 @@ $$
 > 顺带提一句：$\lvert A \rvert \neq 0$ 这件事到第五章还会有别的名字（"$A$ 可逆""$A$ 没有零特征值"），本章只用行列式这一条就够了，现在不懂不影响做题。
 
 ### DETAIL
-**定义/公式**：$n$ 个方程、$n$ 个未知数，$\lvert A \rvert \neq 0$ 时 $x_j = \dfrac{\lvert A_j \rvert}{\lvert A \rvert}$（$j = 1, \dots, n$），其中 $A_j$ 是把 $A$ 的第 $j$ 列换成 $b$ 得到的方阵。
-**齐次情形**：$\lvert A \rvert \neq 0$ 时 $Ax = 0$ 只有零解 —— 因为齐次时每个 $A_j$ 的最后一列全是 $0$，行列式为 $0$，于是每个 $x_j = 0$。
+**定义/公式**：对于 $n$ 个方程、$n$ 个未知数的线性方程组 $Ax=b$，若系数行列式 $\lvert A \rvert \neq 0$，则解唯一，且 $x_j = \dfrac{\lvert A_j \rvert}{\lvert A \rvert}$（$j = 1, \dots, n$），其中 $A_j$ 是把 $A$ 的第 $j$ 列换成常数列 $b$ 后得到的方阵。
+**齐次情形**：当 $\lvert A \rvert \neq 0$ 时，$Ax = 0$ 只有零解。因为齐次时 $b=0$，每个 $A_j$ 的第 $j$ 列都被换成 $0$，所以该列全为 $0$，故 $\lvert A_j \rvert = 0$，于是由公式得每个 $x_j = 0$。
 **算例一（二元）**：
 
 $$
 \begin{cases} 2x_1 + x_2 = 3 \\ x_1 + 3x_2 = 4 \end{cases}
 $$
 
-先把第 $1$ 列、第 $2$ 列分别换成 $b = (3,4)^{\mathrm{T}}$：$\lvert A \rvert = 2 \times 3 - 1 \times 1 = 5$，$\lvert A_1 \rvert = 3 \times 3 - 1 \times 4 = 5$，$\lvert A_2 \rvert = 2 \times 4 - 3 \times 1 = 5$。于是 $x_1 = 5 / 5 = 1$，$x_2 = 5 / 5 = 1$。
+写出系数矩阵、常数列，以及分别替换第 $1$ 列、第 $2$ 列后得到的矩阵：
+
+$$
+A=\begin{pmatrix}2&1\\1&3\end{pmatrix},\quad
+b=\begin{pmatrix}3\\4\end{pmatrix},\quad
+A_1=\begin{pmatrix}3&1\\4&3\end{pmatrix},\quad
+A_2=\begin{pmatrix}2&3\\1&4\end{pmatrix}.
+$$
+
+其中 $A_1$ 是把 $A$ 的第 $1$ 列换成 $b$，$A_2$ 是把 $A$ 的第 $2$ 列换成 $b$。计算得：
+
+$$
+\lvert A \rvert = 2 \times 3 - 1 \times 1 = 5,\quad
+\lvert A_1 \rvert = 3 \times 3 - 1 \times 4 = 5,\quad
+\lvert A_2 \rvert = 2 \times 4 - 3 \times 1 = 5.
+$$
+
+于是 $x_1 = 5 / 5 = 1$，$x_2 = 5 / 5 = 1$。
 **验算**：$2 \times 1 + 1 = 3$，$1 + 3 \times 1 = 4$，与右端一致。
 **算例二（三元）**：
 
@@ -53,11 +70,78 @@ $$
 \begin{cases} x_1 + x_2 + x_3 = 6 \\ 2x_1 - x_2 + x_3 = 3 \\ x_1 + 2x_2 - x_3 = 2 \end{cases}
 $$
 
-按第一行展开算系数行列式：$\lvert A \rvert = 1 \times ((-1) \times (-1) - 1 \times 2) - 1 \times (2 \times (-1) - 1 \times 1) + 1 \times (2 \times 2 - (-1) \times 1) = -1 + 3 + 5 = 7$。
-再把三列依次换成 $b = (6,3,2)^{\mathrm{T}}$，仍按第一行展开。第一列换成 $b$ 后，第一行的三个余子式是 $-1$、$-5$、$8$，所以 $\lvert A_1 \rvert = 6 \times (-1) - 1 \times (-5) + 1 \times 8 = -6 + 5 + 8 = 7$；第二列换成 $b$ 后，三个余子式是 $-5$、$-3$、$1$，所以 $\lvert A_2 \rvert = 1 \times (-5) - 6 \times (-3) + 1 \times 1 = -5 + 18 + 1 = 14$；第三列换成 $b$ 后，三个余子式是 $-8$、$1$、$5$，所以 $\lvert A_3 \rvert = 1 \times (-8) - 1 \times 1 + 6 \times 5 = -8 - 1 + 30 = 21$。
+写出系数矩阵与常数列：
+
+$$
+A=\begin{pmatrix}
+1&1&1\\
+2&-1&1\\
+1&2&-1
+\end{pmatrix},\quad
+b=\begin{pmatrix}6\\3\\2\end{pmatrix}.
+$$
+
+再把三列依次换成 $b$，得到：
+
+$$
+A_1=\begin{pmatrix}
+6&1&1\\
+3&-1&1\\
+2&2&-1
+\end{pmatrix},\quad
+A_2=\begin{pmatrix}
+1&6&1\\
+2&3&1\\
+1&2&-1
+\end{pmatrix},\quad
+A_3=\begin{pmatrix}
+1&1&6\\
+2&-1&3\\
+1&2&2
+\end{pmatrix}.
+$$
+
+其中 $A_1$ 是第 $1$ 列换成 $b$，$A_2$ 是第 $2$ 列换成 $b$，$A_3$ 是第 $3$ 列换成 $b$。
+
+先按第一行展开算系数行列式：
+
+$$
+\lvert A \rvert
+=1\cdot\det\begin{pmatrix}-1&1\\2&-1\end{pmatrix}
+-1\cdot\det\begin{pmatrix}2&1\\1&-1\end{pmatrix}
++1\cdot\det\begin{pmatrix}2&-1\\1&2\end{pmatrix}
+=1\times(-1)-1\times(-3)+1\times5=7.
+$$
+
+再按第一行展开计算三个替换后的行列式：
+
+$$
+\lvert A_1 \rvert
+=6\cdot\det\begin{pmatrix}-1&1\\2&-1\end{pmatrix}
+-1\cdot\det\begin{pmatrix}3&1\\2&-1\end{pmatrix}
++1\cdot\det\begin{pmatrix}3&-1\\2&2\end{pmatrix}
+=6\times(-1)-1\times(-5)+1\times8=7,
+$$
+
+$$
+\lvert A_2 \rvert
+=1\cdot\det\begin{pmatrix}3&1\\2&-1\end{pmatrix}
+-6\cdot\det\begin{pmatrix}2&1\\1&-1\end{pmatrix}
++1\cdot\det\begin{pmatrix}2&3\\1&2\end{pmatrix}
+=1\times(-5)-6\times(-3)+1\times1=14,
+$$
+
+$$
+\lvert A_3 \rvert
+=1\cdot\det\begin{pmatrix}-1&3\\2&2\end{pmatrix}
+-1\cdot\det\begin{pmatrix}2&3\\1&2\end{pmatrix}
++6\cdot\det\begin{pmatrix}2&-1\\1&2\end{pmatrix}
+=1\times(-8)-1\times1+6\times5=21.
+$$
+
 于是 $x_1 = 7 / 7 = 1$，$x_2 = 14 / 7 = 2$，$x_3 = 21 / 7 = 3$。
 **验算**：$1 + 2 + 3 = 6$，$2 - 2 + 3 = 3$，$1 + 4 - 3 = 2$，与右端一致。
-**前提提醒**：方程个数不等于未知数个数、或者 $\lvert A \rvert = 0$，都不许用克拉默法则，要回到"两个秩"的判据上讨论。
+**前提提醒**：若方程个数不等于未知数个数，或者 $\lvert A \rvert = 0$，都不能直接使用克拉默法则；此时应回到系数矩阵与增广矩阵的“两个秩”的判据上讨论解的情况。
 
 ### USAGE
 1. 选择题：判断"哪些条件下能用克拉默法则"（必须是方阵且系数行列式非零），或者比较用克拉默法则与用消元法的适用场景。

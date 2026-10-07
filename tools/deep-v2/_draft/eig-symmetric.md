@@ -27,7 +27,9 @@ $A = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$ 就是这种矩阵（转置�
 - **坑三补上 · 正交只保证在不同特征值之间**：重根内部的特征向量互不相干，想要正交必须在重根内部再做一次施密特正交化 —— 这一步下一节当作必备步骤来写。
 
 ### DETAIL
-**性质一（特征值全为实数）**：实对称矩阵的特征值一定是实数。理由（考试不要求写过程，看懂即可）：把 $A\alpha = \lambda\alpha$ 两边左乘 $\overline{\alpha}^{\mathrm{T}}$（把 $\alpha$ 的元素取共轭后再转置），右边出现 $\overline{\alpha}^{\mathrm{T}}\alpha = \lvert\alpha_1\rvert^{2} + \cdots + \lvert\alpha_n\rvert^{2}$，这是正实数；左边因为 $A$ 的元素是实数、且 $A^{\mathrm{T}} = A$，取共轭后等于它自己，所以左边也是实数 —— 实数除以正实数只能是实数。对照：$\begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}$ 不是对称矩阵，特征值就是 $\pm i$。
+**性质一（特征值全为实数）**：实对称矩阵的特征值一定是实数。
+ - 理由（考试不要求写过程，看懂即可）：把 $A\alpha = \lambda\alpha$ 两边左乘 $\overline{\alpha}^{\mathrm{T}}$（把 $\alpha$ 的元素取共轭后再转置），右边出现 $\overline{\alpha}^{\mathrm{T}}\alpha = \lvert\alpha_1\rvert^{2} + \cdots + \lvert\alpha_n\rvert^{2}$，这是正实数；左边因为 $A$ 的元素是实数、且 $A^{\mathrm{T}} = A$，取共轭后等于它自己，所以左边也是实数 —— 实数除以正实数只能是实数。对照：$\begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}$ 不是对称矩阵，特征值就是 $\pm i$。
+
 **性质二（不同特征值的特征向量正交）的完整推导**：设 $A\alpha_1 = \lambda_1\alpha_1$、$A\alpha_2 = \lambda_2\alpha_2$，且 $\lambda_1 \ne \lambda_2$。把 $\alpha_1^{\mathrm{T}}A\alpha_2$ 用两种方式算：
 
 $$
@@ -40,10 +42,10 @@ $$
 - 对 $\lambda = 3$：$3E - A = \begin{pmatrix} 1 & -1 \\ -1 & 1 \end{pmatrix} \xrightarrow{\;r_2 + r_1\;} \begin{pmatrix} 1 & -1 \\ 0 & 0 \end{pmatrix}$，基础解系 $\begin{pmatrix} 1 \\ 1 \end{pmatrix}$；
 - 对 $\lambda = 1$：$E - A = \begin{pmatrix} -1 & -1 \\ -1 & -1 \end{pmatrix} \xrightarrow{\;r_2 - r_1\;} \begin{pmatrix} -1 & -1 \\ 0 & 0 \end{pmatrix}$，基础解系 $\begin{pmatrix} 1 \\ -1 \end{pmatrix}$；
 - 内积：$\begin{pmatrix} 1 \\ 1 \end{pmatrix}^{\mathrm{T}}\begin{pmatrix} 1 \\ -1 \end{pmatrix} = 1 \times 1 + 1 \times (-1) = 0$，正交 ✓。
-**两个反例/边界**：
+<span class="pit">​</span>**两个反例/边界**：
 - "重根内部自动正交"是错的：$\begin{pmatrix} 2 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 1 \end{pmatrix}$ 中属于 $\lambda = 2$ 的 $\begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}$ 与 $\begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix}$ 内积为 1；
 - "只有实对称矩阵的特征值才是实数"也是错的：$\begin{pmatrix} 1 & 1 \\ 0 & 2 \end{pmatrix}$ 不对称，特征值 1、2 全是实数。实数性不是实对称的专利，"不同特征值的特征向量正交"对非对称矩阵一般不成立。
-**常用结论**：
+<span class="key">​</span>**常用结论**：
 - 实对称矩阵的特征值全为实数，且一定可对角化（还能正交对角化）；
 - 属于不同特征值的特征向量正交；重根内部的要自己做正交化；
 - 实对称矩阵的 $k$ 重特征值一定有 $k$ 个线性无关的特征向量（即 $m_i = n_i$）；
