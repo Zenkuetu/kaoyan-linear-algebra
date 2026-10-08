@@ -90,7 +90,7 @@ $$
 > - [[初等矩阵与初等变换的对应]] ⇒ 🟪 必要 ⇒ 本点——由 ｜AB｜=｜A｜｜B｜ 推出变换对行列式的影响
 > - [[克拉默法则]] ⇒ 🟪 必要 ⇒ 本点——公式的分子分母都是行列式
 
-## <span class="hx hx-exam">📝</span> 九、真题（2004–2018）
+## <span class="hx hx-exam">📝</span> 九、真题（1995–2018）
 
 ### 2018 年 · 数学三 · 第 13 题（填空，4 分）
 
@@ -205,6 +205,21 @@ $$
 > $$
 >
 > > **方法点评**：本题考查由矩阵关系等式确定的矩阵的行列式．本题的关键是要应用公式 $AA^{*}=A^{*}A=|A|E$．
+
+### 1995 年 · 数学一 · 第九大题（解答，6 分）
+
+设 $A$ 是 $n$ 阶矩阵，满足 $AA^{\mathrm{T}}=E$（$E$ 为 $n$ 阶单位矩阵，$A^{\mathrm{T}}$ 为 $A$ 的转置矩阵），$|A|<0$，求 $|A+E|$.
+
+> [!success]- 答案与解析
+> **答案**：$|A+E|=0$.
+>
+> **方法一** 由 $AA^{\mathrm{T}}=E$ 得 $|A|\cdot|A^{\mathrm{T}}|=1$，即 $|A|^2=1$，再由 $|A|<0$ 得 $|A|=-1$. 于是
+> $$
+> |A+E|=|A+AA^{\mathrm{T}}|=|A|\cdot|E+A^{\mathrm{T}}|=-|(E+A)^{\mathrm{T}}|=-|E+A|,
+> $$
+> 故 $|E+A|=0$.
+>
+> **方法二** 令 $AX=\lambda X\ (X\ne 0)$，由 $AX=\lambda X$ 得 $X^{\mathrm{T}}A^{\mathrm{T}}=\lambda X^{\mathrm{T}}$，两边右乘 $AX$ 得 $X^{\mathrm{T}}A^{\mathrm{T}}AX=\lambda X^{\mathrm{T}}AX$，即 $X^{\mathrm{T}}X=\lambda^2X^{\mathrm{T}}X$，或 $(\lambda^2-1)X^{\mathrm{T}}X=0$，由 $X^{\mathrm{T}}X=\|X\|^2>0$ 得 $\lambda^2-1=0$，即 $\lambda=\pm 1$. 因为 $|A|<0$，所以 $A$ 至少有一个特征值为 $-1$，从而 $A+E$ 的特征值至少有一个为 $0$，故 $|A+E|=0$.
 
 ## <span class="hx hx-nav">🧭</span> 十、导航
 
