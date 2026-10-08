@@ -544,6 +544,64 @@ $E$ 为 3 阶单位矩阵。
 >
 > <small>解析出处：《2014 年数学（三）参考答案》第 5 页</small>
 
+### 2014 年 · 数学二 · 第 22 题（解答，11 分）
+
+设矩阵
+$$
+A=\begin{pmatrix}1&-2&3&-4\\0&1&-1&1\\1&2&0&-3\end{pmatrix},
+$$
+$E$ 为 3 阶单位矩阵.
+
+（Ⅰ）求方程组 $Ax=0$ 的一个基础解系；
+
+（Ⅱ）求满足 $AB=E$ 的所有矩阵 $B$.
+
+> [!success]- 答案与解析
+> **答案**：（Ⅰ）$c\begin{pmatrix}-1\\2\\3\\1\end{pmatrix}$（$c$ 为任意常数）；（Ⅱ）$B=\begin{pmatrix}-c_1+2&-c_2+6&-c_3-1\\2c_1-1&2c_2-3&2c_3+1\\3c_1-1&3c_2-4&3c_3+1\\c_1&c_2&c_3\end{pmatrix}$（$c_1,c_2,c_3$ 为任意常数）
+>
+> （Ⅰ）
+> $$
+> (A)=\begin{pmatrix}1&-2&3&-4\\0&1&-1&1\\1&2&0&-3\end{pmatrix}\xrightarrow{r_1+r_3}\begin{pmatrix}1&-2&3&-4\\0&1&-1&1\\0&4&-3&1\end{pmatrix}\xrightarrow{-4r_2+r_3}\begin{pmatrix}1&-2&3&-4\\0&1&-1&1\\0&0&1&-3\end{pmatrix}
+> $$
+> $$
+> \xrightarrow{r_3+r_2,\ -3r_3+r_1}\begin{pmatrix}1&-2&0&5\\0&1&0&-2\\0&0&1&-3\end{pmatrix}\xrightarrow{2r_2+r_1}\begin{pmatrix}1&0&0&1\\0&1&0&-2\\0&0&1&-3\end{pmatrix}
+> $$
+> $$
+> x_1=-x_4,\quad x_2=2x_4,\quad x_3=3x_4,\quad x_4=x_4
+> $$
+> $$
+> \begin{pmatrix}x_1\\x_2\\x_3\\x_4\end{pmatrix}=c\begin{pmatrix}-1\\2\\3\\1\end{pmatrix},\quad c\text{ 为任意常数}
+> $$
+> （Ⅱ）设 $B=\begin{pmatrix}x_1&y_1&z_1\\x_2&y_2&z_2\\x_3&y_3&z_3\end{pmatrix}$
+> $$
+> A\begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix}=\begin{pmatrix}1\\0\\0\end{pmatrix}\Rightarrow\left(\begin{array}{cccc|c}1&-2&3&-4&1\\0&1&-1&1&0\\1&2&0&-3&0\end{array}\right)
+> $$
+> $$
+> A\begin{pmatrix}y_1\\y_2\\y_3\end{pmatrix}=\begin{pmatrix}0\\1\\0\end{pmatrix}\Rightarrow\left(\begin{array}{cccc|c}1&-2&3&-4&0\\0&1&-1&1&1\\1&2&0&-3&0\end{array}\right)
+> $$
+> $$
+> A\begin{pmatrix}z_1\\z_2\\z_3\end{pmatrix}=\begin{pmatrix}0\\0\\1\end{pmatrix}\Rightarrow\left(\begin{array}{cccc|c}1&-2&3&-4&0\\0&1&-1&1&0\\1&2&0&-3&1\end{array}\right)
+> $$
+> 即
+> $$
+> \begin{pmatrix}1&-2&3&-4&1&0&0\\0&1&-1&1&0&1&0\\1&2&0&-3&0&0&1\end{pmatrix}\to\begin{pmatrix}1&-2&3&-4&1&0&0\\0&1&-1&1&0&1&0\\0&4&-3&1&0&0&1\end{pmatrix}
+> $$
+> $$
+> \to\begin{pmatrix}1&-2&3&-4&1&0&0\\0&1&-1&1&0&1&0\\0&0&1&-3&0&0&1\end{pmatrix}\to\begin{pmatrix}1&-2&0&5&4&12&-3\\0&1&0&-2&-1&-3&1\\0&0&1&-3&-1&-4&1\end{pmatrix}
+> $$
+> $$
+> \to\begin{pmatrix}1&0&0&1&2&6&-1\\0&1&0&-2&-1&-3&1\\0&0&1&-3&-1&-4&1\end{pmatrix}
+> $$
+> $$
+> \begin{pmatrix}x_1\\x_2\\x_3\\x_4\end{pmatrix}=c_1\begin{pmatrix}-1\\2\\3\\1\end{pmatrix}+\begin{pmatrix}2\\-1\\-1\\0\end{pmatrix},\quad \begin{pmatrix}y_1\\y_2\\y_3\\y_4\end{pmatrix}=c_2\begin{pmatrix}-1\\2\\3\\1\end{pmatrix}+\begin{pmatrix}6\\-3\\-4\\0\end{pmatrix},\quad \begin{pmatrix}z_1\\z_2\\z_3\\z_4\end{pmatrix}=c_3\begin{pmatrix}-1\\2\\3\\1\end{pmatrix}+\begin{pmatrix}-1\\1\\1\\0\end{pmatrix}
+> $$
+> $$
+> \therefore B=\begin{pmatrix}-c_1+2&-c_2+6&-c_3-1\\2c_1-1&2c_2-3&2c_3+1\\3c_1-1&3c_2-4&3c_3+1\\c_1&c_2&c_3\end{pmatrix}
+> $$
+> $c_1,c_2,c_3$ 为任意常数
+>
+> <small>解析出处：《2014 考研数学二答案真题解析》第 11–12 页</small>
+
 ### 2013 年 · 数学一 · 第 20 题（解答，11 分）
 
 （本题满分 11 分）设 $A=\begin{pmatrix}1&a\\1&0\end{pmatrix}$，$B=\begin{pmatrix}0&1\\1&b\end{pmatrix}$．当 $a,b$ 为何值时，存在矩阵 $C$ 使得 $AC-CA=B$，并求所有矩阵 $C$．

@@ -120,7 +120,38 @@ $$
 > - [[克拉默法则]] ⇒ 🟧 充分 ⇒ 本点——｜A｜≠0 ⇒ 唯一解
 > - [[方程组的几何意义（平面与直线）]] ⇒ 🟪 必要 ⇒ 本点——几何形态由秩决定
 
-## <span class="hx hx-exam">📝</span> 九、真题（2008–2025）
+## <span class="hx hx-exam">📝</span> 九、真题（2008–2026）
+
+### 2026 年 · 数学一 · 第 6 题（选择，5 分）
+
+设 $A,B$ 为 $n$ 阶矩阵，$\beta$ 是 $n$ 维列向量，若 $A$ 的列向量组可由 $B$ 的列向量组表示，则（　）
+
+（A）当 $Ax=\beta$ 有解时，$Bx=\beta$ 有解
+（B）当 $A^{\mathrm{T}}x=\beta$ 有解时，$B^{\mathrm{T}}x=\beta$ 有解
+（C）当 $Bx=\beta$ 有解时，$Ax=\beta$ 有解
+（D）当 $B^{\mathrm{T}}x=\beta$ 有解时，$A^{\mathrm{T}}x=\beta$ 有解
+
+> [!success]- 答案与解析
+> **答案**：（A）
+>
+> 由题设知存在矩阵 $C$ 使得 $A=BC$，若 $Ax=\beta$ 有解，则 $BCx=\beta$ 有解，令 $X=Cx$，则 $BX=\beta$ 有解，故选（A）。
+>
+> <small>解析出处：《2026 考研数学一真题及答案》第 3 页</small>
+
+### 2025 年 · 数学三 · 第 5 题（选择，5 分）
+
+已知 $A$ 是 $m\times n$ 的矩阵，$\beta$ 是 $m$ 维非零向量。若 $A$ 有 $k$ 阶非零子式，则（ ）
+
+（A）当 $k=m$ 时 $Ax=\beta$ 有解　（B）当 $k=m$ 时 $Ax=\beta$ 无解
+
+（C）当 $k<m$ 时 $Ax=\beta$ 有解　（D）当 $k<m$ 时 $Ax=\beta$ 无解
+
+> [!success]- 答案与解析
+> **答案**：（A）
+>
+> $k=m$ 时，$r(A)=r(\overline{A})=m$ 进而 $Ax=\beta$ 有解，A 正确。
+>
+> <small>解析出处：《2025 数学三解析》第 3 页</small>
 
 ### 2025 年 · 数学一 · 第 6 题（选择，5 分）
 
@@ -830,6 +861,81 @@ $$
 > 因此 $Ax=b$ 的通解为 $x=k\begin{pmatrix}1\\0\\1\end{pmatrix}+\begin{pmatrix}\frac{3}{2}\\-\frac{1}{2}\\0\end{pmatrix}$，其中 $k$ 为任意常数.
 >
 > <small>解析出处：《2005—2013 考研数二真题答案解析》第 80–82 页</small>
+
+### 2008 年 · 数学三 · 第 20 题（解答，12 分）
+
+（本题满分 12 分）设 $n$ 元线性方程组 $Ax=b$，其中
+$$
+A=\begin{pmatrix}2a&1&&&\\a^2&2a&1&&\\&\ddots&\ddots&\ddots&\\&&a^2&2a&1\\&&&a^2&2a\end{pmatrix}_{n\times n},\quad
+x=\begin{pmatrix}x_1\\x_2\\\vdots\\x_n\end{pmatrix},\quad
+b=\begin{pmatrix}1\\0\\\vdots\\0\end{pmatrix}.
+$$
+（Ⅰ）证明行列式 $|A|=(n+1)a^n$；
+
+（Ⅱ）当 $a$ 为何值时，该方程组有唯一解，并求 $x_1$；
+
+（Ⅲ）当 $a$ 为何值时，该方程组有无穷多解，并求通解。
+
+> [!success]- 答案与解析
+> **答案**：（Ⅰ）$|A|=(n+1)a^n$；（Ⅱ）$a\ne 0$ 时方程组有唯一解，$x_1=\dfrac{n}{(n+1)a}$；（Ⅲ）$a=0$ 时方程组有无穷多解，通解为 $k(1,0,0,\cdots,0)^{\mathrm{T}}+(0,1,0,\cdots,0)^{\mathrm{T}}$，$k$ 为任意常数。
+>
+> （Ⅰ）**证法一（化三角形）**
+> $$
+> |A|=\begin{vmatrix}2a&1&&&&\\a^2&2a&1&&&\\&a^2&2a&\ddots&&\\&&\ddots&\ddots&\ddots&\\&&&a^2&2a&1\\&&&&a^2&2a\end{vmatrix}
+> \xrightarrow{r_2-\frac{1}{2}ar_1}
+> \begin{vmatrix}2a&1&&&&\\0&\dfrac{3a}{2}&1&&&\\&a^2&2a&\ddots&&\\&&\ddots&\ddots&\ddots&\\&&&a^2&2a&1\\&&&&a^2&2a\end{vmatrix}
+> =\cdots
+> $$
+> $$
+> \xrightarrow{r_n-\frac{n-1}{n}ar_{n-1}}
+> \begin{vmatrix}2a&1&&&&\\0&\dfrac{3a}{2}&1&&&\\&0&\dfrac{4a}{3}&\ddots&&\\&&\ddots&\ddots&\ddots&\\&&&0&\dfrac{(n+1)a}{n}\end{vmatrix}
+> =2a\cdot\frac{3a}{2}\cdot\frac{4a}{3}\cdot\cdots\cdot\frac{(n+1)a}{n}=(n+1)a^n.
+> $$
+>
+> **证法二（数学归纳法）** 记 $D_n=|A|$，下面用数学归纳法证明 $D_n=(n+1)a^n$。
+>
+> 当 $n=1$ 时，$D_1=2a$，结论成立。
+>
+> 当 $n=2$ 时，$D_2=\begin{vmatrix}2a&1\\a^2&2a\end{vmatrix}=3a^2$，结论成立。
+>
+> 假设结论对小于 $n$ 的情况成立。将 $D_n$ 按第 1 行展开得
+> $$
+> D_n=2aD_{n-1}-\begin{vmatrix}a^2&1&&&\\0&2a&1&&\\&a^2&2a&\ddots&\\&&\ddots&\ddots&\ddots&\\&&&a^2&2a\end{vmatrix}
+> =2aD_{n-1}-a^2D_{n-2}=2ana^{n-1}-a^2(n-1)a^{n-2}=(n+1)a^n.
+> $$
+> 故 $|A|=(n+1)a^n$。
+>
+> **证法三（递推）** 记 $D_n=|A|$，将其按第一列展开得 $D_n=2aD_{n-1}-a^2D_{n-2}$，
+>
+> 所以
+> $$
+> D_n-aD_{n-1}=aD_{n-1}-a^2D_{n-2}=a(D_{n-1}-aD_{n-2})
+> =a^2(D_{n-2}-aD_{n-3})=\cdots=a^{n-2}(D_2-aD_1)=a^n.
+> $$
+>
+> （Ⅱ）因为方程组有唯一解，所以由 $Ax=b$ 知 $|A|\ne 0$，又 $|A|=(n+1)a^n$，故 $a\ne 0$。
+>
+> 由克莱姆法则，将 $D_n$ 的第 1 列换成 $b$，得行列式为
+> $$
+> \begin{vmatrix}1&1&&&&\\0&2a&1&&&\\&a^2&2a&\ddots&&\\&&\ddots&\ddots&\ddots&\\&&&a^2&2a&1\\&&&&a^2&2a\end{vmatrix}_{n\times n}
+> =\begin{vmatrix}2a&1&&&&\\a^2&2a&1&&&\\&a^2&2a&\ddots&&\\&&\ddots&\ddots&\ddots&\\&&&a^2&2a&1\\&&&&a^2&2a\end{vmatrix}_{(n-1)\times(n-1)}
+> =D_{n-1}=na^{n-1}.
+> $$
+> 所以
+> $$
+> x_1=\frac{D_{n-1}}{D_n}=\frac{n}{(n+1)a}.
+> $$
+>
+> （Ⅲ）方程组有无穷多解，由 $|A|=0$，有 $a=0$，则方程组为
+> $$
+> \begin{pmatrix}0&1&&&&\\0&0&1&&&\\&\ddots&\ddots&\ddots&&\\&&&0&1&\\&&&&0\end{pmatrix}\begin{pmatrix}x_1\\x_2\\\vdots\\x_{n-1}\\x_n\end{pmatrix}=\begin{pmatrix}1\\0\\\vdots\\0\\0\end{pmatrix},
+> $$
+> 此时方程组系数矩阵的秩和增广矩阵的秩均为 $n-1$，所以方程组有无穷多解，其通解为
+> $$
+> k(1\ 0\ 0\ \cdots\ 0)^{\mathrm{T}}+(0\ 1\ 0\ \cdots\ 0)^{\mathrm{T}},\quad k\ \text{为任意常数}.
+> $$
+>
+> <small>解析出处：《2008 年数学（三）真题解析》第 6–7 页</small>
 
 ### 2008 年 · 数学一 · 第 21 题（解答，12 分）
 
