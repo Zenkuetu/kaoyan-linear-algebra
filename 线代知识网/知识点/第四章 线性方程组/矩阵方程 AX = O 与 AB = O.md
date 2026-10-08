@@ -167,6 +167,70 @@ $B$ 的第 $1$ 列是 $(1,-1,1,0)^{\mathrm{T}}$，与 $A$ 的两行分别配对�
 > > （1）$r(A)+r(B)\le n$；
 > > （2）矩阵 $B$ 的列向量为齐次线性方程组 $AX=0$ 的一组解．
 
+### 2004 年 · 数学二 · 第 14 题（选择，4 分）
+
+设 $A,B$ 为满足 $AB=O$ 的任意两个非零矩阵，则必有（　）
+
+（A）$A$ 的列向量组线性相关，$B$ 的行向量组线性相关.
+（B）$A$ 的列向量组线性相关，$B$ 的列向量组线性相关.
+（C）$A$ 的行向量组线性相关，$B$ 的行向量组线性相关.
+（D）$A$ 的行向量组线性相关，$B$ 的列向量组线性相关.
+
+> [!success]- 答案与解析
+> **答案**：（A）
+>
+> 方法1：由矩阵秩的重要公式：若 $A$ 为 $m\times n$ 矩阵，$B$ 为 $n\times p$ 矩阵，如果 $AB=0$，则 $r(A)+r(B)\le n$
+>
+> 设 $A$ 为 $m\times n$ 矩阵，$B$ 为 $n\times s$ 矩阵，由 $AB=0$ 知，$r(A)+r(B)\le n$，其中 $n$ 是矩阵 $A$ 的列数，也是 $B$ 的行数
+>
+> 因 $A$ 为非零矩阵，故 $r(A)\ge1$，因 $r(A)+r(B)\le n$，从而 $r(B)\le n-1<n$，由向量组线性相关的充分必要条件向量组的秩小于向量的个数，知 $B$ 的行向量组线性相关.
+>
+> 因 $B$ 为非零矩阵，故 $r(B)\ge1$，因 $r(A)+r(B)\le n$，从而 $r(A)\le n-1<n$，由向量组线性相关的充分必要条件向量组的秩小于向量的个数，知 $A$ 的列向量组线性相关. 故应选（A）.
+>
+> 方法2：设 $A$ 为 $m\times n$ 矩阵，$B$ 为 $n\times s$ 矩阵，将 $B$ 按列分块，由 $AB=0$ 得，
+> $$
+> AB=A[\beta_1,\beta_2,\cdots,\beta_s]=0,\ A\beta_i=0,\ i=1,2,\cdots,s.
+> $$
+> 因 $B$ 是非零矩阵，故存在 $\beta_i\ne0$，使得 $A\beta_i=0$. 即齐次线性方程组 $Ax=0$ 有非零解. 由齐次线性方程组 $Ax=0$ 有非零解的充要条件 $r(A)<n$，知 $r(A)<n$. 所以 $A$ 的列向量组线性相关.
+>
+> 又 $(AB)^{\mathrm{T}}=B^{\mathrm{T}}A^{\mathrm{T}}=0$，将 $A^{\mathrm{T}}$ 按列分块，得
+> $$
+> B^{\mathrm{T}}A^{\mathrm{T}}=B^{\mathrm{T}}[\alpha_1^{\mathrm{T}},\alpha_2^{\mathrm{T}},\cdots,\alpha_m^{\mathrm{T}}]=0,\ B^{\mathrm{T}}\alpha_i^{\mathrm{T}}=0,\ i=1,2,\cdots,m.
+> $$
+> 因 $A$ 是非零矩阵，故存在 $\alpha_i^{\mathrm{T}}\ne0$，使得 $B^{\mathrm{T}}\alpha_i^{\mathrm{T}}=0$，即齐次线性方程组 $Bx=0$ 有非零解. 由齐次线性方程组 $Bx=0$ 有非零解的充要条件，知 $B^{\mathrm{T}}$ 的列向量组线性相关，由 $B^{\mathrm{T}}$ 是 $B$ 行列互换得到的，从而 $B$ 的行向量组线性相关，故应选（A）.
+>
+> 方法3：设 $A=(a_{ij})_{m\times n},B=(b_{ij})_{n\times s}$，将 $A$ 按列分块，记 $A=(A_1\ A_2\ \cdots\ A_n)$
+> $$
+> AB=0\Rightarrow(A_1\ A_2\ \cdots\ A_n)\begin{pmatrix}b_{11}&b_{12}&\cdots&b_{1s}\\b_{21}&b_{22}&\cdots&b_{2s}\\\cdot&\cdot&\cdots&\cdot\\b_{n1}&b_{n2}&\cdots&b_{ns}\end{pmatrix}=(b_{11}A_1+\cdots+b_{n1}A_n,\ \cdots,\ b_{1s}A_1+\cdots+b_{ns}A_n)=0\tag{1}
+> $$
+> 由于 $B\ne0$，所以至少有一个 $b_{ij}\ne0$（$1\le i\le n,1\le j\le s$）. 又由(1)知，
+> $$
+> b_{1j}A_1+b_{2j}A_2+\cdots+b_{ij}A_i+\cdots+b_{nj}A_n=0,
+> $$
+> 所以 $A_1,A_2,\cdots,A_n$ 线性相关. 即 $A$ 的列向量组线性相关.
+>
+> （向量组线性相关的定义：如果对 $m$ 个向量 $\alpha_1,\alpha_2,\cdots,\alpha_m\in R^n$，有 $m$ 个不全为零的数 $k_1,k_2,\cdots,k_m\in R$，使 $k_1\alpha_1+k_2\alpha_2+\cdots+k_m\alpha_m=0$ 成立，则称 $\alpha_1,\alpha_2,\cdots,\alpha_m$ 线性相关.）
+>
+> 又将 $B$ 按行分块，记 $B=\begin{pmatrix}B_1\\B_2\\\vdots\\B_n\end{pmatrix}$，同样，
+> $$
+> AB=0\Rightarrow\begin{pmatrix}a_{11}&a_{12}&\cdots&a_{1n}\\a_{21}&a_{22}&\cdots&a_{2n}\\\cdot&\cdot&\cdots&\cdot\\a_{m1}&a_{m2}&\cdots&a_{mn}\end{pmatrix}\begin{pmatrix}B_1\\B_2\\\vdots\\B_n\end{pmatrix}=\begin{pmatrix}a_{11}B_1+a_{12}B_2+\cdots+a_{1n}B_n\\a_{21}B_1+a_{22}B_2+\cdots+a_{2n}B_n\\\cdots\\a_{m1}B_1+a_{m2}B_2+\cdots+a_{mn}B_n\end{pmatrix}=0
+> $$
+> 由于 $A\ne0$，则至少存在一个 $a_{ij}\ne0$（$1\le i\le m,1\le j\le n$），使
+> $$
+> a_{i1}B_1+a_{i2}B_2+\cdots+a_{ij}B_j+\cdots+a_{in}B_n=0,
+> $$
+> 由向量组线性相关的定义知，$B_1,B_2,\cdots,B_n$ 线性相关，即 $B$ 的行向量组线性相关，故应选（A）.
+>
+> 方法4：用排除法. 取满足题设条件的 $A,B$.
+>
+> 取 $A=\begin{pmatrix}1&0&0\\1&0&0\end{pmatrix}\ne0$，$B=\begin{pmatrix}0&0\\1&0\\0&1\end{pmatrix}\ne0$，有 $AB=\begin{pmatrix}1&0&0\\1&0&0\end{pmatrix}\begin{pmatrix}0&0\\1&0\\0&1\end{pmatrix}=0$，
+>
+> $A$ 的行向量组，列向量组均线性相关，但 $B$ 的列向量组线性无关，故（B），（D）不成立.
+>
+> 又取 $A=\begin{pmatrix}0&1&0\\0&0&1\end{pmatrix}\ne0$，$B=\begin{pmatrix}1&1\\0&0\\0&0\end{pmatrix}\ne0$，有 $AB=\begin{pmatrix}0&1&0\\0&0&1\end{pmatrix}\begin{pmatrix}1&1\\0&0\\0&0\end{pmatrix}=0$，
+>
+> $A$ 的行向量组线性无关，$B$ 的列向量组线性相关，故（C）不成立. 由排除法知应选（A）.
+
 ### 1998 年 · 数学三 · 选择题第 3 题（选择，3 分）
 
 齐次线性方程组

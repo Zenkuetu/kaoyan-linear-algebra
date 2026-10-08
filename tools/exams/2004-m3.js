@@ -84,17 +84,17 @@ k_1\alpha_1+k_2\alpha_2+k_3\alpha_3=\beta.\tag{*}
 $$
 记 $A=(\alpha_1,\alpha_2,\alpha_3)$。对矩阵 $(A,\beta)$ 施以初等行变换，有
 $$
-(A,\beta)=\begin{pmatrix}1&1&-1&\mid&1\\2&a+2&-b-2&\mid&3\\0&-3a&a+2b&\mid&-3\end{pmatrix}\to\begin{pmatrix}1&1&-1&\mid&1\\0&a&b-2&\mid&1\\0&0&a-b&\mid&0\end{pmatrix}.
+(A,\beta)=\begin{pmatrix}1&1&-1&\mid&1\\2&a+2&-b-2&\mid&3\\0&-3a&a+2b&\mid&-3\end{pmatrix}\to\begin{pmatrix}1&1&-1&\mid&1\\0&a&b&\mid&1\\0&0&a-b&\mid&0\end{pmatrix}.
 $$
 （Ⅰ）当 $a=0$ 时，有
 $$
-(A,\beta)\to\begin{pmatrix}1&1&-1&\mid&1\\0&0&b-2&\mid&1\\0&0&0&\mid&-1\end{pmatrix}.
+(A,\beta)\to\begin{pmatrix}1&1&-1&\mid&1\\0&0&b&\mid&1\\0&0&0&\mid&-1\end{pmatrix}.
 $$
 可知 $r(A)\ne r(A,\beta)$。故方程组 $(*)$ 无解，$\beta$ 不能由 $\alpha_1,\alpha_2,\alpha_3$ 线性表示。
 
 （Ⅱ）当 $a\ne 0$，且 $a\ne b$ 时，有
 $$
-(A,\beta)\to\begin{pmatrix}1&1&-1&\mid&1\\0&a&b-2&\mid&1\\0&0&a-b&\mid&0\end{pmatrix}\to\begin{pmatrix}1&0&0&\mid&1-\dfrac{1}{a}\\[4pt]0&1&0&\mid&\dfrac{1}{a}\\[4pt]0&0&1&\mid&0\end{pmatrix},
+(A,\beta)\to\begin{pmatrix}1&1&-1&\mid&1\\0&a&b&\mid&1\\0&0&a-b&\mid&0\end{pmatrix}\to\begin{pmatrix}1&0&0&\mid&1-\dfrac{1}{a}\\[4pt]0&1&0&\mid&\dfrac{1}{a}\\[4pt]0&0&1&\mid&0\end{pmatrix},
 $$
 $r(A)=r(A,\beta)=3$，方程组 $(*)$ 有唯一解：
 $$
@@ -106,7 +106,7 @@ $$
 $$
 （Ⅲ）当 $a=b\ne 0$ 时，对矩阵 $(A,\beta)$ 施以初等行变换，有
 $$
-(A,\beta)\to\begin{pmatrix}1&1&-1&\mid&1\\0&a&b-2&\mid&1\\0&0&a-b&\mid&0\end{pmatrix}\to\begin{pmatrix}1&0&0&\mid&1-\dfrac{1}{a}\\[4pt]0&1&-1&\mid&\dfrac{1}{a}\\[4pt]0&0&0&\mid&0\end{pmatrix},
+(A,\beta)\to\begin{pmatrix}1&1&-1&\mid&1\\0&a&b&\mid&1\\0&0&a-b&\mid&0\end{pmatrix}\to\begin{pmatrix}1&0&0&\mid&1-\dfrac{1}{a}\\[4pt]0&1&-1&\mid&\dfrac{1}{a}\\[4pt]0&0&0&\mid&0\end{pmatrix},
 $$
 $r(A)=r(A,\beta)=2$，方程组 $(*)$ 有无穷多解，其全部解为
 $$

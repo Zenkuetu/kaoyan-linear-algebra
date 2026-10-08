@@ -1278,17 +1278,17 @@ $$
 > $$
 > 记 $A=(\alpha_1,\alpha_2,\alpha_3)$。对矩阵 $(A,\beta)$ 施以初等行变换，有
 > $$
-> (A,\beta)=\begin{pmatrix}1&1&-1&\mid&1\\2&a+2&-b-2&\mid&3\\0&-3a&a+2b&\mid&-3\end{pmatrix}\to\begin{pmatrix}1&1&-1&\mid&1\\0&a&b-2&\mid&1\\0&0&a-b&\mid&0\end{pmatrix}.
+> (A,\beta)=\begin{pmatrix}1&1&-1&\mid&1\\2&a+2&-b-2&\mid&3\\0&-3a&a+2b&\mid&-3\end{pmatrix}\to\begin{pmatrix}1&1&-1&\mid&1\\0&a&b&\mid&1\\0&0&a-b&\mid&0\end{pmatrix}.
 > $$
 > （Ⅰ）当 $a=0$ 时，有
 > $$
-> (A,\beta)\to\begin{pmatrix}1&1&-1&\mid&1\\0&0&b-2&\mid&1\\0&0&0&\mid&-1\end{pmatrix}.
+> (A,\beta)\to\begin{pmatrix}1&1&-1&\mid&1\\0&0&b&\mid&1\\0&0&0&\mid&-1\end{pmatrix}.
 > $$
 > 可知 $r(A)\ne r(A,\beta)$。故方程组 $(*)$ 无解，$\beta$ 不能由 $\alpha_1,\alpha_2,\alpha_3$ 线性表示。
 >
 > （Ⅱ）当 $a\ne 0$，且 $a\ne b$ 时，有
 > $$
-> (A,\beta)\to\begin{pmatrix}1&1&-1&\mid&1\\0&a&b-2&\mid&1\\0&0&a-b&\mid&0\end{pmatrix}\to\begin{pmatrix}1&0&0&\mid&1-\dfrac{1}{a}\\[4pt]0&1&0&\mid&\dfrac{1}{a}\\[4pt]0&0&1&\mid&0\end{pmatrix},
+> (A,\beta)\to\begin{pmatrix}1&1&-1&\mid&1\\0&a&b&\mid&1\\0&0&a-b&\mid&0\end{pmatrix}\to\begin{pmatrix}1&0&0&\mid&1-\dfrac{1}{a}\\[4pt]0&1&0&\mid&\dfrac{1}{a}\\[4pt]0&0&1&\mid&0\end{pmatrix},
 > $$
 > $r(A)=r(A,\beta)=3$，方程组 $(*)$ 有唯一解：
 > $$
@@ -1300,7 +1300,7 @@ $$
 > $$
 > （Ⅲ）当 $a=b\ne 0$ 时，对矩阵 $(A,\beta)$ 施以初等行变换，有
 > $$
-> (A,\beta)\to\begin{pmatrix}1&1&-1&\mid&1\\0&a&b-2&\mid&1\\0&0&a-b&\mid&0\end{pmatrix}\to\begin{pmatrix}1&0&0&\mid&1-\dfrac{1}{a}\\[4pt]0&1&-1&\mid&\dfrac{1}{a}\\[4pt]0&0&0&\mid&0\end{pmatrix},
+> (A,\beta)\to\begin{pmatrix}1&1&-1&\mid&1\\0&a&b&\mid&1\\0&0&a-b&\mid&0\end{pmatrix}\to\begin{pmatrix}1&0&0&\mid&1-\dfrac{1}{a}\\[4pt]0&1&-1&\mid&\dfrac{1}{a}\\[4pt]0&0&0&\mid&0\end{pmatrix},
 > $$
 > $r(A)=r(A,\beta)=2$，方程组 $(*)$ 有无穷多解，其全部解为
 > $$
@@ -1759,6 +1759,55 @@ $$
 >
 > > **编者注**：原书此处行变换标记印作 $[3]+[2]\times 3$，但由结果 $0$ 行应为 $[3]+[2]\times(-3)$，疑为原书漏印负号（按原文转写标记）。
 
+### 1994 年 · 数学三 · 试卷四·第九题（解答，11 分）
+
+设线性方程组
+$$
+\begin{cases}x_1+a_1x_2+a_1^2x_3=a_1^3,\\x_1+a_2x_2+a_2^2x_3=a_2^3,\\x_1+a_3x_2+a_3^2x_3=a_3^3,\\x_1+a_4x_2+a_4^2x_3=a_4^3,\end{cases}
+$$
+（1）证明：若 $a_1,a_2,a_3,a_4$ 两两不相等，则此线性方程组无解；
+（2）设 $a_1=a_3=k,a_2=a_4=-k(k\ne 0)$，且已知 $\beta_1,\beta_2$ 是该方程组的两个解，其中
+$$
+\beta_1=\begin{pmatrix}-1\\1\\1\end{pmatrix},\quad\beta_2=\begin{pmatrix}1\\1\\-1\end{pmatrix},
+$$
+写出此方程组的通解.
+
+> [!success]- 答案与解析
+> **答案**：
+> （1）证明见解析；（2）
+> $$
+> \beta_1+k\eta=\begin{pmatrix}-1\\1\\1\end{pmatrix}+k\begin{pmatrix}-2\\0\\2\end{pmatrix}\quad(k\text{ 为任意常数}).
+> $$
+>
+> 【解析】（1）因为增广矩阵 $\overline{A}$ 的行列式是范德蒙行列式，$a_1,a_2,a_3,a_4$ 两两不相等，则有
+> $$
+> |\overline{A}|=(a_2-a_1)(a_3-a_1)(a_4-a_1)(a_3-a_2)(a_4-a_2)(a_4-a_3)\ne 0,
+> $$
+> 故 $r(\overline{A})=4$. 而系数矩阵 $A$ 的秩 $r(A)=3$，所以方程组无解.
+> （2）当 $a_1=a_3=k,a_2=a_4=-k(k\ne 0)$ 时，方程组同解于
+> $$
+> \begin{cases}x_1+kx_2+k^2x_3=k^3,\\x_1-kx_2+k^2x_3=-k^3.\end{cases}
+> $$
+> 因为 $\begin{vmatrix}1&k\\1&-k\end{vmatrix}=-2k\ne 0$，知 $r(A)=r(\overline{A})=2$.
+> 由 $n-r(A)=3-2=1$，知导出组 $Ax=0$ 的基础解系含有 1 个解向量，即解空间的维数为 1.
+> 由解的结构和解的性质，
+> $$
+> \eta=\beta_1-\beta_2=\begin{pmatrix}-1\\1\\1\end{pmatrix}-\begin{pmatrix}1\\1\\-1\end{pmatrix}=\begin{pmatrix}-2\\0\\2\end{pmatrix}
+> $$
+> 是 $Ax=0$ 的基础解系.
+> 于是方程组的通解为
+> $$
+> \beta_1+k\eta=\begin{pmatrix}-1\\1\\1\end{pmatrix}+k\begin{pmatrix}-2\\0\\2\end{pmatrix},
+> $$
+> 其中 $k$ 为任意常数.
+> 【相关知识点】1. 非齐次线性方程组有解的判定定理：设 $A$ 是 $m\times n$ 矩阵，线性方程组 $Ax=b$ 有解的充分必要条件是系数矩阵的秩等于增广矩阵 $\overline{A}=(A\vdots b)$ 的秩，即 $r(A)=r(\overline{A})$.
+> 设 $A$ 是 $m\times n$ 矩阵，线性方程组 $Ax=b$，则
+> （1）有唯一解 $\Leftrightarrow r(A)=r(\overline{A})=n$.
+> （2）有无穷多解 $\Leftrightarrow r(A)=r(\overline{A})<n$.
+> （3）无解 $\Leftrightarrow r(A)+1=r(\overline{A})\Leftrightarrow b$ 不能由 $A$ 的列向量 $\alpha_1,\alpha_2,\cdots,\alpha_n$ 线表出.
+> 2. 解的结构：若 $\eta_1$、$\eta_2$ 是对应齐次线性方程组 $Ax=0$ 的基础解系，知 $Ax=b$ 的通解形式为 $k_1\eta_1+k_2\eta_2+\xi$，其中 $\eta_1,\eta_2$ 是 $Ax=0$ 的基础解系，$\xi$ 是 $Ax=b$ 的一个特解.
+> 3. 解的性质：如果 $\eta_1,\eta_2$ 是 $Ax=0$ 的两个解，则其线性组合 $k_1\eta_1+k_2\eta_2$ 仍是 $Ax=0$ 的解；如果 $\xi$ 是 $Ax=b$ 的一个解，$\eta$ 是 $Ax=0$ 的一个解，则 $\xi+\eta$ 仍是 $Ax=b$ 的解.
+
 ### 1993 年 · 数学三 · 试卷四·第八题（解答，10 分）
 
 $k$ 为何值时，线性方程组
@@ -1834,6 +1883,35 @@ $$
 > $$
 > X=k\begin{pmatrix}-1\\2\\1\end{pmatrix}+\begin{pmatrix}1\\-1\\0\end{pmatrix}\quad(k\text{ 为任意常数}).
 > $$
+
+### 1988 年 · 数学三 · 第七题（解答，8 分）
+
+已知线性方程组
+$$
+\begin{cases}x_1+x_2+2x_3+3x_4=1,\\ x_1+3x_2+6x_3+x_4=3,\\ 3x_1-x_2-k_1x_3+15x_4=3,\\ x_1-5x_2-10x_3+12x_4=k_2.\end{cases}
+$$
+问 $k_1$ 和 $k_2$ 各取何值时，方程组无解？有唯一解？有无穷多解？在方程组有无穷多解的情况下，试求出一般解.
+
+> [!success]- 答案与解析
+> **答案**：当 $k_1\ne 2$ 时，方程组有唯一解；当 $k_1=2$ 而 $k_2\ne 1$ 时，方程组无解；当 $k_1=2$ 且 $k_2=1$ 时，方程组有无穷多解，其一般解为 $x_1=-8$，$x_2=3-2c$，$x_3=c$，$x_4=2$，其中 $c$ 为任意常数．
+>
+> 解：以 $A$ 表示方程组的系数矩阵，以 $(A|B)$ 表示增广矩阵，
+> $$
+> (A|B)=\begin{pmatrix}1&1&2&3&1\\1&3&6&1&3\\3&-1&-k_1&15&3\\1&-5&-10&12&k_2\end{pmatrix}\to\begin{pmatrix}1&1&2&3&1\\0&1&2&-1&1\\0&0&-k_1+2&2&4\\0&0&0&3&k_2+5\end{pmatrix},
+> $$
+> 故当 $k_1\ne 2$ 时，$R(A)=R(A|B)=4$，方程组有唯一解；
+> 当 $k_1=2$ 时，有
+> $$
+> (A|B)\to\begin{pmatrix}1&1&2&3&1\\0&1&2&-1&1\\0&0&0&2&4\\0&0&0&3&k_2+5\end{pmatrix}\to\begin{pmatrix}1&1&2&3&1\\0&1&2&-1&1\\0&0&0&1&2\\0&0&0&0&k_2-1\end{pmatrix},
+> $$
+> 这时，若 $k_2\ne 1$，则 $R(A)=3<R(A|B)=4$，故方程组无解；
+> 若 $k_2=1$，则 $R(A)=R(A|B)=3<4$，故方程组有无穷多组解，此时有
+> $$
+> (A|B)\to\begin{pmatrix}1&1&2&3&1\\0&1&2&-1&1\\0&0&0&1&2\\0&0&0&0&0\end{pmatrix}\to\begin{pmatrix}1&0&0&4&0\\0&1&2&-1&1\\0&0&0&1&2\\0&0&0&0&0\end{pmatrix}\to\begin{pmatrix}1&0&0&0&-8\\0&1&2&0&3\\0&0&0&1&2\\0&0&0&0&0\end{pmatrix},
+> $$
+> 相应的方程组为 $x_1=-8$，$x_2=3-2x_3$，$x_4=2$. 取 $x_3=c$（$c$ 为任意常数），得方程组的一般解：$x_1=-8$，$x_2=3-2c$，$x_3=c$，$x_4=2$.
+>
+> 综上所述：当 $k_1\ne 2$ 时，方程组有唯一解；当 $k_1=2$ 而 $k_2\ne 1$ 时，方程组无解；当 $k_1=2$ 且 $k_2=1$ 时，方程组有无穷多组解，其一般解为 $x_1=-8$，$x_2=3-2c$，$x_3=c$，$x_4=2$，其中 $c$ 为任意常数．
 
 ### 1987 年 · 数学一 · 第九大题（解答，8 分）
 
