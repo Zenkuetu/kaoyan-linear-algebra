@@ -33,7 +33,7 @@ EXAMS.push({
   answer: String.raw`（A）.`,
   analysis: String.raw`【解析】齐次方程组 $Ax=0$ 只有零解 $\Leftrightarrow r(A)=n$.
 由于 $r(A)=A$ 的行秩 $=A$ 的列秩，现 $A$ 是 $m\times n$ 矩阵，$r(A)=n$，即 $A$ 的列向量线性无关. 故应选（A）.
-【相关知识点】对奇次线性方程组 $Ax=0$，有定理如下：
+【相关知识点】对齐次线性方程组 $Ax=0$，有定理如下：
 对矩阵 $A$ 按列分块，有 $A=(\alpha_1,\alpha_2,\cdots,\alpha_n)$，则 $Ax=0$ 的向量形式为
 $$
 x_1\alpha_1+x_2\alpha_2+\cdots+x_n\alpha_n=0.

@@ -92,470 +92,213 @@ $$
 
 ## <span class="hx hx-exam">📝</span> 九、真题（1987–2026）
 
-### 2026 年 · 数学一 · 第 5 题（选择，5 分）
+### 1987 年 · 数学一 · 选择题第 4 题（选择，3 分）
 
-单位矩阵经过若干次互换两行得到的矩阵称为置换矩阵，设 $A$ 为 $n$ 阶置换矩阵，$A^*$ 为 $A$ 的伴随矩阵，则（　）
+设 $A$ 为 $n$ 阶矩阵，且 $|A|=a\ne 0$，$A^*$ 是 $A$ 的伴随矩阵，则 $|A^*|=$（　　）
 
-（A）$A^*$ 为置换矩阵　（B）$A^{-1}$ 为置换矩阵　（C）$A^{-1}=A^*$　（D）$A^{-1}=-A^*$
-
-> [!success]- 答案与解析
-> **答案**：（B）
->
-> 由题设知 $A=P_1P_2\cdots P_s$，其中 $P_1,P_2,\cdots,P_s$ 均为初等矩阵，则
-> $$
-> A^{-1}=(P_1P_2\cdots P_s)^{-1}=P_s^{-1}\cdots P_2^{-1}P_1^{-1}=P_s\cdots P_2P_1
-> $$
-> 也为置换矩阵，故选（B）。
-
-### 2026 年 · 数学三 · 第 6 题（选择，5 分）
-
-设 $A$ 为 3 阶非零矩阵，$A^{*}$ 为 $A$ 的伴随矩阵。若 $A^{*}=-2A$，则 $A^2=$（ ）
-
-（A）$\begin{pmatrix}-4&0&0\\0&-4&0\\0&0&-4\end{pmatrix}$　（B）$\begin{pmatrix}-4&0&0\\0&-4&0\\0&0&4\end{pmatrix}$
-
-（C）$\begin{pmatrix}-4&0&0\\0&4&0\\0&0&4\end{pmatrix}$　（D）$\begin{pmatrix}4&0&0\\0&4&0\\0&0&4\end{pmatrix}$
+（A）$a$　（B）$\dfrac{1}{a}$　（C）$a^{n-1}$　（D）$a^n$
 
 > [!success]- 答案与解析
-> **答案**：（D）
+> **答案**：（C）.
 >
-> 由 $A^{*}=-2A$ 两边同时左乘 $A$ 可得，$AA^{*}=-2AA\Rightarrow A^2=\frac{|A|}{-2}E$；对 $A^{*}=-2A$ 取行列式可得
-> $$
-> |A^{*}|=|-2A|\Rightarrow |A|^2=(-2)^3|A|\Rightarrow |A|=(-2)^3,
-> $$
-> 从而 $A^2=4E$，故答案选 D。
+> 由 $AA^*=|A|E$ 得出 $|A|\cdot|A^*|=||A|E|=|A|^n$，由 $|A|=a\ne 0$ 得 $|A^*|=a^{n-1}$，应选（C）.
 
-### 2023 年 · 数学三 · 第 5 题（选择，5 分）
+### 1988 年 · 数学三 · 第九题（解答，6 分）
 
-设 $A,B$ 为 $n$ 阶可逆矩阵，$E$ 为 $n$ 阶单位矩阵，$M^{*}$ 为矩阵 $M$ 的伴随矩阵，则
+设 $A$ 是三阶方阵，$A^*$ 是 $A$ 的伴随矩阵，$A$ 的行列式 $|A|=\dfrac{1}{2}$. 求行列式 $|(3A)^{-1}-2A^*|$ 的值.
+
+> [!success]- 答案与解析
+> **答案**：$-\dfrac{16}{27}$.
+>
+> 解：因 $(3A)^{-1}=\dfrac{1}{3}A^{-1}$，
+> 故 $A^*=|A|\cdot A^{-1}=\dfrac{1}{2}A^{-1}$，
+> 所以
+> $$
+> |(3A)^{-1}-2A^*|=\left|\dfrac{1}{3}A^{-1}-A^{-1}\right|=\left|-\dfrac{2}{3}A^{-1}\right|=\left(-\dfrac{2}{3}\right)^3|A^{-1}|=-\dfrac{16}{27}.
+> $$
+
+### 1989 年 · 数学一 · 第八大题（证明题）（解答，8 分）
+
+设 $\lambda$ 为 $n$ 阶可逆矩阵 $A$ 的一个特征值，证明：
+
+（1）$\dfrac{1}{\lambda}$ 为 $A^{-1}$ 的特征值；
+（2）$\dfrac{|A|}{\lambda}$ 为 $A$ 的伴随矩阵 $A^*$ 的特征值.
+
+> [!success]- 答案与解析
+> **答案**：证明见解析.
+>
+> （1）因为 $A$ 可逆，所以 $\lambda\ne 0$，设 $A$ 的属于特征值 $\lambda$ 的特征向量为 $\alpha$，即 $A\alpha=\lambda\alpha$，将 $A\alpha=\lambda\alpha$ 两边左乘 $A^{-1}$，得 $A^{-1}A\alpha=\lambda A^{-1}\alpha$，于是 $A^{-1}\alpha=\dfrac{1}{\lambda}\alpha$，即 $\dfrac{1}{\lambda}$ 为 $A^{-1}$ 的特征值.
+>
+> （2）因为 $A^*=|A|A^{-1}$，所以 $A^*\alpha=|A|A^{-1}\alpha=\dfrac{|A|}{\lambda}\alpha$，即 $\dfrac{|A|}{\lambda}$ 为 $A$ 的伴随矩阵 $A^*$ 的特征值.
+
+### 1994 年 · 数学一 · 第九大题（证明题）（解答，6 分）
+
+设 $A$ 为 $n$ 阶非零方阵，$A^*$ 为 $A$ 的伴随矩阵，$A^{\mathrm{T}}$ 是 $A$ 的转置矩阵，当 $A^*=A^{\mathrm{T}}$ 时，证明：$|A|\ne 0$.
+
+> [!success]- 答案与解析
+> **答案**：证明见解析.
+>
+> 由 $A^*=A^{\mathrm{T}}$ 得 $a_{ij}=A_{ij}\ (i,j=1,2,\cdots,n)$. 因为 $A$ 为非零矩阵，所以矩阵 $A$ 中有非零元素，不妨设 $a_{1j}\ne 0$，故
+> $$
+> |A|=a_{11}A_{11}+a_{12}A_{12}+\cdots+a_{1n}A_{1n}=a_{11}^2+a_{12}^2+\cdots+a_{1n}^2>0.
+> $$
+
+### 1995 年 · 数学三 · 填空题第 4 题（填空，3 分）
+
+设
 $$
-\begin{bmatrix}A&E\\O&B\end{bmatrix}^{*}=
+A=\begin{pmatrix}1&0&0\\2&2&0\\3&4&5\end{pmatrix},
 $$
-（A）$\begin{bmatrix}|A|B^{*}&-B^{*}A^{*}\\O&|B|A^{*}\end{bmatrix}$　（B）$\begin{bmatrix}|B|A^{*}&-A^{*}B^{*}\\O&|A|B^{*}\end{bmatrix}$
-
-（C）$\begin{bmatrix}|B|A^{*}&-B^{*}A^{*}\\O&|A|B^{*}\end{bmatrix}$　（D）$\begin{bmatrix}|A|B^{*}&-A^{*}B^{*}\\O&|B|A^{*}\end{bmatrix}$
+$A^*$ 是 $A$ 的伴随矩阵，则 $(A^*)^{-1}=$______.
 
 > [!success]- 答案与解析
-> **答案**：（B）
+> **答案**：
+> $$
+> (A^*)^{-1}=\frac{A}{|A|}=\frac{1}{10}\begin{pmatrix}1&0&0\\2&2&0\\3&4&5\end{pmatrix}.
+> $$
 >
-> （方法一）分别令（A）（B）（C）（D）选项中的矩阵为 $I_1,I_2,I_3,I_4$。
+> 【解析】由 $AA^*=|A|E$，有 $\dfrac{A}{|A|}A^*=E$，故 $(A^*)^{-1}=\dfrac{A}{|A|}$.
+> 而
 > $$
-> \begin{bmatrix}A&E\\O&B\end{bmatrix}I_1=\begin{bmatrix}A&E\\O&B\end{bmatrix}\begin{bmatrix}|A|B^{*}&-B^{*}A^{*}\\O&|B|A^{*}\end{bmatrix}=\begin{bmatrix}|A|AB^{*}&\cdots\\\cdots&\cdots\end{bmatrix},
-> $$
-> 不能保证 $|A|AB^{*}=|A||B|E$，所以 $I_1$ 不是 $\begin{bmatrix}A&E\\O&B\end{bmatrix}^{*}$，选项（A）不正确。同理，选项（D）也不正确。
-> $$
-> \begin{bmatrix}A&E\\O&B\end{bmatrix}I_3=\begin{bmatrix}A&E\\O&B\end{bmatrix}\begin{bmatrix}|B|A^{*}&-B^{*}A^{*}\\O&|A|B^{*}\end{bmatrix}=\begin{bmatrix}|A||B|E&-AB^{*}A^{*}+|A|B^{*}\\O&|A||B|E\end{bmatrix},
-> $$
-> （C）不正确。
-> $$
-> \begin{bmatrix}A&E\\O&B\end{bmatrix}I_4=\begin{bmatrix}A&E\\O&B\end{bmatrix}\begin{bmatrix}|A|B^{*}&-A^{*}B^{*}\\O&|B|A^{*}\end{bmatrix}=\begin{bmatrix}|A||B|E&-|A|B^{*}+|A|B^{*}\\O&|A||B|E\end{bmatrix}=\begin{bmatrix}|A||B|E&O\\O&|A||B|E\end{bmatrix},
-> $$
-> 选项（B）是正确的。
->
-> （方法二）
-> $$
-> \begin{bmatrix}A&E\\O&B\end{bmatrix}^{*}=\begin{bmatrix}A&E\\O&B\end{bmatrix}\begin{bmatrix}A&E\\O&B\end{bmatrix}^{-1}=|A||B|\begin{bmatrix}A^{-1}&-A^{-1}B^{-1}\\O&B^{-1}\end{bmatrix}=\begin{bmatrix}|A||B|A^{-1}&-|A||B|A^{-1}B^{-1}\\O&|A||B|B^{-1}\end{bmatrix}=\begin{bmatrix}|B|A^{*}&-A^{*}B^{*}\\O&|A|B^{*}\end{bmatrix}.
-> $$
-
-### 2023 年 · 数学二 · 第 8 题（选择，5 分）
-
-设 $A,B$ 为 $n$ 阶可逆矩阵，$E$ 为 $n$ 阶单位矩阵，$M^*$ 为矩阵 $M$ 的伴随矩阵，则
-$$
-\begin{pmatrix}A&E\\O&B\end{pmatrix}^*=
-$$
-
-（A）$\begin{pmatrix}|A|B^*&-B^*A^*\\O&|B|A^*\end{pmatrix}$　　（B）$\begin{pmatrix}|A|B^*&-A^*B^*\\O&|B|A^*\end{pmatrix}$
-
-（C）$\begin{pmatrix}|B|A^*&-B^*A^*\\O&|A|B^*\end{pmatrix}$　　（D）$\begin{pmatrix}|B|A^*&-A^*B^*\\O&|A|B^*\end{pmatrix}$
-
-> [!success]- 答案与解析
-> **答案**：（D）
->
-> 【解】
-> $$
-> \begin{vmatrix}A&E\\O&B\end{vmatrix}=|A|\cdot|B|,
-> $$
-> 令
-> $$
-> \begin{pmatrix}A&E\\O&B\end{pmatrix}^{-1}=\begin{pmatrix}X_{11}&X_{12}\\X_{21}&X_{22}\end{pmatrix},
-> $$
-> 由
-> $$
-> \begin{pmatrix}A&E\\O&B\end{pmatrix}\begin{pmatrix}X_{11}&X_{12}\\X_{21}&X_{22}\end{pmatrix}=\begin{pmatrix}E&O\\O&E\end{pmatrix}
-> $$
-> 得
-> $$
-> \begin{cases}AX_{11}+EX_{21}=E,\\AX_{12}+EX_{22}=O,\\BX_{21}=O,\\BX_{22}=E,\end{cases}
-> $$
-> 解得
-> $$
-> \begin{cases}X_{11}=A^{-1},\\X_{12}=-A^{-1}B^{-1},\\X_{21}=O,\\X_{22}=B^{-1},\end{cases}
-> $$
-> 则
-> $$
-> \begin{pmatrix}A&E\\O&B\end{pmatrix}^*=|A|\cdot|B|\begin{pmatrix}A^{-1}&-A^{-1}B^{-1}\\O&B^{-1}\end{pmatrix}=\begin{pmatrix}|B|A^*&-A^*B^*\\O&|A|B^*\end{pmatrix},
-> $$
-> 选（D）。
-
-### 2013 年 · 数学二 · 第 14 题（填空，4 分）
-
-设 $A=(a_{ij})$ 是 3 阶非零矩阵，$|A|$ 为 $A$ 的行列式，$A_{ij}$ 为 $a_{ij}$ 的代数余子式. 若 $a_{ij}+A_{ij}=0\ (i,j=1,2,3)$，则 $|A|=$ ________.
-
-> [!success]- 答案与解析
-> **答案**：-1
->
-> 由 $a_{ij}+A_{ij}=0$ 可知，$A^{\mathrm{T}}=-A^*$
-> $$
-> |A|=a_{11}A_{11}+a_{12}A_{12}+a_{13}A_{13}=a_{1j}A_{1j}+a_{2j}A_{2j}+a_{3j}A_{3j}
-> $$
-> $$
-> =-\sum_{j=1}^{3}a_{1j}^2=-\sum_{i=1}^{3}a_{1i}^2<0
-> $$
-> 从而有 $|A|=|A^{\mathrm{T}}|=|-A^*|=-|A|^2$，故 $|A|=-1$.
-
-### 2012 年 · 数学三 · 第 13 题（填空，4 分）
-
-设 $A$ 为 3 阶矩阵，$|A|=3$，$A^{*}$ 为 $A$ 的伴随矩阵，若交换 $A$ 的第 1 行与第 2 行得矩阵 $B$，则 $|BA^{*}|=\underline{\qquad}$。
-
-> [!success]- 答案与解析
-> **答案**：$-27$
->
-> 由于 $B=E_{12}A$，故
-> $$
-> BA^{*}=E_{12}A\cdot A^{*}=|A|E_{12}=3E_{12},
+> |A|=\begin{vmatrix}1&0&0\\2&2&0\\3&4&5\end{vmatrix}=10,
 > $$
 > 所以
 > $$
-> |BA^{*}|=|3E_{12}|=3^3|E_{12}|=27\times(-1)=-27.
+> (A^*)^{-1}=\frac{A}{|A|}=\frac{1}{10}\begin{pmatrix}1&0&0\\2&2&0\\3&4&5\end{pmatrix}.
 > $$
 
-### 2012 年 · 数学二 · 第 14 题（填空，4 分）
+### 1996 年 · 数学三 · 选择题第 3 题（选择，3 分）
 
-设 $A$ 为 3 阶矩阵，$|A|=3$，$A^*$ 为 $A$ 的伴随矩阵，若交换 $A$ 的第 1 行与第 2 行得矩阵 $B$，则 $|BA^*|=$ ________.
+设 $n$ 阶矩阵 $A$ 非奇异（$n\ge 2$），$A^*$ 是矩阵 $A$ 的伴随矩阵，则（　　）
+（A）$(A^*)^*=|A|^{n-1}A$
+（B）$(A^*)^*=|A|^{n+1}A$
+（C）$(A^*)^*=|A|^{n-2}A$
+（D）$(A^*)^*=|A|^{n+2}A$
 
 > [!success]- 答案与解析
-> **答案**：-27
+> **答案**：（C）.
 >
-> 由于 $B=E_{12}A$，故 $BA^*=E_{12}\cdot A\cdot A^*=|A|E_{12}=3E_{12}$，
-> 所以，$|BA^*|=|3E_{12}|=3^3|E_{12}|=27\times(-1)=-27$.
+> 【解析】伴随矩阵的基本关系式为 $AA^*=A^*A=|A|E$，
+> 现将 $A^*$ 视为关系式中的矩阵 $A$，则有 $A^*(A^*)^*=|A^*|E$.
+> 方法一：由 $|A^*|=|A|^{n-1}$ 及 $(A^*)^{-1}=\dfrac{A}{|A|}$，可得
+> $$
+> (A^*)^*=|A^*|(A^*)^{-1}=|A|^{n-1}\frac{A}{|A|}=|A|^{n-2}A.
+> $$
+> 故应选（C）.
+> 方法二：由 $A^*(A^*)^*=|A^*|E$，左乘 $A$ 得
+> $$
+> (AA^*)(A^*)^*=|A|^{n-1}A,\ \text{即}\ (|A|E)(A^*)^*=|A|^{n-1}A.
+> $$
+> 故应选（C）.
 
-### 2011 年 · 数学二 · 第 8 题（选择，4 分）
+### 1997 年 · 数学三 · 第九题（解答，6 分）
 
-设 $A=(\alpha_1,\alpha_2,\alpha_3,\alpha_4)$ 是 4 阶矩阵，$A^*$ 为 $A$ 的伴随矩阵. 若 $(1,0,1,0)^{\mathrm{T}}$ 是方程组 $Ax=0$ 的一个基础解系，则 $A^*x=0$ 的基础解系可为（　）
+（本题满分 6 分）设 $A$ 为 $n$ 阶非奇异矩阵，$\alpha$ 为 $n$ 维列向量，$b$ 为常数。记分块矩阵
+$$
+P=\begin{pmatrix}E&O\\-\alpha^{\mathrm{T}}A^{*}&|A|\end{pmatrix},\qquad Q=\begin{pmatrix}A&\alpha\\\alpha^{\mathrm{T}}&b\end{pmatrix},
+$$
+其中 $A^{*}$ 是矩阵 $A$ 的伴随矩阵，$E$ 为 $n$ 阶单位矩阵。
 
-（A）$\alpha_1,\alpha_3$　（B）$\alpha_1,\alpha_2$　（C）$\alpha_1,\alpha_2,\alpha_3$　（D）$\alpha_2,\alpha_3,\alpha_4$
+（1）计算并化简 $PQ$；
+
+（2）证明：矩阵 $Q$ 可逆的充分必要条件是 $\alpha^{\mathrm{T}}A^{-1}\alpha\ne b$。
 
 > [!success]- 答案与解析
-> **答案**：（D）
+> **答案**：（1）$PQ=\begin{pmatrix}A&\alpha\\0&|A|(b-\alpha^{\mathrm{T}}A^{-1}\alpha)\end{pmatrix}$；（2）证明见解析（$Q$ 可逆 $\Leftrightarrow \alpha^{\mathrm{T}}A^{-1}\alpha\ne b$）。
 >
-> 由于 $(1,0,1,0)^{\mathrm{T}}$ 是方程组 $Ax=0$ 的一个基础解系，所以 $A(1,0,1,0)^{\mathrm{T}}=0$，且 $r(A)=4-1=3$，即 $\alpha_1+\alpha_3=0$，且 $|A|=0$. 由此可得 $A^*A=|A|E=O$，即
+> 【解析】（1）由 $AA^{*}=A^{*}A=|A|E$ 及 $A^{*}=|A|A^{-1}$，有
 > $$
-> A^*(\alpha_1,\alpha_2,\alpha_3,\alpha_4)=O,
+> PQ=\begin{pmatrix}E&O\\-\alpha^{\mathrm{T}}A^{*}&|A|\end{pmatrix}\begin{pmatrix}A&\alpha\\\alpha^{\mathrm{T}}&b\end{pmatrix}
+> =\begin{pmatrix}A&\alpha\\-\alpha^{\mathrm{T}}A^{*}A+|A|\alpha^{\mathrm{T}}&-\alpha^{\mathrm{T}}A^{*}\alpha+b|A|\end{pmatrix}
+> =\begin{pmatrix}A&\alpha\\0&|A|(b-\alpha^{\mathrm{T}}A^{-1}\alpha)\end{pmatrix}.
 > $$
-> 这说明 $\alpha_1,\alpha_2,\alpha_3,\alpha_4$ 是 $A^*x=0$ 的解.
 >
-> 由于 $r(A)=3$，$\alpha_1+\alpha_3=0$，所以 $\alpha_2,\alpha_3,\alpha_4$ 线性无关. 又由于 $r(A)=3$，所以 $r(A^*)=1$，因此 $A^*x=0$ 的基础解系中含有 $4-1=3$ 个线性无关的解向量. 而 $\alpha_2,\alpha_3,\alpha_4$ 线性无关，且为 $A^*x=0$ 的解，所以 $\alpha_2,\alpha_3,\alpha_4$ 可作为 $A^*x=0$ 的基础解系，故选 (D).
+> （2）用行列式拉普拉斯展开式及行列式乘法公式，有
+> $$
+> |P|=\begin{vmatrix}E&O\\-\alpha^{\mathrm{T}}A^{*}&|A|\end{vmatrix}=|A|,
+> $$
+> $$
+> |P||Q|=|PQ|=\begin{vmatrix}A&\alpha\\0&|A|(b-\alpha^{\mathrm{T}}A^{-1}\alpha)\end{vmatrix}=|A|^2(b-\alpha^{\mathrm{T}}A^{-1}\alpha).
+> $$
+> 又因 $A$ 是非奇异矩阵，所以 $|A|\ne 0$，故 $|Q|=|A|(b-\alpha^{\mathrm{T}}A^{-1}\alpha)$。
+>
+> 由此可知 $Q$ 可逆的充要条件是 $|Q|\ne 0$，即 $b-\alpha^{\mathrm{T}}A^{-1}\alpha\ne 0$，亦即 $\alpha^{\mathrm{T}}A^{-1}\alpha\ne b$。
+>
+> > 评注：本题考查分块矩阵的运算，要看清 $\alpha^{\mathrm{T}}A^{-1}\alpha$ 是 1 阶矩阵，是一个数。
 
-### 2009 年 · 数学三 · 第 5 题（选择，4 分）
+### 1998 年 · 数学一 · 填空题第 4 题（填空，3 分）
 
-设 $A,B$ 均为 2 阶方阵，$A^*,B^*$ 分别为 $A,B$ 的伴随矩阵。若 $|A|=2$，$|B|=3$，则分块矩阵
-$$
-\begin{pmatrix}O&A\\B&O\end{pmatrix}
-$$
-的伴随矩阵为（　　）
+设 $A$ 为 $n$ 阶矩阵，$|A|\ne 0$，$A^{*}$ 为 $A$ 的伴随矩阵，$E$ 为 $n$ 阶单位矩阵．若 $A$ 有特征值 $\lambda$，则 $(A^{*})^2+E$ 必有特征值 $\underline{\qquad}$．
 
-（A）$\begin{pmatrix}O&3B^*\\2A^*&O\end{pmatrix}$　　（B）$\begin{pmatrix}O&2B^*\\3A^*&O\end{pmatrix}$
+> [!success]- 答案与解析
+> **答案**：$\left(\dfrac{|A|}{\lambda}\right)^2+1$
+>
+> （4）【答案】 $\left(\dfrac{|A|}{\lambda}\right)^2+1$．
+>
+> 【解】 设 $A$ 的对应于特征值 $\lambda$ 的特征向量为 $\alpha$，则 $A\alpha=\lambda\alpha$，
+> $$
+> \text{由 }A^{*}\alpha=\frac{|A|}{\lambda}\alpha\text{ 得 }[(A^{*})^2+E]\alpha=\left[\left(\frac{|A|}{\lambda}\right)^2+1\right]\alpha,
+> $$
+> 故 $(A^{*})^2+E$ 一定有特征值 $\left(\dfrac{|A|}{\lambda}\right)^2+1$．
 
-（C）$\begin{pmatrix}O&3A^*\\2B^*&O\end{pmatrix}$　　（D）$\begin{pmatrix}O&2A^*\\3B^*&O\end{pmatrix}$
+### 1998 年 · 数学三 · 填空题第 4 题（填空，3 分）
+
+设矩阵 $A,B$ 满足 $A^*BA=2BA-8E$，其中 $A=\begin{pmatrix}1&0&0\\0&-2&0\\0&0&1\end{pmatrix}$，$E$ 为单位矩阵，$A^*$ 为 $A$ 的伴随矩阵，则 $B=$ $\underline{\qquad}$。
+
+> [!success]- 答案与解析
+> **答案**：$B=\begin{pmatrix}2&0&0\\0&-4&0\\0&0&2\end{pmatrix}$。
+>
+> 【解析】由题设 $A^*BA=2BA-8E$，
+> $$
+> |A|=-2\ne 0,
+> $$
+> 所以 $A$ 可逆。上式两边左乘 $A$，右乘 $A^{-1}$，得
+> $$
+> AA^*BAA^{-1}=2ABAA^{-1}-8AA^{-1},
+> $$
+> $$
+> |A|B=2AB-8E\quad(\text{利用公式：}AA^*=|A|E,\ AA^{-1}=E),
+> $$
+> $$
+> |A|B-2AB=-8E\quad(\text{移项}),
+> $$
+> $$
+> (|A|E-2A)B=-8E\quad(\text{矩阵乘法的运算法则}).
+> $$
+> 将 $|A|=-2$ 代入上式，整理得
+> $$
+> \frac{1}{4}(E+A)B=E.
+> $$
+> 由矩阵可逆的定义，知 $E+A,B$ 均可逆，且
+> $$
+> B=4(E+A)^{-1}=4\begin{pmatrix}\dfrac{1}{2}&0&0\\0&-1&0\\0&0&\dfrac{1}{2}\end{pmatrix}=\begin{pmatrix}2&0&0\\0&-4&0\\0&0&2\end{pmatrix}.
+> $$
+
+### 1998 年 · 数学二 · 选择题第 5 题（选择，3 分）
+
+设 $A$ 是任一 $n\ (n\ge3)$ 阶方阵，$A^*$ 是其伴随矩阵，又 $k$ 为常数，且 $k\ne0,\pm1$，则必有 $(kA)^*=(\quad)$
+
+（A）$kA^*$.
+（B）$k^{n-1}A^*$.
+（C）$k^nA^*$.
+（D）$k^{-1}A^*$.
 
 > [!success]- 答案与解析
 > **答案**：（B）
 >
-> 根据 $CC^*=|C|E$，若 $C^*=|C|C^{-1}$，$C^{-1}=\frac{1}{|C|}C^*$。
+> 对任何 $n$ 阶矩阵都要成立的关系式，对特殊的 $n$ 阶矩阵自然也要成立. 那么，当 $A$ 可逆时，由 $A^*=|A|A^{-1}$，有
+> $$
+> (kA)^*=|kA|(kA)^{-1}=k^n|A|\cdot\frac{1}{k}A^{-1}=k^{n-1}|A|A^{-1}=k^{n-1}A^*.
+> $$
+> 故应选（B）.
 >
-> 分块矩阵 $\begin{pmatrix}O&A\\B&O\end{pmatrix}$ 的行列式
+> 一般地，若 $A=(a_{ij})_{n\times n}$，那么 $kA=(ka_{ij})_{n\times n}$，那么矩阵 $kA$ 的第 $i$ 行 $j$ 列元素的代数余子式为
 > $$
-> \begin{vmatrix}O&A\\B&O\end{vmatrix}=(-1)^{2\times2}|A||B|=2\times3=6,
+> (-1)^{i+j}\begin{vmatrix}ka_{11}&\cdots&ka_{1,j-1}&ka_{1,j+1}&\cdots&ka_{1n}\\\vdots&&\vdots&\vdots&&\vdots\\ka_{i-1,1}&\cdots&ka_{i-1,j-1}&ka_{i-1,j+1}&\cdots&ka_{i-1,n}\\ka_{i+1,1}&\cdots&ka_{i+1,j-1}&ka_{i+1,j+1}&\cdots&ka_{i+1,n}\\\vdots&&\vdots&\vdots&&\vdots\\ka_{n1}&\cdots&ka_{n,j-1}&ka_{n,j+1}&\cdots&ka_{nn}\end{vmatrix}=(-1)^{i+j}k^{n-1}\begin{vmatrix}a_{11}&\cdots&a_{1,j-1}&a_{1,j+1}&\cdots&a_{1n}\\\vdots&&\vdots&\vdots&&\vdots\\a_{i-1,1}&\cdots&a_{i-1,j-1}&a_{i-1,j+1}&\cdots&a_{i-1,n}\\a_{i+1,1}&\cdots&a_{i+1,j-1}&a_{i+1,j+1}&\cdots&a_{i+1,n}\\\vdots&&\vdots&\vdots&&\vdots\\a_{n1}&\cdots&a_{n,j-1}&a_{n,j+1}&\cdots&a_{nn}\end{vmatrix},
 > $$
-> 即分块矩阵可逆，故
-> $$
-> \begin{pmatrix}O&A\\B&O\end{pmatrix}^*=\begin{vmatrix}O&A\\B&O\end{vmatrix}\begin{pmatrix}O&A\\B&O\end{pmatrix}^{-1}=6\begin{pmatrix}O&B^{-1}\\A^{-1}&O\end{pmatrix}=6\begin{pmatrix}O&\frac{1}{|B|}B^*\\\frac{1}{|A|}A^*&O\end{pmatrix}=6\begin{pmatrix}O&\frac13B^*\\\frac12A^*&O\end{pmatrix}=\begin{pmatrix}O&2B^*\\3A^*&O\end{pmatrix}.
-> $$
-> 故答案为（B）。
-
-### 2009 年 · 数学一 · 第 6 题（选择，5 分）
-
-设 $A,B$ 均为 2 阶矩阵，$A^*,B^*$ 分别为 $A,B$ 的伴随矩阵，若 $|A|=2$，$|B|=3$，则分块矩阵 $\begin{pmatrix}O&A\\B&O\end{pmatrix}$ 的伴随矩阵为（　　）
-
-（A）$\begin{pmatrix}O&3B^*\\2A^*&O\end{pmatrix}$．　　（B）$\begin{pmatrix}O&2B^*\\3A^*&O\end{pmatrix}$．
-
-（C）$\begin{pmatrix}O&3A^*\\2B^*&O\end{pmatrix}$．　　（D）$\begin{pmatrix}O&2A^*\\3B^*&O\end{pmatrix}$．
-
-> [!success]- 答案与解析
-> **答案**：（B）
+> 即 $|kA|$ 中每个元素的代数余子式恰好是 $|A|$ 相应元素的代数余子式的 $k^{n-1}$ 倍，因而，按伴随矩阵的定义知 $(kA)^*$ 的元素是 $A^*$ 对应元素的 $k^{n-1}$ 倍.
 >
-> $\begin{vmatrix}O&A\\B&O\end{vmatrix}=(-1)^{2\times 2}|A|\cdot|B|=6$，则
->
-> $$
-> \begin{pmatrix}O&A\\B&O\end{pmatrix}^*=\begin{vmatrix}O&A\\B&O\end{vmatrix}\begin{pmatrix}O&A\\B&O\end{pmatrix}^{-1}=6\begin{pmatrix}O&B^{-1}\\A^{-1}&O\end{pmatrix}=\begin{pmatrix}O&6B^{-1}\\6A^{-1}&O\end{pmatrix}=\begin{pmatrix}O&2B^*\\3A^*&O\end{pmatrix},
-> $$
->
-> 应选（B）．
-
-### 2009 年 · 数学二 · 第 7 题（选择，4 分）
-
-设 $A,B$ 均为 2 阶方阵，$A^*,B^*$ 分别为 $A,B$ 的伴随矩阵. 若 $|A|=2$，$|B|=3$，则分块矩阵
-$$
-\begin{pmatrix}
-O&A\\
-B&O
-\end{pmatrix}
-$$
-的伴随矩阵为（　）
-
-（A）$\begin{pmatrix}O&3B^*\\2A^*&O\end{pmatrix}$　（B）$\begin{pmatrix}O&2B^*\\3A^*&O\end{pmatrix}$　（C）$\begin{pmatrix}O&3A^*\\2B^*&O\end{pmatrix}$　（D）$\begin{pmatrix}O&2A^*\\3B^*&O\end{pmatrix}$
-
-> [!success]- 答案与解析
-> **答案**：（B）
->
-> 根据 $CC^*=|C|E$ 若 $C^*=|C|C^{-1},C^{-1}=\frac{1}{|C|}C^*$
->
-> 分块矩阵 $\begin{pmatrix}O&A\\B&O\end{pmatrix}$ 的行列式 $\begin{vmatrix}O&A\\B&O\end{vmatrix}=(-1)^{2\times2}|A||B|=2\times3=6$ 即分块矩阵可逆
-> $$
-> \begin{pmatrix}O&A\\B&O\end{pmatrix}^*=\begin{vmatrix}O&A\\B&O\end{vmatrix}\begin{pmatrix}O&A\\B&O\end{pmatrix}^{-1}=6\begin{pmatrix}O&B^{-1}\\A^{-1}&O\end{pmatrix}=6\begin{pmatrix}O&\frac{1}{|B|}B^*\\\frac{1}{|A|}A^*&O\end{pmatrix}
-> $$
-> $$
-> =6\begin{pmatrix}O&\frac{1}{3}B^*\\\frac{1}{2}A^*&O\end{pmatrix}=\begin{pmatrix}O&2B^*\\3A^*&O\end{pmatrix}
-> $$
-
-### 2005 年 · 数学一 · 第 12 题（选择，4 分）
-
-设 $A$ 为 $n\ (n\ge 2)$ 阶可逆矩阵，交换 $A$ 的第 1 行与第 2 行得矩阵 $B$，$A^{*},B^{*}$ 分别为 $A,B$ 的伴随矩阵，则（　　）
-
-（A）交换 $A^{*}$ 的第 1 列与第 2 列得 $B^{*}$．
-（B）交换 $A^{*}$ 的第 1 行与第 2 行得 $B^{*}$．
-（C）交换 $A^{*}$ 的第 1 列与第 2 列得 $-B^{*}$．
-（D）交换 $A^{*}$ 的第 1 行与第 2 行得 $-B^{*}$．
-
-> [!success]- 答案与解析
-> **答案**：（C）
->
-> 【解】 令 $E_{12}=\begin{pmatrix}0&1&0\\1&0&0\\0&0&1\end{pmatrix}$，由题意得 $B=E_{12}A$．
->
-> 由 $|B|=|E_{12}|\cdot|A|=-|A|$，$B^{-1}=A^{-1}E_{12}^{-1}=A^{-1}E_{12}$，
->
-> 得 $B^{*}=|B|B^{-1}=-|A|\cdot A^{-1}E_{12}=-A^{*}E_{12}$ 或 $-B^{*}=A^{*}E_{12}$，
->
-> 即交换 $A^{*}$ 的第 1、2 两列得 $-B^{*}$，应选（C）．
->
-> > **方法点评**：本题考查初等变换与伴随矩阵．
-> > 设 $A$ 为可逆矩阵，当研究 $A^{*}$ 时，一般需要使用公式 $A^{*}=|A|A^{-1}$，即将伴随矩阵问题转化为逆矩阵问题，注意使用如下结论：
-> > （1）设 $A,B$ 为可逆的 $n$ 阶矩阵，则 $(AB)^{*}=B^{*}A^{*}$；
-> > （2）设 $A,B$ 分别为可逆的 $m$ 阶及 $n$ 阶矩阵，则
-> > $\begin{pmatrix}A&O\\O&B\end{pmatrix}^{*}=\begin{vmatrix}A&O\\O&B\end{vmatrix}\begin{pmatrix}A&O\\O&B\end{pmatrix}^{-1}=\begin{pmatrix}|B|A^{*}&O\\O&|A|B^{*}\end{pmatrix}$；
-> > $\begin{pmatrix}O&A\\B&O\end{pmatrix}^{*}=\begin{vmatrix}O&A\\B&O\end{vmatrix}\begin{pmatrix}O&A\\B&O\end{pmatrix}^{-1}=(-1)^{mn}\begin{pmatrix}O&|A|B^{*}\\|B|A^{*}&O\end{pmatrix}$．
-
-### 2005 年 · 数学三 · 第 12 题（选择，4 分）
-
-设矩阵 $A=(a_{ij})_{3\times 3}$ 满足 $A^*=A^{\mathrm{T}}$，其中 $A^*$ 是 $A$ 的伴随矩阵，$A^{\mathrm{T}}$ 为 $A$ 的转置矩阵。若 $a_{11},a_{12},a_{13}$ 为三个相等的正数，则 $a_{11}$ 为（　　）
-（A）$\dfrac{\sqrt{3}}{3}$　　（B）$3$　　（C）$\dfrac{1}{3}$　　（D）$\sqrt{3}$
-
-> [!success]- 答案与解析
-> **答案**：（A）
->
-> 【分析】题设与 $A$ 的伴随矩阵有关，一般联想到用行列展开定理和相应公式：$AA^*=A^*A=|A|E$。
->
-> 【详解】由 $A^*=A^{\mathrm{T}}$ 及 $AA^*=A^*A=|A|E$，有 $a_{ij}=A_{ij},\ i,j=1,2,3$，其中 $A_{ij}$ 为 $a_{ij}$ 的代数余子式，且
-> $$
-> AA^{\mathrm{T}}=|A|E\Rightarrow |A|^2=|A|^3\Rightarrow |A|=0\text{ 或 }|A|=1.
-> $$
-> 而
-> $$
-> |A|=a_{11}A_{11}+a_{12}A_{12}+a_{13}A_{13}=3a_{11}^2\ne 0,
-> $$
-> 于是 $|A|=1$，且 $a_{11}^2=\dfrac{1}{3}$，即 $a_{11}=\dfrac{\sqrt{3}}{3}$。故正确选项为（A）。
-
-### 2005 年 · 数学二 · 第 14 题（选择，4 分）
-
-设 $A$ 为 $n\ (n\ge2)$ 阶可逆矩阵，交换 $A$ 的第 1 行与第 2 行得矩阵 $B$，$A^*,B^*$ 分别为 $A,B$ 的伴随矩阵，则（　）
-
-（A）交换 $A^*$ 的第 1 列与第 2 列得 $B^*$.
-（B）交换 $A^*$ 的第 1 行与第 2 行得 $B^*$.
-（C）交换 $A^*$ 的第 1 列与第 2 列得 $-B^*$.
-（D）交换 $A^*$ 的第 1 行与第 2 行得 $-B^*$.
-
-> [!success]- 答案与解析
-> **答案**：（C）
->
-> 方法1：由题设，存在初等矩阵 $E_{12}$（交换 $n$ 阶单位矩阵的第 1 行与第 2 行所得），使得
-> $$
-> E_{12}A=B,\quad(A\text{进行行变换，故}A\text{左乘初等矩阵}),
-> $$
-> 于是 $B^*=(E_{12}A)^*=A^*E_{12}^*$，
->
-> 又初等矩阵都是可逆的，故 $E_{12}^{-1}=\frac{E_{12}^*}{|E_{12}|}$，
->
-> 又 $|E_{12}|=-|E|=-1$（行列式的两行互换，行列式反号），$E_{12}^{-1}=E_{12}$，故
-> $$
-> B^*=A^*E_{12}^*=A^*|E_{12}|\cdot E_{12}^{-1}=-A^*E_{12}^{-1}=-A^*E_{12},
-> $$
-> 即 $A^*E_{12}=-B^*$，可见应选（C）.
->
-> 方法2：交换 $A$ 的第一行与第二行得 $B$，即 $B=E_{12}A$.
->
-> 又因为 $A$ 是可逆阵，$|E_{12}|=-|E|=-1$，故 $|B|=|E_{12}A|=|E_{12}||A|=-|A|\ne0$，
->
-> 所以 $B$ 可逆，且 $B^{-1}=(E_{12}A)^{-1}=A^{-1}E_{12}$.
->
-> 又 $A^{-1}=\frac{A^*}{|A|}$，$B^{-1}=\frac{B^*}{|B|}$，故 $\frac{B^*}{|B|}=\frac{A^*}{|A|}E_{12}$，又因 $|B|=-|A|$，故 $A^*E_{12}=-B^*$.
-
-### 2004 年 · 数学一 · 第 5 题（填空，4 分）
-
-设矩阵 $A=\begin{pmatrix}2&1&0\\1&2&0\\0&0&1\end{pmatrix}$，矩阵 $B$ 满足 $ABA^{*}=2BA^{*}+E$，其中 $A^{*}$ 为 $A$ 的伴随矩阵，$E$ 是单位矩阵，则 $|B|=\underline{\qquad}$．
-
-> [!success]- 答案与解析
-> **答案**：$\dfrac{1}{9}$
->
-> 【解】 $|A|=3$，在 $ABA^{*}=2BA^{*}+E$ 两边右乘 $A$，得 $3AB=6B+A$ 或 $3(A-2E)B=A$．于是 $3^3|A-2E|\cdot|B|=|A|$．
-> $$
-> \text{而 }A-2E=\begin{pmatrix}0&1&0\\1&0&0\\0&0&-1\end{pmatrix},\quad|A-2E|=1,\text{故 }|B|=\frac{1}{9}.
-> $$
->
-> > **方法点评**：本题考查由矩阵关系等式确定的矩阵的行列式．本题的关键是要应用公式 $AA^{*}=A^{*}A=|A|E$．
-
-### 2004 年 · 数学二 · 第 6 题（填空，4 分）
-
-设矩阵 $A=\begin{pmatrix}2&1&0\\1&2&0\\0&0&1\end{pmatrix}$，矩阵 $B$ 满足 $ABA^*=2BA^*+E$，其中 $A^*$ 为 $A$ 的伴随矩阵，$E$ 是单位矩阵，则 $|B|=$ ________.
-
-> [!success]- 答案与解析
-> **答案**：$rac{1}{9}$
->
-> 方法1：已知等式两边同时右乘 $A$，得 $ABA^*A=2BA^*A+A$，
->
-> 由伴随矩阵的运算规律：$A^*A=AA^*=|A|E$，有 $AB|A|=2B|A|+A$，而
-> $$
-> |A|=\begin{vmatrix}2&1&0\\1&2&0\\0&0&1\end{vmatrix}=(-1)^{3+3}\begin{vmatrix}2&1\\1&2\end{vmatrix}=2\times2-1\times1=3,
-> $$
-> 于是有 $3AB=6B+A$，移项、合并有 $(3A-6E)B=A$，再两边取行列式，由方阵乘积的行列式的性质：矩阵乘积的行列式等于矩阵行列式的积，有
-> $$
-> |(3A-6E)B|=|3A-6E||B|=|A|=3,
-> $$
-> 而
-> $$
-> |3A-6E|=\begin{vmatrix}6&3&0\\3&6&0\\0&0&3\end{vmatrix}-\begin{vmatrix}6&0&0\\0&6&0\\0&0&6\end{vmatrix}=\begin{vmatrix}0&3&0\\3&0&0\\0&0&-3\end{vmatrix}=(-1)^{3+3}(-3)\begin{vmatrix}0&3\\3&0\end{vmatrix}=(-3)\times3\times3=27,
-> $$
-> 故所求行列式为 $|B|=\frac{|A|}{|3A-6E|}=\frac{3}{27}=\frac{1}{9}$.
->
-> 方法2：由题设条件 $ABA^*=2BA^*+E$，得 $ABA^*-2BA^*=(A-2E)BA^*=E$.
->
-> 由方阵乘积行列式的性质：矩阵乘积的行列式等于矩阵行列式的积，故两边取行列式，有 $|(A-2E)BA^*|=|A-2E||B||A^*|=|E|=1$.
->
-> 其中 $|A|=\begin{vmatrix}2&1&0\\1&2&0\\0&0&1\end{vmatrix}=(-1)^{3+3}\begin{vmatrix}2&1\\1&2\end{vmatrix}=2\times2-1\times1=3$；
->
-> 由伴随矩阵行列式的公式：若 $A$ 是 $n$ 阶矩阵，则 $|A^*|=|A|^{n-1}$.
->
-> 所以，$|A^*|=|A|^{3-1}=|A|^2=9$；又 $|A-2E|=\begin{vmatrix}0&1&0\\1&0&0\\0&0&1\end{vmatrix}=(-1)^{1+2}\begin{vmatrix}1&0\\0&1\end{vmatrix}=1$.
->
-> 故 $|B|=\frac{1}{|A-2E||A^*|}=\frac{1}{9}$.
-
-### 2003 年 · 数学一 · 解答题第 9 题（解答，10 分）
-
-（本题满分 10 分）设矩阵 $A=\begin{pmatrix}3&2&2\\2&3&2\\2&2&3\end{pmatrix}$，$P=\begin{pmatrix}0&1&0\\1&0&1\\0&0&1\end{pmatrix}$，$B=P^{-1}A^{*}P$，求 $B+2E$ 的特征值与特征向量，其中 $A^{*}$ 为 $A$ 的伴随矩阵，$E$ 为 3 阶单位矩阵．
-
-> [!success]- 答案与解析
-> **答案**：$B+2E$ 的特征值为 $\lambda_1=3$，$\lambda_2=\lambda_3=9$；属于 $\lambda_1=3$ 的全部特征向量为 $k_1\begin{pmatrix}0\\1\\1\end{pmatrix}$（$k_1$ 为非零常数）；属于 $\lambda_2=\lambda_3=9$ 的全部特征向量为 $k_2\begin{pmatrix}-1\\1\\0\end{pmatrix}+k_3\begin{pmatrix}-2\\0\\1\end{pmatrix}$（$k_2,k_3$ 为不全为零的常数）．
->
-> （19）【解】 方法一
-> $$
-> |A|=\begin{vmatrix}3&2&2\\2&3&2\\2&2&3\end{vmatrix}=7,
-> $$
-> $$
-> \text{由}\begin{pmatrix}3&2&2&\mid&1&0&0\\2&3&2&\mid&0&1&0\\2&2&3&\mid&0&0&1\end{pmatrix}\to\begin{pmatrix}1&1&1&\mid&\dfrac{1}{7}&\dfrac{1}{7}&\dfrac{1}{7}\\0&1&0&\mid&-\dfrac{2}{7}&\dfrac{5}{7}&-\dfrac{2}{7}\\0&0&1&\mid&-\dfrac{2}{7}&-\dfrac{2}{7}&\dfrac{5}{7}\end{pmatrix}\to\begin{pmatrix}1&0&0&\mid&\dfrac{5}{7}&-\dfrac{2}{7}&-\dfrac{2}{7}\\0&1&0&\mid&-\dfrac{2}{7}&\dfrac{5}{7}&-\dfrac{2}{7}\\0&0&1&\mid&-\dfrac{2}{7}&-\dfrac{2}{7}&\dfrac{5}{7}\end{pmatrix}
-> $$
-> 得 $A^{*}=|A|A^{-1}=\begin{pmatrix}5&-2&-2\\-2&5&-2\\-2&-2&5\end{pmatrix}$．
-> $$
-> \text{由}\begin{pmatrix}0&1&0&\mid&1&0&0\\1&0&1&\mid&0&1&0\\0&0&1&\mid&0&0&1\end{pmatrix}\to\begin{pmatrix}1&0&1&\mid&0&1&0\\0&1&0&\mid&1&0&0\\0&0&1&\mid&0&0&1\end{pmatrix}\to\begin{pmatrix}1&0&0&\mid&0&1&-1\\0&1&0&\mid&1&0&0\\0&0&1&\mid&0&0&1\end{pmatrix},
-> $$
-> 得 $P^{-1}=\begin{pmatrix}0&1&-1\\1&0&0\\0&0&1\end{pmatrix}$，
-> $$
-> \text{于是 }B=P^{-1}A^{*}P=\begin{pmatrix}0&1&-1\\1&0&0\\0&0&1\end{pmatrix}\begin{pmatrix}5&-2&-2\\-2&5&-2\\-2&-2&5\end{pmatrix}\begin{pmatrix}0&1&0\\1&0&1\\0&0&1\end{pmatrix}=\begin{pmatrix}7&0&0\\-2&5&-4\\-2&-2&3\end{pmatrix}.
-> $$
-> $$
-> B+2E=\begin{pmatrix}9&0&0\\-2&7&-4\\-2&-2&5\end{pmatrix}.
-> $$
-> $$
-> \text{由 }|\lambda E-(B+2E)|=\begin{vmatrix}\lambda-9&0&0\\2&\lambda-7&4\\2&2&\lambda-5\end{vmatrix}=(\lambda-3)(\lambda-9)^2=0,
-> $$
-> 得 $B+2E$ 的特征值为 $\lambda_1=3,\lambda_2=\lambda_3=9$．
->
-> 当 $\lambda_1=3$ 时，解方程组 $[3E-(B+2E)]X=0$，
-> $$
-> \text{由 }3E-(B+2E)=\begin{pmatrix}-6&0&0\\2&-4&4\\2&2&-2\end{pmatrix}\to\begin{pmatrix}1&0&0\\0&1&-1\\0&0&0\end{pmatrix},\text{得 }B+2E\text{ 的属于特征值 }\lambda_1=3
-> $$
-> 的特征向量为 $\xi_1=\begin{pmatrix}0\\1\\1\end{pmatrix}$；
->
-> 当 $\lambda_2=\lambda_3=9$ 时，解方程组 $[9E-(B+2E)]X=0$，
-> $$
-> \text{由 }9E-(B+2E)=\begin{pmatrix}0&0&0\\2&2&4\\2&2&4\end{pmatrix}\to\begin{pmatrix}1&1&2\\0&0&0\\0&0&0\end{pmatrix},\text{得 }B+2E\text{ 的属于特征值 }\lambda_2=\lambda_3=9\text{ 的线}
-> $$
-> 性无关的特征向量为 $\xi_2=\begin{pmatrix}-1\\1\\0\end{pmatrix},\xi_3=\begin{pmatrix}-2\\0\\1\end{pmatrix}$．
->
-> 故 $B+2E$ 的特征值为 $\lambda_1=3,\lambda_2=\lambda_3=9$，属于 $\lambda_1=3$ 的全部特征向量为 $k_1\xi_1$（$k_1$ 为任意非零常数）；属于 $\lambda_2=\lambda_3=9$ 的全部特征向量为 $k_2\xi_2+k_3\xi_3$（$k_2,k_3$ 为不全为零的任意常数）．
->
-> 方法二
-> $$
-> \text{由 }|\lambda E-A|=\begin{vmatrix}\lambda-3&-2&-2\\-2&\lambda-3&-2\\-2&-2&\lambda-3\end{vmatrix}=(\lambda-1)^2(\lambda-7)=0\text{ 得矩阵 }A\text{ 的特征值为 }\lambda_1=\lambda_2=1,\lambda_3=7,
-> $$
-> $\lambda_1=\lambda_2=1$ 代入 $(\lambda E-A)X=0$，
-> $$
-> \text{由 }E-A\to\begin{pmatrix}1&1&1\\0&0&0\\0&0&0\end{pmatrix}\text{得 }A\text{ 的属于 }\lambda_1=\lambda_2=1\text{ 的线性无关的特征向量为}
-> $$
-> $$
-> \alpha_1=\begin{pmatrix}-1\\1\\0\end{pmatrix},\alpha_2=\begin{pmatrix}-1\\0\\1\end{pmatrix};
-> $$
-> $\lambda_3=7$ 代入 $(\lambda E-A)X=0$，
-> $$
-> \text{由 }7E-A\to\begin{pmatrix}1&0&-1\\0&1&-1\\0&0&0\end{pmatrix}\text{得 }A\text{ 的属于 }\lambda_3=7\text{ 的特征向量为 }\alpha_3=\begin{pmatrix}1\\1\\1\end{pmatrix}.
-> $$
-> $$
-> |A|=7,A^{*}\text{ 的特征值为 }\frac{|A|}{\lambda_1}=7,\frac{|A|}{\lambda_2}=7,\frac{|A|}{\lambda_3}=1,
-> $$
-> 因为 $B\sim A^{*}$，所以 $B$ 的特征值为 $\lambda_1=\lambda_2=7,\lambda_3=1$，从而 $B+2E$ 的特征值为 $9,9,3$．
->
-> $B+2E$ 的相应于特征值 $9,9,3$ 对应的线性无关的特征向量为
-> $$
-> \beta_1=P^{-1}\alpha_1=\begin{pmatrix}0&1&-1\\1&0&0\\0&0&1\end{pmatrix}\begin{pmatrix}-1\\1\\0\end{pmatrix}=\begin{pmatrix}1\\-1\\0\end{pmatrix},
-> $$
-> $$
-> \beta_2=P^{-1}\alpha_2=\begin{pmatrix}0&1&-1\\1&0&0\\0&0&1\end{pmatrix}\begin{pmatrix}-1\\0\\1\end{pmatrix}=\begin{pmatrix}-1\\-1\\1\end{pmatrix},
-> $$
-> $$
-> \beta_3=P^{-1}\alpha_3=\begin{pmatrix}0&1&-1\\1&0&0\\0&0&1\end{pmatrix}\begin{pmatrix}1\\1\\1\end{pmatrix}=\begin{pmatrix}0\\1\\1\end{pmatrix}.
-> $$
->
-> > **方法点评**：本题考查矩阵的特征值与特征向量．
-> > 矩阵与其关联的矩阵特征值与特征向量之间有一定的关系，主要有如下结论：
-> > （1）设 $A\alpha=\lambda_0\alpha$，则 $f(A)\alpha=f(\lambda_0)\alpha$，
-> > 特别地，若 $A$ 可逆，则 $\begin{cases}A^{-1}\alpha=\dfrac{1}{\lambda_0}\alpha,\\A^{*}\alpha=\dfrac{|A|}{\lambda_0}\alpha,\end{cases}$ 即 $A$ 与 $A^{-1},A^{*}$ 特征向量相同．
-> > （2）设 $A\alpha=\lambda_0\alpha$ 且 $P^{-1}AP=B$，则 $B\cdot P^{-1}\alpha=\lambda_0P^{-1}\alpha$，即 $A$ 与 $B$ 特征值相同，$B$ 的属于特征值 $\lambda_0$ 的特征向量为 $P^{-1}\alpha$．
-
-### 2000 年 · 数学一 · 解答题第 10 题（解答，6 分）
-
-（本题满分 6 分）设矩阵 $A$ 的伴随矩阵 $A^{*}=\begin{pmatrix}1&0&0&0\\0&1&0&0\\1&0&1&0\\0&-3&0&8\end{pmatrix}$，且 $ABA^{-1}=BA^{-1}+3E$，其中 $E$ 为 4 阶单位矩阵，求矩阵 $B$．
-
-> [!success]- 答案与解析
-> **答案**：$B=\begin{pmatrix}6&0&0&0\\0&6&0&0\\6&0&6&0\\0&3&0&-1\end{pmatrix}$
->
-> （18）【解】 $|A^{*}|=8$，由 $|A^{*}|=|A|^3$，得 $|A|=2$．
->
-> 由 $ABA^{-1}=BA^{-1}+3E$，得 $AB=B+3A$，解得 $(A-E)B=3A$．
->
-> 于是 $B=3(A-E)^{-1}A=3[A^{-1}(A-E)]^{-1}=6(2E-2A^{-1})^{-1}=6(2E-A^{*})^{-1}$，
-> $$
-> \text{因为 }2E-A^{*}=\begin{pmatrix}1&0&0&0\\0&1&0&0\\-1&0&1&0\\0&3&0&-6\end{pmatrix},\text{所以 }(2E-A^{*})^{-1}=\begin{pmatrix}1&0&0&0\\0&1&0&0\\1&0&1&0\\0&\dfrac{1}{2}&0&-\dfrac{1}{6}\end{pmatrix},
-> $$
-> $$
-> \text{于是 }B=\begin{pmatrix}6&0&0&0\\0&6&0&0\\6&0&6&0\\0&3&0&-1\end{pmatrix}.
-> $$
+> 【相关知识点】1. 行列式的性质：若 $A$ 是 $n$ 阶矩阵，则 $|kA|=k^n|A|$. 2. 矩阵 $A$ 可逆的充要条件是 $|A|\ne0$，且 $A^{-1}=\frac{1}{|A|}A^*$.
 
 ### 1999 年 · 数学三 · 第九题（解答，9 分）
 
@@ -657,213 +400,470 @@ $$
 > X=\frac{1}{2}\begin{pmatrix}\frac{1}{2}&\frac{1}{2}&0\\0&\frac{1}{2}&\frac{1}{2}\\\frac{1}{2}&0&\frac{1}{2}\end{pmatrix}=\frac{1}{4}\begin{pmatrix}1&1&0\\0&1&1\\1&0&1\end{pmatrix}.
 > $$
 
-### 1998 年 · 数学一 · 填空题第 4 题（填空，3 分）
+### 2000 年 · 数学一 · 解答题第 10 题（解答，6 分）
 
-设 $A$ 为 $n$ 阶矩阵，$|A|\ne 0$，$A^{*}$ 为 $A$ 的伴随矩阵，$E$ 为 $n$ 阶单位矩阵．若 $A$ 有特征值 $\lambda$，则 $(A^{*})^2+E$ 必有特征值 $\underline{\qquad}$．
-
-> [!success]- 答案与解析
-> **答案**：$\left(\dfrac{|A|}{\lambda}\right)^2+1$
->
-> （4）【答案】 $\left(\dfrac{|A|}{\lambda}\right)^2+1$．
->
-> 【解】 设 $A$ 的对应于特征值 $\lambda$ 的特征向量为 $\alpha$，则 $A\alpha=\lambda\alpha$，
-> $$
-> \text{由 }A^{*}\alpha=\frac{|A|}{\lambda}\alpha\text{ 得 }[(A^{*})^2+E]\alpha=\left[\left(\frac{|A|}{\lambda}\right)^2+1\right]\alpha,
-> $$
-> 故 $(A^{*})^2+E$ 一定有特征值 $\left(\dfrac{|A|}{\lambda}\right)^2+1$．
-
-### 1998 年 · 数学三 · 填空题第 4 题（填空，3 分）
-
-设矩阵 $A,B$ 满足 $A^*BA=2BA-8E$，其中 $A=\begin{pmatrix}1&0&0\\0&-2&0\\0&0&1\end{pmatrix}$，$E$ 为单位矩阵，$A^*$ 为 $A$ 的伴随矩阵，则 $B=$ $\underline{\qquad}$。
+（本题满分 6 分）设矩阵 $A$ 的伴随矩阵 $A^{*}=\begin{pmatrix}1&0&0&0\\0&1&0&0\\1&0&1&0\\0&-3&0&8\end{pmatrix}$，且 $ABA^{-1}=BA^{-1}+3E$，其中 $E$ 为 4 阶单位矩阵，求矩阵 $B$．
 
 > [!success]- 答案与解析
-> **答案**：$B=\begin{pmatrix}2&0&0\\0&-4&0\\0&0&2\end{pmatrix}$。
+> **答案**：$B=\begin{pmatrix}6&0&0&0\\0&6&0&0\\6&0&6&0\\0&3&0&-1\end{pmatrix}$
 >
-> 【解析】由题设 $A^*BA=2BA-8E$，
+> （18）【解】 $|A^{*}|=8$，由 $|A^{*}|=|A|^3$，得 $|A|=2$．
+>
+> 由 $ABA^{-1}=BA^{-1}+3E$，得 $AB=B+3A$，解得 $(A-E)B=3A$．
+>
+> 于是 $B=3(A-E)^{-1}A=3[A^{-1}(A-E)]^{-1}=6(2E-2A^{-1})^{-1}=6(2E-A^{*})^{-1}$，
 > $$
-> |A|=-2\ne 0,
-> $$
-> 所以 $A$ 可逆。上式两边左乘 $A$，右乘 $A^{-1}$，得
-> $$
-> AA^*BAA^{-1}=2ABAA^{-1}-8AA^{-1},
-> $$
-> $$
-> |A|B=2AB-8E\quad(\text{利用公式：}AA^*=|A|E,\ AA^{-1}=E),
+> \text{因为 }2E-A^{*}=\begin{pmatrix}1&0&0&0\\0&1&0&0\\-1&0&1&0\\0&3&0&-6\end{pmatrix},\text{所以 }(2E-A^{*})^{-1}=\begin{pmatrix}1&0&0&0\\0&1&0&0\\1&0&1&0\\0&\dfrac{1}{2}&0&-\dfrac{1}{6}\end{pmatrix},
 > $$
 > $$
-> |A|B-2AB=-8E\quad(\text{移项}),
-> $$
-> $$
-> (|A|E-2A)B=-8E\quad(\text{矩阵乘法的运算法则}).
-> $$
-> 将 $|A|=-2$ 代入上式，整理得
-> $$
-> \frac{1}{4}(E+A)B=E.
-> $$
-> 由矩阵可逆的定义，知 $E+A,B$ 均可逆，且
-> $$
-> B=4(E+A)^{-1}=4\begin{pmatrix}\dfrac{1}{2}&0&0\\0&-1&0\\0&0&\dfrac{1}{2}\end{pmatrix}=\begin{pmatrix}2&0&0\\0&-4&0\\0&0&2\end{pmatrix}.
+> \text{于是 }B=\begin{pmatrix}6&0&0&0\\0&6&0&0\\6&0&6&0\\0&3&0&-1\end{pmatrix}.
 > $$
 
-### 1998 年 · 数学二 · 选择题第 5 题（选择，3 分）
+### 2003 年 · 数学一 · 解答题第 9 题（解答，10 分）
 
-设 $A$ 是任一 $n\ (n\ge3)$ 阶方阵，$A^*$ 是其伴随矩阵，又 $k$ 为常数，且 $k\ne0,\pm1$，则必有 $(kA)^*=(\quad)$
+（本题满分 10 分）设矩阵 $A=\begin{pmatrix}3&2&2\\2&3&2\\2&2&3\end{pmatrix}$，$P=\begin{pmatrix}0&1&0\\1&0&1\\0&0&1\end{pmatrix}$，$B=P^{-1}A^{*}P$，求 $B+2E$ 的特征值与特征向量，其中 $A^{*}$ 为 $A$ 的伴随矩阵，$E$ 为 3 阶单位矩阵．
 
-（A）$kA^*$.
-（B）$k^{n-1}A^*$.
-（C）$k^nA^*$.
-（D）$k^{-1}A^*$.
+> [!success]- 答案与解析
+> **答案**：$B+2E$ 的特征值为 $\lambda_1=3$，$\lambda_2=\lambda_3=9$；属于 $\lambda_1=3$ 的全部特征向量为 $k_1\begin{pmatrix}0\\1\\1\end{pmatrix}$（$k_1$ 为非零常数）；属于 $\lambda_2=\lambda_3=9$ 的全部特征向量为 $k_2\begin{pmatrix}-1\\1\\0\end{pmatrix}+k_3\begin{pmatrix}-2\\0\\1\end{pmatrix}$（$k_2,k_3$ 为不全为零的常数）．
+>
+> （19）【解】 方法一
+> $$
+> |A|=\begin{vmatrix}3&2&2\\2&3&2\\2&2&3\end{vmatrix}=7,
+> $$
+> $$
+> \text{由}\begin{pmatrix}3&2&2&\mid&1&0&0\\2&3&2&\mid&0&1&0\\2&2&3&\mid&0&0&1\end{pmatrix}\to\begin{pmatrix}1&1&1&\mid&\dfrac{1}{7}&\dfrac{1}{7}&\dfrac{1}{7}\\0&1&0&\mid&-\dfrac{2}{7}&\dfrac{5}{7}&-\dfrac{2}{7}\\0&0&1&\mid&-\dfrac{2}{7}&-\dfrac{2}{7}&\dfrac{5}{7}\end{pmatrix}\to\begin{pmatrix}1&0&0&\mid&\dfrac{5}{7}&-\dfrac{2}{7}&-\dfrac{2}{7}\\0&1&0&\mid&-\dfrac{2}{7}&\dfrac{5}{7}&-\dfrac{2}{7}\\0&0&1&\mid&-\dfrac{2}{7}&-\dfrac{2}{7}&\dfrac{5}{7}\end{pmatrix}
+> $$
+> 得 $A^{*}=|A|A^{-1}=\begin{pmatrix}5&-2&-2\\-2&5&-2\\-2&-2&5\end{pmatrix}$．
+> $$
+> \text{由}\begin{pmatrix}0&1&0&\mid&1&0&0\\1&0&1&\mid&0&1&0\\0&0&1&\mid&0&0&1\end{pmatrix}\to\begin{pmatrix}1&0&1&\mid&0&1&0\\0&1&0&\mid&1&0&0\\0&0&1&\mid&0&0&1\end{pmatrix}\to\begin{pmatrix}1&0&0&\mid&0&1&-1\\0&1&0&\mid&1&0&0\\0&0&1&\mid&0&0&1\end{pmatrix},
+> $$
+> 得 $P^{-1}=\begin{pmatrix}0&1&-1\\1&0&0\\0&0&1\end{pmatrix}$，
+> $$
+> \text{于是 }B=P^{-1}A^{*}P=\begin{pmatrix}0&1&-1\\1&0&0\\0&0&1\end{pmatrix}\begin{pmatrix}5&-2&-2\\-2&5&-2\\-2&-2&5\end{pmatrix}\begin{pmatrix}0&1&0\\1&0&1\\0&0&1\end{pmatrix}=\begin{pmatrix}7&0&0\\-2&5&-4\\-2&-2&3\end{pmatrix}.
+> $$
+> $$
+> B+2E=\begin{pmatrix}9&0&0\\-2&7&-4\\-2&-2&5\end{pmatrix}.
+> $$
+> $$
+> \text{由 }|\lambda E-(B+2E)|=\begin{vmatrix}\lambda-9&0&0\\2&\lambda-7&4\\2&2&\lambda-5\end{vmatrix}=(\lambda-3)(\lambda-9)^2=0,
+> $$
+> 得 $B+2E$ 的特征值为 $\lambda_1=3,\lambda_2=\lambda_3=9$．
+>
+> 当 $\lambda_1=3$ 时，解方程组 $[3E-(B+2E)]X=0$，
+> $$
+> \text{由 }3E-(B+2E)=\begin{pmatrix}-6&0&0\\2&-4&4\\2&2&-2\end{pmatrix}\to\begin{pmatrix}1&0&0\\0&1&-1\\0&0&0\end{pmatrix},\text{得 }B+2E\text{ 的属于特征值 }\lambda_1=3
+> $$
+> 的特征向量为 $\xi_1=\begin{pmatrix}0\\1\\1\end{pmatrix}$；
+>
+> 当 $\lambda_2=\lambda_3=9$ 时，解方程组 $[9E-(B+2E)]X=0$，
+> $$
+> \text{由 }9E-(B+2E)=\begin{pmatrix}0&0&0\\2&2&4\\2&2&4\end{pmatrix}\to\begin{pmatrix}1&1&2\\0&0&0\\0&0&0\end{pmatrix},\text{得 }B+2E\text{ 的属于特征值 }\lambda_2=\lambda_3=9\text{ 的线}
+> $$
+> 性无关的特征向量为 $\xi_2=\begin{pmatrix}-1\\1\\0\end{pmatrix},\xi_3=\begin{pmatrix}-2\\0\\1\end{pmatrix}$．
+>
+> 故 $B+2E$ 的特征值为 $\lambda_1=3,\lambda_2=\lambda_3=9$，属于 $\lambda_1=3$ 的全部特征向量为 $k_1\xi_1$（$k_1$ 为任意非零常数）；属于 $\lambda_2=\lambda_3=9$ 的全部特征向量为 $k_2\xi_2+k_3\xi_3$（$k_2,k_3$ 为不全为零的任意常数）．
+>
+> 方法二
+> $$
+> \text{由 }|\lambda E-A|=\begin{vmatrix}\lambda-3&-2&-2\\-2&\lambda-3&-2\\-2&-2&\lambda-3\end{vmatrix}=(\lambda-1)^2(\lambda-7)=0\text{ 得矩阵 }A\text{ 的特征值为 }\lambda_1=\lambda_2=1,\lambda_3=7,
+> $$
+> $\lambda_1=\lambda_2=1$ 代入 $(\lambda E-A)X=0$，
+> $$
+> \text{由 }E-A\to\begin{pmatrix}1&1&1\\0&0&0\\0&0&0\end{pmatrix}\text{得 }A\text{ 的属于 }\lambda_1=\lambda_2=1\text{ 的线性无关的特征向量为}
+> $$
+> $$
+> \alpha_1=\begin{pmatrix}-1\\1\\0\end{pmatrix},\alpha_2=\begin{pmatrix}-1\\0\\1\end{pmatrix};
+> $$
+> $\lambda_3=7$ 代入 $(\lambda E-A)X=0$，
+> $$
+> \text{由 }7E-A\to\begin{pmatrix}1&0&-1\\0&1&-1\\0&0&0\end{pmatrix}\text{得 }A\text{ 的属于 }\lambda_3=7\text{ 的特征向量为 }\alpha_3=\begin{pmatrix}1\\1\\1\end{pmatrix}.
+> $$
+> $$
+> |A|=7,A^{*}\text{ 的特征值为 }\frac{|A|}{\lambda_1}=7,\frac{|A|}{\lambda_2}=7,\frac{|A|}{\lambda_3}=1,
+> $$
+> 因为 $B\sim A^{*}$，所以 $B$ 的特征值为 $\lambda_1=\lambda_2=7,\lambda_3=1$，从而 $B+2E$ 的特征值为 $9,9,3$．
+>
+> $B+2E$ 的相应于特征值 $9,9,3$ 对应的线性无关的特征向量为
+> $$
+> \beta_1=P^{-1}\alpha_1=\begin{pmatrix}0&1&-1\\1&0&0\\0&0&1\end{pmatrix}\begin{pmatrix}-1\\1\\0\end{pmatrix}=\begin{pmatrix}1\\-1\\0\end{pmatrix},
+> $$
+> $$
+> \beta_2=P^{-1}\alpha_2=\begin{pmatrix}0&1&-1\\1&0&0\\0&0&1\end{pmatrix}\begin{pmatrix}-1\\0\\1\end{pmatrix}=\begin{pmatrix}-1\\-1\\1\end{pmatrix},
+> $$
+> $$
+> \beta_3=P^{-1}\alpha_3=\begin{pmatrix}0&1&-1\\1&0&0\\0&0&1\end{pmatrix}\begin{pmatrix}1\\1\\1\end{pmatrix}=\begin{pmatrix}0\\1\\1\end{pmatrix}.
+> $$
+>
+> > **方法点评**：本题考查矩阵的特征值与特征向量．
+> > 矩阵与其关联的矩阵特征值与特征向量之间有一定的关系，主要有如下结论：
+> > （1）设 $A\alpha=\lambda_0\alpha$，则 $f(A)\alpha=f(\lambda_0)\alpha$，
+> > 特别地，若 $A$ 可逆，则 $\begin{cases}A^{-1}\alpha=\dfrac{1}{\lambda_0}\alpha,\\A^{*}\alpha=\dfrac{|A|}{\lambda_0}\alpha,\end{cases}$ 即 $A$ 与 $A^{-1},A^{*}$ 特征向量相同．
+> > （2）设 $A\alpha=\lambda_0\alpha$ 且 $P^{-1}AP=B$，则 $B\cdot P^{-1}\alpha=\lambda_0P^{-1}\alpha$，即 $A$ 与 $B$ 特征值相同，$B$ 的属于特征值 $\lambda_0$ 的特征向量为 $P^{-1}\alpha$．
+
+### 2004 年 · 数学一 · 第 5 题（填空，4 分）
+
+设矩阵 $A=\begin{pmatrix}2&1&0\\1&2&0\\0&0&1\end{pmatrix}$，矩阵 $B$ 满足 $ABA^{*}=2BA^{*}+E$，其中 $A^{*}$ 为 $A$ 的伴随矩阵，$E$ 是单位矩阵，则 $|B|=\underline{\qquad}$．
+
+> [!success]- 答案与解析
+> **答案**：$\dfrac{1}{9}$
+>
+> 【解】 $|A|=3$，在 $ABA^{*}=2BA^{*}+E$ 两边右乘 $A$，得 $3AB=6B+A$ 或 $3(A-2E)B=A$．于是 $3^3|A-2E|\cdot|B|=|A|$．
+> $$
+> \text{而 }A-2E=\begin{pmatrix}0&1&0\\1&0&0\\0&0&-1\end{pmatrix},\quad|A-2E|=1,\text{故 }|B|=\frac{1}{9}.
+> $$
+>
+> > **方法点评**：本题考查由矩阵关系等式确定的矩阵的行列式．本题的关键是要应用公式 $AA^{*}=A^{*}A=|A|E$．
+
+### 2004 年 · 数学二 · 第 6 题（填空，4 分）
+
+设矩阵 $A=\begin{pmatrix}2&1&0\\1&2&0\\0&0&1\end{pmatrix}$，矩阵 $B$ 满足 $ABA^*=2BA^*+E$，其中 $A^*$ 为 $A$ 的伴随矩阵，$E$ 是单位矩阵，则 $|B|=$ ________.
+
+> [!success]- 答案与解析
+> **答案**：$rac{1}{9}$
+>
+> 方法1：已知等式两边同时右乘 $A$，得 $ABA^*A=2BA^*A+A$，
+>
+> 由伴随矩阵的运算规律：$A^*A=AA^*=|A|E$，有 $AB|A|=2B|A|+A$，而
+> $$
+> |A|=\begin{vmatrix}2&1&0\\1&2&0\\0&0&1\end{vmatrix}=(-1)^{3+3}\begin{vmatrix}2&1\\1&2\end{vmatrix}=2\times2-1\times1=3,
+> $$
+> 于是有 $3AB=6B+A$，移项、合并有 $(3A-6E)B=A$，再两边取行列式，由方阵乘积的行列式的性质：矩阵乘积的行列式等于矩阵行列式的积，有
+> $$
+> |(3A-6E)B|=|3A-6E||B|=|A|=3,
+> $$
+> 而
+> $$
+> |3A-6E|=\begin{vmatrix}6&3&0\\3&6&0\\0&0&3\end{vmatrix}-\begin{vmatrix}6&0&0\\0&6&0\\0&0&6\end{vmatrix}=\begin{vmatrix}0&3&0\\3&0&0\\0&0&-3\end{vmatrix}=(-1)^{3+3}(-3)\begin{vmatrix}0&3\\3&0\end{vmatrix}=(-3)\times3\times3=27,
+> $$
+> 故所求行列式为 $|B|=\frac{|A|}{|3A-6E|}=\frac{3}{27}=\frac{1}{9}$.
+>
+> 方法2：由题设条件 $ABA^*=2BA^*+E$，得 $ABA^*-2BA^*=(A-2E)BA^*=E$.
+>
+> 由方阵乘积行列式的性质：矩阵乘积的行列式等于矩阵行列式的积，故两边取行列式，有 $|(A-2E)BA^*|=|A-2E||B||A^*|=|E|=1$.
+>
+> 其中 $|A|=\begin{vmatrix}2&1&0\\1&2&0\\0&0&1\end{vmatrix}=(-1)^{3+3}\begin{vmatrix}2&1\\1&2\end{vmatrix}=2\times2-1\times1=3$；
+>
+> 由伴随矩阵行列式的公式：若 $A$ 是 $n$ 阶矩阵，则 $|A^*|=|A|^{n-1}$.
+>
+> 所以，$|A^*|=|A|^{3-1}=|A|^2=9$；又 $|A-2E|=\begin{vmatrix}0&1&0\\1&0&0\\0&0&1\end{vmatrix}=(-1)^{1+2}\begin{vmatrix}1&0\\0&1\end{vmatrix}=1$.
+>
+> 故 $|B|=\frac{1}{|A-2E||A^*|}=\frac{1}{9}$.
+
+### 2005 年 · 数学一 · 第 12 题（选择，4 分）
+
+设 $A$ 为 $n\ (n\ge 2)$ 阶可逆矩阵，交换 $A$ 的第 1 行与第 2 行得矩阵 $B$，$A^{*},B^{*}$ 分别为 $A,B$ 的伴随矩阵，则（　　）
+
+（A）交换 $A^{*}$ 的第 1 列与第 2 列得 $B^{*}$．
+（B）交换 $A^{*}$ 的第 1 行与第 2 行得 $B^{*}$．
+（C）交换 $A^{*}$ 的第 1 列与第 2 列得 $-B^{*}$．
+（D）交换 $A^{*}$ 的第 1 行与第 2 行得 $-B^{*}$．
+
+> [!success]- 答案与解析
+> **答案**：（C）
+>
+> 【解】 令 $E_{12}=\begin{pmatrix}0&1&0\\1&0&0\\0&0&1\end{pmatrix}$，由题意得 $B=E_{12}A$．
+>
+> 由 $|B|=|E_{12}|\cdot|A|=-|A|$，$B^{-1}=A^{-1}E_{12}^{-1}=A^{-1}E_{12}$，
+>
+> 得 $B^{*}=|B|B^{-1}=-|A|\cdot A^{-1}E_{12}=-A^{*}E_{12}$ 或 $-B^{*}=A^{*}E_{12}$，
+>
+> 即交换 $A^{*}$ 的第 1、2 两列得 $-B^{*}$，应选（C）．
+>
+> > **方法点评**：本题考查初等变换与伴随矩阵．
+> > 设 $A$ 为可逆矩阵，当研究 $A^{*}$ 时，一般需要使用公式 $A^{*}=|A|A^{-1}$，即将伴随矩阵问题转化为逆矩阵问题，注意使用如下结论：
+> > （1）设 $A,B$ 为可逆的 $n$ 阶矩阵，则 $(AB)^{*}=B^{*}A^{*}$；
+> > （2）设 $A,B$ 分别为可逆的 $m$ 阶及 $n$ 阶矩阵，则
+> > $\begin{pmatrix}A&O\\O&B\end{pmatrix}^{*}=\begin{vmatrix}A&O\\O&B\end{vmatrix}\begin{pmatrix}A&O\\O&B\end{pmatrix}^{-1}=\begin{pmatrix}|B|A^{*}&O\\O&|A|B^{*}\end{pmatrix}$；
+> > $\begin{pmatrix}O&A\\B&O\end{pmatrix}^{*}=\begin{vmatrix}O&A\\B&O\end{vmatrix}\begin{pmatrix}O&A\\B&O\end{pmatrix}^{-1}=(-1)^{mn}\begin{pmatrix}O&|A|B^{*}\\|B|A^{*}&O\end{pmatrix}$．
+
+### 2005 年 · 数学三 · 第 12 题（选择，4 分）
+
+设矩阵 $A=(a_{ij})_{3\times 3}$ 满足 $A^*=A^{\mathrm{T}}$，其中 $A^*$ 是 $A$ 的伴随矩阵，$A^{\mathrm{T}}$ 为 $A$ 的转置矩阵。若 $a_{11},a_{12},a_{13}$ 为三个相等的正数，则 $a_{11}$ 为（　　）
+（A）$\dfrac{\sqrt{3}}{3}$　　（B）$3$　　（C）$\dfrac{1}{3}$　　（D）$\sqrt{3}$
+
+> [!success]- 答案与解析
+> **答案**：（A）
+>
+> 【分析】题设与 $A$ 的伴随矩阵有关，一般联想到用行列展开定理和相应公式：$AA^*=A^*A=|A|E$。
+>
+> 【详解】由 $A^*=A^{\mathrm{T}}$ 及 $AA^*=A^*A=|A|E$，有 $a_{ij}=A_{ij},\ i,j=1,2,3$，其中 $A_{ij}$ 为 $a_{ij}$ 的代数余子式，且
+> $$
+> AA^{\mathrm{T}}=|A|E\Rightarrow |A|^2=|A|^3\Rightarrow |A|=0\text{ 或 }|A|=1.
+> $$
+> 而
+> $$
+> |A|=a_{11}A_{11}+a_{12}A_{12}+a_{13}A_{13}=3a_{11}^2\ne 0,
+> $$
+> 于是 $|A|=1$，且 $a_{11}^2=\dfrac{1}{3}$，即 $a_{11}=\dfrac{\sqrt{3}}{3}$。故正确选项为（A）。
+
+### 2005 年 · 数学二 · 第 14 题（选择，4 分）
+
+设 $A$ 为 $n\ (n\ge2)$ 阶可逆矩阵，交换 $A$ 的第 1 行与第 2 行得矩阵 $B$，$A^*,B^*$ 分别为 $A,B$ 的伴随矩阵，则（　）
+
+（A）交换 $A^*$ 的第 1 列与第 2 列得 $B^*$.
+（B）交换 $A^*$ 的第 1 行与第 2 行得 $B^*$.
+（C）交换 $A^*$ 的第 1 列与第 2 列得 $-B^*$.
+（D）交换 $A^*$ 的第 1 行与第 2 行得 $-B^*$.
+
+> [!success]- 答案与解析
+> **答案**：（C）
+>
+> 方法1：由题设，存在初等矩阵 $E_{12}$（交换 $n$ 阶单位矩阵的第 1 行与第 2 行所得），使得
+> $$
+> E_{12}A=B,\quad(A\text{进行行变换，故}A\text{左乘初等矩阵}),
+> $$
+> 于是 $B^*=(E_{12}A)^*=A^*E_{12}^*$，
+>
+> 又初等矩阵都是可逆的，故 $E_{12}^{-1}=\frac{E_{12}^*}{|E_{12}|}$，
+>
+> 又 $|E_{12}|=-|E|=-1$（行列式的两行互换，行列式反号），$E_{12}^{-1}=E_{12}$，故
+> $$
+> B^*=A^*E_{12}^*=A^*|E_{12}|\cdot E_{12}^{-1}=-A^*E_{12}^{-1}=-A^*E_{12},
+> $$
+> 即 $A^*E_{12}=-B^*$，可见应选（C）.
+>
+> 方法2：交换 $A$ 的第一行与第二行得 $B$，即 $B=E_{12}A$.
+>
+> 又因为 $A$ 是可逆阵，$|E_{12}|=-|E|=-1$，故 $|B|=|E_{12}A|=|E_{12}||A|=-|A|\ne0$，
+>
+> 所以 $B$ 可逆，且 $B^{-1}=(E_{12}A)^{-1}=A^{-1}E_{12}$.
+>
+> 又 $A^{-1}=\frac{A^*}{|A|}$，$B^{-1}=\frac{B^*}{|B|}$，故 $\frac{B^*}{|B|}=\frac{A^*}{|A|}E_{12}$，又因 $|B|=-|A|$，故 $A^*E_{12}=-B^*$.
+
+### 2009 年 · 数学三 · 第 5 题（选择，4 分）
+
+设 $A,B$ 均为 2 阶方阵，$A^*,B^*$ 分别为 $A,B$ 的伴随矩阵。若 $|A|=2$，$|B|=3$，则分块矩阵
+$$
+\begin{pmatrix}O&A\\B&O\end{pmatrix}
+$$
+的伴随矩阵为（　　）
+
+（A）$\begin{pmatrix}O&3B^*\\2A^*&O\end{pmatrix}$　　（B）$\begin{pmatrix}O&2B^*\\3A^*&O\end{pmatrix}$
+
+（C）$\begin{pmatrix}O&3A^*\\2B^*&O\end{pmatrix}$　　（D）$\begin{pmatrix}O&2A^*\\3B^*&O\end{pmatrix}$
 
 > [!success]- 答案与解析
 > **答案**：（B）
 >
-> 对任何 $n$ 阶矩阵都要成立的关系式，对特殊的 $n$ 阶矩阵自然也要成立. 那么，当 $A$ 可逆时，由 $A^*=|A|A^{-1}$，有
-> $$
-> (kA)^*=|kA|(kA)^{-1}=k^n|A|\cdot\frac{1}{k}A^{-1}=k^{n-1}|A|A^{-1}=k^{n-1}A^*.
-> $$
-> 故应选（B）.
+> 根据 $CC^*=|C|E$，若 $C^*=|C|C^{-1}$，$C^{-1}=\frac{1}{|C|}C^*$。
 >
-> 一般地，若 $A=(a_{ij})_{n\times n}$，那么 $kA=(ka_{ij})_{n\times n}$，那么矩阵 $kA$ 的第 $i$ 行 $j$ 列元素的代数余子式为
+> 分块矩阵 $\begin{pmatrix}O&A\\B&O\end{pmatrix}$ 的行列式
 > $$
-> (-1)^{i+j}\begin{vmatrix}ka_{11}&\cdots&ka_{1,j-1}&ka_{1,j+1}&\cdots&ka_{1n}\\\vdots&&\vdots&\vdots&&\vdots\\ka_{i-1,1}&\cdots&ka_{i-1,j-1}&ka_{i-1,j+1}&\cdots&ka_{i-1,n}\\ka_{i+1,1}&\cdots&ka_{i+1,j-1}&ka_{i+1,j+1}&\cdots&ka_{i+1,n}\\\vdots&&\vdots&\vdots&&\vdots\\ka_{n1}&\cdots&ka_{n,j-1}&ka_{n,j+1}&\cdots&ka_{nn}\end{vmatrix}=(-1)^{i+j}k^{n-1}\begin{vmatrix}a_{11}&\cdots&a_{1,j-1}&a_{1,j+1}&\cdots&a_{1n}\\\vdots&&\vdots&\vdots&&\vdots\\a_{i-1,1}&\cdots&a_{i-1,j-1}&a_{i-1,j+1}&\cdots&a_{i-1,n}\\a_{i+1,1}&\cdots&a_{i+1,j-1}&a_{i+1,j+1}&\cdots&a_{i+1,n}\\\vdots&&\vdots&\vdots&&\vdots\\a_{n1}&\cdots&a_{n,j-1}&a_{n,j+1}&\cdots&a_{nn}\end{vmatrix},
+> \begin{vmatrix}O&A\\B&O\end{vmatrix}=(-1)^{2\times2}|A||B|=2\times3=6,
 > $$
-> 即 $|kA|$ 中每个元素的代数余子式恰好是 $|A|$ 相应元素的代数余子式的 $k^{n-1}$ 倍，因而，按伴随矩阵的定义知 $(kA)^*$ 的元素是 $A^*$ 对应元素的 $k^{n-1}$ 倍.
->
-> 【相关知识点】1. 行列式的性质：若 $A$ 是 $n$ 阶矩阵，则 $|kA|=k^n|A|$. 2. 矩阵 $A$ 可逆的充要条件是 $|A|\ne0$，且 $A^{-1}=\frac{1}{|A|}A^*$.
+> 即分块矩阵可逆，故
+> $$
+> \begin{pmatrix}O&A\\B&O\end{pmatrix}^*=\begin{vmatrix}O&A\\B&O\end{vmatrix}\begin{pmatrix}O&A\\B&O\end{pmatrix}^{-1}=6\begin{pmatrix}O&B^{-1}\\A^{-1}&O\end{pmatrix}=6\begin{pmatrix}O&\frac{1}{|B|}B^*\\\frac{1}{|A|}A^*&O\end{pmatrix}=6\begin{pmatrix}O&\frac13B^*\\\frac12A^*&O\end{pmatrix}=\begin{pmatrix}O&2B^*\\3A^*&O\end{pmatrix}.
+> $$
+> 故答案为（B）。
 
-### 1997 年 · 数学三 · 第九题（解答，6 分）
+### 2009 年 · 数学一 · 第 6 题（选择，5 分）
 
-（本题满分 6 分）设 $A$ 为 $n$ 阶非奇异矩阵，$\alpha$ 为 $n$ 维列向量，$b$ 为常数。记分块矩阵
-$$
-P=\begin{pmatrix}E&O\\-\alpha^{\mathrm{T}}A^{*}&|A|\end{pmatrix},\qquad Q=\begin{pmatrix}A&\alpha\\\alpha^{\mathrm{T}}&b\end{pmatrix},
-$$
-其中 $A^{*}$ 是矩阵 $A$ 的伴随矩阵，$E$ 为 $n$ 阶单位矩阵。
+设 $A,B$ 均为 2 阶矩阵，$A^*,B^*$ 分别为 $A,B$ 的伴随矩阵，若 $|A|=2$，$|B|=3$，则分块矩阵 $\begin{pmatrix}O&A\\B&O\end{pmatrix}$ 的伴随矩阵为（　　）
 
-（1）计算并化简 $PQ$；
+（A）$\begin{pmatrix}O&3B^*\\2A^*&O\end{pmatrix}$．　　（B）$\begin{pmatrix}O&2B^*\\3A^*&O\end{pmatrix}$．
 
-（2）证明：矩阵 $Q$ 可逆的充分必要条件是 $\alpha^{\mathrm{T}}A^{-1}\alpha\ne b$。
+（C）$\begin{pmatrix}O&3A^*\\2B^*&O\end{pmatrix}$．　　（D）$\begin{pmatrix}O&2A^*\\3B^*&O\end{pmatrix}$．
 
 > [!success]- 答案与解析
-> **答案**：（1）$PQ=\begin{pmatrix}A&\alpha\\0&|A|(b-\alpha^{\mathrm{T}}A^{-1}\alpha)\end{pmatrix}$；（2）证明见解析（$Q$ 可逆 $\Leftrightarrow \alpha^{\mathrm{T}}A^{-1}\alpha\ne b$）。
+> **答案**：（B）
 >
-> 【解析】（1）由 $AA^{*}=A^{*}A=|A|E$ 及 $A^{*}=|A|A^{-1}$，有
+> $\begin{vmatrix}O&A\\B&O\end{vmatrix}=(-1)^{2\times 2}|A|\cdot|B|=6$，则
+>
 > $$
-> PQ=\begin{pmatrix}E&O\\-\alpha^{\mathrm{T}}A^{*}&|A|\end{pmatrix}\begin{pmatrix}A&\alpha\\\alpha^{\mathrm{T}}&b\end{pmatrix}
-> =\begin{pmatrix}A&\alpha\\-\alpha^{\mathrm{T}}A^{*}A+|A|\alpha^{\mathrm{T}}&-\alpha^{\mathrm{T}}A^{*}\alpha+b|A|\end{pmatrix}
-> =\begin{pmatrix}A&\alpha\\0&|A|(b-\alpha^{\mathrm{T}}A^{-1}\alpha)\end{pmatrix}.
+> \begin{pmatrix}O&A\\B&O\end{pmatrix}^*=\begin{vmatrix}O&A\\B&O\end{vmatrix}\begin{pmatrix}O&A\\B&O\end{pmatrix}^{-1}=6\begin{pmatrix}O&B^{-1}\\A^{-1}&O\end{pmatrix}=\begin{pmatrix}O&6B^{-1}\\6A^{-1}&O\end{pmatrix}=\begin{pmatrix}O&2B^*\\3A^*&O\end{pmatrix},
 > $$
 >
-> （2）用行列式拉普拉斯展开式及行列式乘法公式，有
-> $$
-> |P|=\begin{vmatrix}E&O\\-\alpha^{\mathrm{T}}A^{*}&|A|\end{vmatrix}=|A|,
-> $$
-> $$
-> |P||Q|=|PQ|=\begin{vmatrix}A&\alpha\\0&|A|(b-\alpha^{\mathrm{T}}A^{-1}\alpha)\end{vmatrix}=|A|^2(b-\alpha^{\mathrm{T}}A^{-1}\alpha).
-> $$
-> 又因 $A$ 是非奇异矩阵，所以 $|A|\ne 0$，故 $|Q|=|A|(b-\alpha^{\mathrm{T}}A^{-1}\alpha)$。
->
-> 由此可知 $Q$ 可逆的充要条件是 $|Q|\ne 0$，即 $b-\alpha^{\mathrm{T}}A^{-1}\alpha\ne 0$，亦即 $\alpha^{\mathrm{T}}A^{-1}\alpha\ne b$。
->
-> > 评注：本题考查分块矩阵的运算，要看清 $\alpha^{\mathrm{T}}A^{-1}\alpha$ 是 1 阶矩阵，是一个数。
+> 应选（B）．
 
-### 1996 年 · 数学三 · 选择题第 3 题（选择，3 分）
+### 2009 年 · 数学二 · 第 7 题（选择，4 分）
 
-设 $n$ 阶矩阵 $A$ 非奇异（$n\ge 2$），$A^*$ 是矩阵 $A$ 的伴随矩阵，则（　　）
-（A）$(A^*)^*=|A|^{n-1}A$
-（B）$(A^*)^*=|A|^{n+1}A$
-（C）$(A^*)^*=|A|^{n-2}A$
-（D）$(A^*)^*=|A|^{n+2}A$
+设 $A,B$ 均为 2 阶方阵，$A^*,B^*$ 分别为 $A,B$ 的伴随矩阵. 若 $|A|=2$，$|B|=3$，则分块矩阵
+$$
+\begin{pmatrix}
+O&A\\
+B&O
+\end{pmatrix}
+$$
+的伴随矩阵为（　）
+
+（A）$\begin{pmatrix}O&3B^*\\2A^*&O\end{pmatrix}$　（B）$\begin{pmatrix}O&2B^*\\3A^*&O\end{pmatrix}$　（C）$\begin{pmatrix}O&3A^*\\2B^*&O\end{pmatrix}$　（D）$\begin{pmatrix}O&2A^*\\3B^*&O\end{pmatrix}$
 
 > [!success]- 答案与解析
-> **答案**：（C）.
+> **答案**：（B）
 >
-> 【解析】伴随矩阵的基本关系式为 $AA^*=A^*A=|A|E$，
-> 现将 $A^*$ 视为关系式中的矩阵 $A$，则有 $A^*(A^*)^*=|A^*|E$.
-> 方法一：由 $|A^*|=|A|^{n-1}$ 及 $(A^*)^{-1}=\dfrac{A}{|A|}$，可得
+> 根据 $CC^*=|C|E$ 若 $C^*=|C|C^{-1},C^{-1}=\frac{1}{|C|}C^*$
+>
+> 分块矩阵 $\begin{pmatrix}O&A\\B&O\end{pmatrix}$ 的行列式 $\begin{vmatrix}O&A\\B&O\end{vmatrix}=(-1)^{2\times2}|A||B|=2\times3=6$ 即分块矩阵可逆
 > $$
-> (A^*)^*=|A^*|(A^*)^{-1}=|A|^{n-1}\frac{A}{|A|}=|A|^{n-2}A.
+> \begin{pmatrix}O&A\\B&O\end{pmatrix}^*=\begin{vmatrix}O&A\\B&O\end{vmatrix}\begin{pmatrix}O&A\\B&O\end{pmatrix}^{-1}=6\begin{pmatrix}O&B^{-1}\\A^{-1}&O\end{pmatrix}=6\begin{pmatrix}O&\frac{1}{|B|}B^*\\\frac{1}{|A|}A^*&O\end{pmatrix}
 > $$
-> 故应选（C）.
-> 方法二：由 $A^*(A^*)^*=|A^*|E$，左乘 $A$ 得
 > $$
-> (AA^*)(A^*)^*=|A|^{n-1}A,\ \text{即}\ (|A|E)(A^*)^*=|A|^{n-1}A.
+> =6\begin{pmatrix}O&\frac{1}{3}B^*\\\frac{1}{2}A^*&O\end{pmatrix}=\begin{pmatrix}O&2B^*\\3A^*&O\end{pmatrix}
 > $$
-> 故应选（C）.
 
-### 1995 年 · 数学三 · 填空题第 4 题（填空，3 分）
+### 2011 年 · 数学二 · 第 8 题（选择，4 分）
 
-设
-$$
-A=\begin{pmatrix}1&0&0\\2&2&0\\3&4&5\end{pmatrix},
-$$
-$A^*$ 是 $A$ 的伴随矩阵，则 $(A^*)^{-1}=$______.
+设 $A=(\alpha_1,\alpha_2,\alpha_3,\alpha_4)$ 是 4 阶矩阵，$A^*$ 为 $A$ 的伴随矩阵. 若 $(1,0,1,0)^{\mathrm{T}}$ 是方程组 $Ax=0$ 的一个基础解系，则 $A^*x=0$ 的基础解系可为（　）
+
+（A）$\alpha_1,\alpha_3$　（B）$\alpha_1,\alpha_2$　（C）$\alpha_1,\alpha_2,\alpha_3$　（D）$\alpha_2,\alpha_3,\alpha_4$
 
 > [!success]- 答案与解析
-> **答案**：
-> $$
-> (A^*)^{-1}=\frac{A}{|A|}=\frac{1}{10}\begin{pmatrix}1&0&0\\2&2&0\\3&4&5\end{pmatrix}.
-> $$
+> **答案**：（D）
 >
-> 【解析】由 $AA^*=|A|E$，有 $\dfrac{A}{|A|}A^*=E$，故 $(A^*)^{-1}=\dfrac{A}{|A|}$.
-> 而
+> 由于 $(1,0,1,0)^{\mathrm{T}}$ 是方程组 $Ax=0$ 的一个基础解系，所以 $A(1,0,1,0)^{\mathrm{T}}=0$，且 $r(A)=4-1=3$，即 $\alpha_1+\alpha_3=0$，且 $|A|=0$. 由此可得 $A^*A=|A|E=O$，即
 > $$
-> |A|=\begin{vmatrix}1&0&0\\2&2&0\\3&4&5\end{vmatrix}=10,
+> A^*(\alpha_1,\alpha_2,\alpha_3,\alpha_4)=O,
+> $$
+> 这说明 $\alpha_1,\alpha_2,\alpha_3,\alpha_4$ 是 $A^*x=0$ 的解.
+>
+> 由于 $r(A)=3$，$\alpha_1+\alpha_3=0$，所以 $\alpha_2,\alpha_3,\alpha_4$ 线性无关. 又由于 $r(A)=3$，所以 $r(A^*)=1$，因此 $A^*x=0$ 的基础解系中含有 $4-1=3$ 个线性无关的解向量. 而 $\alpha_2,\alpha_3,\alpha_4$ 线性无关，且为 $A^*x=0$ 的解，所以 $\alpha_2,\alpha_3,\alpha_4$ 可作为 $A^*x=0$ 的基础解系，故选 (D).
+
+### 2012 年 · 数学三 · 第 13 题（填空，4 分）
+
+设 $A$ 为 3 阶矩阵，$|A|=3$，$A^{*}$ 为 $A$ 的伴随矩阵，若交换 $A$ 的第 1 行与第 2 行得矩阵 $B$，则 $|BA^{*}|=\underline{\qquad}$。
+
+> [!success]- 答案与解析
+> **答案**：$-27$
+>
+> 由于 $B=E_{12}A$，故
+> $$
+> BA^{*}=E_{12}A\cdot A^{*}=|A|E_{12}=3E_{12},
 > $$
 > 所以
 > $$
-> (A^*)^{-1}=\frac{A}{|A|}=\frac{1}{10}\begin{pmatrix}1&0&0\\2&2&0\\3&4&5\end{pmatrix}.
+> |BA^{*}|=|3E_{12}|=3^3|E_{12}|=27\times(-1)=-27.
 > $$
 
-### 1994 年 · 数学一 · 第九大题（证明题）（解答，6 分）
+### 2012 年 · 数学二 · 第 14 题（填空，4 分）
 
-设 $A$ 为 $n$ 阶非零方阵，$A^*$ 为 $A$ 的伴随矩阵，$A^{\mathrm{T}}$ 是 $A$ 的转置矩阵，当 $A^*=A^{\mathrm{T}}$ 时，证明：$|A|\ne 0$.
+设 $A$ 为 3 阶矩阵，$|A|=3$，$A^*$ 为 $A$ 的伴随矩阵，若交换 $A$ 的第 1 行与第 2 行得矩阵 $B$，则 $|BA^*|=$ ________.
 
 > [!success]- 答案与解析
-> **答案**：证明见解析.
+> **答案**：-27
 >
-> 由 $A^*=A^{\mathrm{T}}$ 得 $a_{ij}=A_{ij}\ (i,j=1,2,\cdots,n)$. 因为 $A$ 为非零矩阵，所以矩阵 $A$ 中有非零元素，不妨设 $a_{1j}\ne 0$，故
-> $$
-> |A|=a_{11}A_{11}+a_{12}A_{12}+\cdots+a_{1n}A_{1n}=a_{11}^2+a_{12}^2+\cdots+a_{1n}^2>0.
-> $$
+> 由于 $B=E_{12}A$，故 $BA^*=E_{12}\cdot A\cdot A^*=|A|E_{12}=3E_{12}$，
+> 所以，$|BA^*|=|3E_{12}|=3^3|E_{12}|=27\times(-1)=-27$.
 
-### 1989 年 · 数学一 · 第八大题（证明题）（解答，8 分）
+### 2013 年 · 数学二 · 第 14 题（填空，4 分）
 
-设 $\lambda$ 为 $n$ 阶可逆矩阵 $A$ 的一个特征值，证明：
-
-（1）$\dfrac{1}{\lambda}$ 为 $A^{-1}$ 的特征值；
-（2）$\dfrac{|A|}{\lambda}$ 为 $A$ 的伴随矩阵 $A^*$ 的特征值.
+设 $A=(a_{ij})$ 是 3 阶非零矩阵，$|A|$ 为 $A$ 的行列式，$A_{ij}$ 为 $a_{ij}$ 的代数余子式. 若 $a_{ij}+A_{ij}=0\ (i,j=1,2,3)$，则 $|A|=$ ________.
 
 > [!success]- 答案与解析
-> **答案**：证明见解析.
+> **答案**：-1
 >
-> （1）因为 $A$ 可逆，所以 $\lambda\ne 0$，设 $A$ 的属于特征值 $\lambda$ 的特征向量为 $\alpha$，即 $A\alpha=\lambda\alpha$，将 $A\alpha=\lambda\alpha$ 两边左乘 $A^{-1}$，得 $A^{-1}A\alpha=\lambda A^{-1}\alpha$，于是 $A^{-1}\alpha=\dfrac{1}{\lambda}\alpha$，即 $\dfrac{1}{\lambda}$ 为 $A^{-1}$ 的特征值.
->
-> （2）因为 $A^*=|A|A^{-1}$，所以 $A^*\alpha=|A|A^{-1}\alpha=\dfrac{|A|}{\lambda}\alpha$，即 $\dfrac{|A|}{\lambda}$ 为 $A$ 的伴随矩阵 $A^*$ 的特征值.
+> 由 $a_{ij}+A_{ij}=0$ 可知，$A^{\mathrm{T}}=-A^*$
+> $$
+> |A|=a_{11}A_{11}+a_{12}A_{12}+a_{13}A_{13}=a_{1j}A_{1j}+a_{2j}A_{2j}+a_{3j}A_{3j}
+> $$
+> $$
+> =-\sum_{j=1}^{3}a_{1j}^2=-\sum_{i=1}^{3}a_{1i}^2<0
+> $$
+> 从而有 $|A|=|A^{\mathrm{T}}|=|-A^*|=-|A|^2$，故 $|A|=-1$.
 
-### 1988 年 · 数学三 · 第九题（解答，6 分）
+### 2023 年 · 数学三 · 第 5 题（选择，5 分）
 
-设 $A$ 是三阶方阵，$A^*$ 是 $A$ 的伴随矩阵，$A$ 的行列式 $|A|=\dfrac{1}{2}$. 求行列式 $|(3A)^{-1}-2A^*|$ 的值.
+设 $A,B$ 为 $n$ 阶可逆矩阵，$E$ 为 $n$ 阶单位矩阵，$M^{*}$ 为矩阵 $M$ 的伴随矩阵，则
+$$
+\begin{bmatrix}A&E\\O&B\end{bmatrix}^{*}=
+$$
+（A）$\begin{bmatrix}|A|B^{*}&-B^{*}A^{*}\\O&|B|A^{*}\end{bmatrix}$　（B）$\begin{bmatrix}|B|A^{*}&-A^{*}B^{*}\\O&|A|B^{*}\end{bmatrix}$
+
+（C）$\begin{bmatrix}|B|A^{*}&-B^{*}A^{*}\\O&|A|B^{*}\end{bmatrix}$　（D）$\begin{bmatrix}|A|B^{*}&-A^{*}B^{*}\\O&|B|A^{*}\end{bmatrix}$
 
 > [!success]- 答案与解析
-> **答案**：$-\dfrac{16}{27}$.
+> **答案**：（B）
 >
-> 解：因 $(3A)^{-1}=\dfrac{1}{3}A^{-1}$，
-> 故 $A^*=|A|\cdot A^{-1}=\dfrac{1}{2}A^{-1}$，
-> 所以
+> （方法一）分别令（A）（B）（C）（D）选项中的矩阵为 $I_1,I_2,I_3,I_4$。
 > $$
-> |(3A)^{-1}-2A^*|=\left|\dfrac{1}{3}A^{-1}-A^{-1}\right|=\left|-\dfrac{2}{3}A^{-1}\right|=\left(-\dfrac{2}{3}\right)^3|A^{-1}|=-\dfrac{16}{27}.
+> \begin{bmatrix}A&E\\O&B\end{bmatrix}I_1=\begin{bmatrix}A&E\\O&B\end{bmatrix}\begin{bmatrix}|A|B^{*}&-B^{*}A^{*}\\O&|B|A^{*}\end{bmatrix}=\begin{bmatrix}|A|AB^{*}&\cdots\\\cdots&\cdots\end{bmatrix},
+> $$
+> 不能保证 $|A|AB^{*}=|A||B|E$，所以 $I_1$ 不是 $\begin{bmatrix}A&E\\O&B\end{bmatrix}^{*}$，选项（A）不正确。同理，选项（D）也不正确。
+> $$
+> \begin{bmatrix}A&E\\O&B\end{bmatrix}I_3=\begin{bmatrix}A&E\\O&B\end{bmatrix}\begin{bmatrix}|B|A^{*}&-B^{*}A^{*}\\O&|A|B^{*}\end{bmatrix}=\begin{bmatrix}|A||B|E&-AB^{*}A^{*}+|A|B^{*}\\O&|A||B|E\end{bmatrix},
+> $$
+> （C）不正确。
+> $$
+> \begin{bmatrix}A&E\\O&B\end{bmatrix}I_4=\begin{bmatrix}A&E\\O&B\end{bmatrix}\begin{bmatrix}|A|B^{*}&-A^{*}B^{*}\\O&|B|A^{*}\end{bmatrix}=\begin{bmatrix}|A||B|E&-|A|B^{*}+|A|B^{*}\\O&|A||B|E\end{bmatrix}=\begin{bmatrix}|A||B|E&O\\O&|A||B|E\end{bmatrix},
+> $$
+> 选项（B）是正确的。
+>
+> （方法二）
+> $$
+> \begin{bmatrix}A&E\\O&B\end{bmatrix}^{*}=\begin{bmatrix}A&E\\O&B\end{bmatrix}\begin{bmatrix}A&E\\O&B\end{bmatrix}^{-1}=|A||B|\begin{bmatrix}A^{-1}&-A^{-1}B^{-1}\\O&B^{-1}\end{bmatrix}=\begin{bmatrix}|A||B|A^{-1}&-|A||B|A^{-1}B^{-1}\\O&|A||B|B^{-1}\end{bmatrix}=\begin{bmatrix}|B|A^{*}&-A^{*}B^{*}\\O&|A|B^{*}\end{bmatrix}.
 > $$
 
-### 1987 年 · 数学一 · 选择题第 4 题（选择，3 分）
+### 2023 年 · 数学二 · 第 8 题（选择，5 分）
 
-设 $A$ 为 $n$ 阶矩阵，且 $|A|=a\ne 0$，$A^*$ 是 $A$ 的伴随矩阵，则 $|A^*|=$（　　）
+设 $A,B$ 为 $n$ 阶可逆矩阵，$E$ 为 $n$ 阶单位矩阵，$M^*$ 为矩阵 $M$ 的伴随矩阵，则
+$$
+\begin{pmatrix}A&E\\O&B\end{pmatrix}^*=
+$$
 
-（A）$a$　（B）$\dfrac{1}{a}$　（C）$a^{n-1}$　（D）$a^n$
+（A）$\begin{pmatrix}|A|B^*&-B^*A^*\\O&|B|A^*\end{pmatrix}$　　（B）$\begin{pmatrix}|A|B^*&-A^*B^*\\O&|B|A^*\end{pmatrix}$
+
+（C）$\begin{pmatrix}|B|A^*&-B^*A^*\\O&|A|B^*\end{pmatrix}$　　（D）$\begin{pmatrix}|B|A^*&-A^*B^*\\O&|A|B^*\end{pmatrix}$
 
 > [!success]- 答案与解析
-> **答案**：（C）.
+> **答案**：（D）
 >
-> 由 $AA^*=|A|E$ 得出 $|A|\cdot|A^*|=||A|E|=|A|^n$，由 $|A|=a\ne 0$ 得 $|A^*|=a^{n-1}$，应选（C）.
+> 【解】
+> $$
+> \begin{vmatrix}A&E\\O&B\end{vmatrix}=|A|\cdot|B|,
+> $$
+> 令
+> $$
+> \begin{pmatrix}A&E\\O&B\end{pmatrix}^{-1}=\begin{pmatrix}X_{11}&X_{12}\\X_{21}&X_{22}\end{pmatrix},
+> $$
+> 由
+> $$
+> \begin{pmatrix}A&E\\O&B\end{pmatrix}\begin{pmatrix}X_{11}&X_{12}\\X_{21}&X_{22}\end{pmatrix}=\begin{pmatrix}E&O\\O&E\end{pmatrix}
+> $$
+> 得
+> $$
+> \begin{cases}AX_{11}+EX_{21}=E,\\AX_{12}+EX_{22}=O,\\BX_{21}=O,\\BX_{22}=E,\end{cases}
+> $$
+> 解得
+> $$
+> \begin{cases}X_{11}=A^{-1},\\X_{12}=-A^{-1}B^{-1},\\X_{21}=O,\\X_{22}=B^{-1},\end{cases}
+> $$
+> 则
+> $$
+> \begin{pmatrix}A&E\\O&B\end{pmatrix}^*=|A|\cdot|B|\begin{pmatrix}A^{-1}&-A^{-1}B^{-1}\\O&B^{-1}\end{pmatrix}=\begin{pmatrix}|B|A^*&-A^*B^*\\O&|A|B^*\end{pmatrix},
+> $$
+> 选（D）。
+
+### 2026 年 · 数学一 · 第 5 题（选择，5 分）
+
+单位矩阵经过若干次互换两行得到的矩阵称为置换矩阵，设 $A$ 为 $n$ 阶置换矩阵，$A^*$ 为 $A$ 的伴随矩阵，则（　）
+
+（A）$A^*$ 为置换矩阵　（B）$A^{-1}$ 为置换矩阵　（C）$A^{-1}=A^*$　（D）$A^{-1}=-A^*$
+
+> [!success]- 答案与解析
+> **答案**：（B）
+>
+> 由题设知 $A=P_1P_2\cdots P_s$，其中 $P_1,P_2,\cdots,P_s$ 均为初等矩阵，则
+> $$
+> A^{-1}=(P_1P_2\cdots P_s)^{-1}=P_s^{-1}\cdots P_2^{-1}P_1^{-1}=P_s\cdots P_2P_1
+> $$
+> 也为置换矩阵，故选（B）。
+
+### 2026 年 · 数学三 · 第 6 题（选择，5 分）
+
+设 $A$ 为 3 阶非零矩阵，$A^{*}$ 为 $A$ 的伴随矩阵。若 $A^{*}=-2A$，则 $A^2=$（ ）
+
+（A）$\begin{pmatrix}-4&0&0\\0&-4&0\\0&0&-4\end{pmatrix}$　（B）$\begin{pmatrix}-4&0&0\\0&-4&0\\0&0&4\end{pmatrix}$
+
+（C）$\begin{pmatrix}-4&0&0\\0&4&0\\0&0&4\end{pmatrix}$　（D）$\begin{pmatrix}4&0&0\\0&4&0\\0&0&4\end{pmatrix}$
+
+> [!success]- 答案与解析
+> **答案**：（D）
+>
+> 由 $A^{*}=-2A$ 两边同时左乘 $A$ 可得，$AA^{*}=-2AA\Rightarrow A^2=\frac{|A|}{-2}E$；对 $A^{*}=-2A$ 取行列式可得
+> $$
+> |A^{*}|=|-2A|\Rightarrow |A|^2=(-2)^3|A|\Rightarrow |A|=(-2)^3,
+> $$
+> 从而 $A^2=4E$，故答案选 D。
 
 ## <span class="hx hx-nav">🧭</span> 十、导航
 

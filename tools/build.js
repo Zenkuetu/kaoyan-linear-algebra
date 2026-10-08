@@ -384,10 +384,10 @@ for (const m of MODULES) {
     }
     // 8.5 真题（线性代数部分）：题面直接展示，答案与解析默认折叠
     const myExams = EXAMS.filter(e => (e.ids || []).includes(p.id))
-      .sort((a, b) => (b.year - a.year) || (a.number - b.number));
+      .sort((a, b) => (a.year - b.year) || (a.number - b.number));   // 年号升序
     if (myExams.length) {
-      const years = [...new Set(myExams.map(e => e.year))].sort((a, b) => b - a);
-      head('真题' + (years.length ? '（' + years[years.length - 1] + (years.length > 1 ? '–' + years[0] : '') + '）' : ''), 'exam');
+      const ys = [...new Set(myExams.map(e => e.year))].sort((a, b) => a - b);
+      head('真题' + (ys.length ? '（' + ys[0] + (ys.length > 1 ? '–' + ys[ys.length - 1] : '') + '）' : ''), 'exam');
       for (const e of myExams) {
         L.push('### ' + e.year + ' 年 · 数学' + ({ '数一': '一', '数二': '二', '数三': '三' }[e.subject] || e.subject) + ' · ' + (e.label || ('第 ' + e.number + ' 题')) + '（' + e.kind + (e.score ? '，' + e.score + ' 分' : '') + '）');
         L.push('');
