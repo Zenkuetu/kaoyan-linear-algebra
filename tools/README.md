@@ -11,6 +11,27 @@
          canvas-v2.js <输出目录>   6 张 Canvas 关系图
 ```
 
+
+## 真题流水线（tools/exams/）
+
+知识点笔记里的「📝 九、真题」小节由真题数据层驱动：
+
+```
+tools/exams.js            # 只有 const EXAMS = []
+tools/exams/*.js          # 一套卷一个文件：<年份>-m1.js / -m2.js / -m3.js（一题一个 EXAMS.push）
+tools/exams/README.md     # 字段说明、排版约定、103 个知识点 ID 总表
+```
+
+- **每题字段**：`year / subject / number / kind / score / ids / question / answer / analysis / source`。
+  - `ids` 可写 1~n 个知识点（一道题同时进多篇笔记）；
+  - `source` 只在数据层做溯源，**不渲染进笔记**；
+  - `answer` 若含多行 `$`，渲染时会逐行加 callout 前缀（否则公式块会被拆坏）；
+  - `analysis` 允许为空（源解析资料本身没印解答时，笔记里只显示答案）。
+- **渲染位置**：`build.js` 在「八、关系网」与「导航」之间插入该小节（导航顺延为「十」）。
+- **校验**：`node tools/check-exams.mjs` —— 字段完整性、知识点 ID 是否真实存在、LaTeX（同一行 `$`/命令/环境/公式内中文）、`(年份,科目,题号)` 去重。
+- **渲染校验**：`node tools/build.js .build/_vault_test && node tools/check-notes.mjs .build/_vault_test`（后者能抓出"多行公式被拆出 callout"这类问题）。
+- **内容约定**：题面转写自真题 PDF，答案与解析转写自对应《答案及解析》PDF 原文；笔记里不写任何出处/编者注类声明。
+
 ## 路径：不用再改脚本
 
 所有脚本的路径统一由 `tools/paths.mjs` 推导，默认全部相对**仓库根**，clone 到任何机器都能直接跑：
