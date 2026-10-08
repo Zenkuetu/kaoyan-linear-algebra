@@ -17,7 +17,7 @@ const EXTRA_CMDS = ('alpha beta gamma delta epsilon varepsilon zeta eta theta va
 + 'nequiv approx sim simeq cong equiv propto parallel perp angle triangle square aligned align alignat gathered split cases dcases rcases array matrix pmatrix bmatrix Bmatrix vmatrix Vmatrix smallmatrix subarray textcolor colorbox boxed fcolorbox color oplus ominus otimes oslash odot bigoplus bigotimes coprod').split(/\s+/);
 for (const c of EXTRA_CMDS) CMD.add(c);
 // TeX/MathJax 的「尺寸与样式」原语：Obsidian 的 MathJax 支持，但不在符号表里，单独放行
-for (const c of ('displaystyle textstyle scriptstyle scriptscriptstyle big Big bigg Bigg bigl bigr Bigl Bigr biggl biggr Biggl Biggr limits nolimits allowbreak').split(' ')) CMD.add(c);
+for (const c of ('displaystyle textstyle scriptstyle scriptscriptstyle big Big bigg Bigg bigl bigr Bigl Bigr biggl biggr Biggl Biggr limits nolimits allowbreak overrightarrow overleftarrow overleftrightarrow underrightarrow underleftarrow').split(' ')) CMD.add(c);
 for (const e of ['aligned','align','align*','alignat','alignat*','gathered','gather','gather*','split','cases','dcases','rcases','array','matrix','pmatrix','bmatrix','Bmatrix','vmatrix','Vmatrix','smallmatrix','subarray','equation','equation*','CD']) ENV.add(e);
 
 // 从一段 Markdown 里抽出所有数学片段

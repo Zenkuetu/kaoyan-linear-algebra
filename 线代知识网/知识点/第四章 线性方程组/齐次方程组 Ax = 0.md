@@ -228,6 +228,60 @@ $$
 > > （3）若 $AX=0$ 的解为 $BX=0$ 的解，反之不对，则 $r(A)>r(B)$；
 > > （4）若 $AX=0$ 的解为 $BX=0$ 的解，且 $r(A)=r(B)$，则 $AX=0$ 与 $BX=0$ 同解．
 
+### 2003 年 · 数学三 · 第九题（解答，13 分）
+
+（本题满分 13 分）已知齐次线性方程组
+$$
+\begin{cases}(a_1+b)x_1+a_2x_2+a_3x_3+\cdots+a_nx_n=0,\\a_1x_1+(a_2+b)x_2+a_3x_3+\cdots+a_nx_n=0,\\a_1x_1+a_2x_2+(a_3+b)x_3+\cdots+a_nx_n=0,\\\cdots\cdots\cdots\\a_1x_1+a_2x_2+a_3x_3+\cdots+(a_n+b)x_n=0,\end{cases}
+$$
+其中 $\sum\limits_{i=1}^n a_i\ne 0$，试讨论 $a_1,a_2,\cdots,a_n$ 和 $b$ 满足何种关系时，
+
+（1）方程组仅有零解；
+
+（2）方程组有非零解，在有非零解时，求此方程组的一个基础解系。
+
+> [!success]- 答案与解析
+> **答案**：（1）$b\ne 0$ 且 $b+\sum\limits_{i=1}^n a_i\ne 0$ 时方程组仅有零解；（2）$b=0$ 时，基础解系为 $\alpha_1=\left(-\dfrac{a_2}{a_1},1,0,\cdots,0\right)^{\mathrm{T}},\alpha_2=\left(-\dfrac{a_3}{a_1},0,1,\cdots,0\right)^{\mathrm{T}},\cdots,\alpha_{n-1}=\left(-\dfrac{a_n}{a_1},0,0,\cdots,1\right)^{\mathrm{T}}$；$b=-\sum\limits_{i=1}^n a_i$ 时，基础解系为 $\alpha=(1,1,\cdots,1)^{\mathrm{T}}$。
+>
+> 【分析】方程的个数与未知量的个数相同，问题转化为系数矩阵行列式是否为零，而系数行列式的计算具有明显的特征：所有列对应元素相加后相等。可先将所有列对应元素相加，然后提出公因式，再将第一行的 $(-1)$ 倍加到其余各行，即可计算出行列式的值。
+>
+> 【详解】方程组的系数行列式
+> $$
+> |A|=\begin{vmatrix}a_1+b&a_2&a_3&\cdots&a_n\\a_1&a_2+b&a_3&\cdots&a_n\\a_1&a_2&a_3+b&\cdots&a_n\\\vdots&\vdots&\vdots&&\vdots\\a_1&a_2&a_3&\cdots&a_n+b\end{vmatrix}=b^{n-1}\left(b+\sum_{i=1}^n a_i\right).
+> $$
+> （1）当 $b\ne 0$ 时且 $b+\sum\limits_{i=1}^n a_i\ne 0$ 时，秩 $(A)=n$，方程组仅有零解。
+>
+> （2）当 $b=0$ 时，原方程组的同解方程组为
+> $$
+> a_1x_1+a_2x_2+\cdots+a_nx_n=0.
+> $$
+> 由 $\sum\limits_{i=1}^n a_i\ne 0$ 可知，$a_i\ (i=1,2,\cdots,n)$ 不全为零。不妨设 $a_1\ne 0$，得原方程组的一个基础解系为
+> $$
+> \alpha_1=\left(-\frac{a_2}{a_1},1,0,\cdots,0\right)^{\mathrm{T}},\ \alpha_2=\left(-\frac{a_3}{a_1},0,1,\cdots,0\right)^{\mathrm{T}},\ \cdots,\ \alpha_{n-1}=\left(-\frac{a_n}{a_1},0,0,\cdots,1\right)^{\mathrm{T}}.
+> $$
+> 当 $b=-\sum\limits_{i=1}^n a_i$ 时，有 $b\ne 0$，原方程组的系数矩阵可化为
+> $$
+> \begin{pmatrix}a_1-\sum\limits_{i=1}^n a_i&a_2&a_3&\cdots&a_n\\a_1&a_2-\sum\limits_{i=1}^n a_i&a_3&\cdots&a_n\\a_1&a_2&a_3-\sum\limits_{i=1}^n a_i&\cdots&a_n\\\vdots&\vdots&\vdots&&\vdots\\a_1&a_2&a_3&\cdots&a_n-\sum\limits_{i=1}^n a_i\end{pmatrix}
+> $$
+> （将第 $1$ 行的 $-1$ 倍加到其余各行，再从第 $2$ 行到第 $n$ 行同乘以 $-\dfrac{1}{\sum\limits_{i=1}^n a_i}$ 倍）
+> $$
+> \to\begin{pmatrix}a_1-\sum\limits_{i=1}^n a_i&a_2&a_3&\cdots&a_n\\-1&1&0&\cdots&0\\-1&0&1&\cdots&0\\\vdots&\vdots&\vdots&&\vdots\\-1&0&0&\cdots&1\end{pmatrix}
+> $$
+> （将第 $n$ 行的 $-a_n$ 倍到第 $2$ 行的 $-a_2$ 倍加到第 $1$ 行，再将第 $1$ 行移到最后一行）
+> $$
+> \to\begin{pmatrix}-1&1&0&\cdots&0\\-1&0&1&\cdots&0\\\vdots&\vdots&\vdots&&\vdots\\-1&0&0&\cdots&1\\0&0&0&\cdots&0\end{pmatrix}.
+> $$
+> 由此得原方程组的同解方程组为
+> $$
+> x_2=x_1,\ x_3=x_1,\ \cdots,\ x_n=x_1.
+> $$
+> 原方程组的一个基础解系为
+> $$
+> \alpha=(1,1,\cdots,1)^{\mathrm{T}}.
+> $$
+>
+> 【评注】本题的难点在 $b=-\sum\limits_{i=1}^n a_i$ 时的讨论，事实上也可这样分析：此时系数矩阵的秩为 $n-1$（存在 $n-1$ 阶子式不为零），且显然 $\alpha=(1,1,\cdots,1)^{\mathrm{T}}$ 为方程组的一个非零解，即可作为基础解系。
+
 ### 2002 年 · 数学三 · 选择题第 3 题（选择，3 分）
 
 设 $A$ 是 $m\times n$ 矩阵，$B$ 是 $n\times m$ 矩阵，则线性方程组 $(AB)x=0$（　　）
@@ -398,6 +452,32 @@ $$
 >
 > 评注：对于条件 $AB=O$ 应当有两个思路：一是 $B$ 的列向量是齐次方程组 $Ax=0$ 的解；二是秩的信息，即 $r(A)+r(B)\le n$，要有这两种思考问题的意识。
 
+### 1992 年 · 数学三 · 试卷四·选择题第 3 题（选择，3 分）
+
+设 $A$ 为 $m\times n$ 矩阵，齐次线性方程组 $Ax=0$ 仅有零解的充分条件是（　　）
+（A）$A$ 的列向量线性无关
+（B）$A$ 的列向量线性相关
+（C）$A$ 的行向量线性无关
+（D）$A$ 的行向量线性相关
+
+> [!success]- 答案与解析
+> **答案**：（A）.
+>
+> 【解析】齐次方程组 $Ax=0$ 只有零解 $\Leftrightarrow r(A)=n$.
+> 由于 $r(A)=A$ 的行秩 $=A$ 的列秩，现 $A$ 是 $m\times n$ 矩阵，$r(A)=n$，即 $A$ 的列向量线性无关. 故应选（A）.
+> 【相关知识点】对奇次线性方程组 $Ax=0$，有定理如下：
+> 对矩阵 $A$ 按列分块，有 $A=(\alpha_1,\alpha_2,\cdots,\alpha_n)$，则 $Ax=0$ 的向量形式为
+> $$
+> x_1\alpha_1+x_2\alpha_2+\cdots+x_n\alpha_n=0.
+> $$
+> 那么，
+> $$
+> Ax=0\text{ 有非零解}\Leftrightarrow \alpha_1,\alpha_2,\cdots,\alpha_n\text{ 线性相关}
+> $$
+> $$
+> \Leftrightarrow r(\alpha_1,\alpha_2,\cdots,\alpha_n)<n\Leftrightarrow r(A)<n.
+> $$
+
 ### 1992 年 · 数学一 · 选择题第 5 题（选择，3 分）
 
 要使 $\xi_1=\begin{pmatrix}1\\0\\2\end{pmatrix},\xi_2=\begin{pmatrix}0\\1\\-1\end{pmatrix}$ 都是线性方程组 $AX=0$ 的解，只要系数矩阵 $A$ 为（　　）.
@@ -411,6 +491,39 @@ $$
 > **答案**：（A）.
 >
 > 因为 $\xi_1$ 与 $\xi_2$ 线性无关，所以三元齐次线性方程组 $AX=0$ 的基础解系中至少含 2 个解向量，即 $3-r(A)\ge 2$，得 $r(A)\le 1$，而选项（B）（C）（D）中矩阵的秩都大于 1，所以均不对，只有选项（A）正确.
+
+### 1992 年 · 数学三 · 试卷四·第十题（解答，6 分）
+
+已知三阶矩阵 $B\ne O$，且 $B$ 的每一个列向量都是以下方程组的解：
+$$
+\begin{cases}x_1+2x_2-2x_3=0,\\2x_1-x_2+\lambda x_3=0,\\3x_1+x_2-x_3=0.\end{cases}
+$$
+（1）求 $\lambda$ 的值；
+（2）证明 $|B|=0$.
+
+> [!success]- 答案与解析
+> **答案**：（1）$\lambda=1$；（2）证明见解析.
+>
+> 【解析】对于条件 $AB=0$ 应当有两个思路：一是 $B$ 的列向量是齐次方程组 $Ax=0$ 的解；另一个是秩的信息即 $r(A)+r(B)\le n$. 要有这两种思考问题的意识.
+> （1）令
+> $$
+> A=\begin{pmatrix}1&2&-2\\2&-1&\lambda\\3&1&-1\end{pmatrix},
+> $$
+> 对 3 阶矩阵 $A$，由 $AB=0$，$B\ne 0$ 知必有 $|A|=0$，否则 $A$ 可逆，从而 $B=A^{-1}(AB)=A^{-1}0=0$，这与 $B\ne 0$ 矛盾. 故
+> $$
+> |A|=\begin{vmatrix}1&2&-2\\2&-1&\lambda\\3&1&-1\end{vmatrix}=0,
+> $$
+> 用行列式的等价变换，将第三列加到第二列上，再按第二列展开，有
+> $$
+> |A|=\begin{vmatrix}1&0&-2\\2&\lambda-1&\lambda\\3&0&-1\end{vmatrix}=5(\lambda-1)=0.
+> $$
+> 解出 $\lambda=1$.
+> （2）反证法：对于 $AB=0$，若 $|B|\ne 0$，则 $B$ 可逆，那么 $A=(AB)B^{-1}=0B^{-1}=0$. 与已知条件 $A\ne 0$ 矛盾. 故假设不成立，$|B|=0$.
+> 【相关知识点】对矩阵 $B$ 按列分块，记 $B=(\beta_1,\beta_2,\beta_3)$，那么
+> $$
+> AB=A(\beta_1,\beta_2,\beta_3)=(A\beta_1,A\beta_2,A\beta_3)=(0,0,0).
+> $$
+> 因而 $A\beta_i=0\ (i=1,2,3)$，即 $\beta_i$ 是 $Ax=0$ 的解.
 
 ## <span class="hx hx-nav">🧭</span> 十、导航
 

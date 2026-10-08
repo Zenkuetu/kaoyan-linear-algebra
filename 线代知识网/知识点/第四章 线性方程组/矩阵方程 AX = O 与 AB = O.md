@@ -104,7 +104,7 @@ $B$ 的第 $1$ 列是 $(1,-1,1,0)^{\mathrm{T}}$，与 $A$ 的两行分别配对�
 > - [[秩的不等式（乘法与加法）]] ⇒ 🟧 充分 ⇒ 本点——乘法秩不等式 r(AB) ≥ r(A)+r(B)−n 中令 r(AB)=0，即得 AB=O 时的 r(A)+r(B) ≤ n（特例，反过来不成立）
 > - [[用初等变换求逆与解矩阵方程 AX = B]] ⇒ 🟧 充分 ⇒ 本点——把 B 换成 O 即得齐次矩阵方程 AX = O，解法与 AX = B 完全同形
 
-## <span class="hx hx-exam">📝</span> 九、真题（1993–2022）
+## <span class="hx hx-exam">📝</span> 九、真题（1992–2022）
 
 ### 2022 年 · 数学一 · 第 6 题（选择，5 分）
 
@@ -194,6 +194,52 @@ $$
 >
 > 评注：对于条件 $AB=O$ 应当有两个思路：一是 $B$ 的列向量是齐次方程组 $Ax=0$ 的解；二是秩的信息，即 $r(A)+r(B)\le n$，要有这两种思考问题的意识。
 
+### 1998 年 · 数学一 · 解答题第 12 题（解答，5 分）
+
+（本题满分 5 分）已知线性方程组
+$$
+(\text{I})\begin{cases}a_{11}x_1+a_{12}x_2+\cdots+a_{1,2n}x_{2n}=0,\\a_{21}x_1+a_{22}x_2+\cdots+a_{2,2n}x_{2n}=0,\\\cdots\cdots\\a_{n1}x_1+a_{n2}x_2+\cdots+a_{n,2n}x_{2n}=0\end{cases}
+$$
+的一个基础解系为 $(b_{11},b_{12},\cdots,b_{1,2n})^{\mathrm{T}},(b_{21},b_{22},\cdots,b_{2,2n})^{\mathrm{T}},\cdots,(b_{n1},b_{n2},\cdots,b_{n,2n})^{\mathrm{T}}$．试写出线性方程组
+$$
+(\text{II})\begin{cases}b_{11}y_1+b_{12}y_2+\cdots+b_{1,2n}y_{2n}=0,\\b_{21}y_1+b_{22}y_2+\cdots+b_{2,2n}y_{2n}=0,\\\cdots\cdots\\b_{n1}y_1+b_{n2}y_2+\cdots+b_{n,2n}y_{2n}=0\end{cases}
+$$
+的通解，并说明理由．
+
+> [!success]- 答案与解析
+> **答案**：通解为 $Y=C_1\begin{pmatrix}a_{11}\\a_{12}\\\vdots\\a_{1,2n}\end{pmatrix}+C_2\begin{pmatrix}a_{21}\\a_{22}\\\vdots\\a_{2,2n}\end{pmatrix}+\cdots+C_n\begin{pmatrix}a_{n1}\\a_{n2}\\\vdots\\a_{n,2n}\end{pmatrix}$（$C_1,C_2,\cdots,C_n$ 为任意常数）．
+>
+> 十二、【解】 令
+> $$
+> A=\begin{pmatrix}a_{11}&a_{12}&\cdots&a_{1,2n}\\a_{21}&a_{22}&\cdots&a_{2,2n}\\\vdots&\vdots&&\vdots\\a_{n1}&a_{n2}&\cdots&a_{n,2n}\end{pmatrix},\quad X=\begin{pmatrix}x_1\\x_2\\\vdots\\x_{2n}\end{pmatrix},\quad B=\begin{pmatrix}b_{11}&b_{21}&\cdots&b_{n1}\\b_{12}&b_{22}&\cdots&b_{n2}\\\vdots&\vdots&&\vdots\\b_{1,2n}&b_{2,2n}&\cdots&b_{n,2n}\end{pmatrix},
+> $$
+> 因为 $(b_{11},b_{12},\cdots,b_{1,2n})^{\mathrm{T}},(b_{21},b_{22},\cdots,b_{2,2n})^{\mathrm{T}},\cdots,(b_{n1},b_{n2},\cdots,b_{n,2n})^{\mathrm{T}}$ 为方程组 $AX=0$ 的基础解系，所以 $r(A)=2n-n=n$ 且 $AB=O$．
+>
+> 又因为 $(b_{11},b_{12},\cdots,b_{1,2n})^{\mathrm{T}},(b_{21},b_{22},\cdots,b_{2,2n})^{\mathrm{T}},\cdots,(b_{n1},b_{n2},\cdots,b_{n,2n})^{\mathrm{T}}$ 线性无关，所以 $r(B)=n$．
+>
+> 令 $Y=(y_1,y_2,\cdots,y_{2n})^{\mathrm{T}}$，方程组（Ⅱ）表示为 $B^{\mathrm{T}}Y=0$，
+>
+> 由 $AB=O$ 得 $B^{\mathrm{T}}A^{\mathrm{T}}=O$，即 $(a_{11},a_{12},\cdots,a_{1,2n})^{\mathrm{T}},(a_{21},a_{22},\cdots,a_{2,2n})^{\mathrm{T}},\cdots,(a_{n1},a_{n2},\cdots,a_{n,2n})^{\mathrm{T}}$ 为方程组 $B^{\mathrm{T}}Y=0$ 的解．
+>
+> 因为 $r(A)=n$，所以 $(a_{11},a_{12},\cdots,a_{1,2n})^{\mathrm{T}},(a_{21},a_{22},\cdots,a_{2,2n})^{\mathrm{T}},\cdots,(a_{n1},a_{n2},\cdots,a_{n,2n})^{\mathrm{T}}$ 线性无关，又因为 $r(B^{\mathrm{T}})=n$，所以 $(a_{11},a_{12},\cdots,a_{1,2n})^{\mathrm{T}},(a_{21},a_{22},\cdots,a_{2,2n})^{\mathrm{T}},\cdots,(a_{n1},a_{n2},\cdots,a_{n,2n})^{\mathrm{T}}$ 为方程组（Ⅱ）的一个基础解系．
+
+### 1998 年 · 数学一 · 证明题第 11 题（解答，4 分）
+
+（本题满分 4 分）设 $A$ 是 $n$ 阶矩阵，若存在正整数 $k$，使线性方程组 $A^kx=0$ 有解向量 $\alpha$，且 $A^{k-1}\alpha\ne 0$．证明：向量组 $\alpha,A\alpha,\cdots,A^{k-1}\alpha$ 是线性无关的．
+
+> [!success]- 答案与解析
+> **答案**：证明见解析．
+>
+> 十一、【证明】 显然 $A^k\alpha=0$，令 $l_0\alpha+l_1A\alpha+\cdots+l_{k-1}A^{k-1}\alpha=0$，
+>
+> 将 $l_0\alpha+l_1A\alpha+\cdots+l_{k-1}A^{k-1}\alpha=0$ 两边左乘 $A^{k-1}$ 得 $l_0A^{k-1}\alpha=0$，
+>
+> 因为 $A^{k-1}\alpha\ne 0$，所以 $l_0=0$；
+>
+> 将 $l_1A\alpha+\cdots+l_{k-1}A^{k-1}\alpha=0$ 两边左乘 $A^{k-2}$ 得 $l_1A^{k-1}\alpha=0$，从而 $l_1=0$．
+>
+> 依次类推，可得 $l_2=\cdots=l_{k-1}=0$，故 $\alpha,A\alpha,\cdots,A^{k-1}\alpha$ 线性无关．
+
 ### 1993 年 · 数学一 · 选择题第 5 题（选择，3 分）
 
 已知
@@ -211,6 +257,39 @@ $P$ 为 3 阶非零矩阵，且满足 $PQ=O$，则（　　）.
 > **答案**：（C）.
 >
 > 由 $PQ=O$ 得 $r(P)+r(Q)\le 3$，当 $t\ne 6$ 时 $r(Q)=2$，则 $r(P)\le 1$，再由 $P$ 为非零矩阵得 $r(P)\ge 1$，故 $r(P)=1$，应选（C）.
+
+### 1992 年 · 数学三 · 试卷四·第十题（解答，6 分）
+
+已知三阶矩阵 $B\ne O$，且 $B$ 的每一个列向量都是以下方程组的解：
+$$
+\begin{cases}x_1+2x_2-2x_3=0,\\2x_1-x_2+\lambda x_3=0,\\3x_1+x_2-x_3=0.\end{cases}
+$$
+（1）求 $\lambda$ 的值；
+（2）证明 $|B|=0$.
+
+> [!success]- 答案与解析
+> **答案**：（1）$\lambda=1$；（2）证明见解析.
+>
+> 【解析】对于条件 $AB=0$ 应当有两个思路：一是 $B$ 的列向量是齐次方程组 $Ax=0$ 的解；另一个是秩的信息即 $r(A)+r(B)\le n$. 要有这两种思考问题的意识.
+> （1）令
+> $$
+> A=\begin{pmatrix}1&2&-2\\2&-1&\lambda\\3&1&-1\end{pmatrix},
+> $$
+> 对 3 阶矩阵 $A$，由 $AB=0$，$B\ne 0$ 知必有 $|A|=0$，否则 $A$ 可逆，从而 $B=A^{-1}(AB)=A^{-1}0=0$，这与 $B\ne 0$ 矛盾. 故
+> $$
+> |A|=\begin{vmatrix}1&2&-2\\2&-1&\lambda\\3&1&-1\end{vmatrix}=0,
+> $$
+> 用行列式的等价变换，将第三列加到第二列上，再按第二列展开，有
+> $$
+> |A|=\begin{vmatrix}1&0&-2\\2&\lambda-1&\lambda\\3&0&-1\end{vmatrix}=5(\lambda-1)=0.
+> $$
+> 解出 $\lambda=1$.
+> （2）反证法：对于 $AB=0$，若 $|B|\ne 0$，则 $B$ 可逆，那么 $A=(AB)B^{-1}=0B^{-1}=0$. 与已知条件 $A\ne 0$ 矛盾. 故假设不成立，$|B|=0$.
+> 【相关知识点】对矩阵 $B$ 按列分块，记 $B=(\beta_1,\beta_2,\beta_3)$，那么
+> $$
+> AB=A(\beta_1,\beta_2,\beta_3)=(A\beta_1,A\beta_2,A\beta_3)=(0,0,0).
+> $$
+> 因而 $A\beta_i=0\ (i=1,2,3)$，即 $\beta_i$ 是 $Ax=0$ 的解.
 
 ## <span class="hx hx-nav">🧭</span> 十、导航
 
