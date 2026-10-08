@@ -173,7 +173,29 @@ EXAMS.push({
   ids: ['vec-express-crit', 'vec-equivalent'],
   question: String.raw`确定常数 $a$，使向量组 $\alpha_1=(1,1,a)^{\mathrm{T}}$，$\alpha_2=(1,a,1)^{\mathrm{T}}$，$\alpha_3=(a,1,1)^{\mathrm{T}}$ 可由向量组 $\beta_1=(1,1,a)^{\mathrm{T}}$，$\beta_2=(-2,a,4)^{\mathrm{T}}$，$\beta_3=(-2,a,a)^{\mathrm{T}}$ 线性表示，但向量组 $\beta_1,\beta_2,\beta_3$ 不能由向量组 $\alpha_1,\alpha_2,\alpha_3$ 线性表示.`,
   answer: '$a=1$.',
-  analysis: String.raw`方法2：对矩阵 $\overline{A}=(\beta_1,\beta_2,\beta_3:\alpha_1,\alpha_2,\alpha_3)$ 作初等行变换，有
+  analysis: String.raw`方法1：记 $A=(\alpha_1,\alpha_2,\alpha_3)$，$B=(\beta_1,\beta_2,\beta_3)$. 由于 $\beta_1,\beta_2,\beta_3$ 不能由 $\alpha_1,\alpha_2,\alpha_3$ 线性表出，故 $r(A)<3$（若 $r(A)=3$，则任何三维向量都可以由 $\alpha_1,\alpha_2,\alpha_3$ 线性表出），从而
+$$
+|A|=\begin{vmatrix}1&1&a\\1&a&1\\a&1&1\end{vmatrix}\xrightarrow[\text{把第 }2,3\text{ 行加到第 }1\text{ 行}]{}\begin{vmatrix}2+a&2+a&2+a\\1&a&1\\a&1&1\end{vmatrix}\xrightarrow[\text{提取第 }1\text{ 行的公因子}(2+a)]{}(2+a)\begin{vmatrix}1&1&1\\1&a&1\\a&1&1\end{vmatrix}
+$$
+$$
+\xrightarrow[3\text{行}-1\text{行}]{2\text{行}-1\text{行},}(2+a)\begin{vmatrix}1&1&1\\0&a-1&0\\a-1&0&0\end{vmatrix}\xrightarrow{\text{按第 }3\text{ 列展开}}(2+a)\cdot(-1)^{1+3}\times1\times\begin{vmatrix}0&a-1\\a-1&0\end{vmatrix}=-(2+a)(a-1)^2=0
+$$
+（其中 $(-1)^{1+3}$ 指数中的 $1$ 和 $3$ 分别是 $1$ 所在的行数和列数）从而得 $a=1$ 或 $a=-2$.
+
+当 $a=1$ 时，$\alpha_1=\alpha_2=\alpha_3=\beta_1=[1,1,1]^{\mathrm{T}}$，则 $\alpha_1=\alpha_2=\alpha_3=\beta_1+0\cdot\beta_2+0\cdot\beta_3$，故 $\alpha_1,\alpha_2,\alpha_3$ 可由 $\beta_1,\beta_2,\beta_3$ 线性表出，但 $\beta_2=[-2,1,4]^{\mathrm{T}}$ 不能由 $\alpha_1,\alpha_2,\alpha_3$ 线性表出（因为方程组
+$$
+\beta_2=\begin{pmatrix}-2\\1\\4\end{pmatrix}=k_1\begin{pmatrix}1\\1\\1\end{pmatrix}+k_2\begin{pmatrix}1\\1\\1\end{pmatrix}+k_3\begin{pmatrix}1\\1\\1\end{pmatrix},\qquad\text{即}\qquad\begin{cases}k_1+k_2+k_3=-2,\\k_1+k_2+k_3=1,\\k_1+k_2+k_3=4\end{cases}
+$$
+无解），故 $a=1$ 符合题意.
+
+当 $a=-2$ 时，由于
+$$
+[B:A]=\begin{pmatrix}1&-2&-2&:&1&1&-2\\1&-2&-2&:&1&-2&1\\-2&4&-2&:&-2&1&1\end{pmatrix}\xrightarrow[2\text{行}-1\text{行}]{3\text{行}+1\text{行}\times2}\begin{pmatrix}1&-2&-2&:&1&1&-2\\0&0&0&:&0&-3&-3\\0&0&-6&:&0&0&0\end{pmatrix}
+$$
+因 $r(B)=2\ne r(B:\alpha_2)=3$，系数矩阵的秩和增广矩阵的秩不相等，故方程组 $BX=\alpha_2$ 无解，故 $\alpha_2$ 不能由 $\beta_1,\beta_2,\beta_3$ 线性表出，这和题设矛盾，故 $a=-2$ 不合题意.
+
+因此 $a=1$.
+方法2：对矩阵 $\overline{A}=(\beta_1,\beta_2,\beta_3:\alpha_1,\alpha_2,\alpha_3)$ 作初等行变换，有
 $$
 \overline{A}=(\beta_1,\beta_2,\beta_3:\alpha_1,\alpha_2,\alpha_3)=\begin{pmatrix}1&-2&-2&:&1&1&a\\1&a&a&:&1&a&1\\a&4&a&:&a&1&1\end{pmatrix}
 $$
