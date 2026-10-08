@@ -112,7 +112,7 @@ $$
 $$
 \text{令 }Q=\begin{pmatrix}-\dfrac{1}{\sqrt{2}}&\dfrac{1}{\sqrt{2}}&0\\\dfrac{1}{\sqrt{2}}&\dfrac{1}{\sqrt{2}}&0\\0&0&1\end{pmatrix},\text{则 }Q^{\mathrm{T}}AQ=\begin{pmatrix}0&0&0\\0&2&0\\0&0&2\end{pmatrix},
 $$
-于是 $f(x_1,x_2,x_3)=X^{\mathrm{T}}AX\xlongequal{x=Qy}2y_2^2+2y_3^2$．
+于是 $f(x_1,x_2,x_3)=X^{\mathrm{T}}AX\overset{x=Qy}{=}2y_2^2+2y_3^2$．
 
 （Ⅲ）由 $f(x_1,x_2,x_3)=x_1^2+x_2^2+2x_3^2+2x_1x_2=(x_1+x_2)^2+2x_3^2=0$，得 $\begin{cases}x_1+x_2=0,\\x_3=0,\end{cases}$ 则 $f(x_1,x_2,x_3)=0$ 的解为 $C\begin{pmatrix}-1\\1\\0\end{pmatrix}$（$C$ 为任意常数）．`,
   source: '《2005 年数学（一）真题解析》第 8 页',

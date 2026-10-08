@@ -121,7 +121,7 @@ $$
 > - [[矩阵方程 AX = O 与 AB = O]] ⇒ 🟥 充要 ⇒ 本点——AB=O 即 B 的列都是齐次解
 > - [[可逆的充要条件（汇总枢纽）]] ⇒ 🟥 充要 ⇒ 本点——可逆 ⇔ 齐次只有零解
 
-## <span class="hx hx-exam">📝</span> 九、真题（2004–2025）
+## <span class="hx hx-exam">📝</span> 九、真题（1998–2025）
 
 ### 2025 年 · 数学一 · 第 15 题（填空，5 分）
 
@@ -186,6 +186,33 @@ $$
 > $$
 > X=C_1\begin{pmatrix}-1\\1\\0\\\vdots\\0\end{pmatrix}+C_2\begin{pmatrix}-1\\0\\1\\\vdots\\0\end{pmatrix}+\cdots+C_{n-1}\begin{pmatrix}-1\\0\\0\\\vdots\\1\end{pmatrix}\quad(C_1,C_2,\cdots,C_{n-1}\text{ 为任意常数}).
 > $$
+
+### 1998 年 · 数学三 · 选择题第 3 题（选择，3 分）
+
+齐次线性方程组
+$$
+\begin{cases}\lambda x_1+x_2+\lambda^2x_3=0,\\x_1+\lambda x_2+x_3=0,\\x_1+x_2+\lambda x_3=0\end{cases}
+$$
+的系数矩阵记为 $A$。若存在 $3$ 阶矩阵 $B\ne O$，使得 $AB=O$，则（　　）
+（A）$\lambda=-2$ 且 $|B|=0$　　（B）$\lambda=-2$ 且 $|B|\ne 0$
+（C）$\lambda=1$ 且 $|B|=0$　　（D）$\lambda=1$ 且 $|B|\ne 0$
+
+> [!success]- 答案与解析
+> **答案**：（C）
+>
+> 【解析】方法 1：由 $AB=O$ 知 $r(A)+r(B)\le 3$，又 $A\ne O,B\ne O$，于是 $1\le r(A)<3$，$1\le r(B)<3$，故 $|A|=0,|B|=0$，即
+> $$
+> |A|=\begin{vmatrix}\lambda&1&\lambda^2\\1&\lambda&1\\1&1&\lambda\end{vmatrix}=\begin{vmatrix}0&1-\lambda&0\\0&\lambda-1&1-\lambda\\1&1&\lambda\end{vmatrix}=\begin{vmatrix}1-\lambda&0\\\lambda-1&1-\lambda\end{vmatrix}=(1-\lambda)^2=0,
+> $$
+> 得 $\lambda=1$。应选（C）。
+>
+> 方法 2：由 $AB=O$ 知 $r(A)+r(B)\le 3$，又 $A\ne O,B\ne O$，于是 $1\le r(A)<3$，$1\le r(B)<3$，故 $|B|=0$。
+>
+> 显然，$\lambda=1$ 时 $A=\begin{pmatrix}1&1&1\\1&1&1\\1&1&1\end{pmatrix}$，有 $1\le r(A)<3$，故应选（C）。
+>
+> 作为选择题，只需在 $\lambda=-2$ 与 $\lambda=1$ 中选择一个，因而可以用特殊值代入法。
+>
+> 评注：对于条件 $AB=O$ 应当有两个思路：一是 $B$ 的列向量是齐次方程组 $Ax=0$ 的解；二是秩的信息，即 $r(A)+r(B)\le n$，要有这两种思考问题的意识。
 
 ## <span class="hx hx-nav">🧭</span> 十、导航
 

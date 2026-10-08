@@ -162,6 +162,36 @@ $$
 >
 > 因为 $A-E=\begin{pmatrix}1&1\\-1&1\end{pmatrix}$，所以 $|A-E|=2$，于是 $|B|=2$．
 
+### 2005 年 · 数学一 · 第 5 题（填空，4 分）
+
+设 $\alpha_1,\alpha_2,\alpha_3$ 均为 3 维列向量，记矩阵
+$$
+A=(\alpha_1,\alpha_2,\alpha_3),\quad B=(\alpha_1+\alpha_2+\alpha_3,\alpha_1+2\alpha_2+4\alpha_3,\alpha_1+3\alpha_2+9\alpha_3).
+$$
+如果 $|A|=1$，那么 $|B|=\underline{\qquad}$．
+
+> [!success]- 答案与解析
+> **答案**：$2$
+>
+> 【解】 方法一 因为
+> $$
+> B=(\alpha_1+\alpha_2+\alpha_3,\alpha_1+2\alpha_2+4\alpha_3,\alpha_1+3\alpha_2+9\alpha_3)=A\begin{pmatrix}1&1&1\\1&2&3\\1&4&9\end{pmatrix}.
+> $$
+> 所以 $|B|=|A|\cdot\begin{vmatrix}1&1&1\\1&2&3\\1&4&9\end{vmatrix}=(3-1)(3-2)(2-1)=2$．
+>
+> 方法二
+> $$
+> |B|=|\alpha_1+\alpha_2+\alpha_3,\alpha_1+2\alpha_2+4\alpha_3,\alpha_1+3\alpha_2+9\alpha_3|
+> $$
+> $$
+> =|\alpha_1+\alpha_2+\alpha_3,\alpha_2+3\alpha_3,\alpha_2+5\alpha_3|=|\alpha_1+\alpha_2+\alpha_3,\alpha_2+3\alpha_3,2\alpha_3|=2|\alpha_1+\alpha_2+\alpha_3,\alpha_2+3\alpha_3,\alpha_3|
+> $$
+> $$
+> =2|\alpha_1+\alpha_2,\alpha_2,\alpha_3|=2|\alpha_1,\alpha_2,\alpha_3|=2.
+> $$
+>
+> > **方法点评**：本题注意范德蒙德行列式的使用．
+
 ### 2004 年 · 数学一 · 第 5 题（填空，4 分）
 
 设矩阵 $A=\begin{pmatrix}2&1&0\\1&2&0\\0&0&1\end{pmatrix}$，矩阵 $B$ 满足 $ABA^{*}=2BA^{*}+E$，其中 $A^{*}$ 为 $A$ 的伴随矩阵，$E$ 是单位矩阵，则 $|B|=\underline{\qquad}$．

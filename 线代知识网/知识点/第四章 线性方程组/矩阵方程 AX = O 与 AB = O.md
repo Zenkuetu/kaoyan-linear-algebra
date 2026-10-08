@@ -104,7 +104,7 @@ $B$ 的第 $1$ 列是 $(1,-1,1,0)^{\mathrm{T}}$，与 $A$ 的两行分别配对�
 > - [[秩的不等式（乘法与加法）]] ⇒ 🟧 充分 ⇒ 本点——乘法秩不等式 r(AB) ≥ r(A)+r(B)−n 中令 r(AB)=0，即得 AB=O 时的 r(A)+r(B) ≤ n（特例，反过来不成立）
 > - [[用初等变换求逆与解矩阵方程 AX = B]] ⇒ 🟧 充分 ⇒ 本点——把 B 换成 O 即得齐次矩阵方程 AX = O，解法与 AX = B 完全同形
 
-## <span class="hx hx-exam">📝</span> 九、真题（2022）
+## <span class="hx hx-exam">📝</span> 九、真题（1998–2022）
 
 ### 2022 年 · 数学一 · 第 6 题（选择，5 分）
 
@@ -135,6 +135,64 @@ $B$ 的第 $1$ 列是 $(1,-1,1,0)^{\mathrm{T}}$，与 $A$ 的两行分别配对�
 > \begin{pmatrix}AB&B\\O&A\end{pmatrix}\begin{pmatrix}y_1\\y_2\end{pmatrix}=\begin{pmatrix}ABy_1+By_2\\Ay_2\end{pmatrix}=\begin{pmatrix}0\\0\end{pmatrix}.
 > $$
 > 展开可得 $\begin{cases}ABy_1+By_2=0,\\Ay_2=0.\end{cases}$ 由于 $Ax=0$ 与 $Bx=0$ 同解，故该方程组等价于 $\begin{cases}ABy_1=0,\\Ay_2=0.\end{cases}$ 同理可得，$\begin{pmatrix}BA&A\\O&B\end{pmatrix}y=0$ 等价于 $\begin{cases}BAy_1=0,\\By_2=0.\end{cases}$ 但是 $ABx=0$ 与 $BAx=0$ 并不一定同解。取 $A=\begin{pmatrix}0&1\\0&0\end{pmatrix},B=\begin{pmatrix}0&1\\0&1\end{pmatrix}$，则 $AB=\begin{pmatrix}0&1\\0&0\end{pmatrix},BA=\begin{pmatrix}0&0\\0&0\end{pmatrix}$，$ABx=0$ 与 $BAx=0$ 不同解。
+
+### 2005 年 · 数学一 · 第 21 题（解答，9 分）
+
+（本题满分 9 分）已知 3 阶矩阵 $A$ 的第一行是 $(a,b,c)$，$a,b,c$ 不全为零，矩阵 $B=\begin{pmatrix}1&2&3\\2&4&6\\3&6&k\end{pmatrix}$（$k$ 为常数），且 $AB=O$，求线性方程组 $Ax=0$ 的通解．
+
+> [!success]- 答案与解析
+> **答案**：当 $k\ne 9$ 时，通解为 $X=C_1\begin{pmatrix}1\\2\\3\end{pmatrix}+C_2\begin{pmatrix}3\\6\\k\end{pmatrix}$（$C_1,C_2$ 为任意常数）；当 $k=9$ 时，若 $r(A)=2$，通解为 $X=C\begin{pmatrix}1\\2\\3\end{pmatrix}$（$C$ 为任意常数）；若 $r(A)=1$，通解为 $X=C_1\begin{pmatrix}-\dfrac{b}{a}\\1\\0\end{pmatrix}+C_2\begin{pmatrix}-\dfrac{c}{a}\\0\\1\end{pmatrix}$（$C_1,C_2$ 为任意常数）．
+>
+> 【解】 由 $AB=O$，得 $r(A)+r(B)\le 3$，
+>
+> 因为 $A$ 为非零矩阵，所以 $r(A)\ge 1$．
+>
+> 当 $k\ne 9$ 时，由 $r(B)=2$ 得 $r(A)=1$．
+>
+> 因为 $AB=O$，所以 $B$ 的列向量为方程组 $AX=0$ 的解，于是方程组 $AX=0$ 的通解为
+> $$
+> X=C_1\begin{pmatrix}1\\2\\3\end{pmatrix}+C_2\begin{pmatrix}3\\6\\k\end{pmatrix}\quad(C_1,C_2\text{ 为任意常数}).
+> $$
+> 当 $k=9$ 时，$r(B)=1$，则 $1\le r(A)\le 2$．
+>
+> 当 $r(A)=2$ 时，因为 $AB=O$，所以 $B$ 的列向量为 $AX=0$ 的解，于是方程组 $AX=0$ 的通解为 $X=C\begin{pmatrix}1\\2\\3\end{pmatrix}$（$C$ 为任意常数）．
+> $$
+> \text{当 }r(A)=1\text{ 时，不妨设 }a\ne 0,\text{由 }A\to\begin{pmatrix}a&b&c\\0&0&0\\0&0&0\end{pmatrix}\to\begin{pmatrix}1&\dfrac{b}{a}&\dfrac{c}{a}\\0&0&0\\0&0&0\end{pmatrix},\text{得方程组 }AX=0\text{ 的通解为}
+> $$
+> $$
+> X=C_1\begin{pmatrix}-\dfrac{b}{a}\\1\\0\end{pmatrix}+C_2\begin{pmatrix}-\dfrac{c}{a}\\0\\1\end{pmatrix}\quad(C_1,C_2\text{ 为任意常数}).
+> $$
+>
+> > **方法点评**：设 $A,B$ 分别为 $m\times n$ 与 $n\times s$ 两个矩阵，对 $AB=O$ 有两种解读：
+> > （1）$r(A)+r(B)\le n$；
+> > （2）矩阵 $B$ 的列向量为齐次线性方程组 $AX=0$ 的一组解．
+
+### 1998 年 · 数学三 · 选择题第 3 题（选择，3 分）
+
+齐次线性方程组
+$$
+\begin{cases}\lambda x_1+x_2+\lambda^2x_3=0,\\x_1+\lambda x_2+x_3=0,\\x_1+x_2+\lambda x_3=0\end{cases}
+$$
+的系数矩阵记为 $A$。若存在 $3$ 阶矩阵 $B\ne O$，使得 $AB=O$，则（　　）
+（A）$\lambda=-2$ 且 $|B|=0$　　（B）$\lambda=-2$ 且 $|B|\ne 0$
+（C）$\lambda=1$ 且 $|B|=0$　　（D）$\lambda=1$ 且 $|B|\ne 0$
+
+> [!success]- 答案与解析
+> **答案**：（C）
+>
+> 【解析】方法 1：由 $AB=O$ 知 $r(A)+r(B)\le 3$，又 $A\ne O,B\ne O$，于是 $1\le r(A)<3$，$1\le r(B)<3$，故 $|A|=0,|B|=0$，即
+> $$
+> |A|=\begin{vmatrix}\lambda&1&\lambda^2\\1&\lambda&1\\1&1&\lambda\end{vmatrix}=\begin{vmatrix}0&1-\lambda&0\\0&\lambda-1&1-\lambda\\1&1&\lambda\end{vmatrix}=\begin{vmatrix}1-\lambda&0\\\lambda-1&1-\lambda\end{vmatrix}=(1-\lambda)^2=0,
+> $$
+> 得 $\lambda=1$。应选（C）。
+>
+> 方法 2：由 $AB=O$ 知 $r(A)+r(B)\le 3$，又 $A\ne O,B\ne O$，于是 $1\le r(A)<3$，$1\le r(B)<3$，故 $|B|=0$。
+>
+> 显然，$\lambda=1$ 时 $A=\begin{pmatrix}1&1&1\\1&1&1\\1&1&1\end{pmatrix}$，有 $1\le r(A)<3$，故应选（C）。
+>
+> 作为选择题，只需在 $\lambda=-2$ 与 $\lambda=1$ 中选择一个，因而可以用特殊值代入法。
+>
+> 评注：对于条件 $AB=O$ 应当有两个思路：一是 $B$ 的列向量是齐次方程组 $Ax=0$ 的解；二是秩的信息，即 $r(A)+r(B)\le n$，要有这两种思考问题的意识。
 
 ## <span class="hx hx-nav">🧭</span> 十、导航
 

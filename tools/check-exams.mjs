@@ -44,9 +44,11 @@ EXAMS.forEach((e, i) => {
   if (typeof e.score !== 'number' || e.score <= 0) errs.push(at + '：score 不合法');
   if (!Array.isArray(e.ids) || !e.ids.length) errs.push(at + '：ids 不能为空');
   else for (const id of e.ids) if (!known.has(id)) errs.push(at + '：知识点 ID 不存在 —— ' + id);
-  for (const k of ['question', 'answer', 'analysis']) {
+  for (const k of ['question', 'answer']) {
     if (typeof e[k] !== 'string' || !e[k].trim()) errs.push(at + '：' + k + ' 为空');
   }
+  // analysis 允许为空：个别年份的解析资料本身没有印出解答过程，此时只给答案
+  if (typeof e.analysis !== 'string') errs.push(at + '：analysis 字段缺失（可为空字符串）');
   if (typeof e.source !== 'string' || !e.source.trim()) errs.push(at + '：缺少 source（解析出处）');
   if (e.label !== undefined && (typeof e.label !== 'string' || !e.label.trim())) errs.push(at + '：label 给了但为空');
   const key = e.year + '|' + e.subject + '|' + e.number;

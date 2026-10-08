@@ -140,6 +140,6 @@ $$
 \alpha_3=\frac{1}{\sqrt6}\begin{pmatrix}1\\1\\2\end{pmatrix},
 $$
 取 $Q=(\alpha_1,\alpha_2,\alpha_3)$，则正交变换 $x=Qy$ 将 $f$ 化为标准形 $2y_2^2+6y_3^2$。
-
+`,
   source: '《2012 年数学（三）试题答案》第 10–11 页',
 });
