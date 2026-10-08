@@ -69,7 +69,9 @@ node tools/build.js .build/_vault_test
 node tools/check-notes.mjs .build/_vault_test        # LaTeX 配对/命令/环境
 node tools/check-template.mjs .build/_vault_test tools/deep-v2
 node tools/check-contain.mjs .build/_vault_test
+node tools/build.js .build/_vault_test                # ← sync 读的就是这个目录，必须先重建
 node tools/sync-vault.mjs --apply                    # 同步进 线代知识网/
+node tools/check-exams.mjs                           # 真题数据专项校验
 ```
 
 ## 知识点 ID 总表（103 个）

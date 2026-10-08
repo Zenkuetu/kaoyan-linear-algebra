@@ -74,7 +74,7 @@ $$
   analysis: String.raw`（Ⅰ）由
 
 $$
-(A\ \vdots\ \xi_1)=\begin{pmatrix}1&-1&-1&\vline&-1\\-1&1&1&\vline&1\\0&-4&-2&\vline&-2\end{pmatrix}\to\begin{pmatrix}1&-1&-1&\vline&-1\\0&1&\frac{1}{2}&\vline&\frac{1}{2}\\0&0&0&\vline&0\end{pmatrix}\to\begin{pmatrix}1&0&-\frac{1}{2}&\vline&-\frac{1}{2}\\0&1&\frac{1}{2}&\vline&\frac{1}{2}\\0&0&0&\vline&0\end{pmatrix}
+(A\ \vdots\ \xi_1)=\begin{pmatrix}1&-1&-1&\mid&-1\\-1&1&1&\mid&1\\0&-4&-2&\mid&-2\end{pmatrix}\to\begin{pmatrix}1&-1&-1&\mid&-1\\0&1&\frac{1}{2}&\mid&\frac{1}{2}\\0&0&0&\mid&0\end{pmatrix}\to\begin{pmatrix}1&0&-\frac{1}{2}&\mid&-\frac{1}{2}\\0&1&\frac{1}{2}&\mid&\frac{1}{2}\\0&0&0&\mid&0\end{pmatrix}
 $$
 
 得 $\xi_2=k_1\begin{pmatrix}\frac{1}{2}\\-\frac{1}{2}\\1\end{pmatrix}+\begin{pmatrix}-\frac{1}{2}\\\frac{1}{2}\\0\end{pmatrix}=\begin{pmatrix}\frac{1}{2}k_1-\frac{1}{2}\\-\frac{1}{2}k_1+\frac{1}{2}\\k_1\end{pmatrix}$（$k_1$ 为任意常数）．
@@ -86,7 +86,7 @@ $$
 由
 
 $$
-(A^2\ \vdots\ \xi_1)=\begin{pmatrix}2&2&0&\vline&-1\\-2&-2&0&\vline&1\\4&4&0&\vline&-2\end{pmatrix}\to\begin{pmatrix}1&1&0&\vline&-\frac{1}{2}\\0&0&0&\vline&0\\0&0&0&\vline&0\end{pmatrix}
+(A^2\ \vdots\ \xi_1)=\begin{pmatrix}2&2&0&\mid&-1\\-2&-2&0&\mid&1\\4&4&0&\mid&-2\end{pmatrix}\to\begin{pmatrix}1&1&0&\mid&-\frac{1}{2}\\0&0&0&\mid&0\\0&0&0&\mid&0\end{pmatrix}
 $$
 
 得 $\xi_3=k_2\begin{pmatrix}-1\\1\\0\end{pmatrix}+k_3\begin{pmatrix}0\\0\\1\end{pmatrix}+\begin{pmatrix}-\frac{1}{2}\\0\\0\end{pmatrix}=\begin{pmatrix}-k_2-\frac{1}{2}\\k_2\\k_3\end{pmatrix}$（$k_2,k_3$ 为任意常数）．
