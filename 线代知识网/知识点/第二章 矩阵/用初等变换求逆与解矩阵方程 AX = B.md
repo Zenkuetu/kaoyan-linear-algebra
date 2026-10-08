@@ -769,6 +769,31 @@ $$
 > B=4(E+A)^{-1}=4\begin{pmatrix}\dfrac{1}{2}&0&0\\0&-1&0\\0&0&\dfrac{1}{2}\end{pmatrix}=\begin{pmatrix}2&0&0\\0&-4&0\\0&0&2\end{pmatrix}.
 > $$
 
+### 1998 年 · 数学二 · 第十二题（解答，5 分）
+
+设 $(2E-C^{-1}B)A^{\mathrm{T}}=C^{-1}$，其中 $E$ 是 4 阶单位矩阵，$A^{\mathrm{T}}$ 是 4 阶矩阵 $A$ 的转置矩阵，
+$$
+B=\begin{pmatrix}1&2&-3&-2\\0&1&2&-3\\0&0&1&2\\0&0&0&1\end{pmatrix},\qquad C=\begin{pmatrix}1&2&0&1\\0&1&2&0\\0&0&1&2\\0&0&0&1\end{pmatrix}.
+$$
+求 $A$.
+
+> [!success]- 答案与解析
+> **答案**：
+> $$
+> A=(2C^{\mathrm{T}}-B^{\mathrm{T}})^{-1}=\begin{pmatrix}1&0&0&0\\-2&1&0&0\\1&-2&1&0\\0&1&-2&1\end{pmatrix}.
+> $$
+>
+> 由矩阵运算法则，将等式 $(2E-C^{-1}B)A^{\mathrm{T}}=C^{-1}$ 两边左乘 $C$，得
+> $$
+> C(2E-C^{-1}B)A^{\mathrm{T}}=CC^{-1},\ \text{即}\ (2C-B)A^{\mathrm{T}}=E.
+> $$
+> 对上式两端取转置，有 $A(2C^{\mathrm{T}}-B^{\mathrm{T}})=E$.
+>
+> 由可逆矩阵及逆矩阵的定义，可知矩阵 $2C^{\mathrm{T}}-B^{\mathrm{T}},A$ 均可逆，因为 $A$ 是 4 阶方阵，故
+> $$
+> A=(2C^{\mathrm{T}}-B^{\mathrm{T}})^{-1}=\begin{pmatrix}1&0&0&0\\2&1&0&0\\3&2&1&0\\4&3&2&1\end{pmatrix}^{-1}=\begin{pmatrix}1&0&0&0\\-2&1&0&0\\1&-2&1&0\\0&1&-2&1\end{pmatrix}.
+> $$
+
 ### 1990 年 · 数学一 · 第七大题（解答，6 分）
 
 设 4 阶矩阵

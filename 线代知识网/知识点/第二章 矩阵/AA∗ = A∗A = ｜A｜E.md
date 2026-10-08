@@ -401,6 +401,32 @@ $$
 > B=4(E+A)^{-1}=4\begin{pmatrix}\dfrac{1}{2}&0&0\\0&-1&0\\0&0&\dfrac{1}{2}\end{pmatrix}=\begin{pmatrix}2&0&0\\0&-4&0\\0&0&2\end{pmatrix}.
 > $$
 
+### 1998 年 · 数学二 · 选择题第 5 题（选择，3 分）
+
+设 $A$ 是任一 $n\ (n\ge3)$ 阶方阵，$A^*$ 是其伴随矩阵，又 $k$ 为常数，且 $k\ne0,\pm1$，则必有 $(kA)^*=(\quad)$
+
+（A）$kA^*$.
+（B）$k^{n-1}A^*$.
+（C）$k^nA^*$.
+（D）$k^{-1}A^*$.
+
+> [!success]- 答案与解析
+> **答案**：（B）
+>
+> 对任何 $n$ 阶矩阵都要成立的关系式，对特殊的 $n$ 阶矩阵自然也要成立. 那么，当 $A$ 可逆时，由 $A^*=|A|A^{-1}$，有
+> $$
+> (kA)^*=|kA|(kA)^{-1}=k^n|A|\cdot\frac{1}{k}A^{-1}=k^{n-1}|A|A^{-1}=k^{n-1}A^*.
+> $$
+> 故应选（B）.
+>
+> 一般地，若 $A=(a_{ij})_{n\times n}$，那么 $kA=(ka_{ij})_{n\times n}$，那么矩阵 $kA$ 的第 $i$ 行 $j$ 列元素的代数余子式为
+> $$
+> (-1)^{i+j}\begin{vmatrix}ka_{11}&\cdots&ka_{1,j-1}&ka_{1,j+1}&\cdots&ka_{1n}\\\vdots&&\vdots&\vdots&&\vdots\\ka_{i-1,1}&\cdots&ka_{i-1,j-1}&ka_{i-1,j+1}&\cdots&ka_{i-1,n}\\ka_{i+1,1}&\cdots&ka_{i+1,j-1}&ka_{i+1,j+1}&\cdots&ka_{i+1,n}\\\vdots&&\vdots&\vdots&&\vdots\\ka_{n1}&\cdots&ka_{n,j-1}&ka_{n,j+1}&\cdots&ka_{nn}\end{vmatrix}=(-1)^{i+j}k^{n-1}\begin{vmatrix}a_{11}&\cdots&a_{1,j-1}&a_{1,j+1}&\cdots&a_{1n}\\\vdots&&\vdots&\vdots&&\vdots\\a_{i-1,1}&\cdots&a_{i-1,j-1}&a_{i-1,j+1}&\cdots&a_{i-1,n}\\a_{i+1,1}&\cdots&a_{i+1,j-1}&a_{i+1,j+1}&\cdots&a_{i+1,n}\\\vdots&&\vdots&\vdots&&\vdots\\a_{n1}&\cdots&a_{n,j-1}&a_{n,j+1}&\cdots&a_{nn}\end{vmatrix},
+> $$
+> 即 $|kA|$ 中每个元素的代数余子式恰好是 $|A|$ 相应元素的代数余子式的 $k^{n-1}$ 倍，因而，按伴随矩阵的定义知 $(kA)^*$ 的元素是 $A^*$ 对应元素的 $k^{n-1}$ 倍.
+>
+> 【相关知识点】1. 行列式的性质：若 $A$ 是 $n$ 阶矩阵，则 $|kA|=k^n|A|$. 2. 矩阵 $A$ 可逆的充要条件是 $|A|\ne0$，且 $A^{-1}=\frac{1}{|A|}A^*$.
+
 ### 1997 年 · 数学三 · 第九题（解答，6 分）
 
 （本题满分 6 分）设 $A$ 为 $n$ 阶非奇异矩阵，$\alpha$ 为 $n$ 维列向量，$b$ 为常数。记分块矩阵

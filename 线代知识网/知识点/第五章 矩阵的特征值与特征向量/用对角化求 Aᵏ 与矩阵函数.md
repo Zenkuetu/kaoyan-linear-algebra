@@ -460,6 +460,43 @@ $$
 > \beta_3=(2-2^{98})\alpha_1+(2-2^{99})\alpha_2.
 > $$
 
+### 1992 年 · 数学一 · 第九大题（解答，7 分）
+
+设 3 阶矩阵 $A$ 的特征值为 $\lambda_1=1,\lambda_2=2,\lambda_3=3$，对应的特征向量依次为
+$$
+\xi_1=\begin{pmatrix}1\\1\\1\end{pmatrix},\quad\xi_2=\begin{pmatrix}1\\2\\4\end{pmatrix},\quad\xi_3=\begin{pmatrix}1\\3\\9\end{pmatrix},
+$$
+又向量 $\beta=\begin{pmatrix}1\\1\\3\end{pmatrix}$.
+
+（1）将 $\beta$ 用 $\xi_1,\xi_2,\xi_3$ 线性表示；
+（2）求 $A^n\beta$（$n$ 为自然数）.
+
+> [!success]- 答案与解析
+> **答案**：
+> （1）$\beta=2\xi_1-2\xi_2+\xi_3$.
+> （2）
+> $$
+> A^n\beta=\begin{pmatrix}2-2^{n+1}+3^n\\2-2^{n+2}+3^{n+1}\\2-2^{n+3}+3^{n+2}\end{pmatrix}.
+> $$
+>
+> （1）设
+> $$
+> \beta=x_1\xi_1+x_2\xi_2+x_3\xi_3=(\xi_1,\xi_2,\xi_3)\begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix},
+> $$
+> 对此方程组的增广矩阵作初等行变换
+> $$
+> (\xi_1,\xi_2,\xi_3\vdots\beta)=\begin{pmatrix}1&1&1&1\\1&2&3&1\\1&4&9&3\end{pmatrix}\to\begin{pmatrix}1&1&1&1\\0&1&2&0\\0&3&8&2\end{pmatrix}\to\begin{pmatrix}1&1&1&1\\0&1&2&0\\0&0&1&1\end{pmatrix},
+> $$
+> 得唯一解 $(2,-2,1)^{\mathrm{T}}$，故有 $\beta=2\xi_1-2\xi_2+\xi_3$.
+>
+> （2）由于 $A\xi_i=\lambda_i\xi_i$，故 $A^n\xi_i=\lambda_i^n\xi_i,i=1,2,3$，因此
+> $$
+> A^n\beta=A^n(2\xi_1-2\xi_2+\xi_3)=2A^n\xi_1-2A^n\xi_2+A^n\xi_3
+> $$
+> $$
+> =2\begin{pmatrix}1\\1\\1\end{pmatrix}-2^{n+1}\begin{pmatrix}1\\2\\4\end{pmatrix}+3^n\begin{pmatrix}1\\3\\9\end{pmatrix}=\begin{pmatrix}2-2^{n+1}+3^n\\2-2^{n+2}+3^{n+1}\\2-2^{n+3}+3^{n+2}\end{pmatrix}.
+> $$
+
 ### 1988 年 · 数学一 · 第七大题（解答，6 分）
 
 已知 $AP=PB$，其中

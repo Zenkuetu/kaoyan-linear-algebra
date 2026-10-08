@@ -1257,6 +1257,68 @@ $$
 > > **方法点评**：设 $A$ 为 $m\times n$ 矩阵，若 $r(A)=r(A\ \vdots\ b)$ 时，$AX=b$ 有解．
 > > 若 $r(A)=r$，则 $AX=0$ 的基础解系含 $n-r(A)$ 个解向量，但 $AX=b$ 线性无关的解向量组所含解向量的个数最多含 $n-r(A)+1$ 个．
 
+### 1998 年 · 数学二 · 第十三题（解答，6 分）
+
+已知 $\alpha_1=(1,4,0,2)^{\mathrm{T}},\alpha_2=(2,7,1,3)^{\mathrm{T}},\alpha_3=(0,1,-1,a)^{\mathrm{T}},\beta=(3,10,b,4)^{\mathrm{T}}$，问：
+
+（1）$a,b$ 取何值时，$\beta$ 不能由 $\alpha_1,\alpha_2,\alpha_3$ 线性表示？
+
+（2）$a,b$ 取何值时，$\beta$ 可由 $\alpha_1,\alpha_2,\alpha_3$ 线性表示？并写出此表示式.
+
+> [!success]- 答案与解析
+> **答案**：（1）$b\ne2$ 时 $\beta$ 不能由 $\alpha_1,\alpha_2,\alpha_3$ 线性表示；（2）$b=2,a\ne1$ 时唯一表示为 $\beta=-\alpha_1+2\alpha_2$；$b=2,a=1$ 时表示法为无穷多，$\beta=-(2k+1)\alpha_1+(k+2)\alpha_2+k\alpha_3$（$k$ 为任意常数）.
+>
+> 【分析】$\beta$ 能由（不能由）$\alpha_1,\alpha_2,\cdots,\alpha_s$ 线性表出 $\Leftrightarrow$ $\alpha_i,i=1,2,\cdots,s,\beta$ 为列向量的非齐次线性方程组 $\alpha_1x_1+\alpha_2x_2+\cdots+\alpha_sx_s=\beta$ 有解（无解），从而将线性表出的问题转化为方程组解的判定与求解.
+>
+> 【解析】令 $A=[\alpha_1,\alpha_2,\alpha_3],X=[x_1,x_2,x_3]^{\mathrm{T}}$，作方程组 $AX=\beta$，并对此方程组的增广矩阵进行初等变换：
+> $$
+> [A;\beta]=\begin{pmatrix}1&2&0&:&3\\4&7&1&:&10\\0&1&-1&:&b\\2&3&a&:&4\end{pmatrix}\xrightarrow{(*_1)}\begin{pmatrix}1&2&0&:&3\\0&-1&1&:&-2\\0&1&-1&:&b\\0&-1&a&:&-2\end{pmatrix}\xrightarrow{(*_2)}\begin{pmatrix}1&2&0&:&3\\0&-1&1&:&-2\\0&0&a-1&:&0\\0&0&0&:&b-2\end{pmatrix}.
+> $$
+> 其中，$(*_1)$ 变换：将第 1 行乘以 $-4$ 加到第 2 行，再将第 1 行乘以 $-2$ 加到第 4 行；
+>
+> $(*_2)$ 变换：第 2 行加到第 1 行，再将第 2 行乘以 $-1$ 加到第 4 行，最后 3、4 行互换.
+>
+> 由非齐次线性方程组有解的判定定理，可得
+>
+> （1）当 $b\ne2$ 时，线性方程组 $AX=\beta$ 无解，此时 $\beta$ 不能由 $\alpha_1,\alpha_2,\alpha_3$ 线性表出.
+>
+> （2）当 $b=2,a\ne1$ 时，$r(A)=r(\overline{A})=3$，线性方程组 $AX=\beta$ 有唯一解，下面求此唯一解.
+>
+> 由以上增广矩阵变换可得线性方程组 $AX=\beta$ 的同解方程组为
+> $$
+> \begin{cases}
+> x_1+2x_2=3\\
+> -x_2+x_3=-2\\
+> (a-1)x_3=0
+> \end{cases}
+> $$
+> 解得唯一解为 $X=[-1,2,0]^{\mathrm{T}}$. 故 $\beta$ 可由 $\alpha_1,\alpha_2,\alpha_3$ 线性表出为 $\beta=-\alpha_1+2\alpha_2$.
+>
+> （3）当 $b=2,a=1$ 时，$r(A)=r(\overline{A})=2<3$，线性方程组 $AX=\beta$ 有无穷多解. 求齐次线性方程组 $AX=0$ 的基础解系.
+>
+> 齐次线性方程组 $AX=0$ 的同解方程组为
+> $$
+> \begin{cases}
+> x_1+2x_2=0\\
+> -x_2+x_3=0
+> \end{cases}
+> $$
+> 基础解系所含向量的个数为 $n-r(A)=3-2=1$，选 $x_2$ 为自由未知量，取 $x_2=1$，解得基础解系为 $\xi=(-2,1,1)^{\mathrm{T}}$. 取 $x_3=0$，解得的一个特解为 $\eta^*=(-1,2,0)^{\mathrm{T}}$，则由非齐次线性方程组解的结构可知，方程组 $AX=\beta$ 的通解为
+> $$
+> X=k\xi+\eta^*=(-2k-1,k+2,k)^{\mathrm{T}},\ k\ \text{是任意常数}.
+> $$
+> 则 $\beta$ 能由 $\alpha_1,\alpha_2,\alpha_3$ 线性表出，且表示法为无穷多（常数 $k$ 可以任意），且
+> $$
+> \beta=-(2k+1)\alpha_1+(k+2)\alpha_2+k\alpha_3.
+> $$
+> 【相关知识点】非齐次线性方程组有解的判定定理：设 $A$ 是 $m\times n$ 矩阵，方程组 $Ax=b$，则
+>
+> (1) 有唯一解 $\Leftrightarrow r(A)=r(\overline{A})=n$.
+>
+> (2) 有无穷多解 $\Leftrightarrow r(A)=r(\overline{A})<n$.
+>
+> (3) 无解 $\Leftrightarrow r(A)+1=r(\overline{A})$. $\Leftrightarrow b$ 不能由 $A$ 的列向量线性表出.
+
 ### 1989 年 · 数学一 · 第七大题（解答，6 分）
 
 问 $\lambda$ 为何值时，线性方程组
