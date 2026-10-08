@@ -3,7 +3,9 @@ const fs = require('fs');
 const path = require('path');
 
 // ===== 载入数据 =====
-const files = ['dc.js', 'matrices.js', 'vectors.js', 'equations.js', 'eigen.js', 'quadratic.js', 'edges.js', 'exams.js'].map(f => path.join(__dirname, f));
+const examDir = path.join(__dirname, 'exams');
+const examFiles = fs.existsSync(examDir) ? fs.readdirSync(examDir).filter(f => f.endsWith('.js')).sort().map(f => path.join(examDir, f)) : [];
+const files = ['dc.js', 'matrices.js', 'vectors.js', 'equations.js', 'eigen.js', 'quadratic.js', 'edges.js', 'exams.js'].map(f => path.join(__dirname, f)).concat(examFiles);
 const src = files.map(f => fs.readFileSync(f, 'utf8')).join('\n');
 const loader = new Function('__bootstrap',
   src + '\nreturn __bootstrap({MODULES: [].concat(DC, MX, VC, EQ, EG, QF), EDGES: EDGE_LIST, EXAMS: EXAMS});');
