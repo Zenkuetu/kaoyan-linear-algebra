@@ -106,7 +106,109 @@ $$
 > - [[矩阵乘法]] ⇒ 🟪 必要 ⇒ 本点——AX = B 本身就是一个矩阵乘法等式，"解矩阵方程"就是解这个乘法等式
 > - [[初等变换（三种）]] ⇒ 🟪 必要 ⇒ 本点——(A | E) → (E | A⁻¹)、(A|B) → (E|A⁻¹B) 靠的正是三种初等行变换
 
-## <span class="hx hx-nav">🧭</span> 九、导航
+## <span class="hx hx-exam">📝</span> 九、真题（2014–2016）
+
+### 2016 年 · 数学一 · 第 20 题（解答，11 分）
+
+（本题满分 11 分）设矩阵
+$$
+A=\\begin{pmatrix}1&-1&-1\\\\2&a&1\\\\-1&1&a\\end{pmatrix},\\quad B=\\begin{pmatrix}2&2\\\\1&a\\\\-a-1&-2\\end{pmatrix}.
+$$
+当 $a$ 为何值时，方程 $AX=B$ 无解、有唯一解、有无穷多解？在有解时，求解此方程。
+
+> [!success]- 答案与解析
+> **答案**：当 $a\\ne -2$ 且 $a\\ne 1$ 时，有唯一解 $X=\\begin{pmatrix}1&\\frac{3a}{a+2}\\\\0&\\frac{a-4}{a+2}\\\\-1&0\\end{pmatrix}$；当 $a=1$ 时，有无穷多解 $X=\\begin{pmatrix}1&1\\\\-k_1-1&-k_2-1\\\\k_1&k_2\\end{pmatrix}$（$k_1,k_2$ 为任意常数）；当 $a=-2$ 时，无解
+>
+> 方法一
+> $$
+> (A\\ \\vdots\\ B)=\\left(\\begin{array}{ccc|cc}1&-1&-1&2&2\\\\2&a&1&1&a\\\\-1&1&a&-a-1&-2\\end{array}\\right)\\to\\left(\\begin{array}{ccc|cc}1&-1&-1&2&2\\\\0&a+2&3&-3&a-4\\\\0&0&a-1&1-a&0\\end{array}\\right)
+> $$
+> 当 $a\\ne -2$ 且 $a\\ne 1$ 时，
+> $$
+> (A\\ \\vdots\\ B)\\to\\left(\\begin{array}{ccc|cc}1&0&0&1&\\frac{3a}{a+2}\\\\0&1&0&0&\\frac{a-4}{a+2}\\\\0&0&1&-1&0\\end{array}\\right),
+> $$
+> $AX=B$ 有唯一解，$X=A^{-1}B=\\begin{pmatrix}1&\\frac{3a}{a+2}\\\\0&\\frac{a-4}{a+2}\\\\-1&0\\end{pmatrix}$；
+>
+> 当 $a=1$ 时，
+> $$
+> (A\\ \\vdots\\ B)\\to\\left(\\begin{array}{ccc|cc}1&0&0&1&1\\\\0&1&1&-1&-1\\\\0&0&0&0&0\\end{array}\\right),
+> $$
+> 由 $r(A)=r(A\\ \\vdots\\ B)=2<3$ 得 $AX=B$ 有无数个解。
+>
+> 令 $X=(X_1,X_2)$，由
+> $$
+> X_1=k_1\\begin{pmatrix}0\\\\-1\\\\1\\end{pmatrix}+\\begin{pmatrix}1\\\\-1\\\\0\\end{pmatrix}=\\begin{pmatrix}1\\\\-k_1-1\\\\k_1\\end{pmatrix},\\quad X_2=k_2\\begin{pmatrix}0\\\\-1\\\\1\\end{pmatrix}+\\begin{pmatrix}1\\\\-1\\\\0\\end{pmatrix}=\\begin{pmatrix}1\\\\-k_2-1\\\\k_2\\end{pmatrix}
+> $$
+> 得
+> $$
+> X=\\begin{pmatrix}1&1\\\\-k_1-1&-k_2-1\\\\k_1&k_2\\end{pmatrix}\\ (k_1,k_2\\ \\text{为任意常数}).
+> $$
+>
+> $a=-2$ 时，
+> $$
+> (A\\ \\vdots\\ B)\\to\\left(\\begin{array}{ccc|cc}1&-1&-1&2&2\\\\0&0&3&-3&-6\\\\0&0&-3&3&0\\end{array}\\right)\\to\\left(\\begin{array}{ccc|cc}1&-1&-1&2&2\\\\0&0&1&-1&0\\\\0&0&0&0&1\\end{array}\\right),
+> $$
+> 因为 $r(A)\\ne r(A\\ \\vdots\\ B)$，所以 $AX=B$ 无解。
+>
+> 方法二
+> $$
+> |A|=\\begin{vmatrix}1&-1&-1\\\\2&a&1\\\\-1&1&a\\end{vmatrix}=\\begin{vmatrix}1&-1&-1\\\\0&a+2&3\\\\0&0&a-1\\end{vmatrix}=(a+2)(a-1).
+> $$
+> 当 $a\\ne -2$ 且 $a\\ne 1$ 时，因为 $r(A)=r(A\\ \\vdots\\ B)=3$，所以 $AX=B$ 有唯一解，同方法一得 $X=A^{-1}B=\\begin{pmatrix}1&\\frac{3a}{a+2}\\\\0&\\frac{a-4}{a+2}\\\\-1&0\\end{pmatrix}$；
+>
+> 当 $a=1$ 时，由 $r(A)=r(A\\ \\vdots\\ B)=2<3$ 得 $AX=B$ 有无数个解，$X=\\begin{pmatrix}1&1\\\\-k_1-1&-k_2-1\\\\k_1&k_2\\end{pmatrix}$（$k_1,k_2$ 为任意常数）；
+>
+> 当 $a=-2$ 时，因为 $r(A)\\ne r(A\\ \\vdots\\ B)$，所以 $AX=B$ 无解。
+>
+> <small>解析出处：《2016 数学一解析》第 6–8 页</small>
+
+### 2014 年 · 数学三 · 第 20 题（解答，11 分）
+
+（本题满分 11 分）设矩阵
+$$
+A=\begin{pmatrix}1&-2&3&-4\\0&1&-1&1\\1&2&0&-3\end{pmatrix},
+$$
+$E$ 为 3 阶单位矩阵。
+
+（Ⅰ）求方程组 $Ax=0$ 的一个基础解系；
+
+（Ⅱ）求满足 $AB=E$ 的所有矩阵 $B$。
+
+> [!success]- 答案与解析
+> **答案**：（Ⅰ）基础解系 $\alpha=(-1,2,3,1)^{\mathrm{T}}$；
+
+（Ⅱ）$B=\begin{pmatrix}2&6&-1\\-1&-3&1\\-1&-4&1\\0&0&0\end{pmatrix}+(k_1\alpha,\ k_2\alpha,\ k_3\alpha)$，$k_1,k_2,k_3$ 为任意常数。
+>
+> （Ⅰ）对矩阵 $A$ 施以初等行变换
+> $$
+> A=\begin{pmatrix}1&-2&3&-4\\0&1&-1&1\\1&2&0&-3\end{pmatrix}\to\begin{pmatrix}1&0&0&1\\0&1&0&-2\\0&0&1&-3\end{pmatrix},
+> $$
+> 则方程组 $Ax=0$ 的一个基础解系为
+> $$
+> \alpha=\begin{pmatrix}-1\\2\\3\\1\end{pmatrix}.
+> $$
+>
+> （Ⅱ）对矩阵 $(A\ \vdots\ E)$ 施以初等行变换
+> $$
+> (A\ \vdots\ E)=\begin{pmatrix}1&-2&3&-4&1&0&0\\0&1&-1&1&0&1&0\\1&2&0&-3&0&0&1\end{pmatrix}\to\begin{pmatrix}1&0&0&1&2&6&-1\\0&1&0&-2&-1&-3&1\\0&0&1&-3&-1&-4&1\end{pmatrix}.
+> $$
+> 记 $E=(e_1,e_2,e_3)$，则
+> $$
+> Ax=e_1\ \text{的通解}\ x=\begin{pmatrix}2\\-1\\-1\\0\end{pmatrix}+k_1\alpha,\quad
+> Ax=e_2\ \text{的通解}\ x=\begin{pmatrix}6\\-3\\-4\\0\end{pmatrix}+k_2\alpha,\quad
+> Ax=e_3\ \text{的通解}\ x=\begin{pmatrix}-1\\1\\1\\0\end{pmatrix}+k_3\alpha,
+> $$
+> $k_1,k_2,k_3$ 为任意常数。
+>
+> 于是，所求矩阵为
+> $$
+> B=\begin{pmatrix}2&6&-1\\-1&-3&1\\-1&-4&1\\0&0&0\end{pmatrix}+(k_1\alpha,\ k_2\alpha,\ k_3\alpha),
+> $$
+> $k_1,k_2,k_3$ 为任意常数。
+>
+> <small>解析出处：《2014 年数学（三）参考答案》第 5 页</small>
+
+## <span class="hx hx-nav">🧭</span> 十、导航
 
 
 - 本章：[[第二章 矩阵|第二章 矩阵]] ｜ 总览：[00 线性代数知识网总览](00%20线性代数知识网总览.md)

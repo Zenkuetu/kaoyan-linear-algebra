@@ -120,7 +120,94 @@ $$
 > - [[克拉默法则]] ⇒ 🟧 充分 ⇒ 本点——｜A｜≠0 ⇒ 唯一解
 > - [[方程组的几何意义（平面与直线）]] ⇒ 🟪 必要 ⇒ 本点——几何形态由秩决定
 
-## <span class="hx hx-nav">🧭</span> 九、导航
+## <span class="hx hx-exam">📝</span> 九、真题（2015–2016）
+
+### 2016 年 · 数学一 · 第 20 题（解答，11 分）
+
+（本题满分 11 分）设矩阵
+$$
+A=\\begin{pmatrix}1&-1&-1\\\\2&a&1\\\\-1&1&a\\end{pmatrix},\\quad B=\\begin{pmatrix}2&2\\\\1&a\\\\-a-1&-2\\end{pmatrix}.
+$$
+当 $a$ 为何值时，方程 $AX=B$ 无解、有唯一解、有无穷多解？在有解时，求解此方程。
+
+> [!success]- 答案与解析
+> **答案**：当 $a\\ne -2$ 且 $a\\ne 1$ 时，有唯一解 $X=\\begin{pmatrix}1&\\frac{3a}{a+2}\\\\0&\\frac{a-4}{a+2}\\\\-1&0\\end{pmatrix}$；当 $a=1$ 时，有无穷多解 $X=\\begin{pmatrix}1&1\\\\-k_1-1&-k_2-1\\\\k_1&k_2\\end{pmatrix}$（$k_1,k_2$ 为任意常数）；当 $a=-2$ 时，无解
+>
+> 方法一
+> $$
+> (A\\ \\vdots\\ B)=\\left(\\begin{array}{ccc|cc}1&-1&-1&2&2\\\\2&a&1&1&a\\\\-1&1&a&-a-1&-2\\end{array}\\right)\\to\\left(\\begin{array}{ccc|cc}1&-1&-1&2&2\\\\0&a+2&3&-3&a-4\\\\0&0&a-1&1-a&0\\end{array}\\right)
+> $$
+> 当 $a\\ne -2$ 且 $a\\ne 1$ 时，
+> $$
+> (A\\ \\vdots\\ B)\\to\\left(\\begin{array}{ccc|cc}1&0&0&1&\\frac{3a}{a+2}\\\\0&1&0&0&\\frac{a-4}{a+2}\\\\0&0&1&-1&0\\end{array}\\right),
+> $$
+> $AX=B$ 有唯一解，$X=A^{-1}B=\\begin{pmatrix}1&\\frac{3a}{a+2}\\\\0&\\frac{a-4}{a+2}\\\\-1&0\\end{pmatrix}$；
+>
+> 当 $a=1$ 时，
+> $$
+> (A\\ \\vdots\\ B)\\to\\left(\\begin{array}{ccc|cc}1&0&0&1&1\\\\0&1&1&-1&-1\\\\0&0&0&0&0\\end{array}\\right),
+> $$
+> 由 $r(A)=r(A\\ \\vdots\\ B)=2<3$ 得 $AX=B$ 有无数个解。
+>
+> 令 $X=(X_1,X_2)$，由
+> $$
+> X_1=k_1\\begin{pmatrix}0\\\\-1\\\\1\\end{pmatrix}+\\begin{pmatrix}1\\\\-1\\\\0\\end{pmatrix}=\\begin{pmatrix}1\\\\-k_1-1\\\\k_1\\end{pmatrix},\\quad X_2=k_2\\begin{pmatrix}0\\\\-1\\\\1\\end{pmatrix}+\\begin{pmatrix}1\\\\-1\\\\0\\end{pmatrix}=\\begin{pmatrix}1\\\\-k_2-1\\\\k_2\\end{pmatrix}
+> $$
+> 得
+> $$
+> X=\\begin{pmatrix}1&1\\\\-k_1-1&-k_2-1\\\\k_1&k_2\\end{pmatrix}\\ (k_1,k_2\\ \\text{为任意常数}).
+> $$
+>
+> $a=-2$ 时，
+> $$
+> (A\\ \\vdots\\ B)\\to\\left(\\begin{array}{ccc|cc}1&-1&-1&2&2\\\\0&0&3&-3&-6\\\\0&0&-3&3&0\\end{array}\\right)\\to\\left(\\begin{array}{ccc|cc}1&-1&-1&2&2\\\\0&0&1&-1&0\\\\0&0&0&0&1\\end{array}\\right),
+> $$
+> 因为 $r(A)\\ne r(A\\ \\vdots\\ B)$，所以 $AX=B$ 无解。
+>
+> 方法二
+> $$
+> |A|=\\begin{vmatrix}1&-1&-1\\\\2&a&1\\\\-1&1&a\\end{vmatrix}=\\begin{vmatrix}1&-1&-1\\\\0&a+2&3\\\\0&0&a-1\\end{vmatrix}=(a+2)(a-1).
+> $$
+> 当 $a\\ne -2$ 且 $a\\ne 1$ 时，因为 $r(A)=r(A\\ \\vdots\\ B)=3$，所以 $AX=B$ 有唯一解，同方法一得 $X=A^{-1}B=\\begin{pmatrix}1&\\frac{3a}{a+2}\\\\0&\\frac{a-4}{a+2}\\\\-1&0\\end{pmatrix}$；
+>
+> 当 $a=1$ 时，由 $r(A)=r(A\\ \\vdots\\ B)=2<3$ 得 $AX=B$ 有无数个解，$X=\\begin{pmatrix}1&1\\\\-k_1-1&-k_2-1\\\\k_1&k_2\\end{pmatrix}$（$k_1,k_2$ 为任意常数）；
+>
+> 当 $a=-2$ 时，因为 $r(A)\\ne r(A\\ \\vdots\\ B)$，所以 $AX=B$ 无解。
+>
+> <small>解析出处：《2016 数学一解析》第 6–8 页</small>
+
+### 2015 年 · 数学一 · 第 5 题（选择，4 分）
+
+设矩阵 $A=\begin{pmatrix}1&1&1\\1&2&a\\1&4&a^2\end{pmatrix}$，$b=\begin{pmatrix}1\\d\\d^2\end{pmatrix}$。若集合 $\Omega=\{1,2\}$，则线性方程组 $Ax=b$ 有无穷多解的充分必要条件为（　）
+
+（A）$a\notin\Omega,\ d\notin\Omega$　（B）$a\notin\Omega,\ d\in\Omega$　（C）$a\in\Omega,\ d\notin\Omega$　（D）$a\in\Omega,\ d\in\Omega$
+
+> [!success]- 答案与解析
+> **答案**：（D）
+>
+> 因为 $Ax=b$ 有无数个解，所以 $r(A)=r(\overline{A})<3$，由
+> $$
+> |A|=\begin{vmatrix}1&1&1\\1&2&a\\1&4&a^2\end{vmatrix}=(a-1)(a-2)=0
+> $$
+> 得 $a=1,\ a=2$；
+>
+> 当 $a=1$ 时，
+> $$
+> \overline{A}=\begin{pmatrix}1&1&1&1\\1&2&1&d\\1&4&1&d^2\end{pmatrix}\to\begin{pmatrix}1&1&1&1\\0&1&0&d-1\\0&3&0&d^2-1\end{pmatrix}\to\begin{pmatrix}1&1&1&1\\0&1&0&d-1\\0&0&0&d^2-3d+2\end{pmatrix},
+> $$
+> 因为方程组有无数个解，所以 $d=1$ 或 $d=2$；
+>
+> 当 $a=2$ 时，
+> $$
+> \overline{A}=\begin{pmatrix}1&1&1&1\\1&2&2&d\\1&4&4&d^2\end{pmatrix}\to\begin{pmatrix}1&1&1&1\\0&1&1&d-1\\0&3&3&d^2-1\end{pmatrix}\to\begin{pmatrix}1&1&1&1\\0&1&1&d-1\\0&0&0&d^2-3d+2\end{pmatrix},
+> $$
+> 因为方程组有无数个解，所以 $d=1$ 或 $d=2$，应选（D）。
+>
+> > 方法点评：本题考查非齐次线性方程组的基本理论。本题非齐次线性方程组有无数个解的两个关键点为：$r(A)<3$ 及 $r(A)=r(\overline{A})$。
+>
+> <small>解析出处：《2015 数学一解析》第 1–2 页</small>
+
+## <span class="hx hx-nav">🧭</span> 十、导航
 
 
 - 本章：[[第四章 线性方程组|第四章 线性方程组]] ｜ 总览：[00 线性代数知识网总览](00%20线性代数知识网总览.md)

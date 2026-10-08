@@ -90,7 +90,30 @@ $$
 > - 本点 ⇒ 🟪 必要 ⇒ [[逆矩阵的求法]]——伴随公式法求逆的依据
 > - [[伴随矩阵 A∗ 的定义|伴随矩阵 A* 的定义]] ⇒ 🟪 必要 ⇒ 本点——先有 A* 才有该恒等式
 
-## <span class="hx hx-nav">🧭</span> 九、导航
+## <span class="hx hx-exam">📝</span> 九、真题（2009）
+
+### 2009 年 · 数学一 · 第 6 题（选择，5 分）
+
+设 $A,B$ 均为 2 阶矩阵，$A^*,B^*$ 分别为 $A,B$ 的伴随矩阵，若 $|A|=2$，$|B|=3$，则分块矩阵 $\begin{pmatrix}O&A\\B&O\end{pmatrix}$ 的伴随矩阵为（　　）
+
+（A）$\begin{pmatrix}O&3B^*\\2A^*&O\end{pmatrix}$．　　（B）$\begin{pmatrix}O&2B^*\\3A^*&O\end{pmatrix}$．
+
+（C）$\begin{pmatrix}O&3A^*\\2B^*&O\end{pmatrix}$．　　（D）$\begin{pmatrix}O&2A^*\\3B^*&O\end{pmatrix}$．
+
+> [!success]- 答案与解析
+> **答案**：（B）
+>
+> $\begin{vmatrix}O&A\\B&O\end{vmatrix}=(-1)^{2\times 2}|A|\cdot|B|=6$，则
+>
+> $$
+> \begin{pmatrix}O&A\\B&O\end{pmatrix}^*=\begin{vmatrix}O&A\\B&O\end{vmatrix}\begin{pmatrix}O&A\\B&O\end{pmatrix}^{-1}=6\begin{pmatrix}O&B^{-1}\\A^{-1}&O\end{pmatrix}=\begin{pmatrix}O&6B^{-1}\\6A^{-1}&O\end{pmatrix}=\begin{pmatrix}O&2B^*\\3A^*&O\end{pmatrix},
+> $$
+>
+> 应选（B）．
+>
+> <small>解析出处：《2009 数学一解析》第 3 页</small>
+
+## <span class="hx hx-nav">🧭</span> 十、导航
 
 
 - 本章：[[第二章 矩阵|第二章 矩阵]] ｜ 总览：[00 线性代数知识网总览](00%20线性代数知识网总览.md)

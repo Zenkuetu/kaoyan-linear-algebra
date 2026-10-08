@@ -116,7 +116,33 @@ $$
 > - [[行列式计算的总思路：化三角形]] ⇒ 🟧 充分 ⇒ 本点——化三角形是定义式计算的替代路径
 > - [[数乘与行列式的线性性]] ⇒ ⬜ 无关 ⇒ 本点——性质可加速计算，但非定义所需
 
-## <span class="hx hx-nav">🧭</span> 九、导航
+## <span class="hx hx-exam">📝</span> 九、真题（2014）
+
+### 2014 年 · 数学三 · 第 5 题（选择，4 分）
+
+行列式
+$$
+\begin{vmatrix}0&a&b&0\\a&0&0&b\\0&c&d&0\\c&0&0&d\end{vmatrix}=(\quad)
+$$
+（A）$(ad-bc)^2$　（B）$-(ad-bc)^2$　（C）$a^2d^2-b^2c^2$　（D）$b^2c^2-a^2d^2$
+
+> [!success]- 答案与解析
+> **答案**：（B）
+>
+> 由行列式展开定理按第一列展开：
+> $$
+> \begin{vmatrix}0&a&b&0\\a&0&0&b\\0&c&d&0\\c&0&0&d\end{vmatrix}
+> =-a\begin{vmatrix}a&b&0\\c&d&0\\0&0&d\end{vmatrix}-c\begin{vmatrix}a&b&0\\0&0&b\\c&d&0\end{vmatrix}
+> =-ad\begin{vmatrix}a&b\\c&d\end{vmatrix}+bc\begin{vmatrix}a&b\\c&d\end{vmatrix}
+> $$
+> $$
+> =-ad(ad-bc)+bc(ad-bc)=-(ad-bc)^2.
+> $$
+> 故应选（B）。
+>
+> <small>解析出处：《2014 年数学（三）参考答案》第 1 页</small>
+
+## <span class="hx hx-nav">🧭</span> 十、导航
 
 
 - 本章：[[第一章 行列式|第一章 行列式]] ｜ 总览：[00 线性代数知识网总览](00%20线性代数知识网总览.md)
