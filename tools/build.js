@@ -394,7 +394,9 @@ for (const m of MODULES) {
         // 勾选后 sync-vault 以「所在标题 + 该行文本」为键记住状态（空文本任务项也不会互相串）
         L.push('### ' + qTitle);
         L.push('');
-        L.push('- [ ]');
+        // 注意：Obsidian 只在 `- [ ] ` 后面有文字时才渲染成可点的方框，空的 `- [ ]` 会退化成普通列表项（显示成 "[]"），
+        // 所以这里给方框配一个短标签（题号），既能点、也让勾选状态有唯一的键。
+        L.push('- [ ] ' + (e.label || ('第 ' + e.number + ' 题')));
         L.push('');
         // 题面：逐行缩进 2 空格，保证仍在这个任务项内
         for (const line of decorate(String(e.question)).split(/\r?\n/)) L.push(line.trim() === '' ? '' : '  ' + noLink(line));
