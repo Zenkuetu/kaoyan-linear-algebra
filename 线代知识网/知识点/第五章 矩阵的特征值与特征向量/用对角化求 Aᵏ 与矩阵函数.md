@@ -133,7 +133,78 @@ $$
 > - [[相似对角化的方法与步骤]] ⇒ 🟧 充分 ⇒ 本点——对角化后立得幂与矩阵函数
 > - [[方阵的幂与矩阵多项式]] ⇒ 🟩 关联 ⇒ 本点——同一个"求 Aᵏ"主题的两种手段：初等技巧（拆分/秩 1）与对角化
 
-## <span class="hx hx-exam">📝</span> 九、真题（2016–2024）
+## <span class="hx hx-exam">📝</span> 九、真题（2016–2026）
+
+### 2026 年 · 数学二 · 第 10 题（选择，5 分）
+
+设 3 阶矩阵 $A,B$，满足 $AB+BA=A^2+B^2$，则 $A\ne B$. 则下列结论错误的是
+
+（A）$(A-B)^3=O$　　（B）$A-B$ 只有零特征值
+
+（C）$A,B$ 不能都是对角矩阵　　（D）$A-B$ 只有一个线性无关的特征向量
+
+> [!success]- 答案与解析
+> **答案**：（D）
+>
+> 【解析】由 $AB+BA=A^2+B^2$，得 $(A-B)^2=O$.
+>
+> $(A-B)^2=O\Rightarrow (A-B)^3=O$，（A）正确；
+>
+> $(A-B)^2=O\Rightarrow A-B$ 的特征值满足 $\lambda^2=0$，所以 $A-B$ 只有零特征值，（B）正确；
+>
+> 若 $A,B$ 都是对角矩阵，则 $A-B$ 是对角矩阵，$(A-B)^2=O\Rightarrow A-B=O$，与题意矛盾；（C）正确；
+>
+> $(A-B)^2=O\Rightarrow r(A-B)+r(A-B)\le 3$，又 $A-B\ne O$，得 $r(A-B)=1$，$n-r(A-B)=2$，从而 $A-B$ 有 2 个线性无关的特征向量，（D）错误，故选（D）.
+
+### 2026 年 · 数学二 · 第 22 题（解答，12 分）
+
+（本题满分 12 分）已知向量组
+$$
+\alpha_1=\begin{pmatrix}1\\0\\-1\\-1\end{pmatrix},\quad\alpha_2=\begin{pmatrix}1\\-1\\0\\-2\end{pmatrix},\quad\alpha_3=\begin{pmatrix}0\\-1\\1\\-1\end{pmatrix},\quad\alpha_4=\begin{pmatrix}0\\1\\-1\\1\end{pmatrix},
+$$
+记 $A=(\alpha_1,\alpha_2,\alpha_3,\alpha_4)$，$G=(\alpha_1,\alpha_2)$.
+
+（1）证明：$\alpha_1,\alpha_2$ 是 $\alpha_1,\alpha_2,\alpha_3,\alpha_4$ 的极大线性无关组；
+
+（2）求矩阵 $H$ 使得 $A=GH$，并求 $A^{10}$.
+
+> [!success]- 答案与解析
+> **答案**：
+> （1）证明见解析；（2）
+> $$
+> H=\begin{pmatrix}1&0&-1&1\\0&1&1&-1\end{pmatrix},\quad A^{10}=\begin{pmatrix}1&-8&-9&9\\0&-1&-1&1\\-1&9&10&-10\\-1&7&8&-8\end{pmatrix}.
+> $$
+>
+> 【解析】（1）由
+> $$
+> (\alpha_1,\alpha_2,\alpha_3,\alpha_4)=\begin{pmatrix}1&1&0&0\\0&-1&-1&1\\-1&0&1&-1\\-1&-2&-1&1\end{pmatrix}\to\begin{pmatrix}1&0&-1&1\\0&1&1&-1\\0&0&0&0\\0&0&0&0\end{pmatrix},
+> $$
+> 故 $r(\alpha_1,\alpha_2)=r(\alpha_1,\alpha_2,\alpha_3,\alpha_4)=2$，故极大线性无关组中有 2 个向量，又由 $\alpha_1,\alpha_2,\alpha_3,\alpha_4$ 均可由 $\alpha_1,\alpha_2$ 线性表示，故 $\alpha_1,\alpha_2$ 为向量组 $\alpha_1,\alpha_2,\alpha_3,\alpha_4$ 的一个极大线性无关组.
+>
+> （2）由（1）知 $\alpha_3=-\alpha_1+\alpha_2$，$\alpha_4=\alpha_1-\alpha_2$，故
+> $$
+> (\alpha_1,\alpha_2,\alpha_3,\alpha_4)=(\alpha_1,\alpha_2)\begin{pmatrix}1&0&-1&1\\0&1&1&-1\end{pmatrix},
+> $$
+> 故
+> $$
+> H=\begin{pmatrix}1&0&-1&1\\0&1&1&-1\end{pmatrix},
+> $$
+> 由于 $A=GH$，故
+> $$
+> A^{10}=GH\cdot GH\cdot GH\cdots GH=G(HG)^9H,
+> $$
+> 由
+> $$
+> HG=\begin{pmatrix}1&0&-1&1\\0&1&1&-1\end{pmatrix}\begin{pmatrix}1&1\\0&-1\\-1&0\\-1&-2\end{pmatrix}=\begin{pmatrix}1&-1\\0&1\end{pmatrix},
+> $$
+> 故
+> $$
+> (HG)^9=\begin{pmatrix}1&-9\\0&1\end{pmatrix},
+> $$
+> 则
+> $$
+> A^{10}=G(HG)^9H=\begin{pmatrix}1&1\\0&-1\\-1&0\\-1&-2\end{pmatrix}\begin{pmatrix}1&-9\\0&1\end{pmatrix}\begin{pmatrix}1&0&-1&1\\0&1&1&-1\end{pmatrix}=\begin{pmatrix}1&-8&-9&9\\0&-1&-1&1\\-1&9&10&-10\\-1&7&8&-8\end{pmatrix}.
+> $$
 
 ### 2024 年 · 数学一 · 第 21 题（解答，12 分）
 
@@ -196,8 +267,9 @@ $$
 （Ⅱ）设 3 阶矩阵 $B=(\alpha_1,\alpha_2,\alpha_3)$ 满足 $B^2=BA$。记 $B^{100}=(\beta_1,\beta_2,\beta_3)$，将 $\beta_1,\beta_2,\beta_3$ 分别表示为 $\alpha_1,\alpha_2,\alpha_3$ 的线性组合。
 
 > [!success]- 答案与解析
-> **答案**：（Ⅰ）$A^{99}=\begin{pmatrix}2^{99}-2&1-2^{99}&2-2^{98}\\2^{100}-2&1-2^{100}&2-2^{99}\\0&0&0\end{pmatrix}$；
-（Ⅱ）$\beta_1=(2^{99}-2)\alpha_1+(2^{100}-2)\alpha_2$，$\beta_2=(1-2^{99})\alpha_1+(1-2^{100})\alpha_2$，$\beta_3=(2-2^{98})\alpha_1+(2-2^{99})\alpha_2$
+> **答案**：
+> （Ⅰ）$A^{99}=\begin{pmatrix}2^{99}-2&1-2^{99}&2-2^{98}\\2^{100}-2&1-2^{100}&2-2^{99}\\0&0&0\end{pmatrix}$；
+> （Ⅱ）$\beta_1=(2^{99}-2)\alpha_1+(2^{100}-2)\alpha_2$，$\beta_2=(1-2^{99})\alpha_1+(1-2^{100})\alpha_2$，$\beta_3=(2-2^{98})\alpha_1+(2-2^{99})\alpha_2$
 >
 > （Ⅰ）由
 > $$
@@ -307,11 +379,12 @@ $$
 （Ⅱ）设 3 阶矩阵 $B=(\alpha_1,\alpha_2,\alpha_3)$ 满足 $B^2=BA$。记 $B^{100}=(\beta_1,\beta_2,\beta_3)$，将 $\beta_1,\beta_2,\beta_3$ 分别表示为 $\alpha_1,\alpha_2,\alpha_3$ 的线性组合。
 
 > [!success]- 答案与解析
-> **答案**：（Ⅰ）
-$$
-A^{99}=\begin{pmatrix}2^{99}-2&1-2^{99}&2-2^{98}\\2^{100}-2&1-2^{100}&2-2^{99}\\0&0&0\end{pmatrix}
-$$
-（Ⅱ）$\beta_1=(2^{99}-2)\alpha_1+(2^{100}-2)\alpha_2$，$\beta_2=(1-2^{99})\alpha_1+(1-2^{100})\alpha_2$，$\beta_3=(2-2^{98})\alpha_1+(2-2^{99})\alpha_2$。
+> **答案**：
+> （Ⅰ）
+> $$
+> A^{99}=\begin{pmatrix}2^{99}-2&1-2^{99}&2-2^{98}\\2^{100}-2&1-2^{100}&2-2^{99}\\0&0&0\end{pmatrix}
+> $$
+> （Ⅱ）$\beta_1=(2^{99}-2)\alpha_1+(2^{100}-2)\alpha_2$，$\beta_2=(1-2^{99})\alpha_1+(1-2^{100})\alpha_2$，$\beta_3=(2-2^{98})\alpha_1+(2-2^{99})\alpha_2$。
 >
 > 本题中的矩阵是一个一般矩阵，要求它的 99 次幂，若直接计算，则计算量会比较大，而对角矩阵的高次幂较容易计算。因此我们可以考虑证明 $A$ 相似于一个对角矩阵，并利用以下结论：
 >

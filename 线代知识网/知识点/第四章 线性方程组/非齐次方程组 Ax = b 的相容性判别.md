@@ -147,6 +147,30 @@ $$
 >
 > 由题设知存在矩阵 $C$ 使得 $A=BC$，若 $Ax=\beta$ 有解，则 $BCx=\beta$ 有解，令 $X=Cx$，则 $BX=\beta$ 有解，故选（A）。
 
+### 2026 年 · 数学二 · 第 9 题（选择，5 分）
+
+设矩阵
+$$
+A=\begin{pmatrix}1&0&1\\0&0&1\\1&1&3\\1&1&1\end{pmatrix},\quad C=\begin{pmatrix}2&0\\1&1\\1&1\\a&b\end{pmatrix},
+$$
+若存在矩阵 $B$ 满足 $AB=C$，则
+
+（A）$a=-1,\ b=-1$　　（B）$a=2,\ b=2$
+
+（C）$a=-1,\ b=2$　　（D）$a=2,\ b=-1$
+
+> [!success]- 答案与解析
+> **答案**：（A）
+>
+> 【解析】
+> $$
+> (A,C)=\begin{pmatrix}1&0&1&2&0\\0&0&1&1&1\\1&1&3&1&1\\1&1&1&a&b\end{pmatrix}\to\begin{pmatrix}1&0&1&2&0\\0&0&1&1&1\\0&1&2&-1&1\\0&0&-2&a-1&b-1\end{pmatrix}
+> $$
+> $$
+> \to\begin{pmatrix}1&0&1&2&0\\0&0&1&1&1\\0&1&2&-1&1\\0&0&0&a+1&b+1\end{pmatrix}
+> $$
+> 由于 $r(A,C)=r(A)$，故 $a+1=0,b+1=0$，故 $a=-1,b=-1$. 故选（A）.
+
 ### 2025 年 · 数学三 · 第 5 题（选择，5 分）
 
 已知 $A$ 是 $m\times n$ 的矩阵，$\beta$ 是 $m$ 维非零向量。若 $A$ 有 $k$ 阶非零子式，则（ ）
@@ -485,10 +509,11 @@ $$
 （Ⅱ）求方程组 $A^{\mathrm{T}}Ax=A^{\mathrm{T}}\beta$ 的通解。
 
 > [!success]- 答案与解析
-> **答案**：（Ⅰ）$a=0$；（Ⅱ）通解为
-$$
-x=(1,-2,0)^{\mathrm{T}}+k(0,-1,1)^{\mathrm{T}}\quad(k\ \text{为任意常数})
-$$
+> **答案**：
+> （Ⅰ）$a=0$；（Ⅱ）通解为
+> $$
+> x=(1,-2,0)^{\mathrm{T}}+k(0,-1,1)^{\mathrm{T}}\quad(k\ \text{为任意常数})
+> $$
 >
 > 本题主要考查非齐次线性方程组有解的条件以及求线性方程组的通解。
 >
@@ -795,9 +820,10 @@ $$
 （Ⅱ）求方程组 $Ax=b$ 的通解。
 
 > [!success]- 答案与解析
-> **答案**：（Ⅰ）$\lambda=-1$，$a=-2$；
-
-（Ⅱ）$x=k\begin{pmatrix}1\\0\\1\end{pmatrix}+\begin{pmatrix}\frac32\\-\frac12\\0\end{pmatrix}$（$k$ 为任意常数）。
+> **答案**：
+> （Ⅰ）$\lambda=-1$，$a=-2$；
+>
+> （Ⅱ）$x=k\begin{pmatrix}1\\0\\1\end{pmatrix}+\begin{pmatrix}\frac32\\-\frac12\\0\end{pmatrix}$（$k$ 为任意常数）。
 >
 > 因为方程组有两个不同的解，所以可以判断方程组增广矩阵的秩小于 3，进而可以通过秩的关系求解方程组中未知参数，有以下两种方法。
 >
@@ -1129,10 +1155,11 @@ $$
 有唯一解？无解？有无穷多个解？并求出有无穷多个解时的通解.
 
 > [!success]- 答案与解析
-> **答案**：当 $a\ne 1$，$b$ 为任意常数时，方程组有唯一解；当 $a=1,b\ne -1$ 时，方程组无解；当 $a=1,b=-1$ 时，方程组有无穷多个解，通解为
-$$
-X=k_1\begin{pmatrix}1\\-2\\1\\0\end{pmatrix}+k_2\begin{pmatrix}1\\-2\\0\\1\end{pmatrix}+\begin{pmatrix}-1\\1\\0\\0\end{pmatrix}\quad(k_1,k_2\text{ 为任意常数}).
-$$
+> **答案**：
+> 当 $a\ne 1$，$b$ 为任意常数时，方程组有唯一解；当 $a=1,b\ne -1$ 时，方程组无解；当 $a=1,b=-1$ 时，方程组有无穷多个解，通解为
+> $$
+> X=k_1\begin{pmatrix}1\\-2\\1\\0\end{pmatrix}+k_2\begin{pmatrix}1\\-2\\0\\1\end{pmatrix}+\begin{pmatrix}-1\\1\\0\\0\end{pmatrix}\quad(k_1,k_2\text{ 为任意常数}).
+> $$
 >
 > $$
 > \overline{A}=\begin{pmatrix}1&1&1&1&0\\0&1&2&2&1\\0&-1&a-3&-2&b\\3&2&1&a&-1\end{pmatrix}\to\begin{pmatrix}1&1&1&1&0\\0&1&2&2&1\\0&-1&a-3&-2&b\\0&-1&-2&a-3&-1\end{pmatrix}

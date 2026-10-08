@@ -159,6 +159,6 @@ $$
 
 综上所述，故 $a=2$。
 
-> 注：上式中原书排印为 $(\lambda-a)\left\{\left[a\lambda+\frac12(1-2a)\right]^2-\frac94\right\}$，按前一步 $(\lambda-a)[\lambda^2-2a\lambda+\lambda+a^2-a-2]$ 与本步结果 $(\lambda-a)(\lambda-a+2)(\lambda-a-1)$ 核对，正确写法应为 $(\lambda-a)\left\{\left(\lambda-a+\frac12\right)^2-\frac94\right\}$，原书当系笔误，此处按原文转写。`,
+注：上式中原书排印为 $(\lambda-a)\left\{\left[a\lambda+\frac12(1-2a)\right]^2-\frac94\right\}$，按前一步 $(\lambda-a)[\lambda^2-2a\lambda+\lambda+a^2-a-2]$ 与本步结果 $(\lambda-a)(\lambda-a+2)(\lambda-a-1)$ 核对，正确写法应为 $(\lambda-a)\left\{\left(\lambda-a+\frac12\right)^2-\frac94\right\}$，原书当系笔误，此处按原文转写。`,
   source: '《2009 年数学三真题答案解析》第 12 页',
 });

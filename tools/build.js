@@ -393,7 +393,14 @@ for (const m of MODULES) {
         L.push('');
         push(e.question);
         L.push('> [!success]- 答案与解析');
-        L.push('> **答案**：' + e.answer);
+        // 答案可能含多行（例如多行 $ 矩阵）：逐行加 "> " 前缀，否则第二行会跑到 callout 外、把 $ 拆坏
+        const ansLines = String(e.answer).split('\n');
+        if (ansLines.length === 1) {
+          L.push('> **答案**：' + ansLines[0]);
+        } else {
+          L.push('> **答案**：');
+          for (const ln of ansLines) L.push(ln.trim() === '' ? '>' : '> ' + ln);
+        }
         L.push('>');
         for (const line of String(e.analysis).split('\n')) L.push(line.trim() === '' ? '>' : '> ' + line);
         L.push('');

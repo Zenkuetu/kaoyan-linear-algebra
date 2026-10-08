@@ -139,6 +139,8 @@ $$
 \alpha_2=\frac{1}{\sqrt2}\begin{pmatrix}1\\-1\\0\end{pmatrix},\quad
 \alpha_3=\frac{1}{\sqrt6}\begin{pmatrix}1\\1\\2\end{pmatrix},
 $$
-取 $Q=(\alpha_1,\alpha_2,\alpha_3)$，则正交变换 $x=Qy$ 将 $f$ 化为标准形 $2y_2^2+6y_3^2$。`,
+取 $Q=(\alpha_1,\alpha_2,\alpha_3)$，则正交变换 $x=Qy$ 将 $f$ 化为标准形 $2y_2^2+6y_3^2$。
+
+注：题面中 $A$ 为 $4\times3$ 矩阵；原书解析将 $A$ 印成 3 阶矩阵（只列出前 3 行）并据此写出三阶行列式。按题面的 $4\times3$ 矩阵算得的 $B=A^{\mathrm{T}}A$ 与原书所列 $B$ 完全一致，故解析结论无误，此处按原书转写。`,
   source: '《2012 年数学（三）试题答案》第 10–11 页',
 });
