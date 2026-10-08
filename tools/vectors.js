@@ -23,6 +23,6 @@ VC.push({ id: 'm-vec', title: '第三章 向量（向量组的线性相关性）
     pitfalls: ['把 r(I)=r(I,β) 当作唯一表示的判据（还需 (I) 无关）'] },
   { id: 'vec-rank-table',title: '向量组秩与线性表出的关系表', module: 'm-vec', summary: '单向定理：若 (I) 可由 (II) 表示且 s > r(II)，则 (I) 必线性相关。', tags: ['数一', '数二'],
     pitfalls: ['机械套用 s>n 而忽略"可由谁表示"的前提'] },
-  { id: 'vec-schmidt',title: '施密特正交化与标准正交基', module: 'm-vec', summary: '把线性无关组逐步化为正交组：β₁=α₁，βᵢ=αᵢ−Σ(αᵢ,βⱼ)/(βⱼ,βⱼ)·βⱼ，再单位化。', tags: ['数一'],
+  { id: 'vec-schmidt',title: '施密特正交化与标准正交基', module: 'm-vec', summary: '把线性无关组逐步化为正交组：β₁=α₁，βᵢ=αᵢ−Σ(αᵢ,βⱼ)/(βⱼ,βⱼ)·βⱼ，再单位化。', tags: ['数一', '数二'],
     pitfalls: ['投影项的分母写成 (βⱼ,βⱼ) 之外的形式'] },
 ] });

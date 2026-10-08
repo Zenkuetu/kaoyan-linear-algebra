@@ -53,7 +53,7 @@ EG.push({ id: 'm-eig', title: '第五章 矩阵的特征值与特征向量', x: 
     note: '这两条性质保证了实对称矩阵一定能正交对角化。',
     prop: ['λ 全为实数', 'λᵢ≠λⱼ ⇒ αᵢ ⊥ αⱼ'],
     pitfalls: ['把"不同特征值正交"推广到"重根内部的特征向量也自动正交"'] },
-  { id: 'eig-orth-diag', title: '实对称矩阵的正交对角化', module: 'm-eig', tags: ['数一'], summary: '必存在正交矩阵 Q 使 QᵀAQ = Q⁻¹AQ = Λ（对角）。',
+  { id: 'eig-orth-diag', title: '实对称矩阵的正交对角化', module: 'm-eig', tags: ['数一', '数二'], summary: '必存在正交矩阵 Q 使 QᵀAQ = Q⁻¹AQ = Λ（对角）。',
     note: '步骤：求特征值 → 重根内部施密特正交化 → 全部单位化 → 拼成 Q。',
     prop: ['QᵀAQ = Λ，Q 为正交矩阵', '重根的特征向量必须组内正交化'],
     pitfalls: ['单重根的特征向量忘记单位化'] },

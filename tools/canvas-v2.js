@@ -50,7 +50,7 @@ function depthsFor(moduleId) {
 const DEPTH = new Map(MODULES.map(m => [m.id, depthsFor(m.id)]));
 
 // ---------- 布局引擎 ----------
-const NODE_W = 300, NODE_H = 116, VGAP = 30, LANE = 322, PAD = 34, HEADER = 92, COL_GAP = 120;
+const NODE_W = 300, NODE_H = 116, VGAP = 36, LANE = NODE_W + 30, PAD = 34, HEADER = 92, COL_GAP = 120;
 
 /**
  * @param visibleIds 参与布局的节点集合
@@ -64,7 +64,8 @@ function layout(visibleIds, mode) {
 
   if (mode === 'grid') {
     // 每章一个等高方块（用于跨章视图，避免列高参差不齐）
-    const GX = 4, FW = 1160, GAPX = 90, GAPY = 90, LANE_G = 276;
+    // LANE_G 必须 ≥ NODE_W + 间距，否则同块内的列会互相重叠（曾经写成 276 < 300，全库 68 对重叠）
+    const GX = 4, FW = PAD * 2 + 3 * LANE + NODE_W, GAPX = 90, GAPY = 90, LANE_G = LANE;
     const present = MODULES.filter(m => m.points.some(p => visibleIds.has(p.id)));
     // 行容量 → 统一方块高度，保证最后一行不被裁切
     const packs = present.map(m => {
