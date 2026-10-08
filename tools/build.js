@@ -394,6 +394,8 @@ for (const m of MODULES) {
         L.push('> **答案**：' + e.answer);
         L.push('>');
         for (const line of String(e.analysis).split('\n')) L.push(line.trim() === '' ? '>' : '> ' + line);
+        if (e.source) L.push('>');
+        if (e.source) L.push('> <small>解析出处：' + e.source + '</small>');
         L.push('');
       }
     }

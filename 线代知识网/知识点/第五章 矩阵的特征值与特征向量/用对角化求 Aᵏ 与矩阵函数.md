@@ -148,45 +148,44 @@ $$
 记 $\alpha_n=\begin{pmatrix}x_n\\y_n\\z_n\end{pmatrix}$，写出满足 $\alpha_n=A\alpha_{n-1}$ 的矩阵 $A$，并求 $A^n$ 及 $x_n,y_n,z_n\ (n=1,2,\cdots)$。
 
 > [!success]- 答案与解析
-> **答案**：$A=\begin{pmatrix}-2&0&2\\0&-2&-2\\-6&-3&3\end{pmatrix}$，$A^n=\begin{pmatrix}-4-(-2)^n&-2-(-2)^n&2\\4+2(-2)^n&2+2(-2)^n&-2\\-6&-3&3\end{pmatrix}$，$x_n=8+(-2)^n,\ y_n=-8-2(-2)^n,\ z_n=12\ (n\ge 1)$。
+> **答案**：$x_n=8+(-2)^n$，$y_n=-8+(-2)^{n+1}$，$z_n=12\ (n=1,2,\cdots)$
 >
-> **第一步：写 $A$。** 把三元递推式的系数直接读成矩阵：
+> 由题设得
 > $$
-> A=\begin{pmatrix}-2&0&2\\0&-2&-2\\-6&-3&3\end{pmatrix}.
+> \begin{pmatrix}x_n\\y_n\\z_n\end{pmatrix}=\begin{pmatrix}-2&0&2\\0&-2&-2\\-6&-3&3\end{pmatrix}\begin{pmatrix}x_{n-1}\\y_{n-1}\\z_{n-1}\end{pmatrix},
 > $$
+> 得矩阵 $A=\begin{pmatrix}-2&0&2\\0&-2&-2\\-6&-3&3\end{pmatrix}$ 满足 $\alpha_n=A\alpha_{n-1}$。
 >
-> **第二步：特征值与特征向量。**
+> 因为
 > $$
-> |\lambda E-A|=\begin{vmatrix}\lambda+2&0&-2\\0&\lambda+2&2\\6&3&\lambda-3\end{vmatrix}=(\lambda+2)\big[(\lambda+2)(\lambda-3)-6\big]+12(\lambda+2)=\lambda(\lambda+2)(\lambda-1),
+> |\lambda E-A|=\begin{vmatrix}\lambda+2&0&-2\\0&\lambda+2&2\\6&3&\lambda-3\end{vmatrix}=\lambda(\lambda-1)(\lambda+2),
 > $$
-> 三个特征值 $0,-2,1$ **互异** ⇒ $A$ 可对角化。逐个求特征向量：
+> 所以矩阵 $A$ 的特征值为 $\lambda_1=0$，$\lambda_2=1$，$\lambda_3=-2$。
 >
-> - $\lambda=0$：解 $Ax=0$ 得 $x=z,\ y=-z$，取 $v_1=(1,-1,1)^{\mathrm{T}}$；
-> - $\lambda=-2$：解 $(\lambda E-A)x=0$ 得 $z=0,\ y=-2x$，取 $v_2=(1,-2,0)^{\mathrm{T}}$；
-> - $\lambda=1$：解 $(E-A)x=0$ 得 $3x=2z,\ 3y=-2z$，取 $z=3$ 得 $v_3=(2,-2,3)^{\mathrm{T}}$。
+> 当 $\lambda_1=0$ 时，解方程组 $(0E-A)x=0$，得特征向量 $\xi_1=\begin{pmatrix}1\\-1\\1\end{pmatrix}$；
 >
-> **第三步：构造 $P$ 与 $P^{-1}$。** 取
-> $$
-> P=\begin{pmatrix}1&1&2\\-1&-2&-2\\1&0&3\end{pmatrix},\qquad P^{-1}=\begin{pmatrix}6&3&-2\\-1&-1&0\\-2&-1&1\end{pmatrix},
-> $$
-> 则 $P^{-1}AP=\mathrm{diag}(0,-2,1)=:\Lambda$，即 $A=P\Lambda P^{-1}$。
+> 当 $\lambda_2=1$ 时，解方程组 $(E-A)x=0$，得特征向量 $\xi_2=\begin{pmatrix}2\\-2\\3\end{pmatrix}$；
 >
-> **第四步：求 $A^n$。** 由 $A^n=P\Lambda^nP^{-1}$，且对角阵第一列乘 $0^n=0$ 后消失，只用第二、三列：
-> $$
-> A^n=(-2)^n\begin{pmatrix}1\\-2\\0\end{pmatrix}\begin{pmatrix}-1&-1&0\end{pmatrix}+\begin{pmatrix}2\\-2\\3\end{pmatrix}\begin{pmatrix}-2&-1&1\end{pmatrix}
-> =\begin{pmatrix}-4-(-2)^n&-2-(-2)^n&2\\4+2(-2)^n&2+2(-2)^n&-2\\-6&-3&3\end{pmatrix}.
-> $$
+> 当 $\lambda_3=-2$ 时，解方程组 $(-2E-A)x=0$，得特征向量 $\xi_3=\begin{pmatrix}-1\\2\\0\end{pmatrix}$。
 >
-> **第五步：求三个数列。** $\alpha_n=A^n\alpha_0$，$\alpha_0=(-1,0,2)^{\mathrm{T}}$，于是
+> 令 $P=(\xi_1,\xi_2,\xi_3)=\begin{pmatrix}1&2&-1\\-1&-2&2\\1&3&0\end{pmatrix}$，则 $P^{-1}AP=\begin{pmatrix}0&0&0\\0&1&0\\0&0&-2\end{pmatrix}$，即
 > $$
-> x_n=(-1)\big(-4-(-2)^n\big)+2\cdot 2=8+(-2)^n,\quad
-> y_n=(-1)\big(4+2(-2)^n\big)+(-2)\cdot 2=-8-2(-2)^n,\quad
-> z_n=(-1)(-6)+3\cdot 2=12.
+> A=P\begin{pmatrix}0&0&0\\0&1&0\\0&0&-2\end{pmatrix}P^{-1},
 > $$
+> 从而得
+> $$
+> A^n=P\begin{pmatrix}0&0&0\\0&1&0\\0&0&-2\end{pmatrix}^nP^{-1}=\begin{pmatrix}1&2&-1\\-1&-2&2\\1&3&0\end{pmatrix}\begin{pmatrix}0&0&0\\0&1&0\\0&0&(-2)^n\end{pmatrix}\begin{pmatrix}6&3&-2\\-2&-1&1\\1&1&0\end{pmatrix}
+> $$
+> $$
+> =\begin{pmatrix}-4-(-2)^n&-2-(-2)^n&2\\4-(-2)^{n+1}&2-(-2)^{n+1}&-2\\-6&-3&3\end{pmatrix}.
+> $$
+> 由递推式 $\alpha_n=A\alpha_{n-1}$ 知 $\alpha_n=A^n\alpha_0$，其中 $\alpha_0=\begin{pmatrix}-1\\0\\2\end{pmatrix}$，所以
+> $$
+> \alpha_n=A^n\alpha_0=\begin{pmatrix}-4-(-2)^n&-2-(-2)^n&2\\4-(-2)^{n+1}&2-(-2)^{n+1}&-2\\-6&-3&3\end{pmatrix}\begin{pmatrix}-1\\0\\2\end{pmatrix}=\begin{pmatrix}8+(-2)^n\\-8+(-2)^{n+1}\\12\end{pmatrix},
+> $$
+> 故 $x_n=8+(-2)^n$，$y_n=-8+(-2)^{n+1}$，$z_n=12\ (n=1,2,\cdots)$。
 >
-> **验算（$n=1$）**：$x_1=6,\ y_1=-4,\ z_1=12$；直接代递推式也得 $6,-4,-12$ 中的前两个吻合、$z_1=12$ ✓（三式一致）。
->
-> > **要点**：三元递推的标准套路是 $\alpha_n=A\alpha_{n-1}\Rightarrow\alpha_n=A^n\alpha_0$，再用**相似对角化**求 $A^n$；三个特征值互异，省掉了正交化的麻烦。
+> <small>解析出处：《2024 数学一解析》第 14–15 页</small>
 
 ## <span class="hx hx-nav">🧭</span> 十、导航
 
