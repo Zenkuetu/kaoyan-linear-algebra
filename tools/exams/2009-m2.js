@@ -33,7 +33,7 @@ EXAMS.push({
 （A）$\begin{pmatrix}2&1&0\\1&1&0\\0&0&2\end{pmatrix}$　（B）$\begin{pmatrix}1&1&0\\1&2&0\\0&0&2\end{pmatrix}$　（C）$\begin{pmatrix}2&0&0\\0&1&0\\0&0&2\end{pmatrix}$　（D）$\begin{pmatrix}1&0&0\\0&2&0\\0&0&2\end{pmatrix}$`,
   answer: '（A）',
   analysis: String.raw`$$
-Q=(\alpha_1+\alpha_2,\alpha_2,\alpha_3)=(\alpha_1,\alpha_2,\alpha_3)\begin{bmatrix}1&1&0\\0&1&0\\0&0&1\end{bmatrix}=(\alpha_1,\alpha_2,\alpha_3)E_{12}(1),
+Q=(\alpha_1+\alpha_2,\alpha_2,\alpha_3)=(\alpha_1,\alpha_2,\alpha_3)\begin{bmatrix}1&0&0\\1&1&0\\0&0&1\end{bmatrix}=(\alpha_1,\alpha_2,\alpha_3)E_{12}(1),
 $$
 即：
 $$
@@ -46,7 +46,7 @@ $$
 =E_{12}^{\mathrm{T}}(1)\begin{bmatrix}1&0&0\\0&1&0\\0&0&2\end{bmatrix}E_{12}(1)
 $$
 $$
-=\begin{bmatrix}1&1&0\\0&1&0\\0&0&1\end{bmatrix}\begin{bmatrix}1&0&0\\0&1&0\\0&0&2\end{bmatrix}\begin{bmatrix}1&1&0\\0&1&0\\0&0&1\end{bmatrix}=\begin{bmatrix}2&1&0\\1&1&0\\0&0&2\end{bmatrix}
+=\begin{bmatrix}1&1&0\\0&1&0\\0&0&1\end{bmatrix}\begin{bmatrix}1&0&0\\0&1&0\\0&0&2\end{bmatrix}\begin{bmatrix}1&0&0\\1&1&0\\0&0&1\end{bmatrix}=\begin{bmatrix}2&1&0\\1&1&0\\0&0&2\end{bmatrix}
 $$`,
   source: '《2005—2013 考研数二真题答案解析》第 63–64 页',
 });
