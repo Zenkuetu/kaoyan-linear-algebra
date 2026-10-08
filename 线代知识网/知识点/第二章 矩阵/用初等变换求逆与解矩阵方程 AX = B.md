@@ -995,6 +995,34 @@ $$
 > A=\begin{pmatrix}1&0&0&0\\-2&1&0&0\\1&-2&1&0\\0&1&-2&1\end{pmatrix}.
 > $$
 
+### 1989 年 · 数学三 · 第七题（解答，5 分）
+
+已知 $X=AX+B$，其中
+$$
+A=\begin{pmatrix}0&1&0\\-1&1&1\\-1&0&-1\end{pmatrix},\qquad B=\begin{pmatrix}1&-1\\2&0\\5&-3\end{pmatrix},
+$$
+求矩阵 $X$.
+
+> [!success]- 答案与解析
+> **答案**：
+> $$
+> X=\begin{pmatrix}3&-1\\2&0\\1&-1\end{pmatrix}.
+> $$
+>
+> 解：以 $E$ 表示 3 阶单位矩阵，由 $X=AX+B$，有 $(E-A)X=B$.
+> 其中
+> $$
+> E-A=\begin{pmatrix}1&-1&0\\1&0&-1\\1&0&2\end{pmatrix}.
+> $$
+> 其逆矩阵为
+> $$
+> (E-A)^{-1}=\begin{pmatrix}0&\dfrac{2}{3}&\dfrac{1}{3}\\-1&\dfrac{2}{3}&\dfrac{1}{3}\\0&-\dfrac{1}{3}&\dfrac{1}{3}\end{pmatrix};
+> $$
+> 于是
+> $$
+> X=(E-A)^{-1}B=\begin{pmatrix}0&\dfrac{2}{3}&\dfrac{1}{3}\\-1&\dfrac{2}{3}&\dfrac{1}{3}\\0&-\dfrac{1}{3}&\dfrac{1}{3}\end{pmatrix}\begin{pmatrix}1&-1\\2&0\\5&-3\end{pmatrix}=\begin{pmatrix}3&-1\\2&0\\1&-1\end{pmatrix}.
+> $$
+
 ### 1987 年 · 数学一 · 第三大题第（2）小题（解答，4 分）
 
 设矩阵 $A$ 与 $B$ 满足 $AB=A+2B$，其中

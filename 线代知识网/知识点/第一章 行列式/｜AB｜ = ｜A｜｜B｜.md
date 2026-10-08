@@ -329,6 +329,18 @@ $$
 >
 > **方法二** 令 $AX=\lambda X\ (X\ne 0)$，由 $AX=\lambda X$ 得 $X^{\mathrm{T}}A^{\mathrm{T}}=\lambda X^{\mathrm{T}}$，两边右乘 $AX$ 得 $X^{\mathrm{T}}A^{\mathrm{T}}AX=\lambda X^{\mathrm{T}}AX$，即 $X^{\mathrm{T}}X=\lambda^2X^{\mathrm{T}}X$，或 $(\lambda^2-1)X^{\mathrm{T}}X=0$，由 $X^{\mathrm{T}}X=\|X\|^2>0$ 得 $\lambda^2-1=0$，即 $\lambda=\pm 1$. 因为 $|A|<0$，所以 $A$ 至少有一个特征值为 $-1$，从而 $A+E$ 的特征值至少有一个为 $0$，故 $|A+E|=0$.
 
+### 1989 年 · 数学三 · 选择题第 4 题（选择，3 分）
+
+设 $A$ 和 $B$ 都是 $n\times n$ 矩阵，则必有（　　）
+
+（A）$|A+B|=|A|+|B|$.　（B）$AB=BA$.
+
+（C）$|AB|=|BA|$.　（D）$(A+B)^{-1}=A^{-1}+B^{-1}$.
+
+> [!success]- 答案与解析
+> **答案**：（C）．
+>
+
 ### 1988 年 · 数学三 · 第九题（解答，6 分）
 
 设 $A$ 是三阶方阵，$A^*$ 是 $A$ 的伴随矩阵，$A$ 的行列式 $|A|=\dfrac{1}{2}$. 求行列式 $|(3A)^{-1}-2A^*|$ 的值.

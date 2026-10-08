@@ -354,6 +354,26 @@ $$
 > > $\begin{pmatrix}A&O\\O&B\end{pmatrix}^{*}=\begin{vmatrix}A&O\\O&B\end{vmatrix}\begin{pmatrix}A&O\\O&B\end{pmatrix}^{-1}=\begin{pmatrix}|B|A^{*}&O\\O&|A|B^{*}\end{pmatrix}$；
 > > $\begin{pmatrix}O&A\\B&O\end{pmatrix}^{*}=\begin{vmatrix}O&A\\B&O\end{vmatrix}\begin{pmatrix}O&A\\B&O\end{pmatrix}^{-1}=(-1)^{mn}\begin{pmatrix}O&|A|B^{*}\\|B|A^{*}&O\end{pmatrix}$．
 
+### 2005 年 · 数学三 · 第 12 题（选择，4 分）
+
+设矩阵 $A=(a_{ij})_{3\times 3}$ 满足 $A^*=A^{\mathrm{T}}$，其中 $A^*$ 是 $A$ 的伴随矩阵，$A^{\mathrm{T}}$ 为 $A$ 的转置矩阵。若 $a_{11},a_{12},a_{13}$ 为三个相等的正数，则 $a_{11}$ 为（　　）
+（A）$\dfrac{\sqrt{3}}{3}$　　（B）$3$　　（C）$\dfrac{1}{3}$　　（D）$\sqrt{3}$
+
+> [!success]- 答案与解析
+> **答案**：（A）
+>
+> 【分析】题设与 $A$ 的伴随矩阵有关，一般联想到用行列展开定理和相应公式：$AA^*=A^*A=|A|E$。
+>
+> 【详解】由 $A^*=A^{\mathrm{T}}$ 及 $AA^*=A^*A=|A|E$，有 $a_{ij}=A_{ij},\ i,j=1,2,3$，其中 $A_{ij}$ 为 $a_{ij}$ 的代数余子式，且
+> $$
+> AA^{\mathrm{T}}=|A|E\Rightarrow |A|^2=|A|^3\Rightarrow |A|=0\text{ 或 }|A|=1.
+> $$
+> 而
+> $$
+> |A|=a_{11}A_{11}+a_{12}A_{12}+a_{13}A_{13}=3a_{11}^2\ne 0,
+> $$
+> 于是 $|A|=1$，且 $a_{11}^2=\dfrac{1}{3}$，即 $a_{11}=\dfrac{\sqrt{3}}{3}$。故正确选项为（A）。
+
 ### 2004 年 · 数学一 · 第 5 题（填空，4 分）
 
 设矩阵 $A=\begin{pmatrix}2&1&0\\1&2&0\\0&0&1\end{pmatrix}$，矩阵 $B$ 满足 $ABA^{*}=2BA^{*}+E$，其中 $A^{*}$ 为 $A$ 的伴随矩阵，$E$ 是单位矩阵，则 $|B|=\underline{\qquad}$．
@@ -711,6 +731,30 @@ $$
 > 由此可知 $Q$ 可逆的充要条件是 $|Q|\ne 0$，即 $b-\alpha^{\mathrm{T}}A^{-1}\alpha\ne 0$，亦即 $\alpha^{\mathrm{T}}A^{-1}\alpha\ne b$。
 >
 > > 评注：本题考查分块矩阵的运算，要看清 $\alpha^{\mathrm{T}}A^{-1}\alpha$ 是 1 阶矩阵，是一个数。
+
+### 1996 年 · 数学三 · 试卷四·选择题第 3 题（选择，3 分）
+
+设 $n$ 阶矩阵 $A$ 非奇异（$n\ge 2$），$A^*$ 是矩阵 $A$ 的伴随矩阵，则（　　）
+（A）$(A^*)^*=|A|^{n-1}A$
+（B）$(A^*)^*=|A|^{n+1}A$
+（C）$(A^*)^*=|A|^{n-2}A$
+（D）$(A^*)^*=|A|^{n+2}A$
+
+> [!success]- 答案与解析
+> **答案**：（C）.
+>
+> 【解析】伴随矩阵的基本关系式为 $AA^*=A^*A=|A|E$，
+> 现将 $A^*$ 视为关系式中的矩阵 $A$，则有 $A^*(A^*)^*=|A^*|E$.
+> 方法一：由 $|A^*|=|A|^{n-1}$ 及 $(A^*)^{-1}=\dfrac{A}{|A|}$，可得
+> $$
+> (A^*)^*=|A^*|(A^*)^{-1}=|A|^{n-1}\frac{A}{|A|}=|A|^{n-2}A.
+> $$
+> 故应选（C）.
+> 方法二：由 $A^*(A^*)^*=|A^*|E$，左乘 $A$ 得
+> $$
+> (AA^*)(A^*)^*=|A|^{n-1}A,\ \text{即}\ (|A|E)(A^*)^*=|A|^{n-1}A.
+> $$
+> 故应选（C）.
 
 ### 1995 年 · 数学三 · 试卷四·填空题第 4 题（填空，3 分）
 
