@@ -3,11 +3,11 @@ const fs = require('fs');
 const path = require('path');
 
 // ===== 载入数据 =====
-const files = ['dc.js', 'matrices.js', 'vectors.js', 'equations.js', 'eigen.js', 'quadratic.js', 'edges.js'].map(f => path.join(__dirname, f));
+const files = ['dc.js', 'matrices.js', 'vectors.js', 'equations.js', 'eigen.js', 'quadratic.js', 'edges.js', 'exams.js'].map(f => path.join(__dirname, f));
 const src = files.map(f => fs.readFileSync(f, 'utf8')).join('\n');
 const loader = new Function('__bootstrap',
-  src + '\nreturn __bootstrap({MODULES: [].concat(DC, MX, VC, EQ, EG, QF), EDGES: EDGE_LIST});');
-const { MODULES, EDGES } = loader(x => x);
+  src + '\nreturn __bootstrap({MODULES: [].concat(DC, MX, VC, EQ, EG, QF), EDGES: EDGE_LIST, EXAMS: EXAMS});');
+const { MODULES, EDGES, EXAMS } = loader(x => x);
 
 
 // ===== 表格对齐（输出前统一跑一遍）=====
@@ -218,7 +218,8 @@ const HX_EMOJI = {
   err: '⚠️',     // 六、易错点
   check: '🎯',   // 七、30 秒自测
   rel: '🕸️',     // 八、关系网
-  nav: '🧭',     // 九、导航
+  nav: '🧭',     // 十、导航
+  exam: '📝',    // 九、真题
 };
 
 // ===== 语义着色（只为可读性，不改一个字）=====
@@ -379,6 +380,23 @@ for (const m of MODULES) {
       L.push('> 该知识点独立性强，暂未与其他知识点连线。');
       L.push('');
     }
+    // 8.5 真题（线性代数部分）：题面直接展示，答案与解析默认折叠
+    const myExams = EXAMS.filter(e => (e.ids || []).includes(p.id))
+      .sort((a, b) => (b.year - a.year) || (a.number - b.number));
+    if (myExams.length) {
+      const years = [...new Set(myExams.map(e => e.year))].sort((a, b) => b - a);
+      head('真题' + (years.length ? '（' + years[years.length - 1] + (years.length > 1 ? '–' + years[0] : '') + '）' : ''), 'exam');
+      for (const e of myExams) {
+        L.push('### ' + e.year + ' 年 · 数学' + ({ '数一': '一', '数二': '二', '数三': '三' }[e.subject] || e.subject) + ' · 第 ' + e.number + ' 题（' + e.kind + (e.score ? '，' + e.score + ' 分' : '') + '）');
+        L.push('');
+        push(e.question);
+        L.push('> [!success]- 答案与解析');
+        L.push('> **答案**：' + e.answer);
+        L.push('>');
+        for (const line of String(e.analysis).split('\n')) L.push(line.trim() === '' ? '>' : '> ' + line);
+        L.push('');
+      }
+    }
     head('导航', 'nav');
     L.push('');
     L.push('- 本章：' + chapterLink(m) + ' ｜ 总览：[00 线性代数知识网总览](00%20线性代数知识网总览.md)');
@@ -481,7 +499,8 @@ const CANVAS_META = {
   L.push('| ⚠️ | 六、易错点 | 最容易踩的地方 |');
   L.push('| 🎯 | 七、30 秒自测 | 三个自查问题 |');
   L.push('| 🕸️ | 八、关系网 | 与其他知识点的充分必要关系（默认折叠） |');
-  L.push('| 🧭 | 九、导航 | 跳去画布、速查表、易错清单 |');
+  L.push('| 📝 | 九、真题 | 该知识点的历年真题（题面直接看，答案与解析默认折叠） |');
+  L.push('| 🧭 | 十、导航 | 跳去画布、速查表、易错清单 |');
   L.push('');
   L.push('## 二、范围对照（重要，已按现行大纲核对）');
   L.push('');

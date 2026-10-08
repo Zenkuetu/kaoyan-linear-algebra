@@ -1,1572 +1,174 @@
 {
- "nodes": [
-  {
-   "id": "legend",
-   "type": "text",
-   "x": 0,
-   "y": -300,
-   "width": 1358,
-   "height": 250,
-   "color": "5",
-   "text": "# 03 跨章关系网（判定枢纽如何把全书串成一体）\n\n**节点颜色**：🟦 基础（三卷共同要求）｜🟩 **数二也要求** ｜ 🟧 仅数一（= 数二不要求）\n**连线**（起点=条件，终点=结论）：🟥 充要 A⇔B（可互换）｜🟧 充分 A⇒B ｜ 🟪 必要 B⇒A ｜ ⬜ 无关 ｜ 🟩 关联\n> 只画**跨章节**的连线：它们说明\"行列式、秩、解、特征值、惯性指数\"其实是同一件事的不同说法。\n> 典型链条：｜A｜=0 ⇔ 不可逆 ⇔ 降秩 ⇔ 列组线性相关 ⇔ 齐次有非零解 ⇔ 有零特征值。\n本图含 **103** 个知识点、**57** 条连线。"
-  },
-  {
-   "id": "g-m-det",
-   "type": "group",
-   "x": 0,
-   "y": 0,
-   "width": 1358,
-   "height": 1224,
-   "color": "6",
-   "label": "一. 行列式（17）"
-  },
-  {
-   "id": "p-det-def",
-   "type": "text",
-   "x": 34,
-   "y": 852,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**n 阶行列式**\n｜A｜ = Σ(−1)^τ(j₁j₂…jₙ)a₁ⱼ₁a₂ⱼ₂…aₙⱼₙ，n! 项代数和；…\n`基础`"
-  },
-  {
-   "id": "p-det-transpose",
-   "type": "text",
-   "x": 34,
-   "y": 92,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**行列式转置不变**\n｜Aᵀ｜ = ｜A｜：行列式的行与列地位完全对称。\n`基础`"
-  },
-  {
-   "id": "p-det-swap",
-   "type": "text",
-   "x": 364,
-   "y": 548,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**换行（列）变号**\n互换两行（列），行列式变号；两行（列）完全相同 ⇒ ｜A｜=0。\n`基础`"
-  },
-  {
-   "id": "p-det-multilinearity",
-   "type": "text",
-   "x": 364,
-   "y": 244,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**数乘与行列式的线性性**\n某一行乘 k ⇒ 行列式乘 k；某行是两组数之和 ⇒ 行列式可拆成两个行列式之和。\n`基础`"
-  },
-  {
-   "id": "p-det-add-row",
-   "type": "text",
-   "x": 364,
-   "y": 700,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**倍加变换不改变行列式**\n把某行（列）的 k 倍加到另一行（列），行列式值不变。\n`基础`"
-  },
-  {
-   "id": "p-det-triangular",
-   "type": "text",
-   "x": 364,
-   "y": 852,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**三角（含对角）行列式**\n上（下）三角行列式 = 主对角线元素之积：｜A｜ = a₁₁a₂₂…aₙₙ。\n`基础`"
-  },
-  {
-   "id": "p-det-cofactor",
-   "type": "text",
-   "x": 694,
-   "y": 700,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**余子式与代数余子式**\nMᵢⱼ 为划去第 i 行第 j 列所得 n−1 阶行列式；Aᵢⱼ = (−1)^{i+j…\n`基础`"
-  },
-  {
-   "id": "p-det-expansion",
-   "type": "text",
-   "x": 694,
-   "y": 396,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**展开定理（按行/列展开）**\n｜A｜ = Σⱼ aᵢⱼAᵢⱼ（按第 i 行展开）；异乘变零：Σⱼ aᵢⱼA_kⱼ = …\n`基础`"
-  },
-  {
-   "id": "p-det-rowsum-zero",
-   "type": "text",
-   "x": 34,
-   "y": 244,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**｜A｜=0 ⇔ 行（列）线性相关**\n｜A｜= 0 ⇔ A 的列（行）向量组线性相关 ⇔ A 不可逆 ⇔ r(A) < n。\n`基础`"
-  },
-  {
-   "id": "p-det-rank",
-   "type": "text",
-   "x": 34,
-   "y": 396,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**由行列式判定矩阵的秩**\nr(A) = r ⇔ 存在 r 阶子式非零而所有 r+1 阶子式全为零。\n`基础`"
-  },
-  {
-   "id": "p-det-product",
-   "type": "text",
-   "x": 34,
-   "y": 548,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**｜AB｜ = ｜A｜｜B｜**\n同阶方阵乘积的行列式等于行列式之积；对任意有限个方阵同样成立。\n`基础`"
-  },
-  {
-   "id": "p-det-vandermonde",
-   "type": "text",
-   "x": 694,
-   "y": 92,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**范德蒙德行列式**\nVₙ = ∏_{1≤j<i≤n}(xᵢ−xⱼ)，等于所有\"后减前\"型差积。\n`基础`"
-  },
-  {
-   "id": "p-det-tridiagonal",
-   "type": "text",
-   "x": 34,
-   "y": 700,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**三对角与递推型行列式**\n形如主对角 a、次对角 b,c 的行列式满足 Dₙ = aD_{n−1} − bcD_{…\n`基础`"
-  },
-  {
-   "id": "p-det-arrow",
-   "type": "text",
-   "x": 694,
-   "y": 244,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**箭形（爪形）行列式**\n第一行、第一列及主对角线非零的行列式；可用\"消去第一行（列）的非对角元\"化为三角。\n`基础`"
-  },
-  {
-   "id": "p-det-elimination",
-   "type": "text",
-   "x": 364,
-   "y": 396,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**行列式计算的总思路：化三角形**\n用倍加、换行、提公因子把行列式化为上三角，再由对角线之积得值。\n`基础`"
-  },
-  {
-   "id": "p-det-roots",
-   "type": "text",
-   "x": 364,
-   "y": 92,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**方程根与行列式的结合**\n把方程写成含参数的行列式等于零，用行列式性质求根（如 f(x)=0 的根与重数）。\n`基础`"
-  },
-  {
-   "id": "p-det-block",
-   "type": "text",
-   "x": 694,
-   "y": 548,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**分块（拉普拉斯）行列式**\n对角分块：｜A O; O B｜ = ｜A｜｜B｜；副对角分块需乘以 (−1)^{mn} …\n`基础/数二`"
-  },
-  {
-   "id": "g-m-mat",
-   "type": "group",
-   "x": 1448,
-   "y": 0,
-   "width": 1358,
-   "height": 1224,
-   "color": "6",
-   "label": "二. 矩阵（27）"
-  },
-  {
-   "id": "p-mat-def",
-   "type": "text",
-   "x": 1812,
-   "y": 244,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**矩阵的定义与相等**\nm×n 个数排成的数表 A=(aᵢⱼ)；同型且对应元素全相等才相等。\n`基础`"
-  },
-  {
-   "id": "p-mat-types",
-   "type": "text",
-   "x": 1482,
-   "y": 92,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**常见特殊矩阵**\n零矩阵、单位矩阵、对角矩阵、数量矩阵、三角矩阵、对称与反对称矩阵。\n`基础`"
-  },
-  {
-   "id": "p-mat-linear",
-   "type": "text",
-   "x": 2472,
-   "y": 700,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**矩阵的加法与数乘**\n同型矩阵对应元素相加；数 k 乘 A 即所有元素都乘 k。\n`基础`"
-  },
-  {
-   "id": "p-mat-mult",
-   "type": "text",
-   "x": 2472,
-   "y": 396,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**矩阵乘法**\nA_{m×s}B_{s×n} 才有意义，结果 C_{m×n}，cᵢⱼ = Σₖ aᵢₖb…\n`基础`"
-  },
-  {
-   "id": "p-mat-noncommute",
-   "type": "text",
-   "x": 2142,
-   "y": 396,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**AB ≠ BA（乘法不可交换）**\n一般 AB ≠ BA；AB = BA 称为 A 与 B 可交换，是特殊情形。\n`基础`"
-  },
-  {
-   "id": "p-mat-nocancel",
-   "type": "text",
-   "x": 1812,
-   "y": 396,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**AB = O 没有零因子**\nAB = O 推不出 A = O 或 B = O。\n`基础`"
-  },
-  {
-   "id": "p-mat-nocancel-2",
-   "type": "text",
-   "x": 1482,
-   "y": 244,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**AX = AY 推不出 X = Y**\n矩阵乘法不满足消去律：即使 AB = AC 也不能约去 A，除非 A 可逆。\n`基础`"
-  },
-  {
-   "id": "p-mat-transpose",
-   "type": "text",
-   "x": 2142,
-   "y": 1004,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**矩阵的转置**\n(Aᵀ)ᵀ=A；(A+B)ᵀ=Aᵀ+Bᵀ；(kA)ᵀ=kAᵀ；(AB)ᵀ=BᵀAᵀ（要\"…\n`基础`"
-  },
-  {
-   "id": "p-mat-power",
-   "type": "text",
-   "x": 1482,
-   "y": 396,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**方阵的幂与矩阵多项式**\n求 Aᵏ 的常用办法：找规律、拆分 A = λE + B（B 幂零）、用秩 1 矩阵性质…\n`基础`"
-  },
-  {
-   "id": "p-mat-adjoint",
-   "type": "text",
-   "x": 2142,
-   "y": 92,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**伴随矩阵 A* 的定义**\nA* = (Aⱼᵢ)，即把每个元素的代数余子式排成矩阵后再转置。\n`基础`"
-  },
-  {
-   "id": "p-mat-adj-identity",
-   "type": "text",
-   "x": 1812,
-   "y": 548,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**AA* = A*A = ｜A｜E**\n伴随矩阵的核心恒等式：AA* = A*A = ｜A｜E。\n`基础`"
-  },
-  {
-   "id": "p-mat-adj-rank",
-   "type": "text",
-   "x": 2142,
-   "y": 548,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**A* 的秩与可逆性判定**\nr(A*) = n（若 r(A)=n）；= 1（若 r(A)=n−1）；= 0（若 r(…\n`基础`"
-  },
-  {
-   "id": "p-mat-inverse-def",
-   "type": "text",
-   "x": 1482,
-   "y": 548,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**逆矩阵的定义**\n存在 B 使 AB = BA = E，则 B = A⁻¹ 唯一；此时称 A 可逆（非奇异…\n`基础`"
-  },
-  {
-   "id": "p-mat-invertible-crit",
-   "type": "text",
-   "x": 2142,
-   "y": 244,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**可逆的充要条件（汇总枢纽）**\nA 可逆 ⇔ ｜A｜≠0 ⇔ r(A)=n ⇔ Ax=0 只有零解 ⇔ A 的行（列）组…\n`基础`"
-  },
-  {
-   "id": "p-mat-inv-method",
-   "type": "text",
-   "x": 1482,
-   "y": 700,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**逆矩阵的求法**\n(A | E) 经初等行变换化为 (E | A⁻¹)；或用伴随公式 A⁻¹ = A*/｜…\n`基础/数二`"
-  },
-  {
-   "id": "p-mat-eq-solve",
-   "type": "text",
-   "x": 1812,
-   "y": 700,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**用初等变换求逆与解矩阵方程 AX = B**\n对 (A | E) 作行变换得 A⁻¹；对 (A|B) 作行变换得 (E | A⁻¹B)…\n`基础/数二`"
-  },
-  {
-   "id": "p-mat-block",
-   "type": "text",
-   "x": 1482,
-   "y": 852,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**分块矩阵及其运算**\n分块后按\"小矩阵\"整体做乘法、转置与求逆；分块对角阵的逆与原矩阵块的逆对应。\n`基础/数二`"
-  },
-  {
-   "id": "p-mat-elem-op",
-   "type": "text",
-   "x": 2472,
-   "y": 92,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**初等变换（三种）**\n换行、乘非零数、倍加。初等行变换不改变矩阵的秩（等价变换）。\n`基础/数二`"
-  },
-  {
-   "id": "p-mat-elem-mat",
-   "type": "text",
-   "x": 2472,
-   "y": 548,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**初等矩阵与等价标准形**\n对 I 作一次初等变换得到初等矩阵 E；左乘 E 相当于作对应行变换，右乘相当于作列变换…\n`基础`"
-  },
-  {
-   "id": "p-mat-elem-relation",
-   "type": "text",
-   "x": 2472,
-   "y": 852,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**初等矩阵与初等变换的对应**\n｜E｜ ≠ 0 且 ｜E(i,j)｜=−1、｜E(i(k))｜=k、｜E(ij(k))｜…\n`基础`"
-  },
-  {
-   "id": "p-mat-equiv",
-   "type": "text",
-   "x": 2142,
-   "y": 700,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**矩阵等价与秩**\nA ≅ B ⇔ 存在可逆 P,Q 使 PAQ = B ⇔ r(A) = r(B)（同型）…\n`基础`"
-  },
-  {
-   "id": "p-mat-rank",
-   "type": "text",
-   "x": 1482,
-   "y": 1004,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**矩阵的秩**\nA 中非零子式的最高阶数；也等于行（列）向量组的秩，即行阶梯形非零行数。\n`基础/数二`"
-  },
-  {
-   "id": "p-mat-rank-invariance",
-   "type": "text",
-   "x": 1812,
-   "y": 852,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**秩的运算不变性**\nr(A)=r(Aᵀ)=r(kA)(k≠0)=r(AᵀA)=r(AAᵀ)；可逆 P,Q 使…\n`基础`"
-  },
-  {
-   "id": "p-mat-rank-ineq",
-   "type": "text",
-   "x": 1812,
-   "y": 1004,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**秩的不等式（乘法与加法）**\nr(A+B) ≤ r(A)+r(B)；r(AB) ≤ min{r(A),r(B)}；r(…\n`基础`"
-  },
-  {
-   "id": "p-mat-rank-crit",
-   "type": "text",
-   "x": 2472,
-   "y": 244,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**由秩判定矩阵性质**\nr(A)=0 ⇔ A=O；n 阶方阵 r(A)=n ⇔ 可逆；r(A)=n−1 ⇒ A*…\n`基础`"
-  },
-  {
-   "id": "p-mat-orthogonal",
-   "type": "text",
-   "x": 2142,
-   "y": 852,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**正交矩阵与正交变换**\nAᵀA = AAᵀ = E，即 A⁻¹ = Aᵀ；其列（行）组是标准正交基。\n`数一/数二`"
-  },
-  {
-   "id": "p-mat-trace",
-   "type": "text",
-   "x": 1812,
-   "y": 92,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**矩阵的迹**\ntr(A) = Σaᵢᵢ；tr(AB) = tr(BA)；tr(A) = Σλᵢ。\n`基础/数二`"
-  },
-  {
-   "id": "g-m-vec",
-   "type": "group",
-   "x": 2896,
-   "y": 0,
-   "width": 1358,
-   "height": 1224,
-   "color": "6",
-   "label": "三. 向量（向量组的线性相关性）（13）"
-  },
-  {
-   "id": "p-vec-def",
-   "type": "text",
-   "x": 3260,
-   "y": 244,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**n 维向量及其运算**\nn 个数组成的有序数组 α=(a₁,…,aₙ)ᵀ；加法与数乘按分量进行。\n`数一/数二`"
-  },
-  {
-   "id": "p-vec-inner",
-   "type": "text",
-   "x": 2930,
-   "y": 548,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**向量的内积、长度与正交**\n内积 (α,β)=αᵀβ；长度 ‖α‖=√(αᵀα)；αᵀβ=0 称正交；非零正交组线性…\n`数一/数二`"
-  },
-  {
-   "id": "p-vec-combo",
-   "type": "text",
-   "x": 3260,
-   "y": 396,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**线性组合与线性表示**\nβ 可由 α₁,…,αₛ 线性表示 ⇔ 存在 k₁,…,kₛ 使 β=Σkᵢαᵢ ⇔ 方…\n`数一/数二`"
-  },
-  {
-   "id": "p-vec-indep-def",
-   "type": "text",
-   "x": 2930,
-   "y": 700,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**线性相关与线性无关的定义**\n存在不全为零的 kᵢ 使 Σkᵢαᵢ=0 则线性相关；只有全零解才成立则线性无关。\n`数一/数二`"
-  },
-  {
-   "id": "p-vec-indep-crit",
-   "type": "text",
-   "x": 2930,
-   "y": 92,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**线性相关性的判定方法**\n向量个数 s 与维数 n 比较：s>n 必相关；s=n 时看行列式；一般情形看 r(α₁…\n`数一/数二`"
-  },
-  {
-   "id": "p-vec-indep-concl",
-   "type": "text",
-   "x": 2930,
-   "y": 244,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**线性相关性的重要结论**\n部分相关 ⇒ 整体相关；整体无关 ⇒ 部分无关；无关组添加分量仍无关，相关组减少分量仍相…\n`数一/数二`"
-  },
-  {
-   "id": "p-vec-equivalent",
-   "type": "text",
-   "x": 3260,
-   "y": 700,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**向量组的等价**\n两组可互相线性表示称等价；等价向量组的秩相等（逆不成立）。\n`数一/数二`"
-  },
-  {
-   "id": "p-vec-maximal",
-   "type": "text",
-   "x": 3260,
-   "y": 92,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**极大线性无关组**\n向量组中线性无关且再添任一向量就相关的部分组；不唯一，但所含向量个数固定。\n`数一/数二`"
-  },
-  {
-   "id": "p-vec-rank-def",
-   "type": "text",
-   "x": 3260,
-   "y": 548,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**向量组的秩**\n向量组的极大线性无关组所含向量的个数，记 r(α₁,…,αₛ)。\n`数一/数二`"
-  },
-  {
-   "id": "p-vec-rank-vs-mat",
-   "type": "text",
-   "x": 3590,
-   "y": 92,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**向量组的秩与矩阵的秩**\n矩阵的秩 = 行向量组的秩 = 列向量组的秩；这是\"行秩 = 列秩\"的完整表述。\n`数一/数二`"
-  },
-  {
-   "id": "p-vec-express-crit",
-   "type": "text",
-   "x": 3590,
-   "y": 244,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**线性表出的判定定理**\nβ 可由组 (I) 唯一表示 ⇔ r(I)=r(I,β)=s（组 (I) 无关）；有无穷…\n`数一/数二`"
-  },
-  {
-   "id": "p-vec-rank-table",
-   "type": "text",
-   "x": 3590,
-   "y": 396,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**向量组秩与线性表出的关系表**\n单向定理：若 (I) 可由 (II) 表示且 s > r(II)，则 (I) 必线性相关…\n`数一/数二`"
-  },
-  {
-   "id": "p-vec-schmidt",
-   "type": "text",
-   "x": 2930,
-   "y": 396,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**施密特正交化与标准正交基**\n把线性无关组逐步化为正交组：β₁=α₁，βᵢ=αᵢ−Σ(αᵢ,βⱼ)/(βⱼ,βⱼ)·β…\n`数一/数二`"
-  },
-  {
-   "id": "g-m-eq",
-   "type": "group",
-   "x": 4344,
-   "y": 0,
-   "width": 1358,
-   "height": 1224,
-   "color": "6",
-   "label": "四. 线性方程组（12）"
-  },
-  {
-   "id": "p-eq-homo-sol",
-   "type": "text",
-   "x": 4708,
-   "y": 548,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**齐次方程组 Ax = 0**\n必有零解；有非零解 ⇔ r(A) < n ⇔ 列组线性相关 ⇔ ｜A｜=0（方阵）。\n`基础`"
-  },
-  {
-   "id": "p-eq-homo-structure",
-   "type": "text",
-   "x": 4708,
-   "y": 92,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**基础解系**\nAx=0 的解向量组的极大无关组；当 r(A)=r<n 时含 n−r 个向量 ξ₁,…,…\n`基础`"
-  },
-  {
-   "id": "p-eq-homo-general",
-   "type": "text",
-   "x": 4378,
-   "y": 396,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**齐次方程组的通解与解空间**\nx = k₁ξ₁ + … + k_{n−r}ξ_{n−r}（kᵢ 任意）；所有解构成 n…\n`基础`"
-  },
-  {
-   "id": "p-eq-nonhomo-crit",
-   "type": "text",
-   "x": 4378,
-   "y": 548,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**非齐次方程组 Ax = b 的相容性判别**\n有解 ⇔ r(A) = r(A,b)；无解 ⇔ r(A) < r(A,b)（此时 r(A…\n`基础`"
-  },
-  {
-   "id": "p-eq-nonhomo-general",
-   "type": "text",
-   "x": 4378,
-   "y": 92,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**非齐次方程组的通解结构**\n通解 = 特解 η* + 对应齐次方程组的通解；任意两解之差是对应齐次的解。\n`基础`"
-  },
-  {
-   "id": "p-eq-rank-relation",
-   "type": "text",
-   "x": 4378,
-   "y": 244,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**系数矩阵与增广矩阵的关系**\nr(A) ≤ r(A,b) ≤ r(A)+1；两者相等 ⇔ 有解，相差 1 ⇔ 无解。\n`基础`"
-  },
-  {
-   "id": "p-eq-cramer",
-   "type": "text",
-   "x": 5038,
-   "y": 92,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**克拉默法则**\nn 个方程 n 个未知数且 ｜A｜≠0 时，xⱼ = ｜Aⱼ｜/｜A｜（Aⱼ 为第 j …\n`基础`"
-  },
-  {
-   "id": "p-eq-homo-nonhomo",
-   "type": "text",
-   "x": 5038,
-   "y": 244,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**齐次与非齐次解的关系**\nAx=0 只有零解 ⇒ Ax=b 解唯一（若有解）；Ax=0 有非零解 ⇒ Ax=b 若…\n`基础`"
-  },
-  {
-   "id": "p-eq-samesol",
-   "type": "text",
-   "x": 4708,
-   "y": 244,
-   "width": 300,
-   "height": 116,
-   "color": "2",
-   "text": "**同解方程组与公共解**\n两个方程组同解 ⇔ 解集相同；求公共解可联立求解，或用一组的通解代入另一组。\n`数一`"
-  },
-  {
-   "id": "p-eq-AX-O-AB-O",
-   "type": "text",
-   "x": 5038,
-   "y": 396,
-   "width": 300,
-   "height": 116,
-   "color": "2",
-   "text": "**矩阵方程 AX = O 与 AB = O**\nAB = O ⇔ B 的每一列都是 Ax=0 的解 ⇒ r(A)+r(B) ≤ n（A …\n`数一`"
-  },
-  {
-   "id": "p-eq-gauss",
-   "type": "text",
-   "x": 5038,
-   "y": 548,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**高斯消元法与行阶梯形**\n对增广矩阵作初等行变换化为行最简形，选出主元，把自由未知量取为参数写出通解。\n`基础`"
-  },
-  {
-   "id": "p-eq-geometry",
-   "type": "text",
-   "x": 4708,
-   "y": 396,
-   "width": 300,
-   "height": 116,
-   "color": "5",
-   "text": "**方程组的几何意义（平面与直线）**\n三个未知数时，每个方程表示一张平面；解的情况对应三平面的相交形态（一点、一条线、无公共点…\n`基础`"
-  },
-  {
-   "id": "g-m-eig",
-   "type": "group",
-   "x": 0,
-   "y": 1314,
-   "width": 1358,
-   "height": 1224,
-   "color": "6",
-   "label": "五. 矩阵的特征值与特征向量（17）"
-  },
-  {
-   "id": "p-eig-def",
-   "type": "text",
-   "x": 694,
-   "y": 1862,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**特征值与特征向量的定义**\nAα = λα（α≠0），λ 为特征值、α 为对应特征向量。\n`数一/数二`"
-  },
-  {
-   "id": "p-eig-poly",
-   "type": "text",
-   "x": 694,
-   "y": 1710,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**特征多项式与特征方程**\n｜λE − A｜ 为特征多项式，｜λE−A｜=0 为特征方程，其根即全部特征值（含重数）…\n`数一/数二`"
-  },
-  {
-   "id": "p-eig-vector-space",
-   "type": "text",
-   "x": 694,
-   "y": 1558,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**特征子空间与特征向量的求法**\n对每个 λᵢ 解齐次方程组 (λᵢI−A)x=0，其基础解系即属于 λᵢ 的线性无关特征…\n`数一/数二`"
-  },
-  {
-   "id": "p-eig-mult",
-   "type": "text",
-   "x": 694,
-   "y": 1406,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**代数重数与几何重数**\n代数重数 nᵢ 为 λᵢ 作为特征方程根的重数；几何重数 mᵢ = n − r(λᵢI−…\n`数一/数二`"
-  },
-  {
-   "id": "p-eig-property",
-   "type": "text",
-   "x": 364,
-   "y": 1862,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**特征值与特征向量的性质**\n属于不同特征值的特征向量线性无关；k 重特征值最多有 k 个线性无关的特征向量。\n`数一/数二`"
-  },
-  {
-   "id": "p-eig-ops",
-   "type": "text",
-   "x": 34,
-   "y": 2014,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**特征值的运算性质**\nf(A) 的特征值为 f(λ)；A⁻¹ 为 1/λ；A* 为 ｜A｜/λ；Aᵀ 与 A …\n`数一/数二`"
-  },
-  {
-   "id": "p-eig-similar",
-   "type": "text",
-   "x": 364,
-   "y": 2014,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**相似矩阵的定义**\n存在可逆 P 使 P⁻¹AP = B，则 A ∼ B；相似是等价关系（自反、对称、传递）…\n`数一/数二`"
-  },
-  {
-   "id": "p-eig-similar-prop",
-   "type": "text",
-   "x": 34,
-   "y": 2166,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**相似矩阵的性质与不变量**\n相似矩阵有相同的特征多项式、特征值、行列式、迹、秩；且 P⁻¹AᵏP=(P⁻¹AP)ᵏ，…\n`数一/数二`"
-  },
-  {
-   "id": "p-eig-similar-crit",
-   "type": "text",
-   "x": 34,
-   "y": 1406,
-   "width": 300,
-   "height": 116,
-   "color": "2",
-   "text": "**相似的判定与反例**\n特征值相同不一定相似（如 diag(1,1) 与 [​[1,1],[0,1]]）；可用\"…\n`数一`"
-  },
-  {
-   "id": "p-eig-diag-crit",
-   "type": "text",
-   "x": 364,
-   "y": 1558,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**可对角化的充要条件**\nA 可对角化 ⇔ A 有 n 个线性无关的特征向量 ⇔ 每个特征值的几何重数 = 代数重…\n`数一/数二`"
-  },
-  {
-   "id": "p-eig-diag-method",
-   "type": "text",
-   "x": 364,
-   "y": 1406,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**相似对角化的方法与步骤**\n求特征值 → 求各自的特征向量 → 拼成 P=(α₁,…,αₙ) → 得 P⁻¹AP =…\n`数一/数二`"
-  },
-  {
-   "id": "p-eig-power-app",
-   "type": "text",
-   "x": 34,
-   "y": 1558,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**用对角化求 Aᵏ 与矩阵函数**\nA = PΛP⁻¹ ⇒ Aᵏ = PΛᵏP⁻¹；同理可得 f(A) = Pf(Λ)P⁻¹…\n`数一/数二`"
-  },
-  {
-   "id": "p-eig-symmetric",
-   "type": "text",
-   "x": 364,
-   "y": 1710,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**实对称矩阵的特征值与特征向量**\n实对称矩阵的特征值全为实数；不同特征值对应的特征向量相互正交。\n`数一/数二`"
-  },
-  {
-   "id": "p-eig-orth-diag",
-   "type": "text",
-   "x": 34,
-   "y": 1710,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**实对称矩阵的正交对角化**\n必存在正交矩阵 Q 使 QᵀAQ = Q⁻¹AQ = Λ（对角）。\n`数一/数二`"
-  },
-  {
-   "id": "p-eig-trace-det-app",
-   "type": "text",
-   "x": 34,
-   "y": 1862,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**特征值的应用：求行列式与幂**\n｜A｜ = ∏λᵢ，tr(A) = Σλᵢ；配合相似不变量可反解参数。\n`数一/数二`"
-  },
-  {
-   "id": "p-eig-minpoly",
-   "type": "text",
-   "x": 364,
-   "y": 2166,
-   "width": 300,
-   "height": 116,
-   "color": "2",
-   "text": "**最小多项式与可对角化**\nA 可对角化 ⇔ 最小多项式无重根 ⇔ (λE−A) 的每个重根的几何重数等于代数重数。\n`数一`"
-  },
-  {
-   "id": "p-eig-estimate",
-   "type": "text",
-   "x": 694,
-   "y": 2014,
-   "width": 300,
-   "height": 116,
-   "color": "2",
-   "text": "**特征值的范围与估计**\n圆盘定理：每个特征值都落在某个以 aᵢᵢ 为心、以该行非对角元绝对值之和为半径的圆盘内。\n`数一`"
-  },
-  {
-   "id": "g-m-quad",
-   "type": "group",
-   "x": 1448,
-   "y": 1314,
-   "width": 1358,
-   "height": 1224,
-   "color": "6",
-   "label": "六. 二次型（11）"
-  },
-  {
-   "id": "p-qf-def",
-   "type": "text",
-   "x": 1812,
-   "y": 1862,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**二次型及其矩阵表示**\nn 元二次齐次多项式 f = xᵀAx，其中 A 为实对称矩阵（aᵢⱼ=aⱼᵢ=交叉项系…\n`数一/数二`"
-  },
-  {
-   "id": "p-qf-canonical",
-   "type": "text",
-   "x": 1812,
-   "y": 1558,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**标准形与规范形**\n标准形：只含平方项 d₁y₁²+…+dₙyₙ²；规范形：系数只取 1、−1、0。\n`数一/数二`"
-  },
-  {
-   "id": "p-qf-inertia-index",
-   "type": "text",
-   "x": 1812,
-   "y": 1406,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**惯性指数与符号差**\n正惯性指数 p（正平方项个数）、负惯性指数 q（负平方项个数）、符号差 p − q；p …\n`数一/数二`"
-  },
-  {
-   "id": "p-qf-complete-square",
-   "type": "text",
-   "x": 2142,
-   "y": 1406,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**配方法化标准形**\n按变量逐个配成完全平方，得到可逆线性替换 x = Cy，从而 f = d₁y₁²+…。\n`数一/数二`"
-  },
-  {
-   "id": "p-qf-orthogonal",
-   "type": "text",
-   "x": 2142,
-   "y": 1558,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**正交变换法化标准形**\nA 正交对角化：取正交矩阵 Q，令 x = Qy，则 f = λ₁y₁²+…+λₙyₙ²…\n`数一/数二`"
-  },
-  {
-   "id": "p-qf-inertia-law",
-   "type": "text",
-   "x": 1482,
-   "y": 1710,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**惯性定理**\n二次型经任意可逆线性替换，正、负惯性指数不变，因而规范形唯一。\n`数一/数二`"
-  },
-  {
-   "id": "p-qf-congruent",
-   "type": "text",
-   "x": 1482,
-   "y": 1406,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**矩阵合同**\n存在可逆 C 使 CᵀAC = B，则 A ≃ B（合同）；实对称矩阵合同 ⇔ 正负惯性…\n`数一/数二`"
-  },
-  {
-   "id": "p-qf-contract-vs-similar",
-   "type": "text",
-   "x": 1482,
-   "y": 1862,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**合同与相似的对比**\n相似：P⁻¹AP 保特征值；合同：CᵀAC 保惯性指数；正交相似时二者等价。\n`数一/数二`"
-  },
-  {
-   "id": "p-qf-positive-def",
-   "type": "text",
-   "x": 2142,
-   "y": 1710,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**正定二次型与正定矩阵**\n对任意 x≠0 有 xᵀAx > 0，则 A 正定，记 A > 0。\n`数一/数二`"
-  },
-  {
-   "id": "p-qf-positive-crit",
-   "type": "text",
-   "x": 1812,
-   "y": 1710,
-   "width": 300,
-   "height": 116,
-   "color": "4",
-   "text": "**正定的充要条件（五条等价）**\nA 正定 ⇔ 特征值全正 ⇔ 正惯性指数 p = n ⇔ 存在可逆 C 使 A = Cᵀ…\n`数一/数二`"
-  },
-  {
-   "id": "p-qf-semi-def",
-   "type": "text",
-   "x": 1482,
-   "y": 1558,
-   "width": 300,
-   "height": 116,
-   "color": "2",
-   "text": "**半正定与负定矩阵**\n半正定：xᵀAx ≥ 0 ⇔ 特征值全 ≥0 ⇔ 所有主子式 ≥0；负定：−A 正定。\n`数一`"
-  },
-  {
-   "id": "g-m-space",
-   "type": "group",
-   "x": 2896,
-   "y": 1314,
-   "width": 1358,
-   "height": 1224,
-   "color": "6",
-   "label": "附录·线性空间与线性变换（6）"
-  },
-  {
-   "id": "p-sp-def",
-   "type": "text",
-   "x": 3260,
-   "y": 1710,
-   "width": 300,
-   "height": 116,
-   "color": "2",
-   "text": "**线性空间与子空间**\n满足八条运算法则的集合称线性空间（向量空间）；对加法与数乘封闭的非空子集称子空间。\n`数一`"
-  },
-  {
-   "id": "p-sp-dim-basis",
-   "type": "text",
-   "x": 3260,
-   "y": 1558,
-   "width": 300,
-   "height": 116,
-   "color": "2",
-   "text": "**维数、基与坐标**\n线性空间中极大无关组称基，其向量个数称维数；向量在基下的表示系数称坐标。\n`数一`"
-  },
-  {
-   "id": "p-sp-transition",
-   "type": "text",
-   "x": 2930,
-   "y": 1710,
-   "width": 300,
-   "height": 116,
-   "color": "2",
-   "text": "**过渡矩阵与坐标变换**\n两组基满足 (β₁,…,βₙ) = (α₁,…,αₙ)P，P 称过渡矩阵且必可逆；坐标满…\n`数一`"
-  },
-  {
-   "id": "p-sp-transform",
-   "type": "text",
-   "x": 3260,
-   "y": 1406,
-   "width": 300,
-   "height": 116,
-   "color": "2",
-   "text": "**线性变换的定义与矩阵表示**\nT(kα+lβ)=kT(α)+lT(β)；在给定基下 T 对应唯一矩阵 A，且 T(α)…\n`数一`"
-  },
-  {
-   "id": "p-sp-similar-transform",
-   "type": "text",
-   "x": 2930,
-   "y": 1406,
-   "width": 300,
-   "height": 116,
-   "color": "2",
-   "text": "**线性变换与矩阵的对应（相似）**\n同一线性变换在两组基下的矩阵 A、B 满足 B = P⁻¹AP，即相似。\n`数一`"
-  },
-  {
-   "id": "p-sp-kernel-image",
-   "type": "text",
-   "x": 2930,
-   "y": 1558,
-   "width": 300,
-   "height": 116,
-   "color": "2",
-   "text": "**核与像（值域）**\nker T = {α | T(α)=0} 是子空间；Im T 也是子空间；dim ker…\n`数一`"
-  }
- ],
- "edges": [
-  {
-   "id": "e-det-rowsum-zero__mat-invertible-crit",
-   "fromNode": "p-det-rowsum-zero",
-   "toNode": "p-mat-invertible-crit",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "1"
-  },
-  {
-   "id": "e-det-rank__mat-rank",
-   "fromNode": "p-det-rank",
-   "toNode": "p-mat-rank",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "1"
-  },
-  {
-   "id": "e-det-rank__mat-invertible-crit",
-   "fromNode": "p-det-rank",
-   "toNode": "p-mat-invertible-crit",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "1"
-  },
-  {
-   "id": "e-det-product__mat-invertible-crit",
-   "fromNode": "p-det-product",
-   "toNode": "p-mat-invertible-crit",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "2"
-  },
-  {
-   "id": "e-mat-adj-rank__det-rank",
-   "fromNode": "p-mat-adj-rank",
-   "toNode": "p-det-rank",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "6"
-  },
-  {
-   "id": "e-mat-trace__eig-poly",
-   "fromNode": "p-mat-trace",
-   "toNode": "p-eig-poly",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "6"
-  },
-  {
-   "id": "e-mat-elem-relation__det-product",
-   "fromNode": "p-mat-elem-relation",
-   "toNode": "p-det-product",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "6"
-  },
-  {
-   "id": "e-mat-block__det-block",
-   "fromNode": "p-mat-block",
-   "toNode": "p-det-block",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "6"
-  },
-  {
-   "id": "e-mat-elem-op__eq-gauss",
-   "fromNode": "p-mat-elem-op",
-   "toNode": "p-eq-gauss",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "2"
-  },
-  {
-   "id": "e-vec-indep-crit__det-rowsum-zero",
-   "fromNode": "p-vec-indep-crit",
-   "toNode": "p-det-rowsum-zero",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "2"
-  },
-  {
-   "id": "e-vec-indep-crit__mat-rank",
-   "fromNode": "p-vec-indep-crit",
-   "toNode": "p-mat-rank",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "2"
-  },
-  {
-   "id": "e-vec-rank-vs-mat__mat-rank",
-   "fromNode": "p-vec-rank-vs-mat",
-   "toNode": "p-mat-rank",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "1"
-  },
-  {
-   "id": "e-vec-schmidt__eig-orth-diag",
-   "fromNode": "p-vec-schmidt",
-   "toNode": "p-eig-orth-diag",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "2"
-  },
-  {
-   "id": "e-vec-indep-def__mat-invertible-crit",
-   "fromNode": "p-vec-indep-def",
-   "toNode": "p-mat-invertible-crit",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "1"
-  },
-  {
-   "id": "e-eq-cramer__det-product",
-   "fromNode": "p-eq-cramer",
-   "toNode": "p-det-product",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "6"
-  },
-  {
-   "id": "e-eq-samesol__vec-equivalent",
-   "fromNode": "p-eq-samesol",
-   "toNode": "p-vec-equivalent",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "1"
-  },
-  {
-   "id": "e-eq-nonhomo-general__mat-inv-method",
-   "fromNode": "p-eq-nonhomo-general",
-   "toNode": "p-mat-inv-method",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "6"
-  },
-  {
-   "id": "e-eq-gauss__mat-adj-rank",
-   "fromNode": "p-eq-gauss",
-   "toNode": "p-mat-adj-rank",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "2"
-  },
-  {
-   "id": "e-eig-vector-space__eq-homo-general",
-   "fromNode": "p-eig-vector-space",
-   "toNode": "p-eq-homo-general",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "2"
-  },
-  {
-   "id": "e-eig-ops__mat-adj-rank",
-   "fromNode": "p-eig-ops",
-   "toNode": "p-mat-adj-rank",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "2"
-  },
-  {
-   "id": "e-eig-ops__mat-trace",
-   "fromNode": "p-eig-ops",
-   "toNode": "p-mat-trace",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "6"
-  },
-  {
-   "id": "e-eig-orth-diag__qf-orthogonal",
-   "fromNode": "p-eig-orth-diag",
-   "toNode": "p-qf-orthogonal",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "4"
-  },
-  {
-   "id": "e-eig-diag-method__sp-similar-transform",
-   "fromNode": "p-eig-diag-method",
-   "toNode": "p-sp-similar-transform",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "4"
-  },
-  {
-   "id": "e-eig-similar-crit__mat-trace",
-   "fromNode": "p-eig-similar-crit",
-   "toNode": "p-mat-trace",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "2"
-  },
-  {
-   "id": "e-eig-def__mat-invertible-crit",
-   "fromNode": "p-eig-def",
-   "toNode": "p-mat-invertible-crit",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "1"
-  },
-  {
-   "id": "e-qf-def__eig-def",
-   "fromNode": "p-qf-def",
-   "toNode": "p-eig-def",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "6"
-  },
-  {
-   "id": "e-qf-orthogonal__eig-orth-diag",
-   "fromNode": "p-qf-orthogonal",
-   "toNode": "p-eig-orth-diag",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "4"
-  },
-  {
-   "id": "e-qf-congruent__eig-similar",
-   "fromNode": "p-qf-congruent",
-   "toNode": "p-eig-similar",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "5"
-  },
-  {
-   "id": "e-qf-contract-vs-similar__eig-similar",
-   "fromNode": "p-qf-contract-vs-similar",
-   "toNode": "p-eig-similar",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "6"
-  },
-  {
-   "id": "e-qf-congruent__mat-orthogonal",
-   "fromNode": "p-qf-congruent",
-   "toNode": "p-mat-orthogonal",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "2"
-  },
-  {
-   "id": "e-qf-positive-crit__eig-symmetric",
-   "fromNode": "p-qf-positive-crit",
-   "toNode": "p-eig-symmetric",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "1"
-  },
-  {
-   "id": "e-qf-semi-def__mat-rank",
-   "fromNode": "p-qf-semi-def",
-   "toNode": "p-mat-rank",
-   "fromSide": "top",
-   "toSide": "bottom",
-   "color": "2"
-  },
-  {
-   "id": "e-qf-inertia-index__mat-rank",
-   "fromNode": "p-qf-inertia-index",
-   "toNode": "p-mat-rank",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "2"
-  },
-  {
-   "id": "e-qf-def__mat-types",
-   "fromNode": "p-qf-def",
-   "toNode": "p-mat-types",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "2"
-  },
-  {
-   "id": "e-qf-contract-vs-similar__mat-equiv",
-   "fromNode": "p-qf-contract-vs-similar",
-   "toNode": "p-mat-equiv",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "2"
-  },
-  {
-   "id": "e-sp-similar-transform__eig-similar",
-   "fromNode": "p-sp-similar-transform",
-   "toNode": "p-eig-similar",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "1"
-  },
-  {
-   "id": "e-sp-kernel-image__eq-homo-general",
-   "fromNode": "p-sp-kernel-image",
-   "toNode": "p-eq-homo-general",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "2"
-  },
-  {
-   "id": "e-sp-dim-basis__vec-rank-def",
-   "fromNode": "p-sp-dim-basis",
-   "toNode": "p-vec-rank-def",
-   "fromSide": "top",
-   "toSide": "bottom",
-   "color": "4"
-  },
-  {
-   "id": "e-sp-def__vec-inner",
-   "fromNode": "p-sp-def",
-   "toNode": "p-vec-inner",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "2"
-  },
-  {
-   "id": "e-sp-similar-transform__qf-congruent",
-   "fromNode": "p-sp-similar-transform",
-   "toNode": "p-qf-congruent",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "2"
-  },
-  {
-   "id": "e-mat-invertible-crit__eig-diag-crit",
-   "fromNode": "p-mat-invertible-crit",
-   "toNode": "p-eig-diag-crit",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "2"
-  },
-  {
-   "id": "e-mat-invertible-crit__eq-homo-sol",
-   "fromNode": "p-mat-invertible-crit",
-   "toNode": "p-eq-homo-sol",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "1"
-  },
-  {
-   "id": "e-mat-invertible-crit__vec-indep-def",
-   "fromNode": "p-mat-invertible-crit",
-   "toNode": "p-vec-indep-def",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "1"
-  },
-  {
-   "id": "e-mat-invertible-crit__det-rowsum-zero",
-   "fromNode": "p-mat-invertible-crit",
-   "toNode": "p-det-rowsum-zero",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "1"
-  },
-  {
-   "id": "e-mat-rank__eq-rank-relation",
-   "fromNode": "p-mat-rank",
-   "toNode": "p-eq-rank-relation",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "6"
-  },
-  {
-   "id": "e-mat-rank-ineq__eq-AX-O-AB-O",
-   "fromNode": "p-mat-rank-ineq",
-   "toNode": "p-eq-AX-O-AB-O",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "2"
-  },
-  {
-   "id": "e-det-def__eig-poly",
-   "fromNode": "p-det-def",
-   "toNode": "p-eig-poly",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "2"
-  },
-  {
-   "id": "e-det-product__eig-trace-det-app",
-   "fromNode": "p-det-product",
-   "toNode": "p-eig-trace-det-app",
-   "fromSide": "bottom",
-   "toSide": "top",
-   "color": "2"
-  },
-  {
-   "id": "e-mat-trace__eig-trace-det-app",
-   "fromNode": "p-mat-trace",
-   "toNode": "p-eig-trace-det-app",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "2"
-  },
-  {
-   "id": "e-vec-indep-crit__eig-property",
-   "fromNode": "p-vec-indep-crit",
-   "toNode": "p-eig-property",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "2"
-  },
-  {
-   "id": "e-vec-rank-table__eig-mult",
-   "fromNode": "p-vec-rank-table",
-   "toNode": "p-eig-mult",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "2"
-  },
-  {
-   "id": "e-mat-power__eig-power-app",
-   "fromNode": "p-mat-power",
-   "toNode": "p-eig-power-app",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "4"
-  },
-  {
-   "id": "e-mat-power__eig-diag-method",
-   "fromNode": "p-mat-power",
-   "toNode": "p-eig-diag-method",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "4"
-  },
-  {
-   "id": "e-mat-power__eig-trace-det-app",
-   "fromNode": "p-mat-power",
-   "toNode": "p-eig-trace-det-app",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "4"
-  },
-  {
-   "id": "e-mat-noncommute__eig-property",
-   "fromNode": "p-mat-noncommute",
-   "toNode": "p-eig-property",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "4"
-  },
-  {
-   "id": "e-mat-eq-solve__eq-AX-O-AB-O",
-   "fromNode": "p-mat-eq-solve",
-   "toNode": "p-eq-AX-O-AB-O",
-   "fromSide": "right",
-   "toSide": "left",
-   "color": "2"
-  },
-  {
-   "id": "e-qf-positive-def__mat-orthogonal",
-   "fromNode": "p-qf-positive-def",
-   "toNode": "p-mat-orthogonal",
-   "fromSide": "top",
-   "toSide": "bottom",
-   "color": "2"
-  }
- ]
+	"nodes":[
+		{"id":"legend","type":"text","x":0,"y":-300,"width":1358,"height":250,"color":"5","text":"# 03 跨章关系网（判定枢纽如何把全书串成一体）\n\n**节点颜色**：🟦 基础（三卷共同要求）｜🟩 **数二也要求** ｜ 🟧 仅数一（= 数二不要求）\n**连线**（起点=条件，终点=结论）：🟥 充要 A⇔B（可互换）｜🟧 充分 A⇒B ｜ 🟪 必要 B⇒A ｜ ⬜ 无关 ｜ 🟩 关联\n> 只画**跨章节**的连线：它们说明\"行列式、秩、解、特征值、惯性指数\"其实是同一件事的不同说法。\n> 典型链条：｜A｜=0 ⇔ 不可逆 ⇔ 降秩 ⇔ 列组线性相关 ⇔ 齐次有非零解 ⇔ 有零特征值。\n本图含 **103** 个知识点、**57** 条连线。"},
+		{"id":"g-m-det","type":"group","x":0,"y":0,"width":1358,"height":1224,"color":"6","label":"一. 行列式（17）"},
+		{"id":"p-det-def","type":"text","x":34,"y":852,"width":300,"height":116,"color":"5","text":"**n 阶行列式**\n｜A｜ = Σ(−1)^τ(j₁j₂…jₙ)a₁ⱼ₁a₂ⱼ₂…aₙⱼₙ，n! 项代数和；…\n`基础`"},
+		{"id":"p-det-transpose","type":"text","x":34,"y":92,"width":300,"height":116,"color":"5","text":"**行列式转置不变**\n｜Aᵀ｜ = ｜A｜：行列式的行与列地位完全对称。\n`基础`"},
+		{"id":"p-det-swap","type":"text","x":364,"y":548,"width":300,"height":116,"color":"5","text":"**换行（列）变号**\n互换两行（列），行列式变号；两行（列）完全相同 ⇒ ｜A｜=0。\n`基础`"},
+		{"id":"p-det-multilinearity","type":"text","x":364,"y":244,"width":300,"height":116,"color":"5","text":"**数乘与行列式的线性性**\n某一行乘 k ⇒ 行列式乘 k；某行是两组数之和 ⇒ 行列式可拆成两个行列式之和。\n`基础`"},
+		{"id":"p-det-add-row","type":"text","x":364,"y":700,"width":300,"height":116,"color":"5","text":"**倍加变换不改变行列式**\n把某行（列）的 k 倍加到另一行（列），行列式值不变。\n`基础`"},
+		{"id":"p-det-triangular","type":"text","x":364,"y":852,"width":300,"height":116,"color":"5","text":"**三角（含对角）行列式**\n上（下）三角行列式 = 主对角线元素之积：｜A｜ = a₁₁a₂₂…aₙₙ。\n`基础`"},
+		{"id":"p-det-cofactor","type":"text","x":694,"y":700,"width":300,"height":116,"color":"5","text":"**余子式与代数余子式**\nMᵢⱼ 为划去第 i 行第 j 列所得 n−1 阶行列式；Aᵢⱼ = (−1)^{i+j…\n`基础`"},
+		{"id":"p-det-expansion","type":"text","x":694,"y":396,"width":300,"height":116,"color":"5","text":"**展开定理（按行/列展开）**\n｜A｜ = Σⱼ aᵢⱼAᵢⱼ（按第 i 行展开）；异乘变零：Σⱼ aᵢⱼA_kⱼ = …\n`基础`"},
+		{"id":"p-det-rowsum-zero","type":"text","x":34,"y":244,"width":300,"height":116,"color":"5","text":"**｜A｜=0 ⇔ 行（列）线性相关**\n｜A｜= 0 ⇔ A 的列（行）向量组线性相关 ⇔ A 不可逆 ⇔ r(A) < n。\n`基础`"},
+		{"id":"p-det-rank","type":"text","x":34,"y":396,"width":300,"height":116,"color":"5","text":"**由行列式判定矩阵的秩**\nr(A) = r ⇔ 存在 r 阶子式非零而所有 r+1 阶子式全为零。\n`基础`"},
+		{"id":"p-det-product","type":"text","x":34,"y":548,"width":300,"height":116,"color":"5","text":"**｜AB｜ = ｜A｜｜B｜**\n同阶方阵乘积的行列式等于行列式之积；对任意有限个方阵同样成立。\n`基础`"},
+		{"id":"p-det-vandermonde","type":"text","x":694,"y":92,"width":300,"height":116,"color":"5","text":"**范德蒙德行列式**\nVₙ = ∏_{1≤j<i≤n}(xᵢ−xⱼ)，等于所有\"后减前\"型差积。\n`基础`"},
+		{"id":"p-det-tridiagonal","type":"text","x":34,"y":700,"width":300,"height":116,"color":"5","text":"**三对角与递推型行列式**\n形如主对角 a、次对角 b,c 的行列式满足 Dₙ = aD_{n−1} − bcD_{…\n`基础`"},
+		{"id":"p-det-arrow","type":"text","x":694,"y":244,"width":300,"height":116,"color":"5","text":"**箭形（爪形）行列式**\n第一行、第一列及主对角线非零的行列式；可用\"消去第一行（列）的非对角元\"化为三角。\n`基础`"},
+		{"id":"p-det-elimination","type":"text","x":364,"y":396,"width":300,"height":116,"color":"5","text":"**行列式计算的总思路：化三角形**\n用倍加、换行、提公因子把行列式化为上三角，再由对角线之积得值。\n`基础`"},
+		{"id":"p-det-roots","type":"text","x":364,"y":92,"width":300,"height":116,"color":"5","text":"**方程根与行列式的结合**\n把方程写成含参数的行列式等于零，用行列式性质求根（如 f(x)=0 的根与重数）。\n`基础`"},
+		{"id":"p-det-block","type":"text","x":694,"y":548,"width":300,"height":116,"color":"4","text":"**分块（拉普拉斯）行列式**\n对角分块：｜A O; O B｜ = ｜A｜｜B｜；副对角分块需乘以 (−1)^{mn} …\n`基础/数二`"},
+		{"id":"g-m-mat","type":"group","x":1448,"y":0,"width":1358,"height":1224,"color":"6","label":"二. 矩阵（27）"},
+		{"id":"p-mat-def","type":"text","x":1812,"y":244,"width":300,"height":116,"color":"5","text":"**矩阵的定义与相等**\nm×n 个数排成的数表 A=(aᵢⱼ)；同型且对应元素全相等才相等。\n`基础`"},
+		{"id":"p-mat-types","type":"text","x":1482,"y":92,"width":300,"height":116,"color":"5","text":"**常见特殊矩阵**\n零矩阵、单位矩阵、对角矩阵、数量矩阵、三角矩阵、对称与反对称矩阵。\n`基础`"},
+		{"id":"p-mat-linear","type":"text","x":2472,"y":700,"width":300,"height":116,"color":"5","text":"**矩阵的加法与数乘**\n同型矩阵对应元素相加；数 k 乘 A 即所有元素都乘 k。\n`基础`"},
+		{"id":"p-mat-mult","type":"text","x":2472,"y":396,"width":300,"height":116,"color":"5","text":"**矩阵乘法**\nA_{m×s}B_{s×n} 才有意义，结果 C_{m×n}，cᵢⱼ = Σₖ aᵢₖb…\n`基础`"},
+		{"id":"p-mat-noncommute","type":"text","x":2142,"y":396,"width":300,"height":116,"color":"5","text":"**AB ≠ BA（乘法不可交换）**\n一般 AB ≠ BA；AB = BA 称为 A 与 B 可交换，是特殊情形。\n`基础`"},
+		{"id":"p-mat-nocancel","type":"text","x":1812,"y":396,"width":300,"height":116,"color":"5","text":"**AB = O 没有零因子**\nAB = O 推不出 A = O 或 B = O。\n`基础`"},
+		{"id":"p-mat-nocancel-2","type":"text","x":1482,"y":244,"width":300,"height":116,"color":"5","text":"**AX = AY 推不出 X = Y**\n矩阵乘法不满足消去律：即使 AB = AC 也不能约去 A，除非 A 可逆。\n`基础`"},
+		{"id":"p-mat-transpose","type":"text","x":2142,"y":1004,"width":300,"height":116,"color":"5","text":"**矩阵的转置**\n(Aᵀ)ᵀ=A；(A+B)ᵀ=Aᵀ+Bᵀ；(kA)ᵀ=kAᵀ；(AB)ᵀ=BᵀAᵀ（要\"…\n`基础`"},
+		{"id":"p-mat-power","type":"text","x":1482,"y":396,"width":300,"height":116,"color":"5","text":"**方阵的幂与矩阵多项式**\n求 Aᵏ 的常用办法：找规律、拆分 A = λE + B（B 幂零）、用秩 1 矩阵性质…\n`基础`"},
+		{"id":"p-mat-adjoint","type":"text","x":2142,"y":92,"width":300,"height":116,"color":"5","text":"**伴随矩阵 A* 的定义**\nA* = (Aⱼᵢ)，即把每个元素的代数余子式排成矩阵后再转置。\n`基础`"},
+		{"id":"p-mat-adj-identity","type":"text","x":1812,"y":548,"width":300,"height":116,"color":"5","text":"**AA* = A*A = ｜A｜E**\n伴随矩阵的核心恒等式：AA* = A*A = ｜A｜E。\n`基础`"},
+		{"id":"p-mat-adj-rank","type":"text","x":2142,"y":548,"width":300,"height":116,"color":"5","text":"**A* 的秩与可逆性判定**\nr(A*) = n（若 r(A)=n）；= 1（若 r(A)=n−1）；= 0（若 r(…\n`基础`"},
+		{"id":"p-mat-inverse-def","type":"text","x":1482,"y":548,"width":300,"height":116,"color":"5","text":"**逆矩阵的定义**\n存在 B 使 AB = BA = E，则 B = A⁻¹ 唯一；此时称 A 可逆（非奇异…\n`基础`"},
+		{"id":"p-mat-invertible-crit","type":"text","x":2142,"y":244,"width":300,"height":116,"color":"5","text":"**可逆的充要条件（汇总枢纽）**\nA 可逆 ⇔ ｜A｜≠0 ⇔ r(A)=n ⇔ Ax=0 只有零解 ⇔ A 的行（列）组…\n`基础`"},
+		{"id":"p-mat-inv-method","type":"text","x":1482,"y":700,"width":300,"height":116,"color":"4","text":"**逆矩阵的求法**\n(A | E) 经初等行变换化为 (E | A⁻¹)；或用伴随公式 A⁻¹ = A*/｜…\n`基础/数二`"},
+		{"id":"p-mat-eq-solve","type":"text","x":1812,"y":700,"width":300,"height":116,"color":"4","text":"**用初等变换求逆与解矩阵方程 AX = B**\n对 (A | E) 作行变换得 A⁻¹；对 (A|B) 作行变换得 (E | A⁻¹B)…\n`基础/数二`"},
+		{"id":"p-mat-block","type":"text","x":1482,"y":852,"width":300,"height":116,"color":"4","text":"**分块矩阵及其运算**\n分块后按\"小矩阵\"整体做乘法、转置与求逆；分块对角阵的逆与原矩阵块的逆对应。\n`基础/数二`"},
+		{"id":"p-mat-elem-op","type":"text","x":2472,"y":92,"width":300,"height":116,"color":"4","text":"**初等变换（三种）**\n换行、乘非零数、倍加。初等行变换不改变矩阵的秩（等价变换）。\n`基础/数二`"},
+		{"id":"p-mat-elem-mat","type":"text","x":2472,"y":548,"width":300,"height":116,"color":"5","text":"**初等矩阵与等价标准形**\n对 I 作一次初等变换得到初等矩阵 E；左乘 E 相当于作对应行变换，右乘相当于作列变换…\n`基础`"},
+		{"id":"p-mat-elem-relation","type":"text","x":2472,"y":852,"width":300,"height":116,"color":"5","text":"**初等矩阵与初等变换的对应**\n｜E｜ ≠ 0 且 ｜E(i,j)｜=−1、｜E(i(k))｜=k、｜E(ij(k))｜…\n`基础`"},
+		{"id":"p-mat-equiv","type":"text","x":2142,"y":700,"width":300,"height":116,"color":"5","text":"**矩阵等价与秩**\nA ≅ B ⇔ 存在可逆 P,Q 使 PAQ = B ⇔ r(A) = r(B)（同型）…\n`基础`"},
+		{"id":"p-mat-rank","type":"text","x":1482,"y":1004,"width":300,"height":116,"color":"4","text":"**矩阵的秩**\nA 中非零子式的最高阶数；也等于行（列）向量组的秩，即行阶梯形非零行数。\n`基础/数二`"},
+		{"id":"p-mat-rank-invariance","type":"text","x":1812,"y":852,"width":300,"height":116,"color":"5","text":"**秩的运算不变性**\nr(A)=r(Aᵀ)=r(kA)(k≠0)=r(AᵀA)=r(AAᵀ)；可逆 P,Q 使…\n`基础`"},
+		{"id":"p-mat-rank-ineq","type":"text","x":1812,"y":1004,"width":300,"height":116,"color":"5","text":"**秩的不等式（乘法与加法）**\nr(A+B) ≤ r(A)+r(B)；r(AB) ≤ min{r(A),r(B)}；r(…\n`基础`"},
+		{"id":"p-mat-rank-crit","type":"text","x":2472,"y":244,"width":300,"height":116,"color":"5","text":"**由秩判定矩阵性质**\nr(A)=0 ⇔ A=O；n 阶方阵 r(A)=n ⇔ 可逆；r(A)=n−1 ⇒ A*…\n`基础`"},
+		{"id":"p-mat-orthogonal","type":"text","x":2142,"y":852,"width":300,"height":116,"color":"4","text":"**正交矩阵与正交变换**\nAᵀA = AAᵀ = E，即 A⁻¹ = Aᵀ；其列（行）组是标准正交基。\n`数一/数二`"},
+		{"id":"p-mat-trace","type":"text","x":1812,"y":92,"width":300,"height":116,"color":"4","text":"**矩阵的迹**\ntr(A) = Σaᵢᵢ；tr(AB) = tr(BA)；tr(A) = Σλᵢ。\n`基础/数二`"},
+		{"id":"g-m-vec","type":"group","x":2896,"y":0,"width":1358,"height":1224,"color":"6","label":"三. 向量（向量组的线性相关性）（13）"},
+		{"id":"p-vec-def","type":"text","x":3260,"y":244,"width":300,"height":116,"color":"4","text":"**n 维向量及其运算**\nn 个数组成的有序数组 α=(a₁,…,aₙ)ᵀ；加法与数乘按分量进行。\n`数一/数二`"},
+		{"id":"p-vec-inner","type":"text","x":2930,"y":548,"width":300,"height":116,"color":"4","text":"**向量的内积、长度与正交**\n内积 (α,β)=αᵀβ；长度 ‖α‖=√(αᵀα)；αᵀβ=0 称正交；非零正交组线性…\n`数一/数二`"},
+		{"id":"p-vec-combo","type":"text","x":3260,"y":396,"width":300,"height":116,"color":"4","text":"**线性组合与线性表示**\nβ 可由 α₁,…,αₛ 线性表示 ⇔ 存在 k₁,…,kₛ 使 β=Σkᵢαᵢ ⇔ 方…\n`数一/数二`"},
+		{"id":"p-vec-indep-def","type":"text","x":2930,"y":700,"width":300,"height":116,"color":"4","text":"**线性相关与线性无关的定义**\n存在不全为零的 kᵢ 使 Σkᵢαᵢ=0 则线性相关；只有全零解才成立则线性无关。\n`数一/数二`"},
+		{"id":"p-vec-indep-crit","type":"text","x":2930,"y":92,"width":300,"height":116,"color":"4","text":"**线性相关性的判定方法**\n向量个数 s 与维数 n 比较：s>n 必相关；s=n 时看行列式；一般情形看 r(α₁…\n`数一/数二`"},
+		{"id":"p-vec-indep-concl","type":"text","x":2930,"y":244,"width":300,"height":116,"color":"4","text":"**线性相关性的重要结论**\n部分相关 ⇒ 整体相关；整体无关 ⇒ 部分无关；无关组添加分量仍无关，相关组减少分量仍相…\n`数一/数二`"},
+		{"id":"p-vec-equivalent","type":"text","x":3260,"y":700,"width":300,"height":116,"color":"4","text":"**向量组的等价**\n两组可互相线性表示称等价；等价向量组的秩相等（逆不成立）。\n`数一/数二`"},
+		{"id":"p-vec-maximal","type":"text","x":3260,"y":92,"width":300,"height":116,"color":"4","text":"**极大线性无关组**\n向量组中线性无关且再添任一向量就相关的部分组；不唯一，但所含向量个数固定。\n`数一/数二`"},
+		{"id":"p-vec-rank-def","type":"text","x":3260,"y":548,"width":300,"height":116,"color":"4","text":"**向量组的秩**\n向量组的极大线性无关组所含向量的个数，记 r(α₁,…,αₛ)。\n`数一/数二`"},
+		{"id":"p-vec-rank-vs-mat","type":"text","x":3590,"y":92,"width":300,"height":116,"color":"4","text":"**向量组的秩与矩阵的秩**\n矩阵的秩 = 行向量组的秩 = 列向量组的秩；这是\"行秩 = 列秩\"的完整表述。\n`数一/数二`"},
+		{"id":"p-vec-express-crit","type":"text","x":3590,"y":244,"width":300,"height":116,"color":"4","text":"**线性表出的判定定理**\nβ 可由组 (I) 唯一表示 ⇔ r(I)=r(I,β)=s（组 (I) 无关）；有无穷…\n`数一/数二`"},
+		{"id":"p-vec-rank-table","type":"text","x":3590,"y":396,"width":300,"height":116,"color":"4","text":"**向量组秩与线性表出的关系表**\n单向定理：若 (I) 可由 (II) 表示且 s > r(II)，则 (I) 必线性相关…\n`数一/数二`"},
+		{"id":"p-vec-schmidt","type":"text","x":2930,"y":396,"width":300,"height":116,"color":"4","text":"**施密特正交化与标准正交基**\n把线性无关组逐步化为正交组：β₁=α₁，βᵢ=αᵢ−Σ(αᵢ,βⱼ)/(βⱼ,βⱼ)·β…\n`数一/数二`"},
+		{"id":"g-m-eq","type":"group","x":4344,"y":0,"width":1358,"height":1224,"color":"6","label":"四. 线性方程组（12）"},
+		{"id":"p-eq-homo-sol","type":"text","x":4708,"y":548,"width":300,"height":116,"color":"5","text":"**齐次方程组 Ax = 0**\n必有零解；有非零解 ⇔ r(A) < n ⇔ 列组线性相关 ⇔ ｜A｜=0（方阵）。\n`基础`"},
+		{"id":"p-eq-homo-structure","type":"text","x":4708,"y":92,"width":300,"height":116,"color":"5","text":"**基础解系**\nAx=0 的解向量组的极大无关组；当 r(A)=r<n 时含 n−r 个向量 ξ₁,…,…\n`基础`"},
+		{"id":"p-eq-homo-general","type":"text","x":4378,"y":396,"width":300,"height":116,"color":"5","text":"**齐次方程组的通解与解空间**\nx = k₁ξ₁ + … + k_{n−r}ξ_{n−r}（kᵢ 任意）；所有解构成 n…\n`基础`"},
+		{"id":"p-eq-nonhomo-crit","type":"text","x":4378,"y":548,"width":300,"height":116,"color":"5","text":"**非齐次方程组 Ax = b 的相容性判别**\n有解 ⇔ r(A) = r(A,b)；无解 ⇔ r(A) < r(A,b)（此时 r(A…\n`基础`"},
+		{"id":"p-eq-nonhomo-general","type":"text","x":4378,"y":92,"width":300,"height":116,"color":"5","text":"**非齐次方程组的通解结构**\n通解 = 特解 η* + 对应齐次方程组的通解；任意两解之差是对应齐次的解。\n`基础`"},
+		{"id":"p-eq-rank-relation","type":"text","x":4378,"y":244,"width":300,"height":116,"color":"5","text":"**系数矩阵与增广矩阵的关系**\nr(A) ≤ r(A,b) ≤ r(A)+1；两者相等 ⇔ 有解，相差 1 ⇔ 无解。\n`基础`"},
+		{"id":"p-eq-cramer","type":"text","x":5038,"y":92,"width":300,"height":116,"color":"5","text":"**克拉默法则**\nn 个方程 n 个未知数且 ｜A｜≠0 时，xⱼ = ｜Aⱼ｜/｜A｜（Aⱼ 为第 j …\n`基础`"},
+		{"id":"p-eq-homo-nonhomo","type":"text","x":5038,"y":244,"width":300,"height":116,"color":"5","text":"**齐次与非齐次解的关系**\nAx=0 只有零解 ⇒ Ax=b 解唯一（若有解）；Ax=0 有非零解 ⇒ Ax=b 若…\n`基础`"},
+		{"id":"p-eq-samesol","type":"text","x":4708,"y":244,"width":300,"height":116,"color":"2","text":"**同解方程组与公共解**\n两个方程组同解 ⇔ 解集相同；求公共解可联立求解，或用一组的通解代入另一组。\n`数一`"},
+		{"id":"p-eq-AX-O-AB-O","type":"text","x":5038,"y":396,"width":300,"height":116,"color":"2","text":"**矩阵方程 AX = O 与 AB = O**\nAB = O ⇔ B 的每一列都是 Ax=0 的解 ⇒ r(A)+r(B) ≤ n（A …\n`数一`"},
+		{"id":"p-eq-gauss","type":"text","x":5038,"y":548,"width":300,"height":116,"color":"5","text":"**高斯消元法与行阶梯形**\n对增广矩阵作初等行变换化为行最简形，选出主元，把自由未知量取为参数写出通解。\n`基础`"},
+		{"id":"p-eq-geometry","type":"text","x":4708,"y":396,"width":300,"height":116,"color":"5","text":"**方程组的几何意义（平面与直线）**\n三个未知数时，每个方程表示一张平面；解的情况对应三平面的相交形态（一点、一条线、无公共点…\n`基础`"},
+		{"id":"g-m-eig","type":"group","x":0,"y":1314,"width":1358,"height":1224,"color":"6","label":"五. 矩阵的特征值与特征向量（17）"},
+		{"id":"p-eig-def","type":"text","x":694,"y":1862,"width":300,"height":116,"color":"4","text":"**特征值与特征向量的定义**\nAα = λα（α≠0），λ 为特征值、α 为对应特征向量。\n`数一/数二`"},
+		{"id":"p-eig-poly","type":"text","x":694,"y":1710,"width":300,"height":116,"color":"4","text":"**特征多项式与特征方程**\n｜λE − A｜ 为特征多项式，｜λE−A｜=0 为特征方程，其根即全部特征值（含重数）…\n`数一/数二`"},
+		{"id":"p-eig-vector-space","type":"text","x":694,"y":1558,"width":300,"height":116,"color":"4","text":"**特征子空间与特征向量的求法**\n对每个 λᵢ 解齐次方程组 (λᵢI−A)x=0，其基础解系即属于 λᵢ 的线性无关特征…\n`数一/数二`"},
+		{"id":"p-eig-mult","type":"text","x":694,"y":1406,"width":300,"height":116,"color":"4","text":"**代数重数与几何重数**\n代数重数 nᵢ 为 λᵢ 作为特征方程根的重数；几何重数 mᵢ = n − r(λᵢI−…\n`数一/数二`"},
+		{"id":"p-eig-property","type":"text","x":364,"y":1862,"width":300,"height":116,"color":"4","text":"**特征值与特征向量的性质**\n属于不同特征值的特征向量线性无关；k 重特征值最多有 k 个线性无关的特征向量。\n`数一/数二`"},
+		{"id":"p-eig-ops","type":"text","x":34,"y":2014,"width":300,"height":116,"color":"4","text":"**特征值的运算性质**\nf(A) 的特征值为 f(λ)；A⁻¹ 为 1/λ；A* 为 ｜A｜/λ；Aᵀ 与 A …\n`数一/数二`"},
+		{"id":"p-eig-similar","type":"text","x":364,"y":2014,"width":300,"height":116,"color":"4","text":"**相似矩阵的定义**\n存在可逆 P 使 P⁻¹AP = B，则 A ∼ B；相似是等价关系（自反、对称、传递）…\n`数一/数二`"},
+		{"id":"p-eig-similar-prop","type":"text","x":34,"y":2166,"width":300,"height":116,"color":"4","text":"**相似矩阵的性质与不变量**\n相似矩阵有相同的特征多项式、特征值、行列式、迹、秩；且 P⁻¹AᵏP=(P⁻¹AP)ᵏ，…\n`数一/数二`"},
+		{"id":"p-eig-similar-crit","type":"text","x":34,"y":1406,"width":300,"height":116,"color":"2","text":"**相似的判定与反例**\n特征值相同不一定相似（如 diag(1,1) 与 [​[1,1],[0,1]]）；可用\"…\n`数一`"},
+		{"id":"p-eig-diag-crit","type":"text","x":364,"y":1558,"width":300,"height":116,"color":"4","text":"**可对角化的充要条件**\nA 可对角化 ⇔ A 有 n 个线性无关的特征向量 ⇔ 每个特征值的几何重数 = 代数重…\n`数一/数二`"},
+		{"id":"p-eig-diag-method","type":"text","x":364,"y":1406,"width":300,"height":116,"color":"4","text":"**相似对角化的方法与步骤**\n求特征值 → 求各自的特征向量 → 拼成 P=(α₁,…,αₙ) → 得 P⁻¹AP =…\n`数一/数二`"},
+		{"id":"p-eig-power-app","type":"text","x":34,"y":1558,"width":300,"height":116,"color":"4","text":"**用对角化求 Aᵏ 与矩阵函数**\nA = PΛP⁻¹ ⇒ Aᵏ = PΛᵏP⁻¹；同理可得 f(A) = Pf(Λ)P⁻¹…\n`数一/数二`"},
+		{"id":"p-eig-symmetric","type":"text","x":364,"y":1710,"width":300,"height":116,"color":"4","text":"**实对称矩阵的特征值与特征向量**\n实对称矩阵的特征值全为实数；不同特征值对应的特征向量相互正交。\n`数一/数二`"},
+		{"id":"p-eig-orth-diag","type":"text","x":34,"y":1710,"width":300,"height":116,"color":"4","text":"**实对称矩阵的正交对角化**\n必存在正交矩阵 Q 使 QᵀAQ = Q⁻¹AQ = Λ（对角）。\n`数一/数二`"},
+		{"id":"p-eig-trace-det-app","type":"text","x":34,"y":1862,"width":300,"height":116,"color":"4","text":"**特征值的应用：求行列式与幂**\n｜A｜ = ∏λᵢ，tr(A) = Σλᵢ；配合相似不变量可反解参数。\n`数一/数二`"},
+		{"id":"p-eig-minpoly","type":"text","x":364,"y":2166,"width":300,"height":116,"color":"2","text":"**最小多项式与可对角化**\nA 可对角化 ⇔ 最小多项式无重根 ⇔ (λE−A) 的每个重根的几何重数等于代数重数。\n`数一`"},
+		{"id":"p-eig-estimate","type":"text","x":694,"y":2014,"width":300,"height":116,"color":"2","text":"**特征值的范围与估计**\n圆盘定理：每个特征值都落在某个以 aᵢᵢ 为心、以该行非对角元绝对值之和为半径的圆盘内。\n`数一`"},
+		{"id":"g-m-quad","type":"group","x":1448,"y":1314,"width":1358,"height":1224,"color":"6","label":"六. 二次型（11）"},
+		{"id":"p-qf-def","type":"text","x":1812,"y":1862,"width":300,"height":116,"color":"4","text":"**二次型及其矩阵表示**\nn 元二次齐次多项式 f = xᵀAx，其中 A 为实对称矩阵（aᵢⱼ=aⱼᵢ=交叉项系…\n`数一/数二`"},
+		{"id":"p-qf-canonical","type":"text","x":1812,"y":1558,"width":300,"height":116,"color":"4","text":"**标准形与规范形**\n标准形：只含平方项 d₁y₁²+…+dₙyₙ²；规范形：系数只取 1、−1、0。\n`数一/数二`"},
+		{"id":"p-qf-inertia-index","type":"text","x":1812,"y":1406,"width":300,"height":116,"color":"4","text":"**惯性指数与符号差**\n正惯性指数 p（正平方项个数）、负惯性指数 q（负平方项个数）、符号差 p − q；p …\n`数一/数二`"},
+		{"id":"p-qf-complete-square","type":"text","x":2142,"y":1406,"width":300,"height":116,"color":"4","text":"**配方法化标准形**\n按变量逐个配成完全平方，得到可逆线性替换 x = Cy，从而 f = d₁y₁²+…。\n`数一/数二`"},
+		{"id":"p-qf-orthogonal","type":"text","x":2142,"y":1558,"width":300,"height":116,"color":"4","text":"**正交变换法化标准形**\nA 正交对角化：取正交矩阵 Q，令 x = Qy，则 f = λ₁y₁²+…+λₙyₙ²…\n`数一/数二`"},
+		{"id":"p-qf-inertia-law","type":"text","x":1482,"y":1710,"width":300,"height":116,"color":"4","text":"**惯性定理**\n二次型经任意可逆线性替换，正、负惯性指数不变，因而规范形唯一。\n`数一/数二`"},
+		{"id":"p-qf-congruent","type":"text","x":1482,"y":1406,"width":300,"height":116,"color":"4","text":"**矩阵合同**\n存在可逆 C 使 CᵀAC = B，则 A ≃ B（合同）；实对称矩阵合同 ⇔ 正负惯性…\n`数一/数二`"},
+		{"id":"p-qf-contract-vs-similar","type":"text","x":1482,"y":1862,"width":300,"height":116,"color":"4","text":"**合同与相似的对比**\n相似：P⁻¹AP 保特征值；合同：CᵀAC 保惯性指数；正交相似时二者等价。\n`数一/数二`"},
+		{"id":"p-qf-positive-def","type":"text","x":2142,"y":1710,"width":300,"height":116,"color":"4","text":"**正定二次型与正定矩阵**\n对任意 x≠0 有 xᵀAx > 0，则 A 正定，记 A > 0。\n`数一/数二`"},
+		{"id":"p-qf-positive-crit","type":"text","x":1812,"y":1710,"width":300,"height":116,"color":"4","text":"**正定的充要条件（五条等价）**\nA 正定 ⇔ 特征值全正 ⇔ 正惯性指数 p = n ⇔ 存在可逆 C 使 A = Cᵀ…\n`数一/数二`"},
+		{"id":"p-qf-semi-def","type":"text","x":1482,"y":1558,"width":300,"height":116,"color":"2","text":"**半正定与负定矩阵**\n半正定：xᵀAx ≥ 0 ⇔ 特征值全 ≥0 ⇔ 所有主子式 ≥0；负定：−A 正定。\n`数一`"},
+		{"id":"g-m-space","type":"group","x":2896,"y":1314,"width":1358,"height":1224,"color":"6","label":"附录·线性空间与线性变换（6）"},
+		{"id":"p-sp-def","type":"text","x":3260,"y":1710,"width":300,"height":116,"color":"2","text":"**线性空间与子空间**\n满足八条运算法则的集合称线性空间（向量空间）；对加法与数乘封闭的非空子集称子空间。\n`数一`"},
+		{"id":"p-sp-dim-basis","type":"text","x":3260,"y":1558,"width":300,"height":116,"color":"2","text":"**维数、基与坐标**\n线性空间中极大无关组称基，其向量个数称维数；向量在基下的表示系数称坐标。\n`数一`"},
+		{"id":"p-sp-transition","type":"text","x":2930,"y":1710,"width":300,"height":116,"color":"2","text":"**过渡矩阵与坐标变换**\n两组基满足 (β₁,…,βₙ) = (α₁,…,αₙ)P，P 称过渡矩阵且必可逆；坐标满…\n`数一`"},
+		{"id":"p-sp-transform","type":"text","x":3260,"y":1406,"width":300,"height":116,"color":"2","text":"**线性变换的定义与矩阵表示**\nT(kα+lβ)=kT(α)+lT(β)；在给定基下 T 对应唯一矩阵 A，且 T(α)…\n`数一`"},
+		{"id":"p-sp-similar-transform","type":"text","x":2930,"y":1406,"width":300,"height":116,"color":"2","text":"**线性变换与矩阵的对应（相似）**\n同一线性变换在两组基下的矩阵 A、B 满足 B = P⁻¹AP，即相似。\n`数一`"},
+		{"id":"p-sp-kernel-image","type":"text","x":2930,"y":1558,"width":300,"height":116,"color":"2","text":"**核与像（值域）**\nker T = {α | T(α)=0} 是子空间；Im T 也是子空间；dim ker…\n`数一`"}
+	],
+	"edges":[
+		{"id":"e-det-rowsum-zero__mat-invertible-crit","fromNode":"p-det-rowsum-zero","toNode":"p-mat-invertible-crit","fromSide":"right","toSide":"left","color":"1"},
+		{"id":"e-det-rank__mat-rank","fromNode":"p-det-rank","toNode":"p-mat-rank","fromSide":"right","toSide":"left","color":"1"},
+		{"id":"e-det-rank__mat-invertible-crit","fromNode":"p-det-rank","toNode":"p-mat-invertible-crit","fromSide":"right","toSide":"left","color":"1"},
+		{"id":"e-det-product__mat-invertible-crit","fromNode":"p-det-product","toNode":"p-mat-invertible-crit","fromSide":"right","toSide":"left","color":"2"},
+		{"id":"e-mat-adj-rank__det-rank","fromNode":"p-mat-adj-rank","toNode":"p-det-rank","fromSide":"right","toSide":"left","color":"6"},
+		{"id":"e-mat-trace__eig-poly","fromNode":"p-mat-trace","toNode":"p-eig-poly","fromSide":"right","toSide":"left","color":"6"},
+		{"id":"e-mat-elem-relation__det-product","fromNode":"p-mat-elem-relation","toNode":"p-det-product","fromSide":"right","toSide":"left","color":"6"},
+		{"id":"e-mat-block__det-block","fromNode":"p-mat-block","toNode":"p-det-block","fromSide":"right","toSide":"left","color":"6"},
+		{"id":"e-mat-elem-op__eq-gauss","fromNode":"p-mat-elem-op","toNode":"p-eq-gauss","fromSide":"right","toSide":"left","color":"2"},
+		{"id":"e-vec-indep-crit__det-rowsum-zero","fromNode":"p-vec-indep-crit","toNode":"p-det-rowsum-zero","fromSide":"right","toSide":"left","color":"2"},
+		{"id":"e-vec-indep-crit__mat-rank","fromNode":"p-vec-indep-crit","toNode":"p-mat-rank","fromSide":"right","toSide":"left","color":"2"},
+		{"id":"e-vec-rank-vs-mat__mat-rank","fromNode":"p-vec-rank-vs-mat","toNode":"p-mat-rank","fromSide":"right","toSide":"left","color":"1"},
+		{"id":"e-vec-schmidt__eig-orth-diag","fromNode":"p-vec-schmidt","toNode":"p-eig-orth-diag","fromSide":"right","toSide":"left","color":"2"},
+		{"id":"e-vec-indep-def__mat-invertible-crit","fromNode":"p-vec-indep-def","toNode":"p-mat-invertible-crit","fromSide":"right","toSide":"left","color":"1"},
+		{"id":"e-eq-cramer__det-product","fromNode":"p-eq-cramer","toNode":"p-det-product","fromSide":"right","toSide":"left","color":"6"},
+		{"id":"e-eq-samesol__vec-equivalent","fromNode":"p-eq-samesol","toNode":"p-vec-equivalent","fromSide":"right","toSide":"left","color":"1"},
+		{"id":"e-eq-nonhomo-general__mat-inv-method","fromNode":"p-eq-nonhomo-general","toNode":"p-mat-inv-method","fromSide":"right","toSide":"left","color":"6"},
+		{"id":"e-eq-gauss__mat-adj-rank","fromNode":"p-eq-gauss","toNode":"p-mat-adj-rank","fromSide":"right","toSide":"left","color":"2"},
+		{"id":"e-eig-vector-space__eq-homo-general","fromNode":"p-eig-vector-space","toNode":"p-eq-homo-general","fromSide":"right","toSide":"left","color":"2"},
+		{"id":"e-eig-ops__mat-adj-rank","fromNode":"p-eig-ops","toNode":"p-mat-adj-rank","fromSide":"right","toSide":"left","color":"2"},
+		{"id":"e-eig-ops__mat-trace","fromNode":"p-eig-ops","toNode":"p-mat-trace","fromSide":"right","toSide":"left","color":"6"},
+		{"id":"e-eig-orth-diag__qf-orthogonal","fromNode":"p-eig-orth-diag","toNode":"p-qf-orthogonal","fromSide":"right","toSide":"left","color":"4"},
+		{"id":"e-eig-diag-method__sp-similar-transform","fromNode":"p-eig-diag-method","toNode":"p-sp-similar-transform","fromSide":"right","toSide":"left","color":"4"},
+		{"id":"e-eig-similar-crit__mat-trace","fromNode":"p-eig-similar-crit","toNode":"p-mat-trace","fromSide":"right","toSide":"left","color":"2"},
+		{"id":"e-eig-def__mat-invertible-crit","fromNode":"p-eig-def","toNode":"p-mat-invertible-crit","fromSide":"right","toSide":"left","color":"1"},
+		{"id":"e-qf-def__eig-def","fromNode":"p-qf-def","toNode":"p-eig-def","fromSide":"right","toSide":"left","color":"6"},
+		{"id":"e-qf-orthogonal__eig-orth-diag","fromNode":"p-qf-orthogonal","toNode":"p-eig-orth-diag","fromSide":"right","toSide":"left","color":"4"},
+		{"id":"e-qf-congruent__eig-similar","fromNode":"p-qf-congruent","toNode":"p-eig-similar","fromSide":"right","toSide":"left","color":"5"},
+		{"id":"e-qf-contract-vs-similar__eig-similar","fromNode":"p-qf-contract-vs-similar","toNode":"p-eig-similar","fromSide":"right","toSide":"left","color":"6"},
+		{"id":"e-qf-congruent__mat-orthogonal","fromNode":"p-qf-congruent","toNode":"p-mat-orthogonal","fromSide":"right","toSide":"left","color":"2"},
+		{"id":"e-qf-positive-crit__eig-symmetric","fromNode":"p-qf-positive-crit","toNode":"p-eig-symmetric","fromSide":"right","toSide":"left","color":"1"},
+		{"id":"e-qf-semi-def__mat-rank","fromNode":"p-qf-semi-def","toNode":"p-mat-rank","fromSide":"top","toSide":"bottom","color":"2"},
+		{"id":"e-qf-inertia-index__mat-rank","fromNode":"p-qf-inertia-index","toNode":"p-mat-rank","fromSide":"right","toSide":"left","color":"2"},
+		{"id":"e-qf-def__mat-types","fromNode":"p-qf-def","toNode":"p-mat-types","fromSide":"right","toSide":"left","color":"2"},
+		{"id":"e-qf-contract-vs-similar__mat-equiv","fromNode":"p-qf-contract-vs-similar","toNode":"p-mat-equiv","fromSide":"right","toSide":"left","color":"2"},
+		{"id":"e-sp-similar-transform__eig-similar","fromNode":"p-sp-similar-transform","toNode":"p-eig-similar","fromSide":"right","toSide":"left","color":"1"},
+		{"id":"e-sp-kernel-image__eq-homo-general","fromNode":"p-sp-kernel-image","toNode":"p-eq-homo-general","fromSide":"right","toSide":"left","color":"2"},
+		{"id":"e-sp-dim-basis__vec-rank-def","fromNode":"p-sp-dim-basis","toNode":"p-vec-rank-def","fromSide":"top","toSide":"bottom","color":"4"},
+		{"id":"e-sp-def__vec-inner","fromNode":"p-sp-def","toNode":"p-vec-inner","fromSide":"right","toSide":"left","color":"2"},
+		{"id":"e-sp-similar-transform__qf-congruent","fromNode":"p-sp-similar-transform","toNode":"p-qf-congruent","fromSide":"right","toSide":"left","color":"2"},
+		{"id":"e-mat-invertible-crit__eig-diag-crit","fromNode":"p-mat-invertible-crit","toNode":"p-eig-diag-crit","fromSide":"right","toSide":"left","color":"2"},
+		{"id":"e-mat-invertible-crit__eq-homo-sol","fromNode":"p-mat-invertible-crit","toNode":"p-eq-homo-sol","fromSide":"right","toSide":"left","color":"1"},
+		{"id":"e-mat-invertible-crit__vec-indep-def","fromNode":"p-mat-invertible-crit","toNode":"p-vec-indep-def","fromSide":"right","toSide":"left","color":"1"},
+		{"id":"e-mat-invertible-crit__det-rowsum-zero","fromNode":"p-mat-invertible-crit","toNode":"p-det-rowsum-zero","fromSide":"right","toSide":"left","color":"1"},
+		{"id":"e-mat-rank__eq-rank-relation","fromNode":"p-mat-rank","toNode":"p-eq-rank-relation","fromSide":"right","toSide":"left","color":"6"},
+		{"id":"e-mat-rank-ineq__eq-AX-O-AB-O","fromNode":"p-mat-rank-ineq","toNode":"p-eq-AX-O-AB-O","fromSide":"right","toSide":"left","color":"2"},
+		{"id":"e-det-def__eig-poly","fromNode":"p-det-def","toNode":"p-eig-poly","fromSide":"right","toSide":"left","color":"2"},
+		{"id":"e-det-product__eig-trace-det-app","fromNode":"p-det-product","toNode":"p-eig-trace-det-app","fromSide":"bottom","toSide":"top","color":"2"},
+		{"id":"e-mat-trace__eig-trace-det-app","fromNode":"p-mat-trace","toNode":"p-eig-trace-det-app","fromSide":"right","toSide":"left","color":"2"},
+		{"id":"e-vec-indep-crit__eig-property","fromNode":"p-vec-indep-crit","toNode":"p-eig-property","fromSide":"right","toSide":"left","color":"2"},
+		{"id":"e-vec-rank-table__eig-mult","fromNode":"p-vec-rank-table","toNode":"p-eig-mult","fromSide":"right","toSide":"left","color":"2"},
+		{"id":"e-mat-power__eig-power-app","fromNode":"p-mat-power","toNode":"p-eig-power-app","fromSide":"right","toSide":"left","color":"4"},
+		{"id":"e-mat-power__eig-diag-method","fromNode":"p-mat-power","toNode":"p-eig-diag-method","fromSide":"right","toSide":"left","color":"4"},
+		{"id":"e-mat-power__eig-trace-det-app","fromNode":"p-mat-power","toNode":"p-eig-trace-det-app","fromSide":"right","toSide":"left","color":"4"},
+		{"id":"e-mat-noncommute__eig-property","fromNode":"p-mat-noncommute","toNode":"p-eig-property","fromSide":"right","toSide":"left","color":"4"},
+		{"id":"e-mat-eq-solve__eq-AX-O-AB-O","fromNode":"p-mat-eq-solve","toNode":"p-eq-AX-O-AB-O","fromSide":"right","toSide":"left","color":"2"},
+		{"id":"e-qf-positive-def__mat-orthogonal","fromNode":"p-qf-positive-def","toNode":"p-mat-orthogonal","fromSide":"top","toSide":"bottom","color":"2"}
+	]
 }

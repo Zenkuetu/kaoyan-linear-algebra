@@ -57,7 +57,15 @@ export function checkTex(tex) {
     else { const top = stack.pop(); if (top !== name) errs.push('环境不匹配：\\begin{' + (top || '空') + '} vs \\end{' + name + '}'); }
   }
   if (stack.length) errs.push('未闭合环境 ' + stack.join(','));
-  for (const m of tex.matchAll(/\\([A-Za-z]+)/g)) if (!CMD.has(m[1])) errs.push('未知命令 \\' + m[1]);
+  // 逐字符扫描命令名：矩阵换行符 \\ 后面若紧跟字母（如 a\\b），不能把第二个反斜杠当成命令开头
+  for (let i = 0; i < tex.length; i++) {
+    if (tex[i] !== '\\') continue;
+    if (tex[i + 1] === '\\') { i++; continue; }   // 行分隔符 \\：整体跳过，不当作命令
+    const m = /^[A-Za-z]+/.exec(tex.slice(i + 1));
+    if (!m) continue;                              // \, \; \{ 这类符号命令不检查
+    if (!CMD.has(m[0])) errs.push('未知命令 \\' + m[0]);
+    i += m[0].length;
+  }
   if (tex.includes('[[')) errs.push('公式内含 [[（会被当双链）');
   if (/[\u4e00-\u9fa5]/.test(tex) && !/\\text\{[^}]*[\u4e00-\u9fa5]/.test(tex)) errs.push('公式内含中文');
   return errs;
