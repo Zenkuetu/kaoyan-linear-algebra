@@ -191,59 +191,59 @@ $$
 
 （本题满分 11 分）已知矩阵
 $$
-A=\\begin{pmatrix}0&-1&1\\\\2&-3&0\\\\0&0&0\\end{pmatrix}.
+A=\begin{pmatrix}0&-1&1\\2&-3&0\\0&0&0\end{pmatrix}.
 $$
 （Ⅰ）求 $A^{99}$；
 
-（Ⅱ）设 3 阶矩阵 $B=(\\alpha_1,\\alpha_2,\\alpha_3)$ 满足 $B^2=BA$。记 $B^{100}=(\\beta_1,\\beta_2,\\beta_3)$，将 $\\beta_1,\\beta_2,\\beta_3$ 分别表示为 $\\alpha_1,\\alpha_2,\\alpha_3$ 的线性组合。
+（Ⅱ）设 3 阶矩阵 $B=(\alpha_1,\alpha_2,\alpha_3)$ 满足 $B^2=BA$。记 $B^{100}=(\beta_1,\beta_2,\beta_3)$，将 $\beta_1,\beta_2,\beta_3$ 分别表示为 $\alpha_1,\alpha_2,\alpha_3$ 的线性组合。
 
 > [!success]- 答案与解析
-> **答案**：（Ⅰ）$A^{99}=\\begin{pmatrix}2^{99}-2&1-2^{99}&2-2^{98}\\\\2^{100}-2&1-2^{100}&2-2^{99}\\\\0&0&0\\end{pmatrix}$；
-（Ⅱ）$\\beta_1=(2^{99}-2)\\alpha_1+(2^{100}-2)\\alpha_2$，$\\beta_2=(1-2^{99})\\alpha_1+(1-2^{100})\\alpha_2$，$\\beta_3=(2-2^{98})\\alpha_1+(2-2^{99})\\alpha_2$
+> **答案**：（Ⅰ）$A^{99}=\begin{pmatrix}2^{99}-2&1-2^{99}&2-2^{98}\\2^{100}-2&1-2^{100}&2-2^{99}\\0&0&0\end{pmatrix}$；
+（Ⅱ）$\beta_1=(2^{99}-2)\alpha_1+(2^{100}-2)\alpha_2$，$\beta_2=(1-2^{99})\alpha_1+(1-2^{100})\alpha_2$，$\beta_3=(2-2^{98})\alpha_1+(2-2^{99})\alpha_2$
 >
 > （Ⅰ）由
 > $$
-> |\\lambda E-A|=\\begin{vmatrix}\\lambda&1&-1\\\\-2&\\lambda+3&0\\\\0&0&\\lambda\\end{vmatrix}=\\lambda(\\lambda+1)(\\lambda+2)=0
+> |\lambda E-A|=\begin{vmatrix}\lambda&1&-1\\-2&\lambda+3&0\\0&0&\lambda\end{vmatrix}=\lambda(\lambda+1)(\lambda+2)=0
 > $$
-> 得矩阵 $A$ 的特征值为 $\\lambda_1=-1,\\lambda_2=-2,\\lambda_3=0$。
+> 得矩阵 $A$ 的特征值为 $\lambda_1=-1,\lambda_2=-2,\lambda_3=0$。
 >
-> 将 $\\lambda_1=-1$ 代入 $(\\lambda E-A)X=0$，由
+> 将 $\lambda_1=-1$ 代入 $(\lambda E-A)X=0$，由
 > $$
-> -E-A=\\begin{pmatrix}-1&1&-1\\\\-2&2&0\\\\0&0&-1\\end{pmatrix}\\to\\begin{pmatrix}1&-1&0\\\\0&0&1\\\\0&0&0\\end{pmatrix}
+> -E-A=\begin{pmatrix}-1&1&-1\\-2&2&0\\0&0&-1\end{pmatrix}\to\begin{pmatrix}1&-1&0\\0&0&1\\0&0&0\end{pmatrix}
 > $$
-> 得 $\\lambda_1=-1$ 对应的特征向量为 $\\xi_1=\\begin{pmatrix}1\\\\1\\\\0\\end{pmatrix}$；
+> 得 $\lambda_1=-1$ 对应的特征向量为 $\xi_1=\begin{pmatrix}1\\1\\0\end{pmatrix}$；
 >
-> 将 $\\lambda_2=-2$ 代入 $(\\lambda E-A)X=0$，由
+> 将 $\lambda_2=-2$ 代入 $(\lambda E-A)X=0$，由
 > $$
-> -2E-A=\\begin{pmatrix}-2&1&-1\\\\-2&1&0\\\\0&0&-2\\end{pmatrix}\\to\\begin{pmatrix}1&-\\frac{1}{2}&0\\\\0&0&1\\\\0&0&0\\end{pmatrix}
+> -2E-A=\begin{pmatrix}-2&1&-1\\-2&1&0\\0&0&-2\end{pmatrix}\to\begin{pmatrix}1&-\frac{1}{2}&0\\0&0&1\\0&0&0\end{pmatrix}
 > $$
-> 得 $\\lambda_2=-2$ 对应的特征向量为 $\\xi_2=\\begin{pmatrix}1\\\\2\\\\0\\end{pmatrix}$；
+> 得 $\lambda_2=-2$ 对应的特征向量为 $\xi_2=\begin{pmatrix}1\\2\\0\end{pmatrix}$；
 >
-> 将 $\\lambda_3=0$ 代入 $(\\lambda E-A)X=0$，由
+> 将 $\lambda_3=0$ 代入 $(\lambda E-A)X=0$，由
 > $$
-> -A=\\begin{pmatrix}0&1&-1\\\\-2&3&0\\\\0&0&0\\end{pmatrix}\\to\\begin{pmatrix}1&0&-\\frac{3}{2}\\\\0&1&-1\\\\0&0&0\\end{pmatrix}
+> -A=\begin{pmatrix}0&1&-1\\-2&3&0\\0&0&0\end{pmatrix}\to\begin{pmatrix}1&0&-\frac{3}{2}\\0&1&-1\\0&0&0\end{pmatrix}
 > $$
-> 得 $\\lambda_3=0$ 对应的特征向量为 $\\xi_3=\\begin{pmatrix}3\\\\2\\\\2\\end{pmatrix}$。
+> 得 $\lambda_3=0$ 对应的特征向量为 $\xi_3=\begin{pmatrix}3\\2\\2\end{pmatrix}$。
 >
-> 令 $P=\\begin{pmatrix}1&1&3\\\\1&2&2\\\\0&0&2\\end{pmatrix}$，由 $P^{-1}AP=\\begin{pmatrix}-1&0&0\\\\0&-2&0\\\\0&0&0\\end{pmatrix}$ 得
+> 令 $P=\begin{pmatrix}1&1&3\\1&2&2\\0&0&2\end{pmatrix}$，由 $P^{-1}AP=\begin{pmatrix}-1&0&0\\0&-2&0\\0&0&0\end{pmatrix}$ 得
 > $$
-> A^{99}=P\\begin{pmatrix}(-1)^{99}&0&0\\\\0&(-2)^{99}&0\\\\0&0&0\\end{pmatrix}P^{-1}=\\begin{pmatrix}1&1&3\\\\1&2&2\\\\0&0&2\\end{pmatrix}\\begin{pmatrix}(-1)^{99}&0&0\\\\0&(-2)^{99}&0\\\\0&0&0\\end{pmatrix}\\begin{pmatrix}2&-1&-2\\\\-1&1&\\frac{1}{2}\\\\0&0&\\frac{1}{2}\\end{pmatrix}
+> A^{99}=P\begin{pmatrix}(-1)^{99}&0&0\\0&(-2)^{99}&0\\0&0&0\end{pmatrix}P^{-1}=\begin{pmatrix}1&1&3\\1&2&2\\0&0&2\end{pmatrix}\begin{pmatrix}(-1)^{99}&0&0\\0&(-2)^{99}&0\\0&0&0\end{pmatrix}\begin{pmatrix}2&-1&-2\\-1&1&\frac{1}{2}\\0&0&\frac{1}{2}\end{pmatrix}
 > $$
 > $$
-> =\\begin{pmatrix}2^{99}-2&1-2^{99}&2-2^{98}\\\\2^{100}-2&1-2^{100}&2-2^{99}\\\\0&0&0\\end{pmatrix}.
+> =\begin{pmatrix}2^{99}-2&1-2^{99}&2-2^{98}\\2^{100}-2&1-2^{100}&2-2^{99}\\0&0&0\end{pmatrix}.
 > $$
 >
-> （Ⅱ）由 $B^2=BA$ 得 $B^{100}=B^{98}B^2=B^{99}A=\\cdots=BA^{99}$，即
+> （Ⅱ）由 $B^2=BA$ 得 $B^{100}=B^{98}B^2=B^{99}A=\cdots=BA^{99}$，即
 > $$
-> (\\beta_1,\\beta_2,\\beta_3)=(\\alpha_1,\\alpha_2,\\alpha_3)\\begin{pmatrix}2^{99}-2&1-2^{99}&2-2^{98}\\\\2^{100}-2&1-2^{100}&2-2^{99}\\\\0&0&0\\end{pmatrix},
+> (\beta_1,\beta_2,\beta_3)=(\alpha_1,\alpha_2,\alpha_3)\begin{pmatrix}2^{99}-2&1-2^{99}&2-2^{98}\\2^{100}-2&1-2^{100}&2-2^{99}\\0&0&0\end{pmatrix},
 > $$
 > 故
 > $$
-> \\begin{cases}
-> \\beta_1=(2^{99}-2)\\alpha_1+(2^{100}-2)\\alpha_2+0\\alpha_3,\\\\
-> \\beta_2=(1-2^{99})\\alpha_1+(1-2^{100})\\alpha_2+0\\alpha_3,\\\\
-> \\beta_3=(2-2^{98})\\alpha_1+(2-2^{99})\\alpha_2+0\\alpha_3.
-> \\end{cases}
+> \begin{cases}
+> \beta_1=(2^{99}-2)\alpha_1+(2^{100}-2)\alpha_2+0\alpha_3,\\
+> \beta_2=(1-2^{99})\alpha_1+(1-2^{100})\alpha_2+0\alpha_3,\\
+> \beta_3=(2-2^{98})\alpha_1+(2-2^{99})\alpha_2+0\alpha_3.
+> \end{cases}
 > $$
 >
 > <small>解析出处：《2016 数学一解析》第 8–9 页</small>

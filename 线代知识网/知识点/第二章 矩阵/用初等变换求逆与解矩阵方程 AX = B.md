@@ -106,61 +106,135 @@ $$
 > - [[矩阵乘法]] ⇒ 🟪 必要 ⇒ 本点——AX = B 本身就是一个矩阵乘法等式，"解矩阵方程"就是解这个乘法等式
 > - [[初等变换（三种）]] ⇒ 🟪 必要 ⇒ 本点——(A | E) → (E | A⁻¹)、(A|B) → (E|A⁻¹B) 靠的正是三种初等行变换
 
-## <span class="hx hx-exam">📝</span> 九、真题（2014–2016）
+## <span class="hx hx-exam">📝</span> 九、真题（2013–2021）
+
+### 2021 年 · 数学二 · 第 10 题（选择，5 分）
+
+已知矩阵
+$$
+A=\begin{pmatrix}1&0&-1\\2&-1&1\\-1&2&-5\end{pmatrix},
+$$
+若下三角可逆矩阵 $P$ 和上三角可逆矩阵 $Q$，使 $PAQ$ 为对角矩阵，则 $P$，$Q$ 可以分别取
+
+（A）$\begin{pmatrix}1&0&0\\0&1&0\\0&0&1\end{pmatrix},\ \begin{pmatrix}1&0&1\\0&1&3\\0&0&1\end{pmatrix}$
+
+（B）$\begin{pmatrix}1&0&0\\2&-1&0\\-3&2&1\end{pmatrix},\ \begin{pmatrix}1&0&0\\0&1&0\\0&0&1\end{pmatrix}$
+
+（C）$\begin{pmatrix}1&0&0\\2&-1&0\\-3&2&1\end{pmatrix},\ \begin{pmatrix}1&0&1\\0&1&3\\0&0&1\end{pmatrix}$
+
+（D）$\begin{pmatrix}1&0&0\\0&1&0\\1&3&1\end{pmatrix},\ \begin{pmatrix}1&2&-3\\0&-1&2\\0&0&1\end{pmatrix}$
+
+> [!success]- 答案与解析
+> **答案**：（C）
+>
+> 【解析】
+> $$
+> (A,E)=\begin{pmatrix}1&0&-1&1&0&0\\2&-1&1&0&1&0\\-1&2&-5&0&0&1\end{pmatrix}\to\begin{pmatrix}1&0&-1&1&0&0\\0&-1&3&-2&1&0\\0&2&-6&1&0&1\end{pmatrix}\to\begin{pmatrix}1&0&-1&1&0&0\\0&1&-3&2&-1&0\\0&0&0&-3&2&1\end{pmatrix}
+> $$
+> $=(F,P)$，则
+> $$
+> P=\begin{pmatrix}1&0&0\\2&-1&0\\-3&2&1\end{pmatrix};
+> $$
+> $$
+> \begin{pmatrix}F\\E\end{pmatrix}=\begin{pmatrix}1&0&-1\\0&1&-3\\0&0&0\\1&0&0\\0&1&0\\0&0&1\end{pmatrix}\to\begin{pmatrix}1&0&0\\0&1&0\\0&0&0\\1&0&1\\0&1&3\\0&0&1\end{pmatrix}=\begin{pmatrix}\Lambda\\Q\end{pmatrix},
+> $$
+> 则
+> $$
+> Q=\begin{pmatrix}1&0&1\\0&1&3\\0&0&1\end{pmatrix}.
+> $$
+> 故应选 C。
+>
+> <small>解析出处：《2021 数学二解析》第 3–4 页</small>
 
 ### 2016 年 · 数学一 · 第 20 题（解答，11 分）
 
 （本题满分 11 分）设矩阵
 $$
-A=\\begin{pmatrix}1&-1&-1\\\\2&a&1\\\\-1&1&a\\end{pmatrix},\\quad B=\\begin{pmatrix}2&2\\\\1&a\\\\-a-1&-2\\end{pmatrix}.
+A=\begin{pmatrix}1&-1&-1\\2&a&1\\-1&1&a\end{pmatrix},\quad B=\begin{pmatrix}2&2\\1&a\\-a-1&-2\end{pmatrix}.
 $$
 当 $a$ 为何值时，方程 $AX=B$ 无解、有唯一解、有无穷多解？在有解时，求解此方程。
 
 > [!success]- 答案与解析
-> **答案**：当 $a\\ne -2$ 且 $a\\ne 1$ 时，有唯一解 $X=\\begin{pmatrix}1&\\frac{3a}{a+2}\\\\0&\\frac{a-4}{a+2}\\\\-1&0\\end{pmatrix}$；当 $a=1$ 时，有无穷多解 $X=\\begin{pmatrix}1&1\\\\-k_1-1&-k_2-1\\\\k_1&k_2\\end{pmatrix}$（$k_1,k_2$ 为任意常数）；当 $a=-2$ 时，无解
+> **答案**：当 $a\ne -2$ 且 $a\ne 1$ 时，有唯一解 $X=\begin{pmatrix}1&\frac{3a}{a+2}\\0&\frac{a-4}{a+2}\\-1&0\end{pmatrix}$；当 $a=1$ 时，有无穷多解 $X=\begin{pmatrix}1&1\\-k_1-1&-k_2-1\\k_1&k_2\end{pmatrix}$（$k_1,k_2$ 为任意常数）；当 $a=-2$ 时，无解
 >
 > 方法一
 > $$
-> (A\\ \\vdots\\ B)=\\left(\\begin{array}{ccc|cc}1&-1&-1&2&2\\\\2&a&1&1&a\\\\-1&1&a&-a-1&-2\\end{array}\\right)\\to\\left(\\begin{array}{ccc|cc}1&-1&-1&2&2\\\\0&a+2&3&-3&a-4\\\\0&0&a-1&1-a&0\\end{array}\\right)
+> (A\ \vdots\ B)=\left(\begin{array}{ccc|cc}1&-1&-1&2&2\\2&a&1&1&a\\-1&1&a&-a-1&-2\end{array}\right)\to\left(\begin{array}{ccc|cc}1&-1&-1&2&2\\0&a+2&3&-3&a-4\\0&0&a-1&1-a&0\end{array}\right)
 > $$
-> 当 $a\\ne -2$ 且 $a\\ne 1$ 时，
+> 当 $a\ne -2$ 且 $a\ne 1$ 时，
 > $$
-> (A\\ \\vdots\\ B)\\to\\left(\\begin{array}{ccc|cc}1&0&0&1&\\frac{3a}{a+2}\\\\0&1&0&0&\\frac{a-4}{a+2}\\\\0&0&1&-1&0\\end{array}\\right),
+> (A\ \vdots\ B)\to\left(\begin{array}{ccc|cc}1&0&0&1&\frac{3a}{a+2}\\0&1&0&0&\frac{a-4}{a+2}\\0&0&1&-1&0\end{array}\right),
 > $$
-> $AX=B$ 有唯一解，$X=A^{-1}B=\\begin{pmatrix}1&\\frac{3a}{a+2}\\\\0&\\frac{a-4}{a+2}\\\\-1&0\\end{pmatrix}$；
+> $AX=B$ 有唯一解，$X=A^{-1}B=\begin{pmatrix}1&\frac{3a}{a+2}\\0&\frac{a-4}{a+2}\\-1&0\end{pmatrix}$；
 >
 > 当 $a=1$ 时，
 > $$
-> (A\\ \\vdots\\ B)\\to\\left(\\begin{array}{ccc|cc}1&0&0&1&1\\\\0&1&1&-1&-1\\\\0&0&0&0&0\\end{array}\\right),
+> (A\ \vdots\ B)\to\left(\begin{array}{ccc|cc}1&0&0&1&1\\0&1&1&-1&-1\\0&0&0&0&0\end{array}\right),
 > $$
-> 由 $r(A)=r(A\\ \\vdots\\ B)=2<3$ 得 $AX=B$ 有无数个解。
+> 由 $r(A)=r(A\ \vdots\ B)=2<3$ 得 $AX=B$ 有无数个解。
 >
 > 令 $X=(X_1,X_2)$，由
 > $$
-> X_1=k_1\\begin{pmatrix}0\\\\-1\\\\1\\end{pmatrix}+\\begin{pmatrix}1\\\\-1\\\\0\\end{pmatrix}=\\begin{pmatrix}1\\\\-k_1-1\\\\k_1\\end{pmatrix},\\quad X_2=k_2\\begin{pmatrix}0\\\\-1\\\\1\\end{pmatrix}+\\begin{pmatrix}1\\\\-1\\\\0\\end{pmatrix}=\\begin{pmatrix}1\\\\-k_2-1\\\\k_2\\end{pmatrix}
+> X_1=k_1\begin{pmatrix}0\\-1\\1\end{pmatrix}+\begin{pmatrix}1\\-1\\0\end{pmatrix}=\begin{pmatrix}1\\-k_1-1\\k_1\end{pmatrix},\quad X_2=k_2\begin{pmatrix}0\\-1\\1\end{pmatrix}+\begin{pmatrix}1\\-1\\0\end{pmatrix}=\begin{pmatrix}1\\-k_2-1\\k_2\end{pmatrix}
 > $$
 > 得
 > $$
-> X=\\begin{pmatrix}1&1\\\\-k_1-1&-k_2-1\\\\k_1&k_2\\end{pmatrix}\\ (k_1,k_2\\ \\text{为任意常数}).
+> X=\begin{pmatrix}1&1\\-k_1-1&-k_2-1\\k_1&k_2\end{pmatrix}\ (k_1,k_2\ \text{为任意常数}).
 > $$
 >
 > $a=-2$ 时，
 > $$
-> (A\\ \\vdots\\ B)\\to\\left(\\begin{array}{ccc|cc}1&-1&-1&2&2\\\\0&0&3&-3&-6\\\\0&0&-3&3&0\\end{array}\\right)\\to\\left(\\begin{array}{ccc|cc}1&-1&-1&2&2\\\\0&0&1&-1&0\\\\0&0&0&0&1\\end{array}\\right),
+> (A\ \vdots\ B)\to\left(\begin{array}{ccc|cc}1&-1&-1&2&2\\0&0&3&-3&-6\\0&0&-3&3&0\end{array}\right)\to\left(\begin{array}{ccc|cc}1&-1&-1&2&2\\0&0&1&-1&0\\0&0&0&0&1\end{array}\right),
 > $$
-> 因为 $r(A)\\ne r(A\\ \\vdots\\ B)$，所以 $AX=B$ 无解。
+> 因为 $r(A)\ne r(A\ \vdots\ B)$，所以 $AX=B$ 无解。
 >
 > 方法二
 > $$
-> |A|=\\begin{vmatrix}1&-1&-1\\\\2&a&1\\\\-1&1&a\\end{vmatrix}=\\begin{vmatrix}1&-1&-1\\\\0&a+2&3\\\\0&0&a-1\\end{vmatrix}=(a+2)(a-1).
+> |A|=\begin{vmatrix}1&-1&-1\\2&a&1\\-1&1&a\end{vmatrix}=\begin{vmatrix}1&-1&-1\\0&a+2&3\\0&0&a-1\end{vmatrix}=(a+2)(a-1).
 > $$
-> 当 $a\\ne -2$ 且 $a\\ne 1$ 时，因为 $r(A)=r(A\\ \\vdots\\ B)=3$，所以 $AX=B$ 有唯一解，同方法一得 $X=A^{-1}B=\\begin{pmatrix}1&\\frac{3a}{a+2}\\\\0&\\frac{a-4}{a+2}\\\\-1&0\\end{pmatrix}$；
+> 当 $a\ne -2$ 且 $a\ne 1$ 时，因为 $r(A)=r(A\ \vdots\ B)=3$，所以 $AX=B$ 有唯一解，同方法一得 $X=A^{-1}B=\begin{pmatrix}1&\frac{3a}{a+2}\\0&\frac{a-4}{a+2}\\-1&0\end{pmatrix}$；
 >
-> 当 $a=1$ 时，由 $r(A)=r(A\\ \\vdots\\ B)=2<3$ 得 $AX=B$ 有无数个解，$X=\\begin{pmatrix}1&1\\\\-k_1-1&-k_2-1\\\\k_1&k_2\\end{pmatrix}$（$k_1,k_2$ 为任意常数）；
+> 当 $a=1$ 时，由 $r(A)=r(A\ \vdots\ B)=2<3$ 得 $AX=B$ 有无数个解，$X=\begin{pmatrix}1&1\\-k_1-1&-k_2-1\\k_1&k_2\end{pmatrix}$（$k_1,k_2$ 为任意常数）；
 >
-> 当 $a=-2$ 时，因为 $r(A)\\ne r(A\\ \\vdots\\ B)$，所以 $AX=B$ 无解。
+> 当 $a=-2$ 时，因为 $r(A)\ne r(A\ \vdots\ B)$，所以 $AX=B$ 无解。
 >
 > <small>解析出处：《2016 数学一解析》第 6–8 页</small>
+
+### 2015 年 · 数学三 · 第 20 题（解答，11 分）
+
+（本题满分 11 分）设矩阵 $A=\begin{pmatrix}a&1&0\\1&a&-1\\0&1&a\end{pmatrix}$，且 $A^3=O$.
+
+（Ⅰ）求 $a$ 的值；
+
+（Ⅱ）若矩阵 $X$ 满足 $X-XA^2-AX+AXA^2=E$，其中 $E$ 为 3 阶单位矩阵，求 $X$.
+
+> [!success]- 答案与解析
+> **答案**：$a=0$；$X=\begin{pmatrix}3&1&-2\\1&1&-1\\2&1&-1\end{pmatrix}$
+>
+> （Ⅰ）由于 $A^3=O$，所以
+> $$
+> |A|=\begin{vmatrix}a&1&0\\1&a&-1\\0&1&a\end{vmatrix}=a^3=0,
+> $$
+> 于是 $a=0$.
+>
+> （Ⅱ）由于
+> $$
+> X-XA^2-AX+AXA^2=E,
+> $$
+> 所以
+> $$
+> (E-A)X(E-A^2)=E.
+> $$
+> 由（Ⅰ）知
+> $$
+> E-A=\begin{pmatrix}1&-1&0\\-1&1&1\\0&-1&1\end{pmatrix},\quad E-A^2=\begin{pmatrix}0&0&1\\0&1&0\\-1&0&2\end{pmatrix},
+> $$
+> 因为 $E-A,E-A^2$ 均可逆，所以
+> $$
+> X=(E-A)^{-1}(E-A^2)^{-1}=\begin{pmatrix}2&1&-1\\1&1&-1\\1&1&0\end{pmatrix}\begin{pmatrix}2&0&-1\\0&1&0\\1&0&0\end{pmatrix}=\begin{pmatrix}3&1&-2\\1&1&-1\\2&1&-1\end{pmatrix}.
+> $$
+>
+> <small>解析出处：《2015 数学三真题答案解析》第 6 页</small>
 
 ### 2014 年 · 数学三 · 第 20 题（解答，11 分）
 
@@ -207,6 +281,50 @@ $E$ 为 3 阶单位矩阵。
 > $k_1,k_2,k_3$ 为任意常数。
 >
 > <small>解析出处：《2014 年数学（三）参考答案》第 5 页</small>
+
+### 2013 年 · 数学三 · 第 20 题（解答，11 分）
+
+（本题满分 11 分）设
+$$
+A=\begin{pmatrix}1&a\\1&0\end{pmatrix},\quad B=\begin{pmatrix}0&1\\1&b\end{pmatrix}.
+$$
+当 $a,b$ 为何值时，存在矩阵 $C$ 使得 $AC-CA=B$，并求所有矩阵 $C$。
+
+> [!success]- 答案与解析
+> **答案**：$a=-1$，$b=0$；此时 $C=\begin{pmatrix}k_1+k_2+1&-k_1\\k_1&k_2\end{pmatrix}$，$k_1,k_2$ 为任意常数。
+>
+> 由题意可知矩阵 $C$ 为 2 阶矩阵，故可设 $C=\begin{pmatrix}x_1&x_2\\x_3&x_4\end{pmatrix}$，则由 $AC-CA=B$ 可得线性方程组
+> $$
+> \begin{cases}
+> -x_2+ax_3=0,\\
+> -ax_1+x_2+ax_4=1,\\
+> x_1-x_3-x_4=1,\\
+> x_2-ax_3=b.
+> \end{cases}\tag{1}
+> $$
+> 对增广矩阵作初等行变换：
+> $$
+> \begin{pmatrix}0&-1&a&0&0\\-a&1&0&a&1\\1&0&-1&-1&1\\0&1&-a&0&b\end{pmatrix}
+> \to\begin{pmatrix}1&0&-1&-1&1\\-a&1&0&a&1\\0&-1&a&0&0\\0&1&-a&0&b\end{pmatrix}
+> \to\begin{pmatrix}1&0&-1&-1&1\\0&1&-a&0&1+a\\0&-1&a&0&0\\0&1&-a&0&b\end{pmatrix}
+> $$
+> $$
+> \to\begin{pmatrix}1&0&-1&-1&1\\0&1&-a&0&1+a\\0&0&0&0&1+a\\0&0&0&0&b-1-a\end{pmatrix}.
+> $$
+> 由于方程组 (1) 有解，故 $1+a=0$，$b-1-a=0$，即 $a=-1,\ b=0$。从而有
+> $$
+> \begin{pmatrix}0&-1&a&0&0\\-a&1&0&a&1\\1&0&-1&-1&1\\0&1&-a&0&b\end{pmatrix}\to\begin{pmatrix}1&0&-1&-1&1\\0&1&1&0&0\\0&0&0&0&0\\0&0&0&0&0\end{pmatrix},
+> $$
+> 故有
+> $$
+> \begin{cases}x_1=k_1+k_2+1,\\ x_2=-k_1,\\ x_3=k_1,\\ x_4=k_2,\end{cases}
+> $$
+> 其中 $k_1,k_2$ 任意。从而有
+> $$
+> C=\begin{pmatrix}k_1+k_2+1&-k_1\\k_1&k_2\end{pmatrix}.
+> $$
+>
+> <small>解析出处：《2013 年数学（三）试题答案》第 8 页</small>
 
 ## <span class="hx hx-nav">🧭</span> 十、导航
 

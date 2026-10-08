@@ -116,7 +116,25 @@ $$
 > - [[行列式计算的总思路：化三角形]] ⇒ 🟧 充分 ⇒ 本点——化三角形是定义式计算的替代路径
 > - [[数乘与行列式的线性性]] ⇒ ⬜ 无关 ⇒ 本点——性质可加速计算，但非定义所需
 
-## <span class="hx hx-exam">📝</span> 九、真题（2014）
+## <span class="hx hx-exam">📝</span> 九、真题（2014–2021）
+
+### 2021 年 · 数学三 · 第 15 题（填空，5 分）
+
+多项式
+$$
+f(x)=\begin{vmatrix}x&x&1&2x\\1&x&2&-1\\2&1&x&1\\2&-1&1&x\end{vmatrix}
+$$
+中 $x^3$ 项的系数为 $\underline{\qquad}$。
+
+> [!success]- 答案与解析
+> **答案**：$-5$
+>
+> $$
+> f(x)=\begin{vmatrix}x&x&1&2x\\1&x&2&-1\\2&1&x&1\\2&-1&1&x\end{vmatrix}=x\begin{vmatrix}x&2&-1\\1&x&1\\-1&1&x\end{vmatrix}-x\begin{vmatrix}1&2&-1\\2&x&1\\2&1&x\end{vmatrix}-\begin{vmatrix}1&x&-1\\2&1&1\\2&-1&x\end{vmatrix}-2x\begin{vmatrix}1&x&2\\2&1&x\\2&-1&1\end{vmatrix}
+> $$
+> 所以展开式中含 $x^3$ 项的有 $-x^3,-4x^3$，即 $x^3$ 项的系数为 $-5$。
+>
+> <small>解析出处：《2021 数学三解析》第 5 页</small>
 
 ### 2014 年 · 数学三 · 第 5 题（选择，4 分）
 

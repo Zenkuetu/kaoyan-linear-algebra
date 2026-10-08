@@ -92,7 +92,32 @@ $$
 > - [[高斯消元法与行阶梯形]] ⇒ 🟧 充分 ⇒ 本点——解方程组可求伴随矩阵的秩
 > - [[特征值的运算性质]] ⇒ 🟧 充分 ⇒ 本点——A* 的特征值 ｜A｜/λ 可反推可逆性
 
-## <span class="hx hx-exam">📝</span> 九、真题（2020）
+## <span class="hx hx-exam">📝</span> 九、真题（2009–2020）
+
+### 2020 年 · 数学三 · 第 5 题（选择，5 分）
+
+设 4 阶矩阵 $A=(a_{ij})$ 不可逆，$a_{12}$ 的代数余子式 $A_{12}\ne 0$，$\alpha_1,\alpha_2,\alpha_3,\alpha_4$ 为矩阵 $A$ 的列向量组，$A^{*}$ 为 $A$ 的伴随矩阵，则方程组 $A^{*}x=0$ 的通解为
+
+（A）$x=k_1\alpha_1+k_2\alpha_2+k_3\alpha_3$，其中 $k_1,k_2,k_3$ 为任意常数
+
+（B）$x=k_1\alpha_1+k_2\alpha_2+k_3\alpha_4$，其中 $k_1,k_2,k_3$ 为任意常数
+
+（C）$x=k_1\alpha_1+k_2\alpha_3+k_3\alpha_4$，其中 $k_1,k_2,k_3$ 为任意常数
+
+（D）$x=k_1\alpha_2+k_2\alpha_3+k_3\alpha_4$，其中 $k_1,k_2,k_3$ 为任意常数
+
+> [!success]- 答案与解析
+> **答案**：（C）
+>
+> 选择题的 4 个选项，已经告诉你 $A^{*}x=0$ 的基础解系由 $A$ 的 3 个列向量所构成。因此只要判断 $A$ 的哪 3 个列向量是线性无关的。而条件就是 $A_{12}\ne 0$。
+>
+> 因
+> $$
+> A_{12}=-\begin{vmatrix}a_{21}&a_{23}&a_{24}\\a_{31}&a_{33}&a_{34}\\a_{41}&a_{43}&a_{44}\end{vmatrix}\ne 0
+> $$
+> 意味 $(a_{21},a_{31},a_{41})^{\mathrm{T}}$，$(a_{23},a_{33},a_{43})^{\mathrm{T}}$，$(a_{24},a_{34},a_{44})^{\mathrm{T}}$ 线性无关，那么必有 $\alpha_1,\alpha_3,\alpha_4$ 线性无关（低维线性无关向量增加坐标而得到的高维向量必线性无关）。故应选（C）。
+>
+> <small>解析出处：《2020 数学三解析》第 5 页</small>
 
 ### 2020 年 · 数学二 · 第 7 题（选择，4 分）
 
@@ -120,6 +145,50 @@ $$
 > 故应选（C）。
 >
 > <small>解析出处：《2020 数学二解析》第 7 页</small>
+
+### 2013 年 · 数学三 · 第 13 题（填空，4 分）
+
+设 $A=(a_{ij})$ 是三阶非零矩阵，$|A|$ 为 $A$ 的行列式，$A_{ij}$ 为 $a_{ij}$ 的代数余子式。若 $a_{ij}+A_{ij}=0\ (i,j=1,2,3)$，则 $|A|=\underline{\qquad}$。
+
+> [!success]- 答案与解析
+> **答案**：$-1$
+>
+> 由 $a_{ij}+A_{ij}=0$ 可知 $A^{\mathrm{T}}=-A^{*}$。
+> $$
+> |A|=a_{11}A_{11}+a_{12}A_{12}+a_{13}A_{13}=a_{11}A_{11}+a_{21}A_{21}+a_{31}A_{31}
+> =-\sum_{j=1}^{3}a_{1j}^2=-\sum_{i=1}^{3}\sum_{j=1}^{3}a_{ij}^2<0,
+> $$
+> 从而有 $|A|=|A^{\mathrm{T}}|=|-A^{*}|=-|A^{*}|=-|A|^2$，故 $|A|=-1$。
+>
+> <small>解析出处：《2013 年数学（三）试题答案》第 5 页</small>
+
+### 2009 年 · 数学二 · 第 7 题（选择，4 分）
+
+设 $A,B$ 均为 2 阶方阵，$A^*,B^*$ 分别为 $A,B$ 的伴随矩阵. 若 $|A|=2$，$|B|=3$，则分块矩阵
+$$
+\begin{pmatrix}
+O&A\\
+B&O
+\end{pmatrix}
+$$
+的伴随矩阵为（　）
+
+（A）$\begin{pmatrix}O&3B^*\\2A^*&O\end{pmatrix}$　（B）$\begin{pmatrix}O&2B^*\\3A^*&O\end{pmatrix}$　（C）$\begin{pmatrix}O&3A^*\\2B^*&O\end{pmatrix}$　（D）$\begin{pmatrix}O&2A^*\\3B^*&O\end{pmatrix}$
+
+> [!success]- 答案与解析
+> **答案**：（B）
+>
+> 根据 $CC^*=|C|E$ 若 $C^*=|C|C^{-1},C^{-1}=\frac{1}{|C|}C^*$
+>
+> 分块矩阵 $\begin{pmatrix}O&A\\B&O\end{pmatrix}$ 的行列式 $\begin{vmatrix}O&A\\B&O\end{vmatrix}=(-1)^{2\times2}|A||B|=2\times3=6$ 即分块矩阵可逆
+> $$
+> \begin{pmatrix}O&A\\B&O\end{pmatrix}^*=\begin{vmatrix}O&A\\B&O\end{vmatrix}\begin{pmatrix}O&A\\B&O\end{pmatrix}^{-1}=6\begin{pmatrix}O&B^{-1}\\A^{-1}&O\end{pmatrix}=6\begin{pmatrix}O&\frac{1}{|B|}B^*\\\frac{1}{|A|}A^*&O\end{pmatrix}
+> $$
+> $$
+> =6\begin{pmatrix}O&\frac{1}{3}B^*\\\frac{1}{2}A^*&O\end{pmatrix}=\begin{pmatrix}O&2B^*\\3A^*&O\end{pmatrix}
+> $$
+>
+> <small>解析出处：《2005—2013 考研数二真题答案解析》第 63 页</small>
 
 ## <span class="hx hx-nav">🧭</span> 十、导航
 
