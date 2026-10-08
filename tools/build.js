@@ -156,6 +156,9 @@ const CN_NUM = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '
 const num2cn = n => CN_NUM[n - 1] || String(n);
 // 库里统一用 Obsidian 原生双链：显示原标题，指向安全文件名；两者不同时用 [[目标|显示]]。
 // Obsidian 会把 [[A* 的秩与可逆性判定]] 里的 * 当作"新建文件的非法字符"，因此必须用清洗后的目标名。
+// 表格单元格里**不能**出现 `|`：`[[目标|别名]]` 的竖线会被 Markdown 当成列分隔符，把整行拆散
+// （总览的章节知识点清单曾因此错列、链接显示成字面量）。表格里一律用不带别名的链接。
+const wikiLinkCell = p => '[[' + safeName(p.title) + ']]';
 function wikiLink(p) {
   const target = safeName(p.title);
   return target === p.title ? '[[' + target + ']]' : '[[' + target + '|' + p.title + ']]';
@@ -367,8 +370,8 @@ for (const m of MODULES) {
       L.push('>');
       L.push('> | 方向 | 关系类型 | 与之相连的知识点 | 数学含义 |');
       L.push('> | --- | --- | --- | --- |');
-      for (const o of outs) L.push('> | 本点 ⇒ 对方 | ' + TYPE[o.t].emoji + ' ' + TYPE[o.t].label + ' | ' + wikiLink(o.other) + ' | ' + o.why + ' |');
-      for (const o of ins) L.push('> | 对方 ⇒ 本点 | ' + TYPE[o.t].emoji + ' ' + TYPE[o.t].label + ' | ' + wikiLink(o.other) + ' | ' + o.why + ' |');
+      for (const o of outs) L.push('> | 本点 ⇒ 对方 | ' + TYPE[o.t].emoji + ' ' + TYPE[o.t].label + ' | ' + wikiLinkCell(o.other) + ' | ' + o.why + ' |');
+      for (const o of ins) L.push('> | 对方 ⇒ 本点 | ' + TYPE[o.t].emoji + ' ' + TYPE[o.t].label + ' | ' + wikiLinkCell(o.other) + ' | ' + o.why + ' |');
       L.push('>');
       L.push('> 图例：🟥 充要（可互换）｜🟧 充分不必要（条件更强）｜🟪 必要不充分（条件更弱）｜⬜ 互不可推 ｜🟩 同源/构成。');
       L.push('>');
@@ -470,7 +473,7 @@ function moduleBlock(m) {
   L.push('');
   L.push('| 知识点 | 层次 | 一句话要点 |');
   L.push('| --- | --- | --- |');
-  for (const p of m.points) L.push('| ' + wikiLink(p) + ' | ' + tagLabel(p.tags) + ' | ' + p.summary.replace(/\|/g, '｜') + ' |');
+  for (const p of m.points) L.push('| ' + wikiLinkCell(p) + ' | ' + tagLabel(p.tags) + ' | ' + p.summary.replace(/\|/g, '｜') + ' |');
   L.push('');
   return L.join('\n');
 }
@@ -589,7 +592,7 @@ for (const m of MODULES) {
   L.push('');
   L.push('| 知识点 | 层次 | 一句话要点 |');
   L.push('| --- | --- | --- |');
-  for (const p of m.points) L.push('| ' + wikiLink(p) + ' | ' + tagLabel(p.tags) + ' | ' + p.summary.replace(/\|/g, '｜') + ' |');
+  for (const p of m.points) L.push('| ' + wikiLinkCell(p) + ' | ' + tagLabel(p.tags) + ' | ' + p.summary.replace(/\|/g, '｜') + ' |');
   L.push('');
   L.push('## 本章关系图（Mermaid）');
   L.push('');
@@ -602,7 +605,7 @@ for (const m of MODULES) {
   const cross = EDGES.filter(e => (ids.has(e[0]) && !ids.has(e[1])) || (!ids.has(e[0]) && ids.has(e[1])));
   L.push('| 起点 | 关系 | 终点 | 含义 |');
   L.push('| --- | --- | --- | --- |');
-  for (const e of cross) L.push('| ' + wikiLink(byId.get(e[0])) + ' | ' + TYPE[e[2]].emoji + ' ' + TYPE[e[2]].short + ' | ' + wikiLink(byId.get(e[1])) + ' | ' + e[3] + ' |');
+  for (const e of cross) L.push('| ' + wikiLinkCell(byId.get(e[0])) + ' | ' + TYPE[e[2]].emoji + ' ' + TYPE[e[2]].short + ' | ' + wikiLinkCell(byId.get(e[1])) + ' | ' + e[3] + ' |');
   L.push('');
   L.push('## Obsidian 双链版关系（供图谱 view 使用）');
   L.push('');
@@ -690,7 +693,7 @@ for (const m of MODULES) {
   let i = 0;
   for (const m of MODULES) for (const p of m.points) {
     i++;
-    L.push('| ' + i + ' | ' + wikiLink(p) + ' | ' + m.title + ' | ' + tagLabel(p.tags) + ' | ' + (!needsNum2(p.tags) ? '❌ **不要求**' : '✅ 要求') + ' |');
+    L.push('| ' + i + ' | ' + wikiLinkCell(p) + ' | ' + m.title + ' | ' + tagLabel(p.tags) + ' | ' + (!needsNum2(p.tags) ? '❌ **不要求**' : '✅ 要求') + ' |');
   }
   L.push('');
   L.push('## 三、数二可直接跳过的知识点（共 ' + skipNum2.length + ' 条）');
