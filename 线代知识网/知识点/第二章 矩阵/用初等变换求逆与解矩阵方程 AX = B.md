@@ -506,6 +506,23 @@ $$
 >
 > 因为 $A-E=\begin{pmatrix}1&1\\-1&1\end{pmatrix}$，所以 $|A-E|=2$，于是 $|B|=2$．
 
+### 2006 年 · 数学二 · 第 6 题（填空，4 分）
+
+设矩阵 $A=\begin{pmatrix}2&1\\-1&2\end{pmatrix}$，$E$ 为 2 阶单位矩阵，矩阵 $B$ 满足 $BA=B+2E$，则 $|B|=$ ________.
+
+> [!success]- 答案与解析
+> **答案**：2
+>
+> 由已知条件 $BA=B+2E$ 变形得，$BA-B=2E\Rightarrow B(A-E)=2E$，两边取行列式，得
+> $$
+> |B(A-E)|=|2E|=2^2=4
+> $$
+> 其中，
+> $$
+> A-E=\begin{pmatrix}2&1\\-1&2\end{pmatrix}-\begin{pmatrix}1&0\\0&1\end{pmatrix}=\begin{pmatrix}1&1\\-1&1\end{pmatrix},\qquad |A-E|=\begin{vmatrix}1&1\\-1&1\end{vmatrix}=2,
+> $$
+> 因此，$|B|=\frac{|2E|}{|A-E|}=\frac{4}{2}=2$.
+
 ### 2013 年 · 数学一 · 第 20 题（解答，11 分）
 
 （本题满分 11 分）设 $A=\begin{pmatrix}1&a\\1&0\end{pmatrix}$，$B=\begin{pmatrix}0&1\\1&b\end{pmatrix}$．当 $a,b$ 为何值时，存在矩阵 $C$ 使得 $AC-CA=B$，并求所有矩阵 $C$．
