@@ -121,7 +121,7 @@ $$
 > - [[矩阵方程 AX = O 与 AB = O]] ⇒ 🟥 充要 ⇒ 本点——AB=O 即 B 的列都是齐次解
 > - [[可逆的充要条件（汇总枢纽）]] ⇒ 🟥 充要 ⇒ 本点——可逆 ⇔ 齐次只有零解
 
-## <span class="hx hx-exam">📝</span> 九、真题（2025）
+## <span class="hx hx-exam">📝</span> 九、真题（2004–2025）
 
 ### 2025 年 · 数学一 · 第 15 题（填空，5 分）
 
@@ -137,6 +137,54 @@ $$
 > 故
 > $$
 > a-b=-4.
+> $$
+
+### 2004 年 · 数学一 · 第 20 题（解答，9 分）
+
+（本题满分 9 分）设有齐次线性方程组
+$$
+\begin{cases}(1+a)x_1+x_2+\cdots+x_n=0,\\2x_1+(2+a)x_2+\cdots+2x_n=0,\\\cdots\cdots\\nx_1+nx_2+\cdots+(n+a)x_n=0,\end{cases}\quad(n\ge 2),
+$$
+试问 $a$ 取何值时，该方程组有非零解，并求出其通解．
+
+> [!success]- 答案与解析
+> **答案**：当 $a=0$ 或 $a=-\dfrac{n(n+1)}{2}$ 时方程组有非零解；$a=0$ 时通解为 $X=C_1\begin{pmatrix}-1\\1\\0\\\vdots\\0\end{pmatrix}+C_2\begin{pmatrix}-1\\0\\1\\\vdots\\0\end{pmatrix}+\cdots+C_{n-1}\begin{pmatrix}-1\\0\\0\\\vdots\\1\end{pmatrix}$（$C_1,C_2,\cdots,C_{n-1}$ 为任意常数）；$a=-\dfrac{n(n+1)}{2}$ 时通解为 $X=C\begin{pmatrix}1\\2\\\vdots\\n\end{pmatrix}$（$C$ 为任意常数）．
+>
+> 【解】 方法一
+> $$
+> |A|=\begin{vmatrix}1+a&1&\cdots&1\\2&2+a&\cdots&2\\\vdots&\vdots&&\vdots\\n&n&\cdots&n+a\end{vmatrix}=\left[a+\frac{n(n+1)}{2}\right]\begin{vmatrix}1&1&\cdots&1\\2&2+a&\cdots&2\\\vdots&\vdots&&\vdots\\n&n&\cdots&n+a\end{vmatrix}
+> $$
+> $$
+> =\left[a+\frac{n(n+1)}{2}\right]a^{n-1}.
+> $$
+> 当 $a=0$ 或 $a=-\dfrac{n(n+1)}{2}$ 时，方程组有非零解．
+>
+> 当 $a=0$ 时，由 $A\to\begin{pmatrix}1&1&\cdots&1\\0&0&\cdots&0\\\vdots&\vdots&&\vdots\\0&0&\cdots&0\end{pmatrix}$ 得方程组的通解为
+> $$
+> X=C_1\begin{pmatrix}-1\\1\\0\\\vdots\\0\end{pmatrix}+C_2\begin{pmatrix}-1\\0\\1\\\vdots\\0\end{pmatrix}+\cdots+C_{n-1}\begin{pmatrix}-1\\0\\0\\\vdots\\1\end{pmatrix}\quad(C_1,C_2,\cdots,C_{n-1}\text{ 为任意常数});
+> $$
+> 当 $a=-\dfrac{n(n+1)}{2}$ 时，
+> $$
+> \text{由 }A=\begin{pmatrix}1+a&1&\cdots&1\\2&2+a&\cdots&2\\\vdots&\vdots&&\vdots\\n&n&\cdots&n+a\end{pmatrix}\to\begin{pmatrix}1+a&1&\cdots&1\\-2a&a&\cdots&0\\\vdots&\vdots&&\vdots\\-na&0&\cdots&a\end{pmatrix}
+> $$
+> $$
+> \to\begin{pmatrix}1+a&1&\cdots&1\\-2&1&\cdots&0\\\vdots&\vdots&&\vdots\\-n&0&\cdots&1\end{pmatrix}\to\begin{pmatrix}-2&1&0&\cdots&0\\-3&0&1&\cdots&0\\\vdots&\vdots&\vdots&&\vdots\\-n&0&0&\cdots&1\\0&0&0&\cdots&0\end{pmatrix},
+> $$
+> 原方程组的通解为 $X=C\begin{pmatrix}1\\2\\\vdots\\n\end{pmatrix}$（$C$ 为任意常数）．
+>
+> 方法二
+> $$
+> A=\begin{pmatrix}1+a&1&\cdots&1\\2&2+a&\cdots&2\\\vdots&\vdots&&\vdots\\n&n&\cdots&n+a\end{pmatrix}\to\begin{pmatrix}a+\dfrac{n(n+1)}{2}&a+\dfrac{n(n+1)}{2}&\cdots&a+\dfrac{n(n+1)}{2}\\2&2+a&\cdots&2\\\vdots&\vdots&&\vdots\\n&n&\cdots&n+a\end{pmatrix},
+> $$
+> 当 $a+\dfrac{n(n+1)}{2}=0$，即 $a=-\dfrac{n(n+1)}{2}$，由 $r(A)=n-1<n$ 得原方程组有无数个解，
+> $$
+> \text{显然 }A\begin{pmatrix}1\\2\\\vdots\\n\end{pmatrix}=0,\text{故方程组的通解为 }X=C\begin{pmatrix}1\\2\\\vdots\\n\end{pmatrix}\text{（}C\text{ 为任意常数）};
+> $$
+> 当 $a+\dfrac{n(n+1)}{2}\ne 0$ 时，$A\to\begin{pmatrix}1&1&\cdots&1\\2&2+a&\cdots&2\\\vdots&\vdots&&\vdots\\n&n&\cdots&n+a\end{pmatrix}\to\begin{pmatrix}1&1&\cdots&1\\0&a&\cdots&0\\\vdots&\vdots&&\vdots\\0&0&\cdots&a\end{pmatrix}$，
+>
+> 当 $a=0$ 时，方程组有无数个解，由 $A\to\begin{pmatrix}1&1&\cdots&1\\0&0&\cdots&0\\\vdots&\vdots&&\vdots\\0&0&\cdots&0\end{pmatrix}$ 得通解为
+> $$
+> X=C_1\begin{pmatrix}-1\\1\\0\\\vdots\\0\end{pmatrix}+C_2\begin{pmatrix}-1\\0\\1\\\vdots\\0\end{pmatrix}+\cdots+C_{n-1}\begin{pmatrix}-1\\0\\0\\\vdots\\1\end{pmatrix}\quad(C_1,C_2,\cdots,C_{n-1}\text{ 为任意常数}).
 > $$
 
 ## <span class="hx hx-nav">🧭</span> 十、导航

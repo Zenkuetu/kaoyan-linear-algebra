@@ -402,7 +402,9 @@ for (const m of MODULES) {
           for (const ln of ansLines) L.push(ln.trim() === '' ? '>' : '> ' + ln);
         }
         L.push('>');
-        for (const line of String(e.analysis).split('\n')) L.push(line.trim() === '' ? '>' : '> ' + line);
+        if (String(e.analysis).trim()) {
+          for (const line of String(e.analysis).split('\n')) L.push(line.trim() === '' ? '>' : '> ' + line);
+        }
         L.push('');
       }
     }

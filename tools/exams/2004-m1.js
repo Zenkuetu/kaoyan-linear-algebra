@@ -70,3 +70,79 @@ $$
   source: '《2004 年数学（一）真题解析》第 5 页',
 });
 
+EXAMS.push({
+  year: 2004, subject: '数一', number: 20, kind: '解答', score: 9,
+  ids: ['eq-homo-sol', 'eq-homo-general', 'det-elimination'],
+  question: String.raw`（本题满分 9 分）设有齐次线性方程组
+$$
+\begin{cases}(1+a)x_1+x_2+\cdots+x_n=0,\\2x_1+(2+a)x_2+\cdots+2x_n=0,\\\cdots\cdots\\nx_1+nx_2+\cdots+(n+a)x_n=0,\end{cases}\quad(n\ge 2),
+$$
+试问 $a$ 取何值时，该方程组有非零解，并求出其通解．`,
+  answer: String.raw`当 $a=0$ 或 $a=-\dfrac{n(n+1)}{2}$ 时方程组有非零解；$a=0$ 时通解为 $X=C_1\begin{pmatrix}-1\\1\\0\\\vdots\\0\end{pmatrix}+C_2\begin{pmatrix}-1\\0\\1\\\vdots\\0\end{pmatrix}+\cdots+C_{n-1}\begin{pmatrix}-1\\0\\0\\\vdots\\1\end{pmatrix}$（$C_1,C_2,\cdots,C_{n-1}$ 为任意常数）；$a=-\dfrac{n(n+1)}{2}$ 时通解为 $X=C\begin{pmatrix}1\\2\\\vdots\\n\end{pmatrix}$（$C$ 为任意常数）．`,
+  analysis: String.raw`【解】 方法一
+$$
+|A|=\begin{vmatrix}1+a&1&\cdots&1\\2&2+a&\cdots&2\\\vdots&\vdots&&\vdots\\n&n&\cdots&n+a\end{vmatrix}=\left[a+\frac{n(n+1)}{2}\right]\begin{vmatrix}1&1&\cdots&1\\2&2+a&\cdots&2\\\vdots&\vdots&&\vdots\\n&n&\cdots&n+a\end{vmatrix}
+$$
+$$
+=\left[a+\frac{n(n+1)}{2}\right]a^{n-1}.
+$$
+当 $a=0$ 或 $a=-\dfrac{n(n+1)}{2}$ 时，方程组有非零解．
+
+当 $a=0$ 时，由 $A\to\begin{pmatrix}1&1&\cdots&1\\0&0&\cdots&0\\\vdots&\vdots&&\vdots\\0&0&\cdots&0\end{pmatrix}$ 得方程组的通解为
+$$
+X=C_1\begin{pmatrix}-1\\1\\0\\\vdots\\0\end{pmatrix}+C_2\begin{pmatrix}-1\\0\\1\\\vdots\\0\end{pmatrix}+\cdots+C_{n-1}\begin{pmatrix}-1\\0\\0\\\vdots\\1\end{pmatrix}\quad(C_1,C_2,\cdots,C_{n-1}\text{ 为任意常数});
+$$
+当 $a=-\dfrac{n(n+1)}{2}$ 时，
+$$
+\text{由 }A=\begin{pmatrix}1+a&1&\cdots&1\\2&2+a&\cdots&2\\\vdots&\vdots&&\vdots\\n&n&\cdots&n+a\end{pmatrix}\to\begin{pmatrix}1+a&1&\cdots&1\\-2a&a&\cdots&0\\\vdots&\vdots&&\vdots\\-na&0&\cdots&a\end{pmatrix}
+$$
+$$
+\to\begin{pmatrix}1+a&1&\cdots&1\\-2&1&\cdots&0\\\vdots&\vdots&&\vdots\\-n&0&\cdots&1\end{pmatrix}\to\begin{pmatrix}-2&1&0&\cdots&0\\-3&0&1&\cdots&0\\\vdots&\vdots&\vdots&&\vdots\\-n&0&0&\cdots&1\\0&0&0&\cdots&0\end{pmatrix},
+$$
+原方程组的通解为 $X=C\begin{pmatrix}1\\2\\\vdots\\n\end{pmatrix}$（$C$ 为任意常数）．
+
+方法二
+$$
+A=\begin{pmatrix}1+a&1&\cdots&1\\2&2+a&\cdots&2\\\vdots&\vdots&&\vdots\\n&n&\cdots&n+a\end{pmatrix}\to\begin{pmatrix}a+\dfrac{n(n+1)}{2}&a+\dfrac{n(n+1)}{2}&\cdots&a+\dfrac{n(n+1)}{2}\\2&2+a&\cdots&2\\\vdots&\vdots&&\vdots\\n&n&\cdots&n+a\end{pmatrix},
+$$
+当 $a+\dfrac{n(n+1)}{2}=0$，即 $a=-\dfrac{n(n+1)}{2}$，由 $r(A)=n-1<n$ 得原方程组有无数个解，
+$$
+\text{显然 }A\begin{pmatrix}1\\2\\\vdots\\n\end{pmatrix}=0,\text{故方程组的通解为 }X=C\begin{pmatrix}1\\2\\\vdots\\n\end{pmatrix}\text{（}C\text{ 为任意常数）};
+$$
+当 $a+\dfrac{n(n+1)}{2}\ne 0$ 时，$A\to\begin{pmatrix}1&1&\cdots&1\\2&2+a&\cdots&2\\\vdots&\vdots&&\vdots\\n&n&\cdots&n+a\end{pmatrix}\to\begin{pmatrix}1&1&\cdots&1\\0&a&\cdots&0\\\vdots&\vdots&&\vdots\\0&0&\cdots&a\end{pmatrix}$，
+
+当 $a=0$ 时，方程组有无数个解，由 $A\to\begin{pmatrix}1&1&\cdots&1\\0&0&\cdots&0\\\vdots&\vdots&&\vdots\\0&0&\cdots&0\end{pmatrix}$ 得通解为
+$$
+X=C_1\begin{pmatrix}-1\\1\\0\\\vdots\\0\end{pmatrix}+C_2\begin{pmatrix}-1\\0\\1\\\vdots\\0\end{pmatrix}+\cdots+C_{n-1}\begin{pmatrix}-1\\0\\0\\\vdots\\1\end{pmatrix}\quad(C_1,C_2,\cdots,C_{n-1}\text{ 为任意常数}).
+$$`,
+  source: '《2004 年数学（一）真题解析》第 8–10 页',
+});
+
+EXAMS.push({
+  year: 2004, subject: '数一', number: 21, kind: '解答', score: 9,
+  ids: ['eig-poly', 'eig-diag-crit', 'eig-mult'],
+  question: String.raw`（本题满分 9 分）设矩阵 $A=\begin{pmatrix}1&2&-3\\-1&4&-3\\1&a&5\end{pmatrix}$ 的特征方程有一个二重根，求 $a$ 的值，并讨论 $A$ 是否可相似对角化．`,
+  answer: String.raw`$a=-2$ 时，$\lambda=2$ 为二重特征值，$A$ 可相似对角化；$a=-\dfrac{2}{3}$ 时，$\lambda=4$ 为二重特征值，$A$ 不可相似对角化．`,
+  analysis: String.raw`【解】
+$$
+|\lambda E-A|=\begin{vmatrix}\lambda-1&-2&3\\1&\lambda-4&3\\-1&-a&\lambda-5\end{vmatrix}=(\lambda-2)(\lambda^2-8\lambda+3a+18),
+$$
+情形一：$\lambda=2$ 为 $A$ 的二重特征值，则当 $\lambda=2$ 时，$\lambda^2-8\lambda+3a+18=0$，即 $4-16+3a+18=0$，解得 $a=-2$．
+$$
+2E-A=\begin{pmatrix}1&-2&3\\1&-2&3\\-1&2&-3\end{pmatrix},
+$$
+因为 $r(2E-A)=1$，所以方程组 $(2E-A)X=0$ 的基础解系只含两个线性无关的解向量，即 $\lambda=2$ 有两个线性无关的特征向量，故 $A$ 可相似对角化．
+
+情形二：$\lambda=2$ 为一重特征值，则 $\lambda^2-8\lambda+3a+18=0$ 有二重根，即 $\Delta=64-4(3a+18)=0$，解得 $a=-\dfrac{2}{3}$，二重特征值为 $\lambda_2=\lambda_3=\dfrac{-8}{2}=4$．
+
+因为 $r(4E-A)=2$，所以 $A$ 不可相似对角化．
+
+> **方法点评**：本题考查矩阵对角化．
+> 设 $A$ 是 $n$ 阶矩阵，若存在可逆矩阵 $P$，使得 $P^{-1}AP$ 为对角矩阵，称 $A$ 可对角化，判断矩阵可否对角化有如下常见思路：
+> （1）若 $A$ 的特征值都是单值，则 $A$ 一定可以相似对角化；
+> （2）若 $A$ 为实对称矩阵，则 $A$ 一定可以相似对角化；
+> （3）若 $A$ 存在 $n$ 个线性无关的特征向量，则 $A$ 一定可以相似对角化；
+> （4）若 $A$ 的每个特征值的重数与该特征值对应的线性无关的特征向量个数相等，即若 $\lambda_0$ 为 $r$ 重特征值，且 $n-r(\lambda_0E-A)=r$，则 $A$ 一定可相似对角化．`,
+  source: '《2004 年数学（一）真题解析》第 10 页',
+});
+

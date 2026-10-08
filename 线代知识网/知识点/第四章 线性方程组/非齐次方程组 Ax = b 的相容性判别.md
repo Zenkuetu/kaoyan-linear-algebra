@@ -1057,6 +1057,71 @@ $$
 > $$
 > （$C$ 为任意常数）。
 
+### 2008 年 · 数学二 · 第 22 题（解答，12 分）
+
+设 $n$ 元线性方程组 $Ax=b$，其中
+$$
+A=\begin{pmatrix}
+2a&1&&&&\\
+a^2&2a&1&&&\\
+&a^2&2a&\ddots&&\\
+&&\ddots&\ddots&1&\\
+&&&a^2&2a
+\end{pmatrix}_{n\times n},\qquad
+x=\begin{pmatrix}x_1\\x_2\\\vdots\\x_n\end{pmatrix},\qquad
+b=\begin{pmatrix}1\\0\\\vdots\\0\end{pmatrix}.
+$$
+（Ⅰ）证明行列式 $|A|=(n+1)a^n$；
+
+（Ⅱ）当 $a$ 为何值时，该方程组有唯一解，并求 $x_1$；
+
+（Ⅲ）当 $a$ 为何值时，该方程组有无穷多解，并求通解.
+
+> [!success]- 答案与解析
+> **答案**：（Ⅰ）见解析；（Ⅱ）当 $a\ne0$ 时方程组有唯一解，$x_1=\frac{n}{(n+1)a}$；（Ⅲ）当 $a=0$ 时方程组有无穷多解，通解为 $k(1,0,0,\cdots,0)^{\mathrm{T}}+(0,1,0,\cdots,0)^{\mathrm{T}}$，$k$ 为任意常数.
+>
+> （Ⅰ）证法一：
+> $$
+> |A|=\begin{vmatrix}2a&1&&&\\a^2&2a&1&&\\&a^2&2a&\ddots&\\&&\ddots&\ddots&1\\&&&a^2&2a\end{vmatrix}\xrightarrow{r_2-\frac{1}{2}ar_1}\begin{vmatrix}2a&1&&&\\0&\frac{3a}{2}&1&&\\a^2&2a&\ddots&\\&&\ddots&\ddots&1\\&&&a^2&2a\end{vmatrix}=\cdots
+> $$
+> $$
+> \xrightarrow{r_n-\frac{n-1}{n}ar_{n-1}}\begin{vmatrix}2a&1&&&\\0&\frac{3a}{2}&1&&\\&0&\frac{4a}{3}&\ddots&\\&&\ddots&\ddots&1\\&&&0&\frac{(n+1)a}{n}\end{vmatrix}=2a\cdot\frac{3a}{2}\cdot\frac{4a}{3}\cdot\cdots\cdot\frac{(n+1)a}{n}=(n+1)a^n
+> $$
+> 证法二：记 $D_n=|A|$，下面用数学归纳法证明 $D_n=(n+1)a^n$.
+>
+> 当 $n=1$ 时，$D_1=2a$，结论成立.
+>
+> 当 $n=2$ 时，$D_2=\begin{vmatrix}2a&1\\a^2&2a\end{vmatrix}=3a^2$，结论成立.
+>
+> 假设结论对小于 $n$ 的情况成立. 将 $D_n$ 按第 $1$ 行展开得
+> $$
+> D_n=2aD_{n-1}-a^2D_{n-2}=2ana^{n-1}-a^2(n-1)a^{n-2}=(n+1)a^n
+> $$
+> 故 $|A|=(n+1)a^n$.
+>
+> 证法三：记 $D_n=|A|$，将其按第一列展开得 $D_n=2aD_{n-1}-a^2D_{n-2}$，所以
+> $$
+> D_n-aD_{n-1}=aD_{n-1}-a^2D_{n-2}=a(D_{n-1}-aD_{n-2})
+> $$
+> $$
+> =a^2(D_{n-2}-aD_{n-3})=\cdots=a^{n-2}(D_2-aD_1)=a^n
+> $$
+> 即 $D_n=a^n+aD_{n-1}=a^n+a(a^{n-1}+aD_{n-2})=2a^n+a^2D_{n-2}=\cdots=(n-1)a^n+a^{n-1}D_1=(n-1)a^n+a^{n-1}\cdot2a=(n+1)a^n$.
+>
+> （Ⅱ）因为方程组有唯一解，所以由 $Ax=B$ 知 $|A|\ne0$，又 $|A|=(n+1)a^n$，故 $a\ne0$.
+>
+> 由克莱姆法则，将 $D_n$ 的第 $1$ 列换成 $b$，得行列式为
+> $$
+> \begin{vmatrix}1&1&&&\\0&2a&1&&\\a^2&2a&\ddots&\\&\ddots&\ddots&1\\&&a^2&2a\end{vmatrix}_{n\times n}=\begin{vmatrix}2a&1&&&\\a^2&2a&1&&\\&a^2&2a&\ddots&\\&&\ddots&\ddots&1\\&&&a^2&2a\end{vmatrix}_{(n-1)\times(n-1)}=D_{n-1}=na^{n-1}
+> $$
+> 所以 $x_1=\frac{D_{n-1}}{D_n}=\frac{n}{(n+1)a}$.
+>
+> （Ⅲ）方程组有无穷多解，由 $|A|=0$，有 $a=0$，则方程组为
+> $$
+> \begin{pmatrix}0&1&&&\\0&0&1&&\\&&\ddots&\ddots&\\&&&0&1\\&&&&0\end{pmatrix}\begin{pmatrix}x_1\\x_2\\\vdots\\x_{n-1}\\x_n\end{pmatrix}=\begin{pmatrix}1\\0\\\vdots\\0\\0\end{pmatrix}
+> $$
+> 此时方程组系数矩阵的秩和增广矩阵的秩均为 $n-1$，所以方程组有无穷多解，其通解为 $k(1,0,0,\cdots,0)^{\mathrm{T}}+(0,1,0,\cdots,0)^{\mathrm{T}}$，$k$ 为任意常数.
+
 ### 2007 年 · 数学一 · 第 21 题（解答，11 分）
 
 （本题满分 11 分）设线性方程组
@@ -1097,6 +1162,52 @@ $$
 > \overline{C}\to\begin{pmatrix}1&1&1&\mid&0\\0&1&1&\mid&0\\0&0&1&\mid&-1\\0&0&0&\mid&0\end{pmatrix}\to\begin{pmatrix}1&0&0&\mid&0\\0&1&0&\mid&1\\0&0&1&\mid&-1\\0&0&0&\mid&0\end{pmatrix}
 > $$
 > 得唯一公共解为 $X=\begin{pmatrix}0\\1\\-1\end{pmatrix}$．
+
+### 2007 年 · 数学二 · 第 23 题（解答，11 分）
+
+设线性方程组
+$$
+\begin{cases}
+x_1+x_2+x_3=0,\\
+x_1+2x_2+ax_3=0,\\
+x_1+4x_2+a^2x_3=0,
+\end{cases}\tag{①}
+$$
+与方程组
+$$
+x_1+2x_2+x_3=a-1\tag{②}
+$$
+有公共解，求 $a$ 的值及所有公共解.
+
+> [!success]- 答案与解析
+> **答案**：当 $a=1$ 时，公共解为 $k(1,0,-1)^{\mathrm{T}}$（$k$ 为任意常数）；当 $a=2$ 时，公共解为 $(0,1,-1)^{\mathrm{T}}$.
+>
+> 方法1：因为方程组(1)、(2)有公共解，将方程组联立得
+> $$
+> \begin{cases}
+> x_1+x_2+x_3=0\\
+> x_1+2x_2+ax_3=0\\
+> x_1+4x_2+a^2x_3=0\\
+> x_1+2x_2+x_3=a-1
+> \end{cases}\tag{3}
+> $$
+> 对联立方程组的增广矩阵作初等行变换
+> $$
+> (A|b)=\begin{pmatrix}1&1&1&0\\1&2&a&0\\1&4&a^2&0\\1&2&1&a\end{pmatrix}\to\begin{pmatrix}1&1&1&0\\0&1&0&a-1\\0&0&a-1&1-a\\0&0&0&(a-1)(a-2)\end{pmatrix}
+> $$
+> 由此知，要使此线性方程组有解，$a$ 必须满足 $(a-1)(a-2)=0$，即 $a=1$ 或 $a=2$.
+>
+> 当 $a=1$ 时，$r(A)=2$，联立方程组(3)的同解方程组为 $\begin{cases}x_1+x_2+x_3=0,\\x_2=0,\end{cases}$ 由 $r(A)=2$，方程组有 $n-r=3-2=1$ 个自由未知量. 选 $x_1$ 为自由未知量，取 $x_1=1$，解得两方程组的公共解为 $k(1,0,-1)^{\mathrm{T}}$，其中 $k$ 是任意常数.
+>
+> 当 $a=2$ 时，联立方程组(3)的同解方程组为 $\begin{cases}x_1+x_2+x_3=0\\x_2=0\\x_3=-1\end{cases}$，解得两方程的公共解为 $(0,1,-1)^{\mathrm{T}}$.
+>
+> 方法2：将方程组(1)的系数矩阵 $A$ 作初等行变换
+> $$
+> A=\begin{pmatrix}1&1&1\\1&2&a\\1&4&a^2\end{pmatrix}\to\begin{pmatrix}1&1&1\\0&1&a-1\\0&0&(a-1)(a-2)\end{pmatrix}
+> $$
+> 当 $a=1$ 时，$r(A)=2$，方程组(1)的同解方程组为 $\begin{cases}x_1+x_2+x_3=0,\\x_2=0,\end{cases}$ 由 $r(A)=2$，方程组有 $n-r=3-2=1$ 个自由未知量. 选 $x_1$ 为自由未知量，取 $x_1=1$，解得(1)的通解为 $k(1,0,-1)^{\mathrm{T}}$，其中 $k$ 是任意常数. 将通解 $k(1,0,-1)^{\mathrm{T}}$ 代入方程(2)得 $k+0+(-k)=0$，对任意的 $k$ 成立，故当 $a=1$ 时，$k(1,0,-1)^{\mathrm{T}}$ 是(1)、(2)的公共解.
+>
+> 当 $a=2$ 时，$r(A)=2$，方程组(1)的同解方程组为 $\begin{cases}x_1+x_2+x_3=0,\\x_2+x_3=0,\end{cases}$ 由 $r(A)=2$，方程组有 $n-r=3-2=1$ 个自由未知量. 选 $x_2$ 为自由未知量，取 $x_2=1$，解得(1)的通解为 $\mu(0,1,-1)^{\mathrm{T}}$，其中 $\mu$ 是任意常数. 将通解 $\mu(0,1,-1)^{\mathrm{T}}$ 代入方程(2)得 $2\mu-\mu=1$，即 $\mu=1$，故当 $a=2$ 时，(1)和(2)的公共解为 $(0,1,-1)^{\mathrm{T}}$.
 
 ### 2006 年 · 数学一 · 第 20 题（解答，9 分）
 
@@ -1145,6 +1256,33 @@ $$
 >
 > > **方法点评**：设 $A$ 为 $m\times n$ 矩阵，若 $r(A)=r(A\ \vdots\ b)$ 时，$AX=b$ 有解．
 > > 若 $r(A)=r$，则 $AX=0$ 的基础解系含 $n-r(A)$ 个解向量，但 $AX=b$ 线性无关的解向量组所含解向量的个数最多含 $n-r(A)+1$ 个．
+
+### 1989 年 · 数学一 · 第七大题（解答，6 分）
+
+问 $\lambda$ 为何值时，线性方程组
+$$
+\begin{cases}x_1+x_3=\lambda,\\4x_1+x_2+2x_3=\lambda+2,\\6x_1+x_2+4x_3=2\lambda+3\end{cases}
+$$
+有解，并求出解的一般形式.
+
+> [!success]- 答案与解析
+> **答案**：
+> 当 $\lambda=1$ 时，方程组有解，通解为
+> $$
+> X=k\begin{pmatrix}-1\\2\\1\end{pmatrix}+\begin{pmatrix}1\\-1\\0\end{pmatrix}\quad(k\text{ 为任意常数}).
+> $$
+>
+> $$
+> \overline{A}=\begin{pmatrix}1&0&1&\lambda\\4&1&2&\lambda+2\\6&1&4&2\lambda+3\end{pmatrix}\to\begin{pmatrix}1&0&1&\lambda\\0&1&-2&2-3\lambda\\0&1&-2&3-4\lambda\end{pmatrix}\to\begin{pmatrix}1&0&1&\lambda\\0&1&-2&2-3\lambda\\0&0&0&1-\lambda\end{pmatrix},
+> $$
+> 当 $\lambda=1$ 时，方程组有解，再由 $\lambda=1$ 时
+> $$
+> \overline{A}\to\begin{pmatrix}1&0&1&1\\0&1&-2&-1\\0&0&0&0\end{pmatrix},
+> $$
+> 得方程组的通解为
+> $$
+> X=k\begin{pmatrix}-1\\2\\1\end{pmatrix}+\begin{pmatrix}1\\-1\\0\end{pmatrix}\quad(k\text{ 为任意常数}).
+> $$
 
 ### 1987 年 · 数学一 · 第九大题（解答，8 分）
 

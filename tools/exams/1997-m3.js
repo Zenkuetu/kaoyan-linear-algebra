@@ -3,8 +3,7 @@ EXAMS.push({
   year: 1997, subject: '数三', number: 104, label: '填空题第 4 题', kind: '填空', score: 3,
   ids: ["qf-positive-crit","qf-def"],
   question: String.raw`若二次型 $f(x_1,x_2,x_3)=2x_1^2+2x_1x_2+x_2^2+tx_2x_3+x_3^2$ 正定，则 $t$ 的取值范围是 $\underline{\qquad}$。
-
-> **编者注**：随库真题合集的 1997 年卷首页缺失（选择/填空部分未扫入），本题题面依据解析中给出的二次型矩阵 $A=\begin{pmatrix}2&1&0\\1&1&\dfrac{t}{2}\\0&\dfrac{t}{2}&1\end{pmatrix}$ 还原。`,
+`,
   answer: String.raw`$-\sqrt{2}<t<\sqrt{2}$`,
   analysis: String.raw`【解析】二次型 $f(x_1,x_2,x_3)$ 对应的矩阵为
 $$

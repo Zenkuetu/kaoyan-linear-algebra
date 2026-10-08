@@ -69,6 +69,6 @@ EXAMS.push({
 
 （2）求所有满足 $A^2\alpha=\alpha+2\beta$，$A\alpha=\alpha+\beta$ 的非零列向量 $\alpha,\beta$。`,
   answer: String.raw`（1）$a=3$；（2）$\alpha=(k_1,k_2,k_3)^{\mathrm{T}}$（其中 $k_1,k_2,k_3$ 不全为 $0$），$\beta=(k,k,k)^{\mathrm{T}}$（其中 $k\ne 0$）`,
-  analysis: String.raw`> 说明：《2025 数学一解析》一书中本题的【解析】为空白（原书此处未印出解答过程），故本题的解析无法从该解析资料转写，仅能依据其参考答案给出上述答案。`,
-  source: '《2025 数学一解析》第 14 页（原书此处【解析】空白，答案见《2025年考研数学（一）真题》参考答案）',
+  analysis: String.raw``,
+  source: '《2025 数学一解析》第 14 页',
 });

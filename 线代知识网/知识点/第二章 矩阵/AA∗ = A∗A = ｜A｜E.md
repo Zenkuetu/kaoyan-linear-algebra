@@ -376,6 +376,20 @@ $$
 >
 > > 评注：本题考查分块矩阵的运算，要看清 $\alpha^{\mathrm{T}}A^{-1}\alpha$ 是 1 阶矩阵，是一个数。
 
+### 1989 年 · 数学一 · 第八大题（证明题）（解答，8 分）
+
+设 $\lambda$ 为 $n$ 阶可逆矩阵 $A$ 的一个特征值，证明：
+
+（1）$\dfrac{1}{\lambda}$ 为 $A^{-1}$ 的特征值；
+（2）$\dfrac{|A|}{\lambda}$ 为 $A$ 的伴随矩阵 $A^*$ 的特征值.
+
+> [!success]- 答案与解析
+> **答案**：证明见解析.
+>
+> （1）因为 $A$ 可逆，所以 $\lambda\ne 0$，设 $A$ 的属于特征值 $\lambda$ 的特征向量为 $\alpha$，即 $A\alpha=\lambda\alpha$，将 $A\alpha=\lambda\alpha$ 两边左乘 $A^{-1}$，得 $A^{-1}A\alpha=\lambda A^{-1}\alpha$，于是 $A^{-1}\alpha=\dfrac{1}{\lambda}\alpha$，即 $\dfrac{1}{\lambda}$ 为 $A^{-1}$ 的特征值.
+>
+> （2）因为 $A^*=|A|A^{-1}$，所以 $A^*\alpha=|A|A^{-1}\alpha=\dfrac{|A|}{\lambda}\alpha$，即 $\dfrac{|A|}{\lambda}$ 为 $A$ 的伴随矩阵 $A^*$ 的特征值.
+
 ### 1987 年 · 数学一 · 选择题第 4 题（选择，3 分）
 
 设 $A$ 为 $n$ 阶矩阵，且 $|A|=a\ne 0$，$A^*$ 是 $A$ 的伴随矩阵，则 $|A^*|=$（　　）
