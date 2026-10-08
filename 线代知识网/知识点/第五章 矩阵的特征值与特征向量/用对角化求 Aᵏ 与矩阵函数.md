@@ -133,7 +133,7 @@ $$
 > - [[相似对角化的方法与步骤]] ⇒ 🟧 充分 ⇒ 本点——对角化后立得幂与矩阵函数
 > - [[方阵的幂与矩阵多项式]] ⇒ 🟩 关联 ⇒ 本点——同一个"求 Aᵏ"主题的两种手段：初等技巧（拆分/秩 1）与对角化
 
-## <span class="hx hx-exam">📝</span> 九、真题（2016–2026）
+## <span class="hx hx-exam">📝</span> 九、真题（1988–2026）
 
 ### 2026 年 · 数学二 · 第 10 题（选择，5 分）
 
@@ -458,6 +458,27 @@ $$
 > $$
 > $$
 > \beta_3=(2-2^{98})\alpha_1+(2-2^{99})\alpha_2.
+> $$
+
+### 1988 年 · 数学一 · 第七大题（解答，6 分）
+
+已知 $AP=PB$，其中
+$$
+B=\begin{pmatrix}1&0&0\\0&0&0\\0&0&-1\end{pmatrix},\quad P=\begin{pmatrix}1&0&0\\2&-1&0\\2&1&1\end{pmatrix},
+$$
+求 $A$ 及 $A^5$.
+
+> [!success]- 答案与解析
+> **答案**：
+> $$
+> A=\begin{pmatrix}1&0&0\\2&0&0\\6&-1&-1\end{pmatrix},\quad A^5=A=\begin{pmatrix}1&0&0\\2&0&0\\6&-1&-1\end{pmatrix}.
+> $$
+>
+> $$
+> P^{-1}=\begin{pmatrix}1&0&0\\2&-1&0\\-4&1&1\end{pmatrix},\quad A=PBP^{-1}=\begin{pmatrix}1&0&0\\2&0&0\\6&-1&-1\end{pmatrix};
+> $$
+> $$
+> A^5=PB^5P^{-1}=PBP^{-1}=A.
 > $$
 
 ## <span class="hx hx-nav">🧭</span> 十、导航

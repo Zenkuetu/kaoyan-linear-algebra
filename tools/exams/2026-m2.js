@@ -14,7 +14,7 @@ EXAMS.push({
 
 EXAMS.push({
   year: 2026, subject: '数二', number: 9, kind: '选择', score: 5,
-  ids: ["eq-nonhomo-crit","mat-eq-solve","mat-rank-relation"],
+  ids: ["eq-nonhomo-crit","mat-eq-solve","eq-rank-relation"],
   question: String.raw`设矩阵
 $$
 A=\begin{pmatrix}1&0&1\\0&0&1\\1&1&3\\1&1&1\end{pmatrix},\quad C=\begin{pmatrix}2&0\\1&1\\1&1\\a&b\end{pmatrix},

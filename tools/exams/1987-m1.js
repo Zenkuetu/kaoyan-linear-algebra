@@ -31,9 +31,7 @@ $$
 A=\begin{pmatrix}3&0&1\\1&1&0\\0&1&4\end{pmatrix},
 $$
 求矩阵 $B$.`,
-  answer: String.raw`$$
-B=\begin{pmatrix}5&-2&-2\\4&-3&-2\\-2&2&3\end{pmatrix}.
-$$`,
+  answer: String.raw`$B=\begin{pmatrix}5&-2&-2\\4&-3&-2\\-2&2&3\end{pmatrix}$`,
   analysis: String.raw`由 $AB=A+2B$ 得 $(A-2E)B=A$，解得 $B=(A-2E)^{-1}A$，而
 $$
 A-2E=\begin{pmatrix}1&0&1\\1&-1&0\\0&1&2\end{pmatrix},
