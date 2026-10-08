@@ -63,19 +63,29 @@ if (!apply) { console.log('\n(dry run，未写入。加 --apply 执行)'); proce
 //   ① 「受保护名单」里的文件：你人工改过（改写正文、勾选自测）→ 永不覆盖，只把勾选状态带过去
 //   ② 其余文件：以构建产物为准（生成器改了排版/文案就该落地）
 //   名单文件：tools/protected-files.json（相对库的路径数组）
+// 勾选状态的键 = 「所在标题 + 该任务行文本」：
+// 真题小节里方框是空文本的 `- [ ]`（正文缩进在任务项内），若不带上标题，所有方框会共用一个键而互相串。
+function checkKey(heading, text) { return heading + '\u0001' + text; }
 function mergeCheckStates(srcText, vaultText) {
-  const vLines = vaultText.split('\n');
-  const state = new Map();   // 勾选行文本 → 是否勾选
-  for (const l of vLines) {
-    const m = /^(\s*-\s*\[)([ xX])(\]\s*)(.*)$/.exec(l);
-    if (m) state.set(m[4], m[2].toLowerCase() === 'x');
-  }
-  let carried = 0;
+  const collect = (text) => {
+    const state = new Map();
+    let heading = '';
+    for (const l of text.split('\n')) {
+      const h = /^#{1,6}\s+(.*)$/.exec(l);
+      if (h) heading = h[1].trim();
+      const m = /^(\s*-\s*\[)([ xX])(\]\s*)(.*)$/.exec(l);
+      if (m) state.set(checkKey(heading, m[4]), m[2].toLowerCase() === 'x');
+    }
+    return state;
+  };
+  const state = collect(vaultText);
+  let carried = 0, heading = '';
   const out = srcText.split('\n').map(l => {
+    const h = /^#{1,6}\s+(.*)$/.exec(l);
+    if (h) heading = h[1].trim();
     const m = /^(\s*-\s*\[)([ xX])(\]\s*)(.*)$/.exec(l);
     if (!m) return l;
-    const checked = state.get(m[4]);
-    if (checked === true && m[2] !== 'x') { carried++; return m[1] + 'x' + m[3] + m[4]; }
+    if (state.get(checkKey(heading, m[4])) === true && m[2] !== 'x') { carried++; return m[1] + 'x' + m[3] + m[4]; }
     return l;
   });
   return { text: out.join('\n'), carried };

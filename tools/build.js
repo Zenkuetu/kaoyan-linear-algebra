@@ -390,10 +390,13 @@ for (const m of MODULES) {
       head('真题' + (ys.length ? '（' + ys[0] + (ys.length > 1 ? '–' + ys[ys.length - 1] : '') + '）' : ''), 'exam');
       for (const e of myExams) {
         const qTitle = e.year + ' 年 · 数学' + ({ '数一': '一', '数二': '二', '数三': '三' }[e.subject] || e.subject) + ' · ' + (e.label || ('第 ' + e.number + ' 题')) + '（' + e.kind + (e.score ? '，' + e.score + ' 分' : '') + '）';
-        // 每题前面一个可勾选的方框：勾上即整题划删除线（见 .obsidian/snippets/linalg-reading.css）
-        L.push('- [ ] **' + qTitle + '**');
+        // 标题保留 ###（大纲可导航）；下面一行是「划删除线」的方框：
+        // 勾选后 sync-vault 以「所在标题 + 该行文本」为键记住状态（空文本任务项也不会互相串）
+        L.push('### ' + qTitle);
         L.push('');
-        // 题面：逐行缩进 2 空格，保证仍在同一列表项内
+        L.push('- [ ]');
+        L.push('');
+        // 题面：逐行缩进 2 空格，保证仍在这个任务项内
         for (const line of decorate(String(e.question)).split(/\r?\n/)) L.push(line.trim() === '' ? '' : '  ' + noLink(line));
         L.push('');
         L.push('  > [!success]- 答案与解析');
