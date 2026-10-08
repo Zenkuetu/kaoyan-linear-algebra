@@ -123,8 +123,6 @@ $$
 > $$
 > \begin{bmatrix}A&E\\O&B\end{bmatrix}^{*}=\begin{bmatrix}A&E\\O&B\end{bmatrix}\begin{bmatrix}A&E\\O&B\end{bmatrix}^{-1}=|A||B|\begin{bmatrix}A^{-1}&-A^{-1}B^{-1}\\O&B^{-1}\end{bmatrix}=\begin{bmatrix}|A||B|A^{-1}&-|A||B|A^{-1}B^{-1}\\O&|A||B|B^{-1}\end{bmatrix}=\begin{bmatrix}|B|A^{*}&-A^{*}B^{*}\\O&|A|B^{*}\end{bmatrix}.
 > $$
->
-> <small>解析出处：《2023 数学三解析》第 2 页</small>
 
 ### 2023 年 · 数学二 · 第 8 题（选择，5 分）
 
@@ -165,8 +163,6 @@ $$
 > \begin{pmatrix}A&E\\O&B\end{pmatrix}^*=|A|\cdot|B|\begin{pmatrix}A^{-1}&-A^{-1}B^{-1}\\O&B^{-1}\end{pmatrix}=\begin{pmatrix}|B|A^*&-A^*B^*\\O&|A|B^*\end{pmatrix},
 > $$
 > 选（D）。
->
-> <small>解析出处：《2023 数学二解析》第 8 页</small>
 
 ### 2013 年 · 数学一 · 第 13 题（填空，5 分）
 
@@ -186,8 +182,6 @@ $$
 > $$
 >
 > 得 $|A|=-1$．
->
-> <small>解析出处：《2013 数学一解析》第 4 页</small>
 
 ### 2013 年 · 数学三 · 第 13 题（填空，4 分）
 
@@ -202,8 +196,6 @@ $$
 > =-\sum_{j=1}^{3}a_{1j}^2=-\sum_{i=1}^{3}\sum_{j=1}^{3}a_{ij}^2<0,
 > $$
 > 从而有 $|A|=|A^{\mathrm{T}}|=|-A^{*}|=-|A^{*}|=-|A|^2$，故 $|A|=-1$。
->
-> <small>解析出处：《2013 年数学（三）试题答案》第 5 页</small>
 
 ### 2009 年 · 数学一 · 第 6 题（选择，5 分）
 
@@ -223,8 +215,6 @@ $$
 > $$
 >
 > 应选（B）．
->
-> <small>解析出处：《2009 数学一解析》第 3 页</small>
 
 ## <span class="hx hx-nav">🧭</span> 十、导航
 

@@ -135,8 +135,6 @@ $B$ 的第 $1$ 列是 $(1,-1,1,0)^{\mathrm{T}}$，与 $A$ 的两行分别配对�
 > \begin{pmatrix}AB&B\\O&A\end{pmatrix}\begin{pmatrix}y_1\\y_2\end{pmatrix}=\begin{pmatrix}ABy_1+By_2\\Ay_2\end{pmatrix}=\begin{pmatrix}0\\0\end{pmatrix}.
 > $$
 > 展开可得 $\begin{cases}ABy_1+By_2=0,\\Ay_2=0.\end{cases}$ 由于 $Ax=0$ 与 $Bx=0$ 同解，故该方程组等价于 $\begin{cases}ABy_1=0,\\Ay_2=0.\end{cases}$ 同理可得，$\begin{pmatrix}BA&A\\O&B\end{pmatrix}y=0$ 等价于 $\begin{cases}BAy_1=0,\\By_2=0.\end{cases}$ 但是 $ABx=0$ 与 $BAx=0$ 并不一定同解。取 $A=\begin{pmatrix}0&1\\0&0\end{pmatrix},B=\begin{pmatrix}0&1\\0&1\end{pmatrix}$，则 $AB=\begin{pmatrix}0&1\\0&0\end{pmatrix},BA=\begin{pmatrix}0&0\\0&0\end{pmatrix}$，$ABx=0$ 与 $BAx=0$ 不同解。
->
-> <small>解析出处：《2022 数学一解析》第 10 页</small>
 
 ## <span class="hx hx-nav">🧭</span> 十、导航
 
