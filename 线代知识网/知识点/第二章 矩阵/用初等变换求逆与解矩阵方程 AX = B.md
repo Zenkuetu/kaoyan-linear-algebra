@@ -736,6 +736,42 @@ $$
 >
 > > **方法点评**：本题考查由矩阵关系等式确定的矩阵的行列式．本题的关键是要应用公式 $AA^{*}=A^{*}A=|A|E$．
 
+### 2001 年 · 数学二 · 第十一题（解答，6 分）
+
+已知矩阵 $A=\begin{pmatrix}1&0&0\\1&1&0\\1&1&1\end{pmatrix}$，$B=\begin{pmatrix}0&1&1\\1&0&1\\1&1&0\end{pmatrix}$，且矩阵 $X$ 满足 $AXA+BXB=AXB+BXA+E$，其中 $E$ 是 3 阶单位矩阵，求 $X$.
+
+> [!success]- 答案与解析
+> **答案**：
+> $$
+> X=\begin{pmatrix}1&2&5\\0&1&2\\0&0&1\end{pmatrix}.
+> $$
+>
+> 由题设，原方程可化为
+> $$
+> AX(A-B)+BX(B-A)=E,\ \text{即}\ (A-B)X(A-B)=E.
+> $$
+> 其中，
+> $$
+> A-B=\begin{pmatrix}1&0&0\\1&1&0\\1&1&1\end{pmatrix}-\begin{pmatrix}0&1&1\\1&0&1\\1&1&0\end{pmatrix}=\begin{pmatrix}1&-1&-1\\0&1&-1\\0&0&1\end{pmatrix}
+> $$
+> 因为 $|A-B|=\begin{vmatrix}1&-1&-1\\0&1&-1\\0&0&1\end{vmatrix}=(-1)^{1+1}\begin{vmatrix}1&-1\\0&1\end{vmatrix}=1\ne0$，
+>
+> 故由 $n$ 阶矩阵 $A$ 可逆的充要条件 $|A|\ne0$，知矩阵 $A-B$ 可逆，用初等行变换求 $(A-B)^{-1}$：
+> $$
+> (A-B,E)=\begin{pmatrix}1&-1&-1&:&1&0&0\\0&1&-1&:&0&1&0\\0&0&1&:&0&0&1\end{pmatrix}\xrightarrow{3\text{行分别加到}1,2\text{行}}\begin{pmatrix}1&-1&0&:&1&0&1\\0&1&0&:&0&1&1\\0&0&1&:&0&0&1\end{pmatrix}
+> $$
+> $$
+> \xrightarrow{2\text{行加到}1\text{行}}\begin{pmatrix}1&0&0&:&1&1&2\\0&1&0&:&0&1&1\\0&0&1&:&0&0&1\end{pmatrix}
+> $$
+> 故而
+> $$
+> (A-B)^{-1}=\begin{pmatrix}1&1&2\\0&1&1\\0&0&1\end{pmatrix},
+> $$
+> 于是，等式 $(A-B)X(A-B)=E$ 两边左、右乘 $(A-B)^{-1}$ 可得
+> $$
+> X=\left[(A-B)^{-1}\right]^2=\begin{pmatrix}1&1&2\\0&1&1\\0&0&1\end{pmatrix}\begin{pmatrix}1&1&2\\0&1&1\\0&0&1\end{pmatrix}=\begin{pmatrix}1&2&5\\0&1&2\\0&0&1\end{pmatrix}.
+> $$
+
 ### 1999 年 · 数学二 · 第十一题（解答，6 分）
 
 设矩阵 $A=\begin{pmatrix}1&1&-1\\-1&1&1\\1&-1&1\end{pmatrix}$，矩阵 $X$ 满足 $A^*X=A^{-1}+2X$，其中 $A^*$ 是 $A$ 的伴随矩阵，求矩阵 $X$.
@@ -836,6 +872,46 @@ $$
 > 由可逆矩阵及逆矩阵的定义，可知矩阵 $2C^{\mathrm{T}}-B^{\mathrm{T}},A$ 均可逆，因为 $A$ 是 4 阶方阵，故
 > $$
 > A=(2C^{\mathrm{T}}-B^{\mathrm{T}})^{-1}=\begin{pmatrix}1&0&0&0\\2&1&0&0\\3&2&1&0\\4&3&2&1\end{pmatrix}^{-1}=\begin{pmatrix}1&0&0&0\\-2&1&0&0\\1&-2&1&0\\0&1&-2&1\end{pmatrix}.
+> $$
+
+### 1997 年 · 数学二 · 计算题第 6 题（解答，5 分）
+
+已知矩阵
+$$
+A=\begin{pmatrix}1&1&-1\\0&1&1\\0&0&-1\end{pmatrix},
+$$
+且 $A^2-AB=E$，其中 $E$ 是 $3$ 阶单位矩阵，求矩阵 $B$。
+
+> [!success]- 答案与解析
+> **答案**：
+> $$
+> B=\begin{pmatrix}0&2&1\\0&0&0\\0&0&0\end{pmatrix}.
+> $$
+>
+> 【答案】
+> $$
+> \begin{pmatrix}0&2&1\\0&0&0\\0&0&0\end{pmatrix}
+> $$
+>
+> 【解析】由题设条件 $A^2-AB=E$，把 $A$ 提出来得 $A(A-B)=E$，因为
+> $$
+> |A|=\begin{vmatrix}1&1&-1\\0&1&1\\0&0&-1\end{vmatrix}=-1\ne 0,
+> $$
+> 由此知道 $A$ 是满秩的，所以 $A$ 可逆，两边左乘 $A^{-1}$，从而有 $A-B=A^{-1}$，$B=A-A^{-1}$。
+>
+> （或 $A^2-AB=E$，$AB=A^2-E$，$A$ 可逆，两边左乘 $A^{-1}$，得 $B=A^{-1}(A^2-E)=A-A^{-1}$。）
+>
+> 用矩阵的初等变换求 $A^{-1}$。
+> $$
+> [A:E]=\begin{pmatrix}1&1&-1&:&1&0&0\\0&1&1&:&0&1&0\\0&0&-1&:&0&0&1\end{pmatrix}\xrightarrow{[1]+[3]\times(-1),[2]+[3]}\begin{pmatrix}1&1&0&:&1&0&-1\\0&1&0&:&0&1&1\\0&0&-1&:&0&0&1\end{pmatrix}\xrightarrow{[1]+[2]\times(-1),[3]\times(-1)}\begin{pmatrix}1&0&0&:&1&-1&-2\\0&1&0&:&0&1&1\\0&0&1&:&0&0&-1\end{pmatrix}=[E:A^{-1}],
+> $$
+> 得
+> $$
+> A^{-1}=\begin{pmatrix}1&-1&-2\\0&1&1\\0&0&-1\end{pmatrix},
+> $$
+> 从而得
+> $$
+> B=A-A^{-1}=\begin{pmatrix}1&1&-1\\0&1&1\\0&0&-1\end{pmatrix}-\begin{pmatrix}1&-1&-2\\0&1&1\\0&0&-1\end{pmatrix}=\begin{pmatrix}0&2&1\\0&0&0\\0&0&0\end{pmatrix}.
 > $$
 
 ### 1995 年 · 数学一 · 填空题第 5 题（填空，3 分）
