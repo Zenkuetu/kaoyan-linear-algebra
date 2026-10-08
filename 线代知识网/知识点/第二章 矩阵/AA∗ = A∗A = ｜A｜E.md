@@ -90,7 +90,101 @@ $$
 > - 本点 ⇒ 🟪 必要 ⇒ [[逆矩阵的求法]]——伴随公式法求逆的依据
 > - [[伴随矩阵 A∗ 的定义|伴随矩阵 A* 的定义]] ⇒ 🟪 必要 ⇒ 本点——先有 A* 才有该恒等式
 
-## <span class="hx hx-exam">📝</span> 九、真题（2009–2012）
+## <span class="hx hx-exam">📝</span> 九、真题（2009–2023）
+
+### 2023 年 · 数学三 · 第 5 题（选择，5 分）
+
+设 $A,B$ 为 $n$ 阶可逆矩阵，$E$ 为 $n$ 阶单位矩阵，$M^{*}$ 为矩阵 $M$ 的伴随矩阵，则
+$$
+\begin{bmatrix}A&E\\O&B\end{bmatrix}^{*}=
+$$
+（A）$\begin{bmatrix}|A|B^{*}&-B^{*}A^{*}\\O&|B|A^{*}\end{bmatrix}$　（B）$\begin{bmatrix}|B|A^{*}&-A^{*}B^{*}\\O&|A|B^{*}\end{bmatrix}$
+
+（C）$\begin{bmatrix}|B|A^{*}&-B^{*}A^{*}\\O&|A|B^{*}\end{bmatrix}$　（D）$\begin{bmatrix}|A|B^{*}&-A^{*}B^{*}\\O&|B|A^{*}\end{bmatrix}$
+
+> [!success]- 答案与解析
+> **答案**：（B）
+>
+> （方法一）分别令（A）（B）（C）（D）选项中的矩阵为 $I_1,I_2,I_3,I_4$。
+> $$
+> \begin{bmatrix}A&E\\O&B\end{bmatrix}I_1=\begin{bmatrix}A&E\\O&B\end{bmatrix}\begin{bmatrix}|A|B^{*}&-B^{*}A^{*}\\O&|B|A^{*}\end{bmatrix}=\begin{bmatrix}|A|AB^{*}&\cdots\\\cdots&\cdots\end{bmatrix},
+> $$
+> 不能保证 $|A|AB^{*}=|A||B|E$，所以 $I_1$ 不是 $\begin{bmatrix}A&E\\O&B\end{bmatrix}^{*}$，选项（A）不正确。同理，选项（D）也不正确。
+> $$
+> \begin{bmatrix}A&E\\O&B\end{bmatrix}I_3=\begin{bmatrix}A&E\\O&B\end{bmatrix}\begin{bmatrix}|B|A^{*}&-B^{*}A^{*}\\O&|A|B^{*}\end{bmatrix}=\begin{bmatrix}|A||B|E&-AB^{*}A^{*}+|A|B^{*}\\O&|A||B|E\end{bmatrix},
+> $$
+> （C）不正确。
+> $$
+> \begin{bmatrix}A&E\\O&B\end{bmatrix}I_4=\begin{bmatrix}A&E\\O&B\end{bmatrix}\begin{bmatrix}|A|B^{*}&-A^{*}B^{*}\\O&|B|A^{*}\end{bmatrix}=\begin{bmatrix}|A||B|E&-|A|B^{*}+|A|B^{*}\\O&|A||B|E\end{bmatrix}=\begin{bmatrix}|A||B|E&O\\O&|A||B|E\end{bmatrix},
+> $$
+> 选项（B）是正确的。
+>
+> （方法二）
+> $$
+> \begin{bmatrix}A&E\\O&B\end{bmatrix}^{*}=\begin{bmatrix}A&E\\O&B\end{bmatrix}\begin{bmatrix}A&E\\O&B\end{bmatrix}^{-1}=|A||B|\begin{bmatrix}A^{-1}&-A^{-1}B^{-1}\\O&B^{-1}\end{bmatrix}=\begin{bmatrix}|A||B|A^{-1}&-|A||B|A^{-1}B^{-1}\\O&|A||B|B^{-1}\end{bmatrix}=\begin{bmatrix}|B|A^{*}&-A^{*}B^{*}\\O&|A|B^{*}\end{bmatrix}.
+> $$
+>
+> <small>解析出处：《2023 数学三解析》第 2 页</small>
+
+### 2023 年 · 数学二 · 第 8 题（选择，5 分）
+
+设 $A,B$ 为 $n$ 阶可逆矩阵，$E$ 为 $n$ 阶单位矩阵，$M^*$ 为矩阵 $M$ 的伴随矩阵，则
+$$
+\begin{pmatrix}A&E\\O&B\end{pmatrix}^*=
+$$
+
+（A）$\begin{pmatrix}|A|B^*&-B^*A^*\\O&|B|A^*\end{pmatrix}$　　（B）$\begin{pmatrix}|A|B^*&-A^*B^*\\O&|B|A^*\end{pmatrix}$
+
+（C）$\begin{pmatrix}|B|A^*&-B^*A^*\\O&|A|B^*\end{pmatrix}$　　（D）$\begin{pmatrix}|B|A^*&-A^*B^*\\O&|A|B^*\end{pmatrix}$
+
+> [!success]- 答案与解析
+> **答案**：（D）
+>
+> 【解】
+> $$
+> \begin{vmatrix}A&E\\O&B\end{vmatrix}=|A|\cdot|B|,
+> $$
+> 令
+> $$
+> \begin{pmatrix}A&E\\O&B\end{pmatrix}^{-1}=\begin{pmatrix}X_{11}&X_{12}\\X_{21}&X_{22}\end{pmatrix},
+> $$
+> 由
+> $$
+> \begin{pmatrix}A&E\\O&B\end{pmatrix}\begin{pmatrix}X_{11}&X_{12}\\X_{21}&X_{22}\end{pmatrix}=\begin{pmatrix}E&O\\O&E\end{pmatrix}
+> $$
+> 得
+> $$
+> \begin{cases}AX_{11}+EX_{21}=E,\\AX_{12}+EX_{22}=O,\\BX_{21}=O,\\BX_{22}=E,\end{cases}
+> $$
+> 解得
+> $$
+> \begin{cases}X_{11}=A^{-1},\\X_{12}=-A^{-1}B^{-1},\\X_{21}=O,\\X_{22}=B^{-1},\end{cases}
+> $$
+> 则
+> $$
+> \begin{pmatrix}A&E\\O&B\end{pmatrix}^*=|A|\cdot|B|\begin{pmatrix}A^{-1}&-A^{-1}B^{-1}\\O&B^{-1}\end{pmatrix}=\begin{pmatrix}|B|A^*&-A^*B^*\\O&|A|B^*\end{pmatrix},
+> $$
+> 选（D）。
+>
+> <small>解析出处：《2023 数学二解析》第 8 页</small>
+
+### 2013 年 · 数学二 · 第 14 题（填空，4 分）
+
+设 $A=(a_{ij})$ 是 3 阶非零矩阵，$|A|$ 为 $A$ 的行列式，$A_{ij}$ 为 $a_{ij}$ 的代数余子式. 若 $a_{ij}+A_{ij}=0\ (i,j=1,2,3)$，则 $|A|=$ ________.
+
+> [!success]- 答案与解析
+> **答案**：-1
+>
+> 由 $a_{ij}+A_{ij}=0$ 可知，$A^{\mathrm{T}}=-A^*$
+> $$
+> |A|=a_{11}A_{11}+a_{12}A_{12}+a_{13}A_{13}=a_{1j}A_{1j}+a_{2j}A_{2j}+a_{3j}A_{3j}
+> $$
+> $$
+> =-\sum_{j=1}^{3}a_{1j}^2=-\sum_{i=1}^{3}a_{1i}^2<0
+> $$
+> 从而有 $|A|=|A^{\mathrm{T}}|=|-A^*|=-|A|^2$，故 $|A|=-1$.
+>
+> <small>解析出处：《2005—2013 考研数二真题答案解析》第 110 页</small>
 
 ### 2012 年 · 数学三 · 第 13 题（填空，4 分）
 
@@ -109,6 +203,37 @@ $$
 > $$
 >
 > <small>解析出处：《2012 年数学（三）试题答案》第 5 页</small>
+
+### 2012 年 · 数学二 · 第 14 题（填空，4 分）
+
+设 $A$ 为 3 阶矩阵，$|A|=3$，$A^*$ 为 $A$ 的伴随矩阵，若交换 $A$ 的第 1 行与第 2 行得矩阵 $B$，则 $|BA^*|=$ ________.
+
+> [!success]- 答案与解析
+> **答案**：-27
+>
+> 由于 $B=E_{12}A$，故 $BA^*=E_{12}\cdot A\cdot A^*=|A|E_{12}=3E_{12}$，
+> 所以，$|BA^*|=|3E_{12}|=3^3|E_{12}|=27\times(-1)=-27$.
+>
+> <small>解析出处：《2005—2013 考研数二真题答案解析》第 99 页</small>
+
+### 2011 年 · 数学二 · 第 8 题（选择，4 分）
+
+设 $A=(\alpha_1,\alpha_2,\alpha_3,\alpha_4)$ 是 4 阶矩阵，$A^*$ 为 $A$ 的伴随矩阵. 若 $(1,0,1,0)^{\mathrm{T}}$ 是方程组 $Ax=0$ 的一个基础解系，则 $A^*x=0$ 的基础解系可为（　）
+
+（A）$\alpha_1,\alpha_3$　（B）$\alpha_1,\alpha_2$　（C）$\alpha_1,\alpha_2,\alpha_3$　（D）$\alpha_2,\alpha_3,\alpha_4$
+
+> [!success]- 答案与解析
+> **答案**：（D）
+>
+> 由于 $(1,0,1,0)^{\mathrm{T}}$ 是方程组 $Ax=0$ 的一个基础解系，所以 $A(1,0,1,0)^{\mathrm{T}}=0$，且 $r(A)=4-1=3$，即 $\alpha_1+\alpha_3=0$，且 $|A|=0$. 由此可得 $A^*A=|A|E=O$，即
+> $$
+> A^*(\alpha_1,\alpha_2,\alpha_3,\alpha_4)=O,
+> $$
+> 这说明 $\alpha_1,\alpha_2,\alpha_3,\alpha_4$ 是 $A^*x=0$ 的解.
+>
+> 由于 $r(A)=3$，$\alpha_1+\alpha_3=0$，所以 $\alpha_2,\alpha_3,\alpha_4$ 线性无关. 又由于 $r(A)=3$，所以 $r(A^*)=1$，因此 $A^*x=0$ 的基础解系中含有 $4-1=3$ 个线性无关的解向量. 而 $\alpha_2,\alpha_3,\alpha_4$ 线性无关，且为 $A^*x=0$ 的解，所以 $\alpha_2,\alpha_3,\alpha_4$ 可作为 $A^*x=0$ 的基础解系，故选 (D).
+>
+> <small>解析出处：《2005—2013 考研数二真题答案解析》第 86–87 页</small>
 
 ### 2009 年 · 数学一 · 第 6 题（选择，5 分）
 

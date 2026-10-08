@@ -120,7 +120,100 @@ $$
 > - [[克拉默法则]] ⇒ 🟧 充分 ⇒ 本点——｜A｜≠0 ⇒ 唯一解
 > - [[方程组的几何意义（平面与直线）]] ⇒ 🟪 必要 ⇒ 本点——几何形态由秩决定
 
-## <span class="hx hx-exam">📝</span> 九、真题（2010–2022）
+## <span class="hx hx-exam">📝</span> 九、真题（2008–2025）
+
+### 2025 年 · 数学一 · 第 6 题（选择，5 分）
+
+设 $\alpha_1,\alpha_2,\alpha_3,\alpha_4$ 是 $n$ 维列向量，向量 $\alpha_1,\alpha_2$ 线性无关，$\alpha_1,\alpha_2,\alpha_3$ 线性相关，且 $\alpha_1+\alpha_2+\alpha_4=0$。空间直角坐标系中关于 $x,y,z$ 的方程 $x\alpha_1+y\alpha_2+z\alpha_3=\alpha_4$（　）
+
+（A）过原点的一个平面　（B）过原点的一条直线
+（C）不过原点的一个平面　（D）不过原点的一条直线
+
+> [!success]- 答案与解析
+> **答案**：（D）
+>
+> 由 $\alpha_1,\alpha_2$ 线性无关，$\alpha_1,\alpha_2,\alpha_3$ 线性相关，则 $r(\alpha_1,\alpha_2,\alpha_3)=2$，又 $\alpha_1+\alpha_2+\alpha_4=0$，则 $r(\alpha_1,\alpha_2,\alpha_3,\alpha_4)=r(\alpha_1,\alpha_2,\alpha_3)=2$，进而 $x\alpha_1+y\alpha_2+z\alpha_3=0$ 的基础解系向量个数为 $1$。
+>
+> 又 $x=y=z=0$ 时，$\alpha_4=0$，此时 $\alpha_1+\alpha_2=0$，与 $\alpha_1,\alpha_2$ 线性无关矛盾，故而不过原点，选（D）。
+>
+> <small>解析出处：《2025 数学一解析》第 4–5 页</small>
+
+### 2023 年 · 数学三 · 第 15 题（填空，5 分）
+
+已知线性方程组
+$$
+\begin{cases}
+ax_1+x_3=1,\\
+x_1+ax_2+x_3=0,\\
+x_1+2x_2+ax_3=0,\\
+ax_1+bx_2=2
+\end{cases}
+$$
+有解，其中 $a,b$ 为常数。若
+$$
+\begin{vmatrix}a&0&1\\1&a&1\\1&2&a\end{vmatrix}=4,
+$$
+则
+$$
+\begin{vmatrix}1&a&1\\1&2&a\\a&b&0\end{vmatrix}=\underline{\qquad}.
+$$
+
+> [!success]- 答案与解析
+> **答案**：$8$
+>
+> 已知题中方程组有解，所以 $r(A)=r(B)$，
+> $$
+> A=\begin{bmatrix}a&0&1\\1&a&1\\1&2&a\end{bmatrix},\quad B=\begin{bmatrix}a&0&1&1\\1&a&1&0\\1&2&a&0\\a&b&0&2\end{bmatrix}.
+> $$
+> 又因为
+> $$
+> \begin{vmatrix}a&0&1\\1&a&1\\1&2&a\end{vmatrix}=4\ne 0,
+> $$
+> 所以 $r(A)=3$，从而 $r(B)=3$，$|B|=0$。
+> $$
+> |B|=\begin{vmatrix}a&0&1&1\\1&a&1&0\\1&2&a&0\\a&b&0&2\end{vmatrix}\xrightarrow{\text{按 4 列展开}}-\begin{vmatrix}1&a&1\\1&2&a\\a&b&0\end{vmatrix}+2\begin{vmatrix}a&0&1\\1&a&1\\1&2&a\end{vmatrix}=8-\begin{vmatrix}1&a&1\\1&2&a\\a&b&0\end{vmatrix}=0.
+> $$
+> 所以
+> $$
+> \begin{vmatrix}1&a&1\\1&2&a\\a&b&0\end{vmatrix}=8.
+> $$
+>
+> <small>解析出处：《2023 数学三解析》第 6–7 页</small>
+
+### 2023 年 · 数学二 · 第 16 题（填空，5 分）
+
+已知线性方程组
+$$
+\begin{cases}ax_1+x_3=1,\\x_1+ax_2+x_3=0,\\x_1+2x_2+ax_3=0,\\ax_1+bx_2=2\end{cases}
+$$
+有解，其中 $a,b$ 为常数. 若
+$$
+\begin{vmatrix}a&0&1\\1&a&1\\1&2&a\end{vmatrix}=4,
+$$
+则
+$$
+\begin{vmatrix}1&a&1\\1&2&a\\a&b&0\end{vmatrix}=\underline{\qquad}.
+$$
+
+> [!success]- 答案与解析
+> **答案**：$8$
+>
+> 【解】
+> $$
+> \overline{A}=\begin{pmatrix}a&0&1&1\\1&a&1&0\\1&2&a&0\\a&b&0&2\end{pmatrix},
+> $$
+> 因为原方程组有解，所以 $r(A)=r(\overline{A})\le 3<4$，从而 $|\overline{A}|=0$，
+>
+> 由
+> $$
+> |\overline{A}|=\begin{vmatrix}a&0&1&1\\1&a&1&0\\1&2&a&0\\a&b&0&2\end{vmatrix}=-\begin{vmatrix}1&a&1\\1&2&a\\a&b&0\end{vmatrix}+2\begin{vmatrix}a&0&1\\1&a&1\\1&2&a\end{vmatrix}=8-\begin{vmatrix}1&a&1\\1&2&a\\a&b&0\end{vmatrix}=0
+> $$
+> 得
+> $$
+> \begin{vmatrix}1&a&1\\1&2&a\\a&b&0\end{vmatrix}=8.
+> $$
+>
+> <small>解析出处：《2023 数学二解析》第 10 页</small>
 
 ### 2022 年 · 数学三 · 第 6 题（选择，5 分）
 
@@ -260,6 +353,23 @@ $$
 >
 > <small>解析出处：《2019 数学一解析》第 2 页</small>
 
+### 2019 年 · 数学三 · 第 13 题（填空，4 分）
+
+已知矩阵 $A=\begin{pmatrix}1&0&-1\\1&1&-1\\0&1&a^2-1\end{pmatrix}$，$b=\begin{pmatrix}0\\1\\a\end{pmatrix}$，若线性方程组 $Ax=b$ 有无穷多解，则 $a=$ $\underline{\qquad}$.
+
+> [!success]- 答案与解析
+> **答案**：1
+>
+> 由题意得
+> $$
+> \overline{A}=\left(\begin{array}{ccc|c}1&0&-1&0\\1&1&-1&1\\0&1&a^2-1&a\end{array}\right)\to\left(\begin{array}{ccc|c}1&0&-1&0\\0&1&0&1\\0&1&a^2-1&a\end{array}\right)\to\left(\begin{array}{ccc|c}1&0&-1&0\\0&1&0&1\\0&0&a^2-1&a-1\end{array}\right).
+> $$
+> 要使 $Ax=b$ 有无穷多解，则应使 $r(A)=r(\overline{A})<3$，
+> 当 $a^2-1=a-1=0$，即 $a=1$ 时，$r(A)=r(\overline{A})=2<3$.
+> 故应填 1.
+>
+> <small>解析出处：《2019 数学三真题答案解析》第 3 页</small>
+
 ### 2016 年 · 数学一 · 第 20 题（解答，11 分）
 
 （本题满分 11 分）设矩阵
@@ -342,6 +452,52 @@ $$
 >
 > <small>解析出处：《2016 数学三真题答案解析》第 5 页</small>
 
+### 2016 年 · 数学二 · 第 22 题（解答，11 分）
+
+（本题满分 11 分）设矩阵
+$$
+A=\begin{pmatrix}1&1&1-a\\1&0&a\\a+1&1&a+1\end{pmatrix},\quad\beta=\begin{pmatrix}0\\1\\2a-2\end{pmatrix},
+$$
+且方程组 $Ax=\beta$ 无解。
+
+（Ⅰ）求 $a$ 的值；
+
+（Ⅱ）求方程组 $A^{\mathrm{T}}Ax=A^{\mathrm{T}}\beta$ 的通解。
+
+> [!success]- 答案与解析
+> **答案**：（Ⅰ）$a=0$；（Ⅱ）通解为
+$$
+x=(1,-2,0)^{\mathrm{T}}+k(0,-1,1)^{\mathrm{T}}\quad(k\ \text{为任意常数})
+$$
+>
+> 本题主要考查非齐次线性方程组有解的条件以及求线性方程组的通解。
+>
+> 已知 $Ax=\beta$ 无解，我们可以利用 $r(A,\beta)\ne r(A)$ 来讨论参数 $a$ 的值。
+>
+> 解（Ⅰ）由于 $Ax=\beta$ 无解，故由非齐次线性方程组有解的充分必要条件可知，$r(A,\beta)\ne r(A)$。
+> $$
+> (A,\beta)=\begin{pmatrix}1&1&1-a&0\\1&0&a&1\\a+1&1&a+1&2a-2\end{pmatrix}\xrightarrow[r_3-(a+1)r_1]{r_2-r_1}\begin{pmatrix}1&1&1-a&0\\0&-1&2a-1&1\\0&-a&a^2+a&2a-2\end{pmatrix}
+> $$
+> $$
+> \xrightarrow[r_3^*+ar_2^{**}]{r_2\times(-1)}\begin{pmatrix}1&1&1-a&0\\0&1&1-2a&-1\\0&0&-a^2+2a&a-2\end{pmatrix}.
+> $$
+> （$r_i^*$ 表示对第 $i$ 行作初等行变换后所得新的第 $i$ 行，每做一次初等行变换，加一个 $*$。）
+>
+> 由上面的式子可知，$r(A)\ge2$。从而，$Ax=\beta$ 无解当且仅当 $r(A)=2$ 且 $r(A,\beta)=3$。此时，$-a^2+2a=0$，且 $a-2\ne0$，解得 $a=0$。
+>
+> （Ⅱ）当 $a=0$ 时，$A^{\mathrm{T}}=\begin{pmatrix}1&1&1\\1&0&1\\1&0&1\end{pmatrix},A^{\mathrm{T}}A=\begin{pmatrix}3&2&2\\2&2&2\\2&2&2\end{pmatrix},A^{\mathrm{T}}\beta=\begin{pmatrix}-1\\-2\\-2\end{pmatrix}$。
+> $$
+> (A^{\mathrm{T}}A,A^{\mathrm{T}}\beta)=\begin{pmatrix}3&2&2&-1\\2&2&2&-2\\2&2&2&-2\end{pmatrix}\xrightarrow[r_2\times\frac12]{r_3-r_2}\begin{pmatrix}3&2&2&-1\\1&1&1&-1\\0&0&0&0\end{pmatrix}\xrightarrow[r_2-r_1^*]{r_1-2r_2^*}\begin{pmatrix}1&0&0&1\\1&1&1&-1\\0&0&0&0\end{pmatrix}
+> $$
+> $$
+> \xrightarrow{r_2^*-r_1^*}\begin{pmatrix}1&0&0&1\\0&1&1&-2\\0&0&0&0\end{pmatrix}.
+> $$
+> $A^{\mathrm{T}}Ax=A^{\mathrm{T}}\beta$ 对应的齐次线性方程组等价于 $\begin{cases}x_1=0,\\x_2+x_3=0,\end{cases}$ 即 $(0,-1,1)^{\mathrm{T}}$ 为该方程组的一个基础解系。又因为 $(1,-2,0)^{\mathrm{T}}$ 是 $A^{\mathrm{T}}Ax=A^{\mathrm{T}}\beta$ 的一个特解，所以 $A^{\mathrm{T}}Ax=A^{\mathrm{T}}\beta$ 的通解为 $k(0,-1,1)^{\mathrm{T}}+(1,-2,0)^{\mathrm{T}}$，其中 $k$ 为任意常数。
+>
+> 注 在第（Ⅰ）问中，还可以利用 $|A|=0$ 求得 $a=0$ 或 $a=2$。讨论 $a=0$ 与 $a=2$ 的情况可知，当 $a=2$ 时，方程组有无穷多解，不符合题意。
+>
+> <small>解析出处：《2016 数学二解析》第 27–28 页</small>
+
 ### 2015 年 · 数学一 · 第 5 题（选择，4 分）
 
 设矩阵 $A=\begin{pmatrix}1&1&1\\1&2&a\\1&4&a^2\end{pmatrix}$，$b=\begin{pmatrix}1\\d\\d^2\end{pmatrix}$。若集合 $\Omega=\{1,2\}$，则线性方程组 $Ax=b$ 有无穷多解的充分必要条件为（　）
@@ -403,6 +559,26 @@ $$
 >
 > <small>解析出处：《2015 数学三真题答案解析》第 2 页</small>
 
+### 2015 年 · 数学二 · 第 7 题（选择，4 分）
+
+设矩阵
+$$
+A=\begin{pmatrix}1&1&1\\1&2&a\\1&4&a^2\end{pmatrix},\quad b=\begin{pmatrix}1\\d\\d^2\end{pmatrix}.
+$$
+若集合 $\Omega=\{1,2\}$，则线性方程组 $Ax=b$ 有无穷多解的充分必要条件为（　）
+
+（A）$a\notin\Omega,\ d\notin\Omega$　（B）$a\notin\Omega,\ d\in\Omega$　（C）$a\in\Omega,\ d\notin\Omega$　（D）$a\in\Omega,\ d\in\Omega$
+
+> [!success]- 答案与解析
+> **答案**：（D）
+>
+> $$
+> (A,b)=\begin{pmatrix}1&1&1&1\\1&2&a&d\\1&4&a^2&d^2\end{pmatrix}\to\begin{pmatrix}1&1&1&1\\0&1&a-1&d-1\\0&0&(a-1)(a-2)&(d-1)(d-2)\end{pmatrix},
+> $$
+> 由 $r(A)=r(A,b)<3$，故 $a=1$ 或 $a=2$，同时 $d=1$ 或 $d=2$。故选（D）。
+>
+> <small>解析出处：《2015 数学二解析》第 4 页</small>
+
 ### 2013 年 · 数学三 · 第 20 题（解答，11 分）
 
 （本题满分 11 分）设
@@ -447,6 +623,35 @@ $$
 >
 > <small>解析出处：《2013 年数学（三）试题答案》第 8 页</small>
 
+### 2013 年 · 数学二 · 第 22 题（解答，11 分）
+
+设 $A=\begin{pmatrix}1&a\\1&0\end{pmatrix},B=\begin{pmatrix}0&1\\1&b\end{pmatrix}$. 当 $a,b$ 为何值时，存在矩阵 $C$ 使得 $AC-CA=B$，并求所有矩阵 $C$.
+
+> [!success]- 答案与解析
+> **答案**：$a=-1,b=0$；$C=\begin{pmatrix}k_1+k_2+1&-k_1\\k_1&k_2\end{pmatrix}$（$k_1,k_2$ 任意）
+>
+> 由题意可知矩阵 $C$ 为 2 阶矩阵，故可设 $C=\begin{pmatrix}x_1&x_2\\x_3&x_4\end{pmatrix}$，则由 $AC-CA=B$ 可得线性方程组：
+> $$
+> \begin{cases}-x_2+ax_3=0\\-ax_1+x_2+ax_4=1\\x_1-x_3-x_4=1\\x_2-ax_3=b\end{cases}\quad (1)
+> $$
+> $$
+> \left(\begin{array}{cccc|c}0&-1&a&0&0\\-a&1&0&a&1\\1&0&-1&-1&1\\0&1&-a&0&b\end{array}\right)\to\left(\begin{array}{cccc|c}1&0&-1&-1&1\\-a&1&0&a&1\\0&-1&a&0&0\\0&1&-a&0&b\end{array}\right)\to\left(\begin{array}{cccc|c}1&0&-1&-1&1\\0&1&-a&0&1+a\\0&-1&a&0&0\\0&1&-a&0&b\end{array}\right)
+> $$
+> $$
+> \to\left(\begin{array}{cccc|c}1&0&-1&-1&1\\0&1&-a&0&1+a\\0&0&0&0&1+a\\0&0&0&0&b-1-a\end{array}\right)
+> $$
+> 由于方程组 (1) 有解，故有 $1+a=0,b-1-a=0$，即 $a=-1,b=0$，从而有
+> $$
+> \left(\begin{array}{cccc|c}0&-1&a&0&0\\-a&1&0&a&1\\1&0&-1&-1&1\\0&1&-a&0&b\end{array}\right)\to\left(\begin{array}{cccc|c}1&0&-1&-1&1\\0&1&1&0&0\\0&0&0&0&0\\0&0&0&0&0\end{array}\right),
+> $$
+> 故有
+> $$
+> \begin{cases}x_1=k_1+k_2+1\\x_2=-k_1\\x_3=k_1\\x_4=k_2\end{cases},\quad \text{其中 }k_1,k_2\text{ 任意}.
+> $$
+> 从而有 $C=\begin{pmatrix}k_1+k_2+1&-k_1\\k_1&k_2\end{pmatrix}$.
+>
+> <small>解析出处：《2005—2013 考研数二真题答案解析》第 114–115 页</small>
+
 ### 2012 年 · 数学三 · 第 20 题（解答，11 分）
 
 （本题满分 11 分）设
@@ -479,6 +684,47 @@ $$
 > $$
 >
 > <small>解析出处：《2012 年数学（三）试题答案》第 9–10 页</small>
+
+### 2012 年 · 数学二 · 第 22 题（解答，11 分）
+
+设
+$$
+A=\begin{pmatrix}1&a&0&0\\0&1&a&0\\0&0&1&a\\a&0&0&1\end{pmatrix},\quad \beta=\begin{pmatrix}1\\-1\\0\\0\end{pmatrix}.
+$$
+（Ⅰ）计算行列式 $|A|$；
+
+（Ⅱ）当实数 $a$ 为何值时，方程组 $Ax=\beta$ 有无穷多解，并求其通解.
+
+> [!success]- 答案与解析
+> **答案**：（Ⅰ）$|A|=1-a^4$；（Ⅱ）$a=-1$，通解 $x=k\begin{pmatrix}1\\1\\1\\1\end{pmatrix}+\begin{pmatrix}0\\-1\\0\\0\end{pmatrix}$（$k$ 为任意常数）
+>
+> （Ⅰ）
+> $$
+> |A|=\begin{vmatrix}1&a&0&0\\0&1&a&0\\0&0&1&a\\a&0&0&1\end{vmatrix}=1\times\begin{vmatrix}1&a&0\\0&1&a\\0&0&1\end{vmatrix}+a\times(-1)^{4+1}\begin{vmatrix}a&0&0\\1&a&0\\0&1&a\end{vmatrix}=1-a^4
+> $$
+> （Ⅱ）
+> $$
+> \left(\begin{array}{cccc|c}1&a&0&0&1\\0&1&a&0&-1\\0&0&1&a&0\\a&0&0&1&0\end{array}\right)\to\left(\begin{array}{cccc|c}1&a&0&0&1\\0&1&a&0&-1\\0&0&1&a&0\\0&-a^2&0&1&-a\end{array}\right)\to\left(\begin{array}{cccc|c}1&a&0&0&1\\0&1&a&0&-1\\0&0&1&a&0\\0&0&a^3&1&-a-a^2\end{array}\right)
+> $$
+> $$
+> \to\left(\begin{array}{cccc|c}1&a&0&0&1\\0&1&a&0&-1\\0&0&1&a&0\\0&0&0&1-a^4&-a-a^2\end{array}\right)
+> $$
+> 可知当要使得原线性方程组有无穷多解，则有 $1-a^4=0$ 及 $-a-a^2=0$，可知 $a=-1$.
+>
+> 此时，原线性方程组增广矩阵为
+> $$
+> \left(\begin{array}{cccc|c}1&-1&0&0&1\\0&1&-1&0&-1\\0&0&1&-1&0\\0&0&0&0&0\end{array}\right),
+> $$
+> 进一步化为行最简形得
+> $$
+> \left(\begin{array}{cccc|c}1&0&0&-1&0\\0&1&0&-1&-1\\0&0&1&-1&0\\0&0&0&0&0\end{array}\right),
+> $$
+> 可知导出组的基础解系为 $\begin{pmatrix}1\\1\\1\\1\end{pmatrix}$，非齐次方程的特解为 $\begin{pmatrix}0\\-1\\0\\0\end{pmatrix}$，故其通解为
+> $$
+> k\begin{pmatrix}1\\1\\1\\1\end{pmatrix}+\begin{pmatrix}0\\-1\\0\\0\end{pmatrix}.
+> $$
+>
+> <small>解析出处：《2005—2013 考研数二真题答案解析》第 103–104 页</small>
 
 ### 2010 年 · 数学一 · 第 20 题（解答，11 分）
 
@@ -584,6 +830,74 @@ $$
 > 因此 $Ax=b$ 的通解为 $x=k\begin{pmatrix}1\\0\\1\end{pmatrix}+\begin{pmatrix}\frac{3}{2}\\-\frac{1}{2}\\0\end{pmatrix}$，其中 $k$ 为任意常数.
 >
 > <small>解析出处：《2005—2013 考研数二真题答案解析》第 80–82 页</small>
+
+### 2008 年 · 数学一 · 第 21 题（解答，12 分）
+
+（本题满分 12 分）设 $n$ 元线性方程组 $Ax=b$，其中
+$$
+A=\begin{pmatrix}2a&1&&&\\a^2&2a&1&&\\&\ddots&\ddots&\ddots&\\&&a^2&2a&1\\&&&a^2&2a\end{pmatrix},\quad
+x=\begin{pmatrix}x_1\\x_2\\\vdots\\x_n\end{pmatrix},\quad
+b=\begin{pmatrix}1\\0\\\vdots\\0\end{pmatrix}.
+$$
+（Ⅰ）证明行列式 $|A|=(n+1)a^n$；
+
+（Ⅱ）当 $a$ 为何值时，该方程组有唯一解，并求 $x_1$；
+
+（Ⅲ）当 $a$ 为何值时，该方程组有无穷多解，并求通解。
+
+> [!success]- 答案与解析
+> **答案**：（Ⅰ）$|A|=(n+1)a^n$；（Ⅱ）$a\ne 0$ 时方程组有唯一解，$x_1=\dfrac{n}{(n+1)a}$；（Ⅲ）$a=0$ 时方程组有无穷多解，通解为 $X=C\begin{pmatrix}1\\0\\\vdots\\0\end{pmatrix}+\begin{pmatrix}0\\1\\0\\\vdots\\0\end{pmatrix}$（$C$ 为任意常数）。
+>
+> （Ⅰ）**方法一（数学归纳法）** 当 $n=1$ 时，$|A|=D_1=2a$，结论显然成立；
+>
+> 设当 $n=k$ 时，$|A|=D_k=(k+1)a^k$；当 $n=k+1$ 时，
+> $$
+> |A|=D_{k+1}=2aD_k-a^2D_{k-1}=2a(k+1)a^k-ka^{k+1}=2(k+1)a^{k+1}-ka^{k+1}=(k+2)a^{k+1},
+> $$
+> 由数学归纳法，对一切的自然数 $n$，有 $|A|=(n+1)a^n$。
+>
+> **方法二**
+> $$
+> |A|=\begin{vmatrix}2a&1&0&\cdots&0\\a^2&2a&1&\cdots&0\\0&a^2&2a&\cdots&0\\\vdots&\vdots&\vdots&&\vdots\\0&0&0&\cdots&1\\0&0&0&\cdots&2a\end{vmatrix}
+> =\begin{vmatrix}2a&1&0&\cdots&0\\0&\dfrac{3a}{2}&1&\cdots&0\\0&a^2&2a&\cdots&0\\\vdots&\vdots&\vdots&&\vdots\\0&0&0&\cdots&1\\0&0&0&\cdots&2a\end{vmatrix}
+> $$
+> $$
+> =\cdots=\begin{vmatrix}2a&1&0&\cdots&0\\0&\dfrac{3a}{2}&1&\cdots&0\\0&0&\dfrac{4a}{3}&\cdots&0\\\vdots&\vdots&\vdots&&\vdots\\0&0&0&\cdots&1\\0&0&0&\cdots&\dfrac{(n+1)a}{n}\end{vmatrix}=(n+1)a^n.
+> $$
+>
+> **方法三** 令 $D_n=|A|$，将 $D_n$ 按第一列展开，得 $D_n=2aD_{n-1}-a^2D_{n-2}$，从而
+> $$
+> D_n-aD_{n-1}=a(D_{n-1}-aD_{n-2}),
+> $$
+> 由递推关系得
+> $$
+> D_n-aD_{n-1}=a(D_{n-1}-aD_{n-2})=\cdots=a^{n-2}(D_2-aD_1)=a^n,
+> $$
+> 于是
+> $$
+> D_n=aD_{n-1}+a^n=a(aD_{n-2}+a^{n-1})+a^n=a^2D_{n-2}+2a^n=\cdots=a^{n-1}D_1+(n-1)a^n=(n+1)a^n.
+> $$
+>
+> （Ⅱ）当 $r(A)=n$ 或 $|A|\ne 0$，即 $a\ne 0$ 时，方程组有唯一解。由
+> $$
+> D_1=\begin{vmatrix}1&1&0&\cdots&0\\0&2a&1&\cdots&0\\0&a^2&2a&\cdots&0\\\vdots&\vdots&\vdots&&\vdots\\0&0&0&\cdots&2a\end{vmatrix}=na^{n-1},
+> $$
+> 得
+> $$
+> x_1=\frac{D_1}{D}=\frac{n}{(n+1)a}.
+> $$
+>
+> （Ⅲ）当 $r(A)<n$ 或 $|A|=0$，即 $a=0$ 时，方程组 $AX=b$ 有无数个解，由
+> $$
+> \overline{A}=\begin{pmatrix}0&1&0&\cdots&0&1\\0&0&1&\cdots&0&0\\\vdots&\vdots&\vdots&&\vdots&\vdots\\0&0&0&\cdots&1&0\\0&0&0&\cdots&0&0\end{pmatrix},
+> $$
+> 得通解为
+> $$
+> X=C\begin{pmatrix}1\\0\\0\\\vdots\\0\end{pmatrix}+\begin{pmatrix}0\\1\\0\\\vdots\\0\end{pmatrix}
+> $$
+> （$C$ 为任意常数）。
+>
+> <small>解析出处：《2008 年数学（一）真题解析》第 7–8 页</small>
 
 ## <span class="hx hx-nav">🧭</span> 十、导航
 

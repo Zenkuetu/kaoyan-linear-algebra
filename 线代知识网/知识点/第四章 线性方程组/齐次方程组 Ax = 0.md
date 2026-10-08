@@ -121,7 +121,27 @@ $$
 > - [[矩阵方程 AX = O 与 AB = O]] ⇒ 🟥 充要 ⇒ 本点——AB=O 即 B 的列都是齐次解
 > - [[可逆的充要条件（汇总枢纽）]] ⇒ 🟥 充要 ⇒ 本点——可逆 ⇔ 齐次只有零解
 
-## <span class="hx hx-nav">🧭</span> 九、导航
+## <span class="hx hx-exam">📝</span> 九、真题（2025）
+
+### 2025 年 · 数学一 · 第 15 题（填空，5 分）
+
+设矩阵 $A=\begin{pmatrix}4&2&-3\\a&3&-4\\b&5&-7\end{pmatrix}$，若方程组 $A^2x=0$ 与 $Ax=0$ 不同解，则 $a-b=\underline{\qquad}$。
+
+> [!success]- 答案与解析
+> **答案**：$-4$
+>
+> 根据题意，$|A|=0$，
+> $$
+> |A|=\begin{vmatrix}4&2&-3\\a&3&-4\\b&5&-7\end{vmatrix}=\begin{vmatrix}4&2&-3\\a-b&-2&3\\b&5&-7\end{vmatrix}=\begin{vmatrix}4+a-b&0&0\\a-b&-2&3\\b&5&-7\end{vmatrix}=(4+a-b)(-1)=0,
+> $$
+> 故
+> $$
+> a-b=-4.
+> $$
+>
+> <small>解析出处：《2025 数学一解析》第 8–9 页</small>
+
+## <span class="hx hx-nav">🧭</span> 十、导航
 
 
 - 本章：[[第四章 线性方程组|第四章 线性方程组]] ｜ 总览：[00 线性代数知识网总览](00%20线性代数知识网总览.md)

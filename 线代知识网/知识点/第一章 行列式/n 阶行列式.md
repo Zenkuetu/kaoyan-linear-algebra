@@ -156,6 +156,35 @@ $$
 >
 > <small>解析出处：《2016 数学三真题答案解析》第 3 页</small>
 
+### 2014 年 · 数学一 · 第 5 题（选择，5 分）
+
+行列式
+
+$$
+\begin{vmatrix}0&a&b&0\\a&0&0&b\\0&c&d&0\\c&0&0&d\end{vmatrix}=
+$$
+
+（　　）
+
+（A）$(ad-bc)^2$．　　（B）$-(ad-bc)^2$．　　（C）$a^2d^2-b^2c^2$．　　（D）$b^2c^2-a^2d^2$．
+
+> [!success]- 答案与解析
+> **答案**：（B）
+>
+>
+>
+> $$
+> \begin{vmatrix}0&a&b&0\\a&0&0&b\\0&c&d&0\\c&0&0&d\end{vmatrix}=-a\begin{vmatrix}a&0&b\\0&d&0\\c&0&d\end{vmatrix}+b\begin{vmatrix}a&0&b\\0&c&0\\c&0&d\end{vmatrix}
+> $$
+>
+> $$
+> =-ad(ad-bc)+bc(ad-bc)=-a^2d^2+2abcd-b^2c^2=-(ad-bc)^2,
+> $$
+>
+> 应选（B）．
+>
+> <small>解析出处：《2014 数学一解析》第 2 页</small>
+
 ### 2014 年 · 数学三 · 第 5 题（选择，4 分）
 
 行列式
