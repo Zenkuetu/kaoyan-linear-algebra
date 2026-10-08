@@ -95,7 +95,7 @@ $$
 
 EXAMS.push({
   year: 2008, subject: '数一', number: 21, kind: '解答', score: 12,
-  ids: ["det-tridiagonal","eq-nonhomo-crit","eq-nonhomo-general"],
+  ids: ["det-tridiagonal","eq-nonhomo-crit","eq-nonhomo-general",'eq-cramer'],
   question: String.raw`（本题满分 12 分）设 $n$ 元线性方程组 $Ax=b$，其中
 $$
 A=\begin{pmatrix}2a&1&&&\\a^2&2a&1&&\\&\ddots&\ddots&\ddots&\\&&a^2&2a&1\\&&&a^2&2a\end{pmatrix},\quad
