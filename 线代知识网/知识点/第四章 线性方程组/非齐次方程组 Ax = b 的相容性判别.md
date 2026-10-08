@@ -1324,6 +1324,110 @@ $$
 >
 > 故当 $a=-2$ 时，原方程组有无穷多解.
 
+### 2000 年 · 数学一 · 填空题第 4 题（填空，3 分）
+
+已知方程组 $\begin{pmatrix}1&2&1\\2&3&a+2\\1&a&-2\end{pmatrix}\begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix}=\begin{pmatrix}1\\3\\0\end{pmatrix}$ 无解，则 $a=\underline{\qquad}$．
+
+> [!success]- 答案与解析
+> **答案**：$-1$
+>
+> （4）【答案】 $-1$．
+>
+> 【解】 因为原方程组无解，所以 $r(A)<r(\overline{A})$，而 $r(\overline{A})\le 3$，所以 $r(A)<3$．
+>
+> 于是 $|A|=0$，解得 $a=-1$ 或 $a=3$．
+> $$
+> \text{当 }a=3\text{ 时，由 }\overline{A}=\begin{pmatrix}1&2&1&\mid&1\\2&3&5&\mid&3\\1&3&-2&\mid&0\end{pmatrix}\to\begin{pmatrix}1&2&1&\mid&1\\0&-1&3&\mid&1\\0&1&-3&\mid&-1\end{pmatrix}\to\begin{pmatrix}1&2&1&\mid&1\\0&-1&3&\mid&1\\0&0&0&\mid&0\end{pmatrix},
+> $$
+> 得 $r(A)=r(\overline{A})=2$，原方程组有无数个解，所以 $a\ne 3$，故 $a=-1$．
+
+### 2000 年 · 数学三 · 选择题第 3 题（选择，3 分）
+
+设 $\alpha_1,\alpha_2,\alpha_3$ 是四元非齐次线性方程组 $AX=b$ 的三个解向量，且 $r(A)=3$，$\alpha_1=(1,2,3,4)^{\mathrm{T}}$，$\alpha_2+\alpha_3=(0,1,2,3)^{\mathrm{T}}$，$C$ 表示任意常数，则线性方程组 $AX=b$ 的通解为（　　）
+
+（A）$\begin{pmatrix}1\\2\\3\\4\end{pmatrix}+C\begin{pmatrix}1\\1\\1\\1\end{pmatrix}$　　（B）$\begin{pmatrix}1\\2\\3\\4\end{pmatrix}+C\begin{pmatrix}0\\1\\2\\3\end{pmatrix}$
+
+（C）$\begin{pmatrix}1\\2\\3\\4\end{pmatrix}+C\begin{pmatrix}2\\3\\4\\5\end{pmatrix}$　　（D）$\begin{pmatrix}1\\2\\3\\4\end{pmatrix}+C\begin{pmatrix}3\\4\\5\\6\end{pmatrix}$
+
+> [!success]- 答案与解析
+> **答案**：（C）
+>
+> 【详解】因为 $\alpha_1=(1,2,3,4)^{\mathrm{T}}$ 是非齐次方程组的解向量，所以有 $A\alpha_1=b$，故 $\alpha_1$ 是 $AX=b$ 的一个特解。
+>
+> 又 $r(A)=3$，$n=4$（未知量的个数），故 $AX=b$ 导出组 $AX=0$ 的基础解系由一个非零解组成，即基础解系的个数为 $1$。
+>
+> 因为
+> $$
+> A\bigl(2\alpha_1-(\alpha_2+\alpha_3)\bigr)=2b-b-b=0,
+> $$
+> 故
+> $$
+> 2\alpha_1-(\alpha_2+\alpha_3)=2\begin{pmatrix}1\\2\\3\\4\end{pmatrix}-\begin{pmatrix}0\\1\\2\\3\end{pmatrix}=\begin{pmatrix}2\\3\\4\\5\end{pmatrix}
+> $$
+> 是 $AX=0$ 的基础解系，故 $AX=b$ 的通解为
+> $$
+> C\bigl(2\alpha_1-(\alpha_2+\alpha_3)\bigr)+\alpha_1=C\begin{pmatrix}2\\3\\4\\5\end{pmatrix}+\begin{pmatrix}1\\2\\3\\4\end{pmatrix}.
+> $$
+
+### 2000 年 · 数学三 · 第九题（解答，8 分）
+
+（本题满分 8 分）设向量组
+$$
+\alpha_1=(a,2,10)^{\mathrm{T}},\quad \alpha_2=(-2,1,5)^{\mathrm{T}},\quad \alpha_3=(-1,1,4)^{\mathrm{T}},\quad \beta=(1,b,c)^{\mathrm{T}}.
+$$
+试问：当 $a,b,c$ 满足什么条件时，
+
+（1）$\beta$ 可由 $\alpha_1,\alpha_2,\alpha_3$ 线性表示，且表示唯一？
+
+（2）$\beta$ 不能由 $\alpha_1,\alpha_2,\alpha_3$ 线性表示？
+
+（3）$\beta$ 可由 $\alpha_1,\alpha_2,\alpha_3$ 线性表示，但表示不唯一？并求出一般表达式。
+
+> [!success]- 答案与解析
+> **答案**：（1）$a\ne -4$ 时，$\beta$ 可由 $\alpha_1,\alpha_2,\alpha_3$ 线性表示且表示唯一；（2）$a=-4$ 且 $c-3b+1\ne 0$ 时，$\beta$ 不能由 $\alpha_1,\alpha_2,\alpha_3$ 线性表示；（3）$a=-4$ 且 $c-3b+1=0$ 时，$\beta$ 可由 $\alpha_1,\alpha_2,\alpha_3$ 线性表示但表示不唯一，一般表达式为 $k(1,-2,0)^{\mathrm{T}}+(0,-(b+1),2b+1)^{\mathrm{T}}$（$k$ 为任意常数）。
+>
+> 【详解】方法 1：设方程组
+> $$
+> \alpha_1x_1+\alpha_2x_2+\alpha_3x_3=\beta.\tag{①}
+> $$
+> 对方程组的增广矩阵作初等行变换，化成阶梯形矩阵，有
+> $$
+> [\alpha_1,\alpha_2,\alpha_3\ \vdots\ \beta]=\begin{pmatrix}a&-2&-1&\mid&1\\2&1&1&\mid&b\\10&5&4&\mid&c\end{pmatrix}\to\begin{pmatrix}a&-2&-1&\mid&1\\2&1&1&\mid&b\\10+4a&-3&0&\mid&c+4\end{pmatrix}\to\begin{pmatrix}a&-2&-1&\mid&1\\2&1&1&\mid&b\\4+a&0&0&\mid&c-3b+1\end{pmatrix}.
+> $$
+> （1）当 $a\ne -4$ 时，$r[\alpha_1,\alpha_2,\alpha_3]=r[\alpha_1,\alpha_2,\alpha_3,\beta]=3$，方程组①有唯一解，即 $\beta$ 可由 $\alpha_1,\alpha_2,\alpha_3$ 线性表出，且表出唯一。
+>
+> （2）当 $a=-4$，但 $c-3b+1\ne 0$ 时，$r[\alpha_1,\alpha_2,\alpha_3]=2\ne r[\alpha_1,\alpha_2,\alpha_3,\beta]=3$，方程组①无解，$\beta$ 不可由 $\alpha_1,\alpha_2,\alpha_3$ 线性表出。
+>
+> （3）当 $a=-4$，且 $c-3b+1=0$ 时，$r[\alpha_1,\alpha_2,\alpha_3]=r[\alpha_1,\alpha_2,\alpha_3,\beta]=2$，方程组①有无穷多解，此时有
+> $$
+> [\alpha_1,\alpha_2,\alpha_3\ \vdots\ \beta]\to\begin{pmatrix}-4&-2&-1&\mid&1\\2&1&1&\mid&b\\0&0&0&\mid&0\end{pmatrix}.
+> $$
+> 得对应齐次方程组的基础解系为：$\xi=(1,-2,0)^{\mathrm{T}}$（取自由未知量 $x_2=1$，回代得 $x_2=-2$，$x_3=0$）；非齐次方程组的一个特解是 $\eta=(0,-(b+1),2b+1)^{\mathrm{T}}$，故通解为
+> $$
+> k\begin{pmatrix}1\\-2\\0\end{pmatrix}+\begin{pmatrix}0\\-(b+1)\\2b+1\end{pmatrix},\quad k\ \text{为任意常数}.
+> $$
+>
+> 方法 2：设方程组 $\alpha_1x_1+\alpha_2x_2+\alpha_3x_3=\beta$\quad①
+>
+> 因为①是三个方程三个未知量的线性非齐次方程组，故也可由系数行列式讨论，
+> $$
+> |A|=|\alpha_1,\alpha_2,\alpha_3|=\begin{vmatrix}a&-2&-1\\2&1&1\\10&5&4\end{vmatrix}=-\,(a+4).
+> $$
+> 因此知道：
+>
+> （1）当 $a\ne -4$ 时，$|A|\ne 0$，方程组有唯一解，$\beta$ 可由 $\alpha_1,\alpha_2,\alpha_3$ 线性表出，且表出唯一。
+>
+> （2）当 $a=-4$ 时（有可能无解或有无穷多解），对增广矩阵作初等行变换，得
+> $$
+> [\alpha_1,\alpha_2,\alpha_3\ \vdots\ \beta]=\begin{pmatrix}-4&-2&-1&\mid&1\\2&1&1&\mid&b\\10&5&4&\mid&c\end{pmatrix}\to\begin{pmatrix}2&1&1&\mid&b\\0&0&1&\mid&2b+1\\0&0&-1&\mid&c-5b\end{pmatrix}\to\begin{pmatrix}2&1&1&\mid&b\\0&0&1&\mid&2b+1\\0&0&0&\mid&c-3b+1\end{pmatrix}.
+> $$
+> （i）当 $a=-4$，且 $c-3b+1\ne 0$ 时，有 $r[\alpha_1,\alpha_2,\alpha_3]=2\ne r[\alpha_1,\alpha_2,\alpha_3,\beta]=3$，方程组①无解。
+>
+> （ii）当 $a=-4$，且 $c-3b+1=0$ 时，$r[\alpha_1,\alpha_2,\alpha_3]=r[\alpha_1,\alpha_2,\alpha_3,\beta]=2$，方程组①有无穷多解，其通解为
+> $$
+> k\begin{pmatrix}1\\-2\\0\end{pmatrix}+\begin{pmatrix}0\\-(b+1)\\2b+1\end{pmatrix},\quad k\ \text{为任意常数}.
+> $$
+
 ### 1998 年 · 数学二 · 第十三题（解答，6 分）
 
 已知 $\alpha_1=(1,4,0,2)^{\mathrm{T}},\alpha_2=(2,7,1,3)^{\mathrm{T}},\alpha_3=(0,1,-1,a)^{\mathrm{T}},\beta=(3,10,b,4)^{\mathrm{T}}$，问：
