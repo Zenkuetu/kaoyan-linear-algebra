@@ -90,7 +90,7 @@ $$
 >
 > - 本点 ⇒ 🟪 必要 ⇒ [[AA∗ = A∗A = ｜A｜E|AA* = A*A = ｜A｜E]]——先有 A* 才有该恒等式
 
-## <span class="hx hx-exam">📝</span> 九、真题（2009–2023）
+## <span class="hx hx-exam">📝</span> 九、真题（1987–2023）
 
 ### 2023 年 · 数学三 · 第 5 题（选择，5 分）
 
@@ -197,6 +197,33 @@ $$
 > $$
 > 从而有 $|A|=|A^{\mathrm{T}}|=|-A^{*}|=-|A^{*}|=-|A|^2$，故 $|A|=-1$。
 
+### 2009 年 · 数学三 · 第 5 题（选择，4 分）
+
+设 $A,B$ 均为 2 阶方阵，$A^*,B^*$ 分别为 $A,B$ 的伴随矩阵。若 $|A|=2$，$|B|=3$，则分块矩阵
+$$
+\begin{pmatrix}O&A\\B&O\end{pmatrix}
+$$
+的伴随矩阵为（　　）
+
+（A）$\begin{pmatrix}O&3B^*\\2A^*&O\end{pmatrix}$　　（B）$\begin{pmatrix}O&2B^*\\3A^*&O\end{pmatrix}$
+
+（C）$\begin{pmatrix}O&3A^*\\2B^*&O\end{pmatrix}$　　（D）$\begin{pmatrix}O&2A^*\\3B^*&O\end{pmatrix}$
+
+> [!success]- 答案与解析
+> **答案**：（B）
+>
+> 根据 $CC^*=|C|E$，若 $C^*=|C|C^{-1}$，$C^{-1}=\frac{1}{|C|}C^*$。
+>
+> 分块矩阵 $\begin{pmatrix}O&A\\B&O\end{pmatrix}$ 的行列式
+> $$
+> \begin{vmatrix}O&A\\B&O\end{vmatrix}=(-1)^{2\times2}|A||B|=2\times3=6,
+> $$
+> 即分块矩阵可逆，故
+> $$
+> \begin{pmatrix}O&A\\B&O\end{pmatrix}^*=\begin{vmatrix}O&A\\B&O\end{vmatrix}\begin{pmatrix}O&A\\B&O\end{pmatrix}^{-1}=6\begin{pmatrix}O&B^{-1}\\A^{-1}&O\end{pmatrix}=6\begin{pmatrix}O&\frac{1}{|B|}B^*\\\frac{1}{|A|}A^*&O\end{pmatrix}=6\begin{pmatrix}O&\frac13B^*\\\frac12A^*&O\end{pmatrix}=\begin{pmatrix}O&2B^*\\3A^*&O\end{pmatrix}.
+> $$
+> 故答案为（B）。
+
 ### 2009 年 · 数学一 · 第 6 题（选择，5 分）
 
 设 $A,B$ 均为 2 阶矩阵，$A^*,B^*$ 分别为 $A,B$ 的伴随矩阵，若 $|A|=2$，$|B|=3$，则分块矩阵 $\begin{pmatrix}O&A\\B&O\end{pmatrix}$ 的伴随矩阵为（　　）
@@ -215,6 +242,17 @@ $$
 > $$
 >
 > 应选（B）．
+
+### 1987 年 · 数学一 · 选择题第 4 题（选择，3 分）
+
+设 $A$ 为 $n$ 阶矩阵，且 $|A|=a\ne 0$，$A^*$ 是 $A$ 的伴随矩阵，则 $|A^*|=$（　　）
+
+（A）$a$　（B）$\dfrac{1}{a}$　（C）$a^{n-1}$　（D）$a^n$
+
+> [!success]- 答案与解析
+> **答案**：（C）.
+>
+> 由 $AA^*=|A|E$ 得出 $|A|\cdot|A^*|=||A|E|=|A|^n$，由 $|A|=a\ne 0$ 得 $|A^*|=a^{n-1}$，应选（C）.
 
 ## <span class="hx hx-nav">🧭</span> 十、导航
 

@@ -90,7 +90,7 @@ $$
 > - 本点 ⇒ 🟪 必要 ⇒ [[逆矩阵的求法]]——伴随公式法求逆的依据
 > - [[伴随矩阵 A∗ 的定义|伴随矩阵 A* 的定义]] ⇒ 🟪 必要 ⇒ 本点——先有 A* 才有该恒等式
 
-## <span class="hx hx-exam">📝</span> 九、真题（2009–2026）
+## <span class="hx hx-exam">📝</span> 九、真题（1987–2026）
 
 ### 2026 年 · 数学一 · 第 5 题（选择，5 分）
 
@@ -106,6 +106,23 @@ $$
 > A^{-1}=(P_1P_2\cdots P_s)^{-1}=P_s^{-1}\cdots P_2^{-1}P_1^{-1}=P_s\cdots P_2P_1
 > $$
 > 也为置换矩阵，故选（B）。
+
+### 2026 年 · 数学三 · 第 6 题（选择，5 分）
+
+设 $A$ 为 3 阶非零矩阵，$A^{*}$ 为 $A$ 的伴随矩阵。若 $A^{*}=-2A$，则 $A^2=$（ ）
+
+（A）$\begin{pmatrix}-4&0&0\\0&-4&0\\0&0&-4\end{pmatrix}$　（B）$\begin{pmatrix}-4&0&0\\0&-4&0\\0&0&4\end{pmatrix}$
+
+（C）$\begin{pmatrix}-4&0&0\\0&4&0\\0&0&4\end{pmatrix}$　（D）$\begin{pmatrix}4&0&0\\0&4&0\\0&0&4\end{pmatrix}$
+
+> [!success]- 答案与解析
+> **答案**：（D）
+>
+> 由 $A^{*}=-2A$ 两边同时左乘 $A$ 可得，$AA^{*}=-2AA\Rightarrow A^2=\frac{|A|}{-2}E$；对 $A^{*}=-2A$ 取行列式可得
+> $$
+> |A^{*}|=|-2A|\Rightarrow |A|^2=(-2)^3|A|\Rightarrow |A|=(-2)^3,
+> $$
+> 从而 $A^2=4E$，故答案选 D。
 
 ### 2023 年 · 数学三 · 第 5 题（选择，5 分）
 
@@ -238,6 +255,33 @@ $$
 >
 > 由于 $r(A)=3$，$\alpha_1+\alpha_3=0$，所以 $\alpha_2,\alpha_3,\alpha_4$ 线性无关. 又由于 $r(A)=3$，所以 $r(A^*)=1$，因此 $A^*x=0$ 的基础解系中含有 $4-1=3$ 个线性无关的解向量. 而 $\alpha_2,\alpha_3,\alpha_4$ 线性无关，且为 $A^*x=0$ 的解，所以 $\alpha_2,\alpha_3,\alpha_4$ 可作为 $A^*x=0$ 的基础解系，故选 (D).
 
+### 2009 年 · 数学三 · 第 5 题（选择，4 分）
+
+设 $A,B$ 均为 2 阶方阵，$A^*,B^*$ 分别为 $A,B$ 的伴随矩阵。若 $|A|=2$，$|B|=3$，则分块矩阵
+$$
+\begin{pmatrix}O&A\\B&O\end{pmatrix}
+$$
+的伴随矩阵为（　　）
+
+（A）$\begin{pmatrix}O&3B^*\\2A^*&O\end{pmatrix}$　　（B）$\begin{pmatrix}O&2B^*\\3A^*&O\end{pmatrix}$
+
+（C）$\begin{pmatrix}O&3A^*\\2B^*&O\end{pmatrix}$　　（D）$\begin{pmatrix}O&2A^*\\3B^*&O\end{pmatrix}$
+
+> [!success]- 答案与解析
+> **答案**：（B）
+>
+> 根据 $CC^*=|C|E$，若 $C^*=|C|C^{-1}$，$C^{-1}=\frac{1}{|C|}C^*$。
+>
+> 分块矩阵 $\begin{pmatrix}O&A\\B&O\end{pmatrix}$ 的行列式
+> $$
+> \begin{vmatrix}O&A\\B&O\end{vmatrix}=(-1)^{2\times2}|A||B|=2\times3=6,
+> $$
+> 即分块矩阵可逆，故
+> $$
+> \begin{pmatrix}O&A\\B&O\end{pmatrix}^*=\begin{vmatrix}O&A\\B&O\end{vmatrix}\begin{pmatrix}O&A\\B&O\end{pmatrix}^{-1}=6\begin{pmatrix}O&B^{-1}\\A^{-1}&O\end{pmatrix}=6\begin{pmatrix}O&\frac{1}{|B|}B^*\\\frac{1}{|A|}A^*&O\end{pmatrix}=6\begin{pmatrix}O&\frac13B^*\\\frac12A^*&O\end{pmatrix}=\begin{pmatrix}O&2B^*\\3A^*&O\end{pmatrix}.
+> $$
+> 故答案为（B）。
+
 ### 2009 年 · 数学一 · 第 6 题（选择，5 分）
 
 设 $A,B$ 均为 2 阶矩阵，$A^*,B^*$ 分别为 $A,B$ 的伴随矩阵，若 $|A|=2$，$|B|=3$，则分块矩阵 $\begin{pmatrix}O&A\\B&O\end{pmatrix}$ 的伴随矩阵为（　　）
@@ -282,6 +326,52 @@ $$
 > $$
 > =6\begin{pmatrix}O&\frac{1}{3}B^*\\\frac{1}{2}A^*&O\end{pmatrix}=\begin{pmatrix}O&2B^*\\3A^*&O\end{pmatrix}
 > $$
+
+### 1997 年 · 数学三 · 第九题（解答，6 分）
+
+（本题满分 6 分）设 $A$ 为 $n$ 阶非奇异矩阵，$\alpha$ 为 $n$ 维列向量，$b$ 为常数。记分块矩阵
+$$
+P=\begin{pmatrix}E&O\\-\alpha^{\mathrm{T}}A^{*}&|A|\end{pmatrix},\qquad Q=\begin{pmatrix}A&\alpha\\\alpha^{\mathrm{T}}&b\end{pmatrix},
+$$
+其中 $A^{*}$ 是矩阵 $A$ 的伴随矩阵，$E$ 为 $n$ 阶单位矩阵。
+
+（1）计算并化简 $PQ$；
+
+（2）证明：矩阵 $Q$ 可逆的充分必要条件是 $\alpha^{\mathrm{T}}A^{-1}\alpha\ne b$。
+
+> [!success]- 答案与解析
+> **答案**：（1）$PQ=\begin{pmatrix}A&\alpha\\0&|A|(b-\alpha^{\mathrm{T}}A^{-1}\alpha)\end{pmatrix}$；（2）证明见解析（$Q$ 可逆 $\Leftrightarrow \alpha^{\mathrm{T}}A^{-1}\alpha\ne b$）。
+>
+> 【解析】（1）由 $AA^{*}=A^{*}A=|A|E$ 及 $A^{*}=|A|A^{-1}$，有
+> $$
+> PQ=\begin{pmatrix}E&O\\-\alpha^{\mathrm{T}}A^{*}&|A|\end{pmatrix}\begin{pmatrix}A&\alpha\\\alpha^{\mathrm{T}}&b\end{pmatrix}
+> =\begin{pmatrix}A&\alpha\\-\alpha^{\mathrm{T}}A^{*}A+|A|\alpha^{\mathrm{T}}&-\alpha^{\mathrm{T}}A^{*}\alpha+b|A|\end{pmatrix}
+> =\begin{pmatrix}A&\alpha\\0&|A|(b-\alpha^{\mathrm{T}}A^{-1}\alpha)\end{pmatrix}.
+> $$
+>
+> （2）用行列式拉普拉斯展开式及行列式乘法公式，有
+> $$
+> |P|=\begin{vmatrix}E&O\\-\alpha^{\mathrm{T}}A^{*}&|A|\end{vmatrix}=|A|,
+> $$
+> $$
+> |P||Q|=|PQ|=\begin{vmatrix}A&\alpha\\0&|A|(b-\alpha^{\mathrm{T}}A^{-1}\alpha)\end{vmatrix}=|A|^2(b-\alpha^{\mathrm{T}}A^{-1}\alpha).
+> $$
+> 又因 $A$ 是非奇异矩阵，所以 $|A|\ne 0$，故 $|Q|=|A|(b-\alpha^{\mathrm{T}}A^{-1}\alpha)$。
+>
+> 由此可知 $Q$ 可逆的充要条件是 $|Q|\ne 0$，即 $b-\alpha^{\mathrm{T}}A^{-1}\alpha\ne 0$，亦即 $\alpha^{\mathrm{T}}A^{-1}\alpha\ne b$。
+>
+> > 评注：本题考查分块矩阵的运算，要看清 $\alpha^{\mathrm{T}}A^{-1}\alpha$ 是 1 阶矩阵，是一个数。
+
+### 1987 年 · 数学一 · 选择题第 4 题（选择，3 分）
+
+设 $A$ 为 $n$ 阶矩阵，且 $|A|=a\ne 0$，$A^*$ 是 $A$ 的伴随矩阵，则 $|A^*|=$（　　）
+
+（A）$a$　（B）$\dfrac{1}{a}$　（C）$a^{n-1}$　（D）$a^n$
+
+> [!success]- 答案与解析
+> **答案**：（C）.
+>
+> 由 $AA^*=|A|E$ 得出 $|A|\cdot|A^*|=||A|E|=|A|^n$，由 $|A|=a\ne 0$ 得 $|A^*|=a^{n-1}$，应选（C）.
 
 ## <span class="hx hx-nav">🧭</span> 十、导航
 

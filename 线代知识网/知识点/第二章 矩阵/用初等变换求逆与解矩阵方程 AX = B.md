@@ -106,7 +106,18 @@ $$
 > - [[矩阵乘法]] ⇒ 🟪 必要 ⇒ 本点——AX = B 本身就是一个矩阵乘法等式，"解矩阵方程"就是解这个乘法等式
 > - [[初等变换（三种）]] ⇒ 🟪 必要 ⇒ 本点——(A | E) → (E | A⁻¹)、(A|B) → (E|A⁻¹B) 靠的正是三种初等行变换
 
-## <span class="hx hx-exam">📝</span> 九、真题（2013–2021）
+## <span class="hx hx-exam">📝</span> 九、真题（1987–2026）
+
+### 2026 年 · 数学三 · 第 5 题（选择，5 分）
+
+设矩阵 $A=\begin{pmatrix}1&0&1\\0&0&1\\1&1&3\\1&1&1\end{pmatrix}$，$C=\begin{pmatrix}2&0\\1&1\\1&1\\a&b\end{pmatrix}$，若存在矩阵 $B$ 满足 $AB=C$，则（ ）
+
+（A）$a=-1,b=-1$　（B）$a=2,b=2$　（C）$a=-1,b=2$　（D）$a=2,b=-1$
+
+> [!success]- 答案与解析
+> **答案**：（A）
+>
+> 由于存在矩阵 $B$ 满足 $AB=C$，可知方程 $AX=C$ 有解，所以有 $r(A)=r(A,C)$，初等行变换易得 $a=b=-1$，故选 A。
 
 ### 2021 年 · 数学二 · 第 10 题（选择，5 分）
 
@@ -671,6 +682,47 @@ $$
 > 其中 $k_1,k_2$ 任意。从而有
 > $$
 > C=\begin{pmatrix}k_1+k_2+1&-k_1\\k_1&k_2\end{pmatrix}.
+> $$
+
+### 2006 年 · 数学一 · 第 5 题（填空，4 分）
+
+设矩阵 $A=\begin{pmatrix}2&1\\-1&2\end{pmatrix}$，$E$ 为 2 阶单位矩阵，矩阵 $B$ 满足 $BA=B+2E$，则 $|B|=\underline{\qquad}$．
+
+> [!success]- 答案与解析
+> **答案**：$2$
+>
+> 【解】 由 $BA=B+2E$，得 $B(A-E)=2E$，两边取行列式，得 $|B|\cdot|A-E|=4$，
+>
+> 因为 $A-E=\begin{pmatrix}1&1\\-1&1\end{pmatrix}$，所以 $|A-E|=2$，于是 $|B|=2$．
+
+### 1987 年 · 数学一 · 第三大题第（2）小题（解答，4 分）
+
+设矩阵 $A$ 与 $B$ 满足 $AB=A+2B$，其中
+$$
+A=\begin{pmatrix}3&0&1\\1&1&0\\0&1&4\end{pmatrix},
+$$
+求矩阵 $B$.
+
+> [!success]- 答案与解析
+> **答案**：$$
+B=\begin{pmatrix}5&-2&-2\\4&-3&-2\\-2&2&3\end{pmatrix}.
+$$
+>
+> 由 $AB=A+2B$ 得 $(A-2E)B=A$，解得 $B=(A-2E)^{-1}A$，而
+> $$
+> A-2E=\begin{pmatrix}1&0&1\\1&-1&0\\0&1&2\end{pmatrix},
+> $$
+> 由
+> $$
+> \begin{pmatrix}1&0&1&1&0&0\\1&-1&0&0&1&0\\0&1&2&0&0&1\end{pmatrix}\to\begin{pmatrix}1&0&1&1&0&0\\0&-1&-1&-1&1&0\\0&0&1&-1&1&1\end{pmatrix}\to\begin{pmatrix}1&0&0&2&-1&-1\\0&1&0&2&-2&-1\\0&0&1&-1&1&1\end{pmatrix},
+> $$
+> 得
+> $$
+> (A-2E)^{-1}=\begin{pmatrix}2&-1&-1\\2&-2&-1\\-1&1&1\end{pmatrix},
+> $$
+> 于是
+> $$
+> B=\begin{pmatrix}2&-1&-1\\2&-2&-1\\-1&1&1\end{pmatrix}\begin{pmatrix}3&0&1\\1&1&0\\0&1&4\end{pmatrix}=\begin{pmatrix}5&-2&-2\\4&-3&-2\\-2&2&3\end{pmatrix}.
 > $$
 
 ## <span class="hx hx-nav">🧭</span> 十、导航

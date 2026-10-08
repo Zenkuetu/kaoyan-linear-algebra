@@ -120,7 +120,18 @@ $$
 > - [[克拉默法则]] ⇒ 🟧 充分 ⇒ 本点——｜A｜≠0 ⇒ 唯一解
 > - [[方程组的几何意义（平面与直线）]] ⇒ 🟪 必要 ⇒ 本点——几何形态由秩决定
 
-## <span class="hx hx-exam">📝</span> 九、真题（2007–2026）
+## <span class="hx hx-exam">📝</span> 九、真题（1987–2026）
+
+### 2026 年 · 数学三 · 第 5 题（选择，5 分）
+
+设矩阵 $A=\begin{pmatrix}1&0&1\\0&0&1\\1&1&3\\1&1&1\end{pmatrix}$，$C=\begin{pmatrix}2&0\\1&1\\1&1\\a&b\end{pmatrix}$，若存在矩阵 $B$ 满足 $AB=C$，则（ ）
+
+（A）$a=-1,b=-1$　（B）$a=2,b=2$　（C）$a=-1,b=2$　（D）$a=2,b=-1$
+
+> [!success]- 答案与解析
+> **答案**：（A）
+>
+> 由于存在矩阵 $B$ 满足 $AB=C$，可知方程 $AX=C$ 有解，所以有 $r(A)=r(A,C)$，初等行变换易得 $a=b=-1$，故选 A。
 
 ### 2026 年 · 数学一 · 第 6 题（选择，5 分）
 
@@ -660,7 +671,12 @@ $$
 （Ⅱ）当实数 $a$ 为何值时，方程组 $Ax=\beta$ 有无穷多解，并求其通解。
 
 > [!success]- 答案与解析
-> **答案**：（Ⅰ）$|A|=1-a^4$；（Ⅱ）$a=-1$ 时方程组有无穷多解，通解为 $x=k\begin{pmatrix}1\\1\\1\\1\end{pmatrix}+\begin{pmatrix}-1\\0\\0\\0\end{pmatrix}$（$k$ 为任意常数）。
+> **答案**：（Ⅰ）$|A|=1-a^4$；（Ⅱ）$a=-1$ 时方程组有无穷多解，通解为 $x=k\begin{pmatrix}1\\1\\1\\1\end{pmatrix}+\begin{pmatrix}0\\-1\\0\\0\end{pmatrix}$（$k$ 为任意常数）。
+>
+> （Ⅰ）
+> $$
+> |A|=1\times\begin{vmatrix}1&a&0\\0&1&a\\0&0&1\end{vmatrix}+a\times(-1)^{4+1}\begin{vmatrix}a&0&0\\1&a&0\\0&1&a\end{vmatrix}=1-a^4.
+> $$
 >
 > （Ⅱ）对方程组的增广矩阵作初等行变换：
 > $$
@@ -675,9 +691,9 @@ $$
 >
 > 此时原线性方程组增广矩阵为 $\begin{pmatrix}1&-1&0&0&1\\0&1&-1&0&-1\\0&0&1&-1&0\\0&0&0&0&0\end{pmatrix}$，进一步化为行最简形得 $\begin{pmatrix}1&0&0&-1&0\\0&1&0&-1&-1\\0&0&1&-1&0\\0&0&0&0&0\end{pmatrix}$，
 >
-> 可知导出组的基础解系为 $\begin{pmatrix}1\\1\\1\\1\end{pmatrix}$，非齐次方程的特解为 $\begin{pmatrix}-1\\0\\0\\0\end{pmatrix}$，故其通解为
+> 可知导出组的基础解系为 $\begin{pmatrix}1\\1\\1\\1\end{pmatrix}$，非齐次方程的特解为 $\begin{pmatrix}0\\-1\\0\\0\end{pmatrix}$，故其通解为
 > $$
-> x=k\begin{pmatrix}1\\1\\1\\1\end{pmatrix}+\begin{pmatrix}-1\\0\\0\\0\end{pmatrix}.
+> x=k\begin{pmatrix}1\\1\\1\\1\end{pmatrix}+\begin{pmatrix}0\\-1\\0\\0\end{pmatrix}.
 > $$
 
 ### 2012 年 · 数学二 · 第 22 题（解答，11 分）
@@ -765,6 +781,62 @@ $$
 > $$
 > X=k\begin{pmatrix}1\\0\\1\end{pmatrix}+\begin{pmatrix}\frac{3}{2}\\-\frac{1}{2}\\0\end{pmatrix}\quad (k\ \text{为任意常数}).
 > $$
+
+### 2010 年 · 数学三 · 第 20 题（解答，11 分）
+
+（本题满分 11 分）设
+$$
+A=\begin{pmatrix}\lambda&1&1\\0&\lambda-1&0\\1&1&\lambda\end{pmatrix},\quad b=\begin{pmatrix}a\\1\\1\end{pmatrix}.
+$$
+已知线性方程组 $Ax=b$ 存在两个不同的解。
+
+（Ⅰ）求 $\lambda$，$a$；
+
+（Ⅱ）求方程组 $Ax=b$ 的通解。
+
+> [!success]- 答案与解析
+> **答案**：（Ⅰ）$\lambda=-1$，$a=-2$；
+
+（Ⅱ）$x=k\begin{pmatrix}1\\0\\1\end{pmatrix}+\begin{pmatrix}\frac32\\-\frac12\\0\end{pmatrix}$（$k$ 为任意常数）。
+>
+> 因为方程组有两个不同的解，所以可以判断方程组增广矩阵的秩小于 3，进而可以通过秩的关系求解方程组中未知参数，有以下两种方法。
+>
+> 方法 1：（Ⅰ）已知 $Ax=b$ 有 2 个不同的解，故 $r(A)=r(\overline{A})<3$，对增广矩阵进行初等行变换，得
+> $$
+> \overline{A}=\begin{pmatrix}\lambda&1&1&a\\0&\lambda-1&0&1\\1&1&\lambda&1\end{pmatrix}\to\begin{pmatrix}1&1&\lambda&1\\0&\lambda-1&0&1\\\lambda&1&1&a\end{pmatrix}\to\begin{pmatrix}1&1&\lambda&1\\0&\lambda-1&0&1\\0&1-\lambda&1-\lambda^2&a-\lambda\end{pmatrix}
+> $$
+> $$
+> \to\begin{pmatrix}1&1&\lambda&1\\0&\lambda-1&0&1\\0&0&1-\lambda^2&a-\lambda+1\end{pmatrix}.
+> $$
+> 当 $\lambda=1$ 时，$\overline{A}\to\begin{pmatrix}1&1&1&1\\0&0&0&1\\0&0&0&a\end{pmatrix}\to\begin{pmatrix}1&1&1&1\\0&0&0&1\\0&0&0&0\end{pmatrix}$，此时，$r(A)\ne r(\overline{A})$，故 $Ax=b$ 无解（舍去）。
+>
+> 当 $\lambda=-1$ 时，$\overline{A}\to\begin{pmatrix}1&1&-1&1\\0&-2&0&1\\0&0&0&a+2\end{pmatrix}$，由于 $r(A)=r(\overline{A})<3$，所以 $a=-2$，故 $\lambda=-1$，$a=-2$。
+>
+> 方法 2：已知 $Ax=b$ 有 2 个不同的解，故 $r(A)=r(\overline{A})<3$，因此 $|A|=0$，即
+> $$
+> |A|=\begin{vmatrix}\lambda&1&1\\0&\lambda-1&0\\1&1&\lambda\end{vmatrix}=(\lambda-1)^2(\lambda+1)=0,
+> $$
+> 知 $\lambda=1$ 或 $-1$。
+>
+> 当 $\lambda=1$ 时，$r(A)=1\ne r(\overline{A})=2$，此时，$Ax=b$ 无解，因此 $\lambda=-1$。由 $r(A)=r(\overline{A})$，得 $a=-2$。
+>
+> （Ⅱ）对增广矩阵做初等行变换
+> $$
+> \overline{A}=\begin{pmatrix}-1&1&1&-2\\0&-2&0&1\\1&1&-1&1\end{pmatrix}\to\begin{pmatrix}1&-1&-1&2\\0&2&0&-1\\0&0&0&0\end{pmatrix}\to\begin{pmatrix}1&0&-1&\frac32\\0&1&0&-\frac12\\0&0&0&0\end{pmatrix}.
+> $$
+> 可知原方程组等价为
+> $$
+> \begin{cases}x_1-x_3=\frac32,\\x_2=-\frac12,\end{cases}
+> $$
+> 写成向量的形式，即
+> $$
+> \begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix}=x_3\begin{pmatrix}1\\0\\1\end{pmatrix}+\begin{pmatrix}\frac32\\-\frac12\\0\end{pmatrix}.
+> $$
+> 因此 $Ax=b$ 的通解为
+> $$
+> x=k\begin{pmatrix}1\\0\\1\end{pmatrix}+\begin{pmatrix}\frac32\\-\frac12\\0\end{pmatrix},
+> $$
+> 其中 $k$ 为任意常数。
 
 ### 2010 年 · 数学二 · 第 22 题（解答，11 分）
 
@@ -999,6 +1071,83 @@ $$
 > \overline{C}\to\begin{pmatrix}1&1&1&\mid&0\\0&1&1&\mid&0\\0&0&1&\mid&-1\\0&0&0&\mid&0\end{pmatrix}\to\begin{pmatrix}1&0&0&\mid&0\\0&1&0&\mid&1\\0&0&1&\mid&-1\\0&0&0&\mid&0\end{pmatrix}
 > $$
 > 得唯一公共解为 $X=\begin{pmatrix}0\\1\\-1\end{pmatrix}$．
+
+### 2006 年 · 数学一 · 第 20 题（解答，9 分）
+
+（本题满分 9 分）已知非齐次线性方程组
+$$
+\begin{cases}x_1+x_2+x_3+x_4=-1,\\4x_1+3x_2+5x_3-x_4=-1,\\ax_1+x_2+3x_3+bx_4=1\end{cases}
+$$
+有 3 个线性无关的解．
+
+（Ⅰ）证明方程组系数矩阵 $A$ 的秩 $r(A)=2$；
+
+（Ⅱ）求 $a,b$ 的值及方程组的通解．
+
+> [!success]- 答案与解析
+> **答案**：（Ⅰ）$r(A)=2$；（Ⅱ）$a=2$，$b=-3$，通解为 $X=C_1\begin{pmatrix}-2\\1\\1\\0\end{pmatrix}+C_2\begin{pmatrix}4\\-5\\0\\1\end{pmatrix}+\begin{pmatrix}2\\-3\\0\\0\end{pmatrix}$（$C_1,C_2$ 为任意常数）．
+>
+> （Ⅰ）令 $A=\begin{pmatrix}1&1&1&1\\4&3&5&-1\\a&1&3&b\end{pmatrix}$，$X=\begin{pmatrix}x_1\\x_2\\x_3\\x_4\end{pmatrix}$，$b=\begin{pmatrix}-1\\-1\\1\end{pmatrix}$，原方程组可表示为 $AX=b$．
+>
+> 因为 $A$ 至少有两行不成比例，所以 $r(A)\ge 2$．
+>
+> 设 $\alpha_1,\alpha_2,\alpha_3$ 为 $AX=b$ 的三个线性无关解，则 $\alpha_1-\alpha_2,\alpha_1-\alpha_3$ 为 $AX=0$ 的两个解．
+>
+> 令 $k_1(\alpha_1-\alpha_2)+k_2(\alpha_1-\alpha_3)=0$，则 $(k_1+k_2)\alpha_1-k_1\alpha_2-k_2\alpha_3=0$，因为 $\alpha_1,\alpha_2,\alpha_3$ 线性无关，所以 $k_1=k_2=0$，从而 $\alpha_1-\alpha_2,\alpha_1-\alpha_3$ 线性无关，即 $AX=0$ 至少有两个线性无关解，于是 $4-r(A)\ge 2$ 或 $r(A)\le 2$，故 $r(A)=2$．
+>
+> （Ⅱ）方法一
+> $$
+> \overline{A}=\begin{pmatrix}1&1&1&1&\mid&-1\\4&3&5&-1&\mid&-1\\a&1&3&b&\mid&1\end{pmatrix}\to\begin{pmatrix}1&1&1&1&\mid&-1\\0&-1&1&-5&\mid&3\\0&1-a&3-a&b-a&\mid&1+a\end{pmatrix},
+> $$
+> 因为 $r(A)=r(\overline{A})=2$，所以 $\dfrac{-1}{1-a}=\dfrac{1}{3-a}=\dfrac{-5}{b-a}=\dfrac{3}{1+a}$，解得 $a=2$，$b=-3$，
+> $$
+> \text{由 }\overline{A}\to\begin{pmatrix}1&1&1&1&\mid&-1\\0&-1&1&-5&\mid&3\\0&0&0&0&\mid&0\end{pmatrix}\to\begin{pmatrix}1&1&1&1&\mid&-1\\0&1&-1&5&\mid&-3\\0&0&0&0&\mid&0\end{pmatrix}\to\begin{pmatrix}1&0&2&-4&\mid&2\\0&1&-1&5&\mid&-3\\0&0&0&0&\mid&0\end{pmatrix},
+> $$
+> 得原方程的通解为 $X=C_1\begin{pmatrix}-2\\1\\1\\0\end{pmatrix}+C_2\begin{pmatrix}4\\-5\\0\\1\end{pmatrix}+\begin{pmatrix}2\\-3\\0\\0\end{pmatrix}$（$C_1,C_2$ 为任意常数）．
+>
+> 方法二 因为 $r(A)=2$，所以 $A$ 的所有三阶子式都为零．
+> $$
+> \text{由 }\begin{vmatrix}1&1&1\\4&3&5\\a&1&3\end{vmatrix}=0,\quad\begin{vmatrix}1&1&1\\3&5&-1\\1&3&b\end{vmatrix}=0\text{ 得 }a=2,b=-3.
+> $$
+> $$
+> \text{由 }\overline{A}=\begin{pmatrix}1&1&1&1&\mid&-1\\4&3&5&-1&\mid&-1\\2&1&3&-3&\mid&1\end{pmatrix}\to\begin{pmatrix}1&1&1&1&\mid&-1\\0&-1&1&-5&\mid&3\\0&-1&1&-5&\mid&3\end{pmatrix}\to\begin{pmatrix}1&1&1&1&\mid&-1\\0&1&-1&5&\mid&-3\\0&0&0&0&\mid&0\end{pmatrix}
+> $$
+> $$
+> \to\begin{pmatrix}1&0&2&-4&\mid&2\\0&1&-1&5&\mid&-3\\0&0&0&0&\mid&0\end{pmatrix},
+> $$
+> 得原方程组的通解为 $X=k_1\begin{pmatrix}-2\\1\\1\\0\end{pmatrix}+k_2\begin{pmatrix}4\\-5\\0\\1\end{pmatrix}+\begin{pmatrix}2\\-3\\0\\0\end{pmatrix}$（$k_1,k_2$ 为任意常数）．
+>
+> > **方法点评**：设 $A$ 为 $m\times n$ 矩阵，若 $r(A)=r(A\ \vdots\ b)$ 时，$AX=b$ 有解．
+> > 若 $r(A)=r$，则 $AX=0$ 的基础解系含 $n-r(A)$ 个解向量，但 $AX=b$ 线性无关的解向量组所含解向量的个数最多含 $n-r(A)+1$ 个．
+
+### 1987 年 · 数学一 · 第九大题（解答，8 分）
+
+问 $a,b$ 为何值时，线性方程组
+$$
+\begin{cases}x_1+x_2+x_3+x_4=0,\\x_2+2x_3+2x_4=1,\\-x_2+(a-3)x_3-2x_4=b,\\3x_1+2x_2+x_3+ax_4=-1\end{cases}
+$$
+有唯一解？无解？有无穷多个解？并求出有无穷多个解时的通解.
+
+> [!success]- 答案与解析
+> **答案**：当 $a\ne 1$，$b$ 为任意常数时，方程组有唯一解；当 $a=1,b\ne -1$ 时，方程组无解；当 $a=1,b=-1$ 时，方程组有无穷多个解，通解为
+$$
+X=k_1\begin{pmatrix}1\\-2\\1\\0\end{pmatrix}+k_2\begin{pmatrix}1\\-2\\0\\1\end{pmatrix}+\begin{pmatrix}-1\\1\\0\\0\end{pmatrix}\quad(k_1,k_2\text{ 为任意常数}).
+$$
+>
+> $$
+> \overline{A}=\begin{pmatrix}1&1&1&1&0\\0&1&2&2&1\\0&-1&a-3&-2&b\\3&2&1&a&-1\end{pmatrix}\to\begin{pmatrix}1&1&1&1&0\\0&1&2&2&1\\0&-1&a-3&-2&b\\0&-1&-2&a-3&-1\end{pmatrix}
+> $$
+> $$
+> \to\begin{pmatrix}1&1&1&1&0\\0&1&2&2&1\\0&0&a-1&0&b+1\\0&0&0&a-1&0\end{pmatrix},
+> $$
+> 当 $a\ne 1$，$b$ 为任意常数时，方程组有唯一解；当 $a=1,b\ne -1$ 时，方程组无解；当 $a=1,b=-1$ 时，方程组有无数个解，将 $a,b$ 代入后得出
+> $$
+> \overline{A}\to\begin{pmatrix}1&0&-1&-1&-1\\0&1&2&2&1\\0&0&0&0&0\\0&0&0&0&0\end{pmatrix},
+> $$
+> 得方程组的通解为
+> $$
+> X=k_1\begin{pmatrix}1\\-2\\1\\0\end{pmatrix}+k_2\begin{pmatrix}1\\-2\\0\\1\end{pmatrix}+\begin{pmatrix}-1\\1\\0\\0\end{pmatrix}\quad(k_1,k_2\text{ 为任意常数}).
+> $$
 
 ## <span class="hx hx-nav">🧭</span> 十、导航
 

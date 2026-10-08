@@ -72,8 +72,13 @@ $$
 （Ⅰ）计算行列式 $|A|$；
 
 （Ⅱ）当实数 $a$ 为何值时，方程组 $Ax=\beta$ 有无穷多解，并求其通解。`,
-  answer: String.raw`（Ⅰ）$|A|=1-a^4$；（Ⅱ）$a=-1$ 时方程组有无穷多解，通解为 $x=k\begin{pmatrix}1\\1\\1\\1\end{pmatrix}+\begin{pmatrix}-1\\0\\0\\0\end{pmatrix}$（$k$ 为任意常数）。`,
-  analysis: String.raw`（Ⅱ）对方程组的增广矩阵作初等行变换：
+  answer: String.raw`（Ⅰ）$|A|=1-a^4$；（Ⅱ）$a=-1$ 时方程组有无穷多解，通解为 $x=k\begin{pmatrix}1\\1\\1\\1\end{pmatrix}+\begin{pmatrix}0\\-1\\0\\0\end{pmatrix}$（$k$ 为任意常数）。`,
+  analysis: String.raw`（Ⅰ）
+$$
+|A|=1\times\begin{vmatrix}1&a&0\\0&1&a\\0&0&1\end{vmatrix}+a\times(-1)^{4+1}\begin{vmatrix}a&0&0\\1&a&0\\0&1&a\end{vmatrix}=1-a^4.
+$$
+
+（Ⅱ）对方程组的增广矩阵作初等行变换：
 $$
 \begin{pmatrix}1&a&0&0&1\\0&1&a&0&-1\\0&0&1&a&0\\a&0&0&1&0\end{pmatrix}
 \to\begin{pmatrix}1&a&0&0&1\\0&1&a&0&-1\\0&0&1&a&0\\0&-a^2&0&1&-a\end{pmatrix}
@@ -86,9 +91,9 @@ $$
 
 此时原线性方程组增广矩阵为 $\begin{pmatrix}1&-1&0&0&1\\0&1&-1&0&-1\\0&0&1&-1&0\\0&0&0&0&0\end{pmatrix}$，进一步化为行最简形得 $\begin{pmatrix}1&0&0&-1&0\\0&1&0&-1&-1\\0&0&1&-1&0\\0&0&0&0&0\end{pmatrix}$，
 
-可知导出组的基础解系为 $\begin{pmatrix}1\\1\\1\\1\end{pmatrix}$，非齐次方程的特解为 $\begin{pmatrix}-1\\0\\0\\0\end{pmatrix}$，故其通解为
+可知导出组的基础解系为 $\begin{pmatrix}1\\1\\1\\1\end{pmatrix}$，非齐次方程的特解为 $\begin{pmatrix}0\\-1\\0\\0\end{pmatrix}$，故其通解为
 $$
-x=k\begin{pmatrix}1\\1\\1\\1\end{pmatrix}+\begin{pmatrix}-1\\0\\0\\0\end{pmatrix}.
+x=k\begin{pmatrix}1\\1\\1\\1\end{pmatrix}+\begin{pmatrix}0\\-1\\0\\0\end{pmatrix}.
 $$`,
   source: '《2012 年数学（三）试题答案》第 9–10 页',
 });
