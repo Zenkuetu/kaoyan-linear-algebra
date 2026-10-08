@@ -31,3 +31,6 @@ _vault_test/
 .build/
 tools/local-paths.json
 
+# Obsidian 误建的空白文件（未命名的新建白板/数据库）
+未命名*.canvas
+未命名*.base
