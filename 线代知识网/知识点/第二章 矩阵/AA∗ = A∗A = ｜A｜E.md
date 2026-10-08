@@ -368,6 +368,131 @@ $$
 >
 > > **方法点评**：本题考查由矩阵关系等式确定的矩阵的行列式．本题的关键是要应用公式 $AA^{*}=A^{*}A=|A|E$．
 
+### 2003 年 · 数学一 · 解答题第 9 题（解答，10 分）
+
+（本题满分 10 分）设矩阵 $A=\begin{pmatrix}3&2&2\\2&3&2\\2&2&3\end{pmatrix}$，$P=\begin{pmatrix}0&1&0\\1&0&1\\0&0&1\end{pmatrix}$，$B=P^{-1}A^{*}P$，求 $B+2E$ 的特征值与特征向量，其中 $A^{*}$ 为 $A$ 的伴随矩阵，$E$ 为 3 阶单位矩阵．
+
+> [!success]- 答案与解析
+> **答案**：$B+2E$ 的特征值为 $\lambda_1=3$，$\lambda_2=\lambda_3=9$；属于 $\lambda_1=3$ 的全部特征向量为 $k_1\begin{pmatrix}0\\1\\1\end{pmatrix}$（$k_1$ 为非零常数）；属于 $\lambda_2=\lambda_3=9$ 的全部特征向量为 $k_2\begin{pmatrix}-1\\1\\0\end{pmatrix}+k_3\begin{pmatrix}-2\\0\\1\end{pmatrix}$（$k_2,k_3$ 为不全为零的常数）．
+>
+> （19）【解】 方法一
+> $$
+> |A|=\begin{vmatrix}3&2&2\\2&3&2\\2&2&3\end{vmatrix}=7,
+> $$
+> $$
+> \text{由}\begin{pmatrix}3&2&2&\mid&1&0&0\\2&3&2&\mid&0&1&0\\2&2&3&\mid&0&0&1\end{pmatrix}\to\begin{pmatrix}1&1&1&\mid&\dfrac{1}{7}&\dfrac{1}{7}&\dfrac{1}{7}\\0&1&0&\mid&-\dfrac{2}{7}&\dfrac{5}{7}&-\dfrac{2}{7}\\0&0&1&\mid&-\dfrac{2}{7}&-\dfrac{2}{7}&\dfrac{5}{7}\end{pmatrix}\to\begin{pmatrix}1&0&0&\mid&\dfrac{5}{7}&-\dfrac{2}{7}&-\dfrac{2}{7}\\0&1&0&\mid&-\dfrac{2}{7}&\dfrac{5}{7}&-\dfrac{2}{7}\\0&0&1&\mid&-\dfrac{2}{7}&-\dfrac{2}{7}&\dfrac{5}{7}\end{pmatrix}
+> $$
+> 得 $A^{*}=|A|A^{-1}=\begin{pmatrix}5&-2&-2\\-2&5&-2\\-2&-2&5\end{pmatrix}$．
+> $$
+> \text{由}\begin{pmatrix}0&1&0&\mid&1&0&0\\1&0&1&\mid&0&1&0\\0&0&1&\mid&0&0&1\end{pmatrix}\to\begin{pmatrix}1&0&1&\mid&0&1&0\\0&1&0&\mid&1&0&0\\0&0&1&\mid&0&0&1\end{pmatrix}\to\begin{pmatrix}1&0&0&\mid&0&1&-1\\0&1&0&\mid&1&0&0\\0&0&1&\mid&0&0&1\end{pmatrix},
+> $$
+> 得 $P^{-1}=\begin{pmatrix}0&1&-1\\1&0&0\\0&0&1\end{pmatrix}$，
+> $$
+> \text{于是 }B=P^{-1}A^{*}P=\begin{pmatrix}0&1&-1\\1&0&0\\0&0&1\end{pmatrix}\begin{pmatrix}5&-2&-2\\-2&5&-2\\-2&-2&5\end{pmatrix}\begin{pmatrix}0&1&0\\1&0&1\\0&0&1\end{pmatrix}=\begin{pmatrix}7&0&0\\-2&5&-4\\-2&-2&3\end{pmatrix}.
+> $$
+> $$
+> B+2E=\begin{pmatrix}9&0&0\\-2&7&-4\\-2&-2&5\end{pmatrix}.
+> $$
+> $$
+> \text{由 }|\lambda E-(B+2E)|=\begin{vmatrix}\lambda-9&0&0\\2&\lambda-7&4\\2&2&\lambda-5\end{vmatrix}=(\lambda-3)(\lambda-9)^2=0,
+> $$
+> 得 $B+2E$ 的特征值为 $\lambda_1=3,\lambda_2=\lambda_3=9$．
+>
+> 当 $\lambda_1=3$ 时，解方程组 $[3E-(B+2E)]X=0$，
+> $$
+> \text{由 }3E-(B+2E)=\begin{pmatrix}-6&0&0\\2&-4&4\\2&2&-2\end{pmatrix}\to\begin{pmatrix}1&0&0\\0&1&-1\\0&0&0\end{pmatrix},\text{得 }B+2E\text{ 的属于特征值 }\lambda_1=3
+> $$
+> 的特征向量为 $\xi_1=\begin{pmatrix}0\\1\\1\end{pmatrix}$；
+>
+> 当 $\lambda_2=\lambda_3=9$ 时，解方程组 $[9E-(B+2E)]X=0$，
+> $$
+> \text{由 }9E-(B+2E)=\begin{pmatrix}0&0&0\\2&2&4\\2&2&4\end{pmatrix}\to\begin{pmatrix}1&1&2\\0&0&0\\0&0&0\end{pmatrix},\text{得 }B+2E\text{ 的属于特征值 }\lambda_2=\lambda_3=9\text{ 的线}
+> $$
+> 性无关的特征向量为 $\xi_2=\begin{pmatrix}-1\\1\\0\end{pmatrix},\xi_3=\begin{pmatrix}-2\\0\\1\end{pmatrix}$．
+>
+> 故 $B+2E$ 的特征值为 $\lambda_1=3,\lambda_2=\lambda_3=9$，属于 $\lambda_1=3$ 的全部特征向量为 $k_1\xi_1$（$k_1$ 为任意非零常数）；属于 $\lambda_2=\lambda_3=9$ 的全部特征向量为 $k_2\xi_2+k_3\xi_3$（$k_2,k_3$ 为不全为零的任意常数）．
+>
+> 方法二
+> $$
+> \text{由 }|\lambda E-A|=\begin{vmatrix}\lambda-3&-2&-2\\-2&\lambda-3&-2\\-2&-2&\lambda-3\end{vmatrix}=(\lambda-1)^2(\lambda-7)=0\text{ 得矩阵 }A\text{ 的特征值为 }\lambda_1=\lambda_2=1,\lambda_3=7,
+> $$
+> $\lambda_1=\lambda_2=1$ 代入 $(\lambda E-A)X=0$，
+> $$
+> \text{由 }E-A\to\begin{pmatrix}1&1&1\\0&0&0\\0&0&0\end{pmatrix}\text{得 }A\text{ 的属于 }\lambda_1=\lambda_2=1\text{ 的线性无关的特征向量为}
+> $$
+> $$
+> \alpha_1=\begin{pmatrix}-1\\1\\0\end{pmatrix},\alpha_2=\begin{pmatrix}-1\\0\\1\end{pmatrix};
+> $$
+> $\lambda_3=7$ 代入 $(\lambda E-A)X=0$，
+> $$
+> \text{由 }7E-A\to\begin{pmatrix}1&0&-1\\0&1&-1\\0&0&0\end{pmatrix}\text{得 }A\text{ 的属于 }\lambda_3=7\text{ 的特征向量为 }\alpha_3=\begin{pmatrix}1\\1\\1\end{pmatrix}.
+> $$
+> $$
+> |A|=7,A^{*}\text{ 的特征值为 }\frac{|A|}{\lambda_1}=7,\frac{|A|}{\lambda_2}=7,\frac{|A|}{\lambda_3}=1,
+> $$
+> 因为 $B\sim A^{*}$，所以 $B$ 的特征值为 $\lambda_1=\lambda_2=7,\lambda_3=1$，从而 $B+2E$ 的特征值为 $9,9,3$．
+>
+> $B+2E$ 的相应于特征值 $9,9,3$ 对应的线性无关的特征向量为
+> $$
+> \beta_1=P^{-1}\alpha_1=\begin{pmatrix}0&1&-1\\1&0&0\\0&0&1\end{pmatrix}\begin{pmatrix}-1\\1\\0\end{pmatrix}=\begin{pmatrix}1\\-1\\0\end{pmatrix},
+> $$
+> $$
+> \beta_2=P^{-1}\alpha_2=\begin{pmatrix}0&1&-1\\1&0&0\\0&0&1\end{pmatrix}\begin{pmatrix}-1\\0\\1\end{pmatrix}=\begin{pmatrix}-1\\-1\\1\end{pmatrix},
+> $$
+> $$
+> \beta_3=P^{-1}\alpha_3=\begin{pmatrix}0&1&-1\\1&0&0\\0&0&1\end{pmatrix}\begin{pmatrix}1\\1\\1\end{pmatrix}=\begin{pmatrix}0\\1\\1\end{pmatrix}.
+> $$
+>
+> > **方法点评**：本题考查矩阵的特征值与特征向量．
+> > 矩阵与其关联的矩阵特征值与特征向量之间有一定的关系，主要有如下结论：
+> > （1）设 $A\alpha=\lambda_0\alpha$，则 $f(A)\alpha=f(\lambda_0)\alpha$，
+> > 特别地，若 $A$ 可逆，则 $\begin{cases}A^{-1}\alpha=\dfrac{1}{\lambda_0}\alpha,\\A^{*}\alpha=\dfrac{|A|}{\lambda_0}\alpha,\end{cases}$ 即 $A$ 与 $A^{-1},A^{*}$ 特征向量相同．
+> > （2）设 $A\alpha=\lambda_0\alpha$ 且 $P^{-1}AP=B$，则 $B\cdot P^{-1}\alpha=\lambda_0P^{-1}\alpha$，即 $A$ 与 $B$ 特征值相同，$B$ 的属于特征值 $\lambda_0$ 的特征向量为 $P^{-1}\alpha$．
+
+### 1999 年 · 数学二 · 第十一题（解答，6 分）
+
+设矩阵 $A=\begin{pmatrix}1&1&-1\\-1&1&1\\1&-1&1\end{pmatrix}$，矩阵 $X$ 满足 $A^*X=A^{-1}+2X$，其中 $A^*$ 是 $A$ 的伴随矩阵，求矩阵 $X$.
+
+> [!success]- 答案与解析
+> **答案**：
+> $$
+> X=\frac{1}{4}\begin{pmatrix}1&1&0\\0&1&1\\1&0&1\end{pmatrix}.
+> $$
+>
+> 题设条件 $A^*X=A^{-1}+2X$
+>
+> 上式两端左乘 $A$，得 $AA^*X=AA^{-1}+2AX$
+>
+> 因为 $AA^*=|A|E,AA^{-1}=E$，所以 $|A|X=E+2AX\Rightarrow(|A|E-2A)X=E$
+>
+> 根据可逆矩阵的定义：对于矩阵 $A_n$，如果存在矩阵 $B_n$，使得 $AB=BA=E$，则称 $A$ 为可逆矩阵，并称 $B$ 是 $A$ 的逆矩阵，故 $(|A|E-2A),X$ 均是可逆矩阵，且
+> $$
+> X=(|A|E-2A)^{-1}
+> $$
+> 又
+> $$
+> |A|=\begin{vmatrix}1&1&-1\\-1&1&1\\1&-1&1\end{vmatrix}\xrightarrow[3\text{行}+1\text{行}]{2\text{行}+1\text{行}}\begin{vmatrix}1&1&-1\\0&2&0\\2&0&0\end{vmatrix}\xrightarrow{1\text{行}-3\text{行}\times\frac{1}{2}}\begin{vmatrix}0&1&-1\\0&2&0\\2&0&0\end{vmatrix}\xrightarrow{1\text{行}-2\text{行}\times\frac{1}{2}}\begin{vmatrix}0&0&-1\\0&2&0\\2&0&0\end{vmatrix}=4
+> $$
+> 因为常数 $k$ 与矩阵 $A$ 相乘，$A$ 的每个元素都要乘以 $k$，故
+> $$
+> |A|E=4E=\begin{pmatrix}4&0&0\\0&4&0\\0&0&4\end{pmatrix},\qquad 2A=\begin{pmatrix}2&2&-2\\-2&2&2\\2&-2&2\end{pmatrix}
+> $$
+> 所以
+> $$
+> |A|E-2A=2(2E-A)=\begin{pmatrix}2&-2&2\\2&2&-2\\-2&2&2\end{pmatrix}=2\begin{pmatrix}1&-1&1\\1&1&-1\\-1&1&1\end{pmatrix}\quad(\text{对应元素相减})
+> $$
+> $$
+> X=(|A|E-2A)^{-1}=\left(2\begin{pmatrix}1&-1&1\\1&1&-1\\-1&1&1\end{pmatrix}\right)^{-1}=\frac{1}{2}\begin{pmatrix}1&-1&1\\1&1&-1\\-1&1&1\end{pmatrix}^{-1}\quad((kA)^{-1}=k^{-1}A^{-1})
+> $$
+> 用初等行变换求逆，当用初等行变换将矩阵 $A$ 化为单位矩阵时，经过相同的初等行变换，单位矩阵 $E$ 化成了 $A^{-1}$，即 $(A\ E)\xrightarrow{\text{初等行变换}}(E\ A^{-1})$
+> $$
+> \left(\begin{array}{ccc|ccc}1&-1&1&1&0&0\\1&1&-1&0&1&0\\-1&1&1&0&0&1\end{array}\right)\to\cdots\to\left(\begin{array}{ccc|ccc}1&0&0&\frac{1}{2}&\frac{1}{2}&0\\0&1&0&0&\frac{1}{2}&\frac{1}{2}\\0&0&1&\frac{1}{2}&0&\frac{1}{2}\end{array}\right)
+> $$
+> 故
+> $$
+> X=\frac{1}{2}\begin{pmatrix}\frac{1}{2}&\frac{1}{2}&0\\0&\frac{1}{2}&\frac{1}{2}\\\frac{1}{2}&0&\frac{1}{2}\end{pmatrix}=\frac{1}{4}\begin{pmatrix}1&1&0\\0&1&1\\1&0&1\end{pmatrix}.
+> $$
+
 ### 1998 年 · 数学三 · 填空题第 4 题（填空，3 分）
 
 设矩阵 $A,B$ 满足 $A^*BA=2BA-8E$，其中 $A=\begin{pmatrix}1&0&0\\0&-2&0\\0&0&1\end{pmatrix}$，$E$ 为单位矩阵，$A^*$ 为 $A$ 的伴随矩阵，则 $B=$ $\underline{\qquad}$。
