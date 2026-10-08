@@ -1023,6 +1023,24 @@ $$
 > B=\begin{pmatrix}2&-1&-1\\2&-2&-1\\-1&1&1\end{pmatrix}\begin{pmatrix}3&0&1\\1&1&0\\0&1&4\end{pmatrix}=\begin{pmatrix}5&-2&-2\\4&-3&-2\\-2&2&3\end{pmatrix}.
 > $$
 
+### 1987 年 · 数学三 · 第九题（解答，7 分）
+
+设矩阵 $A$ 和 $B$ 满足 $AB=A+2B$，求矩阵 $B$，其中
+$$
+A=\begin{pmatrix}4&2&3\\1&1&0\\-1&2&3\end{pmatrix}.
+$$
+
+> [!success]- 答案与解析
+> **答案**：
+> $$
+> B=\begin{pmatrix}3&-8&-6\\2&-9&-6\\-2&12&9\end{pmatrix}.
+> $$
+>
+> 因 $AB=A+2B$，故 $AB-2B=A$，即 $(A-2E)B=A$，
+> $$
+> B=(A-2E)^{-1}A=\begin{pmatrix}3&-8&-6\\2&-9&-6\\-2&12&9\end{pmatrix}.
+> $$
+
 ## <span class="hx hx-nav">🧭</span> 十、导航
 
 

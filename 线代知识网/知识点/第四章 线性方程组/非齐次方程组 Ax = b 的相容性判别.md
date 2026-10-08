@@ -1257,6 +1257,62 @@ $$
 > > **方法点评**：设 $A$ 为 $m\times n$ 矩阵，若 $r(A)=r(A\ \vdots\ b)$ 时，$AX=b$ 有解．
 > > 若 $r(A)=r$，则 $AX=0$ 的基础解系含 $n-r(A)$ 个解向量，但 $AX=b$ 线性无关的解向量组所含解向量的个数最多含 $n-r(A)+1$ 个．
 
+### 2004 年 · 数学三 · 第 20 题（解答，13 分）
+
+（本题满分 13 分）设 $\alpha_1=(1,2,0)^{\mathrm{T}}$，$\alpha_2=(1,a+2,-3a)^{\mathrm{T}}$，$\alpha_3=(-1,-b-2,a+2b)^{\mathrm{T}}$，$\beta=(1,3,-3)^{\mathrm{T}}$，试讨论当 $a,b$ 为何值时，
+
+（Ⅰ）$\beta$ 不能由 $\alpha_1,\alpha_2,\alpha_3$ 线性表示；
+
+（Ⅱ）$\beta$ 可由 $\alpha_1,\alpha_2,\alpha_3$ 唯一地线性表示，并求出表示式；
+
+（Ⅲ）$\beta$ 可由 $\alpha_1,\alpha_2,\alpha_3$ 线性表示，但表示式不唯一，并求出表示式。
+
+> [!success]- 答案与解析
+> **答案**：（Ⅰ）$a=0$ 时，$\beta$ 不能由 $\alpha_1,\alpha_2,\alpha_3$ 线性表示；（Ⅱ）$a\ne 0$ 且 $a\ne b$ 时，$\beta$ 唯一表示为 $\beta=\left(1-\dfrac{1}{a}\right)\alpha_1+\dfrac{1}{a}\alpha_2$；（Ⅲ）$a=b\ne 0$ 时，表示式不唯一，$\beta=\left(1-\dfrac{1}{a}\right)\alpha_1+\left(\dfrac{1}{a}+c\right)\alpha_2+c\alpha_3$（$c$ 为任意常数）。
+>
+> 【分析】将 $\beta$ 可否由 $\alpha_1,\alpha_2,\alpha_3$ 线性表示的问题转化为线性方程组 $k_1\alpha_1+k_2\alpha_2+k_3\alpha_3=\beta$ 是否有解的问题即易求解。
+>
+> 【详解】设有数 $k_1,k_2,k_3$，使得
+> $$
+> k_1\alpha_1+k_2\alpha_2+k_3\alpha_3=\beta.\tag{*}
+> $$
+> 记 $A=(\alpha_1,\alpha_2,\alpha_3)$。对矩阵 $(A,\beta)$ 施以初等行变换，有
+> $$
+> (A,\beta)=\begin{pmatrix}1&1&-1&\mid&1\\2&a+2&-b-2&\mid&3\\0&-3a&a+2b&\mid&-3\end{pmatrix}\to\begin{pmatrix}1&1&-1&\mid&1\\0&a&b-2&\mid&1\\0&0&a-b&\mid&0\end{pmatrix}.
+> $$
+> （Ⅰ）当 $a=0$ 时，有
+> $$
+> (A,\beta)\to\begin{pmatrix}1&1&-1&\mid&1\\0&0&b-2&\mid&1\\0&0&0&\mid&-1\end{pmatrix}.
+> $$
+> 可知 $r(A)\ne r(A,\beta)$。故方程组 $(*)$ 无解，$\beta$ 不能由 $\alpha_1,\alpha_2,\alpha_3$ 线性表示。
+>
+> （Ⅱ）当 $a\ne 0$，且 $a\ne b$ 时，有
+> $$
+> (A,\beta)\to\begin{pmatrix}1&1&-1&\mid&1\\0&a&b-2&\mid&1\\0&0&a-b&\mid&0\end{pmatrix}\to\begin{pmatrix}1&0&0&\mid&1-\dfrac{1}{a}\\[4pt]0&1&0&\mid&\dfrac{1}{a}\\[4pt]0&0&1&\mid&0\end{pmatrix},
+> $$
+> $r(A)=r(A,\beta)=3$，方程组 $(*)$ 有唯一解：
+> $$
+> k_1=1-\frac{1}{a},\quad k_2=\frac{1}{a},\quad k_3=0.
+> $$
+> 此时 $\beta$ 可由 $\alpha_1,\alpha_2,\alpha_3$ 唯一地线性表示，其表示式为
+> $$
+> \beta=\left(1-\frac{1}{a}\right)\alpha_1+\frac{1}{a}\alpha_2.
+> $$
+> （Ⅲ）当 $a=b\ne 0$ 时，对矩阵 $(A,\beta)$ 施以初等行变换，有
+> $$
+> (A,\beta)\to\begin{pmatrix}1&1&-1&\mid&1\\0&a&b-2&\mid&1\\0&0&a-b&\mid&0\end{pmatrix}\to\begin{pmatrix}1&0&0&\mid&1-\dfrac{1}{a}\\[4pt]0&1&-1&\mid&\dfrac{1}{a}\\[4pt]0&0&0&\mid&0\end{pmatrix},
+> $$
+> $r(A)=r(A,\beta)=2$，方程组 $(*)$ 有无穷多解，其全部解为
+> $$
+> k_1=1-\frac{1}{a},\quad k_2=\frac{1}{a}+c,\quad k_3=c,\quad\text{其中 }c\text{ 为任意常数}.
+> $$
+> $\beta$ 可由 $\alpha_1,\alpha_2,\alpha_3$ 线性表示，但表示式不唯一，其表示式为
+> $$
+> \beta=\left(1-\frac{1}{a}\right)\alpha_1+\left(\frac{1}{a}+c\right)\alpha_2+c\alpha_3.
+> $$
+>
+> 【评注】本题属于常规题型，曾考过两次（1991，2000）。
+
 ### 2003 年 · 数学二 · 第十二题（证明题）（解答，8 分）
 
 已知平面上三条不同直线的方程分别为
@@ -1702,6 +1758,55 @@ $$
 > （或 $[x_1,x_2,x_3]^{\mathrm{T}}=[1,-1,0]^{\mathrm{T}}+k[0,1,1]^{\mathrm{T}}$（$k$ 为任意常数））
 >
 > > **编者注**：原书此处行变换标记印作 $[3]+[2]\times 3$，但由结果 $0$ 行应为 $[3]+[2]\times(-3)$，疑为原书漏印负号（按原文转写标记）。
+
+### 1993 年 · 数学三 · 试卷四·第八题（解答，10 分）
+
+$k$ 为何值时，线性方程组
+$$
+\begin{cases}x_1+x_2+kx_3=4,\\-x_1+kx_2+x_3=k^2,\\x_1-x_2+2x_3=-4\end{cases}
+$$
+有唯一解、无解、有无穷多解？在有解情况下，求出其全部解.
+
+> [!success]- 答案与解析
+> **答案**：
+> 当 $k\ne -1$ 且 $k\ne 4$ 时，方程组有唯一解
+> $$
+> x_1=\frac{k^2+2k}{k+1},\quad x_2=\frac{k^2+2k+4}{k+1},\quad x_3=\frac{-2k}{k+1};
+> $$
+> 当 $k=-1$ 时，方程组无解；当 $k=4$ 时，方程组有无穷多解，通解为
+> $$
+> \alpha+k\eta=(0,4,0)^{\mathrm{T}}+k(-3,-1,1)^{\mathrm{T}}\quad(k\text{ 为任意常数}).
+> $$
+>
+> 【解析】对方程组的增广矩阵作初等行变换，
+> 第一行和第三行互换，再第一行分别乘以 $(1)$、$(-1)$ 加到第二行和第三行上，再第二行和第三行互换，再第二行乘以 $\left(\dfrac{1-k}{2}\right)$ 加到第三行上，有
+> $$
+> \overline{A}=\begin{pmatrix}1&1&k&\vdots&4\\-1&k&1&\vdots&k^2\\1&-1&2&\vdots&-4\end{pmatrix}\to\begin{pmatrix}1&-1&2&\vdots&-4\\-1&k&1&\vdots&k^2\\1&1&k&\vdots&4\end{pmatrix}
+> $$
+> $$
+> \to\begin{pmatrix}1&-1&2&\vdots&-4\\0&k-1&3&\vdots&k^2-4\\0&2&k-2&\vdots&8\end{pmatrix}\to\begin{pmatrix}1&-1&2&\vdots&-4\\0&2&k-2&\vdots&8\\0&k-1&3&\vdots&k^2-4\end{pmatrix}
+> $$
+> $$
+> \to\begin{pmatrix}1&-1&2&\vdots&-4\\0&2&k-2&\vdots&8\\0&0&\dfrac{(1+k)(4-k)}{2}&\vdots&k(k-4)\end{pmatrix}.
+> $$
+> （1）当 $k\ne -1$ 且 $k\ne 4$ 时，$r(\overline{A})=r(A)=3$，方程组有唯一解，即
+> $$
+> x_1=\frac{k^2+2k}{k+1},\quad x_2=\frac{k^2+2k+4}{k+1},\quad x_3=\frac{-2k}{k+1}.
+> $$
+> （2）当 $k=-1$ 时，$r(\overline{A})=3,r(A)=2$，方程组无解.
+> （3）当 $k=4$ 时，有
+> $$
+> \overline{A}=\begin{pmatrix}1&-1&2&\vdots&-4\\0&2&2&\vdots&8\\0&0&0&\vdots&0\end{pmatrix}\to\begin{pmatrix}1&0&3&\vdots&0\\0&1&1&\vdots&4\\0&0&0&\vdots&0\end{pmatrix}.
+> $$
+> 因为 $r(\overline{A})=r(A)=2<3$，方程组有无穷多解.
+> 取 $x_3$ 为自由变量，得方程组的特解为 $\alpha=(0,4,0)^{\mathrm{T}}$.
+> 又导出组的基础解系为 $\eta=(-3,-1,1)^{\mathrm{T}}$，所以方程组的通解为 $\alpha+k\eta$，其中 $k$ 为任意常数.
+> 【相关知识点】非齐次线性方程组有解的判定定理：
+> 设 $A$ 是 $m\times n$ 矩阵，线性方程组 $Ax=b$ 有解的充分必要条件是系数矩阵的秩等于增广矩阵 $\overline{A}=(A\vdots b)$ 的秩，即 $r(A)=r(\overline{A})$.（或者说，$b$ 可由 $A$ 的列向量 $\alpha_1,\alpha_2,\cdots,\alpha_n$ 线表出，亦等同于 $\alpha_1,\alpha_2,\cdots,\alpha_n$ 与 $\alpha_1,\alpha_2,\cdots,\alpha_n,b$ 是等价向量组）
+> 设 $A$ 是 $m\times n$ 矩阵，线性方程组 $Ax=b$，则
+> （1）有唯一解 $\Leftrightarrow r(A)=r(\overline{A})=n$.
+> （2）有无穷多解 $\Leftrightarrow r(A)=r(\overline{A})<n$.
+> （3）无解 $\Leftrightarrow r(A)+1=r(\overline{A})\Leftrightarrow b$ 不能由 $A$ 的列向量 $\alpha_1,\alpha_2,\cdots,\alpha_n$ 线表出.
 
 ### 1989 年 · 数学一 · 第七大题（解答，6 分）
 
