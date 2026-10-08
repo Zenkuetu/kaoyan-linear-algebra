@@ -389,7 +389,7 @@ for (const m of MODULES) {
       const years = [...new Set(myExams.map(e => e.year))].sort((a, b) => b - a);
       head('真题' + (years.length ? '（' + years[years.length - 1] + (years.length > 1 ? '–' + years[0] : '') + '）' : ''), 'exam');
       for (const e of myExams) {
-        L.push('### ' + e.year + ' 年 · 数学' + ({ '数一': '一', '数二': '二', '数三': '三' }[e.subject] || e.subject) + ' · 第 ' + e.number + ' 题（' + e.kind + (e.score ? '，' + e.score + ' 分' : '') + '）');
+        L.push('### ' + e.year + ' 年 · 数学' + ({ '数一': '一', '数二': '二', '数三': '三' }[e.subject] || e.subject) + ' · ' + (e.label || ('第 ' + e.number + ' 题')) + '（' + e.kind + (e.score ? '，' + e.score + ' 分' : '') + '）');
         L.push('');
         push(e.question);
         L.push('> [!success]- 答案与解析');

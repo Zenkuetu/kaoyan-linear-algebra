@@ -48,6 +48,7 @@ EXAMS.forEach((e, i) => {
     if (typeof e[k] !== 'string' || !e[k].trim()) errs.push(at + '：' + k + ' 为空');
   }
   if (typeof e.source !== 'string' || !e.source.trim()) errs.push(at + '：缺少 source（解析出处）');
+  if (e.label !== undefined && (typeof e.label !== 'string' || !e.label.trim())) errs.push(at + '：label 给了但为空');
   const key = e.year + '|' + e.subject + '|' + e.number;
   if (seen.has(key)) errs.push(at + '：与 ' + seen.get(key) + ' 重复');
   else seen.set(key, at);
