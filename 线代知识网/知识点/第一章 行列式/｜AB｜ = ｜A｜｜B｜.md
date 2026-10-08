@@ -206,6 +206,79 @@ $$
 >
 > > **方法点评**：本题考查由矩阵关系等式确定的矩阵的行列式．本题的关键是要应用公式 $AA^{*}=A^{*}A=|A|E$．
 
+### 2003 年 · 数学二 · 填空题第 6 题（填空，4 分）
+
+设 3 阶方阵 $A,B$ 满足 $A^2B-A-B=E$，其中 $E$ 是 3 阶单位矩阵，若 $A=\begin{pmatrix}1&0&1\\0&2&0\\-2&0&1\end{pmatrix}$，则 $|B|=$ ________.
+
+> [!success]- 答案与解析
+> **答案**：$rac{1}{2}$
+>
+> 【分析】先化简分解出矩阵 $B$，再计算行列式 $B$ 或者将已知等式变形成含有因子 $B$ 的矩阵乘积形式，而其余因子的行列式都可以求出即可.
+>
+> 【详解】方法1：由 $A^2B-A-B=E$，知 $(A^2-E)B=A+E$，即 $(A+E)(A-E)B=(A+E)$，
+>
+> 易知矩阵 $A+E$ 可逆，于是有 $(A-E)B=E$.
+>
+> 再两边取行列式，得 $|A-E||B|=1$，
+>
+> 因为 $A-E=\begin{pmatrix}0&0&1\\0&1&0\\-2&0&0\end{pmatrix}$，故 $|A-E|=\begin{vmatrix}0&0&1\\0&1&0\\-2&0&0\end{vmatrix}=2$，所以 $|B|=\frac{1}{2}$.
+>
+> 方法2：由 $A^2B-A-B=E$，得 $(A+E)(A-E)B=A+E$
+>
+> 等式两端取行列式且利用矩阵乘积的行列式=行列式的乘积，得
+> $$
+> |A+E||A-E||B|=|A+E|
+> $$
+> 约去 $|A+E|\ne0$，得 $|B|=\frac{1}{|A-E|}=\frac{1}{2}$.
+
+### 2001 年 · 数学三 · 填空题第 3 题（填空，3 分）
+
+设矩阵 $A=\begin{pmatrix}k&1&1&1\\1&k&1&1\\1&1&k&1\\1&1&1&k\end{pmatrix}$，且 $r(A)=3$，则 $k=$ $\underline{\qquad}$。
+
+> [!success]- 答案与解析
+> **答案**：$-3$。
+>
+> 【详解】方法 1：由初等变换（既可作初等行变换，也可作初等列变换）不改变矩阵的秩，故对 $A$ 进行初等变换：
+> $$
+> A=\begin{pmatrix}k&1&1&1\\1&k&1&1\\1&1&k&1\\1&1&1&k\end{pmatrix}\xrightarrow{1\text{ 行}\times(-1)\text{ 分别加到 }2,3,4\text{ 行}}\begin{pmatrix}k&1&1&1\\1-k&k-1&0&0\\1-k&0&k-1&0\\1-k&0&0&k-1\end{pmatrix}
+> $$
+> $$
+> \xrightarrow{2,3,4\text{ 列分别加到 }1\text{ 列}}\begin{pmatrix}k+3&1&1&1\\0&k-1&0&0\\0&0&k-1&0\\0&0&0&k-1\end{pmatrix}.
+> $$
+> 可见只有当 $k=-3$ 时，$r(A)=3$。故 $k=-3$。
+>
+> 方法 2：由题设 $r(A)=3$，故应有四阶矩阵行列式 $|A|=0$。由
+> $$
+> |A|=\begin{vmatrix}k&1&1&1\\1&k&1&1\\1&1&k&1\\1&1&1&k\end{vmatrix}\xrightarrow{1\text{ 行}\times(-1)\text{ 分别加到 }2,3,4\text{ 行}}\begin{vmatrix}k&1&1&1\\1-k&k-1&0&0\\1-k&0&k-1&0\\1-k&0&0&k-1\end{vmatrix}
+> $$
+> $$
+> \xrightarrow{2,3,4\text{ 列分别加到 }1\text{ 列}}\begin{vmatrix}k+3&1&1&1\\0&k-1&0&0\\0&0&k-1&0\\0&0&0&k-1\end{vmatrix}=(k+3)(k-1)^3=0,
+> $$
+> 解得 $k=1$ 或 $k=-3$。当 $k=1$ 时，
+> $$
+> A=\begin{pmatrix}1&1&1&1\\1&1&1&1\\1&1&1&1\\1&1&1&1\end{pmatrix}\xrightarrow{1\text{ 行}\times(-1)\text{ 分别加到 }2,3,4\text{ 行}}\begin{pmatrix}1&1&1&1\\0&0&0&0\\0&0&0&0\\0&0&0&0\end{pmatrix},
+> $$
+> 可知此时 $r(A)=1$，不符合题意，因此一定有 $k=-3$。
+
+### 1999 年 · 数学一 · 解答题第 10 题（解答，8 分）
+
+（本题满分 8 分）设矩阵 $A=\begin{pmatrix}a&-1&c\\5&b&3\\1-c&0&-a\end{pmatrix}$，其行列式 $|A|=-1$，又 $A$ 的伴随矩阵 $A^{*}$ 有一个特征值 $\lambda_0$，属于 $\lambda_0$ 的一个特征向量为 $\alpha=(-1,-1,1)^{\mathrm{T}}$，求 $a,b,c$ 和 $\lambda_0$ 的值．
+
+> [!success]- 答案与解析
+> **答案**：$a=2,b=-3,c=2,\lambda_0=1$．
+>
+> 十、【解】 由
+> $$
+> \begin{pmatrix}a&-1&c\\5&b&3\\1-c&0&-a\end{pmatrix}\begin{pmatrix}-1\\-1\\1\end{pmatrix}=\mu\begin{pmatrix}-1\\-1\\1\end{pmatrix}\text{得}\begin{cases}-a+1+c=-\mu,\\-b-2=-\mu,\\c-1-a=\mu,\end{cases}
+> $$
+> 解得 $a=c,\mu=-1,b=-3$；
+>
+> 再由
+> $$
+> |A|=\begin{vmatrix}a&-1&a\\5&-3&3\\1-a&0&-a\end{vmatrix}=-1\text{ 得 }a=2,c=2,
+> $$
+> $\lambda_0=\dfrac{|A|}{\mu}=1$，故 $a=2,b=-3,c=2,\lambda_0=1$．
+
 ### 1995 年 · 数学一 · 第九大题（解答，6 分）
 
 设 $A$ 是 $n$ 阶矩阵，满足 $AA^{\mathrm{T}}=E$（$E$ 为 $n$ 阶单位矩阵，$A^{\mathrm{T}}$ 为 $A$ 的转置矩阵），$|A|<0$，求 $|A+E|$.

@@ -116,7 +116,7 @@ $$
 > - [[行列式计算的总思路：化三角形]] ⇒ 🟧 充分 ⇒ 本点——化三角形是定义式计算的替代路径
 > - [[数乘与行列式的线性性]] ⇒ ⬜ 无关 ⇒ 本点——性质可加速计算，但非定义所需
 
-## <span class="hx hx-exam">📝</span> 九、真题（2014–2025）
+## <span class="hx hx-exam">📝</span> 九、真题（1998–2025）
 
 ### 2025 年 · 数学三 · 第 15 题（填空，5 分）
 
@@ -220,6 +220,30 @@ $$
 > =-ad(ad-bc)+bc(ad-bc)=-(ad-bc)^2.
 > $$
 > 故应选（B）。
+
+### 1998 年 · 数学一 · 选择题第 4 题（选择，3 分）
+
+设矩阵 $\begin{pmatrix}a_1&b_1&c_1\\a_2&b_2&c_2\\a_3&b_3&c_3\end{pmatrix}$ 是满秩的，则直线 $\dfrac{x-a_3}{a_1-a_2}=\dfrac{y-b_3}{b_1-b_2}=\dfrac{z-c_3}{c_1-c_2}$ 与直线 $\dfrac{x-a_1}{a_2-a_3}=\dfrac{y-b_1}{b_2-b_3}=\dfrac{z-c_1}{c_2-c_3}$（　　）
+
+（A）相交于一点．
+（B）重合．
+（C）平行但不重合．
+（D）异面．
+
+> [!success]- 答案与解析
+> **答案**：（A）
+>
+> （4）【答案】 （A）．
+> $$
+> \text{【解】 因为}\begin{vmatrix}a_1&b_1&c_1\\a_2&b_2&c_2\\a_3&b_3&c_3\end{vmatrix}=\begin{vmatrix}a_1-a_2&b_1-b_2&c_1-c_2\\a_2-a_3&b_2-b_3&c_2-c_3\\a_3&b_3&c_3\end{vmatrix}\ne 0,
+> $$
+> 所以两条直线的方向向量不平行，（B）与（C）不对；
+>
+> 令 $s_1=\{a_1-a_2,b_1-b_2,c_1-c_2\}$，$s_2=\{a_2-a_3,b_2-b_3,c_2-c_3\}$，$M_1(a_3,b_3,c_3),M_2(a_1,b_1,c_1)$ 分别为两条直线上的点，$\overrightarrow{M_1M_2}=\{a_1-a_3,b_1-b_3,c_1-c_3\}$，
+> $$
+> \text{因为}\overrightarrow{M_1M_2}\cdot(s_1\times s_2)=\begin{vmatrix}a_1-a_3&b_1-b_3&c_1-c_3\\a_1-a_2&b_1-b_2&c_1-c_2\\a_2-a_3&b_2-b_3&c_2-c_3\end{vmatrix}=0,\text{所以两直线共面且不平行，即两直线交于一}
+> $$
+> 点，应选（A）．
 
 ## <span class="hx hx-nav">🧭</span> 十、导航
 

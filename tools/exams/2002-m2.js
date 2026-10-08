@@ -109,7 +109,8 @@ A=8(B-4E)^{-1}+2E=8\begin{pmatrix}-\frac{1}{4}&\frac{1}{4}&0\\-\frac{1}{8}&-\fra
 $$
 （常数与矩阵相乘，矩阵的每一个元素都需要乘以该常数）
 $$
-=\begin{pmatrix}-2&2&0\\-1&-3&0\\0&0&-4\end{pmatrix}+\begin{pmatrix}2&&\\&2&\\&&2\end{pmatrix}=\begin{pmatrix}0&2&0\\-1&-1&0\\0&0&-2\end{pmatrix}\quad(\text{对应元素相加})$$`,
+=\begin{pmatrix}-2&2&0\\-1&-3&0\\0&0&-4\end{pmatrix}+\begin{pmatrix}2&&\\&2&\\&&2\end{pmatrix}=\begin{pmatrix}0&2&0\\-1&-1&0\\0&0&-2\end{pmatrix}\quad(\text{对应元素相加})
+$$`,
   source: '《1989—2004 考研数二真题答案解析》第 166–167 页',
 });
 
@@ -167,6 +168,7 @@ x_4=1,x_3=k,x_1=x_3=k,x_2=-2k+3
 $$
 故方程组 $Ax=\beta$ 有通解
 $$
-\begin{pmatrix}x_1\\x_2\\x_3\\x_4\end{pmatrix}=\begin{pmatrix}k\\-2k+3\\k\\1\end{pmatrix}=k\begin{pmatrix}1\\-2\\1\\0\end{pmatrix}+\begin{pmatrix}0\\3\\0\\1\end{pmatrix}.\quad(\text{其中}k\text{是任意常数})$$`,
+\begin{pmatrix}x_1\\x_2\\x_3\\x_4\end{pmatrix}=\begin{pmatrix}k\\-2k+3\\k\\1\end{pmatrix}=k\begin{pmatrix}1\\-2\\1\\0\end{pmatrix}+\begin{pmatrix}0\\3\\0\\1\end{pmatrix}.\quad(\text{其中}k\text{是任意常数})
+$$`,
   source: '《1989—2004 考研数二真题答案解析》第 167–169 页',
 });

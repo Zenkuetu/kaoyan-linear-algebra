@@ -1257,6 +1257,79 @@ $$
 > > **方法点评**：设 $A$ 为 $m\times n$ 矩阵，若 $r(A)=r(A\ \vdots\ b)$ 时，$AX=b$ 有解．
 > > 若 $r(A)=r$，则 $AX=0$ 的基础解系含 $n-r(A)$ 个解向量，但 $AX=b$ 线性无关的解向量组所含解向量的个数最多含 $n-r(A)+1$ 个．
 
+### 2003 年 · 数学二 · 第十二题（证明题）（解答，8 分）
+
+已知平面上三条不同直线的方程分别为
+$$
+l_1:ax+2by+3c=0,
+$$
+$$
+l_2:bx+2cy+3a=0,
+$$
+$$
+l_3:cx+2ay+3b=0.
+$$
+试证：这三条直线交于一点的充分必要条件为 $a+b+c=0$.
+
+> [!success]- 答案与解析
+> **答案**：见解析.
+>
+> 【分析】三条直线相交于一点，相当于对应线性方程组有唯一解，进而转化为系数矩阵与增广矩阵的秩均为 2.
+>
+> 【详解】方法1：“必要性”. 设三条直线 $l_1,l_2,l_3$ 交于一点，则线性方程组
+> $$
+> \begin{cases}
+> ax+2by=-3c,\\
+> bx+2cy=-3a,\\
+> cx+2ay=-3b,
+> \end{cases}\tag{*}
+> $$
+> 有唯一解，故系数矩阵 $A=\begin{pmatrix}a&2b\\b&2c\\c&2a\end{pmatrix}$ 与增广矩阵 $\overline{A}=\begin{pmatrix}a&2b&-3c\\b&2c&-3a\\c&2a&-3b\end{pmatrix}$ 的秩均为 2，于是 $|\overline{A}|=0$.
+>
+> $$
+> |\overline{A}|=\begin{vmatrix}a&2b&-3c\\b&2c&-3a\\c&2a&-3b\end{vmatrix}=\begin{vmatrix}a+b+c&2(b+c+a)&-3(c+a+b)\\b&2c&-3a\\c&2a&-3b\end{vmatrix}
+> $$
+> $$
+> =(a+b+c)\begin{vmatrix}1&2&-3\\b&2c&-3a\\c&2a&-3b\end{vmatrix}=-6(a+b+c)\begin{vmatrix}1&1&1\\b&c&a\\c&a&b\end{vmatrix}
+> $$
+> $$
+> =3(a+b+c)\left[(a-b)^2+(b-c)^2+(c-a)^2\right],
+> $$
+> 由于三条直线互不相同，所以 $(a-b)^2+(b-c)^2+(c-a)^2\ne0$，故 $a+b+c=0$.
+>
+> “充分性”. 由 $a+b+c=0$，则从必要性的证明可知，$|\overline{A}|=0$，故秩$(\overline{A})<3$.
+>
+> 由于 $\begin{vmatrix}a&2b\\b&2c\end{vmatrix}=2(ac-b^2)=-2\left[\left(a+\frac{1}{2}b\right)^2+\frac{3}{4}b^2\right]\ne0$，故秩$(\overline{A})=2$. 于是，秩$(A)=$秩$(\overline{A})=2$. 因此方程组(*)有唯一解，即三直线 $l_1,l_2,l_3$ 交于一点.
+>
+> 方法2：“必要性”. 设三直线交于一点 $(x_0,y_0)$，则 $\begin{pmatrix}x_0\\y_0\\1\end{pmatrix}$ 为 $BX=0$ 的非零解，其中 $B=\begin{pmatrix}2a&2b&3c\\2b&2c&3a\\2c&2a&3b\end{pmatrix}$.
+>
+> 所以 $|B|=0$. 而
+> $$
+> |B|=\begin{vmatrix}2a&2b&3c\\2b&2c&3a\\2c&2a&3b\end{vmatrix}=-6(a+b+c)\left[(a-b)^2+(b-c)^2+(c-a)^2\right],
+> $$
+> （解法同方法1）
+>
+> 但根据题设 $(a-b)^2+(b-c)^2+(c-a)^2\ne0$，故 $a+b+c=0$.
+>
+> “充分性”：考虑线性方程组
+> $$
+> \begin{cases}
+> ax+2by=-3c,\\
+> bx+2cy=-3a,\\
+> cx+2ay=-3b,
+> \end{cases}\tag{*}
+> $$
+> 将方程组(*)的三个方程相加，并由 $a+b+c=0$ 可知，方程组(*)等价于方程组
+> $$
+> \begin{cases}
+> ax+2by=-3c,\\
+> bx+2cy=-3a,
+> \end{cases}\tag{**}
+> $$
+> 因为 $\begin{vmatrix}a&2b\\b&2c\end{vmatrix}=2(ac-b^2)=-2\left[\left(a+\frac{1}{2}b\right)^2+\frac{3}{4}b^2\right]\ne0$，
+>
+> 故方程组(**)有唯一解，所以方程组(*)有唯一解，即三直线 $l_1,l_2,l_3$ 交于一点.
+
 ### 2002 年 · 数学一 · 选择题第 4 题（选择，3 分）
 
 设有三张不同平面的方程 $a_{i1}x+a_{i2}y+a_{i3}z=b_i$，$i=1,2,3$，它们所组成的线性方程组的系数矩阵与增广矩阵的秩都为 2，则这三张平面可能的位置关系为（　　）
@@ -1323,6 +1396,85 @@ $$
 > 可知，$r(\overline{A})=r(A)=2<3$，
 >
 > 故当 $a=-2$ 时，原方程组有无穷多解.
+
+### 2001 年 · 数学三 · 第九题（解答，9 分）
+
+（本题满分 9 分）设矩阵 $A=\begin{pmatrix}1&1&a\\1&a&1\\a&1&1\end{pmatrix}$，$\beta=\begin{pmatrix}1\\1\\-2\end{pmatrix}$。已知线性方程组 $AX=\beta$ 有解但不唯一，试求
+
+（1）$a$ 的值；
+
+（2）正交矩阵 $Q$，使 $Q^{\mathrm{T}}AQ$ 为对角矩阵。
+
+> [!success]- 答案与解析
+> **答案**：（1）$a=-2$；（2）$Q=\begin{pmatrix}\dfrac{1}{\sqrt{3}}&\dfrac{1}{\sqrt{2}}&-\dfrac{1}{\sqrt{6}}\\[4pt]\dfrac{1}{\sqrt{3}}&0&\dfrac{2}{\sqrt{6}}\\[4pt]\dfrac{1}{\sqrt{3}}&-\dfrac{1}{\sqrt{2}}&-\dfrac{1}{\sqrt{6}}\end{pmatrix}$，$Q^{\mathrm{T}}AQ=\begin{pmatrix}0&0&0\\0&3&0\\0&0&-3\end{pmatrix}$。
+>
+> 【详解】（1）线性方程组 $AX=\beta$ 有解但不唯一，即有无穷多解 $\Leftrightarrow r(A)=r(\overline{A})<n=3$，将增广矩阵作初等行变换，得
+> $$
+> \overline{A}=\begin{pmatrix}1&1&a&\mid&1\\1&a&1&\mid&1\\a&1&1&\mid&-2\end{pmatrix}\xrightarrow[3\text{ 行}-1\text{ 行}\times a]{2\text{ 行}-1\text{ 行}}\begin{pmatrix}1&1&a&\mid&1\\0&a-1&1-a&\mid&0\\0&1-a&1-a^2&\mid&-2-a\end{pmatrix}
+> $$
+> $$
+> \xrightarrow{2\text{ 行加到 }3\text{ 行}}\begin{pmatrix}1&1&a&\mid&1\\0&a-1&1-a&\mid&0\\0&0&-(a-1)(a+2)&\mid&-(a+2)\end{pmatrix}.
+> $$
+> 因为方程组 $AX=\beta$ 有解但不唯一，所以 $r(A)=r(\overline{A})<3$，故 $a=-2$。
+>
+> （2）由（1），有
+> $$
+> A=\begin{pmatrix}1&1&-2\\1&-2&1\\-2&1&1\end{pmatrix}.
+> $$
+> 由
+> $$
+> |\lambda E-A|=\begin{vmatrix}\lambda-1&-1&2\\-1&\lambda+2&-1\\2&-1&\lambda-1\end{vmatrix}\xrightarrow{2,3\text{ 列加到 }1\text{ 列}}\begin{vmatrix}\lambda&-1&2\\\lambda&\lambda+2&-1\\\lambda&-1&\lambda-1\end{vmatrix}
+> $$
+> $$
+> \xrightarrow{1\text{ 列提出公因子 }\lambda}\lambda\begin{vmatrix}1&-1&2\\1&\lambda+2&-1\\1&-1&\lambda-1\end{vmatrix}\xrightarrow{1\text{ 行}\times(-1)\text{ 分别加到 }2,3\text{ 行}}\lambda\begin{vmatrix}1&-1&2\\0&\lambda+3&-3\\0&0&\lambda-3\end{vmatrix}
+> =\lambda(\lambda+3)(\lambda-3)=0,
+> $$
+> 故 $A$ 的特征值为 $\lambda_1=0,\lambda_2=-3,\lambda_3=3$。
+>
+> 当 $\lambda_1=0$ 时，
+> $$
+> (0E-A)=\begin{pmatrix}-1&-1&2\\-1&2&-1\\2&-1&-1\end{pmatrix}\xrightarrow[1\text{ 行的 }(-1),2\text{ 倍分别加到 }2,3\text{ 行}]{}\begin{pmatrix}-1&-1&2\\0&3&-3\\0&-3&3\end{pmatrix}\xrightarrow[2\text{ 行加到 }3\text{ 行}]{}\begin{pmatrix}-1&-1&2\\0&3&-3\\0&0&0\end{pmatrix}.
+> $$
+> 于是得方程组 $(0E-A)x=0$ 的同解方程组为
+> $$
+> \begin{cases}x_1+x_2-2x_3=0,\\3x_2-3x_3=0.\end{cases}
+> $$
+> 可见 $r(0E-A)=2$，基础解系个数为 $n-r(0E-A)=3-2=1$，故有 $1$ 个自由未知量，选 $x_2$ 为自由未知量，取 $x_2=1$，解得对应的特征向量为 $x_1=(1,1,1)^{\mathrm{T}}$。
+>
+> 当 $\lambda=3$ 时，
+> $$
+> (3E-A)=\begin{pmatrix}2&-1&2\\-1&5&-1\\2&-1&2\end{pmatrix}\xrightarrow[2\text{ 行互换}]{1,2}\begin{pmatrix}-1&5&-1\\2&-1&2\\2&-1&2\end{pmatrix}\xrightarrow[3\text{ 行}-2\text{ 行}]{1\text{ 行}\times 2\text{ 加到 }2\text{ 行}}\begin{pmatrix}-1&5&-1\\0&9&0\\0&0&0\end{pmatrix}.
+> $$
+> 于是得方程组 $(3E-A)x=0$ 的同解方程组为
+> $$
+> \begin{cases}-x_1+5x_2-x_3=0,\\9x_2=0.\end{cases}
+> $$
+> 可见 $r(3E-A)=2$，基础解系个数为 $1$，选 $x_1$ 为自由未知量，取 $x_1=1$，解得对应的特征向量为 $x_2=(1,0,-1)^{\mathrm{T}}$。
+>
+> 当 $\lambda=-3$ 时，
+> $$
+> (-3E-A)=\begin{pmatrix}-4&-1&2\\-1&-1&-1\\2&-1&-4\end{pmatrix}\xrightarrow[1,2\text{ 行互换}]{}\begin{pmatrix}-1&-1&-1\\-4&-1&2\\2&-1&-4\end{pmatrix}\xrightarrow[1\text{ 行 }(-4)\text{ 倍、}2\text{ 倍分别加到 }2,3\text{ 行}]{}\begin{pmatrix}-1&-1&-1\\0&3&6\\0&-3&-6\end{pmatrix}\xrightarrow[2\text{ 行加到 }3\text{ 行}]{}\begin{pmatrix}-1&-1&-1\\0&3&6\\0&0&0\end{pmatrix}.
+> $$
+> 于是得方程组 $(-3E-A)x=0$ 的同解方程组为
+> $$
+> \begin{cases}-x_1-x_2-x_3=0,\\3x_2+6x_3=0.\end{cases}
+> $$
+> 可见 $r(-3E-A)=2$，基础解系个数为 $1$，选 $x_3$ 为自由未知量，取 $x_3=2$，解得对应的特征向量为 $x_3=(-1,2,-1)^{\mathrm{T}}$。
+>
+> 由于 $A$ 是实对称矩阵，其不同特征值的特征向量相互正交，故这三个不同特征值的特征向量相互正交，只需将 $x_1,x_2,x_3$ 单位化，
+> $$
+> \beta_1=\frac{x_1}{|x_1|}=\frac{1}{\sqrt{3}}\begin{pmatrix}1\\1\\1\end{pmatrix},\quad \beta_2=\frac{x_2}{|x_2|}=\frac{1}{\sqrt{2}}\begin{pmatrix}1\\0\\-1\end{pmatrix},\quad \beta_3=\frac{x_3}{|x_3|}=\frac{1}{\sqrt{6}}\begin{pmatrix}-1\\2\\-1\end{pmatrix},
+> $$
+> 其中 $|x_1|=\sqrt{1^2+1^2+1^2}=\sqrt{3}$，$|x_2|=\sqrt{1^2+(-1)^2}=\sqrt{2}$，$|x_3|=\sqrt{(-1)^2+2^2+(-1)^2}=\sqrt{6}$。
+>
+> 令
+> $$
+> Q=(\beta_1,\beta_2,\beta_3)=\begin{pmatrix}\dfrac{1}{\sqrt{3}}&\dfrac{1}{\sqrt{2}}&-\dfrac{1}{\sqrt{6}}\\[4pt]\dfrac{1}{\sqrt{3}}&0&\dfrac{2}{\sqrt{6}}\\[4pt]\dfrac{1}{\sqrt{3}}&-\dfrac{1}{\sqrt{2}}&-\dfrac{1}{\sqrt{6}}\end{pmatrix},
+> $$
+> 则有
+> $$
+> Q^{\mathrm{T}}AQ=Q^{-1}AQ=\begin{pmatrix}0&0&0\\0&3&0\\0&0&-3\end{pmatrix}.
+> $$
 
 ### 2000 年 · 数学一 · 填空题第 4 题（填空，3 分）
 

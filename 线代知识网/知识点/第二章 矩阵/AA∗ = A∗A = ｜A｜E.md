@@ -505,6 +505,25 @@ $$
 >
 > 故 $a=2,\ b=-3,\ c=2,\ \lambda_0=1$。
 
+### 1999 年 · 数学一 · 解答题第 10 题（解答，8 分）
+
+（本题满分 8 分）设矩阵 $A=\begin{pmatrix}a&-1&c\\5&b&3\\1-c&0&-a\end{pmatrix}$，其行列式 $|A|=-1$，又 $A$ 的伴随矩阵 $A^{*}$ 有一个特征值 $\lambda_0$，属于 $\lambda_0$ 的一个特征向量为 $\alpha=(-1,-1,1)^{\mathrm{T}}$，求 $a,b,c$ 和 $\lambda_0$ 的值．
+
+> [!success]- 答案与解析
+> **答案**：$a=2,b=-3,c=2,\lambda_0=1$．
+>
+> 十、【解】 由
+> $$
+> \begin{pmatrix}a&-1&c\\5&b&3\\1-c&0&-a\end{pmatrix}\begin{pmatrix}-1\\-1\\1\end{pmatrix}=\mu\begin{pmatrix}-1\\-1\\1\end{pmatrix}\text{得}\begin{cases}-a+1+c=-\mu,\\-b-2=-\mu,\\c-1-a=\mu,\end{cases}
+> $$
+> 解得 $a=c,\mu=-1,b=-3$；
+>
+> 再由
+> $$
+> |A|=\begin{vmatrix}a&-1&a\\5&-3&3\\1-a&0&-a\end{vmatrix}=-1\text{ 得 }a=2,c=2,
+> $$
+> $\lambda_0=\dfrac{|A|}{\mu}=1$，故 $a=2,b=-3,c=2,\lambda_0=1$．
+
 ### 1999 年 · 数学二 · 第十一题（解答，6 分）
 
 设矩阵 $A=\begin{pmatrix}1&1&-1\\-1&1&1\\1&-1&1\end{pmatrix}$，矩阵 $X$ 满足 $A^*X=A^{-1}+2X$，其中 $A^*$ 是 $A$ 的伴随矩阵，求矩阵 $X$.
@@ -548,6 +567,21 @@ $$
 > $$
 > X=\frac{1}{2}\begin{pmatrix}\frac{1}{2}&\frac{1}{2}&0\\0&\frac{1}{2}&\frac{1}{2}\\\frac{1}{2}&0&\frac{1}{2}\end{pmatrix}=\frac{1}{4}\begin{pmatrix}1&1&0\\0&1&1\\1&0&1\end{pmatrix}.
 > $$
+
+### 1998 年 · 数学一 · 填空题第 4 题（填空，3 分）
+
+设 $A$ 为 $n$ 阶矩阵，$|A|\ne 0$，$A^{*}$ 为 $A$ 的伴随矩阵，$E$ 为 $n$ 阶单位矩阵．若 $A$ 有特征值 $\lambda$，则 $(A^{*})^2+E$ 必有特征值 $\underline{\qquad}$．
+
+> [!success]- 答案与解析
+> **答案**：$\left(\dfrac{|A|}{\lambda}\right)^2+1$
+>
+> （4）【答案】 $\left(\dfrac{|A|}{\lambda}\right)^2+1$．
+>
+> 【解】 设 $A$ 的对应于特征值 $\lambda$ 的特征向量为 $\alpha$，则 $A\alpha=\lambda\alpha$，
+> $$
+> \text{由 }A^{*}\alpha=\frac{|A|}{\lambda}\alpha\text{ 得 }[(A^{*})^2+E]\alpha=\left[\left(\frac{|A|}{\lambda}\right)^2+1\right]\alpha,
+> $$
+> 故 $(A^{*})^2+E$ 一定有特征值 $\left(\dfrac{|A|}{\lambda}\right)^2+1$．
 
 ### 1998 年 · 数学三 · 填空题第 4 题（填空，3 分）
 
