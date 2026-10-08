@@ -118,157 +118,157 @@ $$
 
 ## <span class="hx hx-exam">📝</span> 九、真题（1988–2025）
 
-### 1988 年 · 数学三 · 填空题第 2 题（填空，3 分）
+- [ ] **1988 年 · 数学三 · 填空题第 2 题（填空，3 分）**
 
-$$
-\begin{vmatrix}1&1&1&0\\1&1&0&1\\1&0&1&1\\0&1&1&1\end{vmatrix}=\underline{\qquad}.
-$$
+  $$
+  \begin{vmatrix}1&1&1&0\\1&1&0&1\\1&0&1&1\\0&1&1&1\end{vmatrix}=\underline{\qquad}.
+  $$
 
-> [!success]- 答案与解析
-> **答案**：$-3$.
->
+  > [!success]- 答案与解析
+  > **答案**：$-3$.
+  >
 
-### 1998 年 · 数学一 · 选择题第 4 题（选择，3 分）
+- [ ] **1998 年 · 数学一 · 选择题第 4 题（选择，3 分）**
 
-设矩阵 $\begin{pmatrix}a_1&b_1&c_1\\a_2&b_2&c_2\\a_3&b_3&c_3\end{pmatrix}$ 是满秩的，则直线 $\dfrac{x-a_3}{a_1-a_2}=\dfrac{y-b_3}{b_1-b_2}=\dfrac{z-c_3}{c_1-c_2}$ 与直线 $\dfrac{x-a_1}{a_2-a_3}=\dfrac{y-b_1}{b_2-b_3}=\dfrac{z-c_1}{c_2-c_3}$（　　）
+  设矩阵 $\begin{pmatrix}a_1&b_1&c_1\\a_2&b_2&c_2\\a_3&b_3&c_3\end{pmatrix}$ 是满秩的，则直线 $\dfrac{x-a_3}{a_1-a_2}=\dfrac{y-b_3}{b_1-b_2}=\dfrac{z-c_3}{c_1-c_2}$ 与直线 $\dfrac{x-a_1}{a_2-a_3}=\dfrac{y-b_1}{b_2-b_3}=\dfrac{z-c_1}{c_2-c_3}$（　　）
 
-（A）相交于一点．
-（B）重合．
-（C）平行但不重合．
-（D）异面．
+  （A）相交于一点．
+  （B）重合．
+  （C）平行但不重合．
+  （D）异面．
 
-> [!success]- 答案与解析
-> **答案**：（A）
->
-> （4）【答案】 （A）．
-> $$
-> \text{【解】 因为}\begin{vmatrix}a_1&b_1&c_1\\a_2&b_2&c_2\\a_3&b_3&c_3\end{vmatrix}=\begin{vmatrix}a_1-a_2&b_1-b_2&c_1-c_2\\a_2-a_3&b_2-b_3&c_2-c_3\\a_3&b_3&c_3\end{vmatrix}\ne 0,
-> $$
-> 所以两条直线的方向向量不平行，（B）与（C）不对；
->
-> 令 $s_1=\{a_1-a_2,b_1-b_2,c_1-c_2\}$，$s_2=\{a_2-a_3,b_2-b_3,c_2-c_3\}$，$M_1(a_3,b_3,c_3),M_2(a_1,b_1,c_1)$ 分别为两条直线上的点，$\overrightarrow{M_1M_2}=\{a_1-a_3,b_1-b_3,c_1-c_3\}$，
-> $$
-> \text{因为}\overrightarrow{M_1M_2}\cdot(s_1\times s_2)=\begin{vmatrix}a_1-a_3&b_1-b_3&c_1-c_3\\a_1-a_2&b_1-b_2&c_1-c_2\\a_2-a_3&b_2-b_3&c_2-c_3\end{vmatrix}=0,\text{所以两直线共面且不平行，即两直线交于一}
-> $$
-> 点，应选（A）．
+  > [!success]- 答案与解析
+  > **答案**：（A）
+  >
+  > （4）【答案】 （A）．
+  > $$
+  > \text{【解】 因为}\begin{vmatrix}a_1&b_1&c_1\\a_2&b_2&c_2\\a_3&b_3&c_3\end{vmatrix}=\begin{vmatrix}a_1-a_2&b_1-b_2&c_1-c_2\\a_2-a_3&b_2-b_3&c_2-c_3\\a_3&b_3&c_3\end{vmatrix}\ne 0,
+  > $$
+  > 所以两条直线的方向向量不平行，（B）与（C）不对；
+  >
+  > 令 $s_1=\{a_1-a_2,b_1-b_2,c_1-c_2\}$，$s_2=\{a_2-a_3,b_2-b_3,c_2-c_3\}$，$M_1(a_3,b_3,c_3),M_2(a_1,b_1,c_1)$ 分别为两条直线上的点，$\overrightarrow{M_1M_2}=\{a_1-a_3,b_1-b_3,c_1-c_3\}$，
+  > $$
+  > \text{因为}\overrightarrow{M_1M_2}\cdot(s_1\times s_2)=\begin{vmatrix}a_1-a_3&b_1-b_3&c_1-c_3\\a_1-a_2&b_1-b_2&c_1-c_2\\a_2-a_3&b_2-b_3&c_2-c_3\end{vmatrix}=0,\text{所以两直线共面且不平行，即两直线交于一}
+  > $$
+  > 点，应选（A）．
 
-### 2005 年 · 数学三 · 第 4 题（填空，4 分）
+- [ ] **2005 年 · 数学三 · 第 4 题（填空，4 分）**
 
-设行向量组 $(2,1,1,1)$，$(2,1,a,a)$，$(3,2,1,a)$，$(4,3,2,1)$ 线性相关，且 $a\ne 1$，则 $a=$ $\underline{\qquad}$。
+  设行向量组 $(2,1,1,1)$，$(2,1,a,a)$，$(3,2,1,a)$，$(4,3,2,1)$ 线性相关，且 $a\ne 1$，则 $a=$ $\underline{\qquad}$。
 
-> [!success]- 答案与解析
-> **答案**：$a=\dfrac{1}{2}$。
->
-> 【分析】四个 $4$ 维向量线性相关，必有其对应行列式为零，由此即可确定 $a$。
->
-> 【详解】由题设，有
-> $$
-> \begin{vmatrix}2&1&1&1\\2&1&a&a\\3&2&1&a\\4&3&2&1\end{vmatrix}=(a-1)(2a-1)=0,
-> $$
-> 得 $a=1,a=\dfrac{1}{2}$，但题设 $a\ne 1$，故 $a=\dfrac{1}{2}$。
+  > [!success]- 答案与解析
+  > **答案**：$a=\dfrac{1}{2}$。
+  >
+  > 【分析】四个 $4$ 维向量线性相关，必有其对应行列式为零，由此即可确定 $a$。
+  >
+  > 【详解】由题设，有
+  > $$
+  > \begin{vmatrix}2&1&1&1\\2&1&a&a\\3&2&1&a\\4&3&2&1\end{vmatrix}=(a-1)(2a-1)=0,
+  > $$
+  > 得 $a=1,a=\dfrac{1}{2}$，但题设 $a\ne 1$，故 $a=\dfrac{1}{2}$。
 
-### 2014 年 · 数学一 · 第 5 题（选择，5 分）
+- [ ] **2014 年 · 数学一 · 第 5 题（选择，5 分）**
 
-行列式
+  行列式
 
-$$
-\begin{vmatrix}0&a&b&0\\a&0&0&b\\0&c&d&0\\c&0&0&d\end{vmatrix}=
-$$
+  $$
+  \begin{vmatrix}0&a&b&0\\a&0&0&b\\0&c&d&0\\c&0&0&d\end{vmatrix}=
+  $$
 
-（　　）
+  （　　）
 
-（A）$(ad-bc)^2$．　　（B）$-(ad-bc)^2$．　　（C）$a^2d^2-b^2c^2$．　　（D）$b^2c^2-a^2d^2$．
+  （A）$(ad-bc)^2$．　　（B）$-(ad-bc)^2$．　　（C）$a^2d^2-b^2c^2$．　　（D）$b^2c^2-a^2d^2$．
 
-> [!success]- 答案与解析
-> **答案**：（B）
->
->
->
-> $$
-> \begin{vmatrix}0&a&b&0\\a&0&0&b\\0&c&d&0\\c&0&0&d\end{vmatrix}=-a\begin{vmatrix}a&0&b\\0&d&0\\c&0&d\end{vmatrix}+b\begin{vmatrix}a&0&b\\0&c&0\\c&0&d\end{vmatrix}
-> $$
->
-> $$
-> =-ad(ad-bc)+bc(ad-bc)=-a^2d^2+2abcd-b^2c^2=-(ad-bc)^2,
-> $$
->
-> 应选（B）．
+  > [!success]- 答案与解析
+  > **答案**：（B）
+  >
+  >
+  >
+  > $$
+  > \begin{vmatrix}0&a&b&0\\a&0&0&b\\0&c&d&0\\c&0&0&d\end{vmatrix}=-a\begin{vmatrix}a&0&b\\0&d&0\\c&0&d\end{vmatrix}+b\begin{vmatrix}a&0&b\\0&c&0\\c&0&d\end{vmatrix}
+  > $$
+  >
+  > $$
+  > =-ad(ad-bc)+bc(ad-bc)=-a^2d^2+2abcd-b^2c^2=-(ad-bc)^2,
+  > $$
+  >
+  > 应选（B）．
 
-### 2014 年 · 数学三 · 第 5 题（选择，4 分）
+- [ ] **2014 年 · 数学三 · 第 5 题（选择，4 分）**
 
-行列式
-$$
-\begin{vmatrix}0&a&b&0\\a&0&0&b\\0&c&d&0\\c&0&0&d\end{vmatrix}=(\quad)
-$$
-（A）$(ad-bc)^2$　（B）$-(ad-bc)^2$　（C）$a^2d^2-b^2c^2$　（D）$b^2c^2-a^2d^2$
+  行列式
+  $$
+  \begin{vmatrix}0&a&b&0\\a&0&0&b\\0&c&d&0\\c&0&0&d\end{vmatrix}=(\quad)
+  $$
+  （A）$(ad-bc)^2$　（B）$-(ad-bc)^2$　（C）$a^2d^2-b^2c^2$　（D）$b^2c^2-a^2d^2$
 
-> [!success]- 答案与解析
-> **答案**：（B）
->
-> 由行列式展开定理按第一列展开：
-> $$
-> \begin{vmatrix}0&a&b&0\\a&0&0&b\\0&c&d&0\\c&0&0&d\end{vmatrix}
-> =-a\begin{vmatrix}a&b&0\\c&d&0\\0&0&d\end{vmatrix}-c\begin{vmatrix}a&b&0\\0&0&b\\c&d&0\end{vmatrix}
-> =-ad\begin{vmatrix}a&b\\c&d\end{vmatrix}+bc\begin{vmatrix}a&b\\c&d\end{vmatrix}
-> $$
-> $$
-> =-ad(ad-bc)+bc(ad-bc)=-(ad-bc)^2.
-> $$
-> 故应选（B）。
+  > [!success]- 答案与解析
+  > **答案**：（B）
+  >
+  > 由行列式展开定理按第一列展开：
+  > $$
+  > \begin{vmatrix}0&a&b&0\\a&0&0&b\\0&c&d&0\\c&0&0&d\end{vmatrix}
+  > =-a\begin{vmatrix}a&b&0\\c&d&0\\0&0&d\end{vmatrix}-c\begin{vmatrix}a&b&0\\0&0&b\\c&d&0\end{vmatrix}
+  > =-ad\begin{vmatrix}a&b\\c&d\end{vmatrix}+bc\begin{vmatrix}a&b\\c&d\end{vmatrix}
+  > $$
+  > $$
+  > =-ad(ad-bc)+bc(ad-bc)=-(ad-bc)^2.
+  > $$
+  > 故应选（B）。
 
-### 2016 年 · 数学三 · 第 13 题（填空，4 分）
+- [ ] **2016 年 · 数学三 · 第 13 题（填空，4 分）**
 
-行列式
-$$
-\begin{vmatrix}\lambda&-1&0&0\\0&\lambda&-1&0\\0&0&\lambda&-1\\4&3&2&\lambda+1\end{vmatrix}=\underline{\qquad}.
-$$
+  行列式
+  $$
+  \begin{vmatrix}\lambda&-1&0&0\\0&\lambda&-1&0\\0&0&\lambda&-1\\4&3&2&\lambda+1\end{vmatrix}=\underline{\qquad}.
+  $$
 
-> [!success]- 答案与解析
-> **答案**：$\lambda^4+\lambda^3+2\lambda^2+3\lambda+4$
->
-> 按最后一行展开，得
-> $$
-> (-1)^{4+1}\times4\begin{vmatrix}-1&0&0\\\lambda&-1&0\\0&\lambda&-1\end{vmatrix}+(-1)^{4+2}\times3\begin{vmatrix}\lambda&0&0\\0&-1&0\\0&\lambda&-1\end{vmatrix}+(-1)^{4+3}\times2\begin{vmatrix}\lambda&-1&0\\0&\lambda&0\\0&0&-1\end{vmatrix}+(-1)^{4+4}(\lambda+1)\begin{vmatrix}\lambda&-1&0\\0&\lambda&-1\\0&0&\lambda\end{vmatrix}
-> $$
-> $$
-> =\lambda^4+\lambda^3+2\lambda^2+3\lambda+4.
-> $$
+  > [!success]- 答案与解析
+  > **答案**：$\lambda^4+\lambda^3+2\lambda^2+3\lambda+4$
+  >
+  > 按最后一行展开，得
+  > $$
+  > (-1)^{4+1}\times4\begin{vmatrix}-1&0&0\\\lambda&-1&0\\0&\lambda&-1\end{vmatrix}+(-1)^{4+2}\times3\begin{vmatrix}\lambda&0&0\\0&-1&0\\0&\lambda&-1\end{vmatrix}+(-1)^{4+3}\times2\begin{vmatrix}\lambda&-1&0\\0&\lambda&0\\0&0&-1\end{vmatrix}+(-1)^{4+4}(\lambda+1)\begin{vmatrix}\lambda&-1&0\\0&\lambda&-1\\0&0&\lambda\end{vmatrix}
+  > $$
+  > $$
+  > =\lambda^4+\lambda^3+2\lambda^2+3\lambda+4.
+  > $$
 
-### 2021 年 · 数学三 · 第 15 题（填空，5 分）
+- [ ] **2021 年 · 数学三 · 第 15 题（填空，5 分）**
 
-多项式
-$$
-f(x)=\begin{vmatrix}x&x&1&2x\\1&x&2&-1\\2&1&x&1\\2&-1&1&x\end{vmatrix}
-$$
-中 $x^3$ 项的系数为 $\underline{\qquad}$。
+  多项式
+  $$
+  f(x)=\begin{vmatrix}x&x&1&2x\\1&x&2&-1\\2&1&x&1\\2&-1&1&x\end{vmatrix}
+  $$
+  中 $x^3$ 项的系数为 $\underline{\qquad}$。
 
-> [!success]- 答案与解析
-> **答案**：$-5$
->
-> $$
-> f(x)=\begin{vmatrix}x&x&1&2x\\1&x&2&-1\\2&1&x&1\\2&-1&1&x\end{vmatrix}=x\begin{vmatrix}x&2&-1\\1&x&1\\-1&1&x\end{vmatrix}-x\begin{vmatrix}1&2&-1\\2&x&1\\2&1&x\end{vmatrix}-\begin{vmatrix}1&x&-1\\2&1&1\\2&-1&x\end{vmatrix}-2x\begin{vmatrix}1&x&2\\2&1&x\\2&-1&1\end{vmatrix}
-> $$
-> 所以展开式中含 $x^3$ 项的有 $-x^3,-4x^3$，即 $x^3$ 项的系数为 $-5$。
+  > [!success]- 答案与解析
+  > **答案**：$-5$
+  >
+  > $$
+  > f(x)=\begin{vmatrix}x&x&1&2x\\1&x&2&-1\\2&1&x&1\\2&-1&1&x\end{vmatrix}=x\begin{vmatrix}x&2&-1\\1&x&1\\-1&1&x\end{vmatrix}-x\begin{vmatrix}1&2&-1\\2&x&1\\2&1&x\end{vmatrix}-\begin{vmatrix}1&x&-1\\2&1&1\\2&-1&x\end{vmatrix}-2x\begin{vmatrix}1&x&2\\2&1&x\\2&-1&1\end{vmatrix}
+  > $$
+  > 所以展开式中含 $x^3$ 项的有 $-x^3,-4x^3$，即 $x^3$ 项的系数为 $-5$。
 
-### 2025 年 · 数学三 · 第 15 题（填空，5 分）
+- [ ] **2025 年 · 数学三 · 第 15 题（填空，5 分）**
 
-已知
-$$
-f(x)=\begin{vmatrix}2x+1&3&2x+1&1\\2x&-3&4x&-2\\2x+1&2&2x+1&1\\2x&-4&4x&-2\end{vmatrix},\quad g(x)=\begin{vmatrix}2x+1&1&2x+1&3\\5x+1&-2&4x&-3\\0&1&2x+1&2\\2x&-2&4x&-4\end{vmatrix},
-$$
-则方程 $f(x)=g(x)$ 的不同的根的个数为 $\underline{\qquad}$。
+  已知
+  $$
+  f(x)=\begin{vmatrix}2x+1&3&2x+1&1\\2x&-3&4x&-2\\2x+1&2&2x+1&1\\2x&-4&4x&-2\end{vmatrix},\quad g(x)=\begin{vmatrix}2x+1&1&2x+1&3\\5x+1&-2&4x&-3\\0&1&2x+1&2\\2x&-2&4x&-4\end{vmatrix},
+  $$
+  则方程 $f(x)=g(x)$ 的不同的根的个数为 $\underline{\qquad}$。
 
-> [!success]- 答案与解析
-> **答案**：$2$
->
-> 因为 $f(x)=g(x)$ 所以 $g(x)-f(x)=0$
-> $$
-> g(x)-f(x)=\begin{vmatrix}2x+1&1&2x+1&3\\5x+1&-2&4x&-3\\0&1&2x+1&2\\2x&-2&4x&-4\end{vmatrix}-\begin{vmatrix}2x+1&1&2x+1&3\\2x&-2&4x&-3\\2x+1&1&2x+1&2\\2x&-2&4x&-4\end{vmatrix}
-> $$
-> $$
-> =\begin{vmatrix}4x+2&1&2x+1&3\\7x+1&-2&4x&-3\\2x+1&1&2x+1&2\\4x&-2&4x&-4\end{vmatrix}=-2x(4x+1)=0
-> $$
-> 所以有两个不同的实根。
+  > [!success]- 答案与解析
+  > **答案**：$2$
+  >
+  > 因为 $f(x)=g(x)$ 所以 $g(x)-f(x)=0$
+  > $$
+  > g(x)-f(x)=\begin{vmatrix}2x+1&1&2x+1&3\\5x+1&-2&4x&-3\\0&1&2x+1&2\\2x&-2&4x&-4\end{vmatrix}-\begin{vmatrix}2x+1&1&2x+1&3\\2x&-2&4x&-3\\2x+1&1&2x+1&2\\2x&-2&4x&-4\end{vmatrix}
+  > $$
+  > $$
+  > =\begin{vmatrix}4x+2&1&2x+1&3\\7x+1&-2&4x&-3\\2x+1&1&2x+1&2\\4x&-2&4x&-4\end{vmatrix}=-2x(4x+1)=0
+  > $$
+  > 所以有两个不同的实根。
 
 ## <span class="hx hx-nav">🧭</span> 十、导航
 

@@ -92,358 +92,358 @@ $$
 
 ## <span class="hx hx-exam">📝</span> 九、真题（1988–2018）
 
-### 1988 年 · 数学三 · 第九题（解答，6 分）
+- [ ] **1988 年 · 数学三 · 第九题（解答，6 分）**
 
-设 $A$ 是三阶方阵，$A^*$ 是 $A$ 的伴随矩阵，$A$ 的行列式 $|A|=\dfrac{1}{2}$. 求行列式 $|(3A)^{-1}-2A^*|$ 的值.
+  设 $A$ 是三阶方阵，$A^*$ 是 $A$ 的伴随矩阵，$A$ 的行列式 $|A|=\dfrac{1}{2}$. 求行列式 $|(3A)^{-1}-2A^*|$ 的值.
 
-> [!success]- 答案与解析
-> **答案**：$-\dfrac{16}{27}$.
->
-> 解：因 $(3A)^{-1}=\dfrac{1}{3}A^{-1}$，
-> 故 $A^*=|A|\cdot A^{-1}=\dfrac{1}{2}A^{-1}$，
-> 所以
-> $$
-> |(3A)^{-1}-2A^*|=\left|\dfrac{1}{3}A^{-1}-A^{-1}\right|=\left|-\dfrac{2}{3}A^{-1}\right|=\left(-\dfrac{2}{3}\right)^3|A^{-1}|=-\dfrac{16}{27}.
-> $$
+  > [!success]- 答案与解析
+  > **答案**：$-\dfrac{16}{27}$.
+  >
+  > 解：因 $(3A)^{-1}=\dfrac{1}{3}A^{-1}$，
+  > 故 $A^*=|A|\cdot A^{-1}=\dfrac{1}{2}A^{-1}$，
+  > 所以
+  > $$
+  > |(3A)^{-1}-2A^*|=\left|\dfrac{1}{3}A^{-1}-A^{-1}\right|=\left|-\dfrac{2}{3}A^{-1}\right|=\left(-\dfrac{2}{3}\right)^3|A^{-1}|=-\dfrac{16}{27}.
+  > $$
 
-### 1989 年 · 数学三 · 选择题第 4 题（选择，3 分）
+- [ ] **1989 年 · 数学三 · 选择题第 4 题（选择，3 分）**
 
-设 $A$ 和 $B$ 都是 $n\times n$ 矩阵，则必有（　　）
+  设 $A$ 和 $B$ 都是 $n\times n$ 矩阵，则必有（　　）
 
-（A）$|A+B|=|A|+|B|$.　（B）$AB=BA$.
+  （A）$|A+B|=|A|+|B|$.　（B）$AB=BA$.
 
-（C）$|AB|=|BA|$.　（D）$(A+B)^{-1}=A^{-1}+B^{-1}$.
+  （C）$|AB|=|BA|$.　（D）$(A+B)^{-1}=A^{-1}+B^{-1}$.
 
-> [!success]- 答案与解析
-> **答案**：（C）．
->
+  > [!success]- 答案与解析
+  > **答案**：（C）．
+  >
 
-### 1991 年 · 数学三 · 第十一题（解答，6 分）
+- [ ] **1991 年 · 数学三 · 第十一题（解答，6 分）**
 
-试证明 $n$ 维列向量组 $\alpha_1,\alpha_2,\cdots,\alpha_n$ 线性无关的充分必要条件是
-$$
-D=\begin{vmatrix}\alpha_1^{\mathrm{T}}\alpha_1&\alpha_1^{\mathrm{T}}\alpha_2&\cdots&\alpha_1^{\mathrm{T}}\alpha_n\\\alpha_2^{\mathrm{T}}\alpha_1&\alpha_2^{\mathrm{T}}\alpha_2&\cdots&\alpha_2^{\mathrm{T}}\alpha_n\\\vdots&\vdots&&\vdots\\\alpha_n^{\mathrm{T}}\alpha_1&\alpha_n^{\mathrm{T}}\alpha_2&\cdots&\alpha_n^{\mathrm{T}}\alpha_n\end{vmatrix}\ne 0,
-$$
-其中 $\alpha_i^{\mathrm{T}}$ 表示列向量 $\alpha_i$ 的转置，$i=1,2,\cdots,n$.
+  试证明 $n$ 维列向量组 $\alpha_1,\alpha_2,\cdots,\alpha_n$ 线性无关的充分必要条件是
+  $$
+  D=\begin{vmatrix}\alpha_1^{\mathrm{T}}\alpha_1&\alpha_1^{\mathrm{T}}\alpha_2&\cdots&\alpha_1^{\mathrm{T}}\alpha_n\\\alpha_2^{\mathrm{T}}\alpha_1&\alpha_2^{\mathrm{T}}\alpha_2&\cdots&\alpha_2^{\mathrm{T}}\alpha_n\\\vdots&\vdots&&\vdots\\\alpha_n^{\mathrm{T}}\alpha_1&\alpha_n^{\mathrm{T}}\alpha_2&\cdots&\alpha_n^{\mathrm{T}}\alpha_n\end{vmatrix}\ne 0,
+  $$
+  其中 $\alpha_i^{\mathrm{T}}$ 表示列向量 $\alpha_i$ 的转置，$i=1,2,\cdots,n$.
 
-> [!success]- 答案与解析
-> **答案**：证明见解析．
->
-> 【解析】记 $A=(\alpha_1,\alpha_2,\cdots,\alpha_n)$，则 $\alpha_1,\alpha_2,\cdots,\alpha_n$ 线性无关的充分必要条件是 $|A|\ne 0$.
->
-> 由于
-> $$
-> A^{\mathrm{T}}A=\begin{pmatrix}\alpha_1^{\mathrm{T}}\\\alpha_2^{\mathrm{T}}\\\vdots\\\alpha_n^{\mathrm{T}}\end{pmatrix}\begin{pmatrix}\alpha_1,\alpha_2,\cdots,\alpha_n\end{pmatrix}=\begin{pmatrix}\alpha_1^{\mathrm{T}}\alpha_1&\alpha_1^{\mathrm{T}}\alpha_2&\cdots&\alpha_1^{\mathrm{T}}\alpha_n\\\alpha_2^{\mathrm{T}}\alpha_1&\alpha_2^{\mathrm{T}}\alpha_2&\cdots&\alpha_2^{\mathrm{T}}\alpha_n\\\vdots&\vdots&&\vdots\\\alpha_n^{\mathrm{T}}\alpha_1&\alpha_n^{\mathrm{T}}\alpha_2&\cdots&\alpha_n^{\mathrm{T}}\alpha_n\end{pmatrix},
-> $$
-> 从而取行列式，有 $D=|A^{\mathrm{T}}A|=|A^{\mathrm{T}}||A|=|A|^2$.
-> 由此可见 $\alpha_1,\alpha_2,\cdots,\alpha_n$ 线性无关的充分必要条件是 $D\ne 0$．
+  > [!success]- 答案与解析
+  > **答案**：证明见解析．
+  >
+  > 【解析】记 $A=(\alpha_1,\alpha_2,\cdots,\alpha_n)$，则 $\alpha_1,\alpha_2,\cdots,\alpha_n$ 线性无关的充分必要条件是 $|A|\ne 0$.
+  >
+  > 由于
+  > $$
+  > A^{\mathrm{T}}A=\begin{pmatrix}\alpha_1^{\mathrm{T}}\\\alpha_2^{\mathrm{T}}\\\vdots\\\alpha_n^{\mathrm{T}}\end{pmatrix}\begin{pmatrix}\alpha_1,\alpha_2,\cdots,\alpha_n\end{pmatrix}=\begin{pmatrix}\alpha_1^{\mathrm{T}}\alpha_1&\alpha_1^{\mathrm{T}}\alpha_2&\cdots&\alpha_1^{\mathrm{T}}\alpha_n\\\alpha_2^{\mathrm{T}}\alpha_1&\alpha_2^{\mathrm{T}}\alpha_2&\cdots&\alpha_2^{\mathrm{T}}\alpha_n\\\vdots&\vdots&&\vdots\\\alpha_n^{\mathrm{T}}\alpha_1&\alpha_n^{\mathrm{T}}\alpha_2&\cdots&\alpha_n^{\mathrm{T}}\alpha_n\end{pmatrix},
+  > $$
+  > 从而取行列式，有 $D=|A^{\mathrm{T}}A|=|A^{\mathrm{T}}||A|=|A|^2$.
+  > 由此可见 $\alpha_1,\alpha_2,\cdots,\alpha_n$ 线性无关的充分必要条件是 $D\ne 0$．
 
-### 1995 年 · 数学一 · 第九大题（解答，6 分）
+- [ ] **1995 年 · 数学一 · 第九大题（解答，6 分）**
 
-设 $A$ 是 $n$ 阶矩阵，满足 $AA^{\mathrm{T}}=E$（$E$ 为 $n$ 阶单位矩阵，$A^{\mathrm{T}}$ 为 $A$ 的转置矩阵），$|A|<0$，求 $|A+E|$.
+  设 $A$ 是 $n$ 阶矩阵，满足 $AA^{\mathrm{T}}=E$（$E$ 为 $n$ 阶单位矩阵，$A^{\mathrm{T}}$ 为 $A$ 的转置矩阵），$|A|<0$，求 $|A+E|$.
 
-> [!success]- 答案与解析
-> **答案**：$|A+E|=0$.
->
-> **方法一** 由 $AA^{\mathrm{T}}=E$ 得 $|A|\cdot|A^{\mathrm{T}}|=1$，即 $|A|^2=1$，再由 $|A|<0$ 得 $|A|=-1$. 于是
-> $$
-> |A+E|=|A+AA^{\mathrm{T}}|=|A|\cdot|E+A^{\mathrm{T}}|=-|(E+A)^{\mathrm{T}}|=-|E+A|,
-> $$
-> 故 $|E+A|=0$.
->
-> **方法二** 令 $AX=\lambda X\ (X\ne 0)$，由 $AX=\lambda X$ 得 $X^{\mathrm{T}}A^{\mathrm{T}}=\lambda X^{\mathrm{T}}$，两边右乘 $AX$ 得 $X^{\mathrm{T}}A^{\mathrm{T}}AX=\lambda X^{\mathrm{T}}AX$，即 $X^{\mathrm{T}}X=\lambda^2X^{\mathrm{T}}X$，或 $(\lambda^2-1)X^{\mathrm{T}}X=0$，由 $X^{\mathrm{T}}X=\|X\|^2>0$ 得 $\lambda^2-1=0$，即 $\lambda=\pm 1$. 因为 $|A|<0$，所以 $A$ 至少有一个特征值为 $-1$，从而 $A+E$ 的特征值至少有一个为 $0$，故 $|A+E|=0$.
+  > [!success]- 答案与解析
+  > **答案**：$|A+E|=0$.
+  >
+  > **方法一** 由 $AA^{\mathrm{T}}=E$ 得 $|A|\cdot|A^{\mathrm{T}}|=1$，即 $|A|^2=1$，再由 $|A|<0$ 得 $|A|=-1$. 于是
+  > $$
+  > |A+E|=|A+AA^{\mathrm{T}}|=|A|\cdot|E+A^{\mathrm{T}}|=-|(E+A)^{\mathrm{T}}|=-|E+A|,
+  > $$
+  > 故 $|E+A|=0$.
+  >
+  > **方法二** 令 $AX=\lambda X\ (X\ne 0)$，由 $AX=\lambda X$ 得 $X^{\mathrm{T}}A^{\mathrm{T}}=\lambda X^{\mathrm{T}}$，两边右乘 $AX$ 得 $X^{\mathrm{T}}A^{\mathrm{T}}AX=\lambda X^{\mathrm{T}}AX$，即 $X^{\mathrm{T}}X=\lambda^2X^{\mathrm{T}}X$，或 $(\lambda^2-1)X^{\mathrm{T}}X=0$，由 $X^{\mathrm{T}}X=\|X\|^2>0$ 得 $\lambda^2-1=0$，即 $\lambda=\pm 1$. 因为 $|A|<0$，所以 $A$ 至少有一个特征值为 $-1$，从而 $A+E$ 的特征值至少有一个为 $0$，故 $|A+E|=0$.
 
-### 1999 年 · 数学一 · 解答题第 10 题（解答，8 分）
+- [ ] **1999 年 · 数学一 · 解答题第 10 题（解答，8 分）**
 
-（本题满分 8 分）设矩阵 $A=\begin{pmatrix}a&-1&c\\5&b&3\\1-c&0&-a\end{pmatrix}$，其行列式 $|A|=-1$，又 $A$ 的伴随矩阵 $A^{*}$ 有一个特征值 $\lambda_0$，属于 $\lambda_0$ 的一个特征向量为 $\alpha=(-1,-1,1)^{\mathrm{T}}$，求 $a,b,c$ 和 $\lambda_0$ 的值．
+  （本题满分 8 分）设矩阵 $A=\begin{pmatrix}a&-1&c\\5&b&3\\1-c&0&-a\end{pmatrix}$，其行列式 $|A|=-1$，又 $A$ 的伴随矩阵 $A^{*}$ 有一个特征值 $\lambda_0$，属于 $\lambda_0$ 的一个特征向量为 $\alpha=(-1,-1,1)^{\mathrm{T}}$，求 $a,b,c$ 和 $\lambda_0$ 的值．
 
-> [!success]- 答案与解析
-> **答案**：$a=2,b=-3,c=2,\lambda_0=1$．
->
-> 十、【解】 由
-> $$
-> \begin{pmatrix}a&-1&c\\5&b&3\\1-c&0&-a\end{pmatrix}\begin{pmatrix}-1\\-1\\1\end{pmatrix}=\mu\begin{pmatrix}-1\\-1\\1\end{pmatrix}\text{得}\begin{cases}-a+1+c=-\mu,\\-b-2=-\mu,\\c-1-a=\mu,\end{cases}
-> $$
-> 解得 $a=c,\mu=-1,b=-3$；
->
-> 再由
-> $$
-> |A|=\begin{vmatrix}a&-1&a\\5&-3&3\\1-a&0&-a\end{vmatrix}=-1\text{ 得 }a=2,c=2,
-> $$
-> $\lambda_0=\dfrac{|A|}{\mu}=1$，故 $a=2,b=-3,c=2,\lambda_0=1$．
+  > [!success]- 答案与解析
+  > **答案**：$a=2,b=-3,c=2,\lambda_0=1$．
+  >
+  > 十、【解】 由
+  > $$
+  > \begin{pmatrix}a&-1&c\\5&b&3\\1-c&0&-a\end{pmatrix}\begin{pmatrix}-1\\-1\\1\end{pmatrix}=\mu\begin{pmatrix}-1\\-1\\1\end{pmatrix}\text{得}\begin{cases}-a+1+c=-\mu,\\-b-2=-\mu,\\c-1-a=\mu,\end{cases}
+  > $$
+  > 解得 $a=c,\mu=-1,b=-3$；
+  >
+  > 再由
+  > $$
+  > |A|=\begin{vmatrix}a&-1&a\\5&-3&3\\1-a&0&-a\end{vmatrix}=-1\text{ 得 }a=2,c=2,
+  > $$
+  > $\lambda_0=\dfrac{|A|}{\mu}=1$，故 $a=2,b=-3,c=2,\lambda_0=1$．
 
-### 2001 年 · 数学三 · 填空题第 3 题（填空，3 分）
+- [ ] **2001 年 · 数学三 · 填空题第 3 题（填空，3 分）**
 
-设矩阵 $A=\begin{pmatrix}k&1&1&1\\1&k&1&1\\1&1&k&1\\1&1&1&k\end{pmatrix}$，且 $r(A)=3$，则 $k=$ $\underline{\qquad}$。
+  设矩阵 $A=\begin{pmatrix}k&1&1&1\\1&k&1&1\\1&1&k&1\\1&1&1&k\end{pmatrix}$，且 $r(A)=3$，则 $k=$ $\underline{\qquad}$。
 
-> [!success]- 答案与解析
-> **答案**：$-3$。
->
-> 【详解】方法 1：由初等变换（既可作初等行变换，也可作初等列变换）不改变矩阵的秩，故对 $A$ 进行初等变换：
-> $$
-> A=\begin{pmatrix}k&1&1&1\\1&k&1&1\\1&1&k&1\\1&1&1&k\end{pmatrix}\xrightarrow{1\text{ 行}\times(-1)\text{ 分别加到 }2,3,4\text{ 行}}\begin{pmatrix}k&1&1&1\\1-k&k-1&0&0\\1-k&0&k-1&0\\1-k&0&0&k-1\end{pmatrix}
-> $$
-> $$
-> \xrightarrow{2,3,4\text{ 列分别加到 }1\text{ 列}}\begin{pmatrix}k+3&1&1&1\\0&k-1&0&0\\0&0&k-1&0\\0&0&0&k-1\end{pmatrix}.
-> $$
-> 可见只有当 $k=-3$ 时，$r(A)=3$。故 $k=-3$。
->
-> 方法 2：由题设 $r(A)=3$，故应有四阶矩阵行列式 $|A|=0$。由
-> $$
-> |A|=\begin{vmatrix}k&1&1&1\\1&k&1&1\\1&1&k&1\\1&1&1&k\end{vmatrix}\xrightarrow{1\text{ 行}\times(-1)\text{ 分别加到 }2,3,4\text{ 行}}\begin{vmatrix}k&1&1&1\\1-k&k-1&0&0\\1-k&0&k-1&0\\1-k&0&0&k-1\end{vmatrix}
-> $$
-> $$
-> \xrightarrow{2,3,4\text{ 列分别加到 }1\text{ 列}}\begin{vmatrix}k+3&1&1&1\\0&k-1&0&0\\0&0&k-1&0\\0&0&0&k-1\end{vmatrix}=(k+3)(k-1)^3=0,
-> $$
-> 解得 $k=1$ 或 $k=-3$。当 $k=1$ 时，
-> $$
-> A=\begin{pmatrix}1&1&1&1\\1&1&1&1\\1&1&1&1\\1&1&1&1\end{pmatrix}\xrightarrow{1\text{ 行}\times(-1)\text{ 分别加到 }2,3,4\text{ 行}}\begin{pmatrix}1&1&1&1\\0&0&0&0\\0&0&0&0\\0&0&0&0\end{pmatrix},
-> $$
-> 可知此时 $r(A)=1$，不符合题意，因此一定有 $k=-3$。
+  > [!success]- 答案与解析
+  > **答案**：$-3$。
+  >
+  > 【详解】方法 1：由初等变换（既可作初等行变换，也可作初等列变换）不改变矩阵的秩，故对 $A$ 进行初等变换：
+  > $$
+  > A=\begin{pmatrix}k&1&1&1\\1&k&1&1\\1&1&k&1\\1&1&1&k\end{pmatrix}\xrightarrow{1\text{ 行}\times(-1)\text{ 分别加到 }2,3,4\text{ 行}}\begin{pmatrix}k&1&1&1\\1-k&k-1&0&0\\1-k&0&k-1&0\\1-k&0&0&k-1\end{pmatrix}
+  > $$
+  > $$
+  > \xrightarrow{2,3,4\text{ 列分别加到 }1\text{ 列}}\begin{pmatrix}k+3&1&1&1\\0&k-1&0&0\\0&0&k-1&0\\0&0&0&k-1\end{pmatrix}.
+  > $$
+  > 可见只有当 $k=-3$ 时，$r(A)=3$。故 $k=-3$。
+  >
+  > 方法 2：由题设 $r(A)=3$，故应有四阶矩阵行列式 $|A|=0$。由
+  > $$
+  > |A|=\begin{vmatrix}k&1&1&1\\1&k&1&1\\1&1&k&1\\1&1&1&k\end{vmatrix}\xrightarrow{1\text{ 行}\times(-1)\text{ 分别加到 }2,3,4\text{ 行}}\begin{vmatrix}k&1&1&1\\1-k&k-1&0&0\\1-k&0&k-1&0\\1-k&0&0&k-1\end{vmatrix}
+  > $$
+  > $$
+  > \xrightarrow{2,3,4\text{ 列分别加到 }1\text{ 列}}\begin{vmatrix}k+3&1&1&1\\0&k-1&0&0\\0&0&k-1&0\\0&0&0&k-1\end{vmatrix}=(k+3)(k-1)^3=0,
+  > $$
+  > 解得 $k=1$ 或 $k=-3$。当 $k=1$ 时，
+  > $$
+  > A=\begin{pmatrix}1&1&1&1\\1&1&1&1\\1&1&1&1\\1&1&1&1\end{pmatrix}\xrightarrow{1\text{ 行}\times(-1)\text{ 分别加到 }2,3,4\text{ 行}}\begin{pmatrix}1&1&1&1\\0&0&0&0\\0&0&0&0\\0&0&0&0\end{pmatrix},
+  > $$
+  > 可知此时 $r(A)=1$，不符合题意，因此一定有 $k=-3$。
 
-### 2003 年 · 数学二 · 填空题第 6 题（填空，4 分）
+- [ ] **2003 年 · 数学二 · 填空题第 6 题（填空，4 分）**
 
-设 3 阶方阵 $A,B$ 满足 $A^2B-A-B=E$，其中 $E$ 是 3 阶单位矩阵，若 $A=\begin{pmatrix}1&0&1\\0&2&0\\-2&0&1\end{pmatrix}$，则 $|B|=$ ________.
+  设 3 阶方阵 $A,B$ 满足 $A^2B-A-B=E$，其中 $E$ 是 3 阶单位矩阵，若 $A=\begin{pmatrix}1&0&1\\0&2&0\\-2&0&1\end{pmatrix}$，则 $|B|=$ ________.
 
-> [!success]- 答案与解析
-> **答案**：$rac{1}{2}$
->
-> 【分析】先化简分解出矩阵 $B$，再计算行列式 $B$ 或者将已知等式变形成含有因子 $B$ 的矩阵乘积形式，而其余因子的行列式都可以求出即可.
->
-> 【详解】方法1：由 $A^2B-A-B=E$，知 $(A^2-E)B=A+E$，即 $(A+E)(A-E)B=(A+E)$，
->
-> 易知矩阵 $A+E$ 可逆，于是有 $(A-E)B=E$.
->
-> 再两边取行列式，得 $|A-E||B|=1$，
->
-> 因为 $A-E=\begin{pmatrix}0&0&1\\0&1&0\\-2&0&0\end{pmatrix}$，故 $|A-E|=\begin{vmatrix}0&0&1\\0&1&0\\-2&0&0\end{vmatrix}=2$，所以 $|B|=\frac{1}{2}$.
->
-> 方法2：由 $A^2B-A-B=E$，得 $(A+E)(A-E)B=A+E$
->
-> 等式两端取行列式且利用矩阵乘积的行列式=行列式的乘积，得
-> $$
-> |A+E||A-E||B|=|A+E|
-> $$
-> 约去 $|A+E|\ne0$，得 $|B|=\frac{1}{|A-E|}=\frac{1}{2}$.
+  > [!success]- 答案与解析
+  > **答案**：$rac{1}{2}$
+  >
+  > 【分析】先化简分解出矩阵 $B$，再计算行列式 $B$ 或者将已知等式变形成含有因子 $B$ 的矩阵乘积形式，而其余因子的行列式都可以求出即可.
+  >
+  > 【详解】方法1：由 $A^2B-A-B=E$，知 $(A^2-E)B=A+E$，即 $(A+E)(A-E)B=(A+E)$，
+  >
+  > 易知矩阵 $A+E$ 可逆，于是有 $(A-E)B=E$.
+  >
+  > 再两边取行列式，得 $|A-E||B|=1$，
+  >
+  > 因为 $A-E=\begin{pmatrix}0&0&1\\0&1&0\\-2&0&0\end{pmatrix}$，故 $|A-E|=\begin{vmatrix}0&0&1\\0&1&0\\-2&0&0\end{vmatrix}=2$，所以 $|B|=\frac{1}{2}$.
+  >
+  > 方法2：由 $A^2B-A-B=E$，得 $(A+E)(A-E)B=A+E$
+  >
+  > 等式两端取行列式且利用矩阵乘积的行列式=行列式的乘积，得
+  > $$
+  > |A+E||A-E||B|=|A+E|
+  > $$
+  > 约去 $|A+E|\ne0$，得 $|B|=\frac{1}{|A-E|}=\frac{1}{2}$.
 
-### 2004 年 · 数学一 · 第 5 题（填空，4 分）
+- [ ] **2004 年 · 数学一 · 第 5 题（填空，4 分）**
 
-设矩阵 $A=\begin{pmatrix}2&1&0\\1&2&0\\0&0&1\end{pmatrix}$，矩阵 $B$ 满足 $ABA^{*}=2BA^{*}+E$，其中 $A^{*}$ 为 $A$ 的伴随矩阵，$E$ 是单位矩阵，则 $|B|=\underline{\qquad}$．
+  设矩阵 $A=\begin{pmatrix}2&1&0\\1&2&0\\0&0&1\end{pmatrix}$，矩阵 $B$ 满足 $ABA^{*}=2BA^{*}+E$，其中 $A^{*}$ 为 $A$ 的伴随矩阵，$E$ 是单位矩阵，则 $|B|=\underline{\qquad}$．
 
-> [!success]- 答案与解析
-> **答案**：$\dfrac{1}{9}$
->
-> 【解】 $|A|=3$，在 $ABA^{*}=2BA^{*}+E$ 两边右乘 $A$，得 $3AB=6B+A$ 或 $3(A-2E)B=A$．于是 $3^3|A-2E|\cdot|B|=|A|$．
-> $$
-> \text{而 }A-2E=\begin{pmatrix}0&1&0\\1&0&0\\0&0&-1\end{pmatrix},\quad|A-2E|=1,\text{故 }|B|=\frac{1}{9}.
-> $$
->
-> > **方法点评**：本题考查由矩阵关系等式确定的矩阵的行列式．本题的关键是要应用公式 $AA^{*}=A^{*}A=|A|E$．
+  > [!success]- 答案与解析
+  > **答案**：$\dfrac{1}{9}$
+  >
+  > 【解】 $|A|=3$，在 $ABA^{*}=2BA^{*}+E$ 两边右乘 $A$，得 $3AB=6B+A$ 或 $3(A-2E)B=A$．于是 $3^3|A-2E|\cdot|B|=|A|$．
+  > $$
+  > \text{而 }A-2E=\begin{pmatrix}0&1&0\\1&0&0\\0&0&-1\end{pmatrix},\quad|A-2E|=1,\text{故 }|B|=\frac{1}{9}.
+  > $$
+  >
+  > > **方法点评**：本题考查由矩阵关系等式确定的矩阵的行列式．本题的关键是要应用公式 $AA^{*}=A^{*}A=|A|E$．
 
-### 2004 年 · 数学二 · 第 6 题（填空，4 分）
+- [ ] **2004 年 · 数学二 · 第 6 题（填空，4 分）**
 
-设矩阵 $A=\begin{pmatrix}2&1&0\\1&2&0\\0&0&1\end{pmatrix}$，矩阵 $B$ 满足 $ABA^*=2BA^*+E$，其中 $A^*$ 为 $A$ 的伴随矩阵，$E$ 是单位矩阵，则 $|B|=$ ________.
+  设矩阵 $A=\begin{pmatrix}2&1&0\\1&2&0\\0&0&1\end{pmatrix}$，矩阵 $B$ 满足 $ABA^*=2BA^*+E$，其中 $A^*$ 为 $A$ 的伴随矩阵，$E$ 是单位矩阵，则 $|B|=$ ________.
 
-> [!success]- 答案与解析
-> **答案**：$rac{1}{9}$
->
-> 方法1：已知等式两边同时右乘 $A$，得 $ABA^*A=2BA^*A+A$，
->
-> 由伴随矩阵的运算规律：$A^*A=AA^*=|A|E$，有 $AB|A|=2B|A|+A$，而
-> $$
-> |A|=\begin{vmatrix}2&1&0\\1&2&0\\0&0&1\end{vmatrix}=(-1)^{3+3}\begin{vmatrix}2&1\\1&2\end{vmatrix}=2\times2-1\times1=3,
-> $$
-> 于是有 $3AB=6B+A$，移项、合并有 $(3A-6E)B=A$，再两边取行列式，由方阵乘积的行列式的性质：矩阵乘积的行列式等于矩阵行列式的积，有
-> $$
-> |(3A-6E)B|=|3A-6E||B|=|A|=3,
-> $$
-> 而
-> $$
-> |3A-6E|=\begin{vmatrix}6&3&0\\3&6&0\\0&0&3\end{vmatrix}-\begin{vmatrix}6&0&0\\0&6&0\\0&0&6\end{vmatrix}=\begin{vmatrix}0&3&0\\3&0&0\\0&0&-3\end{vmatrix}=(-1)^{3+3}(-3)\begin{vmatrix}0&3\\3&0\end{vmatrix}=(-3)\times3\times3=27,
-> $$
-> 故所求行列式为 $|B|=\frac{|A|}{|3A-6E|}=\frac{3}{27}=\frac{1}{9}$.
->
-> 方法2：由题设条件 $ABA^*=2BA^*+E$，得 $ABA^*-2BA^*=(A-2E)BA^*=E$.
->
-> 由方阵乘积行列式的性质：矩阵乘积的行列式等于矩阵行列式的积，故两边取行列式，有 $|(A-2E)BA^*|=|A-2E||B||A^*|=|E|=1$.
->
-> 其中 $|A|=\begin{vmatrix}2&1&0\\1&2&0\\0&0&1\end{vmatrix}=(-1)^{3+3}\begin{vmatrix}2&1\\1&2\end{vmatrix}=2\times2-1\times1=3$；
->
-> 由伴随矩阵行列式的公式：若 $A$ 是 $n$ 阶矩阵，则 $|A^*|=|A|^{n-1}$.
->
-> 所以，$|A^*|=|A|^{3-1}=|A|^2=9$；又 $|A-2E|=\begin{vmatrix}0&1&0\\1&0&0\\0&0&1\end{vmatrix}=(-1)^{1+2}\begin{vmatrix}1&0\\0&1\end{vmatrix}=1$.
->
-> 故 $|B|=\frac{1}{|A-2E||A^*|}=\frac{1}{9}$.
+  > [!success]- 答案与解析
+  > **答案**：$rac{1}{9}$
+  >
+  > 方法1：已知等式两边同时右乘 $A$，得 $ABA^*A=2BA^*A+A$，
+  >
+  > 由伴随矩阵的运算规律：$A^*A=AA^*=|A|E$，有 $AB|A|=2B|A|+A$，而
+  > $$
+  > |A|=\begin{vmatrix}2&1&0\\1&2&0\\0&0&1\end{vmatrix}=(-1)^{3+3}\begin{vmatrix}2&1\\1&2\end{vmatrix}=2\times2-1\times1=3,
+  > $$
+  > 于是有 $3AB=6B+A$，移项、合并有 $(3A-6E)B=A$，再两边取行列式，由方阵乘积的行列式的性质：矩阵乘积的行列式等于矩阵行列式的积，有
+  > $$
+  > |(3A-6E)B|=|3A-6E||B|=|A|=3,
+  > $$
+  > 而
+  > $$
+  > |3A-6E|=\begin{vmatrix}6&3&0\\3&6&0\\0&0&3\end{vmatrix}-\begin{vmatrix}6&0&0\\0&6&0\\0&0&6\end{vmatrix}=\begin{vmatrix}0&3&0\\3&0&0\\0&0&-3\end{vmatrix}=(-1)^{3+3}(-3)\begin{vmatrix}0&3\\3&0\end{vmatrix}=(-3)\times3\times3=27,
+  > $$
+  > 故所求行列式为 $|B|=\frac{|A|}{|3A-6E|}=\frac{3}{27}=\frac{1}{9}$.
+  >
+  > 方法2：由题设条件 $ABA^*=2BA^*+E$，得 $ABA^*-2BA^*=(A-2E)BA^*=E$.
+  >
+  > 由方阵乘积行列式的性质：矩阵乘积的行列式等于矩阵行列式的积，故两边取行列式，有 $|(A-2E)BA^*|=|A-2E||B||A^*|=|E|=1$.
+  >
+  > 其中 $|A|=\begin{vmatrix}2&1&0\\1&2&0\\0&0&1\end{vmatrix}=(-1)^{3+3}\begin{vmatrix}2&1\\1&2\end{vmatrix}=2\times2-1\times1=3$；
+  >
+  > 由伴随矩阵行列式的公式：若 $A$ 是 $n$ 阶矩阵，则 $|A^*|=|A|^{n-1}$.
+  >
+  > 所以，$|A^*|=|A|^{3-1}=|A|^2=9$；又 $|A-2E|=\begin{vmatrix}0&1&0\\1&0&0\\0&0&1\end{vmatrix}=(-1)^{1+2}\begin{vmatrix}1&0\\0&1\end{vmatrix}=1$.
+  >
+  > 故 $|B|=\frac{1}{|A-2E||A^*|}=\frac{1}{9}$.
 
-### 2005 年 · 数学一 · 第 5 题（填空，4 分）
+- [ ] **2005 年 · 数学一 · 第 5 题（填空，4 分）**
 
-设 $\alpha_1,\alpha_2,\alpha_3$ 均为 3 维列向量，记矩阵
-$$
-A=(\alpha_1,\alpha_2,\alpha_3),\quad B=(\alpha_1+\alpha_2+\alpha_3,\alpha_1+2\alpha_2+4\alpha_3,\alpha_1+3\alpha_2+9\alpha_3).
-$$
-如果 $|A|=1$，那么 $|B|=\underline{\qquad}$．
+  设 $\alpha_1,\alpha_2,\alpha_3$ 均为 3 维列向量，记矩阵
+  $$
+  A=(\alpha_1,\alpha_2,\alpha_3),\quad B=(\alpha_1+\alpha_2+\alpha_3,\alpha_1+2\alpha_2+4\alpha_3,\alpha_1+3\alpha_2+9\alpha_3).
+  $$
+  如果 $|A|=1$，那么 $|B|=\underline{\qquad}$．
 
-> [!success]- 答案与解析
-> **答案**：$2$
->
-> 【解】 方法一 因为
-> $$
-> B=(\alpha_1+\alpha_2+\alpha_3,\alpha_1+2\alpha_2+4\alpha_3,\alpha_1+3\alpha_2+9\alpha_3)=A\begin{pmatrix}1&1&1\\1&2&3\\1&4&9\end{pmatrix}.
-> $$
-> 所以 $|B|=|A|\cdot\begin{vmatrix}1&1&1\\1&2&3\\1&4&9\end{vmatrix}=(3-1)(3-2)(2-1)=2$．
->
-> 方法二
-> $$
-> |B|=|\alpha_1+\alpha_2+\alpha_3,\alpha_1+2\alpha_2+4\alpha_3,\alpha_1+3\alpha_2+9\alpha_3|
-> $$
-> $$
-> =|\alpha_1+\alpha_2+\alpha_3,\alpha_2+3\alpha_3,\alpha_2+5\alpha_3|=|\alpha_1+\alpha_2+\alpha_3,\alpha_2+3\alpha_3,2\alpha_3|=2|\alpha_1+\alpha_2+\alpha_3,\alpha_2+3\alpha_3,\alpha_3|
-> $$
-> $$
-> =2|\alpha_1+\alpha_2,\alpha_2,\alpha_3|=2|\alpha_1,\alpha_2,\alpha_3|=2.
-> $$
->
-> > **方法点评**：本题注意范德蒙德行列式的使用．
+  > [!success]- 答案与解析
+  > **答案**：$2$
+  >
+  > 【解】 方法一 因为
+  > $$
+  > B=(\alpha_1+\alpha_2+\alpha_3,\alpha_1+2\alpha_2+4\alpha_3,\alpha_1+3\alpha_2+9\alpha_3)=A\begin{pmatrix}1&1&1\\1&2&3\\1&4&9\end{pmatrix}.
+  > $$
+  > 所以 $|B|=|A|\cdot\begin{vmatrix}1&1&1\\1&2&3\\1&4&9\end{vmatrix}=(3-1)(3-2)(2-1)=2$．
+  >
+  > 方法二
+  > $$
+  > |B|=|\alpha_1+\alpha_2+\alpha_3,\alpha_1+2\alpha_2+4\alpha_3,\alpha_1+3\alpha_2+9\alpha_3|
+  > $$
+  > $$
+  > =|\alpha_1+\alpha_2+\alpha_3,\alpha_2+3\alpha_3,\alpha_2+5\alpha_3|=|\alpha_1+\alpha_2+\alpha_3,\alpha_2+3\alpha_3,2\alpha_3|=2|\alpha_1+\alpha_2+\alpha_3,\alpha_2+3\alpha_3,\alpha_3|
+  > $$
+  > $$
+  > =2|\alpha_1+\alpha_2,\alpha_2,\alpha_3|=2|\alpha_1,\alpha_2,\alpha_3|=2.
+  > $$
+  >
+  > > **方法点评**：本题注意范德蒙德行列式的使用．
 
-### 2005 年 · 数学二 · 第 6 题（填空，4 分）
+- [ ] **2005 年 · 数学二 · 第 6 题（填空，4 分）**
 
-设 $\alpha_1,\alpha_2,\alpha_3$ 均为 3 维列向量，记矩阵
-$$
-A=(\alpha_1,\alpha_2,\alpha_3),\qquad B=(\alpha_1+\alpha_2+\alpha_3,\ \alpha_1+2\alpha_2+4\alpha_3,\ \alpha_1+3\alpha_2+9\alpha_3).
-$$
-如果 $|A|=1$，那么 $|B|=$ ________.
+  设 $\alpha_1,\alpha_2,\alpha_3$ 均为 3 维列向量，记矩阵
+  $$
+  A=(\alpha_1,\alpha_2,\alpha_3),\qquad B=(\alpha_1+\alpha_2+\alpha_3,\ \alpha_1+2\alpha_2+4\alpha_3,\ \alpha_1+3\alpha_2+9\alpha_3).
+  $$
+  如果 $|A|=1$，那么 $|B|=$ ________.
 
-> [!success]- 答案与解析
-> **答案**：2
->
-> 方法1：因为 $(\alpha_1+\alpha_2+\alpha_3)=(\alpha_1,\alpha_2,\alpha_3)\begin{pmatrix}1\\1\\1\end{pmatrix}$，$(\alpha_1+2\alpha_2+4\alpha_3)=(\alpha_1,\alpha_2,\alpha_3)\begin{pmatrix}1\\2\\4\end{pmatrix}$，
-> $$
-> (\alpha_1+3\alpha_2+9\alpha_3)=(\alpha_1,\alpha_2,\alpha_3)\begin{pmatrix}1\\3\\9\end{pmatrix},
-> $$
-> 故 $B=(\alpha_1+\alpha_2+\alpha_3,\alpha_1+2\alpha_2+4\alpha_3,\alpha_1+3\alpha_2+9\alpha_3)=(\alpha_1,\alpha_2,\alpha_3)\begin{pmatrix}1&1&1\\1&2&3\\1&4&9\end{pmatrix}$，
->
-> 记 $A=(\alpha_1,\alpha_2,\alpha_3)$，两边取行列式，于是有
-> $$
-> |B|=|A|\cdot\begin{vmatrix}1&1&1\\1&2&3\\1&4&9\end{vmatrix}=1\times2=2.
-> $$
-> 方法2：利用行列式性质（在行列式中，把某行的各元素分别乘以非零常数加到另一行的对应元素上，行列式的值不变；从某一行或列中提取某一公因子行列式值不变）
-> $$
-> |B|=|\alpha_1+\alpha_2+\alpha_3,\alpha_1+2\alpha_2+4\alpha_3,\alpha_1+3\alpha_2+9\alpha_3|
-> $$
-> $$
-> \xrightarrow[3\text{列}-1\text{列}]{2\text{列}-1\text{列}}|\alpha_1+\alpha_2+\alpha_3,\alpha_2+3\alpha_3,2\alpha_2+8\alpha_3|\xrightarrow{3\text{列}-2\text{列}\times2}|\alpha_1+\alpha_2+\alpha_3,\alpha_2+3\alpha_3,2\alpha_3|
-> $$
-> $$
-> =2|\alpha_1+\alpha_2+\alpha_3,\alpha_2+3\alpha_3,\alpha_3|\xrightarrow[2\text{列}-3\text{列}\times3]{1\text{列}-3\text{列}}2|\alpha_1+\alpha_2,\alpha_2,\alpha_3|\xrightarrow{1\text{列}-2\text{列}}2|\alpha_1,\alpha_2,\alpha_3|
-> $$
-> 又因为 $|A|=|\alpha_1,\alpha_2,\alpha_3|=1$，故 $|B|=2|A|=2$.
+  > [!success]- 答案与解析
+  > **答案**：2
+  >
+  > 方法1：因为 $(\alpha_1+\alpha_2+\alpha_3)=(\alpha_1,\alpha_2,\alpha_3)\begin{pmatrix}1\\1\\1\end{pmatrix}$，$(\alpha_1+2\alpha_2+4\alpha_3)=(\alpha_1,\alpha_2,\alpha_3)\begin{pmatrix}1\\2\\4\end{pmatrix}$，
+  > $$
+  > (\alpha_1+3\alpha_2+9\alpha_3)=(\alpha_1,\alpha_2,\alpha_3)\begin{pmatrix}1\\3\\9\end{pmatrix},
+  > $$
+  > 故 $B=(\alpha_1+\alpha_2+\alpha_3,\alpha_1+2\alpha_2+4\alpha_3,\alpha_1+3\alpha_2+9\alpha_3)=(\alpha_1,\alpha_2,\alpha_3)\begin{pmatrix}1&1&1\\1&2&3\\1&4&9\end{pmatrix}$，
+  >
+  > 记 $A=(\alpha_1,\alpha_2,\alpha_3)$，两边取行列式，于是有
+  > $$
+  > |B|=|A|\cdot\begin{vmatrix}1&1&1\\1&2&3\\1&4&9\end{vmatrix}=1\times2=2.
+  > $$
+  > 方法2：利用行列式性质（在行列式中，把某行的各元素分别乘以非零常数加到另一行的对应元素上，行列式的值不变；从某一行或列中提取某一公因子行列式值不变）
+  > $$
+  > |B|=|\alpha_1+\alpha_2+\alpha_3,\alpha_1+2\alpha_2+4\alpha_3,\alpha_1+3\alpha_2+9\alpha_3|
+  > $$
+  > $$
+  > \xrightarrow[3\text{列}-1\text{列}]{2\text{列}-1\text{列}}|\alpha_1+\alpha_2+\alpha_3,\alpha_2+3\alpha_3,2\alpha_2+8\alpha_3|\xrightarrow{3\text{列}-2\text{列}\times2}|\alpha_1+\alpha_2+\alpha_3,\alpha_2+3\alpha_3,2\alpha_3|
+  > $$
+  > $$
+  > =2|\alpha_1+\alpha_2+\alpha_3,\alpha_2+3\alpha_3,\alpha_3|\xrightarrow[2\text{列}-3\text{列}\times3]{1\text{列}-3\text{列}}2|\alpha_1+\alpha_2,\alpha_2,\alpha_3|\xrightarrow{1\text{列}-2\text{列}}2|\alpha_1,\alpha_2,\alpha_3|
+  > $$
+  > 又因为 $|A|=|\alpha_1,\alpha_2,\alpha_3|=1$，故 $|B|=2|A|=2$.
 
-### 2006 年 · 数学三 · 第 4 题（填空，4 分）
+- [ ] **2006 年 · 数学三 · 第 4 题（填空，4 分）**
 
-设矩阵 $A=\begin{pmatrix}2&1\\-1&2\end{pmatrix}$，$E$ 为 $2$ 阶单位矩阵，矩阵 $B$ 满足 $BA=B+2E$，则 $|B|=$ $\underline{\qquad}$。
+  设矩阵 $A=\begin{pmatrix}2&1\\-1&2\end{pmatrix}$，$E$ 为 $2$ 阶单位矩阵，矩阵 $B$ 满足 $BA=B+2E$，则 $|B|=$ $\underline{\qquad}$。
 
-> [!success]- 答案与解析
-> **答案**：$2$。
->
-> 【详解】由已知条件 $BA=B+2E$ 变形得，$BA-2E=B\Rightarrow B(A-E)=2E$，两边取行列式，得
-> $$
-> |B|\cdot|A-E|=|2E|=4|E|=4,
-> $$
-> 其中
-> $$
-> A-E=\begin{pmatrix}2&1\\-1&2\end{pmatrix}-\begin{pmatrix}1&0\\0&1\end{pmatrix}=\begin{pmatrix}1&1\\-1&1\end{pmatrix},\quad |A-E|=\begin{vmatrix}1&1\\-1&1\end{vmatrix}=2,
-> $$
-> 因此
-> $$
-> |B|=\frac{|2E|}{|A-E|}=\frac{4}{2}=2.
-> $$
+  > [!success]- 答案与解析
+  > **答案**：$2$。
+  >
+  > 【详解】由已知条件 $BA=B+2E$ 变形得，$BA-2E=B\Rightarrow B(A-E)=2E$，两边取行列式，得
+  > $$
+  > |B|\cdot|A-E|=|2E|=4|E|=4,
+  > $$
+  > 其中
+  > $$
+  > A-E=\begin{pmatrix}2&1\\-1&2\end{pmatrix}-\begin{pmatrix}1&0\\0&1\end{pmatrix}=\begin{pmatrix}1&1\\-1&1\end{pmatrix},\quad |A-E|=\begin{vmatrix}1&1\\-1&1\end{vmatrix}=2,
+  > $$
+  > 因此
+  > $$
+  > |B|=\frac{|2E|}{|A-E|}=\frac{4}{2}=2.
+  > $$
 
-### 2006 年 · 数学一 · 第 5 题（填空，4 分）
+- [ ] **2006 年 · 数学一 · 第 5 题（填空，4 分）**
 
-设矩阵 $A=\begin{pmatrix}2&1\\-1&2\end{pmatrix}$，$E$ 为 2 阶单位矩阵，矩阵 $B$ 满足 $BA=B+2E$，则 $|B|=\underline{\qquad}$．
+  设矩阵 $A=\begin{pmatrix}2&1\\-1&2\end{pmatrix}$，$E$ 为 2 阶单位矩阵，矩阵 $B$ 满足 $BA=B+2E$，则 $|B|=\underline{\qquad}$．
 
-> [!success]- 答案与解析
-> **答案**：$2$
->
-> 【解】 由 $BA=B+2E$，得 $B(A-E)=2E$，两边取行列式，得 $|B|\cdot|A-E|=4$，
->
-> 因为 $A-E=\begin{pmatrix}1&1\\-1&1\end{pmatrix}$，所以 $|A-E|=2$，于是 $|B|=2$．
+  > [!success]- 答案与解析
+  > **答案**：$2$
+  >
+  > 【解】 由 $BA=B+2E$，得 $B(A-E)=2E$，两边取行列式，得 $|B|\cdot|A-E|=4$，
+  >
+  > 因为 $A-E=\begin{pmatrix}1&1\\-1&1\end{pmatrix}$，所以 $|A-E|=2$，于是 $|B|=2$．
 
-### 2006 年 · 数学二 · 第 6 题（填空，4 分）
+- [ ] **2006 年 · 数学二 · 第 6 题（填空，4 分）**
 
-设矩阵 $A=\begin{pmatrix}2&1\\-1&2\end{pmatrix}$，$E$ 为 2 阶单位矩阵，矩阵 $B$ 满足 $BA=B+2E$，则 $|B|=$ ________.
+  设矩阵 $A=\begin{pmatrix}2&1\\-1&2\end{pmatrix}$，$E$ 为 2 阶单位矩阵，矩阵 $B$ 满足 $BA=B+2E$，则 $|B|=$ ________.
 
-> [!success]- 答案与解析
-> **答案**：2
->
-> 由已知条件 $BA=B+2E$ 变形得，$BA-B=2E\Rightarrow B(A-E)=2E$，两边取行列式，得
-> $$
-> |B(A-E)|=|2E|=2^2=4
-> $$
-> 其中，
-> $$
-> A-E=\begin{pmatrix}2&1\\-1&2\end{pmatrix}-\begin{pmatrix}1&0\\0&1\end{pmatrix}=\begin{pmatrix}1&1\\-1&1\end{pmatrix},\qquad |A-E|=\begin{vmatrix}1&1\\-1&1\end{vmatrix}=2,
-> $$
-> 因此，$|B|=\frac{|2E|}{|A-E|}=\frac{4}{2}=2$.
+  > [!success]- 答案与解析
+  > **答案**：2
+  >
+  > 由已知条件 $BA=B+2E$ 变形得，$BA-B=2E\Rightarrow B(A-E)=2E$，两边取行列式，得
+  > $$
+  > |B(A-E)|=|2E|=2^2=4
+  > $$
+  > 其中，
+  > $$
+  > A-E=\begin{pmatrix}2&1\\-1&2\end{pmatrix}-\begin{pmatrix}1&0\\0&1\end{pmatrix}=\begin{pmatrix}1&1\\-1&1\end{pmatrix},\qquad |A-E|=\begin{vmatrix}1&1\\-1&1\end{vmatrix}=2,
+  > $$
+  > 因此，$|B|=\frac{|2E|}{|A-E|}=\frac{4}{2}=2$.
 
-### 2010 年 · 数学三 · 第 13 题（填空，4 分）
+- [ ] **2010 年 · 数学三 · 第 13 题（填空，4 分）**
 
-设 $A,B$ 为 3 阶矩阵，且 $|A|=3$，$|B|=2$，$|A^{-1}+B|=2$，则 $|A+B^{-1}|=\underline{\qquad}$。
+  设 $A,B$ 为 3 阶矩阵，且 $|A|=3$，$|B|=2$，$|A^{-1}+B|=2$，则 $|A+B^{-1}|=\underline{\qquad}$。
 
-> [!success]- 答案与解析
-> **答案**：$3$
->
-> 由于 $A(A^{-1}+B)B^{-1}=(E+AB)B^{-1}=B^{-1}+A$，所以
-> $$
-> |A+B^{-1}|=|A(A^{-1}+B)B^{-1}|=|A||A^{-1}+B||B^{-1}|.
-> $$
-> 因为 $|B|=2$，所以 $|B^{-1}|=|B|^{-1}=\frac12$，因此
-> $$
-> |A+B^{-1}|=|A||A^{-1}+B||B^{-1}|=3\times2\times\frac12=3.
-> $$
+  > [!success]- 答案与解析
+  > **答案**：$3$
+  >
+  > 由于 $A(A^{-1}+B)B^{-1}=(E+AB)B^{-1}=B^{-1}+A$，所以
+  > $$
+  > |A+B^{-1}|=|A(A^{-1}+B)B^{-1}|=|A||A^{-1}+B||B^{-1}|.
+  > $$
+  > 因为 $|B|=2$，所以 $|B^{-1}|=|B|^{-1}=\frac12$，因此
+  > $$
+  > |A+B^{-1}|=|A||A^{-1}+B||B^{-1}|=3\times2\times\frac12=3.
+  > $$
 
-### 2010 年 · 数学二 · 第 14 题（填空，4 分）
+- [ ] **2010 年 · 数学二 · 第 14 题（填空，4 分）**
 
-设 $A,B$ 为 3 阶矩阵，且 $|A|=3$，$|B|=2$，$|A^{-1}+B|=2$，则 $|A+B^{-1}|=$ ________.
+  设 $A,B$ 为 3 阶矩阵，且 $|A|=3$，$|B|=2$，$|A^{-1}+B|=2$，则 $|A+B^{-1}|=$ ________.
 
-> [!success]- 答案与解析
-> **答案**：3
->
-> 由于 $A(A^{-1}+B)B^{-1}=(E+AB)B^{-1}=B^{-1}+A$，所以
-> $$
-> |A+B^{-1}|=|A(A^{-1}+B)B^{-1}|=|A||A^{-1}+B||B^{-1}|
-> $$
-> 因为 $|B|=2$，所以 $|B^{-1}|=|B|^{-1}=\frac{1}{2}$，因此
-> $$
-> |A+B^{-1}|=|A||A^{-1}+B||B^{-1}|=3\times2\times\frac{1}{2}=3.
-> $$
+  > [!success]- 答案与解析
+  > **答案**：3
+  >
+  > 由于 $A(A^{-1}+B)B^{-1}=(E+AB)B^{-1}=B^{-1}+A$，所以
+  > $$
+  > |A+B^{-1}|=|A(A^{-1}+B)B^{-1}|=|A||A^{-1}+B||B^{-1}|
+  > $$
+  > 因为 $|B|=2$，所以 $|B^{-1}|=|B|^{-1}=\frac{1}{2}$，因此
+  > $$
+  > |A+B^{-1}|=|A||A^{-1}+B||B^{-1}|=3\times2\times\frac{1}{2}=3.
+  > $$
 
-### 2012 年 · 数学二 · 第 14 题（填空，4 分）
+- [ ] **2012 年 · 数学二 · 第 14 题（填空，4 分）**
 
-设 $A$ 为 3 阶矩阵，$|A|=3$，$A^*$ 为 $A$ 的伴随矩阵，若交换 $A$ 的第 1 行与第 2 行得矩阵 $B$，则 $|BA^*|=$ ________.
+  设 $A$ 为 3 阶矩阵，$|A|=3$，$A^*$ 为 $A$ 的伴随矩阵，若交换 $A$ 的第 1 行与第 2 行得矩阵 $B$，则 $|BA^*|=$ ________.
 
-> [!success]- 答案与解析
-> **答案**：-27
->
-> 由于 $B=E_{12}A$，故 $BA^*=E_{12}\cdot A\cdot A^*=|A|E_{12}=3E_{12}$，
-> 所以，$|BA^*|=|3E_{12}|=3^3|E_{12}|=27\times(-1)=-27$.
+  > [!success]- 答案与解析
+  > **答案**：-27
+  >
+  > 由于 $B=E_{12}A$，故 $BA^*=E_{12}\cdot A\cdot A^*=|A|E_{12}=3E_{12}$，
+  > 所以，$|BA^*|=|3E_{12}|=3^3|E_{12}|=27\times(-1)=-27$.
 
-### 2018 年 · 数学三 · 第 13 题（填空，4 分）
+- [ ] **2018 年 · 数学三 · 第 13 题（填空，4 分）**
 
-设 $A$ 为 3 阶矩阵，$\alpha_1,\alpha_2,\alpha_3$ 是线性无关的向量组. 若 $A\alpha_1=\alpha_1+\alpha_2$，$A\alpha_2=\alpha_2+\alpha_3$，$A\alpha_3=\alpha_1+\alpha_3$，则 $|A|=$ $\underline{\qquad}$.
+  设 $A$ 为 3 阶矩阵，$\alpha_1,\alpha_2,\alpha_3$ 是线性无关的向量组. 若 $A\alpha_1=\alpha_1+\alpha_2$，$A\alpha_2=\alpha_2+\alpha_3$，$A\alpha_3=\alpha_1+\alpha_3$，则 $|A|=$ $\underline{\qquad}$.
 
-> [!success]- 答案与解析
-> **答案**：2
->
-> 由题意得
-> $$
-> A(\alpha_1,\alpha_2,\alpha_3)=(\alpha_1,\alpha_2,\alpha_3)\begin{pmatrix}1&0&1\\1&1&0\\0&1&1\end{pmatrix},
-> $$
-> 而 $\alpha_1,\alpha_2,\alpha_3$ 线性无关，则 $|(\alpha_1,\alpha_2,\alpha_3)|\ne0$. 则
-> $$
-> |A|=\begin{vmatrix}1&0&1\\1&1&0\\0&1&1\end{vmatrix}=2.
-> $$
-> 故应填 2.
+  > [!success]- 答案与解析
+  > **答案**：2
+  >
+  > 由题意得
+  > $$
+  > A(\alpha_1,\alpha_2,\alpha_3)=(\alpha_1,\alpha_2,\alpha_3)\begin{pmatrix}1&0&1\\1&1&0\\0&1&1\end{pmatrix},
+  > $$
+  > 而 $\alpha_1,\alpha_2,\alpha_3$ 线性无关，则 $|(\alpha_1,\alpha_2,\alpha_3)|\ne0$. 则
+  > $$
+  > |A|=\begin{vmatrix}1&0&1\\1&1&0\\0&1&1\end{vmatrix}=2.
+  > $$
+  > 故应填 2.
 
 ## <span class="hx hx-nav">🧭</span> 十、导航
 

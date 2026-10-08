@@ -85,67 +85,67 @@ $A$、$B$ 都非零，所以由 $AB = O$ 既推不出 $A = O$，也推不出 $B 
 
 ## <span class="hx hx-exam">📝</span> 九、真题（1988–2004）
 
-### 1988 年 · 数学三 · 判断题第 4 题（选择，2 分）
+- [ ] **1988 年 · 数学三 · 判断题第 4 题（选择，2 分）**
 
-若 $A$ 和 $B$ 都是 $n$ 阶非零方阵，且 $AB=O$，则 $A$ 的秩必小于 $n$.
+  若 $A$ 和 $B$ 都是 $n$ 阶非零方阵，且 $AB=O$，则 $A$ 的秩必小于 $n$.
 
-> [!success]- 答案与解析
-> **答案**：（√）．
->
+  > [!success]- 答案与解析
+  > **答案**：（√）．
+  >
 
-### 1997 年 · 数学一 · 填空题第 4 题（填空，3 分）
+- [ ] **1997 年 · 数学一 · 填空题第 4 题（填空，3 分）**
 
-设
-$$
-A=\begin{pmatrix}1&2&-2\\4&t&3\\3&-1&1\end{pmatrix},
-$$
-$B$ 为 3 阶非零矩阵，且 $AB=O$，则 $t=$______.
+  设
+  $$
+  A=\begin{pmatrix}1&2&-2\\4&t&3\\3&-1&1\end{pmatrix},
+  $$
+  $B$ 为 3 阶非零矩阵，且 $AB=O$，则 $t=$______.
 
-> [!success]- 答案与解析
-> **答案**：$t=-3$.
->
-> **方法一** 因为 $B\ne O$ 且 $AB=O$，所以方程组 $AX=0$ 有非零解，于是 $|A|=0$，而
-> $$
-> |A|=\begin{vmatrix}1&2&-2\\4&t&3\\3&-1&1\end{vmatrix}=7t+21=0,
-> $$
-> 得 $t=-3$.
->
-> **方法二** 由 $AB=O$ 得 $r(A)+r(B)\le 3$，再由 $B\ne O$ 得 $r(B)\ge 1$，于是 $r(A)\le 2<3$，故 $|A|=0$，解得 $t=-3$.
+  > [!success]- 答案与解析
+  > **答案**：$t=-3$.
+  >
+  > **方法一** 因为 $B\ne O$ 且 $AB=O$，所以方程组 $AX=0$ 有非零解，于是 $|A|=0$，而
+  > $$
+  > |A|=\begin{vmatrix}1&2&-2\\4&t&3\\3&-1&1\end{vmatrix}=7t+21=0,
+  > $$
+  > 得 $t=-3$.
+  >
+  > **方法二** 由 $AB=O$ 得 $r(A)+r(B)\le 3$，再由 $B\ne O$ 得 $r(B)\ge 1$，于是 $r(A)\le 2<3$，故 $|A|=0$，解得 $t=-3$.
 
-### 2004 年 · 数学一 · 第 12 题（选择，4 分）
+- [ ] **2004 年 · 数学一 · 第 12 题（选择，4 分）**
 
-设 $A,B$ 为满足 $AB=O$ 的任意两个非零矩阵，则必有（　　）
+  设 $A,B$ 为满足 $AB=O$ 的任意两个非零矩阵，则必有（　　）
 
-（A）$A$ 的列向量组线性相关，$B$ 的行向量组线性相关．
-（B）$A$ 的列向量组线性相关，$B$ 的列向量组线性相关．
-（C）$A$ 的行向量组线性相关，$B$ 的行向量组线性相关．
-（D）$A$ 的行向量组线性相关，$B$ 的列向量组线性相关．
+  （A）$A$ 的列向量组线性相关，$B$ 的行向量组线性相关．
+  （B）$A$ 的列向量组线性相关，$B$ 的列向量组线性相关．
+  （C）$A$ 的行向量组线性相关，$B$ 的行向量组线性相关．
+  （D）$A$ 的行向量组线性相关，$B$ 的列向量组线性相关．
 
-> [!success]- 答案与解析
-> **答案**：（A）
->
-> 【解】 方法一 设 $A$ 为 $m\times n$ 矩阵，$B$ 为 $n\times s$ 矩阵．
->
-> 由 $AB=O$，得 $r(A)+r(B)\le n$．
->
-> 因为 $A,B$ 为非零矩阵，所以 $r(A)\ge 1,r(B)\ge 1$，于是 $r(A)<n,r(B)<n$．
->
-> 因为矩阵的秩、矩阵行向量组的秩、矩阵列向量组的秩都相等，于是 $A$ 的列向量组的秩小于列数，$B$ 的行向量组的秩小于行数，$A$ 的列向量组线性相关，$B$ 的行向量组线性相关，应选（A）．
->
-> 方法二 设
-> $$
-> A=\begin{pmatrix}a_{11}&a_{12}&\cdots&a_{1n}\\a_{21}&a_{22}&\cdots&a_{2n}\\\vdots&\vdots&&\vdots\\a_{m1}&a_{m2}&\cdots&a_{mn}\end{pmatrix}=(\alpha_1,\alpha_2,\cdots,\alpha_n),\quad B=\begin{pmatrix}b_{11}&b_{12}&\cdots&b_{1s}\\b_{21}&b_{22}&\cdots&b_{2s}\\\vdots&\vdots&&\vdots\\b_{n1}&b_{n2}&\cdots&b_{ns}\end{pmatrix}=\begin{pmatrix}\beta_1\\\beta_2\\\vdots\\\beta_n\end{pmatrix},
-> $$
-> 由 $AB=O$ 得
-> $$
-> \begin{cases}b_{11}\alpha_1+b_{21}\alpha_2+\cdots+b_{n1}\alpha_n=0,\\b_{12}\alpha_1+b_{22}\alpha_2+\cdots+b_{n2}\alpha_n=0,\\\vdots\\b_{1s}\alpha_1+b_{2s}\alpha_2+\cdots+b_{ns}\alpha_n=0,\end{cases}\text{及}\begin{cases}a_{11}\beta_1+a_{12}\beta_2+\cdots+a_{1n}\beta_n=0,\\a_{21}\beta_1+a_{22}\beta_2+\cdots+a_{2n}\beta_n=0,\\\vdots\\a_{m1}\beta_1+a_{m2}\beta_2+\cdots+a_{mn}\beta_n=0.\end{cases}
-> $$
-> 因为 $A,B$ 为非零矩阵，所以存在不全为零的常数 $b_{1j},b_{2j},\cdots,b_{nj}$ 及 $a_{i1},a_{i2},\cdots,a_{in}$，使得 $b_{1j}\alpha_1+b_{2j}\alpha_2+\cdots+b_{nj}\alpha_n=0$ 及 $a_{i1}\beta_1+a_{i2}\beta_2+\cdots+a_{in}\beta_n=0$．
->
-> 即 $\alpha_1,\alpha_2,\cdots,\alpha_n$ 与 $\beta_1,\beta_2,\cdots,\beta_n$ 都线性相关，应选（A）．
->
-> > **方法点评**：当研究矩阵的秩与向量相关性时，一般使用矩阵的秩、矩阵行向量组的秩、矩阵列向量组的秩相等的性质．
-> > 向量组线性相关的充要条件是该向量组的秩小于向量组所含向量的个数；向量组线性无关的充要条件是向量组的秩与向量组所含向量个数相等．
+  > [!success]- 答案与解析
+  > **答案**：（A）
+  >
+  > 【解】 方法一 设 $A$ 为 $m\times n$ 矩阵，$B$ 为 $n\times s$ 矩阵．
+  >
+  > 由 $AB=O$，得 $r(A)+r(B)\le n$．
+  >
+  > 因为 $A,B$ 为非零矩阵，所以 $r(A)\ge 1,r(B)\ge 1$，于是 $r(A)<n,r(B)<n$．
+  >
+  > 因为矩阵的秩、矩阵行向量组的秩、矩阵列向量组的秩都相等，于是 $A$ 的列向量组的秩小于列数，$B$ 的行向量组的秩小于行数，$A$ 的列向量组线性相关，$B$ 的行向量组线性相关，应选（A）．
+  >
+  > 方法二 设
+  > $$
+  > A=\begin{pmatrix}a_{11}&a_{12}&\cdots&a_{1n}\\a_{21}&a_{22}&\cdots&a_{2n}\\\vdots&\vdots&&\vdots\\a_{m1}&a_{m2}&\cdots&a_{mn}\end{pmatrix}=(\alpha_1,\alpha_2,\cdots,\alpha_n),\quad B=\begin{pmatrix}b_{11}&b_{12}&\cdots&b_{1s}\\b_{21}&b_{22}&\cdots&b_{2s}\\\vdots&\vdots&&\vdots\\b_{n1}&b_{n2}&\cdots&b_{ns}\end{pmatrix}=\begin{pmatrix}\beta_1\\\beta_2\\\vdots\\\beta_n\end{pmatrix},
+  > $$
+  > 由 $AB=O$ 得
+  > $$
+  > \begin{cases}b_{11}\alpha_1+b_{21}\alpha_2+\cdots+b_{n1}\alpha_n=0,\\b_{12}\alpha_1+b_{22}\alpha_2+\cdots+b_{n2}\alpha_n=0,\\\vdots\\b_{1s}\alpha_1+b_{2s}\alpha_2+\cdots+b_{ns}\alpha_n=0,\end{cases}\text{及}\begin{cases}a_{11}\beta_1+a_{12}\beta_2+\cdots+a_{1n}\beta_n=0,\\a_{21}\beta_1+a_{22}\beta_2+\cdots+a_{2n}\beta_n=0,\\\vdots\\a_{m1}\beta_1+a_{m2}\beta_2+\cdots+a_{mn}\beta_n=0.\end{cases}
+  > $$
+  > 因为 $A,B$ 为非零矩阵，所以存在不全为零的常数 $b_{1j},b_{2j},\cdots,b_{nj}$ 及 $a_{i1},a_{i2},\cdots,a_{in}$，使得 $b_{1j}\alpha_1+b_{2j}\alpha_2+\cdots+b_{nj}\alpha_n=0$ 及 $a_{i1}\beta_1+a_{i2}\beta_2+\cdots+a_{in}\beta_n=0$．
+  >
+  > 即 $\alpha_1,\alpha_2,\cdots,\alpha_n$ 与 $\beta_1,\beta_2,\cdots,\beta_n$ 都线性相关，应选（A）．
+  >
+  > > **方法点评**：当研究矩阵的秩与向量相关性时，一般使用矩阵的秩、矩阵行向量组的秩、矩阵列向量组的秩相等的性质．
+  > > 向量组线性相关的充要条件是该向量组的秩小于向量组所含向量的个数；向量组线性无关的充要条件是向量组的秩与向量组所含向量个数相等．
 
 ## <span class="hx hx-nav">🧭</span> 十、导航
 

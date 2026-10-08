@@ -389,21 +389,24 @@ for (const m of MODULES) {
       const ys = [...new Set(myExams.map(e => e.year))].sort((a, b) => a - b);
       head('真题' + (ys.length ? '（' + ys[0] + (ys.length > 1 ? '–' + ys[ys.length - 1] : '') + '）' : ''), 'exam');
       for (const e of myExams) {
-        L.push('### ' + e.year + ' 年 · 数学' + ({ '数一': '一', '数二': '二', '数三': '三' }[e.subject] || e.subject) + ' · ' + (e.label || ('第 ' + e.number + ' 题')) + '（' + e.kind + (e.score ? '，' + e.score + ' 分' : '') + '）');
+        const qTitle = e.year + ' 年 · 数学' + ({ '数一': '一', '数二': '二', '数三': '三' }[e.subject] || e.subject) + ' · ' + (e.label || ('第 ' + e.number + ' 题')) + '（' + e.kind + (e.score ? '，' + e.score + ' 分' : '') + '）';
+        // 每题前面一个可勾选的方框：勾上即整题划删除线（见 .obsidian/snippets/linalg-reading.css）
+        L.push('- [ ] **' + qTitle + '**');
         L.push('');
-        push(e.question);
-        L.push('> [!success]- 答案与解析');
-        // 答案可能含多行（例如多行 $ 矩阵）：逐行加 "> " 前缀，否则第二行会跑到 callout 外、把 $ 拆坏
+        // 题面：逐行缩进 2 空格，保证仍在同一列表项内
+        for (const line of decorate(String(e.question)).split(/\r?\n/)) L.push(line.trim() === '' ? '' : '  ' + noLink(line));
+        L.push('');
+        L.push('  > [!success]- 答案与解析');
         const ansLines = String(e.answer).split('\n');
         if (ansLines.length === 1) {
-          L.push('> **答案**：' + ansLines[0]);
+          L.push('  > **答案**：' + ansLines[0]);
         } else {
-          L.push('> **答案**：');
-          for (const ln of ansLines) L.push(ln.trim() === '' ? '>' : '> ' + ln);
+          L.push('  > **答案**：');
+          for (const ln of ansLines) L.push(ln.trim() === '' ? '  >' : '  > ' + ln);
         }
-        L.push('>');
+        L.push('  >');
         if (String(e.analysis).trim()) {
-          for (const line of String(e.analysis).split('\n')) L.push(line.trim() === '' ? '>' : '> ' + line);
+          for (const line of String(e.analysis).split('\n')) L.push(line.trim() === '' ? '  >' : '  > ' + line);
         }
         L.push('');
       }

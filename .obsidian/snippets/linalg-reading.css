@@ -125,3 +125,24 @@
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-list-line {
   padding-block: 0.16em;
 }
+
+
+/* ===== 真题 / 自测：勾选后整题划删除线 ===== */
+/* 阅读视图：任务项被勾选时，连同题面与折叠答案一起划掉 */
+.markdown-preview-view li.task-list-item[data-task="x"],
+.markdown-preview-view li.task-list-item[data-task="X"],
+.markdown-preview-view li.task-list-item.is-checked {
+  text-decoration: line-through;
+  text-decoration-color: var(--text-faint);
+}
+.markdown-preview-view li.task-list-item[data-task="x"] > *,
+.markdown-preview-view li.task-list-item[data-task="X"] > *,
+.markdown-preview-view li.task-list-item.is-checked > * {
+  opacity: 0.75;
+}
+/* 实时预览：勾选后本行（题目标题行）划掉 */
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="x"],
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="X"] {
+  text-decoration: line-through;
+  text-decoration-color: var(--text-faint);
+}
