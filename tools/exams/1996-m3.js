@@ -1,6 +1,6 @@
 // 1996 · 数学三 · 线性代数（题面取自《1、1987-1996 考研数学三真题》1996 年试卷（四）；答案与解析取自《1996 年数学三真题答案解析》）
 EXAMS.push({
-  year: 1996, subject: '数三', number: 104, kind: '填空', score: 3, label: '试卷四·填空题第 4 题',
+  year: 1996, subject: '数三', number: 104, kind: '填空', score: 3, label: '填空题第 4 题',
   ids: ['det-vandermonde', 'eq-cramer', 'eq-nonhomo-general'],
   question: String.raw`设
 $$
@@ -36,7 +36,7 @@ $$
 });
 
 EXAMS.push({
-  year: 1996, subject: '数三', number: 203, kind: '选择', score: 3, label: '试卷四·选择题第 3 题',
+  year: 1996, subject: '数三', number: 203, kind: '选择', score: 3, label: '选择题第 3 题',
   ids: ['mat-adj-identity', 'mat-adjoint', 'mat-inv-method'],
   question: String.raw`设 $n$ 阶矩阵 $A$ 非奇异（$n\ge 2$），$A^*$ 是矩阵 $A$ 的伴随矩阵，则（　　）
 （A）$(A^*)^*=|A|^{n-1}A$
@@ -60,7 +60,7 @@ $$
 });
 
 EXAMS.push({
-  year: 1996, subject: '数三', number: 204, kind: '选择', score: 3, label: '试卷四·选择题第 4 题',
+  year: 1996, subject: '数三', number: 204, kind: '选择', score: 3, label: '选择题第 4 题',
   ids: ['vec-indep-def', 'vec-indep-crit', 'vec-indep-concl'],
   question: String.raw`设有任意两个 $n$ 维向量组 $\alpha_1,\cdots,\alpha_m$ 和 $\beta_1,\cdots,\beta_m$，若存在两组不全为零的数 $\lambda_1,\cdots,\lambda_m$ 和 $k_1,\cdots,k_m$，使
 $$
@@ -88,7 +88,7 @@ $$
 });
 
 EXAMS.push({
-  year: 1996, subject: '数三', number: 309, kind: '解答', score: 8, label: '试卷四·第九题',
+  year: 1996, subject: '数三', number: 309, kind: '解答', score: 8, label: '第九题',
   ids: ['eig-poly', 'qf-complete-square', 'qf-orthogonal'],
   question: String.raw`设矩阵
 $$
@@ -185,7 +185,7 @@ $$`,
 });
 
 EXAMS.push({
-  year: 1996, subject: '数三', number: 310, kind: '解答', score: 8, label: '试卷四·第十题',
+  year: 1996, subject: '数三', number: 310, kind: '解答', score: 8, label: '第十题',
   ids: ['eq-homo-structure', 'vec-indep-def', 'vec-rank-def'],
   question: String.raw`设向量组 $\alpha_1,\alpha_2,\cdots,\alpha_t$ 是齐次线性方程组 $Ax=0$ 的一个基础解系，向量 $\beta$ 不是方程组 $Ax=0$ 的解，即 $A\beta\ne 0$. 试证明：向量组 $\beta,\beta+\alpha_1,\beta+\alpha_2,\cdots,\beta+\alpha_t$ 线性无关.`,
   answer: String.raw`证明见解析.`,

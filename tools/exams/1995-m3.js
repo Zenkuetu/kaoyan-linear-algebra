@@ -1,6 +1,6 @@
 // 1995 · 数学三 · 线性代数（题面取自《1、1987-1996 考研数学三真题》1995 年试卷（四）；答案与解析取自《1995 年数学三真题答案解析》）
 EXAMS.push({
-  year: 1995, subject: '数三', number: 104, kind: '填空', score: 3, label: '试卷四·填空题第 4 题',
+  year: 1995, subject: '数三', number: 104, kind: '填空', score: 3, label: '填空题第 4 题',
   ids: ['mat-adj-identity', 'mat-adjoint', 'mat-inv-method'],
   question: String.raw`设
 $$
@@ -23,7 +23,7 @@ $$`,
 });
 
 EXAMS.push({
-  year: 1995, subject: '数三', number: 203, kind: '选择', score: 3, label: '试卷四·选择题第 3 题',
+  year: 1995, subject: '数三', number: 203, kind: '选择', score: 3, label: '选择题第 3 题',
   ids: ['mat-rank', 'mat-rank-crit', 'mat-rank-ineq'],
   question: String.raw`设矩阵 $A_{m\times n}$ 的秩为 $r(A)=m<n$，$E_m$ 为 $m$ 阶单位矩阵，则下述结论中正确的是（　　）
 （A）$A$ 的任意 $m$ 个列向量必线性无关
@@ -38,7 +38,7 @@ EXAMS.push({
 });
 
 EXAMS.push({
-  year: 1995, subject: '数三', number: 309, kind: '解答', score: 9, label: '试卷四·第九题',
+  year: 1995, subject: '数三', number: 309, kind: '解答', score: 9, label: '第九题',
   ids: ['vec-rank-def', 'vec-indep-crit', 'vec-rank-table'],
   question: String.raw`已知向量组（Ⅰ）$\alpha_1,\alpha_2,\alpha_3$；（Ⅱ）$\alpha_1,\alpha_2,\alpha_3,\alpha_4$；（Ⅲ）$\alpha_1,\alpha_2,\alpha_3,\alpha_5$. 如果各向量组的秩分别为 $r(\mathrm{I})=r(\mathrm{II})=3$，$r(\mathrm{III})=4$.
 证明：向量组 $\alpha_1,\alpha_2,\alpha_3,\alpha_5-\alpha_4$ 的秩为 4.`,
@@ -62,7 +62,7 @@ $$
 });
 
 EXAMS.push({
-  year: 1995, subject: '数三', number: 310, kind: '解答', score: 10, label: '试卷四·第十题',
+  year: 1995, subject: '数三', number: 310, kind: '解答', score: 10, label: '第十题',
   ids: ['qf-orthogonal', 'eig-orth-diag', 'eig-diag-method'],
   question: String.raw`已知二次型
 $$

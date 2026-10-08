@@ -1759,7 +1759,7 @@ $$
 >
 > > **编者注**：原书此处行变换标记印作 $[3]+[2]\times 3$，但由结果 $0$ 行应为 $[3]+[2]\times(-3)$，疑为原书漏印负号（按原文转写标记）。
 
-### 1994 年 · 数学三 · 试卷四·第九题（解答，11 分）
+### 1994 年 · 数学三 · 第九题（解答，11 分）
 
 设线性方程组
 $$
@@ -1808,7 +1808,7 @@ $$
 > 2. 解的结构：若 $\eta_1$、$\eta_2$ 是对应齐次线性方程组 $Ax=0$ 的基础解系，知 $Ax=b$ 的通解形式为 $k_1\eta_1+k_2\eta_2+\xi$，其中 $\eta_1,\eta_2$ 是 $Ax=0$ 的基础解系，$\xi$ 是 $Ax=b$ 的一个特解.
 > 3. 解的性质：如果 $\eta_1,\eta_2$ 是 $Ax=0$ 的两个解，则其线性组合 $k_1\eta_1+k_2\eta_2$ 仍是 $Ax=0$ 的解；如果 $\xi$ 是 $Ax=b$ 的一个解，$\eta$ 是 $Ax=0$ 的一个解，则 $\xi+\eta$ 仍是 $Ax=b$ 的解.
 
-### 1993 年 · 数学三 · 试卷四·第八题（解答，10 分）
+### 1993 年 · 数学三 · 第八题（解答，10 分）
 
 $k$ 为何值时，线性方程组
 $$
@@ -1856,6 +1856,103 @@ $$
 > （1）有唯一解 $\Leftrightarrow r(A)=r(\overline{A})=n$.
 > （2）有无穷多解 $\Leftrightarrow r(A)=r(\overline{A})<n$.
 > （3）无解 $\Leftrightarrow r(A)+1=r(\overline{A})\Leftrightarrow b$ 不能由 $A$ 的列向量 $\alpha_1,\alpha_2,\cdots,\alpha_n$ 线表出.
+
+### 1991 年 · 数学三 · 第九题（解答，7 分）
+
+设有 3 维列向量
+$$
+\alpha_1=\begin{pmatrix}1+\lambda\\1\\1\end{pmatrix},\quad\alpha_2=\begin{pmatrix}1\\1+\lambda\\1\end{pmatrix},\quad\alpha_3=\begin{pmatrix}1\\1\\1+\lambda\end{pmatrix},\quad\beta=\begin{pmatrix}0\\\lambda\\\lambda^2\end{pmatrix},
+$$
+问 $\lambda$ 取何值时，
+
+（1）$\beta$ 可由 $\alpha_1,\alpha_2,\alpha_3$ 线性表示，且表达式唯一？
+
+（2）$\beta$ 可由 $\alpha_1,\alpha_2,\alpha_3$ 线性表示，但表达式不唯一？
+
+（3）$\beta$ 不能由 $\alpha_1,\alpha_2,\alpha_3$ 线性表示？
+
+> [!success]- 答案与解析
+> **答案**：（1）$\lambda\ne 0$ 且 $\lambda\ne -3$；（2）$\lambda=0$；（3）$\lambda=-3$．
+>
+> 【解析】设 $x_1\alpha_1+x_2\alpha_2+x_3\alpha_3=\beta$，将分量代入得到方程组
+> $$
+> \begin{cases}(1+\lambda)x_1+x_2+x_3=0,\\ x_1+(1+\lambda)x_2+x_3=\lambda,\\ x_1+x_2+(1+\lambda)x_3=\lambda^2.\end{cases}
+> $$
+> 对方程组的增广矩阵作初等行变换.
+>
+> 第一行分别乘以 $(-1)$、$-(1+\lambda)$ 加到第二行和第三行上，有
+> $$
+> \begin{pmatrix}1+\lambda&1&1&0\\1&1+\lambda&1&\lambda\\1&1&1+\lambda&\lambda^2\end{pmatrix}\to\begin{pmatrix}1+\lambda&1&1&0\\-\lambda&\lambda&0&\lambda\\-\lambda^2-2\lambda&-\lambda&0&\lambda^2\end{pmatrix},
+> $$
+> 再第二行加到第三行上，所以有
+> $$
+> \to\begin{pmatrix}1+\lambda&1&1&0\\-\lambda&\lambda&0&\lambda\\-\lambda^2-3\lambda&0&0&\lambda^2+\lambda\end{pmatrix}.
+> $$
+> 若 $\lambda\ne 0$ 且 $\lambda^2+3\lambda\ne 0$，即 $\lambda\ne 0$ 且 $\lambda\ne -3$，$r(A)=r(\overline{A})=3$，方程组有唯一解，即 $\beta$ 可由 $\alpha_1,\alpha_2,\alpha_3$ 线性表示且表达式唯一.
+>
+> 若 $\lambda=0$，则 $r(A)=r(\overline{A})=1<3$，方程组有无穷多解，$\beta$ 可由 $\alpha_1,\alpha_2,\alpha_3$ 线性表示，且表达式不唯一.
+>
+> 若 $\lambda=-3$，则 $r(A)=2$，$r(\overline{A})=3$，方程组无解，从而 $\beta$ 不能由 $\alpha_1,\alpha_2,\alpha_3$ 线性表示．
+
+### 1990 年 · 数学三 · 填空题第 4 题（填空，3 分）
+
+若线性方程组
+$$
+\begin{cases}x_1+x_2=-a_1,\\ x_2+x_3=a_2,\\ x_3+x_4=-a_3,\\ x_4+x_1=a_4\end{cases}
+$$
+有解，则常数 $a_1,a_2,a_3,a_4$ 应满足条件______.
+
+> [!success]- 答案与解析
+> **答案**：$a_1+a_2+a_3+a_4=0$.
+>
+> 【解析】由于方程组有解 $\Leftrightarrow r(A)=r(\overline{A})$，对 $\overline{A}$ 作初等行变换，
+> 第一行乘以 $(-1)$ 加到第四行上，有
+> $$
+> \begin{pmatrix}1&1&0&0&-a_1\\0&1&1&0&a_2\\0&0&1&1&-a_3\\1&0&0&1&a_4\end{pmatrix}\to\begin{pmatrix}1&1&0&0&-a_1\\0&1&1&0&a_2\\0&0&1&1&-a_3\\0&-1&0&1&a_1+a_4\end{pmatrix},
+> $$
+> 第二行加到第四行上，再第三行乘以 $(-1)$ 加到第四行上，有
+> $$
+> \to\begin{pmatrix}1&1&0&0&-a_1\\0&1&1&0&a_2\\0&0&1&1&-a_3\\0&0&1&1&a_1+a_2+a_4\end{pmatrix}\to\begin{pmatrix}1&1&0&0&-a_1\\&1&1&0&a_2\\&&1&1&-a_3\\&&&0&a_1+a_2+a_3+a_4\end{pmatrix}.
+> $$
+> 为使 $r(A)=r(\overline{A})$，常数 $a_1,a_2,a_3,a_4$ 应满足条件：$a_1+a_2+a_3+a_4=0$.
+
+### 1990 年 · 数学三 · 第六题（解答，8 分）
+
+已知线性方程组
+$$
+\begin{cases}x_1+x_2+x_3+x_4+x_5=a,\\ 3x_1+2x_2+x_3+x_4-3x_5=0,\\ x_2+2x_3+2x_4+6x_5=b,\\ 5x_1+4x_2+3x_3+3x_4-x_5=2.\end{cases}
+$$
+
+（1）$a,b$ 为何值时，方程组有解？
+
+（2）方程组有解时，求出方程组的导出组的一个基础解系；
+
+（3）方程组有解时，求出方程组的全部解.
+
+> [!success]- 答案与解析
+> **答案**：当 $a=1$，$b=3$ 时方程组有解；此时导出组的一个基础解系为 $\eta_1=(1,-2,1,0,0)^{\mathrm{T}}$，$\eta_2=(1,-2,0,1,0)^{\mathrm{T}}$，$\eta_3=(5,-6,0,0,1)^{\mathrm{T}}$；方程组的全部解为 $\alpha+k_1\eta_1+k_2\eta_2+k_3\eta_3$，其中 $\alpha=(-2,3,0,0,0)^{\mathrm{T}}$，$k_1,k_2,k_3$ 为任意常数．
+>
+> 【解析】本题中，方程组有解 $\Leftrightarrow r(A)=r(\overline{A})$.（相关定理见第一题（4））
+>
+> 对增广矩阵作初等行变换，第一行乘以 $(-3)$、$(-5)$ 分别加到第二、四行上，有
+> $$
+> \begin{pmatrix}1&1&1&1&1&a\\3&2&1&1&-3&0\\0&1&2&2&6&b\\5&4&3&3&-1&2\end{pmatrix}\to\begin{pmatrix}1&1&1&1&1&a\\0&-1&-2&-2&-6&-3a\\0&1&2&2&6&b\\0&-1&-2&-2&-6&2-5a\end{pmatrix},
+> $$
+> 第二行乘以 $1$、$(-1)$ 分别加到第三、四行上，第二行再自乘 $(-1)$，有
+> $$
+> \to\begin{pmatrix}1&1&1&1&1&a\\&1&2&2&6&3a\\&&&b-3a\\&&&2-2a\end{pmatrix},
+> $$
+> （1）当 $b-3a=0$ 且 $2-2a=0$，即 $a=1,b=3$ 时方程组有解.
+>
+> （2）当 $a=1,b=3$ 时，方程组的同解方程组是
+> $$
+> \begin{cases}x_1+x_2+x_3+x_4+x_5=1,\\ x_2+2x_3+2x_4+6x_5=3.\end{cases}
+> $$
+> 由 $n-r(A)=5-2=3$，即解空间的维数为 $3$. 取自变量为 $x_3,x_4,x_5$，则导出组的基础解系为
+> $$
+> \eta_1=(1,-2,1,0,0)^{\mathrm{T}},\quad\eta_2=(1,-2,0,1,0)^{\mathrm{T}},\quad\eta_3=(5,-6,0,0,1)^{\mathrm{T}}.
+> $$
+> （3）令 $x_3=x_4=x_5=0$，得方程组的特解为 $\alpha=(-2,3,0,0,0)^{\mathrm{T}}$. 因此，方程组的所有解是 $\alpha+k_1\eta_1+k_2\eta_2+k_3\eta_3$，其中 $k_1,k_2,k_3$ 为任意常数．
 
 ### 1989 年 · 数学一 · 第七大题（解答，6 分）
 

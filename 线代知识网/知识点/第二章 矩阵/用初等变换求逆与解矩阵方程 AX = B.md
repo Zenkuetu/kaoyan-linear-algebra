@@ -711,6 +711,26 @@ $$
 > C=\begin{pmatrix}k_1+k_2+1&-k_1\\k_1&k_2\end{pmatrix}.
 > $$
 
+### 2006 年 · 数学三 · 第 4 题（填空，4 分）
+
+设矩阵 $A=\begin{pmatrix}2&1\\-1&2\end{pmatrix}$，$E$ 为 $2$ 阶单位矩阵，矩阵 $B$ 满足 $BA=B+2E$，则 $|B|=$ $\underline{\qquad}$。
+
+> [!success]- 答案与解析
+> **答案**：$2$。
+>
+> 【详解】由已知条件 $BA=B+2E$ 变形得，$BA-2E=B\Rightarrow B(A-E)=2E$，两边取行列式，得
+> $$
+> |B|\cdot|A-E|=|2E|=4|E|=4,
+> $$
+> 其中
+> $$
+> A-E=\begin{pmatrix}2&1\\-1&2\end{pmatrix}-\begin{pmatrix}1&0\\0&1\end{pmatrix}=\begin{pmatrix}1&1\\-1&1\end{pmatrix},\quad |A-E|=\begin{vmatrix}1&1\\-1&1\end{vmatrix}=2,
+> $$
+> 因此
+> $$
+> |B|=\frac{|2E|}{|A-E|}=\frac{4}{2}=2.
+> $$
+
 ### 2006 年 · 数学一 · 第 5 题（填空，4 分）
 
 设矩阵 $A=\begin{pmatrix}2&1\\-1&2\end{pmatrix}$，$E$ 为 2 阶单位矩阵，矩阵 $B$ 满足 $BA=B+2E$，则 $|B|=\underline{\qquad}$．
@@ -959,6 +979,26 @@ $$
 > $$
 > B=\begin{pmatrix}3&0&0\\0&2&0\\0&0&1\end{pmatrix}.
 > $$
+
+### 1991 年 · 数学三 · 填空题第 4 题（填空，3 分）
+
+设 $A$ 和 $B$ 为可逆矩阵，$X=\begin{pmatrix}O&A\\B&O\end{pmatrix}$ 为分块矩阵，则 $X^{-1}=$______.
+
+> [!success]- 答案与解析
+> **答案**：
+> $$
+> \begin{pmatrix}O&B^{-1}\\A^{-1}&O\end{pmatrix}.
+> $$
+>
+> 【解析】利用分块矩阵，按可逆矩阵定义有
+> $$
+> \begin{pmatrix}O&A\\B&O\end{pmatrix}\begin{pmatrix}X_1&X_2\\X_3&X_4\end{pmatrix}=\begin{pmatrix}E&O\\O&E\end{pmatrix},
+> $$
+> 由对应元素或块相等，即
+> $$
+> \begin{cases}AX_3=E,\\ AX_4=0,\\ BX_1=0,\\ BX_2=E.\end{cases}
+> $$
+> 从 $A$ 和 $B$ 均为可逆矩阵知 $X_3=A^{-1}$，$X_4=0$，$X_1=0$，$X_2=B^{-1}$. 故应填 $\begin{pmatrix}O&B^{-1}\\A^{-1}&O\end{pmatrix}$.
 
 ### 1990 年 · 数学一 · 第七大题（解答，6 分）
 

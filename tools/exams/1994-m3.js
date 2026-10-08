@@ -1,6 +1,6 @@
 // 1994 · 数学三 · 线性代数（题面取自《1、1987-1996 考研数学三真题》1994 年试卷（四）；答案与解析取自《1994 年数学三真题答案解析》）
 EXAMS.push({
-  year: 1994, subject: '数三', number: 104, kind: '填空', score: 3, label: '试卷四·填空题第 4 题',
+  year: 1994, subject: '数三', number: 104, kind: '填空', score: 3, label: '填空题第 4 题',
   ids: ['mat-block', 'mat-inv-method'],
   question: String.raw`设
 $$
@@ -26,7 +26,7 @@ $$`,
 });
 
 EXAMS.push({
-  year: 1994, subject: '数三', number: 203, kind: '选择', score: 3, label: '试卷四·选择题第 3 题',
+  year: 1994, subject: '数三', number: 203, kind: '选择', score: 3, label: '选择题第 3 题',
   ids: ['mat-rank-invariance', 'mat-rank-ineq', 'mat-rank'],
   question: String.raw`设 $A$ 是 $m\times n$ 矩阵，$C$ 是 $n$ 阶可逆矩阵，矩阵 $A$ 的秩为 $r$，矩阵 $B=AC$ 的秩为 $r_1$，则（　　）
 （A）$r>r_1$
@@ -43,7 +43,7 @@ $$
 });
 
 EXAMS.push({
-  year: 1994, subject: '数三', number: 309, kind: '解答', score: 11, label: '试卷四·第九题',
+  year: 1994, subject: '数三', number: 309, kind: '解答', score: 11, label: '第九题',
   ids: ['det-vandermonde', 'eq-nonhomo-crit', 'eq-nonhomo-general'],
   question: String.raw`设线性方程组
 $$
@@ -91,7 +91,7 @@ $$
 });
 
 EXAMS.push({
-  year: 1994, subject: '数三', number: 310, kind: '解答', score: 8, label: '试卷四·第十题',
+  year: 1994, subject: '数三', number: 310, kind: '解答', score: 8, label: '第十题',
   ids: ['eig-diag-crit', 'eig-mult', 'eig-diag-method'],
   question: String.raw`设
 $$

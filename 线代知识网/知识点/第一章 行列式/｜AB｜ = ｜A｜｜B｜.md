@@ -151,6 +151,26 @@ $$
 > |A+B^{-1}|=|A||A^{-1}+B||B^{-1}|=3\times2\times\frac{1}{2}=3.
 > $$
 
+### 2006 年 · 数学三 · 第 4 题（填空，4 分）
+
+设矩阵 $A=\begin{pmatrix}2&1\\-1&2\end{pmatrix}$，$E$ 为 $2$ 阶单位矩阵，矩阵 $B$ 满足 $BA=B+2E$，则 $|B|=$ $\underline{\qquad}$。
+
+> [!success]- 答案与解析
+> **答案**：$2$。
+>
+> 【详解】由已知条件 $BA=B+2E$ 变形得，$BA-2E=B\Rightarrow B(A-E)=2E$，两边取行列式，得
+> $$
+> |B|\cdot|A-E|=|2E|=4|E|=4,
+> $$
+> 其中
+> $$
+> A-E=\begin{pmatrix}2&1\\-1&2\end{pmatrix}-\begin{pmatrix}1&0\\0&1\end{pmatrix}=\begin{pmatrix}1&1\\-1&1\end{pmatrix},\quad |A-E|=\begin{vmatrix}1&1\\-1&1\end{vmatrix}=2,
+> $$
+> 因此
+> $$
+> |B|=\frac{|2E|}{|A-E|}=\frac{4}{2}=2.
+> $$
+
 ### 2006 年 · 数学一 · 第 5 题（填空，4 分）
 
 设矩阵 $A=\begin{pmatrix}2&1\\-1&2\end{pmatrix}$，$E$ 为 2 阶单位矩阵，矩阵 $B$ 满足 $BA=B+2E$，则 $|B|=\underline{\qquad}$．
@@ -191,6 +211,39 @@ $$
 > $$
 >
 > > **方法点评**：本题注意范德蒙德行列式的使用．
+
+### 2005 年 · 数学二 · 第 6 题（填空，4 分）
+
+设 $\alpha_1,\alpha_2,\alpha_3$ 均为 3 维列向量，记矩阵
+$$
+A=(\alpha_1,\alpha_2,\alpha_3),\qquad B=(\alpha_1+\alpha_2+\alpha_3,\ \alpha_1+2\alpha_2+4\alpha_3,\ \alpha_1+3\alpha_2+9\alpha_3).
+$$
+如果 $|A|=1$，那么 $|B|=$ ________.
+
+> [!success]- 答案与解析
+> **答案**：2
+>
+> 方法1：因为 $(\alpha_1+\alpha_2+\alpha_3)=(\alpha_1,\alpha_2,\alpha_3)\begin{pmatrix}1\\1\\1\end{pmatrix}$，$(\alpha_1+2\alpha_2+4\alpha_3)=(\alpha_1,\alpha_2,\alpha_3)\begin{pmatrix}1\\2\\4\end{pmatrix}$，
+> $$
+> (\alpha_1+3\alpha_2+9\alpha_3)=(\alpha_1,\alpha_2,\alpha_3)\begin{pmatrix}1\\3\\9\end{pmatrix},
+> $$
+> 故 $B=(\alpha_1+\alpha_2+\alpha_3,\alpha_1+2\alpha_2+4\alpha_3,\alpha_1+3\alpha_2+9\alpha_3)=(\alpha_1,\alpha_2,\alpha_3)\begin{pmatrix}1&1&1\\1&2&3\\1&4&9\end{pmatrix}$，
+>
+> 记 $A=(\alpha_1,\alpha_2,\alpha_3)$，两边取行列式，于是有
+> $$
+> |B|=|A|\cdot\begin{vmatrix}1&1&1\\1&2&3\\1&4&9\end{vmatrix}=1\times2=2.
+> $$
+> 方法2：利用行列式性质（在行列式中，把某行的各元素分别乘以非零常数加到另一行的对应元素上，行列式的值不变；从某一行或列中提取某一公因子行列式值不变）
+> $$
+> |B|=|\alpha_1+\alpha_2+\alpha_3,\alpha_1+2\alpha_2+4\alpha_3,\alpha_1+3\alpha_2+9\alpha_3|
+> $$
+> $$
+> \xrightarrow[3\text{列}-1\text{列}]{2\text{列}-1\text{列}}|\alpha_1+\alpha_2+\alpha_3,\alpha_2+3\alpha_3,2\alpha_2+8\alpha_3|\xrightarrow{3\text{列}-2\text{列}\times2}|\alpha_1+\alpha_2+\alpha_3,\alpha_2+3\alpha_3,2\alpha_3|
+> $$
+> $$
+> =2|\alpha_1+\alpha_2+\alpha_3,\alpha_2+3\alpha_3,\alpha_3|\xrightarrow[2\text{列}-3\text{列}\times3]{1\text{列}-3\text{列}}2|\alpha_1+\alpha_2,\alpha_2,\alpha_3|\xrightarrow{1\text{列}-2\text{列}}2|\alpha_1,\alpha_2,\alpha_3|
+> $$
+> 又因为 $|A|=|\alpha_1,\alpha_2,\alpha_3|=1$，故 $|B|=2|A|=2$.
 
 ### 2004 年 · 数学一 · 第 5 题（填空，4 分）
 
@@ -328,6 +381,26 @@ $$
 > 故 $|E+A|=0$.
 >
 > **方法二** 令 $AX=\lambda X\ (X\ne 0)$，由 $AX=\lambda X$ 得 $X^{\mathrm{T}}A^{\mathrm{T}}=\lambda X^{\mathrm{T}}$，两边右乘 $AX$ 得 $X^{\mathrm{T}}A^{\mathrm{T}}AX=\lambda X^{\mathrm{T}}AX$，即 $X^{\mathrm{T}}X=\lambda^2X^{\mathrm{T}}X$，或 $(\lambda^2-1)X^{\mathrm{T}}X=0$，由 $X^{\mathrm{T}}X=\|X\|^2>0$ 得 $\lambda^2-1=0$，即 $\lambda=\pm 1$. 因为 $|A|<0$，所以 $A$ 至少有一个特征值为 $-1$，从而 $A+E$ 的特征值至少有一个为 $0$，故 $|A+E|=0$.
+
+### 1991 年 · 数学三 · 第十一题（解答，6 分）
+
+试证明 $n$ 维列向量组 $\alpha_1,\alpha_2,\cdots,\alpha_n$ 线性无关的充分必要条件是
+$$
+D=\begin{vmatrix}\alpha_1^{\mathrm{T}}\alpha_1&\alpha_1^{\mathrm{T}}\alpha_2&\cdots&\alpha_1^{\mathrm{T}}\alpha_n\\\alpha_2^{\mathrm{T}}\alpha_1&\alpha_2^{\mathrm{T}}\alpha_2&\cdots&\alpha_2^{\mathrm{T}}\alpha_n\\\vdots&\vdots&&\vdots\\\alpha_n^{\mathrm{T}}\alpha_1&\alpha_n^{\mathrm{T}}\alpha_2&\cdots&\alpha_n^{\mathrm{T}}\alpha_n\end{vmatrix}\ne 0,
+$$
+其中 $\alpha_i^{\mathrm{T}}$ 表示列向量 $\alpha_i$ 的转置，$i=1,2,\cdots,n$.
+
+> [!success]- 答案与解析
+> **答案**：证明见解析．
+>
+> 【解析】记 $A=(\alpha_1,\alpha_2,\cdots,\alpha_n)$，则 $\alpha_1,\alpha_2,\cdots,\alpha_n$ 线性无关的充分必要条件是 $|A|\ne 0$.
+>
+> 由于
+> $$
+> A^{\mathrm{T}}A=\begin{pmatrix}\alpha_1^{\mathrm{T}}\\\alpha_2^{\mathrm{T}}\\\vdots\\\alpha_n^{\mathrm{T}}\end{pmatrix}\begin{pmatrix}\alpha_1,\alpha_2,\cdots,\alpha_n\end{pmatrix}=\begin{pmatrix}\alpha_1^{\mathrm{T}}\alpha_1&\alpha_1^{\mathrm{T}}\alpha_2&\cdots&\alpha_1^{\mathrm{T}}\alpha_n\\\alpha_2^{\mathrm{T}}\alpha_1&\alpha_2^{\mathrm{T}}\alpha_2&\cdots&\alpha_2^{\mathrm{T}}\alpha_n\\\vdots&\vdots&&\vdots\\\alpha_n^{\mathrm{T}}\alpha_1&\alpha_n^{\mathrm{T}}\alpha_2&\cdots&\alpha_n^{\mathrm{T}}\alpha_n\end{pmatrix},
+> $$
+> 从而取行列式，有 $D=|A^{\mathrm{T}}A|=|A^{\mathrm{T}}||A|=|A|^2$.
+> 由此可见 $\alpha_1,\alpha_2,\cdots,\alpha_n$ 线性无关的充分必要条件是 $D\ne 0$．
 
 ### 1989 年 · 数学三 · 选择题第 4 题（选择，3 分）
 

@@ -1,6 +1,6 @@
 // 1992 · 数学三 · 线性代数（题面取自《1、1987-1996 考研数学三真题》1992 年试卷（四）；答案与解析取自《1992 年数学三真题答案解析》）
 EXAMS.push({
-  year: 1992, subject: '数三', number: 104, kind: '填空', score: 3, label: '试卷四·填空题第 4 题',
+  year: 1992, subject: '数三', number: 104, kind: '填空', score: 3, label: '填空题第 4 题',
   ids: ['det-block', 'mat-block'],
   question: String.raw`设 $A$ 为 $m$ 阶方阵，$B$ 为 $n$ 阶方阵，且 $|A|=a$，$|B|=b$，
 $$
@@ -23,7 +23,7 @@ $$`,
 });
 
 EXAMS.push({
-  year: 1992, subject: '数三', number: 203, kind: '选择', score: 3, label: '试卷四·选择题第 3 题',
+  year: 1992, subject: '数三', number: 203, kind: '选择', score: 3, label: '选择题第 3 题',
   ids: ['eq-homo-sol', 'vec-rank-vs-mat', 'mat-rank-crit'],
   question: String.raw`设 $A$ 为 $m\times n$ 矩阵，齐次线性方程组 $Ax=0$ 仅有零解的充分条件是（　　）
 （A）$A$ 的列向量线性无关
@@ -49,7 +49,7 @@ $$`,
 });
 
 EXAMS.push({
-  year: 1992, subject: '数三', number: 309, kind: '解答', score: 7, label: '试卷四·第九题',
+  year: 1992, subject: '数三', number: 309, kind: '解答', score: 7, label: '第九题',
   ids: ['eig-similar-prop', 'eig-diag-method', 'eig-similar'],
   question: String.raw`设矩阵 $A$ 与 $B$ 相似，其中
 $$
@@ -104,7 +104,7 @@ $$
 });
 
 EXAMS.push({
-  year: 1992, subject: '数三', number: 310, kind: '解答', score: 6, label: '试卷四·第十题',
+  year: 1992, subject: '数三', number: 310, kind: '解答', score: 6, label: '第十题',
   ids: ['eq-AX-O-AB-O', 'eq-homo-sol', 'mat-rank-ineq'],
   question: String.raw`已知三阶矩阵 $B\ne O$，且 $B$ 的每一个列向量都是以下方程组的解：
 $$
@@ -137,7 +137,7 @@ $$
 });
 
 EXAMS.push({
-  year: 1992, subject: '数三', number: 311, kind: '解答', score: 6, label: '试卷四·第十一题',
+  year: 1992, subject: '数三', number: 311, kind: '解答', score: 6, label: '第十一题',
   ids: ['qf-positive-def', 'qf-positive-crit', 'mat-block'],
   question: String.raw`设 $A$、$B$ 分别为 $m$、$n$ 阶正定矩阵，试判定分块矩阵
 $$

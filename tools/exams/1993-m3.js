@@ -1,6 +1,6 @@
 // 1993 · 数学三 · 线性代数（题面取自《1、1987-1996 考研数学三真题》1993 年试卷（四）；答案与解析取自《1993 年数学三真题答案解析》）
 EXAMS.push({
-  year: 1993, subject: '数三', number: 104, kind: '填空', score: 3, label: '试卷四·填空题第 4 题',
+  year: 1993, subject: '数三', number: 104, kind: '填空', score: 3, label: '填空题第 4 题',
   ids: ['mat-adj-rank', 'mat-rank', 'mat-adjoint'],
   question: String.raw`设 4 阶方阵 $A$ 的秩为 2，则其伴随矩阵 $A^*$ 的秩为______.`,
   answer: String.raw`$0$.`,
@@ -21,7 +21,7 @@ $$
 });
 
 EXAMS.push({
-  year: 1993, subject: '数三', number: 203, kind: '选择', score: 3, label: '试卷四·选择题第 3 题',
+  year: 1993, subject: '数三', number: 203, kind: '选择', score: 3, label: '选择题第 3 题',
   ids: ['eig-diag-crit', 'eig-mult', 'eig-similar'],
   question: String.raw`$n$ 阶方阵 $A$ 具有 $n$ 个不同的特征值是 $A$ 与对角阵相似的（　　）
 （A）充分必要条件
@@ -36,7 +36,7 @@ EXAMS.push({
 });
 
 EXAMS.push({
-  year: 1993, subject: '数三', number: 308, kind: '解答', score: 10, label: '试卷四·第八题',
+  year: 1993, subject: '数三', number: 308, kind: '解答', score: 10, label: '第八题',
   ids: ['eq-nonhomo-crit', 'eq-nonhomo-general', 'eq-gauss'],
   question: String.raw`$k$ 为何值时，线性方程组
 $$
@@ -84,7 +84,7 @@ $$
 });
 
 EXAMS.push({
-  year: 1993, subject: '数三', number: 309, kind: '解答', score: 9, label: '试卷四·第九题',
+  year: 1993, subject: '数三', number: 309, kind: '解答', score: 9, label: '第九题',
   ids: ['qf-orthogonal', 'eig-similar-prop', 'qf-def'],
   question: String.raw`设二次型
 $$
