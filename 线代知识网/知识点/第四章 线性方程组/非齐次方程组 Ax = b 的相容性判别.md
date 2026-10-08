@@ -120,7 +120,90 @@ $$
 > - [[克拉默法则]] ⇒ 🟧 充分 ⇒ 本点——｜A｜≠0 ⇒ 唯一解
 > - [[方程组的几何意义（平面与直线）]] ⇒ 🟪 必要 ⇒ 本点——几何形态由秩决定
 
-## <span class="hx hx-exam">📝</span> 九、真题（2010–2016）
+## <span class="hx hx-exam">📝</span> 九、真题（2010–2022）
+
+### 2022 年 · 数学二 · 第 9 题（选择，5 分）
+
+设矩阵
+$$
+A=\begin{pmatrix}1&1&1\\1&a&a^2\\1&b&b^2\end{pmatrix},\quad b=\begin{pmatrix}1\\2\\4\end{pmatrix},
+$$
+则线性方程组 $Ax=b$ 的解的情况为
+
+（A）无解　　（B）有解　　（C）有无穷多解或无解　　（D）有唯一解或无解
+
+> [!success]- 答案与解析
+> **答案**：（D）
+>
+> 【分析】本题主要考查线性方程组的解的情况.
+>
+> 本题的方程组的系数矩阵带参数，故需要分情况讨论. 但若注意到系数矩阵行列式与范德蒙德行列式有关，则有一种情况实际上是很好判断的.
+>
+> 范德蒙德行列式：形如
+> $$
+> V_n=\begin{vmatrix}1&1&\cdots&1\\x_1&x_2&\cdots&x_n\\x_1^2&x_2^2&\cdots&x_n^2\\\vdots&\vdots&&\vdots\\x_1^{n-1}&x_2^{n-1}&\cdots&x_n^{n-1}\end{vmatrix}
+> $$
+> 的 $n$ 阶行列式被称为范德蒙德行列式，$V_n=\prod\limits_{n\ge i>j\ge 1}(x_i-x_j)$. 不难发现，若存在 $x_i=x_j\ (i\ne j)$，则 $V_n=0$，否则 $V_n\ne 0$.
+>
+> 【解】（法一）注意到
+> $$
+> |A|=\begin{vmatrix}1&1&1\\1&a&a^2\\1&b&b^2\end{vmatrix}=\begin{vmatrix}1&1&1\\1&a&b\\1&a^2&b^2\end{vmatrix}=(b-a)(b-1)(a-1).
+> $$
+> 当 $a\ne 1,b\ne 1$，且 $a\ne b$ 时，$|A|\ne 0$. 由克拉默法则可知，此时方程组 $Ax=b$ 有唯一解.
+>
+> 当 $a=1$ 时，
+> $$
+> (A,b)=\begin{pmatrix}1&1&1&1\\1&1&1&2\\1&b&b^2&4\end{pmatrix}\to\begin{pmatrix}1&1&1&1\\0&0&0&1\\1&b&b^2&4\end{pmatrix}.
+> $$
+> $r(A,b)\ne r(A)$，方程组无解. 同理可得，当 $b=1$ 时，$r(A,b)\ne r(A)$，方程组无解.
+>
+> 当 $a=b$ 时，
+> $$
+> (A,b)=\begin{pmatrix}1&1&1&1\\1&a&a^2&2\\1&b&b^2&4\end{pmatrix}\to\begin{pmatrix}1&1&1&1\\1&a&a^2&2\\0&0&0&2\end{pmatrix}.
+> $$
+> $r(A,b)\ne r(A)$，方程组无解.
+>
+> 综上所述，方程组 $Ax=b$ 的解的情况只有两种可能，有唯一解或无解. 应选 D.
+>
+> （法二）直接对增广矩阵 $(A,b)$ 作初等行变换.
+> $$
+> (A,b)=\begin{pmatrix}1&1&1&1\\1&a&a^2&2\\1&b&b^2&4\end{pmatrix}\to\begin{pmatrix}1&1&1&1\\0&a-1&a^2-1&1\\0&b-1&b^2-1&3\end{pmatrix}.
+> $$
+> 当 $a=b=1$ 时，$r(A)=1$，$r(A,b)=2$，方程组无解.
+>
+> 当 $a=1,b\ne 1$ 或 $a\ne 1,b=1$ 时，$r(A)=2$，$r(A,b)=3$，方程组无解.
+>
+> 当 $a=b$，但均不等于 $1$ 时，$r(A)=2$，$r(A,b)=3$，方程组无解.
+>
+> 当 $a\ne 1,b\ne 1$，且 $a\ne b$ 时，$r(A)=r(A,b)=3$. 方程组有唯一解.
+>
+> 综上所述，方程组 $Ax=b$ 的解的情况只有两种可能，有唯一解或无解. 应选 D.
+>
+> <small>解析出处：《2022 数学二解析》第 14–15 页</small>
+
+### 2019 年 · 数学一 · 第 6 题（选择，4 分）
+
+有 3 张平面两两相交，交线相互平行，它们的方程
+$$
+a_{i1}x+a_{i2}y+a_{i3}z=d_i\quad (i=1,2,3)
+$$
+组成的线性方程组的系数矩阵和增广矩阵分别记为 $A,\overline{A}$，则（　）
+
+（A）$r(A)=2,\ r(\overline{A})=3$　（B）$r(A)=2,\ r(\overline{A})=2$　（C）$r(A)=1,\ r(\overline{A})=2$　（D）$r(A)=1,\ r(\overline{A})=1$
+
+> [!success]- 答案与解析
+> **答案**：（A）
+>
+> $$
+> A=\begin{pmatrix}a_{11}&a_{12}&a_{13}\\a_{21}&a_{22}&a_{23}\\a_{31}&a_{32}&a_{33}\end{pmatrix},\quad \overline{A}=\begin{pmatrix}a_{11}&a_{12}&a_{13}&d_1\\a_{21}&a_{22}&a_{23}&d_2\\a_{31}&a_{32}&a_{33}&d_3\end{pmatrix},
+> $$
+> 因为任两个平面不平行，所以 $r(A)\ge 2$。
+>
+> 又因为三个平面没有公共的交点，所以 $r(A)<r(\overline{A})$，
+>
+> 再由 $r(A)\le 3$ 得 $r(A)=2,\ r(\overline{A})=3$，应选（A）。
+>
+> <small>解析出处：《2019 数学一解析》第 2 页</small>
 
 ### 2016 年 · 数学一 · 第 20 题（解答，11 分）
 
@@ -175,6 +258,34 @@ $$
 > 当 $a=-2$ 时，因为 $r(A)\ne r(A\ \vdots\ B)$，所以 $AX=B$ 无解。
 >
 > <small>解析出处：《2016 数学一解析》第 6–8 页</small>
+
+### 2016 年 · 数学三 · 第 20 题（解答，11 分）
+
+（本题满分 11 分）设矩阵 $A=\begin{pmatrix}1&1&1-a\\1&0&a\\a+1&1&a+1\end{pmatrix}$，$\beta=\begin{pmatrix}0\\1\\2a-2\end{pmatrix}$，且方程组 $Ax=\beta$ 无解.
+
+（Ⅰ）求 $a$ 的值；
+
+（Ⅱ）求方程组 $A^{\mathrm{T}}Ax=A^{\mathrm{T}}\beta$ 的通解.
+
+> [!success]- 答案与解析
+> **答案**：$a=0$；$x=\begin{pmatrix}1\\-2\\0\end{pmatrix}+k\begin{pmatrix}0\\-1\\1\end{pmatrix}$（$k$ 为任意常数）
+>
+> （Ⅰ）对矩阵 $(A\mid\beta)$ 施以初等行变换
+> $$
+> (A\mid\beta)=\left(\begin{array}{ccc|c}1&1&1-a&0\\1&0&a&1\\a+1&1&a+1&2a-2\end{array}\right)\to\left(\begin{array}{ccc|c}1&1&1-a&0\\0&-1&2a-1&1\\0&0&-a^2+2a&a-2\end{array}\right),
+> $$
+> 由方程组无解知，秩 $(A\mid\beta)>$ 秩 $A$，即 $-a^2+2a=0$，且 $a-2\ne0$，解得 $a=0$.
+>
+> （Ⅱ）对矩阵 $(A^{\mathrm{T}}A\mid A^{\mathrm{T}}\beta)$ 施以初等行变换
+> $$
+> (A^{\mathrm{T}}A\mid A^{\mathrm{T}}\beta)=\left(\begin{array}{ccc|c}3&2&2&-1\\2&2&2&-2\\2&2&2&-2\end{array}\right)\to\left(\begin{array}{ccc|c}1&0&0&1\\0&1&1&-2\\0&0&0&0\end{array}\right),
+> $$
+> 所以，方程组 $A^{\mathrm{T}}Ax=A^{\mathrm{T}}\beta$ 的通解
+> $$
+> x=\begin{pmatrix}1\\-2\\0\end{pmatrix}+k\begin{pmatrix}0\\-1\\1\end{pmatrix}\quad(k\ \text{为任意常数}).
+> $$
+>
+> <small>解析出处：《2016 数学三真题答案解析》第 5 页</small>
 
 ### 2015 年 · 数学一 · 第 5 题（选择，4 分）
 
@@ -281,6 +392,39 @@ $$
 >
 > <small>解析出处：《2013 年数学（三）试题答案》第 8 页</small>
 
+### 2012 年 · 数学三 · 第 20 题（解答，11 分）
+
+（本题满分 11 分）设
+$$
+A=\begin{pmatrix}1&a&0&0\\0&1&a&0\\0&0&1&a\\a&0&0&1\end{pmatrix},\qquad \beta=\begin{pmatrix}1\\-1\\0\\0\end{pmatrix}.
+$$
+（Ⅰ）计算行列式 $|A|$；
+
+（Ⅱ）当实数 $a$ 为何值时，方程组 $Ax=\beta$ 有无穷多解，并求其通解。
+
+> [!success]- 答案与解析
+> **答案**：（Ⅰ）$|A|=1-a^4$；（Ⅱ）$a=-1$ 时方程组有无穷多解，通解为 $x=k\begin{pmatrix}1\\1\\1\\1\end{pmatrix}+\begin{pmatrix}-1\\0\\0\\0\end{pmatrix}$（$k$ 为任意常数）。
+>
+> （Ⅱ）对方程组的增广矩阵作初等行变换：
+> $$
+> \begin{pmatrix}1&a&0&0&1\\0&1&a&0&-1\\0&0&1&a&0\\a&0&0&1&0\end{pmatrix}
+> \to\begin{pmatrix}1&a&0&0&1\\0&1&a&0&-1\\0&0&1&a&0\\0&-a^2&0&1&-a\end{pmatrix}
+> \to\begin{pmatrix}1&a&0&0&1\\0&1&a&0&-1\\0&0&1&a&0\\0&0&a^3&1&-a-a^2\end{pmatrix}
+> $$
+> $$
+> \to\begin{pmatrix}1&a&0&0&1\\0&1&a&0&-1\\0&0&1&a&0\\0&0&0&1-a^4&-a-a^2\end{pmatrix}.
+> $$
+> 要使得原线性方程组有无穷多解，则有 $1-a^4=0$ 及 $-a-a^2=0$，可知 $a=-1$。
+>
+> 此时原线性方程组增广矩阵为 $\begin{pmatrix}1&-1&0&0&1\\0&1&-1&0&-1\\0&0&1&-1&0\\0&0&0&0&0\end{pmatrix}$，进一步化为行最简形得 $\begin{pmatrix}1&0&0&-1&0\\0&1&0&-1&-1\\0&0&1&-1&0\\0&0&0&0&0\end{pmatrix}$，
+>
+> 可知导出组的基础解系为 $\begin{pmatrix}1\\1\\1\\1\end{pmatrix}$，非齐次方程的特解为 $\begin{pmatrix}-1\\0\\0\\0\end{pmatrix}$，故其通解为
+> $$
+> x=k\begin{pmatrix}1\\1\\1\\1\end{pmatrix}+\begin{pmatrix}-1\\0\\0\\0\end{pmatrix}.
+> $$
+>
+> <small>解析出处：《2012 年数学（三）试题答案》第 9–10 页</small>
+
 ### 2010 年 · 数学一 · 第 20 题（解答，11 分）
 
 （本题满分 11 分）设
@@ -329,6 +473,62 @@ $$
 > $$
 >
 > <small>解析出处：《2010 数学一解析》第 9 页</small>
+
+### 2010 年 · 数学二 · 第 22 题（解答，11 分）
+
+设
+$$
+A=\begin{pmatrix}\lambda&1&1\\0&\lambda-1&0\\1&1&\lambda\end{pmatrix},\quad b=\begin{pmatrix}a\\1\\1\end{pmatrix}.
+$$
+已知线性方程组 $Ax=b$ 存在两个不同的解.
+
+（Ⅰ）求 $\lambda,a$；
+
+（Ⅱ）求方程组 $Ax=b$ 的通解.
+
+> [!success]- 答案与解析
+> **答案**：（Ⅰ）$\lambda=-1,\ a=-2$；（Ⅱ）$x=k\begin{pmatrix}1\\0\\1\end{pmatrix}+\begin{pmatrix}\frac{3}{2}\\-\frac{1}{2}\\0\end{pmatrix}$（$k$ 为任意常数）
+>
+> 因为方程组有两个不同的解，所以可以判断方程组增广矩阵的秩小于 3，进而可以通过秩的关系求解方程组中未知参数，有以下两种方法.
+>
+> 方法 1：（Ⅰ）已知 $Ax=b$ 有 2 个不同的解，故 $r(A)=r(\overline{A})<3$，对增广矩阵进行初等行变换，得
+> $$
+> \overline{A}=\begin{pmatrix}\lambda&1&1&a\\0&\lambda-1&0&1\\1&1&\lambda&1\end{pmatrix}\to\begin{pmatrix}1&1&\lambda&1\\0&\lambda-1&0&1\\\lambda&1&1&a\end{pmatrix}
+> $$
+> $$
+> \to\begin{pmatrix}1&1&\lambda&1\\0&\lambda-1&0&1\\0&1-\lambda&1-\lambda^2&a-\lambda\end{pmatrix}\to\begin{pmatrix}1&1&\lambda&1\\0&\lambda-1&0&1\\0&0&1-\lambda^2&a-\lambda+1\end{pmatrix}
+> $$
+> 当 $\lambda=1$ 时，
+> $$
+> \overline{A}\to\begin{pmatrix}1&1&1&1\\0&0&0&1\\0&0&0&a\end{pmatrix}\to\begin{pmatrix}1&1&1&1\\0&0&0&1\\0&0&0&0\end{pmatrix},
+> $$
+> 此时，$r(A)\ne r(\overline{A})$，故 $Ax=b$ 无解（舍去）.
+>
+> 当 $\lambda=-1$ 时，
+> $$
+> \overline{A}\to\begin{pmatrix}1&1&-1&1\\0&-2&0&1\\0&0&0&a+2\end{pmatrix},
+> $$
+> 由于 $r(A)=r(\overline{A})<3$，所以 $a=-2$，故 $\lambda=-1$，$a=-2$.
+>
+> 方法 2：已知 $Ax=b$ 有 2 个不同的解，故 $r(A)=r(\overline{A})<3$，因此 $|A|=0$，即
+> $$
+> |A|=\begin{vmatrix}\lambda&1&1\\0&\lambda-1&0\\1&1&\lambda\end{vmatrix}=(\lambda-1)^2(\lambda+1)=0,
+> $$
+> 知 $\lambda=1$ 或 $-1$.
+>
+> 当 $\lambda=1$ 时，$r(A)=1\ne r(\overline{A})=2$，此时，$Ax=b$ 无解，因此 $\lambda=-1$. 由 $r(A)=r(\overline{A})$，得 $a=-2$.
+>
+> （Ⅱ）对增广矩阵做初等行变换
+> $$
+> \overline{A}=\begin{pmatrix}-1&1&1&-2\\0&-2&0&1\\1&1&-1&1\end{pmatrix}\to\begin{pmatrix}1&-1&-1&2\\0&2&0&-1\\0&0&0&0\end{pmatrix}\to\begin{pmatrix}1&0&-1&\frac{3}{2}\\0&1&0&-\frac{1}{2}\\0&0&0&0\end{pmatrix}
+> $$
+> 可知原方程组等价为 $\begin{cases}x_1-x_3=\frac{3}{2},\\x_2=-\frac{1}{2},\end{cases}$ 写成向量的形式，即
+> $$
+> \begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix}=x_3\begin{pmatrix}1\\0\\1\end{pmatrix}+\begin{pmatrix}\frac{3}{2}\\-\frac{1}{2}\\0\end{pmatrix}.
+> $$
+> 因此 $Ax=b$ 的通解为 $x=k\begin{pmatrix}1\\0\\1\end{pmatrix}+\begin{pmatrix}\frac{3}{2}\\-\frac{1}{2}\\0\end{pmatrix}$，其中 $k$ 为任意常数.
+>
+> <small>解析出处：《2005—2013 考研数二真题答案解析》第 80–82 页</small>
 
 ## <span class="hx hx-nav">🧭</span> 十、导航
 

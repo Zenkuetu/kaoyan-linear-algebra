@@ -162,6 +162,31 @@ $$
 >
 > <small>解析出处：《2013 年数学（三）试题答案》第 5 页</small>
 
+### 2011 年 · 数学一 · 第 6 题（选择，5 分）
+
+设 $A=(\alpha_1,\alpha_2,\alpha_3,\alpha_4)$ 是 4 阶矩阵，$A^*$ 为 $A$ 的伴随矩阵．若 $(1,0,1,0)^{\mathrm{T}}$ 是方程组 $Ax=0$ 的一个基础解系，则 $A^*x=0$ 的基础解系可为（　　）
+
+（A）$\alpha_1,\alpha_3$．　　（B）$\alpha_1,\alpha_2$．　　（C）$\alpha_1,\alpha_2,\alpha_3$．　　（D）$\alpha_2,\alpha_3,\alpha_4$．
+
+> [!success]- 答案与解析
+> **答案**：（D）
+>
+> 因为 $AX=0$ 的基础解系含一个线性无关的解向量，所以 $r(A)=3$，于是 $r(A^*)=1$，齐次线性方程组 $A^*X=0$ 的基础解系含 3 个线性无关的解向量，排除（A），（B）；
+>
+> 由 $A^*A=|A|E=O$，得 $\alpha_1,\alpha_2,\alpha_3,\alpha_4$ 为 $A^*X=0$ 的一组解．
+>
+> 由 $(1,0,1,0)^{\mathrm{T}}$ 为方程组 $AX=0$ 的解，得
+>
+> $$
+> A\begin{pmatrix}1\\0\\1\\0\end{pmatrix}=(\alpha_1,\alpha_2,\alpha_3,\alpha_4)\begin{pmatrix}1\\0\\1\\0\end{pmatrix}=0,
+> $$
+>
+> 即 $\alpha_1+\alpha_3=0$．
+>
+> 或 $\alpha_1=-\alpha_3$，从而 $\alpha_1,\alpha_2,\alpha_3$ 线性相关，于是 $\alpha_2,\alpha_3,\alpha_4$ 线性无关，故 $\alpha_2,\alpha_3,\alpha_4$ 为方程组 $A^*X=0$ 的一个基础解系，应选（D）．
+>
+> <small>解析出处：《2011 数学一解析》第 2–3 页</small>
+
 ### 2009 年 · 数学二 · 第 7 题（选择，4 分）
 
 设 $A,B$ 均为 2 阶方阵，$A^*,B^*$ 分别为 $A,B$ 的伴随矩阵. 若 $|A|=2$，$|B|=3$，则分块矩阵

@@ -136,6 +136,26 @@ $$
 >
 > <small>解析出处：《2021 数学三解析》第 5 页</small>
 
+### 2016 年 · 数学三 · 第 13 题（填空，4 分）
+
+行列式
+$$
+\begin{vmatrix}\lambda&-1&0&0\\0&\lambda&-1&0\\0&0&\lambda&-1\\4&3&2&\lambda+1\end{vmatrix}=\underline{\qquad}.
+$$
+
+> [!success]- 答案与解析
+> **答案**：$\lambda^4+\lambda^3+2\lambda^2+3\lambda+4$
+>
+> 按最后一行展开，得
+> $$
+> (-1)^{4+1}\times4\begin{vmatrix}-1&0&0\\\lambda&-1&0\\0&\lambda&-1\end{vmatrix}+(-1)^{4+2}\times3\begin{vmatrix}\lambda&0&0\\0&-1&0\\0&\lambda&-1\end{vmatrix}+(-1)^{4+3}\times2\begin{vmatrix}\lambda&-1&0\\0&\lambda&0\\0&0&-1\end{vmatrix}+(-1)^{4+4}(\lambda+1)\begin{vmatrix}\lambda&-1&0\\0&\lambda&-1\\0&0&\lambda\end{vmatrix}
+> $$
+> $$
+> =\lambda^4+\lambda^3+2\lambda^2+3\lambda+4.
+> $$
+>
+> <small>解析出处：《2016 数学三真题答案解析》第 3 页</small>
+
 ### 2014 年 · 数学三 · 第 5 题（选择，4 分）
 
 行列式

@@ -146,6 +146,51 @@ $$
 >
 > <small>解析出处：《2021 数学二解析》第 3–4 页</small>
 
+### 2018 年 · 数学一 · 第 21 题（解答，11 分）
+
+（本题满分 11 分）已知 $a$ 是常数，且矩阵
+$$
+A=\begin{pmatrix}1&2&a\\1&3&0\\2&7&-a\end{pmatrix}
+$$
+可经初等列变换化为矩阵
+$$
+B=\begin{pmatrix}1&a&2\\0&1&1\\-1&1&1\end{pmatrix}.
+$$
+（Ⅰ）求 $a$；
+
+（Ⅱ）求满足 $AP=B$ 的可逆矩阵 $P$。
+
+> [!success]- 答案与解析
+> **答案**：（Ⅰ）$a=2$；（Ⅱ）$P=\begin{pmatrix}-6k_1+3&-6k_2+4&-6k_3+4\\2k_1-1&2k_2-1&2k_3-1\\k_1&k_2&k_3\end{pmatrix}$（$k_1,k_2,k_3$ 为任意常数且 $k_2\ne k_3$）
+>
+> （Ⅰ）显然 $r(A)=2$，因为初等变换不改变矩阵的秩，所以 $r(B)=2$，而
+> $$
+> B=\begin{pmatrix}1&a&2\\0&1&1\\-1&1&1\end{pmatrix}\to\begin{pmatrix}1&a&2\\0&1&1\\0&a+1&3\end{pmatrix}\to\begin{pmatrix}1&a&2\\0&1&1\\0&0&2-a\end{pmatrix},
+> $$
+> 故 $a=2$。
+>
+> （Ⅱ）
+> $$
+> A=\begin{pmatrix}1&2&2\\1&3&0\\2&7&-2\end{pmatrix},\quad B=\begin{pmatrix}1&2&2\\0&1&1\\-1&1&1\end{pmatrix}.
+> $$
+> 令 $P=(X_1,X_2,X_3)$，由
+> $$
+> (A\ \vdots\ B)=\left(\begin{array}{ccc|ccc}1&2&2&1&2&2\\1&3&0&0&1&1\\2&7&-2&-1&1&1\end{array}\right)\to\left(\begin{array}{ccc|ccc}1&0&6&3&4&4\\0&1&-2&-1&-1&-1\\0&0&0&0&0&0\end{array}\right)
+> $$
+> 得
+> $$
+> X_1=k_1\begin{pmatrix}-6\\2\\1\end{pmatrix}+\begin{pmatrix}3\\-1\\0\end{pmatrix}=\begin{pmatrix}-6k_1+3\\2k_1-1\\k_1\end{pmatrix},\quad X_2=k_2\begin{pmatrix}-6\\2\\1\end{pmatrix}+\begin{pmatrix}4\\-1\\0\end{pmatrix}=\begin{pmatrix}-6k_2+4\\2k_2-1\\k_2\end{pmatrix},
+> $$
+> $$
+> X_3=k_3\begin{pmatrix}-6\\2\\1\end{pmatrix}+\begin{pmatrix}4\\-1\\0\end{pmatrix}=\begin{pmatrix}-6k_3+4\\2k_3-1\\k_3\end{pmatrix},
+> $$
+> 则所求的可逆矩阵为
+> $$
+> P=\begin{pmatrix}-6k_1+3&-6k_2+4&-6k_3+4\\2k_1-1&2k_2-1&2k_3-1\\k_1&k_2&k_3\end{pmatrix}\ (k_1,k_2,k_3\ \text{为任意常数且}\ k_2\ne k_3).
+> $$
+>
+> <small>解析出处：《2018 数学一解析》第 6 页</small>
+
 ### 2016 年 · 数学一 · 第 20 题（解答，11 分）
 
 （本题满分 11 分）设矩阵

@@ -248,6 +248,60 @@ $$
 >
 > <small>解析出处：《2016 数学一解析》第 8–9 页</small>
 
+### 2016 年 · 数学三 · 第 21 题（解答，11 分）
+
+（本题满分 11 分）已知矩阵 $A=\begin{pmatrix}0&-1&1\\2&-3&0\\0&0&0\end{pmatrix}$.
+
+（Ⅰ）求 $A^{99}$；
+
+（Ⅱ）设 3 阶矩阵 $B=(\alpha_1,\alpha_2,\alpha_3)$ 满足 $B^2=BA$，记 $B^{100}=(\beta_1,\beta_2,\beta_3)$，将 $\beta_1,\beta_2,\beta_3$ 分别表示为 $\alpha_1,\alpha_2,\alpha_3$ 的线性组合.
+
+> [!success]- 答案与解析
+> **答案**：$A^{99}=\begin{pmatrix}2^{99}-2&1-2^{99}&2-2^{98}\\2^{100}-2&1-2^{100}&2-2^{99}\\0&0&0\end{pmatrix}$；$\beta_1=(2^{99}-2)\alpha_1+(2^{100}-2)\alpha_2$，$\beta_2=(1-2^{99})\alpha_1+(1-2^{100})\alpha_2$，$\beta_3=(2-2^{98})\alpha_1+(2-2^{99})\alpha_2$
+>
+> （Ⅰ）因为
+> $$
+> |\lambda E-A|=\begin{vmatrix}\lambda&1&-1\\-2&\lambda+3&0\\0&0&\lambda\end{vmatrix}=\lambda(\lambda+1)(\lambda+2),
+> $$
+> 所以 $A$ 的特征值为 $\lambda_1=-1,\lambda_2=-2,\lambda_3=0$.
+>
+> 当 $\lambda_1=-1$ 时，解方程组 $(-E-A)x=0$，得特征向量 $\xi_1=(1,1,0)^{\mathrm{T}}$；
+>
+> 当 $\lambda_2=-2$ 时，解方程组 $(-2E-A)x=0$，得特征向量 $\xi_2=(1,2,0)^{\mathrm{T}}$；
+>
+> 当 $\lambda_3=0$ 时，解方程组 $Ax=0$，得特征向量 $\xi_3=(3,2,2)^{\mathrm{T}}$.
+>
+> 令 $P=(\xi_1,\xi_2,\xi_3)=\begin{pmatrix}1&1&3\\1&2&2\\0&0&2\end{pmatrix}$，则
+> $$
+> P^{-1}AP=\begin{pmatrix}-1&0&0\\0&-2&0\\0&0&0\end{pmatrix},
+> $$
+> 所以
+> $$
+> A^{99}=P\begin{pmatrix}(-1)^{99}&0&0\\0&(-2)^{99}&0\\0&0&0\end{pmatrix}P^{-1}=\begin{pmatrix}1&1&3\\1&2&2\\0&0&2\end{pmatrix}\begin{pmatrix}(-1)^{99}&0&0\\0&(-2)^{99}&0\\0&0&0\end{pmatrix}\begin{pmatrix}2&-1&-2\\-1&1&\frac12\\0&0&\frac12\end{pmatrix}
+> $$
+> $$
+> =\begin{pmatrix}2^{99}-2&1-2^{99}&2-2^{98}\\2^{100}-2&1-2^{100}&2-2^{99}\\0&0&0\end{pmatrix}.
+> $$
+>
+> （Ⅱ）因为 $B^2=BA$，所以
+> $$
+> B^{100}=B^{98}B^2=B^{99}A=B^{97}B^2A=B^{98}A^2=\cdots=BA^{99},
+> $$
+> 即
+> $$
+> (\beta_1,\beta_2,\beta_3)=(\alpha_1,\alpha_2,\alpha_3)\begin{pmatrix}2^{99}-2&1-2^{99}&2-2^{98}\\2^{100}-2&1-2^{100}&2-2^{99}\\0&0&0\end{pmatrix},
+> $$
+> 所以
+> $$
+> \begin{cases}
+> \beta_1=(2^{99}-2)\alpha_1+(2^{100}-2)\alpha_2,\\
+> \beta_2=(1-2^{99})\alpha_1+(1-2^{100})\alpha_2,\\
+> \beta_3=(2-2^{98})\alpha_1+(2-2^{99})\alpha_2,
+> \end{cases}
+> $$
+>
+> <small>解析出处：《2016 数学三真题答案解析》第 5–6 页</small>
+
 ## <span class="hx hx-nav">🧭</span> 十、导航
 
 
