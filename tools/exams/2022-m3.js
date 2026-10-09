@@ -171,7 +171,7 @@ $$
 
 EXAMS.push({
   year: 2022, subject: '数三', number: 21, kind: '解答', score: 12,
-  ids: ['qf-orthogonal', 'qf-canonical'],
+  ids: ['qf-orthogonal', 'qf-canonical', 'qf-rayleigh'],
   question: String.raw`（本题满分 12 分）已知二次型 $f(x_1,x_2,x_3)=3x_1^2+4x_2^2+3x_3^2+2x_1x_3$。
 
 （Ⅰ）求正交矩阵 $Q$，使正交变换 $x=Qy$ 将二次型 $f(x_1,x_2,x_3)$ 化为标准形；

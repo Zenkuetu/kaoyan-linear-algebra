@@ -25,6 +25,24 @@ for (const f of files) {
 }
 
 const mdFiles = files.filter(f => f.endsWith('.md'));
+// 数学公式里的方括号/圆括号会伪装成 markdown 链接（例：[E-(E-A)^{-1}](E-A)，整段都在行内公式里），
+// 所以先算出公式区间，落在这区间里的“链接”一律跳过 —— 真实链接不可能出现在公式内部。
+const DL = String.fromCharCode(36);   // 美元符号用编码写，避免生成脚本转义麻烦
+function mathRanges(text) {
+  const ranges = [];
+  let i = 0, start = -1;
+  while (i < text.length) {
+    if (text[i] === DL && text[i - 1] !== '\\') {
+      const disp = text[i + 1] === DL;
+      const len = disp ? 2 : 1;
+      if (start < 0) start = i; else { ranges.push([start, i + len]); start = -1; }
+      i += len;
+    } else i++;
+  }
+  return ranges;
+}
+const inAny = (ranges, idx) => ranges.some(([a, b]) => idx >= a && idx < b);
+
 let wikiTotal = 0, mdTotal = 0;
 const broken = [];
 const ambiguous = [];
@@ -35,9 +53,11 @@ for (const f of mdFiles) {
   const rel = path.relative(vault, f).replace(/\\/g, '/');
   const text = fs.readFileSync(f, 'utf8');
   const lines = text.split(/\r?\n/);
+  const math = mathRanges(text);
 
   // [[目标|显示]] 或 [[目标#标题|显示]]
   for (const m of text.matchAll(/\[\[([^\]\n]+?)\]\]/g)) {
+    if (inAny(math, m.index)) continue;
     wikiTotal++;
     // ⚠️ 先查"链接内部有没有多余空白"——必须在 trim 之前查，
     //    否则 [[目标    |显示名]] 会被 trim 成合法目标，这类坏链接就漏过去了（踩过这个坑）。
@@ -66,6 +86,7 @@ for (const f of mdFiles) {
 
   // [显示](路径.md)
   for (const m of text.matchAll(/\[([^\]\n]*)\]\(([^)\s]+)\)/g)) {
+    if (inAny(math, m.index)) continue;
     mdTotal++;
     let href = m[2];
     if (/^https?:/i.test(href) || href.startsWith('obsidian://')) continue;
