@@ -674,7 +674,7 @@ $$
   >
   > 又 $A^{-1}=\frac{A^*}{|A|}$，$B^{-1}=\frac{B^*}{|B|}$，故 $\frac{B^*}{|B|}=\frac{A^*}{|A|}E_{12}$，又因 $|B|=-|A|$，故 $A^*E_{12}=-B^*$.
 
-### 2009 年 · 数学三 · 第 5 题（选择，4 分）
+### 2009 年 · 数学三 · 第 5 题（选择，4 分）　／　数学二 · 第 7 题
 
 - [ ] 第 5 题
 
@@ -723,34 +723,6 @@ $$
   > $$
   >
   > 应选（B）．
-
-### 2009 年 · 数学二 · 第 7 题（选择，4 分）
-
-- [ ] 第 7 题
-
-  设 $A,B$ 均为 2 阶方阵，$A^*,B^*$ 分别为 $A,B$ 的伴随矩阵. 若 $|A|=2$，$|B|=3$，则分块矩阵
-  $$
-  \begin{pmatrix}
-  O&A\\
-  B&O
-  \end{pmatrix}
-  $$
-  的伴随矩阵为（　）
-
-  （A）$\begin{pmatrix}O&3B^*\\2A^*&O\end{pmatrix}$　（B）$\begin{pmatrix}O&2B^*\\3A^*&O\end{pmatrix}$　（C）$\begin{pmatrix}O&3A^*\\2B^*&O\end{pmatrix}$　（D）$\begin{pmatrix}O&2A^*\\3B^*&O\end{pmatrix}$
-
-  > [!success]- 答案与解析
-  > **答案**：（B）
-  >
-  > 根据 $CC^*=|C|E$ 若 $C^*=|C|C^{-1},C^{-1}=\frac{1}{|C|}C^*$
-  >
-  > 分块矩阵 $\begin{pmatrix}O&A\\B&O\end{pmatrix}$ 的行列式 $\begin{vmatrix}O&A\\B&O\end{vmatrix}=(-1)^{2\times2}|A||B|=2\times3=6$ 即分块矩阵可逆
-  > $$
-  > \begin{pmatrix}O&A\\B&O\end{pmatrix}^*=\begin{vmatrix}O&A\\B&O\end{vmatrix}\begin{pmatrix}O&A\\B&O\end{pmatrix}^{-1}=6\begin{pmatrix}O&B^{-1}\\A^{-1}&O\end{pmatrix}=6\begin{pmatrix}O&\frac{1}{|B|}B^*\\\frac{1}{|A|}A^*&O\end{pmatrix}
-  > $$
-  > $$
-  > =6\begin{pmatrix}O&\frac{1}{3}B^*\\\frac{1}{2}A^*&O\end{pmatrix}=\begin{pmatrix}O&2B^*\\3A^*&O\end{pmatrix}
-  > $$
 
 ### 2011 年 · 数学二 · 第 8 题（选择，4 分）
 

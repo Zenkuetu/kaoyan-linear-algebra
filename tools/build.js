@@ -389,32 +389,75 @@ for (const m of MODULES) {
     const myExams = EXAMS.filter(e => (e.ids || []).includes(p.id))
       .sort((a, b) => (a.year - b.year) || (a.number - b.number));   // 年号升序
     if (myExams.length) {
+      // 同年同题（数一/数二/数三 常共用同一道题）合并成一条：题面只出现一次，标题里列出所有卷面题号。
+      // 判定条件保守：年份 + 题型 + 分值都相同，且题面归一化后完全相同。
+      const normQ = s => String(s)
+        .replace(/\s+/g, '')
+        .replace(/\\dfrac/g, '\\frac').replace(/\\mathrm\{T\}/g, 'T').replace(/\\mathrmT/g, 'T')
+        .replace(/\\limits/g, '').replace(/\\left|\\right/g, '')
+        .replace(/\\[!,;:]/g, '').replace(/\\quad|\\qquad/g, '')
+        .replace(/\\ne(?![a-z])/g, '\\neq')
+        .replace(/[。.．]/g, '')
+        .replace(/（本题满分[^）]*）|\(本题满分[^)]*\)/g, '');
+      const groups = [];
+      for (const e of myExams) {
+        const hit = groups.find(g => g[0].year === e.year && g[0].kind === e.kind && g[0].score === e.score && normQ(g[0].question) === normQ(e.question));
+        if (hit) hit.push(e); else groups.push([e]);
+      }
+      // 同一题的多个解析版本：若一份基本包含另一份，只留更完整的那份；否则都留下（一题多解）
+      // 解析去噪：去掉空白/标点/常见 LaTeX 命令差异后，用 5-gram Jaccard 判断两份是不是同一份解法
+      const grace = s => String(s).replace(/[\s，。．、；：！？（）()【】《》"'“”‘’·,.;:!?\[\]{}]/g, '')
+        .replace(/\\dfrac/g, '\\frac').replace(/\\mathrm\{T\}/g, 'T').replace(/\\mathrmT/g, 'T')
+        .replace(/\\left|\\right/g, '').replace(/\\limits/g, '');
+      const similar = (a, c) => {
+        const A = grace(a), B = grace(c);
+        if (!A || !B) return false;
+        if (A.includes(B) || B.includes(A)) return true;
+        const gram = t => { const s2 = new Set(); for (let i = 0; i + 5 <= t.length; i++) s2.add(t.slice(i, i + 5)); return s2; };
+        const ga = gram(A), gb = gram(B);
+        let inter = 0;
+        for (const x of ga) if (gb.has(x)) inter++;
+        const union = ga.size + gb.size - inter;
+        return union > 0 && inter / union >= 0.6;
+      };
+      const pickAnalyses = list => {
+        const keep = [];
+        for (const e of list) {
+          const a = String(e.analysis || '');
+          if (!a.trim()) continue;
+          const i = keep.findIndex(k => similar(k, a));
+          if (i < 0) keep.push(a);
+          else if (grace(keep[i]).length < grace(a).length) keep[i] = a;
+        }
+        return keep;
+      };
       const ys = [...new Set(myExams.map(e => e.year))].sort((a, b) => a - b);
       head('真题' + (ys.length ? '（' + ys[0] + (ys.length > 1 ? '–' + ys[ys.length - 1] : '') + '）' : ''), 'exam');
-      for (const e of myExams) {
-        const qTitle = e.year + ' 年 · 数学' + ({ '数一': '一', '数二': '二', '数三': '三' }[e.subject] || e.subject) + ' · ' + (e.label || ('第 ' + e.number + ' 题')) + '（' + e.kind + (e.score ? '，' + e.score + ' 分' : '') + '）';
-        // 标题保留 ###（大纲可导航）；下面一行是「划删除线」的方框：
-        // 勾选后 sync-vault 以「所在标题 + 该行文本」为键记住状态（空文本任务项也不会互相串）
+      const subCN = s => ({ '数一': '一', '数二': '二', '数三': '三' }[s] || s);
+      for (const g of groups) {
+        const e0 = g[0];
+        const numText = e => e.label || ('第 ' + e.number + ' 题');
+        const others = g.slice(1).map(e => '数学' + subCN(e.subject) + ' · ' + numText(e)).join(' ／ ');
+        const qTitle = e0.year + ' 年 · 数学' + subCN(e0.subject) + ' · ' + numText(e0) + '（' + e0.kind + (e0.score ? '，' + e0.score + ' 分' : '') + '）' + (others ? '　／　' + others : '');
         L.push('### ' + qTitle);
         L.push('');
-        // 注意：Obsidian 只在 `- [ ] ` 后面有文字时才渲染成可点的方框，空的 `- [ ]` 会退化成普通列表项（显示成 "[]"），
-        // 所以这里给方框配一个短标签（题号），既能点、也让勾选状态有唯一的键。
-        L.push('- [ ] ' + (e.label || ('第 ' + e.number + ' 题')));
+        L.push('- [ ] ' + numText(e0));
         L.push('');
-        // 题面：逐行缩进 2 空格，保证仍在这个任务项内
-        for (const line of decorate(String(e.question)).split(/\r?\n/)) L.push(line.trim() === '' ? '' : '  ' + noLink(line));
+        for (const line of decorate(String(e0.question)).split(/\r?\n/)) L.push(line.trim() === '' ? '' : '  ' + noLink(line));
         L.push('');
+        const ansLines = String(e0.answer).split('\n');
+        const analyses = pickAnalyses(g);
         L.push('  > [!success]- 答案与解析');
-        const ansLines = String(e.answer).split('\n');
         if (ansLines.length === 1) {
           L.push('  > **答案**：' + ansLines[0]);
         } else {
           L.push('  > **答案**：');
           for (const ln of ansLines) L.push(ln.trim() === '' ? '  >' : '  > ' + ln);
         }
-        L.push('  >');
-        if (String(e.analysis).trim()) {
-          for (const line of String(e.analysis).split('\n')) L.push(line.trim() === '' ? '  >' : '  > ' + line);
+        for (let ai = 0; ai < analyses.length; ai++) {
+          L.push('  >');
+          if (analyses.length > 1) L.push('  > **解法' + (ai + 1) + '**');
+          for (const line of String(analyses[ai]).split('\n')) L.push(line.trim() === '' ? '  >' : '  > ' + line);
         }
         L.push('');
       }

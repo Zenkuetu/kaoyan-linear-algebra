@@ -1512,7 +1512,7 @@ $$
   > $$
   > 因此 $Ax=b$ 的通解为 $x=k\begin{pmatrix}1\\0\\1\end{pmatrix}+\begin{pmatrix}\frac{3}{2}\\-\frac{1}{2}\\0\end{pmatrix}$，其中 $k$ 为任意常数.
 
-### 2012 年 · 数学三 · 第 20 题（解答，11 分）
+### 2012 年 · 数学三 · 第 20 题（解答，11 分）　／　数学二 · 第 22 题
 
 - [ ] 第 20 题
 
@@ -1526,44 +1526,6 @@ $$
 
   > [!success]- 答案与解析
   > **答案**：（Ⅰ）$|A|=1-a^4$；（Ⅱ）$a=-1$ 时方程组有无穷多解，通解为 $x=k\begin{pmatrix}1\\1\\1\\1\end{pmatrix}+\begin{pmatrix}0\\-1\\0\\0\end{pmatrix}$（$k$ 为任意常数）。
-  >
-  > （Ⅰ）
-  > $$
-  > |A|=1\times\begin{vmatrix}1&a&0\\0&1&a\\0&0&1\end{vmatrix}+a\times(-1)^{4+1}\begin{vmatrix}a&0&0\\1&a&0\\0&1&a\end{vmatrix}=1-a^4.
-  > $$
-  >
-  > （Ⅱ）对方程组的增广矩阵作初等行变换：
-  > $$
-  > \begin{pmatrix}1&a&0&0&1\\0&1&a&0&-1\\0&0&1&a&0\\a&0&0&1&0\end{pmatrix}
-  > \to\begin{pmatrix}1&a&0&0&1\\0&1&a&0&-1\\0&0&1&a&0\\0&-a^2&0&1&-a\end{pmatrix}
-  > \to\begin{pmatrix}1&a&0&0&1\\0&1&a&0&-1\\0&0&1&a&0\\0&0&a^3&1&-a-a^2\end{pmatrix}
-  > $$
-  > $$
-  > \to\begin{pmatrix}1&a&0&0&1\\0&1&a&0&-1\\0&0&1&a&0\\0&0&0&1-a^4&-a-a^2\end{pmatrix}.
-  > $$
-  > 要使得原线性方程组有无穷多解，则有 $1-a^4=0$ 及 $-a-a^2=0$，可知 $a=-1$。
-  >
-  > 此时原线性方程组增广矩阵为 $\begin{pmatrix}1&-1&0&0&1\\0&1&-1&0&-1\\0&0&1&-1&0\\0&0&0&0&0\end{pmatrix}$，进一步化为行最简形得 $\begin{pmatrix}1&0&0&-1&0\\0&1&0&-1&-1\\0&0&1&-1&0\\0&0&0&0&0\end{pmatrix}$，
-  >
-  > 可知导出组的基础解系为 $\begin{pmatrix}1\\1\\1\\1\end{pmatrix}$，非齐次方程的特解为 $\begin{pmatrix}0\\-1\\0\\0\end{pmatrix}$，故其通解为
-  > $$
-  > x=k\begin{pmatrix}1\\1\\1\\1\end{pmatrix}+\begin{pmatrix}0\\-1\\0\\0\end{pmatrix}.
-  > $$
-
-### 2012 年 · 数学二 · 第 22 题（解答，11 分）
-
-- [ ] 第 22 题
-
-  设
-  $$
-  A=\begin{pmatrix}1&a&0&0\\0&1&a&0\\0&0&1&a\\a&0&0&1\end{pmatrix},\quad \beta=\begin{pmatrix}1\\-1\\0\\0\end{pmatrix}.
-  $$
-  （Ⅰ）计算行列式 $|A|$；
-
-  （Ⅱ）当实数 $a$ 为何值时，方程组 $Ax=\beta$ 有无穷多解，并求其通解.
-
-  > [!success]- 答案与解析
-  > **答案**：（Ⅰ）$|A|=1-a^4$；（Ⅱ）$a=-1$，通解 $x=k\begin{pmatrix}1\\1\\1\\1\end{pmatrix}+\begin{pmatrix}0\\-1\\0\\0\end{pmatrix}$（$k$ 为任意常数）
   >
   > （Ⅰ）
   > $$
@@ -1664,7 +1626,7 @@ $$
   > $$
   > 从而有 $C=\begin{pmatrix}k_1+k_2+1&-k_1\\k_1&k_2\end{pmatrix}$.
 
-### 2015 年 · 数学一 · 第 5 题（选择，4 分）
+### 2015 年 · 数学一 · 第 5 题（选择，4 分）　／　数学三 · 第 5 题
 
 - [ ] 第 5 题
 
@@ -1675,6 +1637,7 @@ $$
   > [!success]- 答案与解析
   > **答案**：（D）
   >
+  > **解法1**
   > 因为 $Ax=b$ 有无数个解，所以 $r(A)=r(\overline{A})<3$，由
   > $$
   > |A|=\begin{vmatrix}1&1&1\\1&2&a\\1&4&a^2\end{vmatrix}=(a-1)(a-2)=0
@@ -1694,18 +1657,8 @@ $$
   > 因为方程组有无数个解，所以 $d=1$ 或 $d=2$，应选（D）。
   >
   > > 方法点评：本题考查非齐次线性方程组的基本理论。本题非齐次线性方程组有无数个解的两个关键点为：$r(A)<3$ 及 $r(A)=r(\overline{A})$。
-
-### 2015 年 · 数学三 · 第 5 题（选择，4 分）
-
-- [ ] 第 5 题
-
-  设矩阵 $A=\begin{pmatrix}1&1&1\\1&2&a\\1&4&a^2\end{pmatrix}$，$b=\begin{pmatrix}1\\d\\d^2\end{pmatrix}$. 若集合 $\Omega=\{1,2\}$，则线性方程组 $Ax=b$ 有无穷多解的充分必要条件为（　）
-
-  （A）$a\notin \Omega,\ d\notin \Omega$.　（B）$a\notin \Omega,\ d\in \Omega$.　（C）$a\in \Omega,\ d\notin \Omega$.　（D）$a\in \Omega,\ d\in \Omega$.
-
-  > [!success]- 答案与解析
-  > **答案**：（D）
   >
+  > **解法2**
   > $$
   > |A|=\begin{vmatrix}1&1&1\\1&2&a\\1&4&a^2\end{vmatrix}=(a-2)(a-1)(2-1)=(a-2)(a-1).
   > $$
@@ -2029,7 +1982,7 @@ $$
   >
   > 综上所述，方程组 $Ax=b$ 的解的情况只有两种可能，有唯一解或无解. 应选 D.
 
-### 2023 年 · 数学三 · 第 15 题（填空，5 分）
+### 2023 年 · 数学三 · 第 15 题（填空，5 分）　／　数学二 · 第 16 题
 
 - [ ] 第 15 题
 
@@ -2054,6 +2007,7 @@ $$
   > [!success]- 答案与解析
   > **答案**：$8$
   >
+  > **解法1**
   > 已知题中方程组有解，所以 $r(A)=r(B)$，
   > $$
   > A=\begin{bmatrix}a&0&1\\1&a&1\\1&2&a\end{bmatrix},\quad B=\begin{bmatrix}a&0&1&1\\1&a&1&0\\1&2&a&0\\a&b&0&2\end{bmatrix}.
@@ -2070,27 +2024,8 @@ $$
   > $$
   > \begin{vmatrix}1&a&1\\1&2&a\\a&b&0\end{vmatrix}=8.
   > $$
-
-### 2023 年 · 数学二 · 第 16 题（填空，5 分）
-
-- [ ] 第 16 题
-
-  已知线性方程组
-  $$
-  \begin{cases}ax_1+x_3=1,\\x_1+ax_2+x_3=0,\\x_1+2x_2+ax_3=0,\\ax_1+bx_2=2\end{cases}
-  $$
-  有解，其中 $a,b$ 为常数. 若
-  $$
-  \begin{vmatrix}a&0&1\\1&a&1\\1&2&a\end{vmatrix}=4,
-  $$
-  则
-  $$
-  \begin{vmatrix}1&a&1\\1&2&a\\a&b&0\end{vmatrix}=\underline{\qquad}.
-  $$
-
-  > [!success]- 答案与解析
-  > **答案**：$8$
   >
+  > **解法2**
   > 【解】
   > $$
   > \overline{A}=\begin{pmatrix}a&0&1&1\\1&a&1&0\\1&2&a&0\\a&b&0&2\end{pmatrix},

@@ -729,7 +729,7 @@ $$
   > B=\begin{pmatrix}-k_1+2&-k_2+6&-k_3-1\\2k_1-1&2k_2-3&2k_3+1\\3k_1-1&3k_2-4&3k_3+1\\k_1&k_2&k_3\end{pmatrix}\quad (k_1,k_2,k_3\ \text{为任意常数}).
   > $$
 
-### 2014 年 · 数学三 · 第 20 题（解答，11 分）
+### 2014 年 · 数学三 · 第 20 题（解答，11 分）　／　数学二 · 第 22 题
 
 - [ ] 第 20 题
 
@@ -749,6 +749,7 @@ $$
   >
   > （Ⅱ）$B=\begin{pmatrix}2&6&-1\\-1&-3&1\\-1&-4&1\\0&0&0\end{pmatrix}+(k_1\alpha,\ k_2\alpha,\ k_3\alpha)$，$k_1,k_2,k_3$ 为任意常数。
   >
+  > **解法1**
   > （Ⅰ）对矩阵 $A$ 施以初等行变换
   > $$
   > A=\begin{pmatrix}1&-2&3&-4\\0&1&-1&1\\1&2&0&-3\end{pmatrix}\to\begin{pmatrix}1&0&0&1\\0&1&0&-2\\0&0&1&-3\end{pmatrix},
@@ -775,24 +776,8 @@ $$
   > B=\begin{pmatrix}2&6&-1\\-1&-3&1\\-1&-4&1\\0&0&0\end{pmatrix}+(k_1\alpha,\ k_2\alpha,\ k_3\alpha),
   > $$
   > $k_1,k_2,k_3$ 为任意常数。
-
-### 2014 年 · 数学二 · 第 22 题（解答，11 分）
-
-- [ ] 第 22 题
-
-  设矩阵
-  $$
-  A=\begin{pmatrix}1&-2&3&-4\\0&1&-1&1\\1&2&0&-3\end{pmatrix},
-  $$
-  $E$ 为 3 阶单位矩阵.
-
-  （Ⅰ）求方程组 $Ax=0$ 的一个基础解系；
-
-  （Ⅱ）求满足 $AB=E$ 的所有矩阵 $B$.
-
-  > [!success]- 答案与解析
-  > **答案**：（Ⅰ）$c\begin{pmatrix}-1\\2\\3\\1\end{pmatrix}$（$c$ 为任意常数）；（Ⅱ）$B=\begin{pmatrix}-c_1+2&-c_2+6&-c_3-1\\2c_1-1&2c_2-3&2c_3+1\\3c_1-1&3c_2-4&3c_3+1\\c_1&c_2&c_3\end{pmatrix}$（$c_1,c_2,c_3$ 为任意常数）
   >
+  > **解法2**
   > （Ⅰ）
   > $$
   > (A)=\begin{pmatrix}1&-2&3&-4\\0&1&-1&1\\1&2&0&-3\end{pmatrix}\xrightarrow{r_1+r_3}\begin{pmatrix}1&-2&3&-4\\0&1&-1&1\\0&4&-3&1\end{pmatrix}\xrightarrow{-4r_2+r_3}\begin{pmatrix}1&-2&3&-4\\0&1&-1&1\\0&0&1&-3\end{pmatrix}
@@ -975,7 +960,7 @@ $$
   >
   > 当 $a=-2$ 时，因为 $r(A)\ne r(A\ \vdots\ B)$，所以 $AX=B$ 无解。
 
-### 2018 年 · 数学一 · 第 21 题（解答，11 分）
+### 2018 年 · 数学一 · 第 21 题（解答，11 分）　／　数学二 · 第 23 题
 
 - [ ] 第 21 题
 
@@ -994,6 +979,7 @@ $$
   > [!success]- 答案与解析
   > **答案**：（Ⅰ）$a=2$；（Ⅱ）$P=\begin{pmatrix}-6k_1+3&-6k_2+4&-6k_3+4\\2k_1-1&2k_2-1&2k_3-1\\k_1&k_2&k_3\end{pmatrix}$（$k_1,k_2,k_3$ 为任意常数且 $k_2\ne k_3$）
   >
+  > **解法1**
   > （Ⅰ）显然 $r(A)=2$，因为初等变换不改变矩阵的秩，所以 $r(B)=2$，而
   > $$
   > B=\begin{pmatrix}1&a&2\\0&1&1\\-1&1&1\end{pmatrix}\to\begin{pmatrix}1&a&2\\0&1&1\\0&a+1&3\end{pmatrix}\to\begin{pmatrix}1&a&2\\0&1&1\\0&0&2-a\end{pmatrix},
@@ -1019,6 +1005,32 @@ $$
   > $$
   > P=\begin{pmatrix}-6k_1+3&-6k_2+4&-6k_3+4\\2k_1-1&2k_2-1&2k_3-1\\k_1&k_2&k_3\end{pmatrix}\ (k_1,k_2,k_3\ \text{为任意常数且}\ k_2\ne k_3).
   > $$
+  >
+  > **解法2**
+  > （Ⅰ）由已知有 $r(A)=r(B)$，
+  > $$
+  > A=\begin{pmatrix}1&2&a\\1&3&0\\2&7&-a\end{pmatrix}\to\begin{pmatrix}1&2&a\\0&1&-a\\0&3&-3a\end{pmatrix}\to\begin{pmatrix}1&2&a\\0&1&-a\\0&0&0\end{pmatrix},
+  > $$
+  > $$
+  > B=\begin{pmatrix}1&a&2\\0&1&1\\-1&1&1\end{pmatrix}\to\begin{pmatrix}1&a&2\\0&1&1\\0&1+a&3\end{pmatrix}\to\begin{pmatrix}1&a&2\\0&1&1\\0&0&2-a\end{pmatrix},
+  > $$
+  > 所以 $2-a=0$，即 $a=2$；
+  >
+  > （Ⅱ）
+  > $$
+  > (A,B)=\begin{pmatrix}1&2&2&1&2&2\\1&3&0&0&1&1\\2&7&-2&-1&1&1\end{pmatrix}\to\begin{pmatrix}1&0&6&3&4&4\\0&1&-2&-1&-1&-1\\0&0&0&0&0&0\end{pmatrix},
+  > $$
+  > 所以方程 $AX=B$ 的解
+  > $$
+  > X=\begin{pmatrix}-6k_1+3&-6k_2+4&-6k_3+4\\2k_1-1&2k_2-1&2k_3-1\\k_1&k_2&k_3\end{pmatrix},
+  > $$
+  > 且当 $|X|\ne0$ 即 $k_2\ne k_3$ 时，$X$ 可逆，
+  >
+  > 则取
+  > $$
+  > P=\begin{pmatrix}-6k_1+3&-6k_2+4&-6k_3+4\\2k_1-1&2k_2-1&2k_3-1\\k_1&k_2&k_3\end{pmatrix},
+  > $$
+  > 其中 $k_1,k_2,k_3$ 为任意常数，且 $k_2\ne k_3$，即为所求。
 
 ### 2018 年 · 数学三 · 第 21 题（解答，11 分）
 
@@ -1061,53 +1073,6 @@ $$
   > P=\begin{pmatrix}3-6k_1&4-6k_2&4-6k_3\\-1+2k_1&-1+2k_2&-1+2k_3\\k_1&k_2&k_3\end{pmatrix},
   > $$
   > 其中 $k_2\ne k_3$.
-
-### 2018 年 · 数学二 · 第 23 题（解答，11 分）
-
-- [ ] 第 23 题
-
-  （本题满分 11 分）已知 $a$ 是常数，且矩阵
-  $$
-  A=\begin{pmatrix}1&2&a\\1&3&0\\2&7&-a\end{pmatrix}
-  $$
-  可经初等列变换化为矩阵
-  $$
-  B=\begin{pmatrix}1&a&2\\0&1&1\\-1&1&1\end{pmatrix}.
-  $$
-  （Ⅰ）求 $a$；（Ⅱ）求满足 $AP=B$ 的可逆矩阵 $P$。
-
-  > [!success]- 答案与解析
-  > **答案**：
-  > （Ⅰ）$a=2$；（Ⅱ）
-  > $$
-  > P=\begin{pmatrix}-6k_1+3&-6k_2+4&-6k_3+4\\2k_1-1&2k_2-1&2k_3-1\\k_1&k_2&k_3\end{pmatrix},
-  > $$
-  > 其中 $k_1,k_2,k_3$ 为任意常数，且 $k_2\ne k_3$。
-  >
-  > （Ⅰ）由已知有 $r(A)=r(B)$，
-  > $$
-  > A=\begin{pmatrix}1&2&a\\1&3&0\\2&7&-a\end{pmatrix}\to\begin{pmatrix}1&2&a\\0&1&-a\\0&3&-3a\end{pmatrix}\to\begin{pmatrix}1&2&a\\0&1&-a\\0&0&0\end{pmatrix},
-  > $$
-  > $$
-  > B=\begin{pmatrix}1&a&2\\0&1&1\\-1&1&1\end{pmatrix}\to\begin{pmatrix}1&a&2\\0&1&1\\0&1+a&3\end{pmatrix}\to\begin{pmatrix}1&a&2\\0&1&1\\0&0&2-a\end{pmatrix},
-  > $$
-  > 所以 $2-a=0$，即 $a=2$；
-  >
-  > （Ⅱ）
-  > $$
-  > (A,B)=\begin{pmatrix}1&2&2&1&2&2\\1&3&0&0&1&1\\2&7&-2&-1&1&1\end{pmatrix}\to\begin{pmatrix}1&0&6&3&4&4\\0&1&-2&-1&-1&-1\\0&0&0&0&0&0\end{pmatrix},
-  > $$
-  > 所以方程 $AX=B$ 的解
-  > $$
-  > X=\begin{pmatrix}-6k_1+3&-6k_2+4&-6k_3+4\\2k_1-1&2k_2-1&2k_3-1\\k_1&k_2&k_3\end{pmatrix},
-  > $$
-  > 且当 $|X|\ne0$ 即 $k_2\ne k_3$ 时，$X$ 可逆，
-  >
-  > 则取
-  > $$
-  > P=\begin{pmatrix}-6k_1+3&-6k_2+4&-6k_3+4\\2k_1-1&2k_2-1&2k_3-1\\k_1&k_2&k_3\end{pmatrix},
-  > $$
-  > 其中 $k_1,k_2,k_3$ 为任意常数，且 $k_2\ne k_3$，即为所求。
 
 ### 2021 年 · 数学二 · 第 10 题（选择，5 分）
 
